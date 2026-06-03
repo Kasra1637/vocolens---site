@@ -1,7 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
+  "name": "bridge-radiant-5d661c60",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "alias": {
+    "#tanstack-router-entry": "./dist/server/assets/router-9LY5dL7e.js",
+    "#tanstack-start-entry": "./dist/server/server.js",
+    "#tanstack-start-plugin-adapters": "./dist/server/assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js",
+    "tanstack-start-manifest:v": "./dist/server/assets/_tanstack-start-manifest_v-DINLH60B.js",
+    "tanstack-start-injected-head-scripts:v": "./dist/server/assets/start-D4mdwD77.js"
+  }
 }
