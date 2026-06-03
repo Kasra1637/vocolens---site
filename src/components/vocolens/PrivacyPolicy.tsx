@@ -1,4 +1,4 @@
-import { Shield, Eye, Lock, Database, Users, Globe, Trash2, FileText, AlertCircle, Smartphone, Bell } from 'lucide-react';
+import { Shield, Eye, Lock, Database, Users, Globe, Trash2, FileText, AlertCircle, Smartphone, Bell, Activity } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 export function PrivacyPolicy() {
@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
           <p className="text-text-muted text-base leading-relaxed">
-            Effective Date: March 10, 2026
+            Effective Date: May 10, 2026
           </p>
         </div>
       </AnimatedSection>
@@ -24,7 +24,7 @@ export function PrivacyPolicy() {
           <div className="bg-gradient-to-br from-primary/10 to-transparent rounded-2xl p-6 border border-primary/20">
             <h2 className="text-2xl font-bold text-text-primary mb-4">Our Core Commitment</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              Vocolens is built on a simple principle: your personal reflections belong to you. We designed the app so your journal entries are stored only on your device. We do not operate user accounts, we do not store your data on our servers, and we do not sell or share your information with advertisers.
+              Vocolens is built on a simple principle: your personal reflections belong to you. We designed the app so your journal entries are stored only on your device. We do not operate user accounts, we do not store your journal data on our servers, and we do not sell or share your information with advertisers.
             </p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               This policy explains exactly what data leaves your device, why, and what happens to it.
@@ -53,7 +53,7 @@ export function PrivacyPolicy() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Audio recordings (.wav files saved to your device's local storage)</span>
+                    <span>Audio recordings (saved to your device's local storage)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -78,7 +78,7 @@ export function PrivacyPolicy() {
                 </ul>
 
                 <p className="text-text-secondary mt-4 text-base leading-relaxed">
-                  All of this data is stored locally using AsyncStorage on your device. There is no cloud synchronisation, no server-side backup, and no remote access to this data.
+                  Journal data and preferences are stored using on-device local storage. Your PIN and encryption keys are stored separately in your device's secure hardware keystore (iOS Keychain / Android Keystore). There is no cloud synchronisation, no server-side backup, and no remote access to this data.
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export function PrivacyPolicy() {
                     <ul className="space-y-2 text-text-secondary text-sm">
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Your audio recording (WAV format) is sent to Deepgram's API to be transcribed into text.</span>
+                        <span>Your audio recording is sent to Deepgram's API to be transcribed into text.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -129,29 +129,25 @@ export function PrivacyPolicy() {
                   <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="font-bold text-text-primary mb-2 text-lg">2. OpenAI (Emotional Analysis)</h4>
+                        <h4 className="font-bold text-text-primary mb-2 text-lg">2. Anthropic Claude (Emotional Analysis) via OpenRouter</h4>
                       </div>
                     </div>
                     <ul className="space-y-2 text-text-secondary text-sm">
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Both your audio recording and text transcript are sent to our analysis backend for emotional analysis.</span>
+                        <span>Your text transcript is sent to our analysis backend for emotional analysis.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Our backend forwards this data to OpenAI's API using the gpt-4o-audio-preview model, which analyses emotions from both your speech characteristics (tone, pacing, vocal cues) and the content of your words simultaneously.</span>
+                        <span>Our backend forwards this transcript to Anthropic's Claude 3.5 Sonnet model, accessed through OpenRouter (an AI gateway service). The AI analyses the words and language in your transcript to score the 8 core emotions and generate a personalised reflection.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>This multimodal analysis enables deeper, more accurate emotion detection than text-only analysis — GPT-4o processes the raw audio and text together to score the 8 core emotions and generate a personalised reflection.</span>
+                        <span>No audio is transmitted for AI analysis. No user identifiers, account details, or persistent metadata are sent alongside the transcript.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>No user identifiers, account details, or persistent metadata are sent alongside the audio or transcript.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>OpenAI's privacy policy governs how they handle audio and text data. See <a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openai.com/privacy</a>.</span>
+                        <span>OpenRouter's privacy policy governs routing of data: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openrouter.ai/privacy</a>. Anthropic's privacy policy governs how the underlying model handles text data: <a href="https://anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">anthropic.com/privacy</a>.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -176,7 +172,7 @@ export function PrivacyPolicy() {
                   3. Audio Data
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  Audio recordings are saved as .wav files in your device's local app storage directory.
+                  Audio recordings are saved in your device's local app storage directory.
                 </p>
 
                 <div className="space-y-3">
@@ -190,11 +186,11 @@ export function PrivacyPolicy() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>Your audio is also temporarily transmitted to OpenAI's GPT-4o audio model (via our secure analysis backend) so it can analyse vocal characteristics — tone, pitch, pacing, and energy — alongside the transcript text to produce more accurate emotion detection.</span>
+                      <span>The resulting text transcript (not the audio) is then transmitted to our analysis backend for emotion analysis.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>Neither Deepgram nor OpenAI receive any personally identifying information alongside the audio.</span>
+                      <span>Deepgram does not receive any personally identifying information alongside the audio.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -202,18 +198,28 @@ export function PrivacyPolicy() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>The local audio file remains on your device. You can delete it by deleting the journal entry.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>Deleting an entry removes the associated audio file from your device.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>Deleting your account removes all audio files and journal data from your device permanently.</span>
+                      <span>The local audio file remains on your device. You can delete it by deleting the journal entry. Deleting an entry removes the associated audio file from your device. Deleting your account removes all audio files and journal data from your device permanently.</span>
                     </li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+        
+        <AnimatedSection animation="fade-in-up" delay={0.45}>
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Activity className="w-6 h-6 text-[#9b87f5]" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                  4. Usage Tracking
+                </h2>
+                <p className="text-text-secondary mb-4 text-base leading-relaxed">
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration (in seconds) and an anonymous device identifier are sent to our servers after each recording session. This data is used solely to track your usage against your monthly allowance and is not linked to your name, email address, or any other personally identifying information.
+                </p>
               </div>
             </div>
           </div>
@@ -227,7 +233,7 @@ export function PrivacyPolicy() {
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  4. Local Notifications
+                  5. Local Notifications
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
                   Vocolens can send daily reminder notifications to encourage journaling. These notifications:
@@ -264,7 +270,7 @@ export function PrivacyPolicy() {
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  5. In-App Purchases
+                  6. In-App Purchases
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
                   Vocolens offers a premium subscription. Subscription purchases are handled by Apple App Store or Google Play.
@@ -272,7 +278,7 @@ export function PrivacyPolicy() {
 
                 <div className="space-y-3">
                   <p className="text-text-secondary text-base leading-relaxed">
-                    We use RevenueCat to manage subscription status. RevenueCat may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">revenuecat.com/privacy</a>.
+                    We use Adapty to manage subscription status. Adapty may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://adapty.io/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">adapty.io/privacy</a>.
                   </p>
                 </div>
               </div>
@@ -288,7 +294,7 @@ export function PrivacyPolicy() {
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  6. No Analytics or Tracking
+                  7. No Analytics or Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
                   Vocolens does not include any third-party analytics, advertising, or crash-reporting SDKs. We do not track:
@@ -318,7 +324,7 @@ export function PrivacyPolicy() {
                 </ul>
 
                 <p className="text-text-secondary mt-4 text-base leading-relaxed">
-                  All usage statistics visible in the app (streaks, entry counts, mood trends) are computed locally from your on-device data and never transmitted.
+                  All usage statistics visible in the app (streaks, entry counts, mood trends) are computed locally from your on-device data.
                 </p>
               </div>
             </div>
@@ -329,11 +335,11 @@ export function PrivacyPolicy() {
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Lock className="w-6 h-6 text-[#9b87f5]" />
+                <Shield className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  7. Security
+                  8. Security
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
                   We take reasonable measures to protect your data:
@@ -350,7 +356,7 @@ export function PrivacyPolicy() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Our analysis backend restricts access using CORS policies and does not log or retain transcript data after analysis is returned.</span>
+                    <span>Our analysis backend does not log or retain transcript data after analysis is returned.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -370,7 +376,7 @@ export function PrivacyPolicy() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  8. Your Rights & Controls
+                  9. Your Rights & Controls
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
                   You have full control over your data at all times:
@@ -380,7 +386,7 @@ export function PrivacyPolicy() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="font-bold text-text-primary">Export</span> — Download all your journal entries, statistics, and achievements as a JSON file via Settings → Privacy Settings → Export Data.
+                      <span className="font-bold text-text-primary">Export</span> — Download all your journal entries, statistics, and achievements as a file via Settings → Privacy Settings → Export Data.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -415,13 +421,13 @@ export function PrivacyPolicy() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  9. Children's Privacy
+                  10. Children's Privacy
                 </h2>
                 <p className="text-text-secondary mb-3 text-base leading-relaxed">
                   Vocolens is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child under 13 has used the app and their data has been transmitted to a third-party service, please contact us at{' '}
                   <a href="mailto:connect@vocolens.com" className="text-primary hover:underline font-medium">
                     connect@vocolens.com
-                  </a>.
+                  </a>
                 </p>
               </div>
             </div>
@@ -436,7 +442,7 @@ export function PrivacyPolicy() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-text-primary mb-3">
-                  10. Changes to This Policy
+                  11. Changes to This Policy
                 </h2>
                 <p className="text-text-secondary mb-3 text-base leading-relaxed">
                   We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this document. Continued use of the app after changes constitutes acceptance of the revised policy.
