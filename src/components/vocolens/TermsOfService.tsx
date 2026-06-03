@@ -14,7 +14,7 @@ export function TermsOfService() {
           </h1>
           <div className="space-y-2 text-text-muted text-base">
             <p>App: Vocolens</p>
-            <p>Effective Date: March 10, 2026</p>
+            <p>Effective Date: May 10, 2026</p>
             <p>Contact: connect@vocolens.com</p>
           </div>
         </div>
