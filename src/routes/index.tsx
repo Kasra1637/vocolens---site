@@ -204,6 +204,9 @@ function Home() {
 
       <EmotionDetection />
 
+      <EmotionScienceSuite />
+
+
       <section id="features" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="blur-in" className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
