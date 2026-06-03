@@ -1,4 +1,4 @@
-import { FileText, AlertCircle, CreditCard, Globe, DollarSign, Lock, Trash2 } from 'lucide-react';
+import { FileText, AlertCircle, CreditCard, Globe, Lock, Trash2, Activity } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 export function TermsOfService() {
@@ -50,7 +50,7 @@ export function TermsOfService() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via OpenAI GPT-4o audio model — analyses both vocal tone and transcript content</span>
+                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via Anthropic's Claude 3.5 Sonnet, accessed through OpenRouter — analyses your transcript text to detect expressed emotions from your words and language</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -79,7 +79,7 @@ export function TermsOfService() {
                   Subscriptions & Free Trial
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  Vocolens offers a 3-day free trial followed by a paid subscription.
+                  Vocolens offers a 3-day free trial followed by a paid subscription. The free trial is available on the yearly plan.
                 </p>
                 <ul className="space-y-3 ml-4">
                   <li className="flex items-start gap-3">
@@ -191,7 +191,20 @@ export function TermsOfService() {
                   You own all content you create in Vocolens, including your voice recordings and written transcripts.
                 </p>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  By using the app, you grant us a limited, temporary licence to transmit your audio recording and transcript text to our analysis backend and to Deepgram and OpenAI solely for the purpose of providing the transcription and emotional analysis services described in this agreement. This licence does not give us the right to use your content for any other purpose.
+                  By using the app, you grant us a limited, temporary licence to:
+                </p>
+                <ul className="space-y-3 ml-4 mb-4">
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span className="text-text-secondary">Transmit your audio recording to Deepgram solely for the purpose of speech-to-text transcription</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span className="text-text-secondary">Transmit the resulting text transcript to our analysis backend, which forwards it to Anthropic's Claude 3.5 Sonnet (via OpenRouter) solely for the purpose of emotional analysis</span>
+                  </li>
+                </ul>
+                <p className="text-text-secondary mb-4 text-base leading-relaxed">
+                  This licence does not give us the right to use your content for any other purpose. Audio is not transmitted to the AI analysis service — only the text transcript is used for emotion detection.
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed">
                   As described in the Privacy Policy, your journal data is stored locally on your device and is not backed up to our servers.
@@ -221,11 +234,11 @@ export function TermsOfService() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>OpenAI GPT-4o</strong> — AI emotional analysis from both audio speech characteristics and transcript text (openai.com)</span>
+                    <span className="text-text-secondary"><strong>Anthropic / Claude 3.5 Sonnet via OpenRouter</strong> — AI emotional analysis from transcript text (openrouter.ai, anthropic.com)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>RevenueCat</strong> — Subscription management (revenuecat.com)</span>
+                    <span className="text-text-secondary"><strong>Adapty</strong> — Subscription management (adapty.io)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -241,6 +254,24 @@ export function TermsOfService() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={0.8}>
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Activity className="w-6 h-6 text-[#9b87f5]" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                  Usage Tracking
+                </h2>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our servers after each recording session. This data is used solely to track your usage against your monthly allowance and is not used for any other purpose.
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-in-up" delay={0.9}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -276,7 +307,7 @@ export function TermsOfService() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={0.9}>
+        <AnimatedSection animation="fade-in-up" delay={1.0}>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-text-primary mb-4">Disclaimers & Limitation of Liability</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -291,7 +322,7 @@ export function TermsOfService() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={1.0}>
+        <AnimatedSection animation="fade-in-up" delay={1.1}>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-text-primary mb-4">Governing Law</h2>
             <p className="text-text-secondary text-base leading-relaxed">
@@ -300,14 +331,14 @@ export function TermsOfService() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={1.1}>
+        <AnimatedSection animation="fade-in-up" delay={1.2}>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold text-text-primary mb-4">Changes to These Terms</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               We may update these Terms of Service. Continued use of the app after changes constitutes your acceptance of the revised terms. We will notify you of material changes through an in-app prompt.
             </p>
             <p className="text-text-secondary text-base leading-relaxed">
-              For questions, contact us at connect@vocolens.com.
+              For questions, contact us at connect@vocolens.com
             </p>
           </div>
         </AnimatedSection>
