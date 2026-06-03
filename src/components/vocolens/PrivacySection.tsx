@@ -10,8 +10,8 @@ const features = [
   },
   {
     icon: Lock,
-    title: 'Biometric authentication — Face ID / Fingerprint on every app open',
-    description: '4-digit PIN fallback stored in iOS Keychain / Android Keystore (hardware-level encryption). Biometric invalidation detection safely falls back to PIN re-authentication if your device biometrics change.',
+    title: 'Biometric lock',
+    description: 'Face ID or Fingerprint required on every open. PIN fallback is hardware-encrypted, and automatically reverts to PIN-only if your biometrics change.',
   },
   {
     icon: Shield,
