@@ -3,6 +3,7 @@ import { Mic, BarChart3, Sparkles, Frown, MessageSquare, Lightbulb, Brain, Heart
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
+import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
 import { PrivacySection } from '@/components/vocolens/PrivacySection';
 
 export const Route = createFileRoute("/")({
