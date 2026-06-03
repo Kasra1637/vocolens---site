@@ -10,8 +10,8 @@ const features = [
   },
   {
     icon: Lock,
-    title: 'Hardware-encrypted PIN',
-    description: 'Your PIN lives in iOS Keychain or Android Keystore — secure hardware, never plain text.',
+    title: 'Biometric authentication — Face ID / Fingerprint on every app open',
+    description: '4-digit PIN fallback stored in iOS Keychain / Android Keystore (hardware-level encryption). Biometric invalidation detection safely falls back to PIN re-authentication if your device biometrics change.',
   },
   {
     icon: Shield,
