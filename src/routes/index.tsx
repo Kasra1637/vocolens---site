@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mic, BarChart3, Sparkles, Frown, MessageSquare, Lightbulb, Brain, Heart, Clock, Cloud, Activity, Shield } from 'lucide-react';
+import { Frown, MessageSquare, Lightbulb } from 'lucide-react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -28,7 +28,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div className="min-h-screen bg-surface">      <section id="home" className="max-w-7xl mx-auto px-6 py-10 lg:py-16" style={{ paddingTop: '116.48px' }}>
+    <div className="min-h-screen bg-surface">
+      <section id="home" className="max-w-7xl mx-auto px-6 py-10 lg:py-16" style={{ paddingTop: '116.48px' }}>
         <div className="grid lg:grid-cols-2 gap-0 items-center">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
@@ -108,58 +109,6 @@ function Home() {
         </AnimatedGrid>
       </section>
 
-      <section id="how-it-works" className="max-w-7xl mx-auto px-6 py-16">
-        <AnimatedSection animation="blur-in" className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            How our AI voice journal works
-          </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-base leading-relaxed">
-            Three steps from raw thoughts to clear audio journal insights.
-          </p>
-        </AnimatedSection>
-        <AnimatedGrid
-          className="grid md:grid-cols-3 gap-8"
-          animation="scale-in"
-          staggerDelay={0.2}
-        >
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Mic className="w-10 h-10 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">Speak Freely</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                Your thoughts, captured instantly. No friction, no judgment—just you and your voice.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <BarChart3 className="w-10 h-10 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">Understand Instantly</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                AI reveals your emotional triggers, patterns, and what truly drives your mood.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Sparkles className="w-10 h-10 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">Track Growth</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                See your progress, celebrate wins, and watch yourself evolve over weeks and months.
-              </p>
-            </div>
-          </div>
-        </AnimatedGrid>
-      </section>
-
       <section className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
         <AnimatedSection animation="fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
@@ -206,152 +155,19 @@ function Home() {
 
       <EmotionScienceSuite />
 
-
-      <section id="features" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <AnimatedSection animation="blur-in" className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Emotional Intelligence Analysis
-          </h2>
-          <p className="text-text-secondary max-w-3xl mx-auto mb-8 text-base leading-relaxed">
-            See the patterns you've missed. Understand yourself deeply.
+      <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
+            Start using Vocolens now!
+          </h3>
+          <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+            Ready to find clarity? Download the app for free and begin your audio journaling journey today.
           </p>
-        </AnimatedSection>
-
-        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 mb-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay hover-icon">
-                <Clock className="w-6 h-6 text-[#9b87f5]" />
-              </div>
-              <div>
-                <h4 className="font-bold text-text-primary mb-1 text-lg">Sentiment Timeline</h4>
-                <p className="text-text-secondary text-base leading-relaxed">Track emotional patterns over time</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay hover-icon">
-                <Cloud className="w-6 h-6 text-[#9b87f5]" />
-              </div>
-              <div>
-                <h4 className="font-bold text-text-primary mb-1 text-lg">Emotion Cloud</h4>
-                <p className="text-text-secondary text-base leading-relaxed">Visualize frequent emotions</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay hover-icon">
-                <Activity className="w-6 h-6 text-[#9b87f5]" />
-              </div>
-              <div>
-                <h4 className="font-bold text-text-primary mb-1 text-lg">Voice Analysis</h4>
-                <p className="text-text-secondary text-base leading-relaxed">Analyze tone and energy</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay hover-icon">
-                <Brain className="w-6 h-6 text-[#9b87f5]" />
-              </div>
-              <div>
-                <h4 className="font-bold text-text-primary mb-1 text-lg">AI Insights</h4>
-                <p className="text-text-secondary text-base leading-relaxed">Get personalized patterns</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-xl p-5 border border-primary/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Emotional Vocabulary Analysis</h4>
-                <span className="px-2 py-1 bg-primary text-white text-sm rounded-full font-semibold">HIGH</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Tracks the complexity and richness of your emotional expression over time, revealing your growing self-awareness.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-primary/10">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"Your emotional vocabulary has expanded by 23% this month"</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-accent/5 to-transparent rounded-xl p-5 border border-accent/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Trigger Detection</h4>
-                <span className="px-2 py-1 bg-amber-500 text-white text-sm rounded-full font-semibold">MEDIUM</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Identifies correlations between specific topics and your emotional responses with confidence scores.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-accent/10">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"Work meetings correlate with anxiety 78% of the time"</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-xl p-5 border border-primary/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Emotional Coherence Analysis</h4>
-                <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded-full font-semibold">INFO</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Detects when your expressed emotions conflict with each other, helping you understand inner tensions.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-blue-50">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"Detected conflicting emotions: excitement + anxiety about promotion"</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-xl p-5 border border-primary/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Mood Cycle Detection</h4>
-                <span className="px-2 py-1 bg-primary text-white text-sm rounded-full font-semibold">HIGH</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Discovers temporal patterns like morning energy dips, weekend recovery cycles, and seasonal mood shifts.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-primary/10">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"You tend to feel more energized on weekends (avg +2.3 points)"</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-accent/5 to-transparent rounded-xl p-5 border border-accent/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Emotional Shift Tracking</h4>
-                <span className="px-2 py-1 bg-amber-500 text-white text-sm rounded-full font-semibold">MEDIUM</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Monitors how you transition between emotional states and identifies what helps you recover from difficult feelings.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-accent/10">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"Exercise helps you shift from stressed to calm in 2 hours"</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-xl p-5 border border-primary/10">
-              <div className="flex items-start justify-between mb-3">
-                <h4 className="font-bold text-text-primary text-lg">Growth Pattern Recognition</h4>
-                <span className="px-2 py-1 bg-emerald-500 text-white text-sm rounded-full font-semibold">GROWTH</span>
-              </div>
-              <p className="text-text-secondary mb-3 text-base leading-relaxed">
-                Tracks your resilience development and self-awareness evolution, celebrating your progress over time.
-              </p>
-              <div className="bg-white/80 rounded-lg p-3 border border-emerald-50">
-                <p className="text-text-muted mb-1 text-base leading-relaxed">Evidence from your journal:</p>
-                <p className="text-text-primary italic text-base leading-relaxed">"Your resilience score has improved 34% in 3 months"</p>
-              </div>
-            </div>
-          </div>
-          <div className="p-8 text-center">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6 text-xl">
-              Download & start using Vocolens now!
-            </h3>
-            <img
-              src="/getitongoogleplay_badge_web_color_english.png"
-              alt="Download Vocolens AI voice journal on Google Play"
-              className="h-16 sm:h-20 lg:h-28 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
-            />
-          </div>
+          <img
+            src="/getitongoogleplay_badge_web_color_english.png"
+            alt="Download Vocolens AI voice journal on Google Play"
+            className="h-16 sm:h-20 lg:h-24 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
+          />
         </AnimatedSection>
       </section>
 
