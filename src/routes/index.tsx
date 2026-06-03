@@ -3,6 +3,7 @@ import { Mic, BarChart3, Sparkles, Frown, MessageSquare, Lightbulb, Brain, Heart
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
+import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
 import { PrivacySection } from '@/components/vocolens/PrivacySection';
 
 export const Route = createFileRoute("/")({
@@ -202,6 +203,9 @@ function Home() {
       </section>
 
       <EmotionDetection />
+
+      <EmotionScienceSuite />
+
 
       <section id="features" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="blur-in" className="text-center mb-12">
