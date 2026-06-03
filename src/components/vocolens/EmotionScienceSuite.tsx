@@ -12,7 +12,16 @@ const plutchikEmotions = [
   { name: 'Anticipation', icon: Compass, color: '#F97316', ladder: ['Interested', 'Anticipating', 'Vigilant'] },
 ];
 
-const bodyRegions = ['Head', 'Throat', 'Chest', 'Stomach', 'Shoulders', 'Hands', 'Back', 'Legs'];
+const bodyRegions = [
+  { name: 'Head', emoji: '👤' },
+  { name: 'Throat', emoji: '🗣️' },
+  { name: 'Chest', emoji: '🫁' },
+  { name: 'Stomach', emoji: '🦋' },
+  { name: 'Shoulders', emoji: '🤷' },
+  { name: 'Hands', emoji: '👐' },
+  { name: 'Back', emoji: '🦴' },
+  { name: 'Legs', emoji: '🦵' }
+];
 
 const distressLevels = [
   { level: 'Low',      color: '#10B981', response: 'Gentle reflection prompts' },
@@ -161,11 +170,11 @@ export function EmotionScienceSuite() {
             <div className="flex flex-wrap gap-2">
               {bodyRegions.map((region) => (
                 <span
-                  key={region}
+                  key={region.name}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  {region}
+                  <span className="text-base">{region.emoji}</span>
+                  {region.name}
                 </span>
               ))}
             </div>
