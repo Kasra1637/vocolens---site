@@ -32,11 +32,11 @@ export function EmotionDetection() {
           </svg>
           Hybrid Emotion Intelligence
         </span>
-        <h2 className="text-4xl lg:text-5xl font-bold text-primary leading-tight mb-6">
+        <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
           Understand your emotions without forcing a single label.
         </h2>
-        <p className="text-text-secondary text-xl leading-relaxed max-w-3xl mx-auto">
-          AI surfaces hidden layers of your mood. You decide what's true. We preserve the nuance of your experience without flattening feelings into one emoji.
+        <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
+          AI surfaces hidden layers of your mood. You decide what's true. We preserve the nuance of your experience without flattening feelings into flat labels.
         </p>
       </AnimatedSection>
 
