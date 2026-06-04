@@ -36,7 +36,7 @@ export function EmotionDetection() {
           Understand your emotions without forcing a single label.
         </h2>
         <p className="text-text-secondary text-xl leading-relaxed max-w-3xl mx-auto">
-          AI surfaces the hidden layers of your mood. You decide what's true. We preserve the full nuance of your experience without flattening your feelings into a single emoji.
+          AI surfaces hidden layers of your mood. You decide what's true. We preserve the nuance of your experience without flattening feelings into one emoji.
         </p>
       </AnimatedSection>
 
