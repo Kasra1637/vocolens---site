@@ -5,6 +5,7 @@ import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
 import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
 import { PrivacySection } from '@/components/vocolens/PrivacySection';
+import { FAQSection } from '@/components/vocolens/FAQSection';
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -237,6 +238,8 @@ function Home() {
           </div>
         </AnimatedGrid>
       </section>
+      <FAQSection />
+
 
       <PrivacySection />
 
