@@ -40,8 +40,8 @@ export function EmotionScienceSuite() {
     >
       <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-          <Fingerprint className="w-3.5 h-3.5" />
-          Private · Biometric-locked · On-device
+          <Brain className="w-3.5 h-3.5" />
+          Scientific Foundation
         </span>
         <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-5" itemProp="name">
           The emotion science inside Vocolens
