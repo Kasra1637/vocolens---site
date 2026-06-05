@@ -38,7 +38,7 @@ export function FAQSection() {
         <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Frequently Asked Questions
         </h2>
         <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
