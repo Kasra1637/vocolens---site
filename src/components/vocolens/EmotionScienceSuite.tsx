@@ -43,7 +43,7 @@ export function EmotionScienceSuite() {
           <Brain className="w-3.5 h-3.5" />
           Scientific Foundation
         </span>
-        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-5" itemProp="name">
+        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5" itemProp="name">
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">

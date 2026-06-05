@@ -32,7 +32,7 @@ export function EmotionDetection() {
           </svg>
           Hybrid Emotion Intelligence
         </span>
-        <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
+        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
           Understand your emotions without forcing a single label.
         </h2>
         <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
@@ -96,7 +96,7 @@ export function EmotionDetection() {
       <AnimatedSection animation="fade-in-up" delay={0.2}>
         <div className="grid lg:grid-cols-5 gap-8 items-stretch">
           <div className="lg:col-span-3 space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-6">Why it matters</h3>
+            <h3 className="text-2xl font-bold mb-6">Why it matters</h3>
             <div className="grid sm:grid-cols-2 gap-6">
               {whyItMatters.map((item, index) => (
                 <div key={index} className="flex gap-4">
