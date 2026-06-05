@@ -60,7 +60,7 @@ function Home() {
               className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
             />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
@@ -112,7 +112,7 @@ function Home() {
 
       <section className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
             Journal in your native tongue
           </h2>
           <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
@@ -158,7 +158,7 @@ function Home() {
 
       <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Start using Vocolens now!
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
@@ -174,7 +174,7 @@ function Home() {
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-8">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Real stories, real impact
           </h2>
         </AnimatedSection>
