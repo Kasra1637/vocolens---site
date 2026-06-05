@@ -53,7 +53,7 @@ export function EmotionDetection() {
                   <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
                   <Mic className="w-7 h-7 relative z-10" />
                </div>
-               <h4 className="text-center font-bold text-text-primary text-xl mb-4">1. You Speak Freely</h4>
+               <h4 className="text-center font-bold text-xl mb-4">1. You Speak Freely</h4>
                <div className="bg-gray-50/80 rounded-2xl p-5 text-center text-text-secondary italic border border-gray-100 shadow-inner text-base leading-relaxed">
                  "I'm excited about the promotion, but terrified of failing."
                </div>
@@ -65,7 +65,7 @@ export function EmotionDetection() {
                   <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
                   <Brain className="w-7 h-7 relative z-10" />
                </div>
-               <h4 className="text-center font-bold text-text-primary text-xl mb-4">2. AI Sees Layers</h4>
+               <h4 className="text-center font-bold text-xl mb-4">2. AI Sees Layers</h4>
                <div className="flex flex-col gap-3">
                  <div className="bg-emerald-50 text-emerald-700 px-4 py-3 rounded-xl text-sm font-semibold flex justify-between items-center border border-emerald-100/50">
                    <span>Anticipation</span> <span className="text-xs uppercase tracking-wider opacity-70">High</span>
@@ -82,7 +82,7 @@ export function EmotionDetection() {
                <div className="w-14 h-14 rounded-2xl bg-white shadow-md text-[#9b87f5] flex items-center justify-center mb-6 mx-auto relative z-10">
                   <Sparkles className="w-7 h-7" />
                </div>
-               <h4 className="text-center font-bold text-text-primary text-xl mb-4 relative z-10">3. You Define the Truth</h4>
+               <h4 className="text-center font-bold text-xl mb-4 relative z-10">3. You Define the Truth</h4>
                <div className="bg-white rounded-2xl p-5 text-center shadow-sm border border-primary/10 relative z-10">
                  <span className="block text-xs uppercase tracking-widest text-[#9b87f5]/70 font-bold mb-2">Refined by you</span>
                  <span className="text-xl font-extrabold text-[#9b87f5]">"Cautiously Optimistic"</span>
@@ -115,7 +115,7 @@ export function EmotionDetection() {
              <div className="w-14 h-14 rounded-full bg-white shadow-clay flex items-center justify-center mb-6">
                 <Sparkles className="w-7 h-7 text-[#9b87f5]" />
              </div>
-             <h3 className="text-2xl font-bold text-text-primary mb-3">Built for emotional clarity</h3>
+             <h3 className="text-2xl font-bold mb-3">Built for emotional clarity</h3>
              <p className="text-text-secondary text-lg leading-relaxed">
                This is designed to feel reflective, supportive, and premium, not clinical or robotic. You get a clearer view of what you felt, why it matters, and how your emotional patterns evolve over time.
              </p>
