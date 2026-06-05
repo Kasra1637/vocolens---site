@@ -77,7 +77,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Frown className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">The problem</h3>
+              <h3 className="font-bold mb-3 text-xl">The problem</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 Living with Tourette's, my mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
               </p>
@@ -89,7 +89,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">Daily struggle</h3>
+              <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
               </p>
@@ -101,7 +101,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">The breakthrough</h3>
+              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
               </p>
@@ -189,7 +189,7 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Sarah Chen</h4>
+            <h4 className="font-bold mb-1 text-lg">Sarah Chen</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">UX Designer & Mom</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               "This AI voice journal has been life-changing for me. As a busy mom and designer, I struggle to find time to reflect on my thoughts, although this audio journal app makes it so easy to capture my emotions on the go every day."
@@ -207,7 +207,7 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Marcus Rodriguez</h4>
+            <h4 className="font-bold mb-1 text-lg">Marcus Rodriguez</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">Tech Entrepreneur</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               "The AI insights are incredibly impressive. I've tried many journaling apps but none have made reflections this meaningful. Understanding my mental patterns helps me make better business and life decisions every single day now."
@@ -225,7 +225,7 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Alex Thompson</h4>
+            <h4 className="font-bold mb-1 text-lg">Alex Thompson</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">College Student</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               "I never thought I'd be into journaling, but this app changed my perspective completely. The voice recording removes the intimidation of writing, and I love seeing my emotional growth over time, which is remarkable."
