@@ -57,7 +57,7 @@ export function EmotionScienceSuite() {
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
               <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
-              <h3 className="font-bold text-text-primary text-xl">Detected and ranked in every entry</h3>
+              <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
               Each emotion family maps to an intensity ladder — your wording reveals which step you're on.
@@ -74,7 +74,7 @@ export function EmotionScienceSuite() {
                   <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${color}1A` }}>
                     <Icon className="w-4.5 h-4.5" style={{ color }} />
                   </span>
-                  <h4 className="font-bold text-text-primary text-lg">{name}</h4>
+                  <h4 className="font-bold text-lg">{name}</h4>
                 </div>
                 <ol className="space-y-1">
                   {ladder.map((step, i) => (
@@ -101,7 +101,7 @@ export function EmotionScienceSuite() {
               <Brain className="w-4 h-4 text-primary" />
               <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
             </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Your emotion in 2D psychological space</h3>
+            <h3 className="font-bold mb-2 text-xl">Your emotion in 2D psychological space</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
               Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
             </p>
@@ -136,7 +136,7 @@ export function EmotionScienceSuite() {
               <HeartPulse className="w-4 h-4 text-primary" />
               <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
             </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Right care, right moment</h3>
+            <h3 className="font-bold mb-2 text-xl">Right care, right moment</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
               Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
             </p>
@@ -163,7 +163,7 @@ export function EmotionScienceSuite() {
               <Activity className="w-4 h-4 text-primary" />
               <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
             </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Where do you feel it?</h3>
+            <h3 className="font-bold mb-2 text-xl">Where do you feel it?</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
               After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
             </p>
@@ -187,7 +187,7 @@ export function EmotionScienceSuite() {
               <Sparkles className="w-4 h-4 text-primary" />
               <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
             </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Learns your emotional fingerprint</h3>
+            <h3 className="font-bold mb-2 text-xl">Learns your emotional fingerprint</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
               A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren't perfectly predictable.
             </p>
