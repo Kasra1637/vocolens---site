@@ -1,5 +1,5 @@
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import { Smile, Frown, Flame, Shield, Sparkles, AlertTriangle, Handshake, Compass, Activity, HeartPulse, Brain, History, Fingerprint } from 'lucide-react';
+import { Smile, Frown, Flame, Shield, Sparkles, AlertTriangle, Handshake, Compass, Activity, HeartPulse, Brain, History } from 'lucide-react';
 
 const plutchikEmotions = [
   { name: 'Happiness', icon: Smile, color: '#F5B700', ladder: ['Content', 'Joyful', 'Elated'] },
@@ -13,13 +13,13 @@ const plutchikEmotions = [
 ];
 
 const bodyRegions = [
-  { name: 'Head', emoji: '👤' },
-  { name: 'Throat', emoji: '🗣️' },
-  { name: 'Chest', emoji: '🫁' },
+  { name: 'Head', emoji: '🧠' },
+  { name: 'Face', emoji: '😶' },
+  { name: 'Neck', emoji: '🦴' },
+  { name: 'Chest', emoji: '🫀' },
   { name: 'Stomach', emoji: '🦋' },
-  { name: 'Shoulders', emoji: '🤷' },
+  { name: 'Arms', emoji: '💪' },
   { name: 'Hands', emoji: '👐' },
-  { name: 'Back', emoji: '🦴' },
   { name: 'Legs', emoji: '🦵' }
 ];
 
@@ -43,7 +43,7 @@ export function EmotionScienceSuite() {
           <Brain className="w-3.5 h-3.5" />
           Scientific Foundation
         </span>
-        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-5" itemProp="name">
+        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5" itemProp="name">
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
@@ -57,7 +57,7 @@ export function EmotionScienceSuite() {
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
               <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
-              <h3 className="font-bold text-text-primary text-xl">Detected and ranked in every entry</h3>
+              <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
               Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
@@ -74,7 +74,7 @@ export function EmotionScienceSuite() {
                   <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${color}1A` }}>
                     <Icon className="w-4.5 h-4.5" style={{ color }} />
                   </span>
-                  <h4 className="font-bold text-text-primary text-lg">{name}</h4>
+                  <h4 className="font-bold text-lg">{name}</h4>
                 </div>
                 <ol className="space-y-1">
                   {ladder.map((step, i) => (
@@ -96,8 +96,7 @@ export function EmotionScienceSuite() {
       {/* Grid Layout */}
       <div className="grid lg:grid-cols-5 gap-5 mb-10">
         
-        {/* ROW 1 */}
-        {/* Valence & Arousal (Left) */}
+        {/* Valence & Arousal */}
         <AnimatedSection animation="fade-in-up" delay={0.1} className="lg:col-span-3">
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
             <div className="flex items-center gap-2 mb-2">
@@ -133,7 +132,7 @@ export function EmotionScienceSuite() {
           </div>
         </AnimatedSection>
 
-        {/* Body Mapping (Right) */}
+        {/* Body Mapping */}
         <AnimatedSection animation="fade-in-up" delay={0.15} className="lg:col-span-2">
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
             <div className="flex items-center gap-2 mb-2">
@@ -142,24 +141,29 @@ export function EmotionScienceSuite() {
             </div>
             <h3 className="font-bold text-text-primary mb-2 text-xl">Where do you feel it?</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
+              After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
             </p>
             <div className="flex flex-wrap gap-2">
               {bodyRegions.map((region) => (
                 <span
                   key={region.name}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
                 >
-                  <span className="text-base">{region.emoji}</span>
+                  <span className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-base">
+                    {region.emoji}
+                  </span>
                   {region.name}
                 </span>
               ))}
             </div>
           </div>
         </AnimatedSection>
+      </div>
 
-        {/* ROW 2 */}
-        {/* Distress Detection (Left - directly under Valence) */}
+      {/* Grid Layout Row 2 */}
+      <div className="grid lg:grid-cols-5 gap-5 mb-10">
+        
+        {/* Distress Detection */}
         <AnimatedSection animation="fade-in-up" delay={0.2} className="lg:col-span-3">
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col justify-center">
             <div className="flex items-center gap-2 mb-2">
@@ -184,7 +188,7 @@ export function EmotionScienceSuite() {
           </div>
         </AnimatedSection>
 
-        {/* Personalization AI (Right - directly under Body Mapping) */}
+        {/* Personalization AI */}
         <AnimatedSection animation="fade-in-up" delay={0.25} className="lg:col-span-2">
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col justify-center">
             <div className="flex items-center gap-2 mb-2">
@@ -270,7 +274,7 @@ export function EmotionScienceSuite() {
                 name: 'What is body sensation mapping?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'After each recording you can tap a body region — chest, throat, stomach, head, and others — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
+                  text: 'After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
                 },
               },
               {

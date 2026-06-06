@@ -60,7 +60,7 @@ function Home() {
               className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
             />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
@@ -77,7 +77,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Frown className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">The problem</h3>
+              <h3 className="font-bold mb-3 text-xl">The problem</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 Living with Tourette's, my mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
               </p>
@@ -89,7 +89,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">Daily struggle</h3>
+              <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
               </p>
@@ -101,7 +101,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold text-text-primary mb-3 text-xl">The breakthrough</h3>
+              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
               </p>
@@ -112,7 +112,7 @@ function Home() {
 
       <section className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
             Journal in your native tongue
           </h2>
           <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
@@ -158,7 +158,7 @@ function Home() {
 
       <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Start using Vocolens now!
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
@@ -174,7 +174,7 @@ function Home() {
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-8">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center text-primary mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
             Real stories, real impact
           </h2>
         </AnimatedSection>
@@ -189,14 +189,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Sarah Chen</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">UX Designer & Mom</p>
+            <h4 className="font-bold mb-1 text-lg">Jordan</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">ADHD & Creative</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "This AI voice journal has been life-changing for me. As a busy mom and designer, I struggle to find time to reflect on my thoughts, although this audio journal app makes it so easy to capture my emotions on the go every day."
+              "My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — no paralysis, no perfectionism, just pure unfiltered me. I finally understand my own patterns."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "100% recommend this app for busy people"
+                "Finally, a journal that moves as fast as my mind"
               </p>
             </div>
           </div>
@@ -207,14 +207,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Marcus Rodriguez</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">Tech Entrepreneur</p>
+            <h4 className="font-bold mb-1 text-lg">Riley</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Autistic & Graduate Student</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "The AI insights are incredibly impressive. I've tried many journaling apps but none have made reflections this meaningful. Understanding my mental patterns helps me make better business and life decisions every single day now."
+              "Writing has always felt like translating my brain into a foreign language. With Vocolens, I just talk — no pressure to organize thoughts first. The AI helps me see emotional patterns I never noticed, especially around burnout and sensory overload."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "This AI journaling really does add value"
+                "Like having a translator for my own mind"
               </p>
             </div>
           </div>
@@ -225,14 +225,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold text-text-primary mb-1 text-lg">Alex Thompson</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">College Student</p>
+            <h4 className="font-bold mb-1 text-lg">Casey</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Tourette's & Remote Worker</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "I never thought I'd be into journaling, but this app changed my perspective completely. The voice recording removes the intimidation of writing, and I love seeing my emotional growth over time, which is remarkable."
+              "As someone with Tourette's, my mind and body rarely sync up when I'm stressed. Vocolens lets me offload the chaos in my head without worrying about how it looks on paper. The privacy and biometric lock mean my rawest thoughts stay mine."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "The emotional growth tracker is truly amazing"
+                "Finally, a safe space for my unfiltered self"
               </p>
             </div>
           </div>
