@@ -5,7 +5,7 @@ import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Yes, absolutely. Your journal entries are stored locally on your device, meaning there is no cloud sync or server-side backup of your personal data. Additionally, the app is protected by biometric authentication (Face ID or Fingerprint) and a 4-digit PIN, ensuring that your most personal thoughts are completely locked away. You also have full control to export or permanently delete your data at any time."
+    a: "Yes, absolutely. Your journal entries are stored locally on your device, meaning there is no cloud sync or server-side backup of your personal data. Additionally, the app is protected by biometric authentication (Face ID or Fingerprint) and a PIN, ensuring that your most personal thoughts are completely locked away. You also have full control to export or permanently delete your data at any time."
   },
   {
     q: "How does the AI actually know what I'm feeling?",
@@ -21,7 +21,11 @@ const faqs = [
   },
   {
     q: "Can I journal in a language other than English?",
+conflict_030626_1549
     a: "Yes! Vocolens features world-class real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive weekly AI insights in the language you are most comfortable with. The app is available for download on both iOS and Android."
+=======
+    a: "Yes! We use reliable real-time speech-to-text transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with."
+main
   }
 ];
 
@@ -38,7 +42,7 @@ export function FAQSection() {
         <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Frequently Asked Questions
         </h2>
         <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">

@@ -11,7 +11,7 @@ const features = [
   {
     icon: Lock,
     title: 'Biometric lock',
-    description: 'Face ID or Fingerprint required on every open. PIN fallback is hardware-encrypted, and automatically reverts to PIN-only if your biometrics change.',
+    description: 'Your journal is protected by biometrics the moment you enable them. A secure PIN acts as your backup — so your entries stay private no matter what.',
   },
   {
     icon: Shield,

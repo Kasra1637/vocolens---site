@@ -11,24 +11,21 @@ const plutchikEmotions = [
   { name: 'Trust',     icon: Handshake, color: '#10B981', ladder: ['Accepting', 'Trusting', 'Devoted'] },
   { name: 'Anticipation', icon: Compass, color: '#F97316', ladder: ['Interested', 'Anticipating', 'Vigilant'] },
 ];
-
-const bodyRegions = [
-  { name: 'Head', emoji: '👤' },
-  { name: 'Throat', emoji: '🗣️' },
-  { name: 'Chest', emoji: '🫁' },
+bodyRegions = [
+  { name: 'Head', emoji: '🧠' },
+  { name: 'Face', emoji: '😶' },
+  { name: 'Neck', emoji: '🦴' },
+  { name: 'Chest', emoji: '🫀' },
   { name: 'Stomach', emoji: '🦋' },
-  { name: 'Shoulders', emoji: '🤷' },
+  { name: 'Arms', emoji: '💪' },
   { name: 'Hands', emoji: '👐' },
-  { name: 'Back', emoji: '🦴' },
   { name: 'Legs', emoji: '🦵' }
 ];
-
-const distressLevels = [
+distressLevels = [
   { level: 'Low',      color: '#10B981', response: 'Gentle reflection prompts' },
   { level: 'Moderate', color: '#F59E0B', response: 'Grounding & breathing guidance' },
   { level: 'High',     color: '#EF4444', response: 'Crisis resources surfaced immediately' },
 ];
-
 export function EmotionScienceSuite() {
   return (
     <section
@@ -43,7 +40,7 @@ export function EmotionScienceSuite() {
           <Brain className="w-3.5 h-3.5" />
           Scientific Foundation
         </span>
-        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-5" itemProp="name">
+        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5" itemProp="name">
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
@@ -57,7 +54,7 @@ export function EmotionScienceSuite() {
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
               <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
-              <h3 className="font-bold text-text-primary text-xl">Detected and ranked in every entry</h3>
+              <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
               Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
@@ -74,7 +71,7 @@ export function EmotionScienceSuite() {
                   <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${color}1A` }}>
                     <Icon className="w-4.5 h-4.5" style={{ color }} />
                   </span>
-                  <h4 className="font-bold text-text-primary text-lg">{name}</h4>
+                  <h4 className="font-bold text-lg">{name}</h4>
                 </div>
                 <ol className="space-y-1">
                   {ladder.map((step, i) => (
@@ -93,6 +90,7 @@ export function EmotionScienceSuite() {
         </div>
       </AnimatedSection>
 
+conflict_030626_1549
       {/* Grid Layout: Left Column (Valence & Distress) | Right Column (Body Mapping & Personalization) */}
       <div className="grid lg:grid-cols-2 gap-5 mb-10">
         
@@ -109,7 +107,18 @@ export function EmotionScienceSuite() {
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
               </p>
-
+      {/* Valence/Arousal + Distress */}
+      <div className="grid lg:grid-cols-5 gap-5 mb-10">
+        <AnimatedSection animation="fade-in-up" delay={0.1} className="lg:col-span-3">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
+            <div className="flex items-center gap-2 mb-2">
+              <Brain className="w-4 h-4 text-primary" />
+              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
+            </div>
+            <h3 className="font-bold mb-2 text-xl">Your emotion in 2D psychological space</h3>
+            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+              Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
+            </p>main
               <div className="relative aspect-[5/4] rounded-2xl bg-gradient-to-br from-amber-50 via-white to-blue-50 border border-primary/10 overflow-hidden">
                 {/* axes */}
                 <div className="absolute inset-y-6 left-1/2 w-px bg-primary/15" />
@@ -157,6 +166,7 @@ export function EmotionScienceSuite() {
                 ))}
               </ul>
             </div>
+ conflict_030626_1549
           </AnimatedSection>
         </div>
 
@@ -184,9 +194,53 @@ export function EmotionScienceSuite() {
                   </span>
                 ))}
               </div>
+            <h3 className="font-bold mb-2 text-xl">Right care, right moment</h3>
+            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+              Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
+            </p>
+            <ul className="space-y-3">
+              {distressLevels.map(({ level, color, response }) => (
+                <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-gradient-to-r from-white to-primary/[0.02]">
+                  <span className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0" style={{ background: color }} />
+                  <div>
+                    <p className="font-bold text-text-primary text-lg">{level} distress</p>
+                    <p className="text-text-secondary text-base leading-relaxed">{response}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </AnimatedSection>
+      </div>
+
+      {/* Body mapping + Personalization */}
+      <div className="grid lg:grid-cols-5 gap-5 mb-10">
+        <AnimatedSection animation="fade-in-up" delay={0.2} className="lg:col-span-2">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
+            <div className="flex items-center gap-2 mb-2">
+              <Activity className="w-4 h-4 text-primary" />
+              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
+            </div>
+            <h3 className="font-bold mb-2 text-xl">Where do you feel it?</h3>
+            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+              After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {bodyRegions.map((region) => (
+                <span
+                  key={region.name}
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
+                >
+                  <span className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-base">
+                    {region.emoji}
+                  </span>
+                  {region.name}
+                </span>
+              ))}main
             </div>
           </AnimatedSection>
 
+ conflict_030626_1549
           {/* Personalization AI */}
           <AnimatedSection animation="fade-in-up" delay={0.25} className="flex-1">
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col">
@@ -198,7 +252,16 @@ export function EmotionScienceSuite() {
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren&apos;t perfectly predictable.
               </p>
-
+        <AnimatedSection animation="fade-in-up" delay={0.25} className="lg:col-span-3">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
+            </div>
+            <h3 className="font-bold mb-2 text-xl">Learns your emotional fingerprint</h3>
+            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+              A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren't perfectly predictable.
+            </p> main
               <div className="grid grid-cols-1 gap-4 mt-auto">
                 <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-primary/5 to-white">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary/70 mb-2">Model accuracy</p>
@@ -275,7 +338,7 @@ export function EmotionScienceSuite() {
                 name: 'What is body sensation mapping?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'After each recording you can tap a body region — chest, throat, stomach, head, and others — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
+                  text: 'After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
                 },
               },
               {
