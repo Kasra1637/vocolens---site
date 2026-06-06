@@ -13,10 +13,12 @@ const plutchikEmotions = [
 ];
 
 const bodyRegions = [
-  { name: 'Head', emoji: '👤' },
-  { name: 'Throat', emoji: '🗣️' },
-  { name: 'Chest', emoji: '🫁' },
+  { name: 'Head', emoji: '🧠' },
+  { name: 'Face', emoji: '😶' },
+  { name: 'Neck', emoji: '🦴' },
+  { name: 'Chest', emoji: '🫀' },
   { name: 'Stomach', emoji: '🦋' },
+  { name: 'Arms', emoji: '💪' },
   { name: 'Hands', emoji: '👐' },
   { name: 'Legs', emoji: '🦵' }
 ];
