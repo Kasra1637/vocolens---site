@@ -70,7 +70,7 @@ export function RecordingScreen({ isActive }: Props) {
           { icon: Mic, active: true, label: 'Record' },
           { icon: BookOpen, active: false, label: 'Journal' },
           { icon: BarChart2, active: false, label: 'Insights' },
-          { icon: Award, active: false, label: 'Awards' },
+          { icon: Award, active: false, label: 'Milestones' },
           { icon: Settings, active: false, label: 'Settings' },
         ].map(({ icon: Icon, active, label }) => (
           <div key={label} className="flex flex-col items-center gap-0.5">
