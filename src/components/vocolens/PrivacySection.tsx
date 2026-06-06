@@ -11,7 +11,7 @@ const features = [
   {
     icon: Lock,
     title: 'Biometric lock',
-    description: 'Biometrics are automatically detected and required for login when enabled. A hardware-encrypted PIN serves as a secure backup if biometric settings change.',
+    description: 'Your journal is protected by biometrics the moment you enable them. A secure PIN acts as your backup — so your entries stay private no matter what.',
   },
   {
     icon: Shield,
