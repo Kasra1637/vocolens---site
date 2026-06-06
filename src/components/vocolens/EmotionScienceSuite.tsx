@@ -267,7 +267,7 @@ export function EmotionScienceSuite() {
                 name: 'What is body sensation mapping?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'After each recording you can tap a body region — chest, throat, stomach, head, and others — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
+                  text: 'After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
                 },
               },
               {
