@@ -225,14 +225,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Alex Thompson</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">College Student</p>
+            <h4 className="font-bold mb-1 text-lg">Casey</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Tourette's & Remote Worker</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "I never thought I'd be into journaling, but this app changed my perspective completely. The voice recording removes the intimidation of writing, and I love seeing my emotional growth over time, which is remarkable."
+              "As someone with Tourette's, my mind and body rarely sync up when I'm stressed. Vocolens lets me offload the chaos in my head without worrying about how it looks on paper. The privacy and biometric lock mean my rawest thoughts stay mine."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "The emotional growth tracker is truly amazing"
+                "Finally, a safe space for my unfiltered self"
               </p>
             </div>
           </div>
