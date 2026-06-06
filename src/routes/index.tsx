@@ -189,14 +189,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Sarah Chen</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">UX Designer & Mom</p>
+            <h4 className="font-bold mb-1 text-lg">Jordan</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">ADHD & Creative</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "This AI voice journal has been life-changing for me. As a busy mom and designer, I struggle to find time to reflect on my thoughts, although this audio journal app makes it so easy to capture my emotions on the go every day."
+              "My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — no paralysis, no perfectionism, just pure unfiltered me. I finally understand my own patterns."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "100% recommend this app for busy people"
+                "Finally, a journal that moves as fast as my mind"
               </p>
             </div>
           </div>
