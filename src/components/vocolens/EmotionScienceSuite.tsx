@@ -13,10 +13,12 @@ const plutchikEmotions = [
 ];
 
 const bodyRegions = [
-  { name: 'Head', emoji: '👤' },
-  { name: 'Throat', emoji: '🗣️' },
-  { name: 'Chest', emoji: '🫁' },
+  { name: 'Head', emoji: '🧠' },
+  { name: 'Face', emoji: '😶' },
+  { name: 'Neck', emoji: '🦴' },
+  { name: 'Chest', emoji: '🫀' },
   { name: 'Stomach', emoji: '🦋' },
+  { name: 'Arms', emoji: '💪' },
   { name: 'Hands', emoji: '👐' },
   { name: 'Legs', emoji: '🦵' }
 ];
@@ -163,15 +165,17 @@ export function EmotionScienceSuite() {
             </div>
             <h3 className="font-bold mb-2 text-xl">Where do you feel it?</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
+              After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
             </p>
             <div className="flex flex-wrap gap-2">
               {bodyRegions.map((region) => (
                 <span
                   key={region.name}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
                 >
-                  <span className="text-base">{region.emoji}</span>
+                  <span className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-base">
+                    {region.emoji}
+                  </span>
                   {region.name}
                 </span>
               ))}
@@ -265,7 +269,7 @@ export function EmotionScienceSuite() {
                 name: 'What is body sensation mapping?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'After each recording you can tap a body region — chest, throat, stomach, head, and others — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
+                  text: 'After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
                 },
               },
               {
