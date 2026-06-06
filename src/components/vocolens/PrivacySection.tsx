@@ -11,7 +11,7 @@ const features = [
   {
     icon: Lock,
     title: 'Biometric lock',
-    description: 'Face ID or Fingerprint required on every open. PIN fallback is hardware-encrypted, and automatically reverts to PIN-only if your biometrics change.',
+    description: 'Biometrics are automatically detected and required for login when enabled. A hardware-encrypted PIN serves as a secure backup if biometric settings change.',
   },
   {
     icon: Shield,
