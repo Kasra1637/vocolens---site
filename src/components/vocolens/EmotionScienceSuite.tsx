@@ -165,7 +165,7 @@ export function EmotionScienceSuite() {
             </div>
             <h3 className="font-bold mb-2 text-xl">Where do you feel it?</h3>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
+              After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
             </p>
             <div className="flex flex-wrap gap-2">
               {bodyRegions.map((region) => (
