@@ -60,7 +60,7 @@ export function EmotionScienceSuite() {
               <h3 className="font-bold text-text-primary text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
-              Each emotion family maps to an intensity ladder — your wording reveals which step you're on.
+              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
             </p>
           </div>
 
@@ -93,141 +93,149 @@ export function EmotionScienceSuite() {
         </div>
       </AnimatedSection>
 
-      {/* Valence/Arousal + Distress */}
-      <div className="grid lg:grid-cols-5 gap-5 mb-10">
-        <AnimatedSection animation="fade-in-up" delay={0.1} className="lg:col-span-3">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
-            <div className="flex items-center gap-2 mb-2">
-              <Brain className="w-4 h-4 text-primary" />
-              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
-            </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Your emotion in 2D psychological space</h3>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
-            </p>
+      {/* Grid Layout: Left Column (Valence & Distress) | Right Column (Body Mapping & Personalization) */}
+      <div className="grid lg:grid-cols-2 gap-5 mb-10">
+        
+        {/* Left Column */}
+        <div className="flex flex-col gap-5">
+          {/* Valence/Arousal */}
+          <AnimatedSection animation="fade-in-up" delay={0.1} className="flex-1">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <Brain className="w-4 h-4 text-primary" />
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
+              </div>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Your emotion in 2D psychological space</h3>
+              <p className="text-text-secondary mb-5 text-base leading-relaxed">
+                Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
+              </p>
 
-            <div className="relative aspect-[5/4] rounded-2xl bg-gradient-to-br from-amber-50 via-white to-blue-50 border border-primary/10 overflow-hidden">
-              {/* axes */}
-              <div className="absolute inset-y-6 left-1/2 w-px bg-primary/15" />
-              <div className="absolute inset-x-6 top-1/2 h-px bg-primary/15" />
-              {/* labels */}
-              <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Activated</span>
-              <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Calm</span>
-              <span className="absolute top-1/2 left-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Unpleasant</span>
-              <span className="absolute top-1/2 right-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Pleasant</span>
-              {/* quadrants */}
-              <span className="absolute top-[18%] left-[18%] text-sm font-semibold text-rose-400/80">Stressed</span>
-              <span className="absolute top-[18%] right-[18%] text-sm font-semibold text-amber-500/80">Excited</span>
-              <span className="absolute bottom-[18%] left-[18%] text-sm font-semibold text-indigo-400/80">Depressed</span>
-              <span className="absolute bottom-[18%] right-[18%] text-sm font-semibold text-emerald-500/80">Serene</span>
-              {/* point */}
-              <div
-                className="absolute w-4 h-4 rounded-full bg-primary shadow-clay-sm ring-4 ring-primary/20"
-                style={{ top: '32%', left: '63%' }}
-                aria-label="Your current emotional state — pleasant and slightly activated"
-              />
+              <div className="relative aspect-[5/4] rounded-2xl bg-gradient-to-br from-amber-50 via-white to-blue-50 border border-primary/10 overflow-hidden">
+                {/* axes */}
+                <div className="absolute inset-y-6 left-1/2 w-px bg-primary/15" />
+                <div className="absolute inset-x-6 top-1/2 h-px bg-primary/15" />
+                {/* labels */}
+                <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Activated</span>
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Calm</span>
+                <span className="absolute top-1/2 left-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Unpleasant</span>
+                <span className="absolute top-1/2 right-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Pleasant</span>
+                {/* quadrants */}
+                <span className="absolute top-[18%] left-[18%] text-sm font-semibold text-rose-400/80">Stressed</span>
+                <span className="absolute top-[18%] right-[18%] text-sm font-semibold text-amber-500/80">Excited</span>
+                <span className="absolute bottom-[18%] left-[18%] text-sm font-semibold text-indigo-400/80">Depressed</span>
+                <span className="absolute bottom-[18%] right-[18%] text-sm font-semibold text-emerald-500/80">Serene</span>
+                {/* point */}
+                <div
+                  className="absolute w-4 h-4 rounded-full bg-primary shadow-clay-sm ring-4 ring-primary/20"
+                  style={{ top: '32%', left: '63%' }}
+                  aria-label="Your current emotional state — pleasant and slightly activated"
+                />
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={0.15} className="lg:col-span-2">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col">
-            <div className="flex items-center gap-2 mb-2">
-              <HeartPulse className="w-4 h-4 text-primary" />
-              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
+          {/* Distress detection */}
+          <AnimatedSection animation="fade-in-up" delay={0.15}>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
+                <HeartPulse className="w-4 h-4 text-primary" />
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
+              </div>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Right care, right moment</h3>
+              <p className="text-text-secondary mb-5 text-base leading-relaxed">
+                Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
+              </p>
+              <ul className="space-y-3">
+                {distressLevels.map(({ level, color, response }) => (
+                  <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-gradient-to-r from-white to-primary/[0.02]">
+                    <span className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0" style={{ background: color }} />
+                    <div>
+                      <p className="font-bold text-text-primary text-lg">{level} distress</p>
+                      <p className="text-text-secondary text-base leading-relaxed">{response}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Right care, right moment</h3>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
-            </p>
-            <ul className="space-y-3">
-              {distressLevels.map(({ level, color, response }) => (
-                <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-gradient-to-r from-white to-primary/[0.02]">
-                  <span className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0" style={{ background: color }} />
-                  <div>
-                    <p className="font-bold text-text-primary text-lg">{level} distress</p>
-                    <p className="text-text-secondary text-base leading-relaxed">{response}</p>
+          </AnimatedSection>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col gap-5">
+          {/* Body mapping */}
+          <AnimatedSection animation="fade-in-up" delay={0.2}>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
+              <div className="flex items-center gap-2 mb-2">
+                <Activity className="w-4 h-4 text-primary" />
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
+              </div>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Where do you feel it?</h3>
+              <p className="text-text-secondary mb-5 text-base leading-relaxed">
+                After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {bodyRegions.map((region) => (
+                  <span
+                    key={region.name}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
+                  >
+                    <span className="text-base">{region.emoji}</span>
+                    {region.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Personalization AI */}
+          <AnimatedSection animation="fade-in-up" delay={0.25} className="flex-1">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full flex flex-col">
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
+              </div>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Learns your emotional fingerprint</h3>
+              <p className="text-text-secondary mb-5 text-base leading-relaxed">
+                A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren&apos;t perfectly predictable.
+              </p>
+
+              <div className="grid grid-cols-1 gap-4 mt-auto">
+                <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-primary/5 to-white">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary/70 mb-2">Model accuracy</p>
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <span className="text-4xl font-bold text-primary">80<span className="text-2xl">%</span></span>
+                    <span className="text-text-muted text-base leading-relaxed">ceiling</span>
                   </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </AnimatedSection>
-      </div>
-
-      {/* Body mapping + Personalization */}
-      <div className="grid lg:grid-cols-5 gap-5 mb-10">
-        <AnimatedSection animation="fade-in-up" delay={0.2} className="lg:col-span-2">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
-            <div className="flex items-center gap-2 mb-2">
-              <Activity className="w-4 h-4 text-primary" />
-              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
-            </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Where do you feel it?</h3>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              After recording, tap the body region — chest, throat, stomach — where the emotion lives. Interoception turns feelings into data.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {bodyRegions.map((region) => (
-                <span
-                  key={region.name}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
-                >
-                  <span className="text-base">{region.emoji}</span>
-                  {region.name}
-                </span>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection animation="fade-in-up" delay={0.25} className="lg:col-span-3">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8 h-full">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
-            </div>
-            <h3 className="font-bold text-text-primary mb-2 text-xl">Learns your emotional fingerprint</h3>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren't perfectly predictable.
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-primary/5 to-white">
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary/70 mb-2">Model accuracy</p>
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-4xl font-bold text-primary">80<span className="text-2xl">%</span></span>
-                  <span className="text-text-muted text-base leading-relaxed">ceiling</span>
+                  <div className="h-2 rounded-full bg-primary/10 overflow-hidden">
+                    <div className="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary" style={{ width: '80%' }} />
+                  </div>
+                  <p className="text-text-muted mt-2 text-base leading-relaxed">Recency-weighted, learns continuously.</p>
                 </div>
-                <div className="h-2 rounded-full bg-primary/10 overflow-hidden">
-                  <div className="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary" style={{ width: '80%' }} />
-                </div>
-                <p className="text-text-muted mt-2 text-base leading-relaxed">Recency-weighted, learns continuously.</p>
-              </div>
 
-              <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-amber-50/60 to-white">
-                <p className="text-sm font-semibold uppercase tracking-wider text-amber-600/90 mb-2 flex items-center gap-2">
-                  <History className="w-3.5 h-3.5" /> Correction history
-                </p>
-                <ul className="space-y-1.5">
-                  <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
-                    <span>Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
-                    <span className="text-sm text-text-muted">Tue</span>
-                  </li>
-                  <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
-                    <span>Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
-                    <span className="text-sm text-text-muted">Mon</span>
-                  </li>
-                  <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
-                    <span>Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
-                    <span className="text-sm text-text-muted">Sun</span>
-                  </li>
-                </ul>
-                <p className="text-text-muted mt-2 text-base leading-relaxed">View and manage every past correction.</p>
+                <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-amber-50/60 to-white">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-amber-600/90 mb-2 flex items-center gap-2">
+                    <History className="w-3.5 h-3.5" /> Correction history
+                  </p>
+                  <ul className="space-y-1.5">
+                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                      <span>Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
+                      <span className="text-sm text-text-muted">Tue</span>
+                    </li>
+                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                      <span>Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
+                      <span className="text-sm text-text-muted">Mon</span>
+                    </li>
+                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                      <span>Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
+                      <span className="text-sm text-text-muted">Sun</span>
+                    </li>
+                  </ul>
+                  <p className="text-text-muted mt-2 text-base leading-relaxed">View and manage every past correction.</p>
+                </div>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </div>
 
       {/* AEO FAQ structured data */}
