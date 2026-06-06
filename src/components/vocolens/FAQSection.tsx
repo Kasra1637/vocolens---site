@@ -5,7 +5,7 @@ import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Yes, absolutely. Your journal entries are stored locally on your device, meaning there is no cloud sync or server-side backup of your personal data. Additionally, the app is protected by biometric authentication (Face ID or Fingerprint) and a 4-digit PIN, ensuring that your most personal thoughts are completely locked away. You also have full control to export or permanently delete your data at any time."
+    a: "Yes, absolutely. Your journal entries are stored locally on your device, meaning there is no cloud sync or server-side backup of your personal data. Additionally, the app is protected by biometric authentication (Face ID or Fingerprint) and a PIN, ensuring that your most personal thoughts are completely locked away. You also have full control to export or permanently delete your data at any time."
   },
   {
     q: "How does the AI actually know what I'm feeling?",

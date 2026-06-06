@@ -17,9 +17,7 @@ const bodyRegions = [
   { name: 'Throat', emoji: '🗣️' },
   { name: 'Chest', emoji: '🫁' },
   { name: 'Stomach', emoji: '🦋' },
-  { name: 'Shoulders', emoji: '🤷' },
   { name: 'Hands', emoji: '👐' },
-  { name: 'Back', emoji: '🦴' },
   { name: 'Legs', emoji: '🦵' }
 ];
 
