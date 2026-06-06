@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Can I journal in a language other than English?",
-    a: "Yes! VocoLens features world-class real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive weekly AI insights in the language you are most comfortable with. The app is available for download on both iOS and Android."
+    a: "Yes! We use reliable real-time speech-to-text transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with."
   }
 ];
 
