@@ -171,9 +171,11 @@ export function EmotionScienceSuite() {
               {bodyRegions.map((region) => (
                 <span
                   key={region.name}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
                 >
-                  <span className="text-base">{region.emoji}</span>
+                  <span className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-base">
+                    {region.emoji}
+                  </span>
                   {region.name}
                 </span>
               ))}
