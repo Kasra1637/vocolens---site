@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "VocoLens uses advanced multimodal AI to simultaneously analyze both the words you speak and the tone of your voice (prosody). It maps your feelings to 8 core psychology-backed emotions and places them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
+    a: "Vocolens uses advanced multimodal AI to simultaneously analyze both the words you speak and the tone of your voice (prosody). It maps your feelings to 8 core psychology-backed emotions and places them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
@@ -17,11 +17,15 @@ const faqs = [
   },
   {
     q: "How much does it cost, and are there limits on how much I can record?",
-    a: "VocoLens offers a premium subscription starting with our best-value Yearly plan ($79.99/year), which includes a 3-day free trial so you can experience the full app risk-free. Your subscription includes 300 minutes per month of world-class, real-time transcription—plenty of time to journal naturally every day."
+    a: "Vocolens offers a premium subscription starting with our best-value Yearly plan ($79.99/year), which includes a 3-day free trial so you can experience the full app risk-free. Your subscription includes 300 minutes per month of world-class, real-time transcription—plenty of time to journal naturally every day."
   },
   {
     q: "Can I journal in a language other than English?",
+conflict_030626_1549
+    a: "Yes! Vocolens features world-class real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive weekly AI insights in the language you are most comfortable with. The app is available for download on both iOS and Android."
+=======
     a: "Yes! We use reliable real-time speech-to-text transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with."
+main
   }
 ];
 
