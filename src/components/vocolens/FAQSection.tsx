@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
-import { ChevronDown, MessageCircleQuestion } from 'lucide-react';
+import { ChevronDown, MessageCircleQuestionMark as MessageCircleQuestion } from 'lucide-react';
 
 const faqs = [
   {
@@ -21,11 +21,7 @@ const faqs = [
   },
   {
     q: "Can I journal in a language other than English?",
-conflict_030626_1549
-    a: "Yes! Vocolens features world-class real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive weekly AI insights in the language you are most comfortable with. The app is available for download on both iOS and Android."
-=======
-    a: "Yes! We use reliable real-time speech-to-text transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with."
-main
+    a: "Yes! Vocolens features real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with. The app is available for download on both iOS and Android."
   }
 ];
 
