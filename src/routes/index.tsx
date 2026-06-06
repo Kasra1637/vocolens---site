@@ -207,14 +207,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Marcus Rodriguez</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">Tech Entrepreneur</p>
+            <h4 className="font-bold mb-1 text-lg">Riley</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Autistic & Graduate Student</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "The AI insights are incredibly impressive. I've tried many journaling apps but none have made reflections this meaningful. Understanding my mental patterns helps me make better business and life decisions every single day now."
+              "Writing has always felt like translating my brain into a foreign language. With Vocolens, I just talk — no pressure to organize thoughts first. The AI helps me see emotional patterns I never noticed, especially around burnout and sensory overload."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "This AI journaling really does add value"
+                "Like having a translator for my own mind"
               </p>
             </div>
           </div>
