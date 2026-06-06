@@ -47,7 +47,7 @@ export function EmotionScienceSuite() {
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          8 core emotions, valence & arousal tracking, distress detection, body mapping, and adaptive AI — all running privately on your device.
+          8 core emotions, valence, distress, body mapping, and adaptive AI — running privately on-device.
         </p>
       </AnimatedSection>
 
