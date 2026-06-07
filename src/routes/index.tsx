@@ -64,6 +64,75 @@ function Home() {
         </div>
       </section>
 
+      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12">
+        <AnimatedSection animation="fade-in-up">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
+            Real stories, real impact
+          </h2>
+        </AnimatedSection>
+        <AnimatedGrid
+          className="grid md:grid-cols-3 gap-8"
+          animation="fade-in-up"
+          staggerDelay={0.15}
+        >
+          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+              ))}
+            </div>
+            <h4 className="font-bold mb-1 text-lg">Jordan</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">ADHD & Creative</p>
+            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+              "My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — no paralysis, no perfectionism, just pure unfiltered me. I finally understand my own patterns."
+            </p>
+            <div className="bg-primary/5 rounded-xl p-3">
+              <p className="text-primary italic text-base leading-relaxed">
+                "Finally, a journal that moves as fast as my mind"
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+              ))}
+            </div>
+            <h4 className="font-bold mb-1 text-lg">Riley</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Autistic & Graduate Student</p>
+            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+              "Writing has always felt like translating my brain into a foreign language. With Vocolens, I just talk — no pressure to organize thoughts first. The AI helps me see emotional patterns I never noticed, especially around burnout and sensory overload."
+            </p>
+            <div className="bg-primary/5 rounded-xl p-3">
+              <p className="text-primary italic text-base leading-relaxed">
+                "Like having a translator for my own mind"
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+              ))}
+            </div>
+            <h4 className="font-bold mb-1 text-lg">Casey</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Tourette's & Remote Worker</p>
+            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+              "As someone with Tourette's, my mind and body rarely sync up when I'm stressed. Vocolens lets me offload the chaos in my head without worrying about how it looks on paper. The privacy and biometric lock mean my rawest thoughts stay mine."
+            </p>
+            <div className="bg-primary/5 rounded-xl p-3">
+              <p className="text-primary italic text-base leading-relaxed">
+                "Finally, a safe space for my unfiltered self"
+              </p>
+            </div>
+          </div>
+        </AnimatedGrid>
+      </section>
+
+
+
       <section id="story" className="max-w-7xl mx-auto px-6 py-16">
         <AnimatedSection animation="scale-in">
           <div className="flex items-center justify-center mb-4">
