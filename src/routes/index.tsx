@@ -192,47 +192,43 @@ function Home() {
         </AnimatedGrid>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
-        <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
-            Journal in your native tongue
-          </h2>
-          <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
-            World-class real-time transcription. 30+ languages. Zero friction.
-          </p>
-        </AnimatedSection>
+      <section className="max-w-7xl mx-auto px-6 py-8 overflow-hidden">
         <div
-          className="relative overflow-hidden py-4"
+          className="relative overflow-hidden py-2 flex items-center gap-4"
           role="marquee"
           aria-label="Supported languages scrolling display"
         >
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
-          <div className="flex animate-scroll-left gap-3">
-            {(() => {
-              const languages = [
-                'English (US)', 'Spanish', 'French', 'German', 'Italian',
-                'Portuguese', 'Japanese', 'Korean', 'Mandarin', 'Hindi',
-                'Arabic', 'Dutch', 'Swedish', 'Norwegian', 'Danish',
-                'Finnish', 'Polish', 'Turkish', 'Russian', 'Thai',
-                'Catalan', 'Estonian', 'Flemish', 'Swiss German', 'Greek',
-                'Latvian', 'Lithuanian', 'Malay', 'Romanian', 'Slovak'
-              ];
-              return [...languages, ...languages];
-            })().map((lang, index) => (
-              <div
-                key={`${lang}-${index}`}
-                className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-primary/10 flex-shrink-0 hover:shadow-md hover:border-primary/20 transition-all"
-              >
-                <div className="w-3 h-3 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+          <span className="flex-shrink-0 text-sm font-semibold text-text-secondary whitespace-nowrap pl-1">
+            Journal in 30+ languages
+          </span>
+          <div className="relative flex-1 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+            <div className="flex animate-scroll-left gap-2">
+              {(() => {
+                const languages = [
+                  'English (US)', 'Spanish', 'French', 'German', 'Italian',
+                  'Portuguese', 'Japanese', 'Korean', 'Mandarin', 'Hindi',
+                  'Arabic', 'Dutch', 'Swedish', 'Norwegian', 'Danish',
+                  'Finnish', 'Polish', 'Turkish', 'Russian', 'Thai',
+                  'Catalan', 'Estonian', 'Flemish', 'Swiss German', 'Greek',
+                  'Latvian', 'Lithuanian', 'Malay', 'Romanian', 'Slovak'
+                ];
+                return [...languages, ...languages];
+              })().map((lang, index) => (
+                <div
+                  key={`${lang}-${index}`}
+                  className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-full shadow-sm border border-primary/10 flex-shrink-0"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                  <span className="text-xs text-text-secondary whitespace-nowrap font-medium">{lang}</span>
                 </div>
-                <span className="text-sm text-text-secondary whitespace-nowrap font-medium">{lang}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
 
       <EmotionDetection />
 
