@@ -40,10 +40,23 @@ function Home() {
                 <span className="hero-line-3"><span className="hero-emphasis">your true self</span></span>
               </h1>
             </div>
-            <p className="text-text-secondary mb-8 max-w-md text-xl leading-relaxed">
+            <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
               Speak your mind. Find your clarity. An audio journal app that listens.
             </p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+              <a href="#download" aria-label="Download Vocolens on Google Play">
+                <img
+                  src="/getitongoogleplay_badge_web_color_english.png"
+                  alt="Download Vocolens on Google Play"
+                  className="h-14 sm:h-16 hover:opacity-90 transition-opacity btn-scale-gentle"
+                />
+              </a>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Free · No signup · On-device biometrics
+              </p>
+            </div>
           </AnimatedSection>
+
 
           <AnimatedSection animation="fade-in-right" delay={0.2} className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
             <AppDemo />
