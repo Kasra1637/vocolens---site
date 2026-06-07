@@ -40,10 +40,23 @@ function Home() {
                 <span className="hero-line-3"><span className="hero-emphasis">your true self</span></span>
               </h1>
             </div>
-            <p className="text-text-secondary mb-8 max-w-md text-xl leading-relaxed">
+            <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
               Speak your mind. Find your clarity. An audio journal app that listens.
             </p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+              <a href="#download" aria-label="Download Vocolens on Google Play">
+                <img
+                  src="/getitongoogleplay_badge_web_color_english.png"
+                  alt="Download Vocolens on Google Play"
+                  className="h-14 sm:h-16 hover:opacity-90 transition-opacity btn-scale-gentle"
+                />
+              </a>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Free · No signup · On-device biometrics
+              </p>
+            </div>
           </AnimatedSection>
+
 
           <AnimatedSection animation="fade-in-right" delay={0.2} className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
             <AppDemo />
@@ -51,130 +64,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="story" className="max-w-7xl mx-auto px-6 py-16">
-        <AnimatedSection animation="scale-in">
-          <div className="flex items-center justify-center mb-4">
-            <img
-              src="/2e7f4e7c-9a75-4292-9b1d-399ac3f34923.jpg"
-              alt="Vocolens founder - Creator of AI voice journal app"
-              className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
-            />
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
-            A personal mission
-          </h2>
-          <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
-            Turning racing thoughts into clear, effortless expression.
-          </p>
-        </AnimatedSection>
-        <AnimatedGrid
-          className="grid md:grid-cols-3 gap-8"
-          animation="fade-in-up"
-          staggerDelay={0.15}
-        >
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Frown className="w-8 h-8 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold mb-3 text-xl">The problem</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                Living with Tourette's, my mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
-              </div>
-              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
-              </p>
-            </div>
-          </div>
-        </AnimatedGrid>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
+      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
-            Journal in your native tongue
-          </h2>
-          <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
-            World-class real-time transcription. 30+ languages. Zero friction.
-          </p>
-        </AnimatedSection>
-        <div
-          className="relative overflow-hidden py-4"
-          role="marquee"
-          aria-label="Supported languages scrolling display"
-        >
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
-          <div className="flex animate-scroll-left gap-3">
-            {(() => {
-              const languages = [
-                'English (US)', 'Spanish', 'French', 'German', 'Italian',
-                'Portuguese', 'Japanese', 'Korean', 'Mandarin', 'Hindi',
-                'Arabic', 'Dutch', 'Swedish', 'Norwegian', 'Danish',
-                'Finnish', 'Polish', 'Turkish', 'Russian', 'Thai',
-                'Catalan', 'Estonian', 'Flemish', 'Swiss German', 'Greek',
-                'Latvian', 'Lithuanian', 'Malay', 'Romanian', 'Slovak'
-              ];
-              return [...languages, ...languages];
-            })().map((lang, index) => (
-              <div
-                key={`${lang}-${index}`}
-                className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-primary/10 flex-shrink-0 hover:shadow-md hover:border-primary/20 transition-all"
-              >
-                <div className="w-3 h-3 rounded-full border-2 border-primary flex items-center justify-center flex-shrink-0">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                </div>
-                <span className="text-sm text-text-secondary whitespace-nowrap font-medium">{lang}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <EmotionDetection />
-
-      <EmotionScienceSuite />
-
-      <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Start using Vocolens now!
-          </h3>
-          <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Ready to find clarity? Download the app for free and begin your audio journaling journey today.
-          </p>
-          <img
-            src="/getitongoogleplay_badge_web_color_english.png"
-            alt="Download Vocolens AI voice journal on Google Play"
-            className="h-16 sm:h-20 lg:h-24 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
-          />
-        </AnimatedSection>
-      </section>
-
-      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-8">
-        <AnimatedSection animation="fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
             Real stories, real impact
           </h2>
         </AnimatedSection>
@@ -238,6 +130,127 @@ function Home() {
           </div>
         </AnimatedGrid>
       </section>
+
+
+
+      <section id="story" className="max-w-7xl mx-auto px-6 py-16">
+        <AnimatedSection animation="scale-in">
+          <div className="flex items-center justify-center mb-4">
+            <img
+              src="/2e7f4e7c-9a75-4292-9b1d-399ac3f34923.jpg"
+              alt="Vocolens founder - Creator of AI voice journal app"
+              className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
+            />
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
+            A personal mission
+          </h2>
+          <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
+            Turning racing thoughts into clear, effortless expression.
+          </p>
+        </AnimatedSection>
+        <AnimatedGrid
+          className="grid md:grid-cols-3 gap-8"
+          animation="fade-in-up"
+          staggerDelay={0.15}
+        >
+          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+                <Frown className="w-8 h-8 text-[#9b87f5]" />
+              </div>
+              <h3 className="font-bold mb-3 text-xl">The problem</h3>
+              <p className="text-text-secondary text-base leading-relaxed">
+                Living with Tourette's, my mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+                <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
+              </div>
+              <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
+              <p className="text-text-secondary text-base leading-relaxed">
+                Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+                <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
+              </div>
+              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
+              <p className="text-text-secondary text-base leading-relaxed">
+                So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
+              </p>
+            </div>
+          </div>
+        </AnimatedGrid>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 py-8 overflow-hidden">
+        <div
+          className="relative overflow-hidden py-2 flex items-center gap-4"
+          role="marquee"
+          aria-label="Supported languages scrolling display"
+        >
+          <span className="flex-shrink-0 text-sm font-semibold text-text-secondary whitespace-nowrap pl-1">
+            Journal in 30+ languages
+          </span>
+          <div className="relative flex-1 overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
+            <div className="flex animate-scroll-left gap-2">
+              {(() => {
+                const languages = [
+                  'English (US)', 'Spanish', 'French', 'German', 'Italian',
+                  'Portuguese', 'Japanese', 'Korean', 'Mandarin', 'Hindi',
+                  'Arabic', 'Dutch', 'Swedish', 'Norwegian', 'Danish',
+                  'Finnish', 'Polish', 'Turkish', 'Russian', 'Thai',
+                  'Catalan', 'Estonian', 'Flemish', 'Swiss German', 'Greek',
+                  'Latvian', 'Lithuanian', 'Malay', 'Romanian', 'Slovak'
+                ];
+                return [...languages, ...languages];
+              })().map((lang, index) => (
+                <div
+                  key={`${lang}-${index}`}
+                  className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-full shadow-sm border border-primary/10 flex-shrink-0"
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                  <span className="text-xs text-text-secondary whitespace-nowrap font-medium">{lang}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <EmotionDetection />
+
+      <EmotionScienceSuite />
+
+      <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            Start using Vocolens now!
+          </h3>
+          <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+            Ready to find clarity? Download the app for free and begin your audio journaling journey today.
+          </p>
+          <img
+            src="/getitongoogleplay_badge_web_color_english.png"
+            alt="Download Vocolens AI voice journal on Google Play"
+            className="h-16 sm:h-20 lg:h-24 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
+          />
+        </AnimatedSection>
+      </section>
+
+
       <FAQSection />
 
 
