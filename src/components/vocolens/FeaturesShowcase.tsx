@@ -480,12 +480,12 @@ export function FeaturesShowcase() {
           return (
             <AnimatedSection
               key={f.id}
-              id={f.id}
               animation={reverse ? 'fade-in-right' : 'fade-in-left'}
               delay={0.05}
             >
               <article
-                className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
+                id={f.id}
+                className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center scroll-mt-32 ${
                   reverse ? 'lg:[&>*:first-child]:order-2' : ''
                 }`}
               >
