@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Frown, MessageSquare, Lightbulb } from 'lucide-react';
+import { Frown, MessageSquare, Lightbulb, CalendarDays, BookOpenText, BarChart3, Activity, ArrowRight } from 'lucide-react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -231,6 +231,47 @@ function Home() {
 
 
       <EmotionDetection />
+
+      <section id="features-preview" className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
+        <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
+            Inside Vocolens
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+            Ten ways to finally understand yourself.
+          </h2>
+          <p className="text-text-secondary text-base leading-relaxed">
+            Every screen has one job — turn your voice into clarity you can act on. No streaks. No guilt. No overwhelm.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedGrid className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10" animation="fade-in-up" staggerDelay={0.08}>
+          {[
+            { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
+            { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
+            { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
+            { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
+          ].map(({ icon: Icon, label, desc }) => (
+            <div key={label} className="bg-white rounded-2xl p-5 border border-primary/10 shadow-clay-sm hover-lift">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                <Icon className="w-5 h-5 text-primary" />
+              </div>
+              <p className="font-bold text-text-primary mb-1">{label}</p>
+              <p className="text-sm text-text-secondary leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </AnimatedGrid>
+
+        <AnimatedSection animation="fade-in-up" className="text-center">
+          <Link
+            to="/features"
+            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-3 rounded-full text-base font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Explore all 10 features
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </AnimatedSection>
+      </section>
 
       <EmotionScienceSuite />
 

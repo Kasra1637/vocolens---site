@@ -62,7 +62,6 @@ export function Header() {
 
   const navLinks = [
     { id: 'story', label: 'Story' },
-    { id: 'how-it-works', label: 'Features' },
     { id: 'privacy', label: 'Privacy' },
   ];
 
@@ -94,6 +93,15 @@ export function Header() {
                   <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </button>
               ))}
+
+              <Link
+                to="/features"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+              >
+                Features
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </Link>
+
 
               <div
                 ref={dropdownRef}
@@ -182,6 +190,13 @@ export function Header() {
                   {link.label}
                 </button>
               ))}
+              <Link
+                to="/features"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+              >
+                Features
+              </Link>
               <Link
                 to="/resources"
                 onClick={() => setIsMenuOpen(false)}
