@@ -191,6 +191,13 @@ export function Header() {
                 </button>
               ))}
               <Link
+                to="/features"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+              >
+                Features
+              </Link>
+              <Link
                 to="/resources"
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
