@@ -62,7 +62,6 @@ export function Header() {
 
   const navLinks = [
     { id: 'story', label: 'Story' },
-    { id: 'how-it-works', label: 'Features' },
     { id: 'privacy', label: 'Privacy' },
   ];
 
