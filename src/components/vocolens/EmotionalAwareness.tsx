@@ -239,21 +239,38 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.55}>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
-            <button
-              onClick={() => navigate({ to: '/resources/science-of-reflection' })}
-              className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex-1">
-                  <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
-                  <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                    How Naming Your Emotions Reduces Stress and Builds Resilience
-                  </h4>
-                  <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
+            <div className="space-y-4">
+              <button
+                onClick={() => navigate({ to: '/resources/science-of-reflection' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      How Naming Your Emotions Reduces Stress and Builds Resilience
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
-              </div>
-            </button>
+              </button>
+              <button
+                onClick={() => navigate({ to: '/resources/distress-detection' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
+              </button>
+            </div>
           </div>
         </AnimatedSection>
 
