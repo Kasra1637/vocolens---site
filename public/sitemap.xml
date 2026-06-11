@@ -38,6 +38,13 @@
   </url>
 
   <url>
+    <loc>https://vocolens.com/resources/distress-detection</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://vocolens.com/privacy</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
