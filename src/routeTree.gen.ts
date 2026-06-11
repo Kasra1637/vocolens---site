@@ -16,6 +16,7 @@ import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
+import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -54,6 +55,12 @@ const ResourcesEmotionalAwarenessPatternsRoute =
     path: '/emotional-awareness-patterns',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesDistressDetectionRoute =
+  ResourcesDistressDetectionRouteImport.update({
+    id: '/distress-detection',
+    path: '/distress-detection',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +68,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
 }
@@ -70,6 +78,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
 }
@@ -80,6 +89,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
 }
@@ -91,6 +101,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/resources'
     | '/terms'
+    | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/science-of-reflection'
   fileRoutesByTo: FileRoutesByTo
@@ -100,6 +111,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/resources'
     | '/terms'
+    | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/science-of-reflection'
   id:
@@ -109,6 +121,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/resources'
     | '/terms'
+    | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/science-of-reflection'
   fileRoutesById: FileRoutesById
@@ -172,15 +185,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesEmotionalAwarenessPatternsRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/distress-detection': {
+      id: '/resources/distress-detection'
+      path: '/distress-detection'
+      fullPath: '/resources/distress-detection'
+      preLoaderRoute: typeof ResourcesDistressDetectionRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
   }
 }
 
 interface ResourcesRouteChildren {
+  ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
 }
 
 const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesDistressDetectionRoute: ResourcesDistressDetectionRoute,
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,
