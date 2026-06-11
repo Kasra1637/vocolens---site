@@ -1,4 +1,4 @@
-import { Brain, Clock, BookOpen, Radar } from 'lucide-react';
+import { Brain, Clock, BookOpen, Radar, Activity } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 
 export function Resources() {
