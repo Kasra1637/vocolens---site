@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
@@ -32,6 +33,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeaturesRoute = FeaturesRouteImport.update({
@@ -71,6 +77,7 @@ const ResourcesDistressDetectionRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/features': typeof FeaturesRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/features': typeof FeaturesRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/features': typeof FeaturesRoute
+  '/join': typeof JoinRoute
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/features'
+    | '/join'
     | '/privacy'
     | '/resources'
     | '/terms'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/features'
+    | '/join'
     | '/privacy'
     | '/terms'
     | '/resources/distress-detection'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/features'
+    | '/join'
     | '/privacy'
     | '/resources'
     | '/terms'
@@ -139,6 +151,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FeaturesRoute: typeof FeaturesRoute
+  JoinRoute: typeof JoinRoute
   PrivacyRoute: typeof PrivacyRoute
   ResourcesRoute: typeof ResourcesRouteWithChildren
   TermsRoute: typeof TermsRoute
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/features': {
@@ -234,6 +254,7 @@ const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FeaturesRoute: FeaturesRoute,
+  JoinRoute: JoinRoute,
   PrivacyRoute: PrivacyRoute,
   ResourcesRoute: ResourcesRouteWithChildren,
   TermsRoute: TermsRoute,
@@ -241,3 +262,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
