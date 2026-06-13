@@ -511,7 +511,7 @@ function JoinPage() {
               Your thoughts deserve<br />
               <em>somewhere to land.</em>
             </h2>
-            <p>Join the waitlist — one email when we launch, nothing more.</p>
+            <p>Join the waitlist — get one email when we launch, nothing else.</p>
             <a href="#waitlist" className="join-btn-bottom">
               Get early access
               <ArrowIcon />
