@@ -341,7 +341,7 @@ function JoinPage() {
 
             <h1 className="join-h1">
               Your thoughts finally have<br />
-              <em>somewhere to land.</em>
+              <em>somewhere to land</em>
             </h1>
 
             <p className="join-hero-sub">Your voice. Your patterns. Your clarity.</p>
@@ -418,7 +418,7 @@ function JoinPage() {
           <section className="join-features" aria-labelledby="features-heading">
             <p className="join-section-label">How it works</p>
             <h2 className="join-features-heading" id="features-heading">
-              A quieter way to know yourself.
+              A quieter way to know yourself
             </h2>
             <p className="join-features-sub">
               Writing is hard. Talking is human. Vocolens turns your voice into a thoughtful
@@ -464,7 +464,7 @@ function JoinPage() {
           <section className="join-testimonials" aria-labelledby="testimonials-heading">
             <p className="join-section-label">Real stories</p>
             <h2 className="join-features-heading" id="testimonials-heading">
-              People who found their clarity.
+              People who found their clarity
             </h2>
 
             <div className="join-testimonial-grid">
@@ -509,7 +509,7 @@ function JoinPage() {
           <section className="join-bottom-cta" aria-labelledby="cta-heading">
             <h2 id="cta-heading">
               Your thoughts deserve<br />
-              <em>somewhere to land.</em>
+              <em>somewhere to land</em>
             </h2>
             <p>Join the waitlist — get one email when we launch, nothing else.</p>
             <a href="#waitlist" className="join-btn-bottom">
