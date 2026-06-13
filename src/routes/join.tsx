@@ -326,7 +326,7 @@ function JoinPage() {
       {/* Hide the site header for this standalone page */}
       <style>{`
         header, nav, .min-h-screen.bg-surface > header { display: none !important; }
-        .min-h-screen.bg-surface { background: #0d0b18 !important; min-height: 100vh; }
+        .min-h-screen.bg-surface { background: #0d0b18 !important; min-height: 100vh; overflow-x: hidden; }
       `}</style>
 
       <div className="join-page-wrapper">
@@ -548,6 +548,7 @@ const joinPageStyles = `
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
   }
 
   /* AMBIENT GLOW */
@@ -556,7 +557,7 @@ const joinPageStyles = `
     top: -200px;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
+    width: min(600px, 100vw);
     height: 400px;
     background: radial-gradient(ellipse at center, rgba(124, 92, 191, 0.08) 0%, transparent 70%);
     pointer-events: none;
@@ -743,7 +744,6 @@ const joinPageStyles = `
     gap: 0.4rem;
     font-size: 12px;
     color: var(--join-text-dim);
-    white-space: nowrap;
   }
 
   /* DIVIDER */
@@ -923,6 +923,8 @@ const joinPageStyles = `
   @media (max-width: 560px) {
     .join-hero { padding: 4rem 1.25rem 3rem; }
     .join-features, .join-testimonials, .join-bottom-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .join-trust-strip { grid-template-columns: 1fr; gap: 0.6rem; }
+    .join-h1 { font-size: 2.25rem !important; }
   }
 
   @media (prefers-reduced-motion: reduce) {
