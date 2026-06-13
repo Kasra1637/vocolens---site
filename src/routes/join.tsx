@@ -289,6 +289,19 @@ function JoinPage() {
     }
     setError("");
     setInputBorderColor("");
+
+    // Submit to Google Form (fires and forgets — Google Forms doesn't return JSON)
+    const formData = new FormData();
+    formData.append("entry.845133720", trimmed);
+    fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSdGAC2U_t5NupyKhDGZk9c9zclqDuOsN6bU6qJuzp2h0yA2SA/formResponse",
+      {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      }
+    );
+
     setSubmitted(true);
   }, [email]);
 
