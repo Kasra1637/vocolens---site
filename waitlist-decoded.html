@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocolens — Join the Waitlist</title>
+  <meta name="description" content="A voice journal built for minds that move fast and feel deeply. Join the Vocolens waitlist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0b18;
+      --bg-card: #13101f;
+      --bg-card-border: rgba(124, 92, 191, 0.18);
+      --purple: #7c5cbf;
+      --purple-light: #a78de0;
+      --purple-glow: rgba(124, 92, 191, 0.12);
+      --text: #f0ecfa;
+      --text-muted: rgba(240, 236, 250, 0.55);
+      --text-dim: rgba(240, 236, 250, 0.35);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO LOGO */
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .logo-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--purple);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg { width: 16px; height: 16px; }
+
+    .logo-name {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--purple-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      padding: 0.35rem 0.9rem;
+      border: 0.5px solid rgba(124, 92, 191, 0.3);
+      border-radius: 999px;
+      background: rgba(124, 92, 191, 0.07);
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--purple-light);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 700;
+      font-variation-settings: 'SOFT' 1, 'opsz' 144;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--purple-light);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* FORM */
+    .form-card {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 0.5px solid rgba(124, 92, 191, 0.25);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      font-size: 15px;
+      font-family: var(--sans);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    input[type="email"]::placeholder { color: var(--text-dim); }
+
+    input[type="email"]:focus {
+      border-color: var(--purple);
+      background: rgba(124, 92, 191, 0.07);
+    }
+
+    .btn-join {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.85rem 1rem;
+      background: var(--purple);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--sans);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-join:hover { background: #6a4dab; }
+    .btn-join:active { transform: scale(0.98); }
+
+    .btn-join svg { width: 16px; height: 16px; }
+
+    .form-note {
+      margin-top: 0.85rem;
+      font-size: 12px;
+      color: var(--text-dim);
+      text-align: center;
+    }
+
+    .gmail-note {
+      margin-top: 0.5rem;
+      font-size: 11px;
+      color: var(--text-dim);
+      text-align: center;
+      opacity: 0.75;
+    }
+
+    .error-msg {
+      margin-top: 0.5rem;
+      font-size: 12px;
+      color: rgba(220, 100, 100, 0.9);
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 1.5rem 0 0.5rem;
+    }
+
+    .success-msg .check {
+      width: 44px;
+      height: 44px;
+      background: rgba(124, 92, 191, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .success-msg p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .success-msg strong { color: var(--text); }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1.25rem;
+      padding: 1.25rem 0 0;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 12px;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+
+    .trust-item svg { width: 14px; height: 14px; color: var(--purple-light); flex-shrink: 0; }
+
+    /* DIVIDER */
+    .section-divider {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      border-top: 0.5px solid rgba(124, 92, 191, 0.12);
+    }
+
+    /* FEATURES */
+    .features {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--purple-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .features-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .features-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 400px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--bg-card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(124, 92, 191, 0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .feature-icon svg { width: 18px; height: 18px; color: var(--purple-light); }
+
+    .feature-card h3 {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 2rem 5rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 0.5px solid var(--bg-card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 0.75rem;
+    }
+
+    .stars svg { width: 13px; height: 13px; fill: var(--purple-light); }
+
+    .testimonial-card blockquote {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-meta {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .testimonial-meta strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 1px;
+    }
+
+    /* BOTTOM CTA */
+    .bottom-cta {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+      text-align: center;
+    }
+
+    .bottom-cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .bottom-cta h2 em {
+      font-style: italic;
+      color: var(--purple-light);
+    }
+
+    .bottom-cta p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--purple);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: var(--sans);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-bottom:hover { background: #6a4dab; }
+
+    /* FOOTER */
+    footer {
+      border-top: 0.5px solid rgba(124, 92, 191, 0.1);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text-muted); }
+
+    /* AMBIENT GLOW */
+    .glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(124, 92, 191, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main { position: relative; z-index: 1; }
+
+    @media (max-width: 560px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .features, .testimonials, .bottom-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { padding: 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow" aria-hidden="true"></div>
+
+
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="waitlist">
+    <div class="eyebrow">Private beta — launching soon</div>
+
+    <h1>Your thoughts finally have<br><em>somewhere to land.</em></h1>
+
+    <p class="hero-sub">Your voice. Your patterns. Your clarity.</p>
+
+    <div class="form-card">
+      <div id="form-area">
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <button class="btn-join" id="join-btn" type="button">
+          Get early access
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <p class="form-note">No spam. One email when we launch.</p>
+        <p class="gmail-note">Must be a Gmail or Google account address to receive your beta invite.</p>
+        <p class="error-msg" id="error-msg" aria-live="polite"></p>
+
+        <!-- TRUST STRIP -->
+        <div class="trust-strip" aria-label="Product trust signals">
+          <div class="trust-item">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Private by design
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M7 4v3l2 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Enterprise-grade transcription accuracy
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            Built for neurodivergent people
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 7c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M5 7l1.5 1.5L9.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            30+ languages supported
+          </div>
+        </div>
+      </div>
+
+      <div class="success-msg" id="success-msg">
+        <div class="check">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10l5 5 7-8" stroke="#a78de0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p><strong>You're on the list.</strong><br>We'll reach out when Vocolens is ready.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FEATURES -->
+  <section class="features" aria-labelledby="features-heading">
+    <p class="section-label">How it works</p>
+    <h2 class="features-heading" id="features-heading">A quieter way to know yourself.</h2>
+    <p class="features-sub">Writing is hard. Talking is human. Vocolens turns your voice into a thoughtful practice.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="6" y="2" width="6" height="8" rx="3" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M3 9c0 3.31 2.69 6 6 6s6-2.69 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="9" y1="15" x2="9" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Speak freely</h3>
+        <p>Open Vocolens and just talk. No prompts, no judgment. Whatever's on your mind.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M6 9l2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Gentle insight, not judgment</h3>
+        <p>AI surfaces the emotional layers in what you said — themes, patterns, gentle questions. You decide what's true.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 14l3-4 3 2 3-5 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>See the patterns you've been living inside</h3>
+        <p>Over weeks and months, your emotional fingerprint comes into focus. Growth you can actually feel.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <p class="section-label">Real stories</p>
+    <h2 class="features-heading" id="testimonials-heading">People who found their clarity.</h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+        </div>
+        <blockquote>"Finally a journal that moves as fast as my mind."</blockquote>
+        <div class="testimonial-meta">
+          <strong>Jordan</strong>
+          ADHD &amp; Creative
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+        </div>
+        <blockquote>"Like having a translator for my own mind."</blockquote>
+        <div class="testimonial-meta">
+          <strong>Riley</strong>
+          Autistic &amp; Graduate Student
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/></svg>
+        </div>
+        <blockquote>"Finally, a safe space for my unfiltered self."</blockquote>
+        <div class="testimonial-meta">
+          <strong>Casey</strong>
+          Tourette's &amp; Remote Worker
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Your thoughts deserve<br><em>somewhere to land.</em></h2>
+    <p>Join the waitlist — one email when we launch, nothing more.</p>
+    <a href="#waitlist" class="btn-bottom">
+      Get early access
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </section>
+</main>
+
+
+
+<script>
+  const btn = document.getElementById('join-btn');
+  const emailInput = document.getElementById('email');
+  const formArea = document.getElementById('form-area');
+  const successMsg = document.getElementById('success-msg');
+  const errorMsg = document.getElementById('error-msg');
+
+  const commonTypos = {
+    'gamil.com': 'gmail.com',
+    'gmai.com': 'gmail.com',
+    'gmial.com': 'gmail.com',
+    'gmal.com': 'gmail.com',
+    'gmil.com': 'gmail.com',
+    'gmaill.com': 'gmail.com',
+    'gmail.co': 'gmail.com',
+    'gmail.cm': 'gmail.com',
+    'gmail.con': 'gmail.com',
+    'gmail.cpm': 'gmail.com',
+    'googlemail.com': 'gmail.com',
+  };
+
+  const gmailDomains = ['gmail.com', 'googlemail.com'];
+
+  function showError(msg) {
+    errorMsg.textContent = msg;
+    emailInput.style.borderColor = 'rgba(220, 100, 100, 0.6)';
+  }
+
+  function clearError() {
+    errorMsg.textContent = '';
+    emailInput.style.borderColor = '';
+  }
+
+  function validate(email) {
+    if (!email) return { ok: false, msg: 'Please enter your email address.' };
+
+    const basicPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!basicPattern.test(email)) {
+      if (!email.includes('@')) return { ok: false, msg: 'Missing @ — check your email address.' };
+      if (email.split('@').length > 2) return { ok: false, msg: 'Too many @ symbols — check your email address.' };
+      const parts = email.split('@');
+      if (!parts[1] || !parts[1].includes('.')) return { ok: false, msg: 'Missing domain — e.g. yourname@gmail.com' };
+      return { ok: false, msg: 'That doesn\'t look like a valid email address.' };
+    }
+
+    const domain = email.split('@')[1].toLowerCase();
+
+    if (commonTypos[domain]) {
+      return { ok: false, msg: `Did you mean ${email.split('@')[0]}@${commonTypos[domain]}?` };
+    }
+
+    if (!gmailDomains.includes(domain)) {
+      return { ok: false, msg: 'Please use a Gmail address — Google needs it to send your beta invite.' };
+    }
+
+    return { ok: true };
+  }
+
+  btn.addEventListener('click', function () {
+    const email = emailInput.value.trim().toLowerCase();
+    const result = validate(email);
+
+    if (!result.ok) {
+      showError(result.msg);
+      emailInput.focus();
+      return;
+    }
+
+    clearError();
+    formArea.style.display = 'none';
+    successMsg.style.display = 'block';
+  });
+
+  emailInput.addEventListener('input', clearError);
+  emailInput.addEventListener('blur', function () {
+    const email = emailInput.value.trim().toLowerCase();
+    if (email) {
+      const result = validate(email);
+      if (!result.ok) showError(result.msg);
+    }
+  });
+</script>
+
+</body>
+</html>

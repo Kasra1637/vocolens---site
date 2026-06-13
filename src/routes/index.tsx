@@ -292,16 +292,17 @@ function Home() {
       <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Start using Vocolens now!
+            Be the first to try Vocolens
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Ready to find clarity? Download the app for free and begin your audio journaling journey today.
+            We're launching soon. Join the waitlist and we'll let you know the moment it's ready.
           </p>
-          <img
-            src="/getitongoogleplay_badge_web_color_english.png"
-            alt="Download Vocolens AI voice journal on Google Play"
-            className="h-16 sm:h-20 lg:h-24 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
-          />
+          <a
+            href="/join"
+            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Join Waitlist
+          </a>
         </AnimatedSection>
       </section>
 

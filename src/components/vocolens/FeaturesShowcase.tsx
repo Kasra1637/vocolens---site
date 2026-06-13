@@ -529,11 +529,12 @@ export function FeaturesShowcase() {
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
             Free, private, on-device. Start with one entry today.
           </p>
-          <img
-            src="/getitongoogleplay_badge_web_color_english.png"
-            alt="Download Vocolens AI voice journal on Google Play"
-            className="h-16 sm:h-20 mx-auto hover:opacity-90 transition-opacity cursor-pointer btn-scale-gentle"
-          />
+          <a
+            href="/join"
+            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Join Waitlist
+          </a>
         </AnimatedSection>
       </section>
 

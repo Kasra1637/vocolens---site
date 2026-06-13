@@ -353,12 +353,10 @@ export function ScienceOfReflection() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://play.google.com/store/apps/details?id=com.vocolens"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/join"
                 className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-md shadow-primary/20"
               >
-                Download Vocolens Free
+                Join Waitlist
                 <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <button
