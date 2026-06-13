@@ -295,7 +295,7 @@ function Home() {
             Be the first to try Vocolens
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            We're launching soon. Join the waitlist and we'll let you know the moment it's ready.
+            One email when we launch. Nothing else.
           </p>
           <a
             href="/join"

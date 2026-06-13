@@ -274,10 +274,10 @@ export function DistressDetection() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Start Listening to Your Body Before It Has to Shout
+              Catch overwhelm before it catches you.
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Vocolens helps you catch overwhelm early by pairing voice journaling with a body sensation map. Tag where feelings live, watch patterns emerge, and learn to intervene while the signal is still gentle.
+              Voice journaling meets body mapping. Tag where stress lives, spot patterns early, act before things escalate.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

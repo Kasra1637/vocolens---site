@@ -524,10 +524,10 @@ export function FeaturesShowcase() {
           className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-14 border border-primary/10 text-center"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            All ten, one quiet app.
+            All ten features. One quiet app.
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Free, private, on-device. Start with one entry today.
+            Private. Powerful. Launching soon. Get in early.
           </p>
           <a
             href="/join"

@@ -346,10 +346,10 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Start Building Your Emotional Resilience Through Voice Journaling Today
+              Break the loop. Find the calm.
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Let Vocolens be your trusted guide — breaking you free from thought loops, one voice journal at a time, and paving your path to lasting calm and clarity.
+              Your voice breaks thought spirals faster than writing ever could. Speak it, see it, release it.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

@@ -277,10 +277,10 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Start Your Journey to Deeper Self-Awareness Today
+              See what you couldn't see alone.
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Let Vocolens be your companion in building emotional awareness—one voice journal at a time. Discover patterns you couldn't see alone, understand your triggers deeply, and accelerate your personal growth through the power of reflective voice journaling.
+              Patterns. Triggers. Growth. Vocolens surfaces what your mind buries — one voice entry at a time.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
