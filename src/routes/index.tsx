@@ -43,17 +43,31 @@ function Home() {
             <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
               Speak your mind. Find your clarity. An audio journal app that listens.
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
-              <a href="#download" aria-label="Download Vocolens on Google Play">
-                <img
-                  src="/getitongoogleplay_badge_web_color_english.png"
-                  alt="Download Vocolens on Google Play"
-                  className="h-14 sm:h-16 hover:opacity-90 transition-opacity btn-scale-gentle"
-                />
-              </a>
-              <p className="text-sm text-text-muted leading-relaxed">
-                Free · No signup · On-device biometrics
-              </p>
+            <div className="grid grid-cols-2 gap-x-5 gap-y-2.5 mb-4 max-w-md">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3 h-3 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                </div>
+                <span className="text-sm text-text-secondary font-medium">Private by design</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3 h-3 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                </div>
+                <span className="text-sm text-text-secondary font-medium">Enterprise-grade transcription accuracy</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3 h-3 text-primary"><path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
+                </div>
+                <span className="text-sm text-text-secondary font-medium">Built for neurodivergent people</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3 h-3 text-primary"><path d="M2 7c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" stroke="currentColor" strokeWidth="1.2"/><path d="M5 7l1.5 1.5L9.5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <span className="text-sm text-text-secondary font-medium">30+ languages supported</span>
+              </div>
             </div>
           </AnimatedSection>
 
