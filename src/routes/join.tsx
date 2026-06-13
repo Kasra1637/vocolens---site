@@ -427,10 +427,9 @@ function JoinPage() {
                 <div className="join-feature-icon">
                   <InsightIcon />
                 </div>
-                <h3>Gentle insight, not judgment</h3>
+                <h3>Gentle insights</h3>
                 <p>
-                  AI surfaces the emotional layers in what you said — themes, patterns, gentle
-                  questions. You decide what's true.
+                  AI finds themes and patterns in what you said. You decide what's true.
                 </p>
               </div>
 
@@ -438,10 +437,9 @@ function JoinPage() {
                 <div className="join-feature-icon">
                   <PatternIcon />
                 </div>
-                <h3>See the patterns you've been living inside</h3>
+                <h3>See your patterns</h3>
                 <p>
-                  Over weeks and months, your emotional fingerprint comes into focus. Growth you
-                  can actually feel.
+                  Over time, your emotional fingerprint comes into focus. Growth you can feel.
                 </p>
               </div>
             </div>
