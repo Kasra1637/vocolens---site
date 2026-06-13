@@ -508,14 +508,7 @@ function JoinPage() {
           </section>
         </main>
 
-        {/* FOOTER */}
-        <footer className="join-footer">
-          <span className="join-footer-copy">&copy; 2025 Vocolens</span>
-          <div className="join-footer-links">
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
-          </div>
-        </footer>
+
       </div>
     </>
   );
@@ -913,43 +906,12 @@ const joinPageStyles = `
 
   .join-btn-bottom:hover { background: #6a4dab; }
 
-  /* FOOTER */
-  .join-footer {
-    border-top: 0.5px solid rgba(124, 92, 191, 0.1);
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
 
-  .join-footer-copy {
-    font-size: 12px;
-    color: var(--join-text-dim);
-  }
-
-  .join-footer-links {
-    display: flex;
-    gap: 1.25rem;
-  }
-
-  .join-footer-links a {
-    font-size: 12px;
-    color: var(--join-text-dim);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .join-footer-links a:hover { color: var(--join-text-muted); }
 
   /* RESPONSIVE */
   @media (max-width: 560px) {
     .join-hero { padding: 4rem 1.25rem 3rem; }
     .join-features, .join-testimonials, .join-bottom-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .join-footer { padding: 1.25rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
