@@ -274,10 +274,10 @@ export function DistressDetection() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Catch overwhelm before it catches you.
+              Feel lighter before the day gets heavy
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Voice journaling meets body mapping. Tag where stress lives, spot patterns early, act before things escalate.
+              Wake up calmer, respond instead of react, and finally know what your body's been trying to tell you.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

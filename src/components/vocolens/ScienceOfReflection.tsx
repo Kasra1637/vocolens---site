@@ -346,10 +346,10 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Break the loop. Find the calm.
+              Sleep better. Worry less. Think clearer
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Your voice breaks thought spirals faster than writing ever could. Speak it, see it, release it.
+              People who reflect daily report less anxiety, better sleep, and sharper decisions. Your voice is the fastest way in.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
