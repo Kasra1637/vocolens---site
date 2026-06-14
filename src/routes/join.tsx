@@ -353,7 +353,7 @@ function JoinPage() {
                     <input
                       type="email"
                       className="join-email-input"
-                      placeholder="you@example.com"
+                      placeholder="you@gmail.com"
                       autoComplete="email"
                       required
                       value={email}
@@ -790,7 +790,7 @@ const joinPageStyles = `
     font-weight: 400 !important;
     line-height: 1.15 !important;
     color: var(--join-text) !important;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 3rem !important;
   }
 
   .join-features-sub {
