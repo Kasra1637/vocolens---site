@@ -385,7 +385,7 @@ function JoinPage() {
                     </div>
                     <div className="join-trust-item">
                       <ClockIcon />
-                      <span>Pro transcription</span>
+                      <span>Flawlessly accurate transcription</span>
                     </div>
                     <div className="join-trust-item">
                       <StarIcon />
