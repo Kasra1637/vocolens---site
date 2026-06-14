@@ -381,19 +381,19 @@ function JoinPage() {
                   <div className="join-trust-strip" aria-label="Product trust signals">
                     <div className="join-trust-item">
                       <LockIcon />
-                      Private by design
+                      <span>Private by design</span>
                     </div>
                     <div className="join-trust-item">
                       <ClockIcon />
-                      Enterprise-grade transcription accuracy
+                      <span>Pro transcription</span>
                     </div>
                     <div className="join-trust-item">
                       <StarIcon />
-                      Built for neurodivergent people
+                      <span>Neurodivergent-friendly</span>
                     </div>
                     <div className="join-trust-item">
                       <CheckCircleIcon />
-                      30+ languages supported
+                      <span>30+ languages</span>
                     </div>
                   </div>
                 </div>
@@ -730,20 +730,26 @@ const joinPageStyles = `
 
   /* TRUST STRIP */
   .join-trust-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem 1.25rem;
-    padding: 1.25rem 0 0;
-    max-width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0;
+    max-width: 440px;
     margin: 0 auto;
   }
 
   .join-trust-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 12px;
-    color: var(--join-text-dim);
+    color: var(--join-text);
+    padding: 0.35rem 0.75rem;
+    background: rgba(124, 92, 191, 0.08);
+    border: 0.5px solid rgba(124, 92, 191, 0.25);
+    border-radius: 999px;
+    white-space: nowrap;
   }
 
   /* DIVIDER */
@@ -923,7 +929,7 @@ const joinPageStyles = `
   @media (max-width: 560px) {
     .join-hero { padding: 4rem 1.25rem 3rem; }
     .join-features, .join-testimonials, .join-bottom-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .join-trust-strip { grid-template-columns: 1fr; gap: 0.6rem; }
+    .join-trust-strip { justify-content: center; gap: 0.4rem; }
     .join-h1 { font-size: 2.25rem !important; }
   }
 
