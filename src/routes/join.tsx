@@ -371,7 +371,7 @@ function JoinPage() {
                   </button>
                   <p className="join-form-note">No spam. One email when we launch.</p>
                   <p className="join-gmail-note">
-                    Must be a Gmail or Google account address to receive your beta invite.
+                    Gmail only — required for beta access.
                   </p>
                   <p className="join-error-msg" aria-live="polite">
                     {error}
