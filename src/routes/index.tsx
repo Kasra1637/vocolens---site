@@ -331,7 +331,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="flex justify-center gap-4 mb-16">
+          <div className="hidden">
             <a
               href="https://www.instagram.com/vocolensapp/"
               target="_blank"
