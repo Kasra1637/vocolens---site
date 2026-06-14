@@ -380,10 +380,6 @@ function JoinPage() {
                   {/* Trust Strip */}
                   <div className="join-trust-strip" aria-label="Product trust signals">
                     <div className="join-trust-item">
-                      <LockIcon />
-                      <span>Private by design</span>
-                    </div>
-                    <div className="join-trust-item">
                       <ClockIcon />
                       <span>Flawlessly accurate transcription</span>
                     </div>
@@ -391,9 +387,14 @@ function JoinPage() {
                       <StarIcon />
                       <span>Neurodivergent-friendly</span>
                     </div>
+                    <div className="join-trust-row-break" />
                     <div className="join-trust-item">
                       <CheckCircleIcon />
                       <span>30+ languages</span>
+                    </div>
+                    <div className="join-trust-item">
+                      <LockIcon />
+                      <span>Private by design</span>
                     </div>
                   </div>
                 </div>
@@ -747,6 +748,15 @@ const joinPageStyles = `
     border: 0.5px solid rgba(124, 92, 191, 0.25);
     border-radius: 999px;
     white-space: nowrap;
+  }
+
+  .join-trust-row-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  @media (max-width: 560px) {
+    .join-trust-row-break { display: none; }
   }
 
   /* DIVIDER */
