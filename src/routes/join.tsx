@@ -420,10 +420,7 @@ function JoinPage() {
             <h2 className="join-features-heading" id="features-heading">
               A quieter way to know yourself
             </h2>
-            <p className="join-features-sub">
-              Writing is hard. Talking is human. Vocolens turns your voice into a thoughtful
-              practice.
-            </p>
+
 
             <div className="join-feature-grid">
               <div className="join-feature-card">
