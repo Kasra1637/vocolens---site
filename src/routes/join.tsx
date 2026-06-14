@@ -730,8 +730,8 @@ const joinPageStyles = `
 
   /* TRUST STRIP */
   .join-trust-strip {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
     gap: 0.5rem;
     padding: 1.5rem 0 0;
@@ -929,7 +929,7 @@ const joinPageStyles = `
   @media (max-width: 560px) {
     .join-hero { padding: 4rem 1.25rem 3rem; }
     .join-features, .join-testimonials, .join-bottom-cta { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .join-trust-strip { justify-content: center; gap: 0.4rem; }
+    .join-trust-strip { grid-template-columns: auto auto; justify-content: center; gap: 0.4rem; }
     .join-h1 { font-size: 2.25rem !important; }
   }
 
