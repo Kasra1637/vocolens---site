@@ -34,10 +34,10 @@ function Home() {
         <div className="grid lg:grid-cols-2 gap-0 items-center">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight hero-title-shimmer" style={{ fontSize: 'clamp(36px, 8vw, 58px)' }}>
-                <span className="hero-line-1">AI voice journal</span>
-                <span className="hero-line-2">that reflects</span>
-                <span className="hero-line-3"><span className="hero-emphasis">your true self</span></span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontSize: 'clamp(36px, 8vw, 58px)', color: '#1e293b' }}>
+                <span className="block">AI voice journal</span>
+                <span className="block">that reflects</span>
+                <span className="block"><span className="font-bold" style={{ color: '#1e293b' }}>your true self</span></span>
               </h1>
             </div>
             <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
@@ -80,7 +80,7 @@ function Home() {
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
             Real stories, real impact
           </h2>
         </AnimatedSection>
@@ -156,7 +156,7 @@ function Home() {
               className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
             />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
@@ -251,7 +251,7 @@ function Home() {
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             Inside Vocolens
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
             Ten ways to finally understand yourself.
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
@@ -291,7 +291,7 @@ function Home() {
 
       <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Be the first to try Vocolens
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">

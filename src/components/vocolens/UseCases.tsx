@@ -253,13 +253,13 @@ export function UseCases() {
         <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             <Sparkles className="w-3.5 h-3.5" />
-            Built for neurodivergent minds
+            Find your condition below ↓
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
             Built for minds that don't think in straight lines.
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
-            Vocolens is built for neurodivergent brains. Minds that don't think in straight lines.
+            Vocolens is built exclusively for neurodivergent brains.
           </p>
         </AnimatedSection>
 
