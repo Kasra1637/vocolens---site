@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Brain, Radar, ChevronDown } from 'lucide-react';
+import { Menu, X, Brain, Radar, Heart, ChevronDown } from 'lucide-react';
 import { Link, useNavigate, useLocation } from '@tanstack/react-router';
 
 const resourcesDropdown = [
   { to: '/resources/science-of-reflection', icon: Brain, label: 'Science of Reflection' },
   { to: '/resources/emotional-awareness-patterns', icon: Radar, label: 'Emotional Awareness' },
+  { to: '/use-cases', icon: Heart, label: 'Neurodivergent Use Cases' },
 ] as const;
 
 export function Header() {
