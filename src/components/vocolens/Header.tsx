@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Brain, Radar, Heart, ChevronDown } from 'lucide-react';
+import { Menu, X, Brain, Radar, ChevronDown } from 'lucide-react';
 import { Link, useNavigate, useLocation } from '@tanstack/react-router';
 
 const resourcesDropdown = [
   { to: '/resources/science-of-reflection', icon: Brain, label: 'Science of Reflection' },
   { to: '/resources/emotional-awareness-patterns', icon: Radar, label: 'Emotional Awareness' },
-  { to: '/use-cases', icon: Heart, label: 'Neurodivergent Use Cases' },
 ] as const;
 
 export function Header() {
@@ -103,6 +102,14 @@ export function Header() {
                 <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </Link>
 
+              <Link
+                to="/use-cases"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+              >
+                Use Cases
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              </Link>
+
 
               <div
                 ref={dropdownRef}
@@ -195,6 +202,13 @@ export function Header() {
                 className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
               >
                 Features
+              </Link>
+              <Link
+                to="/use-cases"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+              >
+                Use Cases
               </Link>
               <Link
                 to="/resources"
