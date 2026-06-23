@@ -256,14 +256,10 @@ export function UseCases() {
             Built for neurodivergent minds
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-            Your brain works differently.<br />
-            <span className="bg-gradient-to-r from-primary to-[#A88AFF] bg-clip-text text-transparent">
-              Your journal should too.
-            </span>
+            Built for minds that don't think in straight lines.
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
-            Vocolens was designed from the ground up for neurodivergent brains — not adapted from
-            neurotypical tools. Voice-first, AI-powered, and endlessly patient.
+            Vocolens is built for neurodivergent brains. Minds that don't think in straight lines.
           </p>
         </AnimatedSection>
 
