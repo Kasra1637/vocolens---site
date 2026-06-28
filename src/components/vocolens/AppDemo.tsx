@@ -3,9 +3,9 @@ import { useState, useEffect, useCallback } from 'react';
 const SCREEN_DURATION = 4500;
 
 const screens = [
-  { src: '/demo-screen-recording.png', alt: 'Recording screen with microphone button' },
-  { src: '/demo-screen-detection.png', alt: 'AI emotion detection screen' },
-  { src: '/demo-screen-entry.png', alt: 'Entry screen with emotion breakdown details' },
+  { src: '/vocolens - demo3.jpg', alt: 'Recording screen with microphone button' },
+  { src: '/vocolens - demo2.jpg', alt: 'AI emotion detection screen' },
+  { src: '/vocolens - demo1.jpg', alt: 'Entry screen with emotion breakdown details' },
 ];
 
 export function AppDemo() {
