@@ -37,9 +37,7 @@ export function FAQSection() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
-          Privacy, AI, and getting started — answered
-        </p>
+
       </AnimatedSection>
 
       <AnimatedSection animation="fade-in-up" delay={0.1}>
