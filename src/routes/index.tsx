@@ -170,7 +170,7 @@ function Home() {
               </div>
               <h3 className="font-bold mb-3 text-xl">The problem</h3>
               <p className="text-text-secondary text-base leading-relaxed">
-                My mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
+                My mind races fast due to Tourette Syndrome and ADHD. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
               </p>
             </div>
           </div>
