@@ -33,10 +33,10 @@ export function EmotionDetection() {
           Hybrid Emotion Intelligence
         </span>
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
-          Understand your emotions without forcing a single label.
+          Understand your emotions without forcing a single label
         </h2>
         <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
-          AI reveals what's beneath the surface. You decide what's true — no flat labels, just nuance
+          AI reveals what's beneath the surface — you decide what's true
         </p>
       </AnimatedSection>
 

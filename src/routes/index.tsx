@@ -249,8 +249,8 @@ function Home() {
 
       <EmotionScienceSuite />
 
-      <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-        <AnimatedSection animation="fade-in-up" className="text-center">
+      <section id="download" className="max-w-3xl mx-auto px-6 py-12 lg:py-16">
+        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Be the first to try Vocolens
           </h3>
