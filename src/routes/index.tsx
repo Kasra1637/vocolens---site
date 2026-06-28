@@ -239,7 +239,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            Every screen has one job — turn your voice into clarity. No streaks. No guilt.
+            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-full text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 10 features
             <ArrowRight className="w-6 h-6" />
