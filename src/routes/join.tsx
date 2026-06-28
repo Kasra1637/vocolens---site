@@ -388,10 +388,7 @@ function JoinPage() {
                       <span>Neurodivergent-friendly</span>
                     </div>
                     <div className="join-trust-row-break" />
-                    <div className="join-trust-item">
-                      <CheckCircleIcon />
-                      <span>30+ languages</span>
-                    </div>
+
                     <div className="join-trust-item">
                       <LockIcon />
                       <span>Private by design</span>

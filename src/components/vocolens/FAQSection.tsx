@@ -18,10 +18,6 @@ const faqs = [
   {
     q: "How much does it cost, and are there limits on how much I can record?",
     a: "Vocolens offers a premium subscription starting with our best-value Yearly plan ($79.99/year), which includes a 3-day free trial so you can experience the full app risk-free. Your subscription includes 300 minutes per month of world-class, real-time transcription—plenty of time to journal naturally every day."
-  },
-  {
-    q: "Can I journal in a language other than English?",
-    a: "Yes! Vocolens features real-time transcription in over 30 languages. You can speak freely, track your emotional growth, and receive AI-powered insights in the language you're most comfortable with. The app is available for download on both iOS and Android."
   }
 ];
 

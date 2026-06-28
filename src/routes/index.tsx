@@ -62,12 +62,7 @@ function Home() {
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><path d="M2 7c0-2.76 2.24-5 5-5s5 2.24 5 5-2.24 5-5 5-5-2.24-5-5z" stroke="currentColor" strokeWidth="1.2"/><path d="M5 7l1.5 1.5L9.5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">30+ languages</span>
-              </div>
+
             </div>
           </AnimatedSection>
 
@@ -206,42 +201,7 @@ function Home() {
         </AnimatedGrid>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-8 overflow-hidden">
-        <div
-          className="relative overflow-hidden py-2 flex items-center gap-4"
-          role="marquee"
-          aria-label="Supported languages scrolling display"
-        >
-          <span className="flex-shrink-0 text-sm font-semibold text-text-secondary whitespace-nowrap pl-1">
-            Journal in 30+ languages
-          </span>
-          <div className="relative flex-1 overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
-            <div className="flex animate-scroll-left gap-2">
-              {(() => {
-                const languages = [
-                  'English (US)', 'Spanish', 'French', 'German', 'Italian',
-                  'Portuguese', 'Japanese', 'Korean', 'Mandarin', 'Hindi',
-                  'Arabic', 'Dutch', 'Swedish', 'Norwegian', 'Danish',
-                  'Finnish', 'Polish', 'Turkish', 'Russian', 'Thai',
-                  'Catalan', 'Estonian', 'Flemish', 'Swiss German', 'Greek',
-                  'Latvian', 'Lithuanian', 'Malay', 'Romanian', 'Slovak'
-                ];
-                return [...languages, ...languages];
-              })().map((lang, index) => (
-                <div
-                  key={`${lang}-${index}`}
-                  className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-full shadow-sm border border-primary/10 flex-shrink-0"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
-                  <span className="text-xs text-text-secondary whitespace-nowrap font-medium">{lang}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
 
 
       <EmotionDetection />

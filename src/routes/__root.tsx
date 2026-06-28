@@ -83,7 +83,6 @@ const softwareApplicationLd = {
   description: "Vocolens is an AI voice journal for emotional clarity, stress relief, and self-reflection.",
   featureList: [
     "AI emotional analysis",
-    "Voice-to-text transcription in 30+ languages",
     "Mood pattern tracking",
     "Emotion labeling prompts",
     "Sentiment timeline",
