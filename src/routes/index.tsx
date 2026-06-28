@@ -170,7 +170,7 @@ function Home() {
               </div>
               <h3 className="font-bold mb-3 text-xl">The problem</h3>
               <p className="text-text-secondary text-base leading-relaxed">
-                With Tourette Syndrome and ADHD, my mind races. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, never truly me.
+                Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, never truly me.
               </p>
             </div>
           </div>
