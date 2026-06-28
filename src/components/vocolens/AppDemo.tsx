@@ -1,9 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
-import { RecordingScreen } from './demo/RecordingScreen';
-import { JournalScreen } from './demo/JournalScreen';
-import { InsightsScreen } from './demo/InsightsScreen';
 
 const SCREEN_DURATION = 4500;
+
+const screens = [
+  { src: '/demo-screen-recording.png', alt: 'Recording screen with microphone button' },
+  { src: '/demo-screen-detection.png', alt: 'AI emotion detection screen' },
+  { src: '/demo-screen-entry.png', alt: 'Entry screen with emotion breakdown details' },
+];
 
 export function AppDemo() {
   const [activeScreen, setActiveScreen] = useState(0);
@@ -31,20 +34,17 @@ export function AppDemo() {
         <div className="demo-phone-frame">
           <div className="demo-phone-screen">
             <div className="demo-phone-notch" />
-            {[0, 1, 2].map((index) => (
+            {screens.map((screen, index) => (
               <div
                 key={index}
                 className={`demo-screen-layer ${activeScreen === index ? 'active' : ''}`}
               >
-                {index === 0 && (
-                  <RecordingScreen isActive={activeScreen === 0} />
-                )}
-                {index === 1 && (
-                  <JournalScreen isActive={activeScreen === 1} />
-                )}
-                {index === 2 && (
-                  <InsightsScreen isActive={activeScreen === 2} />
-                )}
+                <img
+                  src={screen.src}
+                  alt={screen.alt}
+                  className="w-full h-full object-cover"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
               </div>
             ))}
           </div>
@@ -53,7 +53,7 @@ export function AppDemo() {
       </div>
 
       <div className="flex justify-center gap-3 mt-6">
-        {[0, 1, 2].map((index) => (
+        {screens.map((_, index) => (
           <button
             key={index}
             onClick={() => goToScreen(index)}
