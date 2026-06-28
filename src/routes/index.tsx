@@ -10,16 +10,16 @@ import { FAQSection } from '@/components/vocolens/FAQSection';
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vocolens | AI Voice Journal App for Emotional Clarity" },
-      { name: "description", content: "Vocolens is an AI voice journal app to name emotions, reduce stress, and gain emotional clarity. Free on Android." },
-      { property: "og:title", content: "Vocolens | AI Voice Journal for Emotional Clarity & Stress Relief" },
-      { property: "og:description", content: "Name your emotions, reduce stress, and build resilience. Vocolens turns your spoken thoughts into powerful self-awareness — free AI voice journal for Android." },
+      { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds — ADHD, autism, and alexithymia. Speak your emotions, see patterns, and gain clarity. Launching soon." },
+      { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { property: "og:description", content: "An AI voice journal built for neurodivergent minds. Speak your emotions, track patterns, and understand yourself — designed for ADHD, autism, and alexithymia." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vocolens | AI Voice Journal for Emotional Clarity & Stress Relief" },
-      { name: "twitter:description", content: "Name your emotions, reduce stress, and build resilience. Vocolens turns your spoken thoughts into powerful self-awareness — free AI voice journal for Android." },
+      { name: "twitter:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { name: "twitter:description", content: "An AI voice journal built for neurodivergent minds. Speak your emotions, track patterns, and understand yourself — designed for ADHD, autism, and alexithymia." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
