@@ -488,11 +488,11 @@ function JoinPage() {
               <div className="join-testimonial-card">
                 <FiveStars />
                 <blockquote>
-                  "Finally, a safe space for my unfiltered self."
+                  "I finally have words for what my body already knew."
                 </blockquote>
                 <div className="join-testimonial-meta">
-                  <strong>Casey</strong>
-                  Tourette's &amp; Remote Worker
+                  <strong>Sam</strong>
+                  Alexithymia &amp; Designer
                 </div>
               </div>
             </div>

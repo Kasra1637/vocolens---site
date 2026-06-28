@@ -126,14 +126,14 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Casey</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">Tourette's & Remote Worker</p>
+            <h4 className="font-bold mb-1 text-lg">Sam</h4>
+            <p className="text-text-muted mb-4 text-base leading-relaxed">Alexithymia & Designer</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "As someone with Tourette's, my mind and body rarely sync up when I'm stressed. Vocolens lets me offload the chaos in my head without worrying about how it looks on paper. The privacy and biometric lock mean my rawest thoughts stay mine."
+              "I used to just say 'I feel bad' — I couldn't name what was actually going on. Vocolens showed me the patterns in my body that matched specific emotions. Now I have a language for what I feel."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "Finally, a safe space for my unfiltered self"
+                "I finally have words for what my body already knew"
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@ function Home() {
               </div>
               <h3 className="font-bold mb-3 text-xl">The problem</h3>
               <p className="text-text-secondary text-base leading-relaxed">
-                Living with Tourette's, my mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
+                My mind races fast. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, and never truly me.
               </p>
             </div>
           </div>
