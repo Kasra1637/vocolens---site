@@ -41,7 +41,7 @@ function Home() {
               </h1>
             </div>
             <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
-              Speak your mind. Find your clarity. An audio journal app that listens.
+              Speak your mind. Find your clarity
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
@@ -155,7 +155,7 @@ function Home() {
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
-            Turning racing thoughts into clear, effortless expression.
+            Turning racing thoughts into clear, effortless expression
           </p>
         </AnimatedSection>
         <AnimatedGrid
@@ -212,10 +212,10 @@ function Home() {
             Inside Vocolens
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
-            Ten ways to finally understand yourself.
+            Ten ways to finally understand yourself
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
-            Every screen has one job — turn your voice into clarity. No streaks. No guilt.
+            Every screen has one job — turn your voice into clarity
           </p>
         </AnimatedSection>
 

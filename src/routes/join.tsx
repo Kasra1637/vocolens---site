@@ -344,7 +344,7 @@ function JoinPage() {
               <em>somewhere to land</em>
             </h1>
 
-            <p className="join-hero-sub">Your voice. Your patterns. Your clarity.</p>
+            <p className="join-hero-sub">Your voice, your patterns, your clarity</p>
 
             <div className="join-form-card">
               {!submitted ? (
@@ -369,7 +369,7 @@ function JoinPage() {
                     Get early access
                     <ArrowIcon />
                   </button>
-                  <p className="join-form-note">No spam. One email when we launch.</p>
+                  <p className="join-form-note">No spam — one email when we launch</p>
                   <p className="join-gmail-note">
                     Gmail only — required for beta access.
                   </p>

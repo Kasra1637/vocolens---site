@@ -55,7 +55,7 @@ function CalendarVisual() {
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-4 italic">No streaks. No guilt. Just presence.</p>
+      <p className="text-xs text-text-muted mt-4 italic">No streaks, no guilt — just presence</p>
     </div>
   );
 }
@@ -116,7 +116,7 @@ function MoodStoryVisual() {
           </div>
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-4 italic">Words, not numbers — one dominant emotion per day.</p>
+      <p className="text-xs text-text-muted mt-4 italic">Words, not numbers — one dominant emotion per day</p>
     </div>
   );
 }
@@ -165,7 +165,7 @@ function EmotionalLandscapeVisual() {
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-3 italic">Two clusters: Tense (work week) and Calm (weekends).</p>
+      <p className="text-xs text-text-muted mt-3 italic">Two clusters: Tense (work week) and Calm (weekends)</p>
     </div>
   );
 }
@@ -339,7 +339,7 @@ function TimeOfDayVisual() {
           </div>
         ))}
       </div>
-      <p className="text-xs text-text-muted italic">Peaks at 9am & 9pm. Dip mid-afternoon.</p>
+      <p className="text-xs text-text-muted italic">Peaks at 9am & 9pm, dip mid-afternoon</p>
     </div>
   );
 }
@@ -463,7 +463,7 @@ export function FeaturesShowcase() {
             Inside Vocolens
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-            Ten ways to finally understand yourself.
+            Ten ways to finally understand yourself
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed">
             Every screen in Vocolens has one job: turn your voice into clarity
