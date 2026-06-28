@@ -41,7 +41,7 @@ function Home() {
               </h1>
             </div>
             <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
-              Speak your mind. Find your clarity.
+              Detect and name emotions your mind overlooks — powered by AI voice analysis.
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
@@ -62,7 +62,12 @@ function Home() {
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
-
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
+                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
+                </div>
+                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Granular emotion mapping</span>
+              </div>
             </div>
           </AnimatedSection>
 
