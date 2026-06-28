@@ -219,7 +219,7 @@ function Home() {
           </p>
         </AnimatedSection>
 
-        <AnimatedGrid className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10" animation="fade-in-up" staggerDelay={0.08}>
+        <AnimatedGrid className="grid grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto" animation="fade-in-up" staggerDelay={0.08}>
           {[
             { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
             { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
@@ -250,7 +250,7 @@ function Home() {
       <EmotionScienceSuite />
 
       <section id="download" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center">
+        <AnimatedSection animation="fade-in-up" className="text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Be the first to try Vocolens
           </h3>
