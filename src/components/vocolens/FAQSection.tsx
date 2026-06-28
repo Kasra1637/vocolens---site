@@ -38,7 +38,7 @@ export function FAQSection() {
           Frequently Asked Questions
         </h2>
         <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
-          Everything you need to know about privacy, AI analysis, and getting started with Vocolens.
+          Privacy, AI, and getting started — answered
         </p>
       </AnimatedSection>
 

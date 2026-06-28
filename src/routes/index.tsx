@@ -93,11 +93,11 @@ function Home() {
             <h4 className="font-bold mb-1 text-lg">Jordan</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">ADHD & Creative</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — no paralysis, no perfectionism, just pure unfiltered me. I finally understand my own patterns."
+              "I hit record on my commute, talked for 90 seconds about my morning frustration, and the AI showed me it wasn't anger — it was decision fatigue. Three weeks in, I can see my energy crashes always follow overstimulating meetings."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "Finally, a journal that moves as fast as my mind"
+                "90 seconds of talking replaced an hour of overthinking"
               </p>
             </div>
           </div>
@@ -111,11 +111,11 @@ function Home() {
             <h4 className="font-bold mb-1 text-lg">Riley</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">Autistic & Graduate Student</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "Writing has always felt like translating my brain into a foreign language. With Vocolens, I just talk — no pressure to organize thoughts first. The AI helps me see emotional patterns I never noticed, especially around burnout and sensory overload."
+              "After a meltdown last month, I went back through my entries and saw the body map lighting up my shoulders and chest for five days straight before it happened. Now I check my weekly pattern and take a rest day when I see it building."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "Like having a translator for my own mind"
+                "My body was warning me for days — now I actually listen"
               </p>
             </div>
           </div>
@@ -129,11 +129,11 @@ function Home() {
             <h4 className="font-bold mb-1 text-lg">Sam</h4>
             <p className="text-text-muted mb-4 text-base leading-relaxed">Alexithymia & Designer</p>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
-              "I used to just say 'I feel bad' — I couldn't name what was actually going on. Vocolens showed me the patterns in my body that matched specific emotions. Now I have a language for what I feel."
+              "The AI labeled my entry as 'grief' and I almost corrected it — but then I sat with it and realized it was right. I'd been carrying that for weeks without a word for it. The emotion wheel helped me learn the difference between sadness and loss."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
-                "I finally have words for what my body already knew"
+                "The AI named what I couldn't — and it was right"
               </p>
             </div>
           </div>
