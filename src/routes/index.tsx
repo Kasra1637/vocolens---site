@@ -215,7 +215,7 @@ function Home() {
             Ten ways to finally understand yourself.
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
-            Every screen has one job — turn your voice into clarity you can act on. No streaks. No guilt. No overwhelm.
+            Turn your voice into clarity. No streaks. No guilt.
           </p>
         </AnimatedSection>
 
@@ -239,10 +239,10 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-3 rounded-full text-base font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-2xl font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 10 features
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-6 h-6" />
           </Link>
         </AnimatedSection>
       </section>
