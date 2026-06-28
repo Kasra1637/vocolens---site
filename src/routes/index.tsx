@@ -215,7 +215,7 @@ function Home() {
             Ten ways to finally understand yourself.
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
-            Turn your voice into clarity. No streaks. No guilt.
+            Every screen has one job — turn your voice into clarity. No streaks. No guilt.
           </p>
         </AnimatedSection>
 
@@ -239,7 +239,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-2xl font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            Every screen has one job — turn your voice into clarity. No streaks. No guilt.
           >
             Explore all 10 features
             <ArrowRight className="w-6 h-6" />
@@ -259,7 +259,7 @@ function Home() {
           </p>
           <a
             href="/join"
-            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-2xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
             Join Waitlist
           </a>
