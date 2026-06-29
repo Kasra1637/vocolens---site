@@ -1,15 +1,56 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Radar, ArrowUpRight, Clock, ChevronRight } from 'lucide-react';
+import { Radar, ArrowUpRight, Clock, ChevronRight, Circle as HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
+
+const faqData = [
+  {
+    question: 'What is metacognitive awareness and why does it matter for emotional health?',
+    answer: 'Metacognitive awareness is the ability to observe and reflect on your own thoughts and emotions — essentially thinking about your thinking. Research shows it directly enhances emotional regulation capacity because it creates psychological distance between you and your reactions. Instead of being swept away by emotion, you develop the ability to notice patterns, question automatic responses, and choose how to act rather than simply reacting.',
+  },
+  {
+    question: 'How does pattern recognition in voice journaling improve emotional intelligence?',
+    answer: 'When you journal consistently over days and weeks, isolated emotional reactions stop appearing random. Pattern recognition reveals that specific situations, people, or times of day reliably trigger certain emotions. This transforms vague feelings into structured self-knowledge — you understand not just what you feel, but when, why, and under what conditions. That clarity is the foundation of emotional intelligence and intentional behavior change.',
+  },
+  {
+    question: 'How long does it take to start noticing emotional patterns through journaling?',
+    answer: 'Most people begin noticing surface-level patterns within 1-2 weeks of daily voice journaling — such as mood dips on certain days or recurring frustrations after specific interactions. Deeper patterns involving triggers, behavioral cycles, and emotional cause-and-effect typically crystallize after 4-6 weeks of consistent practice. The key is frequency and honesty, not session length.',
+  },
+  {
+    question: 'What is the difference between emotional awareness and emotional suppression?',
+    answer: 'Emotional suppression means pushing feelings away or pretending they don\'t exist — which research shows increases physiological stress and reduces well-being over time. Emotional awareness is the opposite: deliberately noticing, naming, and understanding your emotions without judgment. Awareness doesn\'t mean dwelling on negativity — it means giving your brain the information it needs to regulate effectively, which produces genuine calm rather than surface-level avoidance.',
+  },
+  {
+    question: 'Can voice journaling replace therapy for building self-awareness?',
+    answer: 'Voice journaling is a powerful self-awareness practice, but it serves a different function than therapy. It excels at daily pattern tracking, emotional processing, and metacognitive skill-building — work that actually accelerates therapeutic progress. Many therapists recommend journaling between sessions precisely because the self-knowledge it generates makes therapy more focused and productive. Think of voice journaling as the daily practice and therapy as the guided interpretation.',
+  },
+];
 
 export function EmotionalAwareness() {
   const navigate = useNavigate();
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer,
+      },
+    })),
+  };
+
   return (
     <article
       itemScope
       itemType="https://schema.org/Article"
       className="max-w-3xl mx-auto px-6 py-16 lg:py-24"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -237,6 +278,35 @@ export function EmotionalAwareness() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={0.55}>
+          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <HelpCircle className="w-5 h-5 text-primary" />
+              </div>
+              <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
+                Frequently Asked Questions About Emotional Awareness and Pattern Recognition
+              </h2>
+            </div>
+            <div className="space-y-6">
+              {faqData.map(({ question, answer }, i) => (
+                <details
+                  key={i}
+                  className="group bg-white border border-primary/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
+                    <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
+                    <span>{question}</span>
+                  </summary>
+                  <div className="px-5 pb-5 pl-12 text-sm lg:text-base text-text-secondary leading-relaxed">
+                    {answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
             <div className="space-y-4">
@@ -274,7 +344,7 @@ export function EmotionalAwareness() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <AnimatedSection animation="fade-in-up" delay={0.65}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
               Finally understand why you feel what you feel

@@ -1,15 +1,56 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Activity, ArrowUpRight, Clock, ChevronRight } from 'lucide-react';
+import { Activity, ArrowUpRight, Clock, ChevronRight, Circle as HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
+
+const faqData = [
+  {
+    question: 'What is interoception and how does it help detect overwhelm early?',
+    answer: 'Interoception is your capacity to sense internal body signals — heartbeat, breath, muscle tension, gut sensation, and temperature. Research by Garfinkel et al. (2015) shows that people with higher interoceptive accuracy regulate emotions more effectively and recover from stress faster. By tuning into these signals, you can detect overwhelm in its earliest physical stage — before it escalates into full emotional distress or burnout.',
+  },
+  {
+    question: 'What are the most common early body signals of stress and overwhelm?',
+    answer: 'The most frequent early warning signs include shallow or held breath, chest tightness, jaw clenching, neck and shoulder tension, stomach knots or nausea, cold hands, restless legs, and a feeling of heaviness. These signals typically appear minutes or even hours before you consciously realize you are overwhelmed. Learning to notice them gives you a window to intervene with a pause, a breath, or a boundary.',
+  },
+  {
+    question: 'How does body-sensation mapping in voice journaling work?',
+    answer: 'Body-sensation mapping means tagging where an emotion or stress response lives in your body as you voice journal — chest, stomach, throat, shoulders, hands, etc. Over days and weeks, these tags form a personal map showing which situations produce which physical responses. The map reveals patterns your mind might rationalize away, giving you an honest feedback loop for catching distress early.',
+  },
+  {
+    question: 'Can you train your body awareness to detect stress earlier?',
+    answer: 'Yes. Interoception is a trainable skill. Every time you pause to ask "what does this feel like in my body right now?" you strengthen the insular cortex — the brain region responsible for mapping internal states into conscious awareness. Studies show that consistent practice (even 60 seconds of body scanning per day) measurably improves interoceptive accuracy within weeks, making you progressively better at catching stress signals before they escalate.',
+  },
+  {
+    question: 'What is the difference between somatic awareness and overthinking about symptoms?',
+    answer: 'Somatic awareness is a brief, curious check-in: noticing a sensation, naming it, and letting it inform your next action. Overthinking about symptoms (health anxiety or hypervigilance) involves rumination, catastrophizing, and prolonged focus on what might be wrong. The key difference is duration and intent — a 10-second body scan that leads to action (a breath, a break, a boundary) is awareness. Looping on a sensation for minutes without resolution is anxiety, and benefits from different support.',
+  },
+];
 
 export function DistressDetection() {
   const navigate = useNavigate();
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer,
+      },
+    })),
+  };
+
   return (
     <article
       itemScope
       itemType="https://schema.org/Article"
       className="max-w-3xl mx-auto px-6 py-16 lg:py-24"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -234,6 +275,35 @@ export function DistressDetection() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={0.55}>
+          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <HelpCircle className="w-5 h-5 text-primary" />
+              </div>
+              <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
+                Frequently Asked Questions About Body Awareness and Distress Detection
+              </h2>
+            </div>
+            <div className="space-y-6">
+              {faqData.map(({ question, answer }, i) => (
+                <details
+                  key={i}
+                  className="group bg-white border border-primary/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
+                    <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
+                    <span>{question}</span>
+                  </summary>
+                  <div className="px-5 pb-5 pl-12 text-sm lg:text-base text-text-secondary leading-relaxed">
+                    {answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
             <div className="space-y-4">
@@ -271,7 +341,7 @@ export function DistressDetection() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <AnimatedSection animation="fade-in-up" delay={0.65}>
           <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
               Feel lighter before the day gets heavy
