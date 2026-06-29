@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
           <p className="text-text-muted text-base leading-relaxed">
-            Effective Date: May 10, 2026
+            Effective Date: June 23, 2026
           </p>
         </div>
       </AnimatedSection>
@@ -73,12 +73,12 @@ export function PrivacyPolicy() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Your PIN code (encrypted using your device's secure hardware keystore)</span>
+                    <span>Your PIN code (stored in on-device local storage, protected by your device's app sandbox)</span>
                   </li>
                 </ul>
 
                 <p className="text-text-secondary mt-4 text-base leading-relaxed">
-                  Journal data and preferences are stored using on-device local storage. Your PIN and encryption keys are stored separately in your device's secure hardware keystore (iOS Keychain / Android Keystore). There is no cloud synchronisation, no server-side backup, and no remote access to this data.
+                  Journal data, preferences, and your PIN are stored using on-device local storage (AsyncStorage), protected by your device's application sandbox. Biometric authentication state is also stored locally. There is no cloud synchronisation, no server-side backup, and no remote access to this data.
                 </p>
               </div>
             </div>
@@ -109,11 +109,11 @@ export function PrivacyPolicy() {
                     <ul className="space-y-2 text-text-secondary text-sm">
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Your audio recording is sent to Deepgram's API to be transcribed into text.</span>
+                        <span>Your audio recording is sent to our backend server (hosted on Cloudflare Workers), which forwards it to Deepgram's Nova-2 API for transcription into text.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Deepgram processes the audio and returns a text transcript. The audio is not stored by us after transcription.</span>
+                        <span>Deepgram processes the audio and returns a text transcript. Neither our backend nor Deepgram permanently stores your audio after transcription is complete.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -129,7 +129,7 @@ export function PrivacyPolicy() {
                   <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h4 className="font-bold text-text-primary mb-2 text-lg">2. Anthropic Claude (Emotional Analysis) via OpenRouter</h4>
+                        <h4 className="font-bold text-text-primary mb-2 text-lg">2. OpenAI GPT-5.4 Mini (Emotional Analysis) via OpenRouter</h4>
                       </div>
                     </div>
                     <ul className="space-y-2 text-text-secondary text-sm">
@@ -139,7 +139,7 @@ export function PrivacyPolicy() {
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Our backend forwards this transcript to Anthropic's Claude 3.5 Sonnet model, accessed through OpenRouter (an AI gateway service). The AI analyses the words and language in your transcript to score the 8 core emotions and generate a personalised reflection.</span>
+                        <span>Our backend forwards this transcript to OpenAI's GPT-5.4 Mini model, accessed through OpenRouter (an AI gateway service). The AI analyses the words and language in your transcript to score the 8 core emotions and generate a personalised reflection.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -147,7 +147,7 @@ export function PrivacyPolicy() {
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>OpenRouter's privacy policy governs routing of data: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openrouter.ai/privacy</a>. Anthropic's privacy policy governs how the underlying model handles text data: <a href="https://anthropic.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">anthropic.com/privacy</a>.</span>
+                        <span>OpenRouter's privacy policy governs routing of data: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openrouter.ai/privacy</a>. OpenAI's privacy policy governs how the underlying model handles text data: <a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openai.com/privacy</a>.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -182,7 +182,7 @@ export function PrivacyPolicy() {
                   <ul className="space-y-2 text-text-secondary">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>Your audio is temporarily transmitted to Deepgram over an encrypted HTTPS connection for speech-to-text transcription.</span>
+                      <span>Your audio is temporarily transmitted to our backend server over an encrypted HTTPS connection, which forwards it to Deepgram for speech-to-text transcription.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -218,7 +218,7 @@ export function PrivacyPolicy() {
                   4. Usage Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration (in seconds) and an anonymous device identifier are sent to our servers after each recording session. This data is used solely to track your usage against your monthly allowance and is not linked to your name, email address, or any other personally identifying information.
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration (in seconds) and an anonymous device identifier are sent to our backend server after each recording session. This data is held in ephemeral server memory only — it is not written to a persistent database and is lost when the server restarts. It is used solely to track your usage against your monthly allowance and is not linked to your name, email address, or any other personally identifying information.
                 </p>
               </div>
             </div>
@@ -278,7 +278,7 @@ export function PrivacyPolicy() {
 
                 <div className="space-y-3">
                   <p className="text-text-secondary text-base leading-relaxed">
-                    We use Adapty to manage subscription status. Adapty may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://adapty.io/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">adapty.io/privacy</a>.
+                    We use RevenueCat to manage subscription status. RevenueCat may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">revenuecat.com/privacy</a>.
                   </p>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export function PrivacyPolicy() {
                   7. No Analytics or Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  Vocolens does not include any third-party analytics, advertising, or crash-reporting SDKs. We do not track:
+                  Vocolens does not include any third-party advertising or crash-reporting SDKs. The app includes Expo's built-in telemetry module (expo-insights) which may collect anonymous, aggregate usage statistics for platform stability purposes — no personal data is included. We do not track:
                 </p>
 
                 <ul className="space-y-2 text-text-secondary">
@@ -348,7 +348,11 @@ export function PrivacyPolicy() {
                 <ul className="space-y-2 text-text-secondary">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Your PIN is stored in your device's secure hardware keystore (iOS Keychain / Android Keystore), never in plain text.</span>
+                    <span>Your PIN is stored in on-device local storage, protected by your device's application sandbox. It is not transmitted to any server.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Biometric authentication (fingerprint / Face ID) is handled by your device's secure hardware — Vocolens only stores an enabled/disabled flag locally.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -386,7 +390,7 @@ export function PrivacyPolicy() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="font-bold text-text-primary">Export</span> — Download all your journal entries, statistics, and achievements as a file via Settings → Privacy Settings → Export Data.
+                      <span className="font-bold text-text-primary">Export</span> — Download all your journal entries, statistics, and achievements as a JSON file via Settings → Privacy Settings → Export Data.
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
