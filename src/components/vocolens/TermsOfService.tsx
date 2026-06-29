@@ -14,7 +14,7 @@ export function TermsOfService() {
           </h1>
           <div className="space-y-2 text-text-muted text-base">
             <p>App: Vocolens</p>
-            <p>Effective Date: May 10, 2026</p>
+            <p>Effective Date: June 23, 2026</p>
             <p>Contact: connect@vocolens.com</p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export function TermsOfService() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via Anthropic's Claude 3.5 Sonnet, accessed through OpenRouter — analyses your transcript text to detect expressed emotions from your words and language</span>
+                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via OpenAI's GPT-5.4 Mini, accessed through OpenRouter — analyses your transcript text to detect expressed emotions from your words and language</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -196,11 +196,11 @@ export function TermsOfService() {
                 <ul className="space-y-3 ml-4 mb-4">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary">Transmit your audio recording to Deepgram solely for the purpose of speech-to-text transcription</span>
+                    <span className="text-text-secondary">Transmit your audio recording to our backend server, which forwards it to Deepgram solely for the purpose of speech-to-text transcription</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary">Transmit the resulting text transcript to our analysis backend, which forwards it to Anthropic's Claude 3.5 Sonnet (via OpenRouter) solely for the purpose of emotional analysis</span>
+                    <span className="text-text-secondary">Transmit the resulting text transcript to our analysis backend, which forwards it to OpenAI's GPT-5.4 Mini (via OpenRouter) solely for the purpose of emotional analysis</span>
                   </li>
                 </ul>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -234,11 +234,11 @@ export function TermsOfService() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>Anthropic / Claude 3.5 Sonnet via OpenRouter</strong> — AI emotional analysis from transcript text (openrouter.ai, anthropic.com)</span>
+                    <span className="text-text-secondary"><strong>OpenAI GPT-5.4 Mini via OpenRouter</strong> — AI emotional analysis from transcript text (openrouter.ai, openai.com)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>Adapty</strong> — Subscription management (adapty.io)</span>
+                    <span className="text-text-secondary"><strong>RevenueCat</strong> — Subscription management (revenuecat.com)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -264,7 +264,7 @@ export function TermsOfService() {
                   Usage Tracking
                 </h2>
                 <p className="text-text-secondary text-base leading-relaxed">
-                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our servers after each recording session. This data is used solely to track your usage against your monthly allowance and is not used for any other purpose.
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our backend server after each recording session. This data is held in ephemeral server memory and is not written to a persistent database. It is used solely to track your usage against your monthly allowance and is not used for any other purpose.
                 </p>
               </div>
             </div>
