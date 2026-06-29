@@ -73,12 +73,12 @@ export function PrivacyPolicy() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Your PIN code (stored in on-device local storage, protected by your device's app sandbox)</span>
+                    <span>Your PIN code (hashed with SHA-256 and stored on-device — the raw PIN is never saved)</span>
                   </li>
                 </ul>
 
                 <p className="text-text-secondary mt-4 text-base leading-relaxed">
-                  Journal data, preferences, and your PIN are stored using on-device local storage (AsyncStorage), protected by your device's application sandbox. Biometric authentication state is also stored locally. There is no cloud synchronisation, no server-side backup, and no remote access to this data.
+                  Journal data and preferences are stored using on-device local storage, protected by your device's application sandbox. Your PIN is hashed before storage and the hash salt is kept in your device's secure hardware keystore (iOS Keychain / Android Keystore). Biometric authentication state is also stored locally. There is no cloud synchronisation, no server-side backup, and no remote access to this data.
                 </p>
               </div>
             </div>
@@ -348,7 +348,7 @@ export function PrivacyPolicy() {
                 <ul className="space-y-2 text-text-secondary">
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>Your PIN is stored in on-device local storage, protected by your device's application sandbox. It is not transmitted to any server.</span>
+                    <span>Your PIN is hashed using SHA-256 with a unique device-specific salt before storage. The salt is generated once per installation and stored in your device's secure hardware keystore (iOS Keychain / Android Keystore). The raw PIN is never stored or transmitted.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -356,7 +356,11 @@ export function PrivacyPolicy() {
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span>All network communications use HTTPS / TLS encryption.</span>
+                    <span>All network communications use HTTPS / TLS encryption. Cleartext (unencrypted) traffic is disabled at the platform level.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <span>Our backend API requires authenticated requests — only the Vocolens app can access transcription and analysis endpoints.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>

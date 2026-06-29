@@ -264,7 +264,7 @@ export function TermsOfService() {
                   Usage Tracking
                 </h2>
                 <p className="text-text-secondary text-base leading-relaxed">
-                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our backend server after each recording session. This data is held in ephemeral server memory and is not written to a persistent database. It is used solely to track your usage against your monthly allowance and is not used for any other purpose.
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our backend server after each recording session. All requests to our backend are authenticated — only the Vocolens app can access these endpoints. This data is held in ephemeral server memory and is not written to a persistent database. It is used solely to track your usage against your monthly allowance and is not used for any other purpose.
                 </p>
               </div>
             </div>
