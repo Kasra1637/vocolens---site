@@ -31,6 +31,20 @@ All 10 titles verified ≤44 characters. Tone preserved (conversational, second-
 
 Verified visually via local vite dev server (dependency install required `--ignore-engines` due to Node 20 vs required 22 for miniflare/cloudflare plugin — install succeeded, dev server runs fine on Node 20 for this task).
 
+### 2026-02 — Follow-up: Specific Title Rewording + Remove Trailing Periods
+User requested specific rewording of 7 titles and asked to NOT add trailing periods:
+1. Journal calendar — "Easily track your progress" (was "You showed up. That's the whole point.")
+2. Weekly reflection — "View your weekly mood story" (was "Your week, told back to you as a story.")
+3. Mood story — "See which emotion dominates your days" (was "See which emotion rules each day this week.")
+4. Explore deeper — "Go as deep as you want" (was "Go as deep as you want. Or don't.")
+5. Emotional themes — "Your emotional narrative" (was "The story you keep telling on repeat.")
+6. Emotional triggers — "Learn what keeps setting you off" (was "Name the thing that keeps setting you off.")
+7. Time of day — "Track your mood by time of the day" (was "Morning you and evening you are different.")
+
+Unchanged (not requested this round): Emotional landscape, Body sensation map, Deep insights — still retain trailing periods from earlier copy (user did not ask to change these in this iteration).
+
+Verified visually via screenshot — all new titles render correctly, no trailing periods, no layout regressions.
+
 ## Environment Notes
 - Supervisor config in this container expects `/app/frontend` + `/app/backend` (standard template) — does NOT match this project's structure. `frontend`/`backend` supervisor programs are in FATAL state (ENOENT) — this is pre-existing and unrelated to this change.
 - To preview locally: `cd /app && yarn install --ignore-engines && node_modules/.bin/vite dev --port 3000 --host 0.0.0.0`
