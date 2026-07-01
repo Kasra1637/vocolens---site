@@ -124,34 +124,76 @@ function WeeklyReflectionVisual() {
 
 function MoodStoryVisual() {
   const week = [
-    { d: 'Mon', e: 'Trust', c: '#10B981' },
-    { d: 'Tue', e: 'Fear', c: '#8E6BFF' },
-    { d: 'Wed', e: 'Anticipation', c: '#F97316' },
-    { d: 'Thu', e: 'Happiness', c: '#F5B700' },
-    { d: 'Fri', e: 'Surprise', c: '#06B6D4' },
-    { d: 'Sat', e: 'Happiness', c: '#F5B700' },
-    { d: 'Sun', e: 'Trust', c: '#10B981' },
+    { d: 'Mon', e: 'Trust', c: '#10B981', intensity: 72 },
+    { d: 'Tue', e: 'Fear', c: '#8E6BFF', intensity: 55 },
+    { d: 'Wed', e: 'Anticipation', c: '#F97316', intensity: 80 },
+    { d: 'Thu', e: 'Happiness', c: '#F5B700', intensity: 88 },
+    { d: 'Fri', e: 'Surprise', c: '#06B6D4', intensity: 65 },
+    { d: 'Sat', e: 'Happiness', c: '#F5B700', intensity: 90 },
+    { d: 'Sun', e: 'Trust', c: '#10B981', intensity: 78 },
   ];
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <div className="grid grid-cols-7 gap-2 items-end h-44">
-        {week.map((w, i) => (
-          <div key={w.d} className="flex flex-col items-center gap-2 group">
-            <div
-              className="w-full rounded-lg transition-all duration-300 group-hover:scale-x-110 group-hover:brightness-110"
-              style={{
-                background: `linear-gradient(180deg, ${w.c}, ${w.c}cc)`,
-                height: `${50 + ((i * 37) % 45)}%`,
-                opacity: 0.85,
-              }}
-              aria-label={`${w.d}: ${w.e}`}
-            />
-            <span className="text-[10px] font-semibold text-text-secondary">{w.d}</span>
-            <span className="text-[9px] text-text-muted leading-tight text-center">{w.e}</span>
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-cyan-50/40 to-transparent rounded-tr-full pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-2 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Mood story · This week
+        </p>
+        <div className="flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <span className="text-[10px] font-medium text-text-muted">Mostly positive</span>
+        </div>
+      </div>
+
+      <p className="text-[13px] text-text-muted mb-5 relative">Dominant emotion each day</p>
+
+      <div className="grid grid-cols-7 gap-2.5 items-end h-40 mb-3 relative">
+        {week.map((w) => (
+          <div key={w.d} className="flex flex-col items-center gap-1.5 group">
+            <div className="relative w-full flex justify-center">
+              <div
+                className="w-full max-w-[32px] rounded-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
+                style={{
+                  height: `${w.intensity}%`,
+                  minHeight: '28px',
+                }}
+                aria-label={`${w.d}: ${w.e}`}
+              >
+                <div
+                  className="absolute inset-0 rounded-xl"
+                  style={{
+                    background: `linear-gradient(180deg, ${w.c} 0%, ${w.c}88 100%)`,
+                  }}
+                />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/5 to-white/20" />
+              </div>
+            </div>
+            <span className="text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
+            <span
+              className="text-[9px] font-medium leading-tight text-center px-0.5 transition-colors duration-200"
+              style={{ color: w.c }}
+            >
+              {w.e}
+            </span>
           </div>
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-5 italic">Words, not numbers — one dominant emotion per day</p>
+
+      <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/8 relative">
+        <div className="flex -space-x-1">
+          {['#10B981', '#F5B700', '#06B6D4'].map((c, i) => (
+            <span
+              key={i}
+              className="w-4 h-4 rounded-full border-2 border-white"
+              style={{ background: c }}
+            />
+          ))}
+        </div>
+        <p className="text-xs text-text-muted italic flex-1">
+          Words, not numbers — one dominant emotion per day
+        </p>
+      </div>
     </div>
   );
 }
