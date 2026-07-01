@@ -695,7 +695,7 @@ const features: Feature[] = [
     icon: Map,
     headline: 'Plot yourself on the map of how humans feel.',
     body:
-      'Every entry drops a pin: calm or activated? Pleasant or unpleasant? Over time, your pins form a constellation — your emotional fingerprint. See if you\u2019re stuck in one quadrant. See when you escape. Tap any dot to relive that exact moment.',
+      'Every entry drops a pin: calm or activated, pleasant or not. Over time, pins form a constellation — your emotional fingerprint. See where you get stuck. Tap any dot to relive it.',
     outcome:
       '\u201CI live in Tense during work weeks and shift to Calm every Saturday at 6pm.\u201D — self-knowledge that changes real decisions.',
     visual: <EmotionalLandscapeVisual />,
