@@ -1,15 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import {
-  Zap,
-  Brain,
-  HelpCircle,
-  Mic,
-  Sparkles,
-  TrendingUp,
-  ArrowRight,
-  CheckCircle2,
-} from 'lucide-react';
+import { Zap, Brain, Circle as HelpCircle, Mic, Sparkles, TrendingUp, ArrowRight, CircleCheck as CheckCircle2 } from 'lucide-react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
  * Types
@@ -204,13 +195,13 @@ export function UseCases() {
       </div>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
+      <section className="max-w-3xl mx-auto px-6 pb-20">
         <AnimatedSection
           animation="fade-in-up"
-          className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-14 border border-primary/10 text-center"
+          className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Built different — for brains that are different.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
+            Be the first to try Vocolens
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
             Private. Patient. Neurodivergent-first. Join the waitlist and be among the first to experience it.
