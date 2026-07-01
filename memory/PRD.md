@@ -52,6 +52,24 @@ Verified visually via screenshot — all new titles render correctly, no trailin
 
 Only "Emotional landscape" ("Plot yourself on the map of how humans feel.") retains its original title/period, not requested to change yet. Verified visually via screenshot — renders correctly, no layout regressions.
 
+### 2026-02 — Follow-up: Final 2 Titles Updated
+1. Body sensation map — "Track your physical feelings" (was "Track your emotions in your body")
+2. Emotional landscape — "Mapping your mood in one chart" (was "Plot yourself on the map of how humans feel.")
+
+All 10 feature section titles are now finalized per user's exact wording, all ≤44 chars, no trailing periods on any of the newly-worded titles. Verified visually — no layout regressions.
+
+Final title list (in order):
+1. Journal calendar — "Easily track your progress"
+2. Weekly reflection — "View your weekly mood story"
+3. Mood story — "See which emotion dominates your days"
+4. Explore deeper — "Go as deep as you want"
+5. Emotional landscape — "Mapping your mood in one chart"
+6. Body sensation map — "Track your physical feelings"
+7. Deep insights — "Clear insights without any noise"
+8. Emotional triggers — "Learn what keeps setting you off"
+9. Emotional themes — "Your emotional narrative"
+10. Time of day — "Track your mood by the hour"
+
 ## Environment Notes
 - Supervisor config in this container expects `/app/frontend` + `/app/backend` (standard template) — does NOT match this project's structure. `frontend`/`backend` supervisor programs are in FATAL state (ENOENT) — this is pre-existing and unrelated to this change.
 - To preview locally: `cd /app && yarn install --ignore-engines && node_modules/.bin/vite dev --port 3000 --host 0.0.0.0`
