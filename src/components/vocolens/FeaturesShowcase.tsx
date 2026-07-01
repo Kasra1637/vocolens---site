@@ -716,7 +716,7 @@ const features: Feature[] = [
     icon: Sparkles,
     headline: 'An AI that studied you — not a textbook.',
     body:
-      'One insight at a time. That\u2019s all. No wall of cards competing for attention. Once you\u2019ve built up a few entries, Vocolens surfaces the single most important pattern it found — a recurring loop, a growth moment you missed, or a gentle warning. Tap \u201CSee more\u201D when you\u2019re ready. Or don\u2019t.',
+      'One insight at a time — no dashboard noise. Vocolens surfaces the single most important pattern from your entries: a loop, a growth moment, or a gentle warning. Dig deeper when ready.',
     outcome: 'Personalised emotional intelligence that respects your bandwidth.',
     visual: <DeepInsightsVisual />,
   },
