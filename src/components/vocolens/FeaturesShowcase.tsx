@@ -797,8 +797,7 @@ export function FeaturesShowcase() {
             </span>
           </h1>
           <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
-            Every screen in Vocolens has one job: turn your voice into clarity
-            you can act on — without overwhelm, streaks, or guilt.
+            Vocolens has one job: turn your voice into clarity you can act on now
           </p>
         </AnimatedSection>
 
