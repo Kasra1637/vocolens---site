@@ -694,7 +694,7 @@ const features: Feature[] = [
     id: 'emotional-landscape',
     eyebrow: 'Emotional landscape',
     icon: Map,
-    headline: 'Plot yourself on the map of how humans feel.',
+    headline: 'Mapping your mood in one chart',
     body:
       'Every entry drops a pin: calm or activated, pleasant or not. Over time, pins form a constellation — your emotional fingerprint. See where you get stuck. Tap any dot to relive it.',
     outcome:
@@ -705,7 +705,7 @@ const features: Feature[] = [
     id: 'body-map',
     eyebrow: 'Body sensation map',
     icon: Activity,
-    headline: 'Track your emotions in your body',
+    headline: 'Track your physical feelings',
     body:
       'Tap where you felt it — chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature. Often the first warning sign, days before your mood catches up.',
     outcome: 'Catch the burnout in your chest before it reaches your head.',
