@@ -803,7 +803,7 @@ export function FeaturesShowcase() {
 
         {/* Feature icon strip */}
         <AnimatedSection animation="fade-in-up" delay={0.2} className="relative mt-12">
-          <div className="flex justify-center flex-wrap gap-3 max-w-3xl mx-auto">
+          <div className="flex justify-center flex-wrap gap-3 max-w-4xl mx-auto">
             {features.map((f) => {
               const Icon = f.icon;
               return (
