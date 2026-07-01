@@ -846,23 +846,23 @@ export function FeaturesShowcase() {
       </div>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+      <section className="max-w-3xl mx-auto px-6 pb-24">
         <AnimatedSection
           animation="fade-in-up"
-          className="relative overflow-hidden bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center"
+          className="relative overflow-hidden bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
         >
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-16 -right-16 w-48 h-48 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
           <div className="relative">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               All ten features. One quiet app.
             </h2>
-            <p className="text-text-secondary text-lg lg:text-xl mb-10 max-w-2xl mx-auto">
+            <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
               Private. Powerful. Launching soon. Get in early.
             </p>
             <a
               href="/join"
-              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 group"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-10 py-5 rounded-full text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               Join Waitlist
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
