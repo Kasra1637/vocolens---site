@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Frown, MessageSquare, Lightbulb, CalendarDays, BookOpenText, BarChart3, Activity, ArrowRight } from 'lucide-react';
+import { Frown, MessageSquare, Lightbulb, CalendarDays, BookOpenText, ChartBar as BarChart3, Activity, ArrowRight } from 'lucide-react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -78,7 +78,7 @@ function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12">
+      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
             Real stories, real impact
@@ -147,7 +147,7 @@ function Home() {
 
 
 
-      <section id="story" className="max-w-7xl mx-auto px-6 py-16">
+      <section id="story" className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
         <AnimatedSection animation="scale-in">
           <div className="flex items-center justify-center mb-4">
             <img
@@ -211,7 +211,7 @@ function Home() {
 
       <EmotionDetection />
 
-      <section id="features-preview" className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
+      <section id="features-preview" className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
         <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             Inside Vocolens
@@ -254,7 +254,7 @@ function Home() {
 
       <EmotionScienceSuite />
 
-      <section id="download" className="max-w-3xl mx-auto px-6 py-12 lg:py-16">
+      <section id="download" className="max-w-3xl mx-auto px-6 py-20 lg:py-28">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Be the first to try Vocolens
