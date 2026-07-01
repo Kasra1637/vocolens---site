@@ -50,25 +50,71 @@ function CalendarVisual() {
 }
 
 function WeeklyReflectionVisual() {
+  const weekArc = [
+    { day: 'M', mood: 'Tense', level: 30, color: '#ef4444' },
+    { day: 'T', mood: 'Anxious', level: 40, color: '#f97316' },
+    { day: 'W', mood: 'Calm', level: 70, color: '#10b981' },
+    { day: 'T', mood: 'Focused', level: 75, color: '#06b6d4' },
+    { day: 'F', mood: 'Relief', level: 85, color: '#10b981' },
+    { day: 'S', mood: 'Rest', level: 60, color: '#8b5cf6' },
+    { day: 'S', mood: 'Peace', level: 80, color: '#10b981' },
+  ];
+
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-3">
-        Your week · Mar 18 – Mar 24
-      </p>
-      <p className="text-text-secondary text-base leading-relaxed mb-4">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-bl-full pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-4">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Your week · Mar 18 – 24
+        </p>
+        <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+          +12% wellbeing
+        </span>
+      </div>
+
+      <p className="text-text-secondary text-[15px] leading-relaxed mb-5">
         Monday opened with tension around the deadline. By Wednesday you&apos;d
         named it — and the calm followed. Friday brought a quiet breakthrough
         about boundaries with your team.
       </p>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {['Work pressure', 'Self-trust', 'Rest'].map((t) => (
-          <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-colors duration-200 hover:bg-primary/15">
-            {t}
+
+      <div className="flex items-end gap-1.5 h-16 mb-5 px-1">
+        {weekArc.map((d, i) => (
+          <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
+            <div
+              className="w-full rounded-md transition-all duration-300 group-hover:brightness-110 group-hover:scale-x-110"
+              style={{
+                height: `${d.level}%`,
+                background: `linear-gradient(180deg, ${d.color}cc, ${d.color}66)`,
+              }}
+            />
+            <span className="text-[9px] font-semibold text-text-muted">{d.day}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-5">
+        {[
+          { label: 'Work pressure', icon: '~' },
+          { label: 'Self-trust', icon: '+' },
+          { label: 'Rest', icon: '+' },
+        ].map((t) => (
+          <span
+            key={t.label}
+            className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-all duration-200 hover:bg-primary/15 hover:-translate-y-0.5 flex items-center gap-1"
+          >
+            <span className={`text-[10px] font-bold ${t.icon === '+' ? 'text-emerald-500' : 'text-amber-500'}`}>
+              {t.icon}
+            </span>
+            {t.label}
           </span>
         ))}
       </div>
-      <div className="rounded-xl bg-white border border-primary/10 px-4 py-3 shadow-sm">
-        <p className="text-sm text-text-secondary italic">
+
+      <div className="rounded-xl bg-gradient-to-r from-primary/[0.03] to-white border border-primary/12 px-4 py-3.5 shadow-sm relative">
+        <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary/40" />
+        <p className="text-sm text-text-secondary italic leading-relaxed pl-2">
           &ldquo;You spoke kindly to yourself three times this week. Try one more.&rdquo;
         </p>
       </div>
