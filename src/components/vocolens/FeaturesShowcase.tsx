@@ -268,33 +268,90 @@ function ExploreDeeperVisual() {
 }
 
 function EmotionalLandscapeVisual() {
-  const pins = [
-    { x: 22, y: 28 }, { x: 30, y: 35 }, { x: 38, y: 30 }, { x: 28, y: 42 },
-    { x: 65, y: 70 }, { x: 72, y: 78 }, { x: 68, y: 65 }, { x: 75, y: 72 },
-    { x: 55, y: 50 }, { x: 42, y: 60 },
+  const clusters = [
+    { x: 20, y: 25, size: 14, opacity: 0.9, label: null },
+    { x: 28, y: 32, size: 11, opacity: 0.75, label: null },
+    { x: 35, y: 27, size: 12, opacity: 0.8, label: null },
+    { x: 26, y: 40, size: 10, opacity: 0.65, label: null },
+    { x: 63, y: 68, size: 14, opacity: 0.9, label: null },
+    { x: 70, y: 75, size: 12, opacity: 0.85, label: null },
+    { x: 66, y: 62, size: 11, opacity: 0.7, label: null },
+    { x: 74, y: 70, size: 13, opacity: 0.8, label: null },
+    { x: 78, y: 78, size: 10, opacity: 0.6, label: null },
+    { x: 48, y: 52, size: 9, opacity: 0.5, label: null },
   ];
+
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <div className="relative aspect-[4/3] rounded-xl bg-white/60 border border-primary/10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_30%,rgba(239,68,68,0.04)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(16,185,129,0.04)_0%,transparent_50%)]" />
-        <div className="absolute inset-y-3 left-1/2 w-px bg-primary/15" />
-        <div className="absolute inset-x-3 top-1/2 h-px bg-primary/15" />
-        <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Activated</span>
-        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Calm</span>
-        <span className="absolute top-1/2 left-2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Unpleasant</span>
-        <span className="absolute top-1/2 right-2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Pleasant</span>
-        <span className="absolute top-[14%] left-[14%] text-[10px] font-semibold text-rose-400/80">Tense</span>
-        <span className="absolute bottom-[14%] right-[14%] text-[10px] font-semibold text-emerald-500/80">Calm</span>
-        {pins.map((p, i) => (
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-50/50 to-transparent rounded-tr-full pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-3 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Emotional landscape
+        </p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+          Last 7 days
+        </span>
+      </div>
+
+      <div className="relative aspect-[4/3] rounded-xl bg-gradient-to-br from-rose-50/20 via-white/80 to-emerald-50/20 border border-primary/10 overflow-hidden shadow-inner">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_30%,rgba(239,68,68,0.06)_0%,transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_72%,rgba(16,185,129,0.06)_0%,transparent_45%)]" />
+
+        <div className="absolute inset-y-4 left-1/2 w-px bg-gradient-to-b from-primary/5 via-primary/15 to-primary/5" />
+        <div className="absolute inset-x-4 top-1/2 h-px bg-gradient-to-r from-primary/5 via-primary/15 to-primary/5" />
+
+        <span className="absolute top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Activated</span>
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Calm</span>
+        <span className="absolute top-1/2 left-3 -translate-y-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Unpleasant</span>
+        <span className="absolute top-1/2 right-3 -translate-y-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Pleasant</span>
+
+        <div className="absolute top-[18%] left-[12%] flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+          <span className="text-[10px] font-semibold text-rose-500">Tense</span>
+        </div>
+        <div className="absolute bottom-[12%] right-[10%] flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span className="text-[10px] font-semibold text-emerald-500">Calm</span>
+        </div>
+
+        {clusters.map((p, i) => (
           <span
             key={i}
-            className="absolute w-3 h-3 rounded-full bg-primary shadow-sm ring-2 ring-primary/20 transition-transform duration-200 hover:scale-150"
-            style={{ top: `${p.y}%`, left: `${p.x}%` }}
+            className="absolute rounded-full bg-primary transition-all duration-300 hover:scale-[1.8] hover:z-10"
+            style={{
+              top: `${p.y}%`,
+              left: `${p.x}%`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              opacity: p.opacity,
+              boxShadow: `0 0 ${p.size}px ${p.size / 2}px rgba(142, 107, 255, 0.15)`,
+              transform: 'translate(-50%, -50%)',
+            }}
           />
         ))}
+
+        <div
+          className="absolute rounded-full border border-dashed border-rose-300/50 pointer-events-none"
+          style={{ top: '18%', left: '14%', width: '28%', height: '30%' }}
+        />
+        <div
+          className="absolute rounded-full border border-dashed border-emerald-300/50 pointer-events-none"
+          style={{ top: '55%', left: '55%', width: '32%', height: '34%' }}
+        />
       </div>
-      <p className="text-xs text-text-muted mt-4 italic">Two clusters: Tense (work week) and Calm (weekends)</p>
+
+      <div className="flex items-center gap-4 mt-4 pt-3 border-t border-primary/8 relative">
+        <div className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-full border border-dashed border-rose-300" />
+          <span className="text-[10px] font-medium text-text-muted">Work days</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="w-3 h-3 rounded-full border border-dashed border-emerald-300" />
+          <span className="text-[10px] font-medium text-text-muted">Weekends</span>
+        </div>
+        <p className="text-[10px] text-text-muted italic ml-auto">2 clusters detected</p>
+      </div>
     </div>
   );
 }
