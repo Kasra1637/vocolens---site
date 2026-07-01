@@ -16,7 +16,7 @@ const features = [
   {
     icon: Shield,
     title: 'Encrypted in transit',
-    description: 'All network calls use HTTPS / TLS. Audio is sent transiently for analysis and discarded immediately after.',
+    description: 'All network calls use HTTPS / TLS. Audio is sent transiently for transcription and discarded immediately after.',
   },
   {
     icon: Eye,

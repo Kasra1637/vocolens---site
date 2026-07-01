@@ -30,7 +30,7 @@ export function EmotionDetection() {
           <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="9" /><path d="M12 3v18M3 12h18" />
           </svg>
-          Hybrid Emotion Intelligence
+          AI + Your Corrections
         </span>
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">
           Understand your emotions without forcing a single label

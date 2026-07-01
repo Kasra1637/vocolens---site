@@ -26,7 +26,7 @@ const bodyRegions = [
 const distressLevels = [
   { level: 'Low',      color: '#10B981', response: 'Gentle reflection prompts' },
   { level: 'Moderate', color: '#F59E0B', response: 'Grounding & breathing guidance' },
-  { level: 'High',     color: '#EF4444', response: 'Crisis resources surfaced immediately' },
+  { level: 'High',     color: '#EF4444', response: 'Grounding exercises surfaced immediately' },
 ];
 
 export function EmotionScienceSuite() {
@@ -47,7 +47,7 @@ export function EmotionScienceSuite() {
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          8 core emotions, valence, distress, body mapping, and adaptive AI — running privately on-device.
+          8 core emotions, valence, distress, body mapping, and adaptive AI — your data stays privately on your device.
         </p>
       </AnimatedSection>
 
