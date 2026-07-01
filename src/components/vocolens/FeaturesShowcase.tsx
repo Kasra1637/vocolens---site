@@ -785,7 +785,6 @@ export function FeaturesShowcase() {
     <div className="min-h-screen bg-surface">
       {/* Hero */}
       <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
         <AnimatedSection animation="fade-in-up" className="relative text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6 border border-primary/10">
             <Sparkles className="w-3.5 h-3.5" />
