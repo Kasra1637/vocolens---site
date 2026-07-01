@@ -358,38 +358,77 @@ function EmotionalLandscapeVisual() {
 
 function BodyMapVisual() {
   const regions = [
-    { name: 'Head', heat: 0.2 },
-    { name: 'Face', heat: 0.15 },
-    { name: 'Neck', heat: 0.55 },
-    { name: 'Chest', heat: 0.85 },
-    { name: 'Stomach', heat: 0.7 },
-    { name: 'Arms', heat: 0.1 },
-    { name: 'Hands', heat: 0.45 },
-    { name: 'Legs', heat: 0.1 },
+    { name: 'Head', emoji: '🧠', heat: 0.2 },
+    { name: 'Face', emoji: '😶', heat: 0.15 },
+    { name: 'Neck', emoji: '🦴', heat: 0.55 },
+    { name: 'Chest', emoji: '💓', heat: 0.85 },
+    { name: 'Stomach', emoji: '🫁', heat: 0.7 },
+    { name: 'Arms', emoji: '💪', heat: 0.1 },
+    { name: 'Hands', emoji: '🤲', heat: 0.45 },
+    { name: 'Legs', emoji: '🦵', heat: 0.1 },
   ];
+
+  const getBarColor = (heat: number) => {
+    const hue = 270 - heat * 40;
+    const saturation = 50 + heat * 30;
+    return `linear-gradient(90deg, hsl(${hue}, ${saturation}%, 72%) 0%, hsl(${hue - 10}, ${saturation + 10}%, 58%) 100%)`;
+  };
+
+  const highStress = regions.filter((r) => r.heat >= 0.7);
+
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-rose-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
-        Where stress lives · last 30 days
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-rose-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-xl pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-1 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Where stress lives
+        </p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+          Last 30 days
+        </span>
+      </div>
+
+      <p className="text-[11px] text-text-muted mb-4 relative">
+        {highStress.length} region{highStress.length !== 1 ? 's' : ''} above 70% activation
       </p>
-      <div className="space-y-2.5">
+
+      <div className="space-y-2 relative">
         {regions.map((r) => (
-          <div key={r.name} className="flex items-center gap-3 group">
-            <span className="w-16 text-xs font-semibold text-text-secondary">{r.name}</span>
-            <div className="flex-1 h-3.5 rounded-full bg-primary/8 overflow-hidden">
+          <div key={r.name} className="flex items-center gap-2.5 group">
+            <span className="text-sm w-5 text-center">{r.emoji}</span>
+            <span className="w-14 text-[11px] font-semibold text-text-secondary">{r.name}</span>
+            <div className="flex-1 h-4 rounded-full bg-primary/[0.06] overflow-hidden border border-primary/8 relative">
               <div
-                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110"
+                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110 group-hover:shadow-sm relative"
                 style={{
                   width: `${r.heat * 100}%`,
-                  background: `linear-gradient(90deg, hsl(${200 - r.heat * 180}, 80%, 60%), hsl(${200 - r.heat * 180}, 80%, 45%))`,
+                  background: getBarColor(r.heat),
                 }}
-              />
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/5 to-white/20" />
+              </div>
             </div>
-            <span className="text-[10px] font-semibold text-text-muted w-8 text-right">
+            <span
+              className="text-[11px] font-bold w-9 text-right"
+              style={{ color: r.heat >= 0.7 ? 'hsl(240, 50%, 55%)' : 'hsl(240, 20%, 60%)' }}
+            >
               {Math.round(r.heat * 100)}%
             </span>
           </div>
         ))}
+      </div>
+
+      <div className="flex items-center gap-3 mt-5 pt-3 border-t border-primary/8 relative">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-2.5 rounded-full" style={{ background: getBarColor(0.2) }} />
+          <span className="text-[10px] text-text-muted">Low</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-2.5 rounded-full" style={{ background: getBarColor(0.85) }} />
+          <span className="text-[10px] text-text-muted">High</span>
+        </div>
+        <p className="text-[10px] text-text-muted italic ml-auto">Focus: chest & stomach</p>
       </div>
     </div>
   );
