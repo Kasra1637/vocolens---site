@@ -684,7 +684,7 @@ const features: Feature[] = [
     icon: ChevronDownCircle,
     headline: 'Go as deep as you want. Or don\u2019t. Both are fine.',
     body:
-      'Three sections show by default — enough to understand your week without overwhelm. When you\u2019re ready for more, tap \u201CExplore deeper\u201D to reveal your full emotional dashboard: landscape mapping, body sensation heatmap, AI-powered triggers, and pattern detection. It\u2019s all there. It waits for you.',
+      'Three sections by default \u2014 enough to understand your week. Want more? Tap \u201CExplore deeper\u201D for landscape mapping, body heatmap, and pattern detection. It waits for you.',
     outcome:
       'Full control over your cognitive load. See more when you\u2019re sharp. See less when you\u2019re overstimulated.',
     visual: <ExploreDeeperVisual />,
