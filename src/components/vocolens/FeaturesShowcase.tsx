@@ -674,7 +674,7 @@ const features: Feature[] = [
     icon: BarChart3,
     headline: 'See which emotion runs each day of your week.',
     body:
-      'Trust on Monday. Anticipation on Wednesday. Happiness on Saturday. Vocolens maps your dominant emotion to every weekday across 30 days — no guessing, no \u201CI think I feel\u2026\u201D Each bar tells you the word, not the number. The Emotions tab shows what\u2019s rising, what\u2019s fading, and which feeling shifted most this week.',
+      'Trust on Monday. Anticipation on Wednesday. Happiness on Saturday. Vocolens maps your dominant emotion to every weekday. See what\u2019s rising, fading, and shifting.',
     outcome: 'Know your emotional rhythm by day — and plan your life around it.',
     visual: <MoodStoryVisual />,
   },
