@@ -706,7 +706,7 @@ const features: Feature[] = [
     icon: Activity,
     headline: 'Your body keeps score. Now you can finally read it.',
     body:
-      'After each entry, tap where you felt it — chest, stomach, neck, hands, or any of the 8 body regions. Over time, Vocolens builds a heatmap of your physical stress signature. The pattern is often the first warning sign — days before your mood catches up.',
+      'Tap where you felt it — chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature. Often the first warning sign, days before your mood catches up.',
     outcome: 'Catch the burnout in your chest before it reaches your head.',
     visual: <BodyMapVisual />,
   },
