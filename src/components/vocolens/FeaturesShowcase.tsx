@@ -726,7 +726,7 @@ const features: Feature[] = [
     icon: Zap,
     headline: 'Name the thing that keeps setting you off.',
     body:
-      'Vocolens cross-references your topics with your emotional spikes over 7, 14, or 30 days. Work. Relationships. Health. Money. It shows you which subjects reliably shift your state — and in which direction. Not a guess. A correlation built from your own voice.',
+      'Which subjects reliably shift your state — and which way? Vocolens correlates topics with emotional spikes over 7, 14, or 30 days. Not a guess. A pattern built from your own voice.',
     outcome: 'Stop being blindsided. See the trigger before the spiral starts.',
     visual: <TriggersVisual />,
   },
