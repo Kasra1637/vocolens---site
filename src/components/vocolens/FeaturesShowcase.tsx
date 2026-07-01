@@ -587,30 +587,59 @@ function ThemesVisual() {
 
 function TimeOfDayVisual() {
   const slots = [
-    { t: '6a', v: 35 },
-    { t: '9a', v: 78 },
-    { t: '12p', v: 55 },
-    { t: '3p', v: 40 },
-    { t: '6p', v: 62 },
-    { t: '9p', v: 85 },
+    { t: '6a', emoji: '🌅', v: 35, label: 'Dawn' },
+    { t: '9a', emoji: '☀️', v: 78, label: 'Morning' },
+    { t: '12p', emoji: '🌤️', v: 55, label: 'Noon' },
+    { t: '3p', emoji: '😮‍💨', v: 40, label: 'Afternoon' },
+    { t: '6p', emoji: '🌆', v: 62, label: 'Evening' },
+    { t: '9p', emoji: '🌙', v: 85, label: 'Night' },
   ];
+  const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
-        Mood by hour
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-amber-100/30 rounded-full blur-2xl pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-1 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Mood by hour
+        </p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+          7-day average
+        </span>
+      </div>
+
+      <p className="text-[11px] text-text-muted mb-4 relative">
+        Peak intensity at {peak.t} ({peak.v}%)
       </p>
-      <div className="flex items-end gap-3 h-36 mb-3">
+
+      <div className="flex items-end gap-2.5 h-32 mb-3 relative">
         {slots.map((s) => (
-          <div key={s.t} className="flex-1 flex flex-col items-center gap-1.5 group">
-            <div
-              className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-all duration-300 group-hover:from-primary/40 group-hover:to-primary group-hover:scale-x-110"
-              style={{ height: `${s.v}%` }}
-            />
-            <span className="text-[10px] font-semibold text-text-muted">{s.t}</span>
+          <div key={s.t} className="flex-1 flex flex-col items-center gap-1 group">
+            <span className="text-[10px] font-bold text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              {s.v}%
+            </span>
+            <div className="w-full relative">
+              <div
+                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-all duration-300 group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
+                style={{ height: `${s.v}%`, minHeight: '12px' }}
+              >
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
+              </div>
+            </div>
+            <span className="text-xs mt-0.5">{s.emoji}</span>
+            <span className="text-[9px] font-semibold text-text-muted">{s.t}</span>
           </div>
         ))}
       </div>
-      <p className="text-xs text-text-muted italic">Peaks at 9am & 9pm, dip mid-afternoon</p>
+
+      <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm relative">
+        <p className="text-xs uppercase tracking-widest font-semibold text-primary/70 mb-1">
+          Insight
+        </p>
+        <p className="text-sm text-text-secondary">
+          Peaks at 9am & 9pm — dip mid-afternoon suggests energy depletion pattern.
+        </p>
+      </div>
     </div>
   );
 }
