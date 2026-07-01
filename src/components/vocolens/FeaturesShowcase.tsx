@@ -736,7 +736,7 @@ const features: Feature[] = [
     icon: Repeat,
     headline: 'The story you keep telling yourself on repeat.',
     body:
-      'Across all your entries, certain topics surface again and again. Vocolens counts them, ranks them, and gives you one concrete micro-action for your most dominant theme: \u201CWork appeared 12 times — pause and name the feeling before reacting.\u201D',
+      'Certain topics keep resurfacing. Vocolens ranks them and offers one concrete micro-action for your top theme — so patterns become choices, not loops.',
     outcome: 'See the narrative. Then decide if you want to keep writing it.',
     visual: <ThemesVisual />,
   },
