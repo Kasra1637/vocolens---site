@@ -15,10 +15,6 @@ const faqs = [
     q: "Is this a replacement for therapy or mental health support?",
     a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing tools. If the app detects moderate or high distress during your entry, it immediately surfaces grounding exercises—like box breathing and 5-4-3-2-1 sensory grounding—to help you regulate your emotions in the moment."
   },
-  {
-    q: "How much does it cost, and are there limits on how much I can record?",
-    a: "Vocolens offers a premium subscription starting with our best-value Yearly plan ($79.99/year), which includes a 3-day free trial so you can experience the full app risk-free. Your subscription includes 300 minutes per month of world-class, real-time transcription—plenty of time to journal naturally every day."
-  }
 ];
 
 export function FAQSection() {
