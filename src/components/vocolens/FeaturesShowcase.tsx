@@ -1,16 +1,6 @@
-import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import {
-  CalendarDays,
-  BookOpenText,
-  BarChart3,
-  ChevronDownCircle,
-  Map,
-  Activity,
-  Sparkles,
-  Zap,
-  Repeat,
-  Clock,
-} from 'lucide-react';
+import React, { useState } from 'react';
+import { AnimatedSection } from './AnimatedSection';
+import { CalendarDays, BookOpenText, ChartBar as BarChart3, CircleChevronDown as ChevronDownCircle, Map, Activity, Sparkles, Zap, Repeat, Clock, ArrowRight } from 'lucide-react';
 
 type Feature = {
   id: string;
@@ -25,44 +15,43 @@ type Feature = {
 /* ---------- Visuals ---------- */
 
 function CalendarVisual() {
-  // 30-day dot grid, ~14 active days, soft pulse on a couple
   const days = Array.from({ length: 30 }, (_, i) => i);
   const active = new Set([1, 2, 4, 5, 8, 10, 11, 14, 17, 18, 19, 22, 25, 28]);
   const pulse = new Set([18, 25]);
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.04] to-white border border-primary/10">
-      <div className="flex items-baseline justify-between mb-4">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-amber-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="flex items-baseline justify-between mb-5">
         <div>
-          <p className="text-3xl font-bold text-primary leading-none">14</p>
-          <p className="text-sm text-text-muted mt-1">days this month</p>
+          <p className="text-4xl font-bold text-primary leading-none">14</p>
+          <p className="text-sm text-text-muted mt-1.5">days this month</p>
         </div>
         <div className="text-right">
           <p className="text-sm font-semibold text-text-secondary">Longest run · 6</p>
-          <p className="text-xs text-text-muted">Total · 87</p>
+          <p className="text-xs text-text-muted mt-0.5">Total · 87</p>
         </div>
       </div>
       <div className="grid grid-cols-10 gap-2">
         {days.map((d) => (
           <span
             key={d}
-            className={`aspect-square rounded-full ${
+            className={`aspect-square rounded-full transition-transform duration-300 hover:scale-125 ${
               active.has(d)
                 ? pulse.has(d)
-                  ? 'bg-primary animate-pulse'
+                  ? 'bg-primary animate-pulse shadow-sm shadow-primary/30'
                   : 'bg-primary/70'
                 : 'bg-primary/10'
             }`}
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-4 italic">No streaks, no guilt — just presence</p>
+      <p className="text-xs text-text-muted mt-5 italic">No streaks, no guilt — just presence</p>
     </div>
   );
 }
 
 function WeeklyReflectionVisual() {
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.04] border border-primary/10">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-3">
         Your week · Mar 18 – Mar 24
       </p>
@@ -73,12 +62,12 @@ function WeeklyReflectionVisual() {
       </p>
       <div className="flex flex-wrap gap-2 mb-4">
         {['Work pressure', 'Self-trust', 'Rest'].map((t) => (
-          <span key={t} className="text-xs px-2.5 py-1 rounded-full bg-primary/8 text-primary font-semibold">
+          <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-colors duration-200 hover:bg-primary/15">
             {t}
           </span>
         ))}
       </div>
-      <div className="rounded-xl bg-white border border-primary/10 px-4 py-3">
+      <div className="rounded-xl bg-white border border-primary/10 px-4 py-3 shadow-sm">
         <p className="text-sm text-text-secondary italic">
           &ldquo;You spoke kindly to yourself three times this week. Try one more.&rdquo;
         </p>
@@ -98,14 +87,14 @@ function MoodStoryVisual() {
     { d: 'Sun', e: 'Trust', c: '#10B981' },
   ];
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.04] to-white border border-primary/10">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
       <div className="grid grid-cols-7 gap-2 items-end h-44">
         {week.map((w, i) => (
-          <div key={w.d} className="flex flex-col items-center gap-2">
+          <div key={w.d} className="flex flex-col items-center gap-2 group">
             <div
-              className="w-full rounded-t-lg transition-all"
+              className="w-full rounded-lg transition-all duration-300 group-hover:scale-x-110 group-hover:brightness-110"
               style={{
-                background: w.c,
+                background: `linear-gradient(180deg, ${w.c}, ${w.c}cc)`,
                 height: `${50 + ((i * 37) % 45)}%`,
                 opacity: 0.85,
               }}
@@ -116,23 +105,23 @@ function MoodStoryVisual() {
           </div>
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-4 italic">Words, not numbers — one dominant emotion per day</p>
+      <p className="text-xs text-text-muted mt-5 italic">Words, not numbers — one dominant emotion per day</p>
     </div>
   );
 }
 
 function ExploreDeeperVisual() {
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.04] to-white border border-primary/10">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
       <div className="space-y-3 mb-4">
         {['Journal calendar', 'Weekly reflection', 'Mood story'].map((s) => (
-          <div key={s} className="rounded-xl border border-primary/15 bg-white px-4 py-3 flex items-center justify-between">
+          <div key={s} className="rounded-xl border border-primary/15 bg-white px-4 py-3 flex items-center justify-between shadow-sm transition-all duration-200 hover:border-primary/30 hover:-translate-y-0.5">
             <span className="text-sm font-semibold text-text-primary">{s}</span>
-            <span className="text-xs text-emerald-600 font-semibold">Visible</span>
+            <span className="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Visible</span>
           </div>
         ))}
       </div>
-      <button className="w-full rounded-xl border border-dashed border-primary/30 bg-primary/[0.04] px-4 py-3 flex items-center justify-center gap-2 text-primary text-sm font-semibold">
+      <button className="w-full rounded-xl border border-dashed border-primary/30 bg-primary/[0.04] px-4 py-3.5 flex items-center justify-center gap-2 text-primary text-sm font-semibold transition-all duration-200 hover:bg-primary/[0.08] hover:border-primary/50">
         <ChevronDownCircle className="w-4 h-4" />
         Explore deeper · 7 more
       </button>
@@ -147,25 +136,27 @@ function EmotionalLandscapeVisual() {
     { x: 55, y: 50 }, { x: 42, y: 60 },
   ];
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-50 via-white to-blue-50 border border-primary/10">
-      <div className="relative aspect-[4/3] rounded-xl bg-white/60 border border-primary/10">
-        <div className="absolute inset-y-3 left-1/2 w-px bg-primary/20" />
-        <div className="absolute inset-x-3 top-1/2 h-px bg-primary/20" />
-        <span className="absolute top-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Activated</span>
-        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Calm</span>
-        <span className="absolute top-1/2 left-1 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Unpleasant</span>
-        <span className="absolute top-1/2 right-1 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Pleasant</span>
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="relative aspect-[4/3] rounded-xl bg-white/60 border border-primary/10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_30%,rgba(239,68,68,0.04)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(16,185,129,0.04)_0%,transparent_50%)]" />
+        <div className="absolute inset-y-3 left-1/2 w-px bg-primary/15" />
+        <div className="absolute inset-x-3 top-1/2 h-px bg-primary/15" />
+        <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Activated</span>
+        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-semibold text-text-muted">Calm</span>
+        <span className="absolute top-1/2 left-2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Unpleasant</span>
+        <span className="absolute top-1/2 right-2 -translate-y-1/2 text-[10px] font-semibold text-text-muted">Pleasant</span>
         <span className="absolute top-[14%] left-[14%] text-[10px] font-semibold text-rose-400/80">Tense</span>
         <span className="absolute bottom-[14%] right-[14%] text-[10px] font-semibold text-emerald-500/80">Calm</span>
         {pins.map((p, i) => (
           <span
             key={i}
-            className="absolute w-2.5 h-2.5 rounded-full bg-primary shadow-sm ring-2 ring-primary/20"
+            className="absolute w-3 h-3 rounded-full bg-primary shadow-sm ring-2 ring-primary/20 transition-transform duration-200 hover:scale-150"
             style={{ top: `${p.y}%`, left: `${p.x}%` }}
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-3 italic">Two clusters: Tense (work week) and Calm (weekends)</p>
+      <p className="text-xs text-text-muted mt-4 italic">Two clusters: Tense (work week) and Calm (weekends)</p>
     </div>
   );
 }
@@ -182,20 +173,20 @@ function BodyMapVisual() {
     { name: 'Legs', heat: 0.1 },
   ];
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-rose-50/60 via-white to-primary/[0.04] border border-primary/10">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-3">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-rose-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
         Where stress lives · last 30 days
       </p>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         {regions.map((r) => (
-          <div key={r.name} className="flex items-center gap-3">
+          <div key={r.name} className="flex items-center gap-3 group">
             <span className="w-16 text-xs font-semibold text-text-secondary">{r.name}</span>
-            <div className="flex-1 h-3 rounded-full bg-primary/8 overflow-hidden">
+            <div className="flex-1 h-3.5 rounded-full bg-primary/8 overflow-hidden">
               <div
-                className="h-full rounded-full"
+                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110"
                 style={{
                   width: `${r.heat * 100}%`,
-                  background: `linear-gradient(90deg, hsl(${200 - r.heat * 180}, 80%, 60%), hsl(${200 - r.heat * 180}, 80%, 50%))`,
+                  background: `linear-gradient(90deg, hsl(${200 - r.heat * 180}, 80%, 60%), hsl(${200 - r.heat * 180}, 80%, 45%))`,
                 }}
               />
             </div>
@@ -211,8 +202,8 @@ function BodyMapVisual() {
 
 function DeepInsightsVisual() {
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.05] to-white border border-primary/10">
-      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-clay-sm">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.07] via-white to-amber-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
         <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-3 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           One insight · this week
@@ -221,11 +212,13 @@ function DeepInsightsVisual() {
           You name fear faster than joy.
         </p>
         <p className="text-text-secondary text-sm leading-relaxed">
-          Over the last 14 entries, your fear vocabulary expanded 3× faster than
+          Over the last 14 entries, your fear vocabulary expanded 3x faster than
           your happiness vocabulary. A gentle invitation: name one good thing
           before naming the worry.
         </p>
-        <button className="mt-4 text-sm font-semibold text-primary">See more →</button>
+        <button className="mt-4 text-sm font-semibold text-primary flex items-center gap-1 transition-all duration-200 hover:gap-2">
+          See more <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
     </div>
   );
@@ -234,31 +227,31 @@ function DeepInsightsVisual() {
 function TriggersVisual() {
   const triggers = [
     { topic: 'Work', shift: '+62%', dir: 'up' },
-    { topic: 'Sleep', shift: '−28%', dir: 'down' },
+    { topic: 'Sleep', shift: '-28%', dir: 'down' },
     { topic: 'Money', shift: '+41%', dir: 'up' },
     { topic: 'Family', shift: '+18%', dir: 'up' },
   ];
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.04] to-white border border-primary/10">
-      <div className="flex gap-2 mb-4">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-rose-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="flex gap-2 mb-5">
         {['7d', '14d', '30d'].map((r, i) => (
           <span
             key={r}
-            className={`text-xs px-3 py-1 rounded-full font-semibold ${
+            className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 ${
               i === 1
-                ? 'bg-primary text-white'
-                : 'bg-primary/8 text-primary/70'
+                ? 'bg-primary text-white shadow-sm shadow-primary/20'
+                : 'bg-primary/8 text-primary/70 hover:bg-primary/15'
             }`}
           >
             {r}
           </span>
         ))}
       </div>
-      <ul className="space-y-2">
+      <ul className="space-y-2.5">
         {triggers.map((t) => (
           <li
             key={t.topic}
-            className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-4 py-3"
+            className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-4 py-3.5 shadow-sm transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5"
           >
             <span className="text-sm font-semibold text-text-primary">{t.topic}</span>
             <span
@@ -284,17 +277,17 @@ function ThemesVisual() {
   ];
   const max = 12;
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-primary/[0.04] to-white border border-primary/10">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
         Themes · this month
       </p>
-      <ul className="space-y-2 mb-4">
+      <ul className="space-y-3 mb-5">
         {themes.map((t) => (
-          <li key={t.name} className="flex items-center gap-3">
+          <li key={t.name} className="flex items-center gap-3 group">
             <span className="w-24 text-sm font-semibold text-text-primary">{t.name}</span>
-            <div className="flex-1 h-2.5 rounded-full bg-primary/10 overflow-hidden">
+            <div className="flex-1 h-3 rounded-full bg-primary/10 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary"
+                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-all duration-500 group-hover:from-primary/60 group-hover:to-primary"
                 style={{ width: `${(t.count / max) * 100}%` }}
               />
             </div>
@@ -302,7 +295,7 @@ function ThemesVisual() {
           </li>
         ))}
       </ul>
-      <div className="rounded-xl bg-white border border-primary/15 px-4 py-3">
+      <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm">
         <p className="text-xs uppercase tracking-widest font-semibold text-primary/70 mb-1">
           Micro-action
         </p>
@@ -324,15 +317,15 @@ function TimeOfDayVisual() {
     { t: '9p', v: 85 },
   ];
   return (
-    <div className="rounded-2xl p-5 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.04] border border-primary/10">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
       <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
         Mood by hour
       </p>
-      <div className="flex items-end gap-2 h-32 mb-2">
+      <div className="flex items-end gap-3 h-36 mb-3">
         {slots.map((s) => (
-          <div key={s.t} className="flex-1 flex flex-col items-center gap-1">
+          <div key={s.t} className="flex-1 flex flex-col items-center gap-1.5 group">
             <div
-              className="w-full rounded-t-md bg-gradient-to-t from-primary/30 to-primary"
+              className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-all duration-300 group-hover:from-primary/40 group-hover:to-primary group-hover:scale-x-110"
               style={{ height: `${s.v}%` }}
             />
             <span className="text-[10px] font-semibold text-text-muted">{s.t}</span>
@@ -452,28 +445,83 @@ const features: Feature[] = [
   },
 ];
 
+function FeatureNav({ activeId }: { activeId: string }) {
+  return (
+    <div className="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 z-30">
+      <nav className="flex flex-col gap-2">
+        {features.map((f) => {
+          const isActive = f.id === activeId;
+          return (
+            <a
+              key={f.id}
+              href={`#${f.id}`}
+              title={f.eyebrow}
+              className={`group flex items-center gap-3 transition-all duration-300 ${isActive ? '' : 'opacity-50 hover:opacity-100'}`}
+            >
+              <span className={`block rounded-full transition-all duration-300 ${isActive ? 'w-8 h-2 bg-primary' : 'w-2 h-2 bg-primary/40 group-hover:bg-primary/70'}`} />
+              <span className={`text-xs font-medium transition-all duration-300 ${isActive ? 'text-primary opacity-100 translate-x-0' : 'text-text-muted opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`}>
+                {f.eyebrow}
+              </span>
+            </a>
+          );
+        })}
+      </nav>
+    </div>
+  );
+}
+
 export function FeaturesShowcase() {
+  const [activeFeature, setActiveFeature] = useState(features[0].id);
+
   return (
     <div className="min-h-screen bg-surface">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-12 lg:pt-40 lg:pb-16">
-        <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
+      <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
+        <AnimatedSection animation="fade-in-up" className="relative text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6 border border-primary/10">
             <Sparkles className="w-3.5 h-3.5" />
             Inside Vocolens
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-            Ten ways to finally understand yourself
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Ten ways to finally{' '}
+            <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+              understand yourself
+            </span>
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed">
+          <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
             Every screen in Vocolens has one job: turn your voice into clarity
             you can act on — without overwhelm, streaks, or guilt.
           </p>
         </AnimatedSection>
+
+        {/* Feature icon strip */}
+        <AnimatedSection animation="fade-in-up" delay={0.2} className="relative mt-12">
+          <div className="flex justify-center flex-wrap gap-3 max-w-3xl mx-auto">
+            {features.map((f) => {
+              const Icon = f.icon;
+              return (
+                <a
+                  key={f.id}
+                  href={`#${f.id}`}
+                  className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5"
+                >
+                  <Icon className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
+                  <span className="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors hidden sm:inline">
+                    {f.eyebrow}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
+        </AnimatedSection>
       </section>
 
+      {/* Feature navigation sidebar */}
+      <FeatureNav activeId={activeFeature} />
+
       {/* Feature sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-16 lg:pb-24 space-y-16 lg:space-y-24">
+      <div className="max-w-6xl mx-auto px-6 pb-16 lg:pb-24 space-y-20 lg:space-y-32">
         {features.map((f, i) => {
           const Icon = f.icon;
           const reverse = i % 2 === 1;
@@ -483,58 +531,65 @@ export function FeaturesShowcase() {
               animation={reverse ? 'fade-in-right' : 'fade-in-left'}
               delay={0.05}
             >
-              <article
-                id={f.id}
-                className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center scroll-mt-32 ${
-                  reverse ? 'lg:[&>*:first-child]:order-2' : ''
-                }`}
-              >
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </span>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-primary/70">
-                      {f.eyebrow}
-                    </span>
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4">
-                    {f.headline}
-                  </h2>
-                  <p className="text-text-secondary text-base leading-relaxed mb-5">
-                    {f.body}
-                  </p>
-                  <div className="rounded-xl bg-primary/5 border-l-4 border-primary px-4 py-3">
-                    <p className="text-primary text-base leading-relaxed italic">
-                      {f.outcome}
+              <FeatureObserver id={f.id} onVisible={setActiveFeature}>
+                <article
+                  id={f.id}
+                  className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-mt-32 ${
+                    reverse ? 'lg:[&>*:first-child]:order-2' : ''
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shadow-sm">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </span>
+                      <span className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+                        {f.eyebrow}
+                      </span>
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-5">
+                      {f.headline}
+                    </h2>
+                    <p className="text-text-secondary text-base lg:text-lg leading-relaxed mb-6">
+                      {f.body}
                     </p>
+                    <div className="rounded-xl bg-gradient-to-r from-primary/5 to-primary/[0.02] border-l-4 border-primary px-5 py-4">
+                      <p className="text-primary text-base leading-relaxed italic">
+                        {f.outcome}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div>{f.visual}</div>
-              </article>
+                  <div className="lg:sticky lg:top-32">{f.visual}</div>
+                </article>
+              </FeatureObserver>
             </AnimatedSection>
           );
         })}
       </div>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
+      <section className="max-w-7xl mx-auto px-6 pb-24">
         <AnimatedSection
           animation="fade-in-up"
-          className="bg-white rounded-3xl shadow-clay-lg p-10 lg:p-14 border border-primary/10 text-center"
+          className="relative overflow-hidden bg-white rounded-3xl shadow-clay-lg p-10 lg:p-16 border border-primary/10 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            All ten features. One quiet app.
-          </h2>
-          <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Private. Powerful. Launching soon. Get in early.
-          </p>
-          <a
-            href="/join"
-            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Join Waitlist
-          </a>
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
+              All ten features. One quiet app.
+            </h2>
+            <p className="text-text-secondary text-lg lg:text-xl mb-10 max-w-2xl mx-auto">
+              Private. Powerful. Launching soon. Get in early.
+            </p>
+            <a
+              href="/join"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 group"
+            >
+              Join Waitlist
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
         </AnimatedSection>
       </section>
 
@@ -608,3 +663,31 @@ export function FeaturesShowcase() {
     </div>
   );
 }
+
+function FeatureObserver({
+  id,
+  onVisible,
+  children,
+}: {
+  id: string;
+  onVisible: (id: string) => void;
+  children: React.ReactNode;
+}) {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) onVisible(id);
+      },
+      { threshold: 0.3, rootMargin: '-20% 0px -50% 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [id, onVisible]);
+
+  return <div ref={ref}>{children}</div>;
+}
+
