@@ -663,7 +663,7 @@ const features: Feature[] = [
     icon: BookOpenText,
     headline: 'Your week, told back to you like a story you can finally understand.',
     body:
-      'Every week, Vocolens reads your entries and writes a warm, personal narrative — connecting your Monday tension to your Wednesday calm to your Friday breakthrough. Key themes. Growth moments. A single encouraging sentence for the week ahead. You never have to summarise your own feelings again.',
+      'Each week, Vocolens reads your entries and writes a personal narrative — key themes, growth, one encouraging line ahead. Never summarise your own feelings again.',
     outcome:
       'The kind of weekly debrief a thoughtful friend would give you — generated in seconds, updated with every new entry.',
     visual: <WeeklyReflectionVisual />,
