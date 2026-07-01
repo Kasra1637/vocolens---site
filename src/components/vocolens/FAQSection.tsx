@@ -12,6 +12,14 @@ const faqs = [
     a: "Vocolens uses advanced AI to analyze the words and language in your journal transcript. It detects emotions from your word choice, phrasing, and narrative context — mapping your feelings to 8 core psychology-backed emotions and placing them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
   },
   {
+    q: "What makes Vocolens different from other journaling apps?",
+    a: "Most journaling apps make you write. Vocolens lets you speak — and does the rest. The AI detects your emotions from your words, learns from your corrections over time, and builds a personal emotional map you can't get anywhere else. It's designed specifically for neurodivergent brains that think faster than they can type."
+  },
+  {
+    q: "What happens if the AI gets my emotion wrong?",
+    a: "You correct it — and it learns. Tap the emotion label, change it to what you actually felt, and the AI remembers. Over time, it stops making that mistake for you specifically. Your corrections build a personalised emotional vocabulary that no other user shares. The AI gets better the more you use it."
+  },
+  {
     q: "Is this a replacement for therapy or mental health support?",
     a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing tools. If the app detects moderate or high distress during your entry, it immediately surfaces grounding exercises—like box breathing and 5-4-3-2-1 sensory grounding—to help you regulate your emotions in the moment."
   },
