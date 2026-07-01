@@ -460,44 +460,88 @@ function DeepInsightsVisual() {
 
 function TriggersVisual() {
   const triggers = [
-    { topic: 'Work', shift: '+62%', dir: 'up' },
-    { topic: 'Sleep', shift: '-28%', dir: 'down' },
-    { topic: 'Money', shift: '+41%', dir: 'up' },
-    { topic: 'Family', shift: '+18%', dir: 'up' },
+    { topic: 'Work', emoji: '💼', shift: '+62%', dir: 'up', bar: 0.62 },
+    { topic: 'Sleep', emoji: '😴', shift: '-28%', dir: 'down', bar: 0.28 },
+    { topic: 'Money', emoji: '💰', shift: '+41%', dir: 'up', bar: 0.41 },
+    { topic: 'Family', emoji: '👨‍👩‍👧', shift: '+18%', dir: 'up', bar: 0.18 },
   ];
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-rose-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <div className="flex gap-2 mb-5">
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-rose-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-rose-50/40 rounded-full blur-2xl pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-2 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Trigger analysis
+        </p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+          Correlation strength
+        </span>
+      </div>
+
+      <div className="flex gap-2 mb-5 relative">
         {['7d', '14d', '30d'].map((r, i) => (
           <span
             key={r}
-            className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 ${
+            className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
               i === 1
-                ? 'bg-primary text-white shadow-sm shadow-primary/20'
-                : 'bg-primary/8 text-primary/70 hover:bg-primary/15'
+                ? 'bg-primary text-white shadow-md shadow-primary/25'
+                : 'bg-primary/8 text-primary/60 hover:bg-primary/15 hover:text-primary/80'
             }`}
           >
             {r}
           </span>
         ))}
       </div>
-      <ul className="space-y-2.5">
+
+      <ul className="space-y-2 relative">
         {triggers.map((t) => (
           <li
             key={t.topic}
-            className="flex items-center justify-between rounded-xl border border-primary/10 bg-white px-4 py-3.5 shadow-sm transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5"
+            className="rounded-xl border border-primary/10 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group"
           >
-            <span className="text-sm font-semibold text-text-primary">{t.topic}</span>
-            <span
-              className={`text-sm font-bold ${
-                t.dir === 'up' ? 'text-rose-500' : 'text-emerald-600'
-              }`}
-            >
-              {t.shift}
-            </span>
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2.5">
+                <span className="text-sm">{t.emoji}</span>
+                <span className="text-sm font-semibold text-text-primary">{t.topic}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
+                    t.dir === 'up'
+                      ? 'bg-rose-50 text-rose-500'
+                      : 'bg-emerald-50 text-emerald-600'
+                  }`}
+                >
+                  {t.dir === 'up' ? '↑' : '↓'}
+                </span>
+                <span
+                  className={`text-sm font-bold ${
+                    t.dir === 'up' ? 'text-rose-500' : 'text-emerald-600'
+                  }`}
+                >
+                  {t.shift}
+                </span>
+              </div>
+            </div>
+            <div className="h-1.5 rounded-full bg-primary/[0.06] overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110"
+                style={{
+                  width: `${t.bar * 100}%`,
+                  background:
+                    t.dir === 'up'
+                      ? 'linear-gradient(90deg, hsl(350, 70%, 72%), hsl(340, 75%, 58%))'
+                      : 'linear-gradient(90deg, hsl(160, 60%, 65%), hsl(155, 65%, 50%))',
+                }}
+              />
+            </div>
           </li>
         ))}
       </ul>
+
+      <p className="text-[10px] text-text-muted italic mt-4 pt-3 border-t border-primary/8 relative">
+        Top trigger: Work — strongest correlation with elevated stress
+      </p>
     </div>
   );
 }
