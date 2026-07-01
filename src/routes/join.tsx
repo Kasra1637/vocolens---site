@@ -839,7 +839,7 @@ const joinPageStyles = `
   .join-testimonials {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 2rem 5rem;
+    padding: 5rem 2rem;
   }
 
   .join-testimonial-grid {

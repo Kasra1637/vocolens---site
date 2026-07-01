@@ -33,7 +33,7 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="max-w-4xl mx-auto px-6 py-20 lg:py-28">
+    <section id="faq" className="max-w-4xl mx-auto px-6 py-16 lg:py-24">
       <AnimatedSection animation="fade-in-up" className="text-center mb-12">
         <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />

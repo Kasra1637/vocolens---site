@@ -37,7 +37,7 @@ const features = [
 
 export function PrivacySection() {
   return (
-    <section id="privacy" className="relative overflow-hidden py-28 lg:py-36">
+    <section id="privacy" className="relative overflow-hidden py-20 lg:py-28">
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1230] via-[#1e1638] to-[#120d25]" />
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-60 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-primary-light/8 rounded-full blur-[100px] opacity-40 pointer-events-none" />

@@ -4,7 +4,7 @@ import { useNavigate } from '@tanstack/react-router';
 export function Resources() {
   const navigate = useNavigate();
   return (
-    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 py-16 lg:py-24">
+    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

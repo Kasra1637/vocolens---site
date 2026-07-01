@@ -1,9 +1,9 @@
-import { Shield, Eye, Lock, Database, Users, Globe, Trash2, FileText, AlertCircle, Smartphone, Bell, Activity } from 'lucide-react';
+import { Shield, Eye, Lock, Database, Users, Globe, Trash2, FileText, CircleAlert as AlertCircle, Smartphone, Bell, Activity } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 export function PrivacyPolicy() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24">
+    <section className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <AnimatedSection animation="fade-in-up">
         <div className="text-center mb-12">
           <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">

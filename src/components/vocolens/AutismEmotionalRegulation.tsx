@@ -95,7 +95,7 @@ export function AutismEmotionalRegulation() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 py-16 lg:py-24"
+      className="max-w-3xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24"
     >
       <script
         type="application/ld+json"
