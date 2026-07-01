@@ -662,7 +662,7 @@ const features: Feature[] = [
     id: 'weekly-reflection',
     eyebrow: 'Weekly reflection',
     icon: BookOpenText,
-    headline: 'Your week, told back to you like a story you can finally understand.',
+    headline: 'Your week, told back to you as a story.',
     body:
       'Each week, Vocolens reads your entries and writes a personal narrative — key themes, growth, one encouraging line ahead. Never summarise your own feelings again.',
     outcome:
@@ -673,7 +673,7 @@ const features: Feature[] = [
     id: 'mood-story',
     eyebrow: 'Mood story',
     icon: BarChart3,
-    headline: 'See which emotion runs each day of your week.',
+    headline: 'See which emotion rules each day this week.',
     body:
       'Trust on Monday. Anticipation on Wednesday. Happiness on Saturday. Vocolens maps your dominant emotion to every weekday. See what\u2019s rising, fading, and shifting.',
     outcome: 'Know your emotional rhythm by day — and plan your life around it.',
@@ -683,7 +683,7 @@ const features: Feature[] = [
     id: 'explore-deeper',
     eyebrow: 'Explore deeper',
     icon: ChevronDownCircle,
-    headline: 'Go as deep as you want. Or don\u2019t. Both are fine.',
+    headline: 'Go as deep as you want. Or don\u2019t.',
     body:
       'Three sections by default \u2014 enough to understand your week. Want more? Tap \u201CExplore deeper\u201D for landscape mapping, body heatmap, and pattern detection. It waits for you.',
     outcome:
@@ -705,7 +705,7 @@ const features: Feature[] = [
     id: 'body-map',
     eyebrow: 'Body sensation map',
     icon: Activity,
-    headline: 'Your body keeps score. Now you can finally read it.',
+    headline: 'Your body keeps score. Now you can read it.',
     body:
       'Tap where you felt it — chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature. Often the first warning sign, days before your mood catches up.',
     outcome: 'Catch the burnout in your chest before it reaches your head.',
@@ -735,7 +735,7 @@ const features: Feature[] = [
     id: 'themes',
     eyebrow: 'Emotional themes',
     icon: Repeat,
-    headline: 'The story you keep telling yourself on repeat.',
+    headline: 'The story you keep telling on repeat.',
     body:
       'Certain topics keep resurfacing. Vocolens ranks them and offers one concrete micro-action for your top theme — so patterns become choices, not loops.',
     outcome: 'See the narrative. Then decide if you want to keep writing it.',
@@ -745,7 +745,7 @@ const features: Feature[] = [
     id: 'time-of-day',
     eyebrow: 'Time of day',
     icon: Clock,
-    headline: 'Morning you and evening you are different people. Now you have proof.',
+    headline: 'Morning you and evening you are different.',
     body:
       'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour — turning timestamps you already left into patterns you can act on.',
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
