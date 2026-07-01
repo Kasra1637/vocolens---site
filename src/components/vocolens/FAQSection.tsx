@@ -9,11 +9,11 @@ const faqs = [
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "Vocolens uses advanced multimodal AI to simultaneously analyze both the words you speak and the tone of your voice (prosody). It maps your feelings to 8 core psychology-backed emotions and places them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
+    a: "Vocolens uses advanced AI to analyze the words and language in your journal transcript. It detects emotions from your word choice, phrasing, and narrative context — mapping your feelings to 8 core psychology-backed emotions and placing them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing tools. If the app detects moderate or high distress during your entry, it immediately surfaces grounding exercises—like 4-7-8 breathing and sensory grounding—to help you regulate your emotions in the moment."
+    a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing tools. If the app detects moderate or high distress during your entry, it immediately surfaces grounding exercises—like box breathing and 5-4-3-2-1 sensory grounding—to help you regulate your emotions in the moment."
   },
   {
     q: "How much does it cost, and are there limits on how much I can record?",
