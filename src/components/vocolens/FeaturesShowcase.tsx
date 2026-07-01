@@ -199,18 +199,68 @@ function MoodStoryVisual() {
 }
 
 function ExploreDeeperVisual() {
+  const visibleSections = [
+    { name: 'Journal calendar', icon: CalendarDays, color: '#8E6BFF' },
+    { name: 'Weekly reflection', icon: BookOpenText, color: '#F97316' },
+    { name: 'Mood story', icon: BarChart3, color: '#06B6D4' },
+  ];
+  const hiddenSections = [
+    'Emotional landscape', 'Body map', 'Deep insights', 'Triggers',
+    'Themes', 'Time of day', 'Growth moments',
+  ];
+
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <div className="space-y-3 mb-4">
-        {['Journal calendar', 'Weekly reflection', 'Mood story'].map((s) => (
-          <div key={s} className="rounded-xl border border-primary/15 bg-white px-4 py-3 flex items-center justify-between shadow-sm transition-all duration-200 hover:border-primary/30 hover:-translate-y-0.5">
-            <span className="text-sm font-semibold text-text-primary">{s}</span>
-            <span className="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">Visible</span>
-          </div>
-        ))}
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+      <div className="absolute -top-8 -right-8 w-24 h-24 bg-emerald-100/30 rounded-full blur-2xl pointer-events-none" />
+
+      <div className="flex items-center justify-between mb-4 relative">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+          Your dashboard
+        </p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+          3 of 10 active
+        </span>
       </div>
-      <button className="w-full rounded-xl border border-dashed border-primary/30 bg-primary/[0.04] px-4 py-3.5 flex items-center justify-center gap-2 text-primary text-sm font-semibold transition-all duration-200 hover:bg-primary/[0.08] hover:border-primary/50">
-        <ChevronDownCircle className="w-4 h-4" />
+
+      <div className="space-y-2.5 mb-5 relative">
+        {visibleSections.map((s) => {
+          const Icon = s.icon;
+          return (
+            <div
+              key={s.name}
+              className="rounded-xl border border-primary/12 bg-white px-4 py-3 flex items-center justify-between shadow-sm transition-all duration-200 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group"
+            >
+              <div className="flex items-center gap-3">
+                <span
+                  className="w-7 h-7 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover:scale-110"
+                  style={{ background: `${s.color}15` }}
+                >
+                  <Icon className="w-3.5 h-3.5" style={{ color: s.color }} />
+                </span>
+                <span className="text-sm font-semibold text-text-primary">{s.name}</span>
+              </div>
+              <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                Visible
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="relative mb-4">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+        <div className="pt-4 flex flex-wrap gap-1.5">
+          {hiddenSections.map((s) => (
+            <span key={s} className="text-[10px] px-2 py-1 rounded-md bg-primary/[0.04] text-text-muted font-medium border border-primary/8">
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <button className="w-full rounded-xl border border-dashed border-primary/25 bg-gradient-to-r from-primary/[0.03] to-primary/[0.06] px-4 py-3.5 flex items-center justify-center gap-2.5 text-primary text-sm font-semibold transition-all duration-300 hover:bg-primary/[0.08] hover:border-primary/40 hover:shadow-sm group relative">
+        <ChevronDownCircle className="w-4.5 h-4.5 transition-transform duration-300 group-hover:translate-y-0.5" />
         Explore deeper · 7 more
       </button>
     </div>
