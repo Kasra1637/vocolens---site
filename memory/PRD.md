@@ -41,9 +41,16 @@ User requested specific rewording of 7 titles and asked to NOT add trailing peri
 6. Emotional triggers — "Learn what keeps setting you off" (was "Name the thing that keeps setting you off.")
 7. Time of day — "Track your mood by time of the day" (was "Morning you and evening you are different.")
 
-Unchanged (not requested this round): Emotional landscape, Body sensation map, Deep insights — still retain trailing periods from earlier copy (user did not ask to change these in this iteration).
+Unchanged (not requested this round): Emotional landscape — still retains trailing period from earlier copy (user did not ask to change this in this iteration).
 
 Verified visually via screenshot — all new titles render correctly, no trailing periods, no layout regressions.
+
+### 2026-02 — Follow-up: 3 More Title Rewordings
+1. Time of day — "Track your mood by the hour" (was "Track your mood by time of the day")
+2. Deep insights — "Clear insights without any noise" (was "An AI that studied you — not a textbook.")
+3. Body sensation map — "Track your emotions in your body" (was "Your body keeps score. Now you can read it.")
+
+Only "Emotional landscape" ("Plot yourself on the map of how humans feel.") retains its original title/period, not requested to change yet. Verified visually via screenshot — renders correctly, no layout regressions.
 
 ## Environment Notes
 - Supervisor config in this container expects `/app/frontend` + `/app/backend` (standard template) — does NOT match this project's structure. `frontend`/`backend` supervisor programs are in FATAL state (ENOENT) — this is pre-existing and unrelated to this change.

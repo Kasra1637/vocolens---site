@@ -705,7 +705,7 @@ const features: Feature[] = [
     id: 'body-map',
     eyebrow: 'Body sensation map',
     icon: Activity,
-    headline: 'Your body keeps score. Now you can read it.',
+    headline: 'Track your emotions in your body',
     body:
       'Tap where you felt it — chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature. Often the first warning sign, days before your mood catches up.',
     outcome: 'Catch the burnout in your chest before it reaches your head.',
@@ -715,7 +715,7 @@ const features: Feature[] = [
     id: 'deep-insights',
     eyebrow: 'Deep insights',
     icon: Sparkles,
-    headline: 'An AI that studied you — not a textbook.',
+    headline: 'Clear insights without any noise',
     body:
       'One insight at a time — no dashboard noise. Vocolens surfaces the single most important pattern from your entries: a loop, a growth moment, or a gentle warning. Dig deeper when ready.',
     outcome: 'Personalised emotional intelligence that respects your bandwidth.',
@@ -745,7 +745,7 @@ const features: Feature[] = [
     id: 'time-of-day',
     eyebrow: 'Time of day',
     icon: Clock,
-    headline: 'Track your mood by time of the day',
+    headline: 'Track your mood by the hour',
     body:
       'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour — turning timestamps you already left into patterns you can act on.',
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
