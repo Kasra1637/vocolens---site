@@ -746,7 +746,7 @@ const features: Feature[] = [
     icon: Clock,
     headline: 'Morning you and evening you are different people. Now you have proof.',
     body:
-      'Vocolens breaks your emotional profile by time slot. See which hours your mood peaks, which hours it dips, and where your entries cluster. The data was always in your timestamps — now it\u2019s visible.',
+      'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour — turning timestamps you already left into patterns you can act on.',
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
     visual: <TimeOfDayVisual />,
   },
