@@ -653,7 +653,7 @@ const features: Feature[] = [
     icon: CalendarDays,
     headline: 'You showed up. That\u2019s the whole point.',
     body:
-      'No streaks. No guilt. Just dots on a calendar — each one proof you checked in with yourself. Vocolens counts the days you showed up this month, your total days journaled, and your longest run. Miss a day? Nothing breaks. Come back whenever. The calendar celebrates presence, not perfection.',
+      'No streaks. No guilt. Just dots on a calendar — proof you showed up for yourself. Miss a day? Nothing breaks. Come back whenever. It celebrates presence, not perfection.',
     outcome: '\u201CI journaled 14 times this month without once feeling like I failed.\u201D',
     visual: <CalendarVisual />,
   },
