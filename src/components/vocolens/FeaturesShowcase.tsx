@@ -827,7 +827,7 @@ export function FeaturesShowcase() {
       <FeatureNav activeId={activeFeature} />
 
       {/* Feature sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-16 lg:pb-24 space-y-20 lg:space-y-32">
+      <div className="max-w-6xl mx-auto px-6 pb-20 lg:pb-32 space-y-28 lg:space-y-40">
         {features.map((f, i) => {
           const Icon = f.icon;
           const reverse = i % 2 === 1;
