@@ -7,22 +7,35 @@ import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
 import { PrivacySection } from '@/components/vocolens/PrivacySection';
 import { FAQSection } from '@/components/vocolens/FAQSection';
 
+const speakableLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://vocolens.com",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["#hero-heading", "#hero-subheading"],
+  },
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds — ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
+      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
       { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { property: "og:description", content: "An AI voice journal built for neurodivergent minds. Speak your emotions, track patterns, and understand yourself — designed for ADHD, autism, and alexithymia." },
+      { property: "og:description", content: "An AI voice journal built for neurodivergent minds. Speak your mind, track patterns, and understand yourself - designed for ADHD, autism, and alexithymia." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "twitter:description", content: "An AI voice journal built for neurodivergent minds. Speak your emotions, track patterns, and understand yourself — designed for ADHD, autism, and alexithymia." },
+      { name: "twitter:description", content: "An AI voice journal built for neurodivergent minds. Speak your mind, track patterns, and understand yourself - designed for ADHD, autism, and alexithymia." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(speakableLd) },
+    ],
   }),
   component: Home,
 });
@@ -34,14 +47,14 @@ function Home() {
         <div className="grid lg:grid-cols-2 gap-0 items-center">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontSize: 'clamp(36px, 8vw, 58px)', color: '#1e293b' }}>
+              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontSize: 'clamp(36px, 8vw, 58px)', color: '#1e293b' }}>
                 <span className="block">AI voice journal</span>
                 <span className="block">that reflects</span>
                 <span className="block"><span className="font-bold" style={{ color: '#1e293b' }}>your true self</span></span>
               </h1>
             </div>
-            <p className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
-              Detect and name emotions your mind overlooks — powered by AI voice analysis.
+            <p id="hero-subheading" className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
+              Detect and name emotions your mind overlooks - powered by AI voice analysis.
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
