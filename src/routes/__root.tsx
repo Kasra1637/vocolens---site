@@ -78,7 +78,7 @@ const softwareApplicationLd = {
   screenshot: ["https://vocolens.com/vocolens_app.png", "https://vocolens.com/vocolens_mobile.png"],
   image: "https://vocolens.com/vocolens_-_preview.png",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
-  description: "Vocolens is an AI voice journal for ADHD, autism, and alexithymia. Speak your emotions, track mood patterns, and gain emotional clarity.",
+  description: "Vocolens is an AI voice journal for ADHD, autism, and alexithymia. Speak your mind, track mood patterns, and gain emotional clarity.",
   featureList: [
     "AI emotional analysis",
     "Voice-first journaling",
@@ -93,6 +93,33 @@ const softwareApplicationLd = {
   publisher: { "@type": "Organization", name: "Vocolens", url: "https://vocolens.com" },
 };
 
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vocolens",
+  url: "https://vocolens.com",
+  logo: "https://vocolens.com/logo_vocolens.png",
+  description: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia.",
+  sameAs: [
+    "https://www.instagram.com/vocolensapp/",
+    "https://www.youtube.com/@vocolens",
+    "https://www.linkedin.com/company/vocolens/",
+    "https://www.tiktok.com/@vocolensapp",
+  ],
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Vocolens",
+  url: "https://vocolens.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://vocolens.com/resources?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -103,14 +130,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
       { property: "og:site_name", content: "Vocolens" },
       { property: "og:locale", content: "en_US" },
-      { title: "Lovable App" },
-      { property: "og:title", content: "Lovable App" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "description", content: "Migrates GitHub landing pages to Lovable.dev, preserving design and layout." },
-      { property: "og:description", content: "Migrates GitHub landing pages to Lovable.dev, preserving design and layout." },
-      { name: "twitter:description", content: "Migrates GitHub landing pages to Lovable.dev, preserving design and layout." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1d7d2db2-2015-4c9f-b3a8-229805f2d67b/id-preview-fb42194f--4719ade5-ecb4-4b38-b698-fe194fbf0322.lovable.app-1778480885160.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1d7d2db2-2015-4c9f-b3a8-229805f2d67b/id-preview-fb42194f--4719ade5-ecb4-4b38-b698-fe194fbf0322.lovable.app-1778480885160.png" },
+      { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { name: "twitter:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
+      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
+      { property: "og:description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
+      { name: "twitter:description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
+      { property: "og:image", content: "https://vocolens.com/vocolens_-_preview.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens_-_preview.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],
@@ -130,6 +157,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(softwareApplicationLd) },
+      { type: "application/ld+json", children: JSON.stringify(organizationLd) },
+      { type: "application/ld+json", children: JSON.stringify(websiteLd) },
     ],
   }),
   shellComponent: RootShell,

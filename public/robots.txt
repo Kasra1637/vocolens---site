@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://vocolens.com/sitemap.xml
 LLMs: https://vocolens.com/llms.txt
+LLMs-Full: https://vocolens.com/llms-full.txt
