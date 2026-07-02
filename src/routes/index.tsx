@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds — ADHD, autism, and alexithymia. Speak your emotions, see patterns, and gain clarity. Launching soon." },
+      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds — ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
       { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
       { property: "og:description", content: "An AI voice journal built for neurodivergent minds. Speak your emotions, track patterns, and understand yourself — designed for ADHD, autism, and alexithymia." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
