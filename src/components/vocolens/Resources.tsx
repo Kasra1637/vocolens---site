@@ -1,4 +1,4 @@
-import { Brain, Clock, BookOpen, Radar, Activity, Puzzle } from 'lucide-react';
+import { Brain, Clock, BookOpen, Radar, Activity, Puzzle, Heart } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 
 export function Resources() {
@@ -275,6 +275,65 @@ export function Resources() {
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
                     Autism · Alexithymia · Emotional Regulation
+                  </span>
+                </div>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <article
+          itemScope
+          itemType="https://schema.org/Article"
+          className="w-full mt-8"
+        >
+          <meta itemProp="url" content="https://vocolens.com/resources/alexithymia-emotional-vocabulary" />
+          <meta itemProp="datePublished" content="2026-06-28" />
+          <meta itemProp="dateModified" content="2026-06-28" />
+          <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
+          <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <button
+            onClick={() => navigate({ to: '/resources/alexithymia-emotional-vocabulary' })}
+            aria-label="Read: Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary"
+            className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
+                <Heart className="w-7 h-7 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                    Neuroscience &amp; Emotional Intelligence
+                  </span>
+                  <span className="flex items-center gap-1 text-sm text-text-muted">
+                    <Clock className="w-3 h-3" />
+                    6 min read
+                  </span>
+                </div>
+                <h2
+                  itemProp="headline"
+                  className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                >
+                  Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary
+                </h2>
+                <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
+                  Around 10% of people struggle to identify and describe their own emotions — a trait called alexithymia. Learn the neuroscience of emotional blindness, why traditional journaling fails, and how AI-assisted voice journaling creates a personal emotional vocabulary from scratch.
+                </p>
+                <div className="flex items-center justify-between mt-5">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Read article
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                  <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
+                    Alexithymia · Emotional Vocabulary · AI Journaling
                   </span>
                 </div>
               </div>
