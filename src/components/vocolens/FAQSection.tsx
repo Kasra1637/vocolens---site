@@ -32,8 +32,25 @@ export function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(({ q, a }) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": a,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="max-w-4xl mx-auto px-6 py-16 lg:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <AnimatedSection animation="fade-in-up" className="text-center mb-12">
         <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />

@@ -1,0 +1,100 @@
+# Vocolens (Full Reference)
+
+> AI voice journal for ADHD, autism, and alexithymia. Speak your mind, track mood patterns, and gain emotional clarity.
+
+This is the expanded reference file for Vocolens, intended for AI systems and answer engines that need deeper context than llms.txt provides. See https://vocolens.com/llms.txt for the condensed version.
+
+## About
+
+Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak, and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
+
+- Website: https://vocolens.com
+- Platform: Android
+- Price: Free
+- Category: Health & Mental Wellness
+- Application category: HealthApplication / Mental Wellness
+
+## Frequently Asked Questions
+
+Q: Is my voice and journal data private and secure?
+A: Yes. Journal entries are stored locally on-device with no cloud sync or server-side backup. The app is protected by biometric authentication (Face ID or Fingerprint) and a PIN. Users can export or permanently delete their data at any time.
+
+Q: How does the AI actually know what I'm feeling?
+A: Vocolens analyzes the words and language in a journal transcript to detect emotions from word choice, phrasing, and narrative context, mapping feelings to 8 core psychology-backed emotions on a 2D scale of pleasantness and energy. An on-device personalization AI learns from user corrections to build a unique emotional fingerprint over time.
+
+Q: What makes Vocolens different from other journaling apps?
+A: Most journaling apps require writing. Vocolens lets users speak instead, detects emotions from their words, learns from corrections, and builds a personal emotional map. It is designed specifically for neurodivergent brains that think faster than they can type.
+
+Q: What happens if the AI gets my emotion wrong?
+A: Users can correct the emotion label, and the AI remembers the correction, reducing that mistake in the future. Corrections build a personalized emotional vocabulary unique to each user.
+
+Q: Is this a replacement for therapy or mental health support?
+A: No. Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. It includes built-in wellbeing tools such as grounding exercises (box breathing, 5-4-3-2-1 sensory grounding) that surface automatically if moderate or high distress is detected during an entry.
+
+## Features (Detailed)
+
+1. Journal Calendar - "Easily track your progress." A visual mood calendar showing daily entries and emotional patterns over time, focused on presence rather than streaks.
+2. Weekly Reflection - "View your weekly mood story." An AI-generated narrative summary of the user's emotional week, highlighting patterns and shifts.
+3. Mood Story - "See which emotion dominates your days." Daily dominant emotion tracking visualized across the week.
+4. Explore Deeper - "Go as deep as you want." Flexible depth of analysis, from quick check-ins to deep emotional exploration.
+5. Emotional Landscape - "Mapping your mood in one chart." Plutchik's wheel-based emotion mapping showing the full spectrum of feelings.
+6. Body Sensation Map - "Track your physical feelings." A somatic awareness tool mapping where emotions manifest physically in the body, based on interoception research.
+7. Deep Insights - "Clear insights without any noise." Personalized AI insights that learn the user's emotional dialect rather than generic textbook responses.
+8. Emotional Triggers - "Learn what keeps setting you off." Pattern recognition identifying recurring emotional triggers and their contexts.
+9. Emotional Themes - "Your emotional narrative." Recurring emotional patterns and stories surfaced from journal entries over time.
+10. Time of Day - "Track your mood by the hour." Temporal mood analysis showing how emotions shift throughout the day.
+
+## Who It's For
+
+- People with ADHD who think faster than they can write
+- Autistic individuals seeking better emotional self-understanding and regulation
+- People with alexithymia (difficulty identifying and describing emotions), affecting roughly 10% of people
+- Anyone who finds traditional journaling frustrating or inaccessible
+- Neurodivergent individuals wanting to understand their emotional patterns
+
+## Science & Approach
+
+Vocolens is grounded in emotion science including:
+- Plutchik's wheel of emotions for granular emotion mapping beyond "happy/sad" categories
+- Lieberman (2007) affect labeling research showing that naming emotions reduces amygdala activity and calms the nervous system
+- Interoception research on how the body registers distress before conscious awareness
+- Metacognitive pattern recognition for building emotional intelligence over time
+
+## Resource Articles
+
+1. "How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience" - https://vocolens.com/resources/science-of-reflection
+   Explains Lieberman's affect labeling research and how daily voice journaling reduces anxiety and builds resilience.
+
+2. "Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding" - https://vocolens.com/resources/emotional-awareness-patterns
+   Explains metacognitive awareness and pattern recognition for identifying triggers and behavioral cycles.
+
+3. "How Your Body Tells You Are Overwhelmed Before Your Mind Does" - https://vocolens.com/resources/distress-detection
+   Explains interoception and how body-sensation mapping helps catch overwhelm before it escalates.
+
+4. "Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions" - https://vocolens.com/resources/autism-emotional-regulation
+   Explains alexithymia, sensory overload, and meltdown cycles in autistic adults and how voice journaling helps.
+
+5. "Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
+   Explains the neuroscience of alexithymia and how AI-assisted voice journaling builds emotional vocabulary from scratch.
+
+## Pages
+
+- Home: https://vocolens.com/
+- Features: https://vocolens.com/features
+- Use Cases: https://vocolens.com/use-cases
+- Resources: https://vocolens.com/resources
+- Science of Reflection: https://vocolens.com/resources/science-of-reflection
+- Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
+- Distress Detection: https://vocolens.com/resources/distress-detection
+- Autism & Emotional Regulation: https://vocolens.com/resources/autism-emotional-regulation
+- Alexithymia & Emotional Vocabulary: https://vocolens.com/resources/alexithymia-emotional-vocabulary
+- Privacy Policy: https://vocolens.com/privacy
+- Terms of Service: https://vocolens.com/terms
+- Join Waitlist: https://vocolens.com/join
+
+## Contact & Social
+
+- Instagram: https://www.instagram.com/vocolensapp/
+- YouTube: https://www.youtube.com/@vocolens
+- LinkedIn: https://www.linkedin.com/company/vocolens/
+- TikTok: https://www.tiktok.com/@vocolensapp

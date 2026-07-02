@@ -81,3 +81,7 @@ Vocolens is grounded in emotion science including Plutchik's wheel of emotions, 
 - YouTube: https://www.youtube.com/@vocolens
 - LinkedIn: https://www.linkedin.com/company/vocolens/
 - TikTok: https://www.tiktok.com/@vocolensapp
+
+## Full Reference
+
+For expanded content including FAQs, article summaries, and detailed feature descriptions, see: https://vocolens.com/llms-full.txt
