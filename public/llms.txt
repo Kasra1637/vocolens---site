@@ -1,0 +1,83 @@
+# Vocolens
+
+> AI voice journal for ADHD, autism, and alexithymia. Speak your emotions, track mood patterns, and gain emotional clarity.
+
+## About
+
+Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak — and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
+
+- Website: https://vocolens.com
+- Platform: Android (launching soon)
+- Price: Free
+- Category: Health & Mental Wellness
+
+## Core Value Proposition
+
+- Voice-first journaling removes barriers between thought and expression
+- AI emotional analysis detects emotions users may not recognize themselves
+- Neurodivergent-friendly design accommodates racing thoughts, executive function challenges, and alexithymia
+- Private by design — your data stays yours
+- Flawlessly accurate transcription captures every word
+
+## Features
+
+### Journal Calendar
+Easily track your progress. Visual mood calendar showing daily entries and emotional patterns over time.
+
+### Weekly Reflection
+View your weekly mood story. AI-generated narrative summary of your emotional week, highlighting patterns and shifts.
+
+### Mood Story
+See which emotion dominates your days. Daily dominant emotion tracking visualized across the week.
+
+### Explore Deeper
+Go as deep as you want. Flexible depth of analysis — from quick check-ins to deep emotional exploration.
+
+### Emotional Landscape
+Mapping your mood in one chart. Plutchik's wheel-based emotion mapping showing the full spectrum of your feelings.
+
+### Body Sensation Map
+Track your physical feelings. Somatic awareness tool mapping where emotions manifest physically in your body.
+
+### Deep Insights
+Clear insights without any noise. Personalized AI insights that learn your emotional dialect — not generic textbook responses.
+
+### Emotional Triggers
+Learn what keeps setting you off. Pattern recognition identifying recurring emotional triggers and their contexts.
+
+### Emotional Themes
+Your emotional narrative. Recurring emotional patterns and stories surfaced from your journal entries over time.
+
+### Time of Day
+Track your mood by the hour. Temporal mood analysis showing how emotions shift throughout your day.
+
+## Who It's For
+
+- People with ADHD who think faster than they can write
+- Autistic individuals seeking better emotional self-understanding
+- People with alexithymia who struggle to identify and name emotions
+- Anyone who finds traditional journaling frustrating or inaccessible
+- Neurodivergent individuals wanting to understand their emotional patterns
+
+## Science & Approach
+
+Vocolens is grounded in emotion science including Plutchik's wheel of emotions, somatic awareness research, and AI voice analysis. The app provides granular emotion mapping beyond simple "happy/sad" categories, helping users develop emotional vocabulary and self-awareness over time.
+
+## Pages
+
+- Home: https://vocolens.com/
+- Features: https://vocolens.com/features
+- Resources: https://vocolens.com/resources
+- Science of Reflection: https://vocolens.com/resources/science-of-reflection
+- Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
+- Distress Detection: https://vocolens.com/resources/distress-detection
+- Privacy Policy: https://vocolens.com/privacy
+- Terms of Service: https://vocolens.com/terms
+- Join Waitlist: https://vocolens.com/join
+
+## Contact & Social
+
+- Instagram: https://www.instagram.com/vocolensapp/
+- YouTube: https://www.youtube.com/@vocolens
+- LinkedIn: https://www.linkedin.com/company/vocolens/
+- TikTok: https://www.tiktok.com/@vocolensapp

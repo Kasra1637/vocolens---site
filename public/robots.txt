@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vocolens.com/sitemap.xml
+LLMs: https://vocolens.com/llms.txt
