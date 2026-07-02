@@ -4,10 +4,10 @@
 
 ## About
 
-Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak — and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
+Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak - and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
 
 - Website: https://vocolens.com
-- Platform: Android (launching soon)
+- Platform: Android
 - Price: Free
 - Category: Health & Mental Wellness
 
@@ -16,7 +16,7 @@ Vocolens is an AI-powered voice journaling app designed specifically for neurodi
 - Voice-first journaling removes barriers between thought and expression
 - AI emotional analysis detects emotions users may not recognize themselves
 - Neurodivergent-friendly design accommodates racing thoughts, executive function challenges, and alexithymia
-- Private by design — your data stays yours
+- Private by design - your data stays yours
 - Flawlessly accurate transcription captures every word
 
 ## Features
@@ -31,7 +31,7 @@ View your weekly mood story. AI-generated narrative summary of your emotional we
 See which emotion dominates your days. Daily dominant emotion tracking visualized across the week.
 
 ### Explore Deeper
-Go as deep as you want. Flexible depth of analysis — from quick check-ins to deep emotional exploration.
+Go as deep as you want. Flexible depth of analysis - from quick check-ins to deep emotional exploration.
 
 ### Emotional Landscape
 Mapping your mood in one chart. Plutchik's wheel-based emotion mapping showing the full spectrum of your feelings.
@@ -40,7 +40,7 @@ Mapping your mood in one chart. Plutchik's wheel-based emotion mapping showing t
 Track your physical feelings. Somatic awareness tool mapping where emotions manifest physically in your body.
 
 ### Deep Insights
-Clear insights without any noise. Personalized AI insights that learn your emotional dialect — not generic textbook responses.
+Clear insights without any noise. Personalized AI insights that learn your emotional dialect - not generic textbook responses.
 
 ### Emotional Triggers
 Learn what keeps setting you off. Pattern recognition identifying recurring emotional triggers and their contexts.
