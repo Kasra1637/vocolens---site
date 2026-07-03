@@ -579,7 +579,6 @@ function JoinPage() {
           {/* HERO */}
           <section className="join-hero" id="waitlist">
             <CountdownBanner />
-            <div className="join-eyebrow">Private beta — launching soon</div>
 
             <h1 className="join-h1">
               Your thoughts finally have<br />
