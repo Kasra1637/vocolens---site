@@ -23,6 +23,16 @@ export const Route = createFileRoute("/join")({
         content: "https://vocolens.com/vocolens_-_preview.png",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Vocolens — Join the Waitlist" },
+      {
+        name: "twitter:description",
+        content:
+          "A voice journal built for minds that move fast and feel deeply. Join the Vocolens waitlist.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://vocolens.com/vocolens_-_preview.png",
+      },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/join" }],
   }),
@@ -272,6 +282,179 @@ function FiveStars() {
   );
 }
 
+/* ─── Social Share Icons ─── */
+function XIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 16, height: 16 }}>
+      <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 18, height: 18 }}>
+      <path
+        d="M11 6.2H9.9c-.5 0-.9.4-.9.9V8.3H11l-.3 1.6H9v4.4H7.3V9.9H6V8.3h1.3V6.9c0-1.3 1-2.4 2.3-2.4H11v1.7z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 16, height: 16 }}>
+      <rect x="3" y="7" width="2.4" height="7" fill="currentColor" />
+      <circle cx="4.2" cy="4.2" r="1.3" fill="currentColor" />
+      <path
+        d="M8 7h2.3v1.1c.4-.6 1.1-1.3 2.4-1.3 1.8 0 3 1.2 3 3.6V14h-2.4v-3.2c0-1-.4-1.7-1.4-1.7-.8 0-1.3.5-1.5 1-.1.2-.1.4-.1.7V14H8V7z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 17, height: 17 }}>
+      <path
+        d="M9 2.5a6.5 6.5 0 00-5.6 9.8L2.5 15.5l3.3-.9A6.5 6.5 0 109 2.5z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <path
+        d="M6.3 7.2c.2-.5.4-.5.6-.5h.4c.15 0 .3.05.4.3l.5 1.1c.05.15.03.3-.05.4l-.3.35c-.1.1-.1.25-.03.4.3.55.9 1.15 1.45 1.45.15.08.3.07.4-.03l.35-.3c.1-.08.25-.1.4-.05l1.1.5c.25.1.3.25.3.4v.4c0 .2 0 .4-.5.6-.5.2-1.5.3-2.7-.9-1.2-1.2-1.1-2.2-.9-2.7z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function EmailIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 17, height: 17 }}>
+      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M3 5.5l6 4.5 6-4.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function LinkChainIcon() {
+  return (
+    <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ width: 16, height: 16 }}>
+      <path
+        d="M8 10a3 3 0 004.24 0l1.5-1.5a3 3 0 00-4.24-4.24l-.76.76"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M10 8a3 3 0 00-4.24 0l-1.5 1.5a3 3 0 004.24 4.24l.76-.76"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+/* ─── Social Share Bar ─── */
+const SHARE_URL = "https://vocolens.com/join";
+const SHARE_TEXT =
+  "I just joined the waitlist for Vocolens — an AI voice journal for ADHD, autism & alexithymia. Join me:";
+
+interface ShareBarProps {
+  heading?: string;
+  subheading?: string;
+  variant?: "success" | "section";
+}
+
+function ShareBar({ heading, subheading, variant = "section" }: ShareBarProps) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = useCallback(() => {
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(SHARE_URL).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    }
+  }, []);
+
+  const encodedUrl = encodeURIComponent(SHARE_URL);
+  const encodedText = encodeURIComponent(SHARE_TEXT);
+
+  return (
+    <div className={`join-share-bar join-share-bar--${variant}`}>
+      {heading ? <p className="join-share-heading">{heading}</p> : null}
+      {subheading ? <p className="join-share-sub">{subheading}</p> : null}
+
+      <div className="join-share-icons" role="group" aria-label="Share the Vocolens waitlist">
+        <a
+          href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="join-share-btn"
+          aria-label="Share on X (Twitter)"
+        >
+          <XIcon />
+        </a>
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="join-share-btn"
+          aria-label="Share on Facebook"
+        >
+          <FacebookIcon />
+        </a>
+        <a
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="join-share-btn"
+          aria-label="Share on LinkedIn"
+        >
+          <LinkedInIcon />
+        </a>
+        <a
+          href={`https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="join-share-btn"
+          aria-label="Share on WhatsApp"
+        >
+          <WhatsAppIcon />
+        </a>
+        <a
+          href={`mailto:?subject=${encodeURIComponent("Check out Vocolens")}&body=${encodedText}%20${encodedUrl}`}
+          className="join-share-btn"
+          aria-label="Share via email"
+        >
+          <EmailIcon />
+        </a>
+        <button
+          type="button"
+          className="join-share-btn"
+          onClick={handleCopyLink}
+          aria-label="Copy waitlist link"
+        >
+          <LinkChainIcon />
+        </button>
+      </div>
+
+      <p className="join-share-copied" role="status" aria-live="polite">
+        {copied ? "Link copied!" : ""}
+      </p>
+    </div>
+  );
+}
+
 /* ─── Main Page Component ─── */
 function JoinPage() {
   const [email, setEmail] = useState("");
@@ -405,6 +588,12 @@ function JoinPage() {
                     <br />
                     We'll reach out when Vocolens is ready.
                   </p>
+
+                  <ShareBar
+                    heading="Know someone who'd love this?"
+                    subheading="Share Vocolens with your friends and family."
+                    variant="success"
+                  />
                 </div>
               )}
             </div>
@@ -496,6 +685,20 @@ function JoinPage() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <div className="join-section-divider" />
+
+          {/* SPREAD THE WORD */}
+          <section className="join-spread" aria-labelledby="spread-heading">
+            <p className="join-section-label">Spread the word</p>
+            <h2 className="join-features-heading" id="spread-heading">
+              Help more people find their clarity
+            </h2>
+            <ShareBar
+              subheading="Vocolens is built for neurodivergent minds — share it with someone who needs it."
+              variant="section"
+            />
           </section>
 
           <div className="join-section-divider" />
@@ -878,6 +1081,91 @@ const joinPageStyles = `
     color: var(--join-text-muted);
     margin-bottom: 1px;
     font-family: var(--join-sans);
+  }
+
+  /* SPREAD THE WORD */
+  .join-spread {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .join-spread .join-features-heading {
+    margin-bottom: 2rem !important;
+  }
+
+  /* SOCIAL SHARE BAR */
+  .join-share-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .join-share-bar--success {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid rgba(124, 92, 191, 0.18);
+  }
+
+  .join-share-heading {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--join-text);
+    margin-bottom: 0.35rem;
+    text-align: center;
+  }
+
+  .join-share-sub {
+    font-size: 13px;
+    color: var(--join-text-muted);
+    margin-bottom: 1.1rem;
+    text-align: center;
+    max-width: 380px;
+  }
+
+  .join-share-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .join-share-btn {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--join-purple-light);
+    background: rgba(124, 92, 191, 0.08);
+    border: 0.5px solid rgba(124, 92, 191, 0.25);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    text-decoration: none;
+    padding: 0;
+  }
+
+  .join-share-btn:hover {
+    background: rgba(124, 92, 191, 0.18);
+    border-color: rgba(124, 92, 191, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .join-share-btn:active { transform: scale(0.95); }
+
+  .join-share-btn:focus-visible {
+    outline: 2px solid var(--join-purple-light);
+    outline-offset: 2px;
+  }
+
+  .join-share-copied {
+    margin-top: 0.6rem;
+    font-size: 12px;
+    color: var(--join-purple-light);
+    min-height: 1.2em;
+    text-align: center;
   }
 
   /* BOTTOM CTA */
