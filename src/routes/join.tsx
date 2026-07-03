@@ -1056,6 +1056,13 @@ const joinPageStyles = `
     margin: 0 auto;
   }
 
+  @media (max-width: 560px) {
+    .join-trust-strip {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
   .join-trust-item {
     display: inline-flex;
     align-items: center;
