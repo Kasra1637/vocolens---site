@@ -337,8 +337,6 @@ function JoinPage() {
         <main className="join-main">
           {/* HERO */}
           <section className="join-hero" id="waitlist">
-            <div className="join-eyebrow">Private beta — launching soon</div>
-
             <h1 className="join-h1">
               Your thoughts finally have<br />
               <em>somewhere to land</em>

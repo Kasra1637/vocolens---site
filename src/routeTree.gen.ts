@@ -21,6 +21,7 @@ import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resou
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
 import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
 import { Route as ResourcesAutismEmotionalRegulationRouteImport } from './routes/resources.autism-emotional-regulation'
+import { Route as ResourcesAdhdEmotionalRegulationRouteImport } from './routes/resources.adhd-emotional-regulation'
 
 const UseCasesRoute = UseCasesRouteImport.update({
   id: '/use-cases',
@@ -86,6 +87,12 @@ const ResourcesAutismEmotionalRegulationRoute =
     path: '/autism-emotional-regulation',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesAdhdEmotionalRegulationRoute =
+  ResourcesAdhdEmotionalRegulationRouteImport.update({
+    id: '/adhd-emotional-regulation',
+    path: '/adhd-emotional-regulation',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-emotional-regulation': typeof ResourcesAdhdEmotionalRegulationRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
@@ -108,6 +116,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-emotional-regulation': typeof ResourcesAdhdEmotionalRegulationRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
@@ -123,6 +132,7 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-emotional-regulation': typeof ResourcesAdhdEmotionalRegulationRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-emotional-regulation'
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-emotional-regulation'
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
@@ -166,6 +178,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-emotional-regulation'
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
@@ -269,10 +282,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesAutismEmotionalRegulationRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/adhd-emotional-regulation': {
+      id: '/resources/adhd-emotional-regulation'
+      path: '/adhd-emotional-regulation'
+      fullPath: '/resources/adhd-emotional-regulation'
+      preLoaderRoute: typeof ResourcesAdhdEmotionalRegulationRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
   }
 }
 
 interface ResourcesRouteChildren {
+  ResourcesAdhdEmotionalRegulationRoute: typeof ResourcesAdhdEmotionalRegulationRoute
   ResourcesAutismEmotionalRegulationRoute: typeof ResourcesAutismEmotionalRegulationRoute
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
@@ -281,6 +302,7 @@ interface ResourcesRouteChildren {
 }
 
 const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesAdhdEmotionalRegulationRoute: ResourcesAdhdEmotionalRegulationRoute,
   ResourcesAutismEmotionalRegulationRoute:
     ResourcesAutismEmotionalRegulationRoute,
   ResourcesDistressDetectionRoute: ResourcesDistressDetectionRoute,
