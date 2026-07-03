@@ -461,40 +461,56 @@ function ShareBar({ heading, subheading, variant = "section" }: ShareBarProps) {
 /* ─── Countdown Banner ─── */
 const LAUNCH_DATE = new Date("2026-08-02T00:00:00");
 
-function CountdownBanner() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 60_000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="join-countdown-banner" role="timer" aria-live="polite" aria-label={`${timeLeft.days} days and ${timeLeft.hours} hours until launch`}>
-      <div className="join-countdown-inner">
-        <span className="join-countdown-label">30 days to launch</span>
-        <div className="join-countdown-blocks">
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{timeLeft.days}</span>
-            <span className="join-countdown-unit">days</span>
-          </div>
-          <span className="join-countdown-separator">:</span>
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{timeLeft.hours}</span>
-            <span className="join-countdown-unit">hours</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function getTimeLeft() {
   const now = new Date();
   const diff = Math.max(LAUNCH_DATE.getTime() - now.getTime(), 0);
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  return { days, hours };
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  return { days, hours, minutes, seconds };
+}
+
+function CountdownBanner() {
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const labelText = timeLeft.days === 0
+    ? "Launching today"
+    : `${timeLeft.days} day${timeLeft.days === 1 ? "" : "s"} to launch`;
+
+  return (
+    <div className="join-countdown-banner" role="timer" aria-live="polite" aria-label={`${timeLeft.days} days, ${timeLeft.hours} hours, ${timeLeft.minutes} minutes, and ${timeLeft.seconds} seconds until launch`}>
+      <div className="join-countdown-inner">
+        <span className="join-countdown-label">{labelText}</span>
+        <div className="join-countdown-blocks">
+          <div className="join-countdown-block">
+            <span className="join-countdown-value">{String(timeLeft.days).padStart(2, "0")}</span>
+            <span className="join-countdown-unit">days</span>
+          </div>
+          <span className="join-countdown-separator">:</span>
+          <div className="join-countdown-block">
+            <span className="join-countdown-value">{String(timeLeft.hours).padStart(2, "0")}</span>
+            <span className="join-countdown-unit">hrs</span>
+          </div>
+          <span className="join-countdown-separator">:</span>
+          <div className="join-countdown-block">
+            <span className="join-countdown-value">{String(timeLeft.minutes).padStart(2, "0")}</span>
+            <span className="join-countdown-unit">min</span>
+          </div>
+          <span className="join-countdown-separator">:</span>
+          <div className="join-countdown-block">
+            <span className="join-countdown-value">{String(timeLeft.seconds).padStart(2, "0")}</span>
+            <span className="join-countdown-unit">sec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 /* ─── Main Page Component ─── */
