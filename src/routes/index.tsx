@@ -56,7 +56,13 @@ function Home() {
             <p id="hero-subheading" className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
               Detect and name emotions your mind overlooks - powered by AI voice analysis.
             </p>
-            <div className="flex flex-nowrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
+                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                </div>
+                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Private by design</span>
+              </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
@@ -71,9 +77,9 @@ function Home() {
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Private by design</span>
+                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Granular emotion mapping</span>
               </div>
             </div>
           </AnimatedSection>
