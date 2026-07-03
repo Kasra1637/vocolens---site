@@ -1,3 +1,6 @@
+/**
+ * Waitlist / Join page — with social sharing buttons for virality.
+ */
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
 
