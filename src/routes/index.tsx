@@ -84,7 +84,6 @@ function Home() {
             </div>
           </AnimatedSection>
 
-
           <AnimatedSection animation="fade-in-right" delay={0.2} className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
             <AppDemo />
           </AnimatedSection>
@@ -158,8 +157,6 @@ function Home() {
         </AnimatedGrid>
       </section>
 
-
-
       <section id="story" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="scale-in">
           <div className="flex items-center justify-center mb-4">
@@ -218,9 +215,6 @@ function Home() {
           </div>
         </AnimatedGrid>
       </section>
-
-
-
 
       <EmotionDetection />
 
@@ -284,9 +278,7 @@ function Home() {
         </AnimatedSection>
       </section>
 
-
       <FAQSection />
-
 
       <PrivacySection />
 
