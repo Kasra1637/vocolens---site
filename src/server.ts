@@ -25,6 +25,18 @@ function brandedErrorResponse(): Response {
   });
 }
 
+// Cloudflare Workers see the scheme the client actually connected with. If a
+// request arrives over plain HTTP, force a permanent redirect to the HTTPS
+// version of the same URL so the site never serves insecure responses.
+function httpsRedirectResponse(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (url.protocol !== "http:") return null;
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1") return null;
+
+  url.protocol = "https:";
+  return Response.redirect(url.toString(), 301);
+}
+
 function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
   let payload: unknown;
   try {
@@ -68,6 +80,9 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const redirect = httpsRedirectResponse(request);
+    if (redirect) return redirect;
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
