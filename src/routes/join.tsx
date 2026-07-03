@@ -628,8 +628,6 @@ function JoinPage() {
                       <StarIcon />
                       <span>Neurodivergent-friendly</span>
                     </div>
-                    <div className="join-trust-row-break" />
-
                     <div className="join-trust-item">
                       <LockIcon />
                       <span>Private by design</span>
@@ -1051,11 +1049,10 @@ const joinPageStyles = `
   /* TRUST STRIP */
   .join-trust-strip {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 0.5rem;
     padding: 1.5rem 0 0;
-    max-width: 440px;
     margin: 0 auto;
   }
 
@@ -1070,15 +1067,6 @@ const joinPageStyles = `
     border: 0.5px solid rgba(124, 92, 191, 0.25);
     border-radius: 999px;
     white-space: nowrap;
-  }
-
-  .join-trust-row-break {
-    flex-basis: 100%;
-    height: 0;
-  }
-
-  @media (max-width: 560px) {
-    .join-trust-row-break { display: none; }
   }
 
   /* DIVIDER */
