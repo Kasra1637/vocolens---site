@@ -141,7 +141,7 @@ export function EmotionScienceSuite() {
                 <HeartPulse className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Right care, right moment</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Distress grounding, right on time</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
               </p>
@@ -169,7 +169,7 @@ export function EmotionScienceSuite() {
                 <Activity className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Where do you feel it?</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Body sensation: where do you feel it?</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
               </p>
@@ -196,7 +196,7 @@ export function EmotionScienceSuite() {
                 <Sparkles className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Learns your emotional fingerprint</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Learns from every entry you make</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren&apos;t perfectly predictable.
               </p>

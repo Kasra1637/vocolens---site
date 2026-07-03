@@ -20,16 +20,16 @@ const speakableLd = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
-      { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { property: "og:description", content: "An AI voice journal built for neurodivergent minds. Speak your mind, track patterns, and understand yourself - designed for ADHD, autism, and alexithymia." },
+      { title: "Vocolens | AI Voice Journal That Learns From Every Entry" },
+      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
+      { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
+      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "twitter:description", content: "An AI voice journal built for neurodivergent minds. Speak your mind, track patterns, and understand yourself - designed for ADHD, autism, and alexithymia." },
+      { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
+      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
@@ -210,7 +210,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
+              <h3 className="font-bold mb-3 text-xl">The breakthrough: now I just talk</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
               </p>
@@ -230,7 +230,7 @@ function Home() {
             Inside Vocolens
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
-            Ten ways to finally understand yourself
+            Inside Vocolens: ten ways to finally understand yourself
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
             Every screen has one job — turn your voice into clarity.
@@ -270,7 +270,7 @@ function Home() {
       <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
-            Be the first to try Vocolens
+            Join Waitlist to be first to try Vocolens
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
             One email when we launch. Nothing else.
