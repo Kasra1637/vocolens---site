@@ -174,7 +174,7 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <section aria-labelledby="section-metacognition">
             <h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The Power of Metacognitive Awareness: Thinking About Your Thinking
+              The power of metacognitive awareness: thinking about your thinking
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Metacognition—the ability to observe and reflect on your own thoughts and emotions—is one of the most powerful tools for personal growth. Unlike simple thinking, which is automatic and reactive, metacognitive awareness gives you the psychological distance needed to understand <em>why</em> you think and feel the way you do.
@@ -195,7 +195,7 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <section aria-labelledby="section-expressive-writing">
             <h2 id="section-expressive-writing" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Expressive Disclosure: Why Speaking Your Emotions Unlocks Insight
+              Expressive disclosure: why speaking your emotions unlocks insight
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Talking through your experiences isn't just emotionally cathartic—it's neurologically transformative. Research by Pennebaker and Beall (1986) showed that expressive writing about emotional experiences leads to measurable gains in clarity and insight into emotional patterns. Later meta-analyses by Frattaroli (2006) examining 146 studies confirmed that expressive disclosure produces lasting improvements in psychological health outcomes.
@@ -226,7 +226,7 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.35}>
           <section aria-labelledby="section-pattern-recognition">
             <h2 id="section-pattern-recognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              From Single Moments to Patterns: The Real Power of Voice Journaling
+              From single moments to patterns: the real power of voice journaling
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               An isolated emotional reaction is just data. But when you journal consistently, something remarkable happens: patterns emerge. You notice that frustration tends to spike on Monday mornings. Anxiety about judgment clusters around social situations. Energy crashes after intense focus periods.
@@ -243,7 +243,7 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.42}>
           <section aria-labelledby="section-emotional-triggers">
             <h2 id="section-emotional-triggers" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Identifying Your Emotional Triggers: The Foundation of Self-Regulation
+              Identifying your emotional triggers: the foundation of self-regulation
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               You can't regulate an emotional response you don't understand. The first step to genuine emotional control is precise trigger identification—and voice journaling accelerates this process dramatically.
@@ -263,7 +263,7 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.5}>
           <section aria-labelledby="section-accelerating-growth">
             <h2 id="section-accelerating-growth" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Accelerating Personal Growth Through Reflective Insight
+              Accelerating personal growth through reflective insight
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               The research is clear: individuals who engage in regular reflective practice—pausing to think about their experiences, emotions, and reactions—progress faster in therapy, coaching, and personal development than those who don't. Why? Because reflection bridges the gap between experience and learning.
@@ -284,7 +284,7 @@ export function EmotionalAwareness() {
                 <HelpCircle className="w-5 h-5 text-primary" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
-                Frequently Asked Questions About Emotional Awareness and Pattern Recognition
+                Frequently asked questions about emotional awareness and pattern recognition
               </h2>
             </div>
             <div className="space-y-6">
@@ -308,7 +308,7 @@ export function EmotionalAwareness() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
             <div className="space-y-4">
               <button
                 onClick={() => navigate({ to: '/resources/science-of-reflection' })}
@@ -318,7 +318,7 @@ export function EmotionalAwareness() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Naming Your Emotions Reduces Stress and Builds Resilience
+                      How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
@@ -333,7 +333,7 @@ export function EmotionalAwareness() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                      How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>

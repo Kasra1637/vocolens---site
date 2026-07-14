@@ -299,7 +299,7 @@ export function Resources() {
           </span>
           <button
             onClick={() => navigate({ to: '/resources/alexithymia-emotional-vocabulary' })}
-            aria-label="Read: Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary"
+            aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
@@ -320,7 +320,7 @@ export function Resources() {
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary
+                  Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
                   Around 10% of people struggle to identify and describe their own emotions — a trait called alexithymia. Learn the neuroscience of emotional blindness, why traditional journaling fails, and how AI-assisted voice journaling creates a personal emotional vocabulary from scratch.

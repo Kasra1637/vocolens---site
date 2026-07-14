@@ -56,7 +56,7 @@ export function FAQSection() {
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-          Frequently Asked Questions
+          Frequently asked questions
         </h2>
 
       </AnimatedSection>

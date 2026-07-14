@@ -193,7 +193,7 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <section aria-labelledby="section-neuroscience">
             <h2 id="section-neuroscience" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The Neuroscience of Emotion Labeling: How Affect Labeling Reduces Stress
+              The neuroscience of emotion labeling: how affect labeling reduces stress
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Scientific studies by <strong className="text-text-primary font-semibold">Lieberman et al. (2007)</strong> and a 2011 follow-up demonstrated that simply putting feelings into words — a process called <strong className="text-text-primary font-semibold">affect labeling</strong> — reduces activity in the amygdala, the brain's alarm center. Less amygdala activation means a calmer nervous system and a more measured emotional response.
@@ -224,7 +224,7 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <section aria-labelledby="section-vocolens-approach">
             <h2 id="section-vocolens-approach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              How Voice Journaling Applies Affect Labeling Science to Daily Life
+              How voice journaling applies affect labeling science to daily life
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               With Vocolens, you don't just record — you harness this neurological power every time you speak. The app prompts you to go beyond surface-level descriptions and precisely name what you're feeling: not just "stressed," but "overwhelmed by uncertainty," or "anxious about being judged."
@@ -245,7 +245,7 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.35}>
           <section aria-labelledby="section-worry-loops">
             <h2 id="section-worry-loops" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Breaking Anxiety Worry Loops with Structured Voice Journaling
+              Breaking anxiety worry loops with structured voice journaling
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               In today's fast-paced world, our minds often get trapped in endless loops of worry. Instead of fighting intrusive thoughts — which research shows often makes them stronger — voice journaling helps you give your brain what it truly needs: a sense of control and completion.
@@ -262,7 +262,7 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.42}>
           <section aria-labelledby="section-structured-review">
             <h2 id="section-structured-review" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Pattern Awareness and Building Long-Term Emotional Resilience
+              Pattern awareness and building long-term emotional resilience
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               The power of consistent voice journaling extends beyond individual sessions. Over time, you see patterns emerge — helping you identify when certain worries spike, which contexts trigger them, and how long they typically last. That pattern awareness is itself transformative, because you shift from reacting to individual emotional events to understanding the architecture of your emotional life.
@@ -283,7 +283,7 @@ export function ScienceOfReflection() {
                 <HelpCircle className="w-5 h-5 text-primary" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
-                Frequently Asked Questions About Voice Journaling and Stress Relief
+                Frequently asked questions about voice journaling and stress relief
               </h2>
             </div>
             <div className="space-y-6">
@@ -307,7 +307,7 @@ export function ScienceOfReflection() {
 
         <AnimatedSection animation="fade-in-up" delay={0.52}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
             <div className="space-y-4">
               <button
                 onClick={() => navigate({ to: '/resources/emotional-awareness-patterns' })}
@@ -317,7 +317,7 @@ export function ScienceOfReflection() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Mental Wellness & Self-Discovery</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      Building Emotional Awareness: How Pattern Recognition Transforms Self-Understanding
+                      Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
                   </div>
@@ -332,7 +332,7 @@ export function ScienceOfReflection() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                      How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>
