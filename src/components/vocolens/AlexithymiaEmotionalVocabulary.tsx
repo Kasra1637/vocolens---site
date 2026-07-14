@@ -200,7 +200,7 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <section aria-labelledby="section-what-is-alexithymia">
             <h2 id="section-what-is-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              So What Is Alexithymia, Exactly?
+              So what is alexithymia, exactly?
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               The term goes back to 1970, when psychiatrists <strong className="text-text-primary font-semibold">Nemiah and Sifneos</strong> noticed something odd in their patients: people who could describe a headache or a stomachache in exhaustive detail would go completely quiet the moment the question turned to feelings. Fifteen years later, Taylor, Bagby, and Parker turned that observation into something measurable — the <strong className="text-text-primary font-semibold">Toronto Alexithymia Scale (TAS-20)</strong>, still the standard tool researchers use today.
@@ -228,7 +228,7 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <section aria-labelledby="section-why-journaling-fails">
             <h2 id="section-why-journaling-fails" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Why "Just Write Down How You Feel" Doesn't Work Here
+              Why "just write down how you feel" doesn't work here
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               It's well-meaning advice, and it's also a little cruel if you think about it: <em>"Just write down how you feel."</em> That instruction quietly assumes you already have the exact thing alexithymia takes away — a working vocabulary for your inner life. It's a bit like telling someone who's never learned to read, "just look it up in the dictionary."
@@ -256,7 +256,7 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.35}>
           <section aria-labelledby="section-voice-ai-vocabulary">
             <h2 id="section-voice-ai-vocabulary" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              How Voice and AI Build a Vocabulary Out of Nothing
+              How voice and AI build a vocabulary out of nothing
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Here's where voice journaling flips the whole model on its head. Instead of needing the words first, you just talk — about what happened, how your body feels, what's rattling around in your head — and an AI listens for patterns and offers candidate emotion labels afterward. You don't need to already know the word "apprehension" to describe the tightness in your chest before a meeting. You describe the tightness. The system does the naming.
@@ -294,7 +294,7 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.42}>
           <section aria-labelledby="section-body-bridge">
             <h2 id="section-body-bridge" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              When Words Fail, the Body Is Still Talking
+              When words fail, the body is still talking
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               And when even that doesn't produce a word? The body usually still has something to say. Research on <strong className="text-text-primary font-semibold">interoception</strong> — your ability to sense internal signals like heartbeat, breath, and muscle tension — shows that physical sensations are often the earliest and most trustworthy clue to what you're actually feeling. Chest tightness. A churning stomach. A clenched jaw. Heat rising in your face. None of that is random. It's your body's own vocabulary, running ahead of your mind's.
@@ -325,7 +325,7 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.48}>
           <section aria-labelledby="section-granularity">
             <h2 id="section-granularity" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Getting Past "I Feel Bad": What Emotional Granularity Actually Looks Like
+              Getting past "I feel bad": what emotional granularity actually looks like
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Psychologist Lisa Feldman Barrett has spent years studying something called <strong className="text-text-primary font-semibold">emotional granularity</strong> — the ability to tell closely related emotions apart instead of lumping them together. Her research keeps landing on the same conclusion: people who can distinguish "frustrated" from "disappointed" from "overwhelmed" tend to make better decisions, regulate themselves more skillfully, and carry less chronic distress. Not because they feel less. Because they know exactly what they're responding to.
@@ -353,7 +353,7 @@ export function AlexithymiaEmotionalVocabulary() {
                 <HelpCircle className="w-5 h-5 text-primary" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
-                Frequently Asked Questions About Alexithymia and Voice Journaling
+                Frequently asked questions about alexithymia and voice journaling
               </h2>
             </div>
             <div className="space-y-6">
@@ -378,7 +378,7 @@ export function AlexithymiaEmotionalVocabulary() {
 
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
             <div className="space-y-4">
               <button
                 onClick={() => navigate({ to: '/resources/distress-detection' })}
@@ -388,7 +388,7 @@ export function AlexithymiaEmotionalVocabulary() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                      How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>
@@ -403,7 +403,7 @@ export function AlexithymiaEmotionalVocabulary() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Autism & Neurodivergent Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions
+                      Autism and emotional regulation: how voice journaling helps autistic adults process emotions
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Alexithymia affects up to 50% of autistic adults. See how voice journaling builds emotional vocabulary without social pressure.</p>
                   </div>
@@ -418,7 +418,7 @@ export function AlexithymiaEmotionalVocabulary() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Naming Your Emotions Reduces Stress and Builds Emotional Resilience
+                      How naming your emotions reduces stress and builds emotional resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Neuroscience research proves that labeling emotions calms the amygdala. Discover how voice journaling applies affect labeling science.</p>
                   </div>

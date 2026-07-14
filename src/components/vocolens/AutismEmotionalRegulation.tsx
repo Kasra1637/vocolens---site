@@ -189,7 +189,7 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <section aria-labelledby="section-alexithymia">
             <h2 id="section-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Alexithymia: When You Feel Everything But Can't Name It
+              Alexithymia: when you feel everything but can't name it
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Research estimates that <strong className="text-text-primary font-semibold">alexithymia affects approximately 50% of autistic adults</strong>, compared to roughly 10% of the general population. Alexithymia isn't the absence of emotion — it's the difficulty in identifying, differentiating, and verbally expressing what you feel. You might experience intense internal states without knowing whether it's anger, anxiety, excitement, or hunger.
@@ -210,7 +210,7 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <section aria-labelledby="section-sensory-emotional">
             <h2 id="section-sensory-emotional" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The Sensory-Emotional Connection: Why Overwhelm Builds Invisibly
+              The sensory-emotional connection: why overwhelm builds invisibly
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               For autistic people, sensory processing and emotional processing are deeply intertwined. A flickering light, background noise, an unexpected texture, or a crowded room doesn't just cause sensory discomfort — it depletes the same cognitive resources used for emotional regulation. This is why overwhelm often seems to "come from nowhere": the load has been accumulating across sensory, social, and emotional channels simultaneously.
@@ -241,7 +241,7 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.35}>
           <section aria-labelledby="section-voice-journaling">
             <h2 id="section-voice-journaling" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Why Voice Journaling Works for Autistic Emotional Processing
+              Why voice journaling works for autistic emotional processing
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Traditional emotional regulation advice — "talk to a friend," "write in a journal," "practice mindfulness" — often fails autistic adults because it doesn't account for the specific barriers they face. Social conversation requires real-time processing and masking. Written journaling can feel rigid and slow. Mindfulness may heighten already-intense sensory awareness without providing the language framework needed to make sense of it.
@@ -276,7 +276,7 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.42}>
           <section aria-labelledby="section-meltdown-prevention">
             <h2 id="section-meltdown-prevention" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              From Meltdown Cycles to Early Intervention: Building Your Personal Warning System
+              From meltdown cycles to early intervention: building your personal warning system
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Meltdowns and shutdowns don't happen randomly — they follow predictable trajectories that become visible with consistent tracking. The challenge is that autistic interoception (the ability to sense internal body states) is often atypical: you may not notice rising distress until it's already severe.
@@ -293,7 +293,7 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.5}>
           <section aria-labelledby="section-masking-cost">
             <h2 id="section-masking-cost" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Processing the Cost of Masking: A Private Space for Unmasked Reflection
+              Processing the cost of masking: a private space for unmasked reflection
             </h2>
             <p className="mb-4 text-base leading-relaxed">
               Masking — the conscious or unconscious suppression of autistic traits to fit neurotypical expectations — is emotionally exhausting. Research consistently links long-term masking to anxiety, depression, identity confusion, and burnout. Yet the emotional residue of a day spent masking often goes unprocessed because there's no safe outlet for it.
@@ -314,7 +314,7 @@ export function AutismEmotionalRegulation() {
                 <HelpCircle className="w-5 h-5 text-primary" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
-                Frequently Asked Questions About Autism and Emotional Regulation
+                Frequently asked questions about autism and emotional regulation
               </h2>
             </div>
             <div className="space-y-6">
@@ -338,7 +338,7 @@ export function AutismEmotionalRegulation() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore Related Articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
             <div className="space-y-4">
               <button
                 onClick={() => navigate({ to: '/resources/science-of-reflection' })}
@@ -348,7 +348,7 @@ export function AutismEmotionalRegulation() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Naming Your Emotions Reduces Stress and Builds Resilience
+                      How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
@@ -363,7 +363,7 @@ export function AutismEmotionalRegulation() {
                   <div className="flex-1">
                     <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
-                      How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                      How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>
