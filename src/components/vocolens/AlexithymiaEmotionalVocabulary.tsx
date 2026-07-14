@@ -31,12 +31,12 @@ export function AlexithymiaEmotionalVocabulary() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary",
+    "headline": "Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught",
     "alternativeHeadline": "Alexithymia and Emotional Vocabulary: How AI Voice Journaling Creates Words for Feelings You Cannot Name",
     "description": "Around 10% of people struggle to identify and describe their own emotions — a trait called alexithymia. Learn the neuroscience of emotional blindness, why traditional journaling fails, and how AI-assisted voice journaling creates a personal emotional vocabulary from scratch.",
     "image": "https://vocolens.com/vocolens_-_preview.png",
     "datePublished": "2026-06-28",
-    "dateModified": "2026-06-28",
+    "dateModified": "2026-07-14",
     "author": {
       "@type": "Organization",
       "name": "Vocolens",
@@ -57,7 +57,7 @@ export function AlexithymiaEmotionalVocabulary() {
     },
     "articleSection": "Neuroscience & Emotional Intelligence",
     "keywords": "alexithymia, emotional vocabulary, voice journaling alexithymia, can't name emotions, emotion labeling difficulty, AI emotion detection, neurodivergent journaling, ADHD alexithymia, autism alexithymia, emotional granularity, interoception",
-    "wordCount": 1400,
+    "wordCount": 1500,
     "inLanguage": "en-US",
     "about": [
       { "@type": "Thing", "name": "Alexithymia", "description": "A trait characterised by difficulty identifying and describing one's own emotions" },
@@ -154,10 +154,10 @@ export function AlexithymiaEmotionalVocabulary() {
             itemProp="headline"
             className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
           >
-            Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary
+            Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught
           </h1>
           <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
-            Around 10% of people struggle to identify and describe their own emotions — a trait called <strong className="text-text-primary font-semibold">alexithymia</strong>. The feelings are there, but the words are not. Learn why traditional journaling fails for this population and how AI-assisted voice journaling builds a personal emotional vocabulary from scratch.
+            Around 10% of people know something is wrong but can't say what — a trait called <strong className="text-text-primary font-semibold">alexithymia</strong>. The feeling shows up. The word never does. Here's why traditional journaling makes that worse, and how AI-assisted voice journaling helps you build an emotional vocabulary from the ground up.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
@@ -170,15 +170,15 @@ export function AlexithymiaEmotionalVocabulary() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Alexithymia is about labeling, not feeling.</strong> People with this trait experience emotions as intensely as anyone — they simply lack the vocabulary to identify and describe them.
+                <strong className="font-medium text-text-primary">Alexithymia is a labeling problem, not a feeling problem.</strong> People with this trait feel emotions just as intensely as anyone — they just can't find the words for them.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Traditional journaling assumes the skill it's trying to build.</strong> A blank page requires words you don't yet have. Voice journaling removes this prerequisite entirely.
+                <strong className="font-medium text-text-primary">"Just write down how you feel" assumes the skill it's trying to teach.</strong> A blank page needs words you don't have yet. Voice journaling skips that step entirely.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">AI provides the labels; you build the dictionary.</strong> The correction loop — confirm, reject, adjust — incrementally creates a personalised emotional vocabulary mapped to your unique way of expressing experience.
+                <strong className="font-medium text-text-primary">AI offers the labels; you build the dictionary.</strong> Confirm, correct, or shrug — every response teaches the system your emotional language, one entry at a time.
               </li>
             </ul>
           </div>
@@ -189,10 +189,10 @@ export function AlexithymiaEmotionalVocabulary() {
 
         <AnimatedSection animation="fade-in-up" delay={0.05}>
           <p>
-            You feel something. You know it's there — a weight in your chest, a restlessness in your limbs, a vague sense that something is wrong. But when someone asks "How are you feeling?" the honest answer is: <em>I don't know</em>. Not because you feel nothing. Because you have no words for what you feel.
+            Someone asks how you're doing, and there's a pause before you answer — because you actually don't know. There's a weight in your chest. A restlessness that won't sit still. Something is clearly happening in there. But when you reach for a word to describe it, you come up empty, and "fine" comes out instead, because "fine" is the only word available.
           </p>
           <p className="mt-4">
-            This experience has a name. It's called <strong className="text-text-primary font-semibold">alexithymia</strong> — from the Greek: "no words for emotions." And it's far more common than most people realise.
+            If that sounds familiar, you're not broken, and you're definitely not alone. Psychologists call this <strong className="text-text-primary font-semibold">alexithymia</strong> — literally, from the Greek, "no words for emotions." It's a lot more common than most people think, and once you understand what's actually happening in your brain, it stops feeling like a personal failing and starts looking like a skill you were simply never taught.
           </p>
         </AnimatedSection>
 
@@ -200,23 +200,26 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <section aria-labelledby="section-what-is-alexithymia">
             <h2 id="section-what-is-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              What Is Alexithymia? The Science of Emotional Blindness
+              So What Is Alexithymia, Exactly?
             </h2>
             <p className="mb-4 text-base leading-relaxed">
-              Alexithymia was first described by psychiatrists <strong className="text-text-primary font-semibold">Nemiah and Sifneos in 1970</strong>, who observed that many of their patients could describe physical symptoms in vivid detail but went blank when asked about feelings. The term was formalised with the development of the <strong className="text-text-primary font-semibold">Toronto Alexithymia Scale (TAS-20)</strong> by Taylor, Bagby, and Parker in 1985 — still the gold-standard measure used in clinical research today.
+              The term goes back to 1970, when psychiatrists <strong className="text-text-primary font-semibold">Nemiah and Sifneos</strong> noticed something odd in their patients: people who could describe a headache or a stomachache in exhaustive detail would go completely quiet the moment the question turned to feelings. Fifteen years later, Taylor, Bagby, and Parker turned that observation into something measurable — the <strong className="text-text-primary font-semibold">Toronto Alexithymia Scale (TAS-20)</strong>, still the standard tool researchers use today.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              Crucially, alexithymia is <em>not</em> the absence of emotion. Brain imaging studies consistently show that people high in alexithymia have normal — and sometimes heightened — emotional activation in subcortical regions. The deficit is specifically in the <strong className="text-text-primary font-semibold">connection between feeling and labeling</strong>: the prefrontal cortex struggles to attach linguistic labels to the signals the body is generating.
+              Here's the part that surprises most people: alexithymia has nothing to do with feeling less. Brain scans of people high in alexithymia show completely normal — sometimes even heightened — activity in the emotional centers of the brain. The disconnect happens somewhere else entirely, in the handoff between the body's signal and the mind's ability to attach a word to it. It's a wiring issue, not an empathy issue.
             </p>
             <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "The emotions are there. The body registers them. What's missing is the bridge between sensation and language — the capacity to say 'this feeling is grief' or 'this feeling is excitement.'"
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Lane & Schwartz, 1987, Levels of Emotional Awareness</cite>
             </blockquote>
             <p className="mb-4 text-base leading-relaxed">
-              The prevalence is striking: approximately <strong className="text-text-primary font-semibold">10% of the general population</strong> scores in the clinical range. But among autistic adults, estimates rise to 50%. Among those with ADHD, around 30%. These aren't separate issues — alexithymia is a core dimension of the neurodivergent experience that compounds every other challenge.
+              And it's genuinely widespread. Roughly <strong className="text-text-primary font-semibold">10% of the general population</strong> scores in the clinical range — but that number jumps to nearly 50% among autistic adults, and around 30% for people with ADHD. This isn't a coincidence or a side note. Alexithymia runs underneath a lot of the neurodivergent experience, quietly making everything else harder.
             </p>
             <p>
-              Without words for emotions, distress becomes undifferentiated. You can't manage what you can't name. Anxiety, frustration, sadness, and overwhelm collapse into a single state: <em>"I feel bad."</em> This lack of emotional granularity is what makes alexithymia so corrosive over time — it prevents the targeted coping that specific emotion identification enables.
+              Think about what happens when every difficult feeling collapses into the same vague category: <em>"I feel bad."</em> Anxiety, disappointment, exhaustion, and grief all start to look identical from the inside — because you never learned to tell them apart. And you can't manage what you can't tell apart. That's really the whole problem in one sentence.
+            </p>
+            <p className="mt-4 text-sm text-text-muted italic">
+              Takeaway: alexithymia doesn't mean you feel nothing. It means the bridge between feeling and language hasn't been built yet — which also means it can be.
             </p>
           </section>
         </AnimatedSection>
@@ -225,19 +228,22 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <section aria-labelledby="section-why-journaling-fails">
             <h2 id="section-why-journaling-fails" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Why Traditional Journaling Fails for Alexithymia
+              Why "Just Write Down How You Feel" Doesn't Work Here
             </h2>
             <p className="mb-4 text-base leading-relaxed">
-              The advice is well-meaning: <em>"Just write down how you feel."</em> But for someone with alexithymia, this instruction contains a hidden prerequisite — you must already possess the emotional vocabulary that the practice is supposedly developing. It's like telling someone who can't read to "just look it up in the dictionary."
+              It's well-meaning advice, and it's also a little cruel if you think about it: <em>"Just write down how you feel."</em> That instruction quietly assumes you already have the exact thing alexithymia takes away — a working vocabulary for your inner life. It's a bit like telling someone who's never learned to read, "just look it up in the dictionary."
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              The blank page becomes a mirror of the blank mind. You sit down, pen in hand, and the same frustrating cycle repeats: <em>What do I feel? I don't know. I should know. Why don't I know?</em> The exercise that's meant to build self-awareness instead reinforces the sense of deficiency.
+              So the blank page becomes a mirror of the blank feeling. You sit down, pen ready, and the same loop starts up: <em>What do I feel? I don't know. I should know by now. Why don't I know?</em> A practice that's supposed to build self-awareness ends up reinforcing the opposite — the sense that something's wrong with you for not having the answer.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              Written journaling also demands a level of cognitive filtering that works against emotional discovery. You must compose sentences, choose grammar, manage spelling — all of which engage the analytical prefrontal cortex at the expense of the emotional processing you're trying to access. For ADHD brains already struggling with executive function, this friction is often enough to abandon the practice entirely.
+              There's a second problem, too, and it's more mechanical. Writing requires you to compose sentences, fix your grammar, spell things correctly — all tasks that keep your analytical brain busy at exactly the moment you're trying to access something underneath the analysis. For anyone with ADHD already fighting an uphill battle with executive function, that friction alone is often enough to make the whole habit die within a week.
             </p>
             <p>
-              The problem isn't willpower or motivation. It's that the tool assumes a skill that alexithymia specifically impairs. A fundamentally different approach is needed — one that meets you where you are and builds the vocabulary incrementally, from the outside in.
+              None of this is about willpower. The tool is simply asking for a skill that alexithymia specifically blocks. What actually helps is a different starting point — one that doesn't require you to arrive with words already in hand, and instead builds them for you, gradually, from the outside in.
+            </p>
+            <p className="mt-4 text-sm text-text-muted italic">
+              Takeaway: if journaling has never stuck for you, it's probably not a discipline problem — it's a design problem. The method assumed a skill you're still building.
             </p>
           </section>
         </AnimatedSection>
@@ -250,33 +256,36 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.35}>
           <section aria-labelledby="section-voice-ai-vocabulary">
             <h2 id="section-voice-ai-vocabulary" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              How Voice + AI Creates an Emotional Vocabulary From Nothing
+              How Voice and AI Build a Vocabulary Out of Nothing
             </h2>
             <p className="mb-4 text-base leading-relaxed">
-              Voice journaling inverts the traditional model. Instead of requiring words <em>before</em> you begin, you simply talk about your experience — what happened, how your body feels, what's on your mind — and the AI provides candidate emotion labels after the fact. You don't need to know the word "apprehension" to describe the tightness in your chest before a meeting. You just describe the tightness, and the system maps it.
+              Here's where voice journaling flips the whole model on its head. Instead of needing the words first, you just talk — about what happened, how your body feels, what's rattling around in your head — and an AI listens for patterns and offers candidate emotion labels afterward. You don't need to already know the word "apprehension" to describe the tightness in your chest before a meeting. You describe the tightness. The system does the naming.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              This works because of a key insight from emotional granularity research: <strong className="text-text-primary font-semibold">people can recognise emotions they cannot spontaneously generate</strong>. You might never think to label a feeling as "anticipatory grief" on your own — but when the AI suggests it, something clicks. <em>Yes, that's exactly what this is.</em>
+              This works for a reason emotional granularity research keeps confirming: <strong className="text-text-primary font-semibold">people can recognize an emotion they'd never have generated on their own</strong>. You might never sit down and think "this is anticipatory grief" — but when it's suggested to you, something clicks. <em>Yes. That's exactly it.</em> Ever had that moment where a friend names what you're feeling and it just fits? This is the same mechanism, on demand.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              The correction loop is where the real learning happens. After every entry, the AI presents its emotion analysis. You have three options:
+              The real learning happens in what comes next — the correction loop. After each entry, the AI shows you its read on what you were feeling, and you get to respond:
             </p>
             <ul className="space-y-2 mb-4 ml-4 text-base leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">Confirm</strong> — "Yes, that's right." This reinforces the connection between your expression pattern and that emotion label.</span>
+                <span><strong className="text-text-primary font-semibold">Confirm</strong> — "Yes, that's it." This locks in the connection between how you express yourself and that specific emotion.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, it's not anxiety — it's excitement." The AI learns your unique emotional dialect and adjusts future analysis.</span>
+                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, that's not anxiety, that's excitement." The AI quietly relearns your particular emotional dialect and adjusts.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">"I don't know"</strong> — And that's valid. The system tracks these moments without judgment, building a pattern over time that itself becomes informative.</span>
+                <span><strong className="text-text-primary font-semibold">"I don't know"</strong> — Completely valid, and tracked without judgment. Even the pattern of not knowing turns out to be useful information over time.</span>
               </li>
             </ul>
             <p>
-              Over dozens of entries, this loop builds something remarkable: a personalised emotional dictionary that maps <em>your</em> specific expressions, body descriptions, and narrative patterns to specific emotional states. The AI doesn't impose a universal model — it learns <em>your</em> language for <em>your</em> feelings.
+              String enough of those together — dozens of entries, weeks of small corrections — and something genuinely useful starts to take shape: a personal emotional dictionary, built entirely from your own words, your own body descriptions, your own way of telling a story. Vocolens isn't handing you a universal model of emotion and asking you to fit inside it. It's learning your language, for your feelings, on your terms.
+            </p>
+            <p className="mt-4 text-sm text-text-muted italic">
+              Takeaway: you don't need the right word to start. You just need to talk — the vocabulary catches up as you go.
             </p>
           </section>
         </AnimatedSection>
@@ -285,19 +294,19 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.42}>
           <section aria-labelledby="section-body-bridge">
             <h2 id="section-body-bridge" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The Body as a Bridge to Emotions You Cannot Name
+              When Words Fail, the Body Is Still Talking
             </h2>
             <p className="mb-4 text-base leading-relaxed">
-              When words fail entirely, the body still speaks. Research on <strong className="text-text-primary font-semibold">interoception</strong> — the sense of internal bodily signals — shows that physical sensations are often the first and most reliable indicators of emotional states. Chest tightness, stomach churning, jaw clenching, heat in the face — these are not random. They are the body's emotional vocabulary.
+              And when even that doesn't produce a word? The body usually still has something to say. Research on <strong className="text-text-primary font-semibold">interoception</strong> — your ability to sense internal signals like heartbeat, breath, and muscle tension — shows that physical sensations are often the earliest and most trustworthy clue to what you're actually feeling. Chest tightness. A churning stomach. A clenched jaw. Heat rising in your face. None of that is random. It's your body's own vocabulary, running ahead of your mind's.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              For people with alexithymia, the body becomes the primary entry point to emotional understanding. Rather than asking "What emotion am I feeling?" — a question that may produce only silence — you ask: "Where in my body do I notice something?" This question almost always has an answer.
+              For a lot of people with alexithymia, the body becomes the real entry point into emotional understanding — not the mind. Instead of asking "what am I feeling?" and getting silence back, try asking: "where in my body do I notice something?" That question almost never comes up empty.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              Vocolens provides a 9-region body map where you tap to indicate where sensations are present, paired with 16 pre-defined physical sensation descriptors — chest tightness, racing heart, heavy limbs, tingling, heat, pressure, and more. These give language to physical experience when emotion words fail entirely.
+              This is exactly what Vocolens' body map is built for — a 9-region diagram you tap to mark where a sensation is showing up, paired with 16 physical descriptors like chest tightness, racing heart, heavy limbs, tingling, heat, and pressure. When emotion words won't come, this gives you a language you already have access to.
             </p>
             <p>
-              Over time, patterns emerge. The app might reveal: <em>"Chest tightness + shallow breathing appears in 80% of entries the AI labels as apprehension."</em> Gradually, the connection forms — not through abstract learning, but through your own lived, embodied data. The body teaches the mind what it's feeling, one entry at a time.
+              Keep doing this, and patterns start surfacing on their own. Maybe you notice: <em>"Chest tightness plus shallow breathing shows up in 80% of the entries the AI later labels as apprehension."</em> That connection doesn't arrive through studying flashcards — it arrives through your own lived, embodied data, entry by entry, until your body has effectively taught your mind what it's been feeling all along.
             </p>
             <a
               href="/resources/distress-detection"
@@ -306,6 +315,9 @@ export function AlexithymiaEmotionalVocabulary() {
               <span className="underline underline-offset-2">Read more about interoception and body-based awareness</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
+            <p className="mt-4 text-sm text-text-muted italic">
+              Takeaway: if your mind goes blank, ask your body instead. It's usually been keeping notes the whole time.
+            </p>
           </section>
         </AnimatedSection>
 
@@ -313,19 +325,22 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.48}>
           <section aria-labelledby="section-granularity">
             <h2 id="section-granularity" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              From "I Feel Bad" to Emotional Granularity
+              Getting Past "I Feel Bad": What Emotional Granularity Actually Looks Like
             </h2>
             <p className="mb-4 text-base leading-relaxed">
-              Psychologist Lisa Feldman Barrett's research on <strong className="text-text-primary font-semibold">emotional granularity</strong> reveals a critical insight: people who can distinguish between finely differentiated emotional states navigate life more effectively. They make better decisions, regulate themselves more skillfully, and experience less chronic distress — not because they feel less, but because they can respond to specific emotions with specific strategies.
+              Psychologist Lisa Feldman Barrett has spent years studying something called <strong className="text-text-primary font-semibold">emotional granularity</strong> — the ability to tell closely related emotions apart instead of lumping them together. Her research keeps landing on the same conclusion: people who can distinguish "frustrated" from "disappointed" from "overwhelmed" tend to make better decisions, regulate themselves more skillfully, and carry less chronic distress. Not because they feel less. Because they know exactly what they're responding to.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              The journey from alexithymia toward granularity follows a predictable path. In the early stages, every negative experience collapses into "bad" or "stressed." With repeated AI-assisted labeling, you begin to distinguish: <em>this is frustration</em> (not anger), <em>this is disappointment</em> (not sadness), <em>this is decision fatigue</em> (not laziness).
+              Getting there tends to follow a fairly predictable arc. At the start, everything negative just collapses into "bad" or "stressed" — one bucket for every hard feeling. With enough AI-assisted labeling, though, distinctions start to emerge: <em>this is frustration</em>, not anger. <em>This is disappointment</em>, not sadness. <em>This is decision fatigue</em>, not laziness — which, honestly, might be the most useful reframe of all.
             </p>
             <p className="mb-4 text-base leading-relaxed">
-              Vocolens accelerates this through Plutchik's Wheel of Emotions — scoring 8 primary emotions at three intensity tiers. You don't just learn "I feel fear." You learn the difference between <strong className="text-text-primary font-semibold">apprehension</strong> (low fear), <strong className="text-text-primary font-semibold">fear</strong> (moderate), and <strong className="text-text-primary font-semibold">terror</strong> (high) — and the correction system ensures these distinctions reflect your actual experience rather than a textbook definition.
+              Vocolens leans on Plutchik's Wheel of Emotions to speed this along, scoring 8 primary emotions across three intensity tiers. So instead of a flat "I feel fear," you start to notice the difference between <strong className="text-text-primary font-semibold">apprehension</strong> (fear, low), <strong className="text-text-primary font-semibold">fear</strong> (moderate), and <strong className="text-text-primary font-semibold">terror</strong> (high) — and because the correction system keeps learning from you, those distinctions end up reflecting your actual life, not a definition out of a textbook.
             </p>
             <p>
-              Each correction is a micro-lesson in emotional literacy. Over months, the AI's confidence in reading <em>you</em> grows — and so does yours. The vocabulary expands not through study, but through repeated, embodied practice grounded in your real emotional life.
+              Every correction is a tiny lesson in emotional literacy, and they add up. Over months, the AI gets better at reading you — and, almost as a side effect, you get better at reading yourself. Ask yourself: what would change if "decision fatigue" and "laziness" stopped feeling like the same thing? That's the kind of shift this builds, one small correction at a time, grounded in your real emotional life rather than a study you've never read.
+            </p>
+            <p className="mt-4 text-sm text-text-muted italic">
+              Takeaway: the goal isn't more vocabulary for its own sake — it's precision. The more specific the word, the more specific (and useful) your response can be.
             </p>
           </section>
         </AnimatedSection>
@@ -381,6 +396,21 @@ export function AlexithymiaEmotionalVocabulary() {
                 </div>
               </button>
               <button
+                onClick={() => navigate({ to: '/resources/autism-emotional-regulation' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Autism & Neurodivergent Wellness</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Alexithymia affects up to 50% of autistic adults. See how voice journaling builds emotional vocabulary without social pressure.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
+              </button>
+              <button
                 onClick={() => navigate({ to: '/resources/science-of-reflection' })}
                 className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
@@ -406,7 +436,7 @@ export function AlexithymiaEmotionalVocabulary() {
               Your feelings exist — even without words for them yet
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              You don't need to arrive with a vocabulary. You just need to speak. The words will come — one entry at a time.
+              You don't need to show up with a vocabulary already built. You just need to start talking. The words come one entry at a time — Vocolens is built to help them arrive faster.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
