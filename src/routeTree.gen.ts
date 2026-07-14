@@ -18,6 +18,7 @@ import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
+import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
 import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
 import { Route as ResourcesAutismEmotionalRegulationRouteImport } from './routes/resources.autism-emotional-regulation'
@@ -69,6 +70,12 @@ const ResourcesScienceOfReflectionRoute =
     path: '/science-of-reflection',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesOverthinkingRuminationRoute =
+  ResourcesOverthinkingRuminationRouteImport.update({
+    id: '/overthinking-rumination',
+    path: '/overthinking-rumination',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 const ResourcesEmotionalAwarenessPatternsRoute =
   ResourcesEmotionalAwarenessPatternsRouteImport.update({
     id: '/emotional-awareness-patterns',
@@ -106,6 +113,7 @@ export interface FileRoutesByFullPath {
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -120,6 +128,7 @@ export interface FileRoutesByTo {
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources': typeof ResourcesIndexRoute
 }
@@ -136,6 +145,7 @@ export interface FileRoutesById {
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources/'
   fileRoutesByTo: FileRoutesByTo
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources'
   id:
@@ -182,6 +194,7 @@ export interface FileRouteTypes {
     | '/resources/autism-emotional-regulation'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources/'
   fileRoutesById: FileRoutesById
@@ -261,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesScienceOfReflectionRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/overthinking-rumination': {
+      id: '/resources/overthinking-rumination'
+      path: '/overthinking-rumination'
+      fullPath: '/resources/overthinking-rumination'
+      preLoaderRoute: typeof ResourcesOverthinkingRuminationRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/emotional-awareness-patterns': {
       id: '/resources/emotional-awareness-patterns'
       path: '/emotional-awareness-patterns'
@@ -297,6 +317,7 @@ interface ResourcesRouteChildren {
   ResourcesAutismEmotionalRegulationRoute: typeof ResourcesAutismEmotionalRegulationRoute
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
+  ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
   ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
@@ -309,6 +330,7 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesDistressDetectionRoute: ResourcesDistressDetectionRoute,
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
+  ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,
   ResourcesIndexRoute: ResourcesIndexRoute,
 }
