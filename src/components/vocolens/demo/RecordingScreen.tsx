@@ -1,4 +1,4 @@
-import { Mic, BookOpen, BarChart2, Award, Settings, ChevronDown } from 'lucide-react';
+import { Mic, BookOpen, BarChart2, Award, Settings } from 'lucide-react';
 
 interface Props {
   isActive: boolean;
@@ -21,19 +21,7 @@ export function RecordingScreen({ isActive }: Props) {
         </div>
       </div>
 
-      <div className="px-4 mt-5">
-        <div className="flex items-center justify-between bg-white/15 backdrop-blur-sm rounded-2xl px-3.5 py-3 border border-white/10">
-          <span className="text-white/40 text-[9px] font-semibold tracking-widest uppercase">
-            Warm-up Question
-          </span>
-          <div className="flex items-center gap-1 bg-white/15 rounded-lg px-2 py-1">
-            <span className="text-white/70 text-[9px]">Select Topic</span>
-            <ChevronDown className="w-2.5 h-2.5 text-white/50" />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1 flex flex-col items-center justify-center -mt-4">
+      <div className="flex-1 flex flex-col items-center justify-center">
         <div className="relative flex items-center justify-center">
           {isActive && (
             <>
