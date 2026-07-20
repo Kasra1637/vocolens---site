@@ -45,6 +45,17 @@ export function AppDemo() {
                   className="w-full h-full object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
+                {/* Hide the warm-up question area on the recording screen */}
+                {index === 0 && (
+                  <div
+                    className="absolute left-0 right-0"
+                    style={{
+                      top: '15%',
+                      height: '10%',
+                      background: '#161422',
+                    }}
+                  />
+                )}
               </div>
             ))}
           </div>
