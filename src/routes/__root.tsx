@@ -98,7 +98,7 @@ const organizationLd = {
   "@type": "Organization",
   name: "Vocolens",
   url: "https://vocolens.com",
-  logo: "https://vocolens.com/logo_vocolens.png",
+  logo: "https://vocolens.com/vocolens_logo_new.png",
   description: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia.",
   sameAs: [
     "https://www.instagram.com/vocolensapp/",
