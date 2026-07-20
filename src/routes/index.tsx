@@ -207,7 +207,7 @@ function Home() {
               <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
               </div>
-              <h3 className="font-bold mb-3 text-xl">The breakthrough: now I just talk</h3>
+              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
               <p className="text-text-secondary text-base leading-relaxed">
                 So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
               </p>
