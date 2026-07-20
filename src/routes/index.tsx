@@ -289,7 +289,7 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
           <div className="text-center mb-16">
             <img
-              src="/Vocolens-logo.png"
+              src="/vocolens-logo.png"
               alt="Vocolens AI voice journal logo"
               className="h-12 w-auto mx-auto mb-6"
             />
