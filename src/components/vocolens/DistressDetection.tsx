@@ -105,11 +105,13 @@ export function DistressDetection() {
               >
                 Resources
               </button>
+              <meta itemProp="item" content="https://vocolens.com/resources" />
               <meta itemProp="position" content="1" />
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <span className="text-text-primary font-medium" itemProp="name">How Your Body Tells You Are Overwhelmed</span>
+              <meta itemProp="item" content="https://vocolens.com/resources/distress-detection" />
               <meta itemProp="position" content="2" />
             </li>
           </ol>
