@@ -123,11 +123,13 @@ export function AlexithymiaEmotionalVocabulary() {
               >
                 Resources
               </button>
+              <meta itemProp="item" content="https://vocolens.com/resources" />
               <meta itemProp="position" content="1" />
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <span className="text-text-primary font-medium" itemProp="name">Alexithymia & Emotional Vocabulary</span>
+              <meta itemProp="item" content="https://vocolens.com/resources/alexithymia-emotional-vocabulary" />
               <meta itemProp="position" content="2" />
             </li>
           </ol>
