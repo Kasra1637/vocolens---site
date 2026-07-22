@@ -238,7 +238,7 @@ export function TermsOfService() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>RevenueCat</strong> — Subscription management (revenuecat.com)</span>
+                    <span className="text-text-secondary"><strong>Adapty</strong> — Subscription management (adapty.io)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
