@@ -278,7 +278,7 @@ export function PrivacyPolicy() {
 
                 <div className="space-y-3">
                   <p className="text-text-secondary text-base leading-relaxed">
-                    We use RevenueCat to manage subscription status. RevenueCat may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">revenuecat.com/privacy</a>.
+                    We use Adapty to manage subscription status. Adapty may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://adapty.io/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">adapty.io/privacy</a>.
                   </p>
                 </div>
               </div>
@@ -416,6 +416,15 @@ export function PrivacyPolicy() {
                     </div>
                   </li>
                 </ul>
+
+                <div className="mt-6 bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
+                  <h4 className="font-bold text-text-primary mb-2">External Data Deletion Request</h4>
+                  <p className="text-text-secondary text-base leading-relaxed">
+                    If you have already uninstalled Vocolens and cannot access the in-app deletion options, you can request data deletion by contacting us at{' '}
+                    <a href="mailto:connect@vocolens.com" className="text-primary hover:underline font-medium">connect@vocolens.com</a>.
+                    Because all journal data is stored locally on your device, uninstalling the app automatically removes all local data. If you believe any data was transmitted to a third-party service (Deepgram, OpenAI) during normal use, we can confirm that no data is permanently retained by those services on your behalf.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
