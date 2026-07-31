@@ -70,7 +70,7 @@ const conditions: Condition[] = [
       { feature: 'AI emotion detection from speech', benefit: 'Speak freely about your day — the AI identifies emotions from your words, tone, and context without you needing to label them.' },
       { feature: 'Body heatmap builds your emotion dictionary', benefit: 'Over 30 days, the heatmap reveals: "chest tightness always appears with what the AI calls apprehension." Your body becomes a map to emotions you couldn\'t name before.' },
       { feature: 'Self-correction trains a personal translator', benefit: 'Each correction teaches the AI your unique emotional dialect. After 50+ entries, it speaks YOUR language — not a textbook\'s. It becomes fluent in you.' },
-      { feature: '"I don\'t know" is a valid answer', benefit: 'The app tracks alexithymia moments without judgment. No forced emotion selection required — the system works around it.' },
+
       { feature: 'Body region tap-map (8 zones)', benefit: 'Can\'t name the feeling? Tap where you feel it — head, chest, stomach, hands. The app connects your physical experience to emotional patterns over time.' },
       { feature: 'Physical sensation vocabulary', benefit: '16 pre-defined body sensations (chest tightness, racing heart, heavy limbs, tingling) give words to physical experiences when emotion words fail.' },
       { feature: 'Valence-arousal sliders', benefit: 'Skip emotion labels entirely. Just indicate pleasant/unpleasant and calm/activated on simple sliders. No vocabulary needed.' },
@@ -95,15 +95,15 @@ const conditions: Condition[] = [
     ],
     features: [
       { feature: 'Private, non-social space', benefit: 'No audience, no social rules, no masking. Speak authentically without performing for anyone.' },
-      { feature: 'Body heatmap reveals your warning signs', benefit: 'Over time, the heatmap shows: "chest and neck light up every Tuesday and Thursday — your meeting days." Predictive awareness your interoception doesn\'t naturally provide.' },
+
       { feature: 'Self-correction teaches YOUR emotional map', benefit: 'Autistic emotions don\'t always match neurotypical labels. Correct the AI — "that high arousal isn\'t fear, it\'s anticipation for me" — and it learns your neurology, not a textbook.' },
       { feature: 'Interoception body map (8 zones)', benefit: 'Build internal awareness with structured body scans. Tap where you feel something — even if you can\'t name it. The app connects body signals to emotions over time.' },
       { feature: 'Predictable, structured flow', benefit: 'Multi-step reflection follows a clear sequence: emotions, sliders, body scan, grounding. Same order every time. No surprises.' },
-      { feature: 'Distress detection + auto-grounding', benefit: 'Catches overwhelm early via valence-arousal monitoring and offers grounding exercises before meltdown onset.' },
+
       { feature: 'Skip anything, anytime', benefit: 'Every step is optional. Respects fluctuating capacity — especially during burnout periods.' },
       { feature: 'PDF reports for clinicians', benefit: 'Share body patterns and emotional data with therapists without needing to verbally explain everything in session.' },
     ],
-    quote: 'The body heatmap showed me my burnout starts in my neck and shoulders days before I consciously feel overwhelmed. And after correcting the AI for months, it finally stopped calling my excitement "anxiety." It gets me now.',
+    quote: 'After correcting the AI for months, it finally stopped calling my excitement "anxiety." It gets me now. The structured flow and body map help me understand what I\'m feeling before it becomes a meltdown.',
     quoteAuthor: 'Riley, Autistic & Graduate Student',
   },
 ];
