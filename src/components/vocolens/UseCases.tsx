@@ -21,7 +21,7 @@ interface Condition {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
- * Data
+ * Data — every feature is 100% implemented in the app codebase
  * ────────────────────────────────────────────────────────────────────────────── */
 
 const conditions: Condition[] = [
@@ -40,14 +40,12 @@ const conditions: Condition[] = [
       'Difficulty building consistent habits',
     ],
     features: [
-      { feature: 'Voice-first input', benefit: 'No blank page, no writing paralysis. Just speak — capture thoughts at the speed they arrive.' },
-      { feature: 'AI emotion naming', benefit: 'When feelings hit fast and hard, the AI labels them instantly so you don\'t have to untangle them alone.' },
-      { feature: 'Self-correction that learns your brain', benefit: 'Tell the AI "that\'s not anxiety — that\'s excitement for me." It remembers. Over time, it stops confusing your restless energy with distress.' },
-      { feature: 'Body heatmap over time', benefit: 'ADHD overwhelm lives in the body before you notice it mentally. The heatmap shows where stress accumulates across weeks — catching burnout before it hits.' },
-      { feature: 'Streaks replaced by presence', benefit: 'No broken streaks. No guilt. Badges and milestones reward showing up without punishing you for missing a day.' },
-      { feature: '50-second minimum', benefit: 'Low commitment, high impact. Speak for under a minute and get a full emotional snapshot.' },
-      { feature: 'ADHD-aware personalization', benefit: 'The AI learns that your high energy is excitement, not anxiety — it adapts to how your brain actually works.' },
-      { feature: 'Pattern detection', benefit: 'Your brain can\'t self-monitor in real time — but the app tracks mood cycles, triggers, and time-of-day patterns for you.' },
+      { feature: 'Voice-first input', benefit: 'No blank page, no writing paralysis. Just speak — capture thoughts at the speed they arrive. Real-time transcription turns speech into text instantly.' },
+      { feature: 'AI emotion detection', benefit: 'The AI analyzes your words and vocal characteristics to identify emotions you might not recognize in the moment — labeling them so you don\'t have to.' },
+      { feature: 'Self-correction that learns your brain', benefit: 'Tell the AI "that\'s not anxiety — that\'s excitement for me." It stores the correction and adjusts future analysis using weighted personalization.' },
+      { feature: 'Body heatmap with time tracking', benefit: 'See where tension and stress show up in your body across 7-day, 14-day, or 30-day windows. The heatmap aggregates every session to reveal physical patterns.' },
+      { feature: 'Presence-based milestones', benefit: 'No broken streaks. No guilt. 22 badges reward showing up — from your first entry to 100-day streaks — without punishing you for missing a day.' },
+      { feature: 'Pattern detection', benefit: 'The app tracks topic-emotion correlations, mood cycles, and time-of-day patterns across your entries — surfacing triggers you can\'t self-monitor in real time.' },
     ],
     quote: 'My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — and the AI actually gets that my "anxiety" is usually just excitement now.',
     quoteAuthor: 'Jordan, ADHD & Creative',
@@ -67,14 +65,12 @@ const conditions: Condition[] = [
       'Frustration when asked "how do you feel?"',
     ],
     features: [
-      { feature: 'AI emotion detection from speech', benefit: 'Speak freely about your day — the AI identifies emotions from your words, tone, and context without you needing to label them.' },
-      { feature: 'Body heatmap builds your emotion dictionary', benefit: 'Over 30 days, the heatmap reveals: "chest tightness always appears with what the AI calls apprehension." Your body becomes a map to emotions you couldn\'t name before.' },
-      { feature: 'Self-correction trains a personal translator', benefit: 'Each correction teaches the AI your unique emotional dialect. After 50+ entries, it speaks YOUR language — not a textbook\'s. It becomes fluent in you.' },
-
-      { feature: 'Body region tap-map (8 zones)', benefit: 'Can\'t name the feeling? Tap where you feel it — head, chest, stomach, hands. The app connects your physical experience to emotional patterns over time.' },
-      { feature: 'Physical sensation vocabulary', benefit: '16 pre-defined body sensations (chest tightness, racing heart, heavy limbs, tingling) give words to physical experiences when emotion words fail.' },
-      { feature: 'Valence-arousal sliders', benefit: 'Skip emotion labels entirely. Just indicate pleasant/unpleasant and calm/activated on simple sliders. No vocabulary needed.' },
-      { feature: 'Gradual emotional literacy', benefit: 'Plutchik\'s wheel with tap-to-learn definitions builds emotion vocabulary over time — at your own pace, never forced.' },
+      { feature: 'AI names emotions from your speech', benefit: 'Speak freely about your day — the AI analyzes your words and audio to identify emotions without you needing to label them yourself.' },
+      { feature: 'Body region tap-map (8 zones)', benefit: 'Can\'t name the feeling? Tap where you feel it — head, face, neck, chest, stomach, arms, hands, or legs. The app connects physical regions to emotional patterns over time.' },
+      { feature: 'Self-correction trains a personal translator', benefit: 'Each correction teaches the AI your unique emotional dialect. Weighted personalization ensures recent corrections matter most, adapting to YOUR language over time.' },
+      { feature: 'Valence-arousal sliders', benefit: 'Skip emotion labels entirely. Just indicate pleasant/unpleasant (-100 to +100) and calm/activated (0 to 100) on simple sliders. No vocabulary needed.' },
+      { feature: 'Plutchik emotion vocabulary with definitions', benefit: 'Eight core emotions, each with plain-language definitions, body signals, and examples. Long-press any emotion to learn what it means — building vocabulary at your own pace.' },
+      { feature: 'Longitudinal body heatmap', benefit: 'As you journal, the heatmap aggregates body-tap data across 7, 14, or 30 days — revealing which zones consistently light up with certain emotions.' },
     ],
     quote: 'I used to just say "I feel bad." Now the heatmap shows me it\'s chest tightness + stomach tension, and after months of corrections the AI knows that combination means I\'m overwhelmed, not sad. I finally have a language for myself.',
     quoteAuthor: 'Sam, living with alexithymia',
@@ -94,14 +90,12 @@ const conditions: Condition[] = [
       'Social processing environments feel unsafe for vulnerability',
     ],
     features: [
-      { feature: 'Private, non-social space', benefit: 'No audience, no social rules, no masking. Speak authentically without performing for anyone.' },
-
-      { feature: 'Self-correction teaches YOUR emotional map', benefit: 'Autistic emotions don\'t always match neurotypical labels. Correct the AI — "that high arousal isn\'t fear, it\'s anticipation for me" — and it learns your neurology, not a textbook.' },
-      { feature: 'Interoception body map (8 zones)', benefit: 'Build internal awareness with structured body scans. Tap where you feel something — even if you can\'t name it. The app connects body signals to emotions over time.' },
-      { feature: 'Predictable, structured flow', benefit: 'Multi-step reflection follows a clear sequence: emotions, sliders, body scan, grounding. Same order every time. No surprises.' },
-
-      { feature: 'Skip anything, anytime', benefit: 'Every step is optional. Respects fluctuating capacity — especially during burnout periods.' },
-      { feature: 'PDF reports for clinicians', benefit: 'Share body patterns and emotional data with therapists without needing to verbally explain everything in session.' },
+      { feature: 'Private, local-first space', benefit: 'No audience, no social rules, no masking. All journal entries are stored on-device only — never uploaded, never shared. Speak authentically without performing for anyone.' },
+      { feature: 'Self-correction teaches YOUR emotional map', benefit: 'Autistic emotions don\'t always match neurotypical labels. Correct the AI and it learns your neurology — weighted personalization ensures it adapts to how YOU experience emotions.' },
+      { feature: 'Predictable, structured reflection', benefit: 'Multi-step reflection follows a fixed sequence: emotion selection, valence-arousal sliders, body scan. Same order every time. No surprises.' },
+      { feature: 'Skip anything, anytime', benefit: 'Every step is optional — skip individual steps or turn off reflection entirely. Three modes (full, quick, off) respect fluctuating capacity.' },
+      { feature: 'Valence-arousal over emotion labels', benefit: 'Don\'t relate to standard emotion names? Simply indicate pleasant/unpleasant and calm/activated on numeric sliders. The system works without forcing neurotypical vocabulary.' },
+      { feature: 'PDF reports for clinicians', benefit: 'Export your journal as a styled HTML/PDF document with emotion data, body patterns, and transcripts — share with therapists without needing to verbally explain everything.' },
     ],
     quote: 'After correcting the AI for months, it finally stopped calling my excitement "anxiety." It gets me now. The structured flow and body map help me understand what I\'m feeling before it becomes a meltdown.',
     quoteAuthor: 'Riley, Autistic & Graduate Student',
@@ -220,7 +214,7 @@ export function UseCases() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
- * Condition Section
+ * Condition Section — unified layout for visual cohesion
  * ────────────────────────────────────────────────────────────────────────────── */
 
 function ConditionSection({ condition, index }: { condition: Condition; index: number }) {
@@ -274,8 +268,8 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
           </div>
         </div>
 
-        {/* Features grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* Features grid — 2 rows × 3 columns on desktop, consistent across all sections */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {condition.features.map((item) => (
             <div
               key={item.feature}
