@@ -8,13 +8,13 @@ export const Route = createFileRoute("/features")({
       {
         name: "description",
         content:
-          "Explore every Vocolens feature: journal calendar without streaks, weekly AI reflection, mood story by day, body sensation map, triggers, themes, and time-of-day patterns.",
+          "Explore every Vocolens feature: journal calendar without streaks, weekly AI reflection, mood story by day, body sensation map, triggers, themes, time-of-day patterns, AI emotion corrections, milestone badges, and therapist-ready reports.",
       },
-      { property: "og:title", content: "Inside Vocolens — 10 ways to finally understand yourself" },
+      { property: "og:title", content: "Inside Vocolens — 13 ways to finally understand yourself" },
       {
         property: "og:description",
         content:
-          "Calendar, weekly reflection, mood story, emotional landscape, body sensation heatmap, triggers, themes, and time-of-day analytics — all private, all on-device.",
+          "Calendar, weekly reflection, mood story, emotional landscape, body sensation heatmap, triggers, themes, time-of-day analytics, AI + your corrections, milestones, and therapist sharing — all private, all on-device.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vocolens.com/features" },

@@ -224,7 +224,7 @@ function Home() {
             Inside Vocolens
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
-            Inside Vocolens: ten ways to finally understand yourself
+            Inside Vocolens: 13 ways to finally understand yourself
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
             Every screen has one job — turn your voice into clarity.
@@ -253,7 +253,7 @@ function Home() {
             to="/features"
             className="inline-flex items-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-full text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
-            Explore all 10 features
+            Explore all 13 features
             <ArrowRight className="w-6 h-6" />
           </Link>
         </AnimatedSection>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
-import { CalendarDays, BookOpenText, ChartBar as BarChart3, CircleChevronDown as ChevronDownCircle, Map, Activity, Sparkles, Zap, Repeat, Clock, ArrowRight } from 'lucide-react';
+import { CalendarDays, BookOpenText, ChartBar as BarChart3, CircleChevronDown as ChevronDownCircle, Map, Activity, Sparkles, Zap, Repeat, Clock, ArrowRight, SlidersHorizontal, Award, HeartHandshake } from 'lucide-react';
 
 type Feature = {
   id: string;
@@ -219,7 +219,7 @@ function ExploreDeeperVisual() {
           Your dashboard
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
-          3 of 10 active
+          3 of 13 active
         </span>
       </div>
 
@@ -645,6 +645,96 @@ function TimeOfDayVisual() {
   );
 }
 
+function RefineAnalysisVisual() {
+  return (
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.07] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
+        Emotion breakdown
+      </p>
+      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm space-y-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted mb-1">AI detected</p>
+            <p className="text-text-primary font-bold text-lg">Sadness</p>
+          </div>
+          <span className="text-[10px] font-semibold text-text-muted bg-primary/[0.06] px-2 py-1 rounded-full">78% confidence</span>
+        </div>
+        <div className="h-px bg-primary/10" />
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-primary/70 mb-1">You corrected it to</p>
+            <p className="text-primary font-bold text-lg">Grief</p>
+          </div>
+          <span className="text-[10px] font-semibold text-white bg-primary px-2 py-1 rounded-full">Saved</span>
+        </div>
+      </div>
+      <p className="text-[11px] text-text-muted italic mt-4">
+        Your correction is kept alongside the AI&apos;s original read — nothing is overwritten.
+      </p>
+    </div>
+  );
+}
+
+function MilestonesVisual() {
+  const badges = [
+    { emoji: '🎙️', name: 'First Entry', unlocked: true },
+    { emoji: '🔥', name: '7-Day Presence', unlocked: true },
+    { emoji: '💬', name: '30 Entries', unlocked: true },
+    { emoji: '🧭', name: 'Self-Aware', unlocked: false },
+    { emoji: '🌱', name: 'Growth Streak', unlocked: false },
+    { emoji: '🏆', name: '100 Entries', unlocked: false },
+  ];
+  return (
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="flex items-center justify-between mb-4">
+        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">Your milestones</p>
+        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
+      </div>
+      <div className="grid grid-cols-3 gap-3">
+        {badges.map((b) => (
+          <div
+            key={b.name}
+            className={`rounded-xl p-3 text-center border transition-all duration-300 ${
+              b.unlocked ? 'bg-white border-primary/20 shadow-sm' : 'bg-primary/[0.03] border-primary/8 opacity-50'
+            }`}
+          >
+            <p className="text-2xl mb-1">{b.emoji}</p>
+            <p className="text-[10px] font-semibold text-text-secondary leading-tight">{b.name}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[11px] text-text-muted italic mt-4">Tap any unlocked badge to see its story — and share it.</p>
+    </div>
+  );
+}
+
+function TherapistShareVisual() {
+  return (
+    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-2xl">🩺</span>
+          <div>
+            <p className="font-bold text-text-primary text-base leading-tight">Insights report</p>
+            <p className="text-[11px] text-text-muted">Ready to share as PDF</p>
+          </div>
+        </div>
+        <div className="space-y-2">
+          {['Mood trends (30 days)', 'Dominant emotions', 'Key patterns & triggers'].map((line) => (
+            <div key={line} className="flex items-center gap-2 text-sm text-text-secondary">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+              {line}
+            </div>
+          ))}
+        </div>
+        <div className="mt-4 w-full rounded-xl bg-primary text-white text-sm font-semibold py-3 text-center shadow-sm">
+          Share with therapist
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ---------- Features ---------- */
 
 const features: Feature[] = [
@@ -696,7 +786,7 @@ const features: Feature[] = [
     icon: Map,
     headline: 'Mapping your mood in one chart',
     body:
-      'Every entry drops a pin: calm or activated, pleasant or not. Over time, pins form a constellation — your emotional fingerprint. See where you get stuck. Tap any dot to relive it.',
+      'Every entry drops a pin: calm or activated, pleasant or not. Over time, pins form a constellation — your emotional fingerprint. See where you get stuck. Tap any dot to relive it. Underneath each entry, Vocolens also surfaces blended emotions — like Love or Optimism — and flags emotional tension when two opposite feelings show up at once, so complexity is never flattened into a single label.',
     outcome:
       '\u201CI live in Tense during work weeks and shift to Calm every Saturday at 6pm.\u201D — self-knowledge that changes real decisions.',
     visual: <EmotionalLandscapeVisual />,
@@ -751,6 +841,38 @@ const features: Feature[] = [
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
     visual: <TimeOfDayVisual />,
   },
+  {
+    id: 'refine-analysis',
+    eyebrow: 'AI + Your Corrections',
+    icon: SlidersHorizontal,
+    headline: 'You always have the final word',
+    body:
+      'The AI reads your words and takes its best guess — an emotion, a distress level, how pleasant or activated it felt. If something feels off, tap Refine Analysis to adjust it. Your correction is saved right alongside the AI\u2019s original read, so nothing is ever forced on you.',
+    outcome:
+      '\u201CThe AI labeled my entry as sadness. I changed it to grief \u2014 and finally had a word for what I\u2019d been carrying.\u201D',
+    visual: <RefineAnalysisVisual />,
+  },
+  {
+    id: 'milestones',
+    eyebrow: 'Milestones',
+    icon: Award,
+    headline: 'Celebrate the moments that matter',
+    body:
+      'Unlock badges as you build your practice — from your first entry to consistency streaks to emotional breakthroughs. Each badge comes with the story behind it and a tip for what\u2019s next. Share any unlocked milestone the moment it happens.',
+    outcome: '\u201CSeeing \u201830 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D',
+    visual: <MilestonesVisual />,
+  },
+  {
+    id: 'therapist-share',
+    eyebrow: 'Therapist Share',
+    icon: HeartHandshake,
+    headline: 'Bring your data into the room',
+    body:
+      'Generate a personalised emotional wellness report \u2014 mood trends, dominant emotions, and key patterns \u2014 and share it directly with a therapist, counselor, or doctor as a PDF. Built for the moments professional support matters most.',
+    outcome:
+      '\u201CI stopped trying to summarise three weeks of feelings in five minutes. I just handed my therapist the report.\u201D',
+    visual: <TherapistShareVisual />,
+  },
 ];
 
 function FeatureNav({ activeId }: { activeId: string }) {
@@ -791,7 +913,7 @@ export function FeaturesShowcase() {
             Inside Vocolens
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Ten ways to finally{' '}
+            13 ways to finally{' '}
             <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
               understand yourself
             </span>
@@ -883,7 +1005,7 @@ export function FeaturesShowcase() {
           <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
           <div className="relative">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              All ten features. One quiet app.
+              All 13 features. One quiet app.
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
               Private. Powerful. Launching soon. Get in early.
@@ -1010,6 +1132,30 @@ export function FeaturesShowcase() {
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: 'After each entry you tap one of 8 body regions — head, face, neck, chest, stomach, arms, hands, or legs — and Vocolens builds a heatmap of your physical stress signature over time.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I correct the AI\u2019s emotion analysis if it gets it wrong?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Every entry\u2019s emotion, distress level, and valence/arousal reading can be refined by you. Your correction is saved alongside the AI\u2019s original read — nothing is overwritten or forced.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Does Vocolens have achievements or badges?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Vocolens has a Milestones section with unlockable badges for consistency, entry counts, and emotional breakthroughs, each with a story and a tip, and each shareable once unlocked.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I share my Vocolens insights with a therapist?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Vocolens can generate a personalised PDF wellness report covering mood trends, dominant emotions, and key patterns that you can share directly with a therapist, counselor, or doctor.',
                 },
               },
             ],
