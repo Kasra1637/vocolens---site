@@ -744,7 +744,7 @@ const features: Feature[] = [
     icon: CalendarDays,
     headline: 'Easily track your progress',
     body:
-      'No streaks. No guilt. Just dots on a calendar — proof you showed up for yourself. Miss a day? Nothing breaks. Come back whenever. It celebrates presence, not perfection.',
+      'No streaks. No guilt. Just dots on a calendar showing you showed up for yourself. Miss a day? Nothing breaks. Come back any time. It celebrates presence only.',
     outcome: '\u201CI journaled 14 times this month without once feeling like I failed.\u201D',
     visual: <CalendarVisual />,
   },
@@ -754,7 +754,7 @@ const features: Feature[] = [
     icon: BookOpenText,
     headline: 'View your weekly mood story',
     body:
-      'Each week, Vocolens reads your entries and writes a personal narrative — key themes, growth, one encouraging line ahead. Never summarise your own feelings again.',
+      'Each week, Vocolens reads your entries and writes a personal narrative with key themes, growth moments, and one encouraging line ahead. No more self-summarising.',
     outcome:
       'The kind of weekly debrief a thoughtful friend would give you — generated in seconds, updated with every new entry.',
     visual: <WeeklyReflectionVisual />,
@@ -765,7 +765,7 @@ const features: Feature[] = [
     icon: BarChart3,
     headline: 'See which emotion dominates your days',
     body:
-      'Trust on Monday. Anticipation on Wednesday. Happiness on Saturday. Vocolens maps your dominant emotion to every weekday. See what\u2019s rising, fading, and shifting.',
+      'Trust on Monday. Anticipation on Wednesday. Happiness on Saturday. Vocolens maps your dominant emotion to each weekday so you see what\u2019s rising and shifting.',
     outcome: 'Know your emotional rhythm by day — and plan your life around it.',
     visual: <MoodStoryVisual />,
   },
@@ -775,7 +775,7 @@ const features: Feature[] = [
     icon: ChevronDownCircle,
     headline: 'Go as deep as you want',
     body:
-      'Three sections by default \u2014 enough to understand your week. Want more? Tap \u201CExplore deeper\u201D for landscape mapping, body heatmap, and pattern detection. It waits for you.',
+      'Three sections by default \u2014 enough to understand your week. Want more? Tap Explore Deeper for landscape mapping, body heatmap, and pattern detection on demand.',
     outcome:
       'Full control over your cognitive load. See more when you\u2019re sharp. See less when you\u2019re overstimulated.',
     visual: <ExploreDeeperVisual />,
@@ -786,7 +786,7 @@ const features: Feature[] = [
     icon: Map,
     headline: 'Mapping your mood in one chart',
     body:
-      'Every entry drops a pin: calm or activated, pleasant or not. Over time, pins form a constellation — your emotional fingerprint. See where you get stuck. Tap any dot to relive it. Underneath each entry, Vocolens also surfaces blended emotions — like Love or Optimism — and flags emotional tension when two opposite feelings show up at once, so complexity is never flattened into a single label.',
+      'Every entry drops a pin: calm or activated, pleasant or not. Over time they form a constellation. Blended emotions and tension flags surface hidden complexity.',
     outcome:
       '\u201CI live in Tense during work weeks and shift to Calm every Saturday at 6pm.\u201D — self-knowledge that changes real decisions.',
     visual: <EmotionalLandscapeVisual />,
@@ -797,7 +797,7 @@ const features: Feature[] = [
     icon: Activity,
     headline: 'Track your physical feelings',
     body:
-      'Tap where you felt it — chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature. Often the first warning sign, days before your mood catches up.',
+      'Tap where you felt it \u2014 chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature, often the first warning before mood shifts.',
     outcome: 'Catch the burnout in your chest before it reaches your head.',
     visual: <BodyMapVisual />,
   },
@@ -807,7 +807,7 @@ const features: Feature[] = [
     icon: Sparkles,
     headline: 'Clear insights without any noise',
     body:
-      'One insight at a time — no dashboard noise. Vocolens surfaces the single most important pattern from your entries: a loop, a growth moment, or a gentle warning. Dig deeper when ready.',
+      'One insight at a time \u2014 no dashboard noise. Vocolens surfaces the single most important pattern from your entries: a loop, a growth moment, or a gentle warning.',
     outcome: 'Personalised emotional intelligence that respects your bandwidth.',
     visual: <DeepInsightsVisual />,
   },
@@ -817,7 +817,7 @@ const features: Feature[] = [
     icon: Zap,
     headline: 'Learn what keeps setting you off',
     body:
-      'Which subjects reliably shift your state — and which way? Vocolens correlates topics with emotional spikes over 7, 14, or 30 days. Not a guess. A pattern built from your own voice.',
+      'Which subjects reliably shift your state \u2014 and which way? Vocolens correlates topics with emotional spikes over 7, 14, or 30 days. A pattern from your own voice.',
     outcome: 'Stop being blindsided. See the trigger before the spiral starts.',
     visual: <TriggersVisual />,
   },
@@ -827,7 +827,7 @@ const features: Feature[] = [
     icon: Repeat,
     headline: 'Your emotional narrative',
     body:
-      'Certain topics keep resurfacing. Vocolens ranks them and offers one concrete micro-action for your top theme — so patterns become choices, not loops.',
+      'Certain topics keep resurfacing. Vocolens ranks them and offers one concrete micro-action for your top theme \u2014 turning recurring patterns into choices, not loop.',
     outcome: 'See the narrative. Then decide if you want to keep writing it.',
     visual: <ThemesVisual />,
   },
@@ -837,7 +837,7 @@ const features: Feature[] = [
     icon: Clock,
     headline: 'Track your mood by the hour',
     body:
-      'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour — turning timestamps you already left into patterns you can act on.',
+      'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour \u2014 turning timestamps you already left into patterns you can plan your day around.',
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
     visual: <TimeOfDayVisual />,
   },
@@ -847,7 +847,7 @@ const features: Feature[] = [
     icon: SlidersHorizontal,
     headline: 'You always have the final word',
     body:
-      'The AI reads your words and takes its best guess — an emotion, a distress level, how pleasant or activated it felt. If something feels off, tap Refine Analysis to adjust it. Your correction is saved right alongside the AI\u2019s original read, so nothing is ever forced on you.',
+      'The AI guesses your emotion, distress, and mood. If something feels off, tap Refine Analysis to adjust. Your correction lives right alongside the AI\u2019s original.',
     outcome:
       '\u201CThe AI labeled my entry as sadness. I changed it to grief \u2014 and finally had a word for what I\u2019d been carrying.\u201D',
     visual: <RefineAnalysisVisual />,
@@ -858,7 +858,7 @@ const features: Feature[] = [
     icon: Award,
     headline: 'Celebrate the moments that matter',
     body:
-      'Unlock badges as you build your practice — from your first entry to consistency streaks to emotional breakthroughs. Each badge comes with the story behind it and a tip for what\u2019s next. Share any unlocked milestone the moment it happens.',
+      'Unlock badges as you build your practice \u2014 first entry, consistency streaks, breakthroughs. Each comes with a story and a tip. Share any the moment it unlocks.',
     outcome: '\u201CSeeing \u201830 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D',
     visual: <MilestonesVisual />,
   },
@@ -868,7 +868,7 @@ const features: Feature[] = [
     icon: HeartHandshake,
     headline: 'Bring your data into the room',
     body:
-      'Generate a personalised emotional wellness report \u2014 mood trends, dominant emotions, and key patterns \u2014 and share it directly with a therapist, counselor, or doctor as a PDF. Built for the moments professional support matters most.',
+      'Generate a personalised wellness report \u2014 mood trends, dominant emotions, key patterns \u2014 and share it as a PDF with a therapist, counselor, or doctor in one tap.',
     outcome:
       '\u201CI stopped trying to summarise three weeks of feelings in five minutes. I just handed my therapist the report.\u201D',
     visual: <TherapistShareVisual />,
