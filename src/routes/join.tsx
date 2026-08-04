@@ -586,7 +586,7 @@ function JoinPage() {
                   <p>
                     <strong>You're on the list.</strong>
                     <br />
-                    We'll reach out when Vocolens is ready.
+                    Great! Next, you will receive an email from us with an invite link.
                   </p>
 
                   <ShareBar
