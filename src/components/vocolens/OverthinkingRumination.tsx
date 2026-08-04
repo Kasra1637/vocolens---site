@@ -390,6 +390,21 @@ export function OverthinkingRumination() {
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                 </div>
               </button>
+              <button
+                onClick={() => navigate({ to: '/resources/burnout-recovery-signs' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Stress &amp; Burnout Recovery</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      Burnout doesn't start in your job — it starts in your nervous system
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn the science of allostatic load and how a daily voice-journaled load check catches burnout before it becomes collapse.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
+              </button>
             </div>
           </div>
         </AnimatedSection>
