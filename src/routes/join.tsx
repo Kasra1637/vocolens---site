@@ -2,7 +2,7 @@
  * Waitlist / Join page — with social sharing buttons for virality.
  */
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -458,61 +458,6 @@ function ShareBar({ heading, subheading, variant = "section" }: ShareBarProps) {
   );
 }
 
-/* ─── Countdown Banner ─── */
-const LAUNCH_DATE = new Date("2026-08-02T00:00:00");
-
-function getTimeLeft() {
-  const now = new Date();
-  const diff = Math.max(LAUNCH_DATE.getTime() - now.getTime(), 0);
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-  return { days, hours, minutes, seconds };
-}
-
-function CountdownBanner() {
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const labelText = timeLeft.days === 0
-    ? "Launching today"
-    : `${timeLeft.days} day${timeLeft.days === 1 ? "" : "s"} to launch`;
-
-  return (
-    <div className="join-countdown-banner" role="timer" aria-live="polite" aria-label={`${timeLeft.days} days, ${timeLeft.hours} hours, ${timeLeft.minutes} minutes, and ${timeLeft.seconds} seconds until launch`}>
-      <div className="join-countdown-inner">
-        <span className="join-countdown-label">{labelText}</span>
-        <div className="join-countdown-blocks">
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{String(timeLeft.days).padStart(2, "0")}</span>
-            <span className="join-countdown-unit">days</span>
-          </div>
-          <span className="join-countdown-separator">:</span>
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{String(timeLeft.hours).padStart(2, "0")}</span>
-            <span className="join-countdown-unit">hrs</span>
-          </div>
-          <span className="join-countdown-separator">:</span>
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{String(timeLeft.minutes).padStart(2, "0")}</span>
-            <span className="join-countdown-unit">min</span>
-          </div>
-          <span className="join-countdown-separator">:</span>
-          <div className="join-countdown-block">
-            <span className="join-countdown-value">{String(timeLeft.seconds).padStart(2, "0")}</span>
-            <span className="join-countdown-unit">sec</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ─── Main Page Component ─── */
 function JoinPage() {
   const [email, setEmail] = useState("");
@@ -578,7 +523,6 @@ function JoinPage() {
         <main className="join-main">
           {/* HERO */}
           <section className="join-hero" id="waitlist">
-            <CountdownBanner />
 
             <h1 className="join-h1">
               Your thoughts finally have<br />
@@ -829,70 +773,6 @@ const joinPageStyles = `
     margin: 0 auto;
     padding: 6rem 2rem 5rem;
     text-align: center;
-  }
-
-  /* COUNTDOWN BANNER */
-  .join-countdown-banner {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.25rem;
-  }
-
-  .join-countdown-inner {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.6rem 1.4rem;
-    background: linear-gradient(135deg, rgba(124, 92, 191, 0.12) 0%, rgba(167, 141, 224, 0.08) 100%);
-    border: 0.5px solid rgba(167, 141, 224, 0.3);
-    border-radius: 50px;
-    backdrop-filter: blur(8px);
-  }
-
-  .join-countdown-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--join-purple-light);
-  }
-
-  .join-countdown-blocks {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .join-countdown-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 36px;
-  }
-
-  .join-countdown-value {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--join-text);
-    line-height: 1.1;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .join-countdown-unit {
-    font-size: 9px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--join-text-muted);
-    margin-top: 1px;
-  }
-
-  .join-countdown-separator {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--join-purple-light);
-    margin-bottom: 8px;
   }
 
   .join-eyebrow {
