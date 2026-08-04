@@ -554,7 +554,6 @@ function JoinPage() {
                     Get early access
                     <ArrowIcon />
                   </button>
-                  <p className="join-form-note">No spam — one email when we launch</p>
                   <p className="join-gmail-note">
                     Gmail only — required for beta access.
                   </p>
@@ -709,7 +708,7 @@ function JoinPage() {
               Your thoughts deserve<br />
               <em>somewhere to land</em>
             </h2>
-            <p>Join the waitlist — get one email when we launch, nothing else.</p>
+            <p>Join the waitlist to get early access.</p>
             <a href="#waitlist" className="join-btn-bottom">
               Get early access
               <ArrowIcon />
