@@ -1080,7 +1080,7 @@ export function FeaturesShowcase() {
             '@type': 'SoftwareApplication',
             name: 'Vocolens',
             applicationCategory: 'HealthApplication',
-            operatingSystem: 'Android',
+            operatingSystem: 'iOS, Android, Web',
             featureList: features.map((f) => `${f.eyebrow}: ${f.headline}`),
           }),
         }}

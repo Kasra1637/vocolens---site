@@ -74,7 +74,7 @@ const softwareApplicationLd = {
   url: "https://vocolens.com",
   applicationCategory: "HealthApplication",
   applicationSubCategory: "Mental Wellness",
-  operatingSystem: "Android",
+  operatingSystem: "iOS, Android, Web",
   screenshot: ["https://vocolens.com/vocolens_app.png", "https://vocolens.com/vocolens_mobile.png"],
   image: "https://vocolens.com/vocolens_-_preview.png",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
