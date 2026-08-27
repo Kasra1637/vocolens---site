@@ -24,9 +24,8 @@ const bodyRegions = [
 ];
 
 const distressLevels = [
-  { level: 'Low',      color: '#10B981', response: 'Gentle reflection prompts' },
-  { level: 'Moderate', color: '#F59E0B', response: 'A pause reminder to check in with yourself' },
-  { level: 'High',     color: '#EF4444', response: 'Immediate distress acknowledgment and support prompt' },
+  { level: 'Moderate', color: '#F59E0B', response: 'A gentle on-screen note during reflection' },
+  { level: 'High',     color: '#EF4444', response: 'A gentle on-screen note during reflection' },
 ];
 
 export function EmotionScienceSuite() {
@@ -143,7 +142,7 @@ export function EmotionScienceSuite() {
               </div>
               <h3 className="font-bold text-text-primary mb-2 text-xl">Distress awareness, right on time</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
+                Vocolens flags moderate and high distress signals during reflection, so you can notice and pause if you need to.
               </p>
               <ul className="space-y-3">
                 {distressLevels.map(({ level, color, response }) => (
@@ -268,7 +267,7 @@ export function EmotionScienceSuite() {
                 name: 'How does Vocolens handle distress?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vocolens detects low, moderate, and high distress levels and surfaces an appropriate wellness response — gentle reflection prompts for low distress, a pause reminder for moderate, and immediate distress acknowledgment for high distress.',
+                  text: 'Vocolens scores each entry for low, moderate, or high distress. When moderate or high distress is detected during reflection, the app shows a gentle on-screen note so you can notice and pause if you need to. Vocolens is not a crisis or medical service — if you are in crisis, please contact a mental health professional or a crisis helpline in your region.',
                 },
               },
               {
