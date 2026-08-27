@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "Vocolens uses advanced AI to analyze the words and language in your journal transcript. It detects emotions from your word choice, phrasing, and narrative context — mapping your feelings to 8 core psychology-backed emotions and placing them on a 2D scale of pleasantness and energy. Over time, our on-device personalization AI learns from any corrections you make to build your unique emotional fingerprint."
+    a: "Vocolens uses advanced AI to analyze the words and language in your journal transcript. It detects emotions from your word choice, phrasing, and narrative context — mapping your feelings to 8 core psychology-backed emotions and placing them on a 2D scale of pleasantness and energy. Over time, a personalization layer learns from any corrections you make and adapts future AI analysis to build your unique emotional fingerprint."
   },
   {
     q: "What makes Vocolens different from other journaling apps?",

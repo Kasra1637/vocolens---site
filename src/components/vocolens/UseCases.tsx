@@ -41,10 +41,10 @@ const conditions: Condition[] = [
     ],
     features: [
       { feature: 'Voice-first input', benefit: 'No blank page, no writing paralysis. Just speak — capture thoughts at the speed they arrive. Real-time transcription turns speech into text instantly.' },
-      { feature: 'AI emotion detection', benefit: 'The AI analyzes your words and vocal characteristics to identify emotions you might not recognize in the moment — labeling them so you don\'t have to.' },
+      { feature: 'AI emotion detection', benefit: 'The AI analyzes the words and language in what you say to identify emotions you might not recognize in the moment — labeling them so you don\'t have to.' },
       { feature: 'Self-correction that learns your brain', benefit: 'Tell the AI "that\'s not anxiety — that\'s excitement for me." It stores the correction and adjusts future analysis using weighted personalization.' },
       { feature: 'Body heatmap with time tracking', benefit: 'See where tension and stress show up in your body across 7-day, 14-day, or 30-day windows. The heatmap aggregates every session to reveal physical patterns.' },
-      { feature: 'Presence-based milestones', benefit: 'No broken streaks. No guilt. 22 badges reward showing up — from your first entry to 100-day streaks — without punishing you for missing a day.' },
+      { feature: 'Presence-based milestones', benefit: 'No broken streaks. No guilt. 21 badges reward showing up — from your first entry to 100-day streaks — without punishing you for missing a day.' },
       { feature: 'Pattern detection', benefit: 'The app tracks topic-emotion correlations, mood cycles, and time-of-day patterns across your entries — surfacing triggers you can\'t self-monitor in real time.' },
     ],
     quote: 'My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — and the AI actually gets that my "anxiety" is usually just excitement now.',
@@ -65,7 +65,7 @@ const conditions: Condition[] = [
       'Frustration when asked "how do you feel?"',
     ],
     features: [
-      { feature: 'AI names emotions from your speech', benefit: 'Speak freely about your day — the AI analyzes your words and audio to identify emotions without you needing to label them yourself.' },
+      { feature: 'AI names emotions from your speech', benefit: 'Speak freely about your day — the AI analyzes your transcript to identify emotions without you needing to label them yourself.' },
       { feature: 'Body region tap-map (8 zones)', benefit: 'Can\'t name the feeling? Tap where you feel it — head, face, neck, chest, stomach, arms, hands, or legs. The app connects physical regions to emotional patterns over time.' },
       { feature: 'Self-correction trains a personal translator', benefit: 'Each correction teaches the AI your unique emotional dialect. Weighted personalization ensures recent corrections matter most, adapting to YOUR language over time.' },
       { feature: 'Valence-arousal sliders', benefit: 'Skip emotion labels entirely. Just indicate pleasant/unpleasant (-100 to +100) and calm/activated (0 to 100) on simple sliders. No vocabulary needed.' },

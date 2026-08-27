@@ -20,8 +20,8 @@ const features = [
   },
   {
     icon: Eye,
-    title: 'Zero tracking',
-    description: 'No analytics SDKs, no advertising IDs, no location data, no screen tracking. None.',
+    title: 'No ads, no selling data',
+    description: 'No advertising SDKs, no ad IDs, no location tracking, and we never sell or share your data. Only anonymous, aggregate app diagnostics are collected — never your journal content.',
   },
   {
     icon: Database,
