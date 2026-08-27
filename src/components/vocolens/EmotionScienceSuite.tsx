@@ -25,8 +25,8 @@ const bodyRegions = [
 
 const distressLevels = [
   { level: 'Low',      color: '#10B981', response: 'Gentle reflection prompts' },
-  { level: 'Moderate', color: '#F59E0B', response: 'Grounding & breathing guidance' },
-  { level: 'High',     color: '#EF4444', response: 'Grounding exercises surfaced immediately' },
+  { level: 'Moderate', color: '#F59E0B', response: 'A pause reminder to check in with yourself' },
+  { level: 'High',     color: '#EF4444', response: 'Immediate distress acknowledgment and support prompt' },
 ];
 
 export function EmotionScienceSuite() {
@@ -141,7 +141,7 @@ export function EmotionScienceSuite() {
                 <HeartPulse className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Distress grounding, right on time</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Distress awareness, right on time</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
                 Vocolens listens for distress signals and matches the response to the severity — never one-size-fits-all.
               </p>
@@ -268,7 +268,7 @@ export function EmotionScienceSuite() {
                 name: 'How does Vocolens handle distress?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vocolens detects low, moderate, and high distress levels and surfaces an appropriate wellness response — gentle reflection prompts for low distress, grounding and breathing for moderate, and immediate crisis resources for high distress.',
+                  text: 'Vocolens detects low, moderate, and high distress levels and surfaces an appropriate wellness response — gentle reflection prompts for low distress, a pause reminder for moderate, and immediate distress acknowledgment for high distress.',
                 },
               },
               {

@@ -21,15 +21,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
+      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
       { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
+      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress grounding. Join Waitlist today." },
+      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],

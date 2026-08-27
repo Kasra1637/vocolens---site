@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing tools. If the app detects moderate or high distress during your entry, it immediately surfaces grounding exercises—like box breathing and 5-4-3-2-1 sensory grounding—to help you regulate your emotions in the moment."
+    a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing awareness. If the app detects moderate or high distress during your entry, it gently flags it so you can pause and take a moment for yourself."
   },
 ];
 
