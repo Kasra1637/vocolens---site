@@ -5,7 +5,7 @@ import { ChevronDown, MessageCircleQuestionMark as MessageCircleQuestion } from 
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Yes, absolutely. Your journal entries are stored locally on your device, meaning there is no cloud sync or server-side backup of your personal data. Additionally, the app is protected by biometric authentication (Face ID or Fingerprint) and a PIN, ensuring that your most personal thoughts are completely locked away. You also have full control to export or permanently delete your data at any time."
+    a: "Your journal lives on your device — entries, audio, and personalization data stay local and locked behind biometric authentication (Face ID or Fingerprint) and a PIN, with no cloud account or synced backup of your journal. Turning speech into insight does involve two brief, encrypted steps off-device: your audio is sent for speech-to-text transcription, and the resulting text is sent for emotion analysis. Neither service permanently stores your data, and no audio is sent for the analysis step. You can export or permanently delete everything at any time. Full detail lives in our Privacy Policy."
   },
   {
     q: "How does the AI actually know what I'm feeling?",

@@ -90,7 +90,7 @@ const conditions: Condition[] = [
       'Social processing environments feel unsafe for vulnerability',
     ],
     features: [
-      { feature: 'Private, local-first space', benefit: 'No audience, no social rules, no masking. All journal entries are stored on-device only — never uploaded, never shared. Speak authentically without performing for anyone.' },
+      { feature: 'Private, local-first space', benefit: 'No audience, no social rules, no masking. Your journal is stored on your device behind a biometric lock — no cloud account, no synced backup, nothing shared. Speak authentically without performing for anyone.' },
       { feature: 'Self-correction teaches YOUR emotional map', benefit: 'Autistic emotions don\'t always match neurotypical labels. Correct the AI and it learns your neurology — weighted personalization ensures it adapts to how YOU experience emotions.' },
       { feature: 'Predictable, structured reflection', benefit: 'Multi-step reflection follows a fixed sequence: emotion selection, valence-arousal sliders, body scan. Same order every time. No surprises.' },
       { feature: 'Skip anything, anytime', benefit: 'Every step is optional — skip individual steps or turn off reflection entirely. Three modes (full, quick, off) respect fluctuating capacity.' },

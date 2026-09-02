@@ -54,7 +54,7 @@ function Home() {
               </h1>
             </div>
             <p id="hero-subheading" className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
-              Detect and name emotions your mind overlooks - powered by AI voice analysis.
+              Put a name to the emotions your mind overlooks - just speak, and let the words you say do the rest.
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
@@ -67,7 +67,7 @@ function Home() {
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Flawlessly accurate transcription</span>
+                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Just speak - no typing</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
                 <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">

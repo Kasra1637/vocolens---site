@@ -565,7 +565,7 @@ function JoinPage() {
                   <div className="join-trust-strip" aria-label="Product trust signals">
                     <div className="join-trust-item">
                       <ClockIcon />
-                      <span>Flawlessly accurate transcription</span>
+                      <span>Just speak - no typing</span>
                     </div>
                     <div className="join-trust-item">
                       <StarIcon />

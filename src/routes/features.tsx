@@ -14,7 +14,7 @@ export const Route = createFileRoute("/features")({
       {
         property: "og:description",
         content:
-          "Calendar, weekly reflection, mood story, emotional landscape, body sensation heatmap, triggers, themes, time-of-day analytics, AI + your corrections, milestones, and therapist sharing — all private, all on-device.",
+          "Calendar, weekly reflection, mood story, emotional landscape, body sensation heatmap, triggers, themes, time-of-day analytics, AI + your corrections, milestones, and therapist sharing — your journal stays on your device, behind a biometric lock.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vocolens.com/features" },

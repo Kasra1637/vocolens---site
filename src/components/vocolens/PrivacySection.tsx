@@ -5,8 +5,8 @@ import { Link } from '@tanstack/react-router';
 const features = [
   {
     icon: Smartphone,
-    title: 'Stays on your device',
-    description: 'Entries, audio, stats, and preferences are stored locally. No cloud sync, no server backup, no remote access.',
+    title: 'Lives on your device',
+    description: 'Your entries, audio, stats, and preferences are stored locally — there is no cloud account or synced journal, so your reflections are never sitting on a server waiting to be breached.',
   },
   {
     icon: Lock,

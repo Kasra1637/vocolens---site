@@ -46,7 +46,7 @@ export function EmotionScienceSuite() {
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          8 core emotions, valence, distress, body mapping, and adaptive AI — your data stays privately on your device.
+          8 core emotions, valence, distress, body mapping, and AI that adapts to you — your journal stays on your device, behind your biometric lock.
         </p>
       </AnimatedSection>
 
@@ -291,7 +291,7 @@ export function EmotionScienceSuite() {
                 name: 'Is my emotional data private?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. Vocolens is biometric-locked and stores entries, audio, and personalization data on your device. Nothing is uploaded, synced to the cloud, or shared.',
+                  text: 'Vocolens is biometric-locked and keeps your entries, audio, and personalization data on your device — there is no cloud account or synced backup of your journal. To turn speech into insight, your audio is sent transiently for transcription and the resulting text is sent for emotion analysis over an encrypted connection; neither service permanently stores your data, and no audio is sent for the analysis step. See our Privacy Policy for full detail.',
                 },
               },
             ],

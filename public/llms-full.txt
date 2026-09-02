@@ -6,21 +6,21 @@ This is the expanded reference file for Vocolens, intended for AI systems and an
 
 ## About
 
-Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak, and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
+Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak - Vocolens transcribes what they say and analyses the words and language to name emotions the conscious mind may overlook, so users finally have language for feelings they couldn't put into words. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
 
 - Website: https://vocolens.com
 - Platform: Android
-- Price: Free
+- Price: Paid subscription with a 3-day free trial (monthly, quarterly, and annual plans)
 - Category: Health & Mental Wellness
 - Application category: HealthApplication / Mental Wellness
 
 ## Frequently Asked Questions
 
 Q: Is my voice and journal data private and secure?
-A: Yes. Journal entries are stored locally on-device with no cloud sync or server-side backup. The app is protected by biometric authentication (Face ID or Fingerprint) and a PIN. Users can export or permanently delete their data at any time.
+A: Your journal entries, audio, and personalization data are stored on your device and locked behind biometric authentication (Face ID or Fingerprint) and a PIN - there is no cloud account or synced backup of your journal. To turn speech into insight, two steps happen off-device transiently over an encrypted connection: your audio is sent for speech-to-text transcription (Deepgram), and the resulting text transcript is sent for emotion analysis (OpenAI via OpenRouter). Neither service permanently stores your data, and no audio is sent for the analysis step. You can export or permanently delete your data at any time. See the Privacy Policy for full detail.
 
 Q: How does the AI actually know what I'm feeling?
-A: Vocolens analyzes the words and language in a journal transcript to detect emotions from word choice, phrasing, and narrative context, mapping feelings to 8 core psychology-backed emotions on a 2D scale of pleasantness and energy. An on-device personalization AI learns from user corrections to build a unique emotional fingerprint over time.
+A: Vocolens analyses the words and language in your journal transcript - your word choice, phrasing, and narrative context - to name what you were feeling, mapping it to 8 core psychology-backed emotions on a 2D scale of pleasantness and energy. Over time it learns from the corrections you make, so the labels line up more closely with how you actually experience your emotions, giving you clearer self-understanding the more you use it.
 
 Q: What makes Vocolens different from other journaling apps?
 A: Most journaling apps require writing. Vocolens lets users speak instead, detects emotions from their words, learns from corrections, and builds a personal emotional map. It is designed specifically for neurodivergent brains that think faster than they can type.
@@ -29,7 +29,7 @@ Q: What happens if the AI gets my emotion wrong?
 A: Users can correct the emotion label, and the AI remembers the correction, reducing that mistake in the future. Corrections build a personalized emotional vocabulary unique to each user.
 
 Q: Is this a replacement for therapy or mental health support?
-A: No. Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. It includes built-in wellbeing tools such as grounding exercises (box breathing, 5-4-3-2-1 sensory grounding) that surface automatically if moderate or high distress is detected during an entry.
+A: No. Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. It does include built-in wellbeing awareness: when an entry reads as moderate or high distress, Vocolens gently flags it so you can notice sooner and give yourself a moment - the point being to help you catch overwhelm earlier, not to treat it.
 
 ## Features (Detailed)
 

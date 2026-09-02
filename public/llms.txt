@@ -4,20 +4,20 @@
 
 ## About
 
-Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak - and the app uses AI voice analysis to detect, name, and track emotions that the conscious mind may overlook. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
+Vocolens is an AI-powered voice journaling app designed specifically for neurodivergent minds. Instead of writing, users simply speak - Vocolens transcribes what they say and analyses the words and language to name emotions the conscious mind may overlook, so users finally have language for feelings they couldn't put into words. Built for people with ADHD, autism, alexithymia, and anyone who struggles with traditional journaling or emotional self-awareness.
 
 - Website: https://vocolens.com
 - Platform: Android
-- Price: Free
+- Price: Paid subscription with a 3-day free trial (monthly, quarterly, and annual plans)
 - Category: Health & Mental Wellness
 
 ## Core Value Proposition
 
-- Voice-first journaling removes barriers between thought and expression
-- AI emotional analysis detects emotions users may not recognize themselves
-- Neurodivergent-friendly design accommodates racing thoughts, executive function challenges, and alexithymia
-- Private by design - your data stays yours
-- Flawlessly accurate transcription captures every word
+- Speak instead of write, so thoughts get out before they slip away or feel too hard to start
+- Put a name to feelings you couldn't name yourself, from the words and language in what you said
+- See your patterns over time instead of guessing why the same moods keep returning
+- Understand yourself without handing your private thoughts to a data-hungry app - see Privacy below
+- Reliable speech-to-text (Deepgram Nova-2) so your words are captured without you having to type
 
 ## Features
 
@@ -61,7 +61,11 @@ Track your mood by the hour. Temporal mood analysis showing how emotions shift t
 
 ## Science & Approach
 
-Vocolens is grounded in emotion science including Plutchik's wheel of emotions, somatic awareness research, and AI voice analysis. The app provides granular emotion mapping beyond simple "happy/sad" categories, helping users develop emotional vocabulary and self-awareness over time.
+Vocolens is grounded in emotion science including Plutchik's wheel of emotions, affect-labeling research, and somatic (body-sensation) awareness. Emotions are detected by analysing the words and language in your journal transcript. The result: granular emotion mapping beyond simple "happy/sad" categories, so users steadily build emotional vocabulary and self-awareness over time.
+
+## Privacy
+
+Journal entries, audio, and personalization data are stored on your device and locked behind biometric authentication and a PIN. To turn speech into insight, two things leave the device transiently over an encrypted connection: your audio is sent for speech-to-text transcription (Deepgram) and the resulting text transcript is sent for emotion analysis (OpenAI via OpenRouter). Neither service permanently stores your data, and no audio is sent for the emotion analysis step. Full detail: https://vocolens.com/privacy
 
 ## Pages
 
