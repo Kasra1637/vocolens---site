@@ -77,6 +77,15 @@ Vocolens is grounded in emotion science including:
 5. "Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
    Explains the neuroscience of alexithymia and how AI-assisted voice journaling builds emotional vocabulary from scratch.
 
+6. "The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps" - https://vocolens.com/resources/overthinking-rumination
+   Explains the Zeigarnik effect and default mode network research on rumination, and how voice journaling gives the brain a completion signal.
+
+7. "Burnout Doesn't Start in Your Job — It Starts in Your Nervous System" - https://vocolens.com/resources/burnout-recovery-signs
+   Explains allostatic load and Maslach's three dimensions of burnout, and how a daily voice-journaled load check catches burnout early.
+
+8. "Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock" - https://vocolens.com/resources/adhd-time-blindness
+   Explains the neuroscience of ADHD time perception (interval timing) and how a daily voice-logged time-anchor habit recalibrates the internal clock.
+
 ## Pages
 
 - Home: https://vocolens.com/
@@ -88,6 +97,9 @@ Vocolens is grounded in emotion science including:
 - Distress Detection: https://vocolens.com/resources/distress-detection
 - Autism & Emotional Regulation: https://vocolens.com/resources/autism-emotional-regulation
 - Alexithymia & Emotional Vocabulary: https://vocolens.com/resources/alexithymia-emotional-vocabulary
+- Overthinking & Rumination: https://vocolens.com/resources/overthinking-rumination
+- Burnout Recovery: https://vocolens.com/resources/burnout-recovery-signs
+- ADHD Time Blindness: https://vocolens.com/resources/adhd-time-blindness
 - Privacy Policy: https://vocolens.com/privacy
 - Terms of Service: https://vocolens.com/terms
 - Join Waitlist: https://vocolens.com/join
