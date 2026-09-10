@@ -16,12 +16,12 @@ const features = [
   {
     icon: Shield,
     title: 'Encrypted in transit',
-    description: 'All network calls use HTTPS / TLS. Audio is sent transiently for transcription and discarded immediately after.',
+    description: 'All network calls use HTTPS / TLS. Audio and transcripts are sent transiently for transcription and emotion analysis, and are not permanently stored by either service.',
   },
   {
     icon: Eye,
     title: 'No ads, no selling data',
-    description: 'No advertising SDKs, no ad IDs, no location tracking, and we never sell or share your data. Only anonymous, aggregate app diagnostics are collected — never your journal content.',
+    description: 'No advertising SDKs, no ad IDs, no location tracking, and we never sell or share your data. No analytics or usage tracking is active in the app.',
   },
   {
     icon: Database,
