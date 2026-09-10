@@ -135,15 +135,15 @@ export function PrivacyPolicy() {
                     <ul className="space-y-2 text-text-secondary text-sm">
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Your text transcript is sent to our analysis backend for emotional analysis.</span>
+                        <span>Your text transcript — and, when available, your raw audio recording — is sent to our analysis backend for emotional analysis.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Our backend forwards this transcript to OpenAI's GPT-5.4 Mini model, accessed through OpenRouter (an AI gateway service). The AI analyses the words and language in your transcript to score the 8 core emotions and generate a personalised reflection.</span>
+                        <span>Our backend forwards this data to OpenAI's GPT-5.4 Mini model, accessed through OpenRouter (an AI gateway service). When audio is included, the model analyses vocal characteristics (tone, pace, energy) alongside the words themselves; when only text is available, analysis is based on the transcript content alone. The model scores the 8 core emotions and generates a personalised reflection.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>No audio is transmitted for AI analysis. No user identifiers, account details, or persistent metadata are sent alongside the transcript.</span>
+                        <span>No name, email address, or account identifier is sent alongside the transcript or audio. No persistent metadata is sent beyond what's needed for the request itself.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -186,7 +186,7 @@ export function PrivacyPolicy() {
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span>The resulting text transcript (not the audio) is then transmitted to our analysis backend for emotion analysis.</span>
+                      <span>The resulting text transcript is then transmitted to our analysis backend for emotion analysis. When available, your raw audio recording is also sent so the AI model can analyse vocal tone and pace alongside the words — see "Data Sent to Third-Party Services" above for detail.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -218,7 +218,7 @@ export function PrivacyPolicy() {
                   4. Usage Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration (in seconds) and an anonymous device identifier are sent to our backend server after each recording session. This data is held in ephemeral server memory only — it is not written to a persistent database and is lost when the server restarts. It is used solely to track your usage against your monthly allowance and is not linked to your name, email address, or any other personally identifying information.
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and a hashed device identifier are sent to our backend server after each recording session. This data is stored in our backend database solely to track your usage against your monthly allowance. It is not linked to your name, email address, or any other personally identifying information, and it contains none of your journal content.
                 </p>
               </div>
             </div>
@@ -297,7 +297,7 @@ export function PrivacyPolicy() {
                   7. No Analytics or Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  Vocolens does not include any third-party advertising or crash-reporting SDKs. The app includes Expo's built-in telemetry module (expo-insights) which may collect anonymous, aggregate usage statistics for platform stability purposes — no personal data is included. We do not track:
+                  Vocolens does not include any third-party advertising or crash-reporting SDKs. The app's build tooling includes Expo's own telemetry module (expo-insights), which is not currently enabled or collecting data. We do not track:
                 </p>
 
                 <ul className="space-y-2 text-text-secondary">
