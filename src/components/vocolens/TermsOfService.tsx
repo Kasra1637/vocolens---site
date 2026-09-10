@@ -50,7 +50,7 @@ export function TermsOfService() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via OpenAI's GPT-5.4 Mini, accessed through OpenRouter — analyses your transcript text to detect expressed emotions from your words and language</span>
+                <span className="text-text-secondary">Emotional analysis (8 core emotion scoring) via OpenAI's GPT-5.4 Mini, accessed through OpenRouter — analyses both your transcript text and, when available, your audio recording to detect expressed emotions from your words, language, and vocal tone</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -200,11 +200,11 @@ export function TermsOfService() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary">Transmit the resulting text transcript to our analysis backend, which forwards it to OpenAI's GPT-5.4 Mini (via OpenRouter) solely for the purpose of emotional analysis</span>
+                    <span className="text-text-secondary">Transmit your text transcript — and, when available, your audio recording — to our analysis backend, which forwards it to OpenAI's GPT-5.4 Mini (via OpenRouter) solely for the purpose of emotional analysis</span>
                   </li>
                 </ul>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
-                  This licence does not give us the right to use your content for any other purpose. Audio is not transmitted to the AI analysis service — only the text transcript is used for emotion detection.
+                  This licence does not give us the right to use your content for any other purpose.
                 </p>
                 <p className="text-text-secondary text-base leading-relaxed">
                   As described in the Privacy Policy, your journal data is stored locally on your device and is not backed up to our servers.
@@ -234,7 +234,7 @@ export function TermsOfService() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <span className="text-text-secondary"><strong>OpenAI GPT-5.4 Mini via OpenRouter</strong> — AI emotional analysis from transcript text (openrouter.ai, openai.com)</span>
+                    <span className="text-text-secondary"><strong>OpenAI GPT-5.4 Mini via OpenRouter</strong> — AI emotional analysis from transcript text and, when available, audio (openrouter.ai, openai.com)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -264,7 +264,7 @@ export function TermsOfService() {
                   Usage Tracking
                 </h2>
                 <p className="text-text-secondary text-base leading-relaxed">
-                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and an anonymous device identifier are transmitted to our backend server after each recording session. All requests to our backend are authenticated — only the Vocolens app can access these endpoints. This data is held in ephemeral server memory and is not written to a persistent database. It is used solely to track your usage against your monthly allowance and is not used for any other purpose.
+                  To enforce the 300-minute monthly transcription allowance included with your subscription, your session duration and a hashed device identifier are transmitted to our backend server after each recording session. All requests to our backend are authenticated — only the Vocolens app can access these endpoints. This data is stored in our backend database solely to track your usage against your monthly allowance and is not used for any other purpose.
                 </p>
               </div>
             </div>
