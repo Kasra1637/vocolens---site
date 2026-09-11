@@ -1061,6 +1061,13 @@ export function FeaturesShowcase() {
             >
               Resources
             </Link>
+            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <Link
+              to="/use-cases"
+              className="text-sm text-text-muted hover:text-primary transition-colors"
+            >
+              Use Cases
+            </Link>
           </div>
 
           <div className="border-t border-primary/10 pt-8">
