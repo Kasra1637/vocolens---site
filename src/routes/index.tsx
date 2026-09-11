@@ -256,6 +256,12 @@ function Home() {
             Explore all 13 features
             <ArrowRight className="w-6 h-6" />
           </Link>
+          <p className="text-text-muted text-base mt-5">
+            Curious how it fits your mind specifically?{' '}
+            <Link to="/use-cases" className="text-primary font-semibold hover:underline">
+              See Vocolens for ADHD, autism &amp; alexithymia
+            </Link>
+          </p>
         </AnimatedSection>
       </section>
 
@@ -373,6 +379,13 @@ function Home() {
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Resources
+            </Link>
+            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <Link
+              to="/use-cases"
+              className="text-sm text-text-muted hover:text-primary transition-colors"
+            >
+              Use Cases
             </Link>
           </div>
 
