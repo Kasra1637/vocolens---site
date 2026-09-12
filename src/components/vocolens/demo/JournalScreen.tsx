@@ -4,60 +4,61 @@ import {
   Trash2,
   Calendar,
   Clock,
-  TrendingUp,
+  Activity,
   ChevronUp,
   ChevronDown,
-  Lightbulb,
-  CircleDot,
-  Mic,
-  BookOpen,
-  BarChart2,
-  Award,
-  Settings,
+  MessageSquareText,
+  ChartBar,
 } from 'lucide-react';
+import { DemoTabBar } from './DemoTabBar';
 
 interface Props {
   isActive: boolean;
 }
 
+// Glass-card treatment used throughout the real entry-detail screen
+// (src/app/entry-detail.tsx): translucent white fill + a visible 2px border,
+// not a flat borderless tint.
+const GLASS_BG = 'rgba(255,255,255,0.08)';
+const GLASS_BORDER = 'rgba(255,255,255,0.18)';
+
 function EmotionBar({
   label,
-  value,
-  color,
-  badge,
+  score,
+  isPrimary,
   isActive,
   delay,
 }: {
   label: string;
-  value: number;
-  color: string;
-  badge?: string;
+  score: number;
+  isPrimary?: boolean;
   isActive: boolean;
   delay: number;
 }) {
   return (
-    <div className="mb-2.5 last:mb-0">
+    <div>
       <div className="flex items-center justify-between mb-1">
         <div className="flex items-center gap-1.5">
-          <span className="text-white text-[10px] font-medium">{label}</span>
-          {badge && (
+          <span className={`text-white text-[10px] ${isPrimary ? 'font-semibold' : ''}`}>{label}</span>
+          {isPrimary && (
             <span
-              className="px-1.5 py-px text-[7px] rounded-full font-semibold"
-              style={{ background: 'rgba(255,255,255,0.22)', color: 'rgba(255,255,255,0.9)' }}
+              className="px-1.5 py-px text-[6.5px] rounded-full font-semibold"
+              style={{ background: 'rgba(255,255,255,0.14)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.9)' }}
             >
-              {badge}
+              PRIMARY
             </span>
           )}
         </div>
-        <span className="text-white text-[10px] font-bold">{value}%</span>
+        <span className="text-white/80 text-[10px] font-bold">{score}</span>
       </div>
-      <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.12)' }}>
+      <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
         <div
           className="h-full rounded-full transition-all ease-out"
           style={{
-            width: isActive ? `${value}%` : '0%',
-            backgroundColor: color,
-            transitionDuration: '1.2s',
+            width: isActive ? `${score}%` : '0%',
+            background: '#FFFFFF',
+            opacity: isPrimary ? 1 : 0.55,
+            transitionDuration: '1.1s',
             transitionDelay: `${delay}ms`,
           }}
         />
@@ -71,113 +72,98 @@ export function JournalScreen({ isActive }: Props) {
     <div
       className="h-full flex flex-col overflow-hidden"
       style={{
-        background: 'linear-gradient(170deg, #8059F0 0%, #8B6BFF 35%, #9B7BFF 100%)',
+        background: 'linear-gradient(180deg, #181624 0%, #0F0E1A 100%)',
       }}
     >
-      <div className="flex items-center justify-between px-4 pt-9 pb-2">
-        <ArrowLeft className="w-4 h-4 text-white/75" />
+      <div className="flex items-center justify-between px-4 pt-10 pb-2">
+        <ArrowLeft className="w-3.5 h-3.5 text-white/75" />
         <div className="flex items-center gap-3">
-          <Pencil className="w-3.5 h-3.5 text-white/55" />
-          <Trash2 className="w-3.5 h-3.5 text-white/55" />
+          <Pencil className="w-3 h-3 text-white/55" />
+          <Trash2 className="w-3 h-3 text-white/55" />
         </div>
       </div>
 
-      <div className="px-4 mb-1">
-        <h3 className="text-white text-[17px] font-bold font-comfortaa leading-tight">
+      <div className="px-4 mb-1.5">
+        <h3 className="text-white text-[15px] font-bold leading-tight" style={{ fontFamily: 'Fraunces, serif' }}>
           Morning Reflections
         </h3>
-        <p className="text-white/40 text-[9.5px] mt-0.5 text-base leading-relaxed">Wednesday, February 4, 2026</p>
+        <p className="text-white/70 text-[9px] mt-1">Wednesday, February 4, 2026</p>
       </div>
 
-      <div className="flex items-center gap-3.5 px-4 mb-3">
-        <div className="flex items-center gap-1">
-          <Calendar className="w-3 h-3 text-white/30" />
-          <span className="text-white/30 text-[8.5px]">9:10 PM</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <Clock className="w-3 h-3 text-white/30" />
-          <span className="text-white/30 text-[8.5px]">2m</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <TrendingUp className="w-3 h-3 text-white/30" />
-          <span className="text-white/30 text-[8.5px]">85%</span>
+      {/* Meta chips row — matches the Time / Duration / Intensity strip */}
+      <div className="px-3 mb-2.5">
+        <div
+          className="rounded-xl flex items-center justify-around py-2.5"
+          style={{ background: GLASS_BG, border: `1.5px solid ${GLASS_BORDER}` }}
+        >
+          <div className="flex flex-col items-center gap-0.5">
+            <Calendar className="w-3 h-3 text-white/90" />
+            <span className="text-white text-[8.5px] font-medium">9:10 PM</span>
+            <span className="text-white/40 text-[6.5px]">Time</span>
+          </div>
+          <div style={{ width: 1, height: 22, background: 'rgba(255,255,255,0.15)' }} />
+          <div className="flex flex-col items-center gap-0.5">
+            <Clock className="w-3 h-3 text-white/90" />
+            <span className="text-white text-[8.5px] font-medium">2m</span>
+            <span className="text-white/40 text-[6.5px]">Duration</span>
+          </div>
+          <div style={{ width: 1, height: 22, background: 'rgba(255,255,255,0.15)' }} />
+          <div className="flex flex-col items-center gap-0.5">
+            <Activity className="w-3 h-3 text-white/90" />
+            <span className="text-white text-[8.5px] font-medium">85%</span>
+            <span className="text-white/40 text-[6.5px]">Intensity</span>
+          </div>
         </div>
       </div>
 
       <div className="flex-1 overflow-hidden px-3 space-y-2">
-        <div
-          className="rounded-xl p-3"
-          style={{ background: 'rgba(255,255,255,0.12)' }}
-        >
-          <h4 className="text-white text-[11px] font-bold mb-1.5">Full Transcript</h4>
-          <p className="text-white/60 text-[9.5px] text-base leading-relaxed">
+        <div className="rounded-xl p-3" style={{ background: GLASS_BG, border: `1.5px solid ${GLASS_BORDER}` }}>
+          <div className="flex items-center gap-1.5 mb-1.5">
+            <MessageSquareText className="w-3 h-3 text-white/85" />
+            <h4 className="text-white text-[10.5px] font-semibold">Full Transcript</h4>
+          </div>
+          <p className="text-white/60 text-[9px] leading-relaxed">
             Started my day with a great workout. Feeling energized and ready to tackle the day.
             The sunrise was beautiful and I feel grateful for this moment of peace.
           </p>
         </div>
 
-        <div
-          className="rounded-xl p-3"
-          style={{ background: 'rgba(255,255,255,0.12)' }}
-        >
-          <div className="flex items-center justify-between mb-1">
-            <h4 className="text-white text-[11px] font-bold">Emotion Breakdown</h4>
-            <ChevronUp className="w-3.5 h-3.5 text-white/35" />
+        <div className="rounded-xl p-3" style={{ background: GLASS_BG, border: `1.5px solid ${GLASS_BORDER}` }}>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-1.5">
+              <ChartBar className="w-3 h-3 text-white/85" />
+              <h4 className="text-white text-[10.5px] font-semibold">Emotion Breakdown</h4>
+            </div>
+            <ChevronUp className="w-3 h-3 text-white/40" />
           </div>
-          <p className="text-white/25 text-[7px] uppercase tracking-widest mb-2.5 text-base leading-relaxed">
-            Detected Emotions
+          <p className="text-white/35 text-[6.5px] uppercase tracking-widest mb-2">
+            Top Emotions — Plutchik Intensity
           </p>
-          <EmotionBar
-            label="Happiness"
-            value={85}
-            color="#FBBF24"
-            badge="PRIMARY"
-            isActive={isActive}
-            delay={0}
-          />
-          <EmotionBar
-            label="Trust"
-            value={51}
-            color="#34D399"
-            isActive={isActive}
-            delay={200}
-          />
-          <EmotionBar
-            label="Anticipation"
-            value={42}
-            color="#FB923C"
-            isActive={isActive}
-            delay={400}
-          />
+          <div className="space-y-2">
+            <EmotionBar label="Happiness" score={85} isPrimary isActive={isActive} delay={0} />
+            <EmotionBar label="Trust" score={51} isActive={isActive} delay={180} />
+            <EmotionBar label="Anticipation" score={42} isActive={isActive} delay={360} />
+          </div>
         </div>
 
-        <div
-          className="rounded-xl p-3"
-          style={{ background: 'rgba(255,255,255,0.10)' }}
-        >
+        <div className="rounded-xl p-3" style={{ background: 'rgba(255,255,255,0.06)', border: `1.5px solid rgba(255,255,255,0.14)` }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
-              <Lightbulb className="w-3 h-3 text-white/35" />
-              <h4 className="text-white text-[11px] font-bold">AI Analysis</h4>
+              <MessageSquareText className="w-3 h-3 text-white/40" />
+              <h4 className="text-white text-[10.5px] font-semibold">AI Analysis</h4>
             </div>
-            <ChevronDown className="w-3.5 h-3.5 text-white/35" />
+            <ChevronDown className="w-3 h-3 text-white/40" />
           </div>
         </div>
 
-        <div
-          className="rounded-xl p-3"
-          style={{ background: 'rgba(255,255,255,0.10)' }}
-        >
-          <div className="flex items-center gap-1.5 mb-2">
-            <CircleDot className="w-3 h-3 text-white/35" />
-            <h4 className="text-white text-[11px] font-bold">Topics</h4>
-          </div>
+        <div className="rounded-xl p-3" style={{ background: 'rgba(255,255,255,0.06)', border: `1.5px solid rgba(255,255,255,0.14)` }}>
+          <h4 className="text-white text-[10.5px] font-semibold mb-2">Topics</h4>
           <div className="flex flex-wrap gap-1.5">
             {['Exercise', 'Gratitude'].map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-0.5 text-[8.5px] rounded-full"
-                style={{ background: 'rgba(255,255,255,0.16)', color: 'rgba(255,255,255,0.78)' }}
+                className="px-2 py-0.5 text-[8px] rounded-full"
+                style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.78)' }}
               >
                 {tag}
               </span>
@@ -186,37 +172,7 @@ export function JournalScreen({ isActive }: Props) {
         </div>
       </div>
 
-      <div
-        className="px-4 py-2 flex justify-around items-center"
-        style={{ background: 'rgba(148,120,255,0.75)', backdropFilter: 'blur(12px)' }}
-      >
-        {[
-          { icon: Mic, active: false, label: 'Record' },
-          { icon: BookOpen, active: true, label: 'Journal' },
-          { icon: BarChart2, active: false, label: 'Insights' },
-          { icon: Award, active: false, label: 'Milestones' },
-          { icon: Settings, active: false, label: 'Settings' },
-        ].map(({ icon: Icon, active, label }) => (
-          <div key={label} className="flex flex-col items-center gap-0.5">
-            {active ? (
-              <div
-                className="w-7 h-7 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(255,255,255,0.25)' }}
-              >
-                <Icon className="w-3.5 h-3.5" style={{ color: 'white' }} />
-              </div>
-            ) : (
-              <Icon className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.35)' }} />
-            )}
-            <span
-              className="text-[7px] font-medium"
-              style={{ color: active ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)' }}
-            >
-              {label}
-            </span>
-          </div>
-        ))}
-      </div>
+      <DemoTabBar active="Entries" />
     </div>
   );
 }
