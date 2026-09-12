@@ -1,86 +1,92 @@
-import { Mic, BookOpen, BarChart2, Award, Settings } from 'lucide-react';
+import { Mic } from 'lucide-react';
+import { DemoTabBar } from './DemoTabBar';
 
 interface Props {
   isActive: boolean;
 }
 
+/**
+ * Recreates the app's Record tab (src/app/(tabs)/index.tsx) in its idle
+ * state: "Speak your mind" title, rotating prompt line, the large gradient
+ * mic button with sonar ripples + halo glow (MicButton.tsx), the "Tap to
+ * start" caption, and the minimum-duration hint. Uses the app's actual
+ * Midnight Glow theme colors (THEME_COLORS.darkMode in
+ * lib/state/onboarding-store.ts) rather than the site's own brand purple.
+ */
 export function RecordingScreen({ isActive }: Props) {
   return (
     <div
       className="h-full flex flex-col"
       style={{
-        background: 'linear-gradient(170deg, #8059F0 0%, #8B6BFF 35%, #9B7BFF 100%)',
+        // Midnight Glow background gradient: ["#181624", "#0F0E1A"]
+        background: 'linear-gradient(180deg, #181624 0%, #0F0E1A 100%)',
       }}
     >
-      <div className="flex flex-col items-center pt-10 px-5">
-        <div className="text-center mt-4 mb-1">
-          <h3 className="text-white text-lg font-bold font-comfortaa leading-tight">
+      <div className="flex flex-col items-center pt-11 px-5">
+        <div className="text-center">
+          <h3 className="text-white text-lg font-bold leading-tight" style={{ fontFamily: 'Fraunces, serif' }}>
             Speak your mind
           </h3>
-          <p className="text-white/55 text-[10px] mt-0.5 text-base leading-relaxed">What's on your mind today?</p>
+          <p className="text-white/80 text-[10px] mt-1.5">What's on your mind today?</p>
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center">
+      <div className="flex-1 flex flex-col items-center justify-center -mt-2">
         <div className="relative flex items-center justify-center">
           {isActive && (
             <>
               <div
-                className="absolute rounded-full bg-white/10 demo-mic-pulse"
-                style={{ width: 100, height: 100 }}
+                className="absolute rounded-full demo-mic-pulse"
+                style={{ width: 108, height: 108, border: '1.5px solid rgba(167,139,250,0.35)' }}
               />
               <div
-                className="absolute rounded-full bg-white/07 demo-mic-pulse-delayed"
-                style={{ width: 130, height: 130 }}
+                className="absolute rounded-full demo-mic-pulse-delayed"
+                style={{ width: 108, height: 108, border: '1.5px solid rgba(167,139,250,0.35)' }}
               />
             </>
           )}
+          {/* Outer halo glow, matches Colors.buttonGlow */}
+          <div
+            className="absolute rounded-full"
+            style={{
+              width: 128,
+              height: 128,
+              background: 'rgba(167,139,250,0.5)',
+              filter: 'blur(20px)',
+              opacity: 0.3,
+            }}
+          />
+          {/* Frosted bezel ring */}
           <div
             className="relative z-10 flex items-center justify-center rounded-full"
             style={{
-              width: 72,
-              height: 72,
-              background: 'rgba(255,255,255,0.22)',
-              backdropFilter: 'blur(8px)',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
+              width: 92,
+              height: 92,
+              background: 'rgba(167,139,250,0.18)',
+              border: '1.5px solid rgba(167,139,250,0.3)',
             }}
           >
-            <Mic className="w-7 h-7 text-white" />
+            {/* 3-stop sculpted gradient button, matches micButtonGradient */}
+            <div
+              className="flex items-center justify-center rounded-full"
+              style={{
+                width: 76,
+                height: 76,
+                background: 'linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
+              }}
+            >
+              <Mic className="w-8 h-8 text-white" strokeWidth={2} />
+            </div>
           </div>
         </div>
+        <p className="text-white text-[11px] mt-4">Tap to start</p>
+        <p className="text-white/45 text-[9px] mt-1.5 text-center px-8 leading-snug">
+          Record for at least 50s for accurate emotional insights
+        </p>
       </div>
 
-      <div
-        className="px-4 py-2 flex justify-around items-center"
-        style={{ background: 'rgba(148,120,255,0.75)', backdropFilter: 'blur(12px)' }}
-      >
-        {[
-          { icon: Mic, active: true, label: 'Record' },
-          { icon: BookOpen, active: false, label: 'Journal' },
-          { icon: BarChart2, active: false, label: 'Insights' },
-          { icon: Award, active: false, label: 'Milestones' },
-          { icon: Settings, active: false, label: 'Settings' },
-        ].map(({ icon: Icon, active, label }) => (
-          <div key={label} className="flex flex-col items-center gap-0.5">
-            {active ? (
-              <div
-                className="w-7 h-7 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(255,255,255,0.25)' }}
-              >
-                <Icon className="w-3.5 h-3.5" style={{ color: 'white' }} />
-              </div>
-            ) : (
-              <Icon className="w-4 h-4" style={{ color: 'rgba(255,255,255,0.35)' }} />
-            )}
-            <span
-              className="text-[7px] font-medium"
-              style={{ color: active ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)' }}
-            >
-              {label}
-            </span>
-          </div>
-        ))}
-      </div>
+      <DemoTabBar active="Record" />
     </div>
   );
 }

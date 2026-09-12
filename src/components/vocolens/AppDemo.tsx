@@ -1,11 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
+import { RecordingScreen } from './demo/RecordingScreen';
+import { JournalScreen } from './demo/JournalScreen';
+import { InsightsScreen } from './demo/InsightsScreen';
 
 const SCREEN_DURATION = 4500;
 
+// Live-coded recreations of the app's current screens (Record, Entries,
+// Insights — see src/app/(tabs)/*.tsx and entry-detail.tsx in the mobile
+// app repo), styled with the Midnight Glow theme. Replaces the old static
+// screenshots, which were out of date with the shipped app UI.
 const screens = [
-  { src: '/vocolens - demo3.jpg', alt: 'Recording screen with microphone button' },
-  { src: '/vocolens - demo2.jpg', alt: 'AI emotion detection screen' },
-  { src: '/vocolens - demo1.jpg', alt: 'Entry screen with emotion breakdown details' },
+  { Component: RecordingScreen, alt: 'Record tab with the voice recording button' },
+  { Component: JournalScreen, alt: 'Journal entry with AI emotion breakdown' },
+  { Component: InsightsScreen, alt: 'Insights tab with streak and mood story' },
 ];
 
 export function AppDemo() {
@@ -34,28 +41,14 @@ export function AppDemo() {
         <div className="demo-phone-frame">
           <div className="demo-phone-screen">
             <div className="demo-phone-notch" />
-            {screens.map((screen, index) => (
+            {screens.map(({ Component, alt }, index) => (
               <div
                 key={index}
                 className={`demo-screen-layer ${activeScreen === index ? 'active' : ''}`}
+                role="img"
+                aria-label={alt}
               >
-                <img
-                  src={screen.src}
-                  alt={screen.alt}
-                  className="w-full h-full object-cover"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-                {/* Hide the warm-up question area on the recording screen */}
-                {index === 0 && (
-                  <div
-                    className="absolute left-0 right-0"
-                    style={{
-                      top: '15%',
-                      height: '10%',
-                      background: '#161422',
-                    }}
-                  />
-                )}
+                <Component isActive={activeScreen === index} />
               </div>
             ))}
           </div>
