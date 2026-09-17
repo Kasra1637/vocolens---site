@@ -19,10 +19,13 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
 import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
+import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
 import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
+import { Route as ResourcesBurnoutRecoverySignsRouteImport } from './routes/resources.burnout-recovery-signs'
 import { Route as ResourcesAutismEmotionalRegulationRouteImport } from './routes/resources.autism-emotional-regulation'
 import { Route as ResourcesAlexithymiaEmotionalVocabularyRouteImport } from './routes/resources.alexithymia-emotional-vocabulary'
+import { Route as ResourcesAdhdTimeBlindnessRouteImport } from './routes/resources.adhd-time-blindness'
 
 const UseCasesRoute = UseCasesRouteImport.update({
   id: '/use-cases',
@@ -76,6 +79,12 @@ const ResourcesOverthinkingRuminationRoute =
     path: '/overthinking-rumination',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesEmotionalGranularityRoute =
+  ResourcesEmotionalGranularityRouteImport.update({
+    id: '/emotional-granularity',
+    path: '/emotional-granularity',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 const ResourcesEmotionalAwarenessPatternsRoute =
   ResourcesEmotionalAwarenessPatternsRouteImport.update({
     id: '/emotional-awareness-patterns',
@@ -86,6 +95,12 @@ const ResourcesDistressDetectionRoute =
   ResourcesDistressDetectionRouteImport.update({
     id: '/distress-detection',
     path: '/distress-detection',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesBurnoutRecoverySignsRoute =
+  ResourcesBurnoutRecoverySignsRouteImport.update({
+    id: '/burnout-recovery-signs',
+    path: '/burnout-recovery-signs',
     getParentRoute: () => ResourcesRoute,
   } as any)
 const ResourcesAutismEmotionalRegulationRoute =
@@ -100,6 +115,12 @@ const ResourcesAlexithymiaEmotionalVocabularyRoute =
     path: '/alexithymia-emotional-vocabulary',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesAdhdTimeBlindnessRoute =
+  ResourcesAdhdTimeBlindnessRouteImport.update({
+    id: '/adhd-time-blindness',
+    path: '/adhd-time-blindness',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -109,10 +130,13 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-time-blindness': typeof ResourcesAdhdTimeBlindnessRoute
   '/resources/alexithymia-emotional-vocabulary': typeof ResourcesAlexithymiaEmotionalVocabularyRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
+  '/resources/burnout-recovery-signs': typeof ResourcesBurnoutRecoverySignsRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
@@ -124,10 +148,13 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-time-blindness': typeof ResourcesAdhdTimeBlindnessRoute
   '/resources/alexithymia-emotional-vocabulary': typeof ResourcesAlexithymiaEmotionalVocabularyRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
+  '/resources/burnout-recovery-signs': typeof ResourcesBurnoutRecoverySignsRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources': typeof ResourcesIndexRoute
@@ -141,10 +168,13 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRouteWithChildren
   '/terms': typeof TermsRoute
   '/use-cases': typeof UseCasesRoute
+  '/resources/adhd-time-blindness': typeof ResourcesAdhdTimeBlindnessRoute
   '/resources/alexithymia-emotional-vocabulary': typeof ResourcesAlexithymiaEmotionalVocabularyRoute
   '/resources/autism-emotional-regulation': typeof ResourcesAutismEmotionalRegulationRoute
+  '/resources/burnout-recovery-signs': typeof ResourcesBurnoutRecoverySignsRoute
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
+  '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
@@ -159,10 +189,13 @@ export interface FileRouteTypes {
     | '/resources'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-time-blindness'
     | '/resources/alexithymia-emotional-vocabulary'
     | '/resources/autism-emotional-regulation'
+    | '/resources/burnout-recovery-signs'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources/'
@@ -174,10 +207,13 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-time-blindness'
     | '/resources/alexithymia-emotional-vocabulary'
     | '/resources/autism-emotional-regulation'
+    | '/resources/burnout-recovery-signs'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources'
@@ -190,10 +226,13 @@ export interface FileRouteTypes {
     | '/resources'
     | '/terms'
     | '/use-cases'
+    | '/resources/adhd-time-blindness'
     | '/resources/alexithymia-emotional-vocabulary'
     | '/resources/autism-emotional-regulation'
+    | '/resources/burnout-recovery-signs'
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
+    | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
     | '/resources/science-of-reflection'
     | '/resources/'
@@ -281,6 +320,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesOverthinkingRuminationRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/emotional-granularity': {
+      id: '/resources/emotional-granularity'
+      path: '/emotional-granularity'
+      fullPath: '/resources/emotional-granularity'
+      preLoaderRoute: typeof ResourcesEmotionalGranularityRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/emotional-awareness-patterns': {
       id: '/resources/emotional-awareness-patterns'
       path: '/emotional-awareness-patterns'
@@ -293,6 +339,13 @@ declare module '@tanstack/react-router' {
       path: '/distress-detection'
       fullPath: '/resources/distress-detection'
       preLoaderRoute: typeof ResourcesDistressDetectionRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/burnout-recovery-signs': {
+      id: '/resources/burnout-recovery-signs'
+      path: '/burnout-recovery-signs'
+      fullPath: '/resources/burnout-recovery-signs'
+      preLoaderRoute: typeof ResourcesBurnoutRecoverySignsRouteImport
       parentRoute: typeof ResourcesRoute
     }
     '/resources/autism-emotional-regulation': {
@@ -309,27 +362,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesAlexithymiaEmotionalVocabularyRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/adhd-time-blindness': {
+      id: '/resources/adhd-time-blindness'
+      path: '/adhd-time-blindness'
+      fullPath: '/resources/adhd-time-blindness'
+      preLoaderRoute: typeof ResourcesAdhdTimeBlindnessRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
   }
 }
 
 interface ResourcesRouteChildren {
+  ResourcesAdhdTimeBlindnessRoute: typeof ResourcesAdhdTimeBlindnessRoute
   ResourcesAlexithymiaEmotionalVocabularyRoute: typeof ResourcesAlexithymiaEmotionalVocabularyRoute
   ResourcesAutismEmotionalRegulationRoute: typeof ResourcesAutismEmotionalRegulationRoute
+  ResourcesBurnoutRecoverySignsRoute: typeof ResourcesBurnoutRecoverySignsRoute
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
+  ResourcesEmotionalGranularityRoute: typeof ResourcesEmotionalGranularityRoute
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
   ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
 
 const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesAdhdTimeBlindnessRoute: ResourcesAdhdTimeBlindnessRoute,
   ResourcesAlexithymiaEmotionalVocabularyRoute:
     ResourcesAlexithymiaEmotionalVocabularyRoute,
   ResourcesAutismEmotionalRegulationRoute:
     ResourcesAutismEmotionalRegulationRoute,
+  ResourcesBurnoutRecoverySignsRoute: ResourcesBurnoutRecoverySignsRoute,
   ResourcesDistressDetectionRoute: ResourcesDistressDetectionRoute,
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
+  ResourcesEmotionalGranularityRoute: ResourcesEmotionalGranularityRoute,
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,
   ResourcesIndexRoute: ResourcesIndexRoute,

@@ -346,6 +346,65 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
+          <meta itemProp="url" content="https://vocolens.com/resources/emotional-granularity" />
+          <meta itemProp="datePublished" content="2026-09-17" />
+          <meta itemProp="dateModified" content="2026-09-17" />
+          <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
+          <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <button
+            onClick={() => navigate({ to: '/resources/emotional-granularity' })}
+            aria-label="Read: Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel"
+            className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
+                <Heart className="w-7 h-7 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                    Neuroscience &amp; Emotional Intelligence
+                  </span>
+                  <span className="flex items-center gap-1 text-sm text-text-muted">
+                    <Clock className="w-3 h-3" />
+                    7 min read
+                  </span>
+                </div>
+                <h2
+                  itemProp="headline"
+                  className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                >
+                  Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel
+                </h2>
+                <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
+                  Anxious, stressed, overwhelmed — broad words can all be true and still be too vague to act on. Learn what emotional granularity is, why finer labels are linked to better regulation, and how voice journaling builds a personal emotional vocabulary.
+                </p>
+                <div className="flex items-center justify-between mt-5">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Read article
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                  <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
+                    Emotional Granularity · Affect Labeling · Voice Journaling
+                  </span>
+                </div>
+              </div>
+            </div>
+          </button>
+        </article>
+
+        <article
+          itemScope
+          itemType="https://schema.org/Article"
+          className="w-full mt-8"
+        >
           <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
           <meta itemProp="datePublished" content="2026-07-14" />
           <meta itemProp="dateModified" content="2026-07-14" />
