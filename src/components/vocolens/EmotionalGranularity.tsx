@@ -1,5 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Brain, ArrowUpRight, Clock, ChevronRight } from 'lucide-react';
+import { Heart, ArrowUpRight, Clock, ChevronRight, HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 
 const faqData = [
@@ -133,7 +133,7 @@ export function EmotionalGranularity() {
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-              <Brain className="w-6 h-6 text-primary" />
+              <Heart className="w-6 h-6 text-primary" />
             </div>
             <div>
               <span className="text-sm font-semibold text-primary uppercase tracking-wider block" itemProp="articleSection">
@@ -277,17 +277,83 @@ export function EmotionalGranularity() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
-          <div className="rounded-2xl border border-primary/15 bg-primary/3 p-6">
-            <p className="font-semibold text-primary uppercase tracking-wider mb-3 text-sm">Keep reading</p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <button onClick={() => navigate({ to: '/resources/alexithymia-emotional-vocabulary' })} className="w-full text-left p-4 rounded-xl border border-primary/15 bg-white/60 hover:bg-primary/5 hover:border-primary/25 transition-all group">
-                <p className="font-bold text-text-primary group-hover:text-primary transition-colors mb-1">Why You Can't Name What You're Feeling</p>
-                <p className="text-sm text-text-secondary">Alexithymia and the emotional vocabulary you were never taught — the entry point before this one.</p>
+        <AnimatedSection animation="fade-in-up" delay={0.52}>
+          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <HelpCircle className="w-5 h-5 text-primary" />
+              </div>
+              <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
+                Frequently asked questions about emotional granularity and voice journaling
+              </h2>
+            </div>
+            <div className="space-y-6">
+              {faqData.map(({ question, answer }, i) => (
+                <details
+                  key={i}
+                  className="group bg-white border border-primary/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
+                    <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
+                    <span>{question}</span>
+                  </summary>
+                  <div className="px-5 pb-5 pl-12 text-sm lg:text-base text-text-secondary leading-relaxed">
+                    {answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-in-up" delay={0.56}>
+          <div className="py-8 border-t border-primary/10">
+            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <div className="space-y-4">
+              <button
+                onClick={() => navigate({ to: '/resources/alexithymia-emotional-vocabulary' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      Why you can't name what you're feeling: alexithymia and the emotional vocabulary you were never taught
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Around 10% of people struggle to identify and describe their own emotions. Learn the neuroscience of emotional blindness and how AI voice journaling builds a personal vocabulary from scratch.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
               </button>
-              <button onClick={() => navigate({ to: '/resources/science-of-reflection' })} className="w-full text-left p-4 rounded-xl border border-primary/15 bg-white/60 hover:bg-primary/5 hover:border-primary/25 transition-all group">
-                <p className="font-bold text-text-primary group-hover:text-primary transition-colors mb-1">How Naming Emotions Reduces Stress</p>
-                <p className="text-sm text-text-secondary">What affect labeling does to the amygdala, and how voice journaling applies it every day.</p>
+              <button
+                onClick={() => navigate({ to: '/resources/science-of-reflection' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      How naming your emotions reduces stress and builds resilience
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
+              </button>
+              <button
+                onClick={() => navigate({ to: '/resources/distress-detection' })}
+                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness &amp; Distress Detection</p>
+                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                      How your body tells you it's overwhelmed before your mind does
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                </div>
               </button>
             </div>
           </div>
