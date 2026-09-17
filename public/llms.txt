@@ -72,6 +72,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Resources: https://vocolens.com/resources
+- Emotional Granularity: https://vocolens.com/resources/emotional-granularity
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection
 - Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
 - Distress Detection: https://vocolens.com/resources/distress-detection
