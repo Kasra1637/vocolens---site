@@ -110,9 +110,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/science-of-reflection" />
-          <meta itemProp="datePublished" content="2026-02-28" />
-          <meta itemProp="dateModified" content="2026-02-28" />
+          <meta itemProp="url" content="https://vocolens.com/resources/adhd-time-blindness" />
+          <meta itemProp="datePublished" content="2026-09-09" />
+          <meta itemProp="dateModified" content="2026-09-09" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -121,32 +121,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/science-of-reflection' })}
-            aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
+            onClick={() => navigate({ to: '/resources/adhd-time-blindness' })}
+            aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Brain className="w-7 h-7 text-primary" />
+                <Timer className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    Neuroscience &amp; Mental Wellness
+                    ADHD &amp; Time Perception
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    5 min read
+                    7 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience
+                  Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  Neuroscience research by Lieberman (2007) proves that labeling emotions reduces amygdala activity and calms the nervous system. Discover how daily voice journaling with Vocolens uses this science to help you reduce anxiety, create mental space, and build lasting emotional resilience.
+                  ADHD time blindness isn't laziness — it's a measurable gap in how the brain tracks duration. Learn the science of interval timing, why alarms alone don't fix it, and how a daily voice-logged time-anchor habit recalibrates your internal clock.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -156,7 +156,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    Emotion Labeling · Stress Relief Journaling · Resilience
+                    ADHD · Time Blindness · Interval Timing
                   </span>
                 </div>
               </div>
@@ -169,9 +169,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/emotional-awareness-patterns" />
-          <meta itemProp="datePublished" content="2026-03-30" />
-          <meta itemProp="dateModified" content="2026-03-30" />
+          <meta itemProp="url" content="https://vocolens.com/resources/burnout-recovery-signs" />
+          <meta itemProp="datePublished" content="2026-08-04" />
+          <meta itemProp="dateModified" content="2026-08-04" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -180,32 +180,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/emotional-awareness-patterns' })}
-            aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
+            onClick={() => navigate({ to: '/resources/burnout-recovery-signs' })}
+            aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Radar className="w-7 h-7 text-primary" />
+                <Flame className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    Mental Wellness &amp; Self-Discovery
+                    Stress &amp; Burnout Recovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    6 min read
+                    7 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding
+                  Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  Discover how metacognitive awareness and pattern recognition through daily voice journaling rewire your brain for emotional intelligence. Learn to identify triggers and behavioral cycles with Vocolens' emotion tracking.
+                  Burnout builds through unlogged accumulation, not a single bad week. Learn the science of allostatic load, why a vacation alone doesn't fix it, and how a daily voice-journaled load check catches burnout before it becomes collapse.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -215,7 +215,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    Pattern Recognition · Emotional Intelligence · Self-Awareness
+                    Burnout · Allostatic Load · Stress Recovery
                   </span>
                 </div>
               </div>
@@ -228,9 +228,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/distress-detection" />
-          <meta itemProp="datePublished" content="2026-06-11" />
-          <meta itemProp="dateModified" content="2026-06-11" />
+          <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
+          <meta itemProp="datePublished" content="2026-07-14" />
+          <meta itemProp="dateModified" content="2026-07-14" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -239,32 +239,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/distress-detection' })}
-            aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
+            onClick={() => navigate({ to: '/resources/overthinking-rumination' })}
+            aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Activity className="w-7 h-7 text-primary" />
+                <RefreshCw className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    Body Awareness &amp; Distress Detection
+                    Anxiety &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    6 min read
+                    7 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                  The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  Your body registers distress seconds before your conscious mind catches up. Learn the neuroscience of interoception, body-based early warning signs, and how voice journaling with body-sensation mapping helps you catch overwhelm before it escalates.
+                  Overthinking isn't a willpower problem — it's what happens when your brain treats a thought as unfinished business. Learn the neuroscience of rumination, why "just stop thinking about it" backfires, and how voice journaling gives your brain the completion signal it's been missing.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -274,7 +274,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    Interoception · Body Awareness · Overwhelm
+                    Overthinking · Rumination · Worry Time
                   </span>
                 </div>
               </div>
@@ -405,9 +405,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
-          <meta itemProp="datePublished" content="2026-07-14" />
-          <meta itemProp="dateModified" content="2026-07-14" />
+          <meta itemProp="url" content="https://vocolens.com/resources/distress-detection" />
+          <meta itemProp="datePublished" content="2026-06-11" />
+          <meta itemProp="dateModified" content="2026-06-11" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -416,32 +416,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/overthinking-rumination' })}
-            aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
+            onClick={() => navigate({ to: '/resources/distress-detection' })}
+            aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <RefreshCw className="w-7 h-7 text-primary" />
+                <Activity className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    Anxiety &amp; Mental Wellness
+                    Body Awareness &amp; Distress Detection
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    7 min read
+                    6 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
+                  How Your Body Tells You Are Overwhelmed Before Your Mind Does
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  Overthinking isn't a willpower problem — it's what happens when your brain treats a thought as unfinished business. Learn the neuroscience of rumination, why "just stop thinking about it" backfires, and how voice journaling gives your brain the completion signal it's been missing.
+                  Your body registers distress seconds before your conscious mind catches up. Learn the neuroscience of interoception, body-based early warning signs, and how voice journaling with body-sensation mapping helps you catch overwhelm before it escalates.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -451,7 +451,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    Overthinking · Rumination · Worry Time
+                    Interoception · Body Awareness · Overwhelm
                   </span>
                 </div>
               </div>
@@ -464,9 +464,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/burnout-recovery-signs" />
-          <meta itemProp="datePublished" content="2026-08-04" />
-          <meta itemProp="dateModified" content="2026-08-04" />
+          <meta itemProp="url" content="https://vocolens.com/resources/emotional-awareness-patterns" />
+          <meta itemProp="datePublished" content="2026-03-30" />
+          <meta itemProp="dateModified" content="2026-03-30" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -475,32 +475,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/burnout-recovery-signs' })}
-            aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
+            onClick={() => navigate({ to: '/resources/emotional-awareness-patterns' })}
+            aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Flame className="w-7 h-7 text-primary" />
+                <Radar className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    Stress &amp; Burnout Recovery
+                    Mental Wellness &amp; Self-Discovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    7 min read
+                    6 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
+                  Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  Burnout builds through unlogged accumulation, not a single bad week. Learn the science of allostatic load, why a vacation alone doesn't fix it, and how a daily voice-journaled load check catches burnout before it becomes collapse.
+                  Discover how metacognitive awareness and pattern recognition through daily voice journaling rewire your brain for emotional intelligence. Learn to identify triggers and behavioral cycles with Vocolens' emotion tracking.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -510,7 +510,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    Burnout · Allostatic Load · Stress Recovery
+                    Pattern Recognition · Emotional Intelligence · Self-Awareness
                   </span>
                 </div>
               </div>
@@ -523,9 +523,9 @@ export function Resources() {
           itemType="https://schema.org/Article"
           className="w-full mt-8"
         >
-          <meta itemProp="url" content="https://vocolens.com/resources/adhd-time-blindness" />
-          <meta itemProp="datePublished" content="2026-09-09" />
-          <meta itemProp="dateModified" content="2026-09-09" />
+          <meta itemProp="url" content="https://vocolens.com/resources/science-of-reflection" />
+          <meta itemProp="datePublished" content="2026-02-28" />
+          <meta itemProp="dateModified" content="2026-02-28" />
           <meta itemProp="image" content="https://vocolens.com/vocolens_-_preview.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -534,32 +534,32 @@ export function Resources() {
             <meta itemProp="name" content="Vocolens" />
           </span>
           <button
-            onClick={() => navigate({ to: '/resources/adhd-time-blindness' })}
-            aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
+            onClick={() => navigate({ to: '/resources/science-of-reflection' })}
+            aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Timer className="w-7 h-7 text-primary" />
+                <Brain className="w-7 h-7 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
-                    ADHD &amp; Time Perception
+                    Neuroscience &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
                     <Clock className="w-3 h-3" />
-                    7 min read
+                    5 min read
                   </span>
                 </div>
                 <h2
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
+                  How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
-                  ADHD time blindness isn't laziness — it's a measurable gap in how the brain tracks duration. Learn the science of interval timing, why alarms alone don't fix it, and how a daily voice-logged time-anchor habit recalibrates your internal clock.
+                  Neuroscience research by Lieberman (2007) proves that labeling emotions reduces amygdala activity and calms the nervous system. Discover how daily voice journaling with Vocolens uses this science to help you reduce anxiety, create mental space, and build lasting emotional resilience.
                 </p>
                 <div className="flex items-center justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
@@ -569,7 +569,7 @@ export function Resources() {
                     </svg>
                   </span>
                   <span className="text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-full border border-primary/10">
-                    ADHD · Time Blindness · Interval Timing
+                    Emotion Labeling · Stress Relief Journaling · Resilience
                   </span>
                 </div>
               </div>
