@@ -1,4 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
+import { ListenToArticle } from './ListenToArticle';
 import { Radar, ArrowUpRight, Clock, ChevronRight, Circle as HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 
@@ -145,6 +146,8 @@ export function EmotionalAwareness() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
 
+          <ListenToArticle />
+
           <div className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
@@ -165,7 +168,7 @@ export function EmotionalAwareness() {
         </div>
       </AnimatedSection>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody">
+      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <AnimatedSection animation="fade-in-up" delay={0.05}>
           <p>
@@ -362,7 +365,7 @@ export function EmotionalAwareness() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={0.65}>
-          <div className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
+          <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
               Finally understand why you feel what you feel
             </h2>
