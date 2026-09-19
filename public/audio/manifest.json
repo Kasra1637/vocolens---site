@@ -88,5 +88,95 @@
     "bytes": 1586061,
     "minutes": 6.6,
     "generatedAt": "2026-09-19T03:58:25.374Z"
+  },
+  "adhd-time-blindness-male": {
+    "file": "/audio/adhd-time-blindness-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "ec587dcbba72c776",
+    "chars": 8506,
+    "words": 1412,
+    "bytes": 1894893,
+    "minutes": 7.9,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "alexithymia-emotional-vocabulary-male": {
+    "file": "/audio/alexithymia-emotional-vocabulary-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "52c0a4dd8f8a22f1",
+    "chars": 10304,
+    "words": 1682,
+    "bytes": 2475789,
+    "minutes": 10.3,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "burnout-recovery-signs-male": {
+    "file": "/audio/burnout-recovery-signs-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "3a80c42f358c00c8",
+    "chars": 7942,
+    "words": 1310,
+    "bytes": 1822797,
+    "minutes": 7.6,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "overthinking-rumination-male": {
+    "file": "/audio/overthinking-rumination-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "5567f0d289883158",
+    "chars": 8606,
+    "words": 1405,
+    "bytes": 1977453,
+    "minutes": 8.2,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "autism-emotional-regulation-male": {
+    "file": "/audio/autism-emotional-regulation-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "06c4f98af802c6a6",
+    "chars": 7021,
+    "words": 1010,
+    "bytes": 1691469,
+    "minutes": 7,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "distress-detection-male": {
+    "file": "/audio/distress-detection-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "27c721e347c2be77",
+    "chars": 5359,
+    "words": 846,
+    "bytes": 1328781,
+    "minutes": 5.5,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "emotional-awareness-patterns-male": {
+    "file": "/audio/emotional-awareness-patterns-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "2a3c0c5df2f53100",
+    "chars": 6524,
+    "words": 875,
+    "bytes": 1581453,
+    "minutes": 6.6,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "science-of-reflection-male": {
+    "file": "/audio/science-of-reflection-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "a4463e0d66d0a750",
+    "chars": 5147,
+    "words": 752,
+    "bytes": 1181421,
+    "minutes": 4.9,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
+  },
+  "emotional-granularity-male": {
+    "file": "/audio/emotional-granularity-male.mp3",
+    "voice": "en-US-GuyNeural",
+    "hash": "43627357ff46c916",
+    "chars": 6156,
+    "words": 1033,
+    "bytes": 1489869,
+    "minutes": 6.2,
+    "generatedAt": "2026-09-19T04:37:20.359Z"
   }
 }

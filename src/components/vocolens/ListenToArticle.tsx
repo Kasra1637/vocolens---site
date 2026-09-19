@@ -7,6 +7,11 @@ import { ARTICLE_SECTIONS, sectionAt, sectionStarts } from "../../lib/articleSec
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
+const VOICES = [
+  { id: "aria", label: "Female" },
+  { id: "guy", label: "Male" },
+] as const;
+
 /**
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
@@ -21,11 +26,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
+  const [voiceIdx, setVoiceIdx] = useState(0);
   const [missing, setMissing] = useState(false);
   const [scrubbing, setScrubbing] = useState(false);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
+  const resumeRef = useRef(false);
+  const seekFracRef = useRef<number | null>(null);
 
-  const src = `/audio/${slug}.mp3`;
+  const src = voiceIdx === 0 ? `/audio/${slug}.mp3` : `/audio/${slug}-male.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
   const starts = sectionStarts(sections);
 
@@ -33,7 +41,22 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     const onTime = () => setCurrentTime(audio.currentTime);
-    const onMeta = () => setDuration(audio.duration || 0);
+    const onMeta = () => {
+      const d = audio.duration || 0;
+      setDuration(d);
+      if (seekFracRef.current !== null && d > 0) {
+        audio.currentTime = seekFracRef.current * d;
+        setCurrentTime(audio.currentTime);
+        seekFracRef.current = null;
+      }
+      if (resumeRef.current) {
+        resumeRef.current = false;
+        void audio.play().then(
+          () => setPlaying(true),
+          () => setPlaying(false),
+        );
+      }
+    };
     const onEnd = () => setPlaying(false);
     const onError = () => setMissing(true);
     audio.addEventListener("timeupdate", onTime);
@@ -73,6 +96,16 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const clamped = Math.min(Math.max(t, 0), duration);
     audio.currentTime = clamped;
     setCurrentTime(clamped);
+  };
+
+  const switchVoice = (i: number) => {
+    if (i === voiceIdx) return;
+    seekFracRef.current = duration > 0 ? currentTime / duration : 0;
+    resumeRef.current = playing;
+    setPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    setVoiceIdx(i);
   };
 
   const timeFromClientX = (clientX: number): number | null => {
@@ -139,17 +172,34 @@ export function ListenToArticle({ slug }: { slug: string }) {
       aria-label="Listen to this article"
       {...{ [EXCLUDE_ATTR]: true }}
     >
-      <audio ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
-      <div className="flex items-center gap-3">
+      <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
+      <div className="flex flex-wrap items-center gap-3">
         <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
           <Volume2 className="w-4 h-4 text-primary" />
         </div>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 basis-32">
           <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
           <p className="text-xs text-text-muted mt-0.5">
-            Human narration
+            {VOICES[voiceIdx].label} narration
             {duration > 0 ? ` · ${formatClock(duration)}` : ""}
           </p>
+        </div>
+        <div className="flex rounded-full border border-primary/20 p-0.5 flex-shrink-0" role="group" aria-label="Narration voice">
+          {VOICES.map((v, i) => (
+            <button
+              key={v.id}
+              type="button"
+              onClick={() => switchVoice(i)}
+              aria-pressed={i === voiceIdx}
+              className={
+                i === voiceIdx
+                  ? "px-2.5 h-7 rounded-full text-xs font-semibold bg-primary text-white transition-colors"
+                  : "px-2.5 h-7 rounded-full text-xs font-semibold text-primary hover:bg-primary/10 transition-colors"
+              }
+            >
+              {v.label}
+            </button>
+          ))}
         </div>
         <button
           type="button"
@@ -194,18 +244,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary" style={{ width: `${fraction * 100}%` }} />
             {starts.slice(1).map((s, i) => (
-              <button
+              <span
                 key={i}
-                type="button"
-                tabIndex={-1}
-                onPointerDown={(e) => {
-                  e.stopPropagation();
-                  if (duration > 0) seek(s * duration);
-                }}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-1 h-3 rounded-full bg-primary/50 hover:bg-primary hover:h-4 transition-all"
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/60 pointer-events-none"
                 style={{ left: `${s * 100}%` }}
                 aria-hidden="true"
-                title={sections[i + 1]?.title}
               />
             ))}
             <div

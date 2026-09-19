@@ -33,6 +33,9 @@ const OUT_DIR = path.join(ROOT, "public", "audio");
 const MANIFEST = path.join(OUT_DIR, "manifest.json");
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8793";
 const VOICE = process.env.TTS_VOICE || "en-US-AriaNeural";
+const SUFFIX = process.env.FILE_SUFFIX || "";
+// Additional voices share the same manifest under "<slug><suffix>" keys, e.g.:
+//   FILE_SUFFIX=-male TTS_VOICE=en-US-GuyNeural node scripts/generate-article-audio.cjs
 const FORMAT = OUTPUT_FORMAT.AUDIO_24KHZ_32KBITRATE_MONO_MP3 || OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3;
 const FORCE = process.argv.includes("--force");
 
@@ -192,8 +195,9 @@ function concatMp3(files, outPath) {
       const text = extractArticleText(html);
       if (!text || text.length < 200) throw new Error("extracted text too short (" + (text ? text.length : 0) + " chars)");
       const hash = sha256(text);
-      const outFile = path.join(OUT_DIR, slug + ".mp3");
-      const prev = manifest[slug];
+      const key = slug + SUFFIX;
+      const outFile = path.join(OUT_DIR, key + ".mp3");
+      const prev = manifest[key];
 
       if (!FORCE && prev && prev.hash === hash && fs.existsSync(outFile)) {
         console.log("SKIP  " + slug + " (unchanged, " + Math.round(fs.statSync(outFile).size / 1024) + " KB)");
@@ -210,7 +214,7 @@ function concatMp3(files, outPath) {
         const { audioFilePath } = await tts.toFile(tmpDir, chunks[ci]);
         // The library always writes `<tmpDir>/audio.mp3`, so copy each chunk to
         // its own filename before the next chunk overwrites it.
-        const unique = path.join(tmpDir, slug + "-part" + String(ci).padStart(3, "0") + ".mp3");
+        const unique = path.join(tmpDir, key + "-part" + String(ci).padStart(3, "0") + ".mp3");
         fs.copyFileSync(audioFilePath, unique);
         const partBytes = fs.statSync(unique).size;
         if (partBytes < 2000) {
@@ -237,8 +241,8 @@ function concatMp3(files, outPath) {
           "audio too short: " + actualMin.toFixed(1) + " min for " + words + " words (expected >= " + expectedMin.toFixed(1) + " min)"
         );
       }
-      manifest[slug] = {
-        file: "/audio/" + slug + ".mp3",
+      manifest[key] = {
+        file: "/audio/" + key + ".mp3",
         voice: VOICE,
         hash,
         chars: text.length,
