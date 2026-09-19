@@ -7,8 +7,7 @@
  *  - Same extraction rules as scripts/generate-article-audio.cjs
  *    (h1/h2/h3/p/li blocks before data-listen-exclude)
  *
- * Both female (Aria) and male (Guy) voices read the same text at
- * similar rates, so the same timestamps apply to both.
+ * Timestamps match the single female (Aria) narration MP3 per article.
  *
  * To regenerate after article edits:
  *   1. Ensure the production site is live

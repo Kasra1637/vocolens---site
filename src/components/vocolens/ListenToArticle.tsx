@@ -16,11 +16,6 @@ import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
-const VOICES = [
-  { id: "aria", label: "Female" },
-  { id: "guy", label: "Male" },
-] as const;
-
 /**
  * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
  * narrated h2 section. FAQ / excluded blocks are never included.
@@ -65,17 +60,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
-  const [voiceIdx, setVoiceIdx] = useState(0);
   const [missing, setMissing] = useState(false);
   const [scrubbing, setScrubbing] = useState(false);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [showChapters, setShowChapters] = useState(false);
   const [follow, setFollow] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
-  const resumeRef = useRef(false);
-  const seekFracRef = useRef<number | null>(null);
 
-  const src = voiceIdx === 0 ? `/audio/${slug}.mp3` : `/audio/${slug}-male.mp3`;
+  const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
 
   // Force metadata load on mount so duration is available before play.
@@ -90,20 +82,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     const onTime = () => setCurrentTime(audio.currentTime);
     const onMeta = () => {
-      const d = audio.duration || 0;
-      setDuration(d);
-      if (seekFracRef.current !== null && d > 0) {
-        audio.currentTime = seekFracRef.current * d;
-        setCurrentTime(audio.currentTime);
-        seekFracRef.current = null;
-      }
-      if (resumeRef.current) {
-        resumeRef.current = false;
-        void audio.play().then(
-          () => setPlaying(true),
-          () => setPlaying(false),
-        );
-      }
+      setDuration(audio.duration || 0);
     };
     const onEnd = () => {
       setPlaying(false);
@@ -224,16 +203,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     };
   }, [slug, sections, seekAndPlay]);
 
-  const switchVoice = (i: number) => {
-    if (i === voiceIdx) return;
-    seekFracRef.current = duration > 0 ? currentTime / duration : 0;
-    resumeRef.current = playing;
-    setPlaying(false);
-    setCurrentTime(0);
-    setDuration(0);
-    setVoiceIdx(i);
-  };
-
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
     if (!track || !Number.isFinite(duration) || duration <= 0) return null;
@@ -325,26 +294,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
         <div className="min-w-0 flex-1 basis-32">
           <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
           <p className="text-xs text-text-muted mt-0.5">
-            {VOICES[voiceIdx].label} narration
+            Human narration
             {duration > 0 ? ` · ${formatClock(duration)}` : ""}
           </p>
-        </div>
-        <div className="flex rounded-full border border-primary/20 p-0.5 flex-shrink-0" role="group" aria-label="Narration voice">
-          {VOICES.map((v, i) => (
-            <button
-              key={v.id}
-              type="button"
-              onClick={() => switchVoice(i)}
-              aria-pressed={i === voiceIdx}
-              className={
-                i === voiceIdx
-                  ? "px-2.5 h-7 rounded-full text-xs font-semibold bg-primary text-white transition-colors"
-                  : "px-2.5 h-7 rounded-full text-xs font-semibold text-primary hover:bg-primary/10 transition-colors"
-              }
-            >
-              {v.label}
-            </button>
-          ))}
         </div>
         <div className="flex items-center gap-1 flex-shrink-0" role="group" aria-label="Narration section controls">
           <button
