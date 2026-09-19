@@ -1,7 +1,16 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Pause, Play, Volume2 } from "lucide-react";
+import {
+  ChevronDown,
+  ListMusic,
+  LocateFixed,
+  Pause,
+  Play,
+  SkipBack,
+  SkipForward,
+  Volume2,
+} from "lucide-react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
@@ -13,10 +22,40 @@ const VOICES = [
 ] as const;
 
 /**
+ * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
+ * narrated h2 section. FAQ / excluded blocks are never included.
+ */
+function articleBlocks(): HTMLElement[] {
+  if (typeof document === "undefined") return [];
+  const root = document.getElementById("article-root");
+  if (!root) return [];
+  const blocks: HTMLElement[] = [];
+  const first = root.firstElementChild as HTMLElement | null;
+  if (first) blocks.push(first);
+  root
+    .querySelectorAll('section[aria-labelledby]:not([aria-labelledby="section-faq"])')
+    .forEach((el) => blocks.push(el as HTMLElement));
+  return blocks;
+}
+
+/** Narrated h2 headings in order; heading[i] maps to sections[i + 1]. */
+function articleHeadings(): HTMLElement[] {
+  if (typeof document === "undefined") return [];
+  const root = document.getElementById("article-root");
+  if (!root) return [];
+  return Array.from(
+    root.querySelectorAll('h2[id^="section-"]:not(#section-faq)'),
+  ) as HTMLElement[];
+}
+
+/**
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
- * en-US-AriaNeural). The scrubber supports click + drag seeking with
- * estimated section ticks (see src/lib/articleSections.ts).
+ * en-US-AriaNeural). Features:
+ * - scrubber with click + drag seeking and section ticks
+ * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly)
+ * - tap any article h2 heading to hear that section
+ * - live soft-highlight of the section being narrated + Follow auto-scroll
  * Regenerate audio with: node scripts/generate-article-audio.cjs
  */
 export function ListenToArticle({ slug }: { slug: string }) {
@@ -30,6 +69,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [missing, setMissing] = useState(false);
   const [scrubbing, setScrubbing] = useState(false);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
+  const [showChapters, setShowChapters] = useState(false);
+  const [follow, setFollow] = useState(true);
+  const [hasStarted, setHasStarted] = useState(false);
   const resumeRef = useRef(false);
   const seekFracRef = useRef<number | null>(null);
 
@@ -63,7 +105,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
         );
       }
     };
-    const onEnd = () => setPlaying(false);
+    const onEnd = () => {
+      setPlaying(false);
+      setHasStarted(false);
+    };
     const onError = () => setMissing(true);
     audio.addEventListener("timeupdate", onTime);
     audio.addEventListener("loadedmetadata", onMeta);
@@ -82,6 +127,26 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (audio) audio.playbackRate = SPEEDS[speedIdx];
   }, [speedIdx]);
 
+  // Clear any lingering highlight on unmount / slug change.
+  useEffect(
+    () => () => {
+      document
+        .querySelectorAll(".vocolens-reading")
+        .forEach((el) => el.classList.remove("vocolens-reading"));
+    },
+    [slug],
+  );
+
+  const play = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    setHasStarted(true);
+    void audio.play().then(
+      () => setPlaying(true),
+      () => setPlaying(false),
+    );
+  }, []);
+
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -89,10 +154,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       audio.pause();
       setPlaying(false);
     } else {
-      void audio.play().then(
-        () => setPlaying(true),
-        () => setPlaying(false),
-      );
+      play();
     }
   };
 
@@ -103,6 +165,64 @@ export function ListenToArticle({ slug }: { slug: string }) {
     audio.currentTime = clamped;
     setCurrentTime(clamped);
   }, [duration]);
+
+  const seekAndPlay = useCallback((t: number) => {
+    seek(t);
+    play();
+  }, [seek, play]);
+
+  const prevSection = useCallback(() => {
+    if (sections.length === 0) return;
+    const idx = sectionAt(sections, currentTime);
+    const intoSection = currentTime - sections[idx].startSec;
+    const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
+    seekAndPlay(sections[target].startSec);
+  }, [sections, currentTime, seekAndPlay]);
+
+  const nextSection = useCallback(() => {
+    if (sections.length === 0) return;
+    const idx = sectionAt(sections, currentTime);
+    const target = Math.min(sections.length - 1, idx + 1);
+    seekAndPlay(sections[target].startSec);
+  }, [sections, currentTime, seekAndPlay]);
+
+  // Tap an article h2 heading to hear that section. The chapter list below
+  // remains the fully-accessible equivalent (real buttons).
+  useEffect(() => {
+    const heads = articleHeadings();
+    if (heads.length === 0) return;
+    const cleanups = heads.map((h, i) => {
+      if (!sections[i + 1]) return () => {};
+      const t = sections[i + 1].startSec;
+      h.classList.add("vocolens-listenable");
+      h.setAttribute("title", "Listen from here");
+      h.setAttribute("tabindex", "0");
+      const go = () => seekAndPlay(t);
+      const onClick = (e: MouseEvent) => {
+        if ((e.target as HTMLElement).closest("a,button")) return;
+        e.preventDefault();
+        go();
+      };
+      const onKey = (e: KeyboardEvent) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          go();
+        }
+      };
+      h.addEventListener("click", onClick);
+      h.addEventListener("keydown", onKey);
+      return () => {
+        h.classList.remove("vocolens-listenable");
+        h.removeAttribute("title");
+        h.removeAttribute("tabindex");
+        h.removeEventListener("click", onClick);
+        h.removeEventListener("keydown", onKey);
+      };
+    });
+    return () => {
+      cleanups.forEach((c) => c());
+    };
+  }, [slug, sections, seekAndPlay]);
 
   const switchVoice = (i: number) => {
     if (i === voiceIdx) return;
@@ -226,15 +346,37 @@ export function ListenToArticle({ slug }: { slug: string }) {
             </button>
           ))}
         </div>
-        <button
-          type="button"
-          onClick={toggle}
-          className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors flex-shrink-0"
-          aria-label={(playing ? "Pause" : "Play") + " article narration"}
-        >
-          {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
-          {playing ? "Pause" : "Listen"}
-        </button>
+        <div className="flex items-center gap-1 flex-shrink-0" role="group" aria-label="Narration section controls">
+          <button
+            type="button"
+            onClick={prevSection}
+            disabled={sections.length === 0}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full text-primary hover:bg-primary/10 transition-colors disabled:opacity-40"
+            aria-label="Previous section"
+            title="Previous section"
+          >
+            <SkipBack className="w-4 h-4" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={toggle}
+            className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors"
+            aria-label={(playing ? "Pause" : "Play") + " article narration"}
+          >
+            {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
+            {playing ? "Pause" : "Listen"}
+          </button>
+          <button
+            type="button"
+            onClick={nextSection}
+            disabled={sections.length === 0}
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full text-primary hover:bg-primary/10 transition-colors disabled:opacity-40"
+            aria-label="Next section"
+            title="Next section"
+          >
+            <SkipForward className="w-4 h-4" aria-hidden="true" />
+          </button>
+        </div>
         <button
           type="button"
           onClick={() => setSpeedIdx((i) => (i + 1) % SPEEDS.length)}
@@ -243,6 +385,20 @@ export function ListenToArticle({ slug }: { slug: string }) {
           title="Playback speed"
         >
           {speed}x
+        </button>
+        <button
+          type="button"
+          onClick={() => setFollow((v) => !v)}
+          aria-pressed={follow}
+          title={follow ? "Stop auto-scrolling to the narrated section" : "Auto-scroll to the narrated section"}
+          className={
+            follow
+              ? "inline-flex items-center gap-1 h-8 px-2.5 rounded-full text-xs font-semibold bg-primary/10 text-primary transition-colors flex-shrink-0"
+              : "inline-flex items-center gap-1 h-8 px-2.5 rounded-full text-xs font-semibold text-text-muted hover:bg-primary/10 hover:text-primary transition-colors flex-shrink-0"
+          }
+        >
+          <LocateFixed className="w-3.5 h-3.5" aria-hidden="true" />
+          Follow
         </button>
       </div>
 
@@ -299,9 +455,111 @@ export function ListenToArticle({ slug }: { slug: string }) {
             {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
           </span>
         </div>
+
+        {sections.length > 0 && (
+          <div className="mt-2 border-t border-primary/10 pt-1">
+            <button
+              type="button"
+              onClick={() => setShowChapters((v) => !v)}
+              aria-expanded={showChapters}
+              className="flex w-full items-center gap-2 rounded-lg px-2 min-h-[44px] py-2 text-left text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+            >
+              <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              <span className="flex-shrink-0">Chapters · {sections.length}</span>
+              <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
+                {sectionIdx >= 0 ? sections[sectionIdx].title : ""}
+              </span>
+              <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
+            </button>
+            {showChapters && (
+              <ol className="mt-1 space-y-0.5">
+                {sections.map((s, i) => {
+                  const active = i === sectionIdx;
+                  return (
+                    <li key={i}>
+                      <button
+                        type="button"
+                        onClick={() => seekAndPlay(s.startSec)}
+                        aria-current={active ? "true" : undefined}
+                        className={
+                          active
+                            ? "flex w-full items-center gap-3 rounded-xl px-3 min-h-[44px] py-2 text-left text-sm bg-primary/10 font-semibold text-text-primary transition-colors"
+                            : "flex w-full items-center gap-3 rounded-xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-primary/5 transition-colors"
+                        }
+                      >
+                        <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-primary" : "text-text-muted"}`}>
+                          {formatClock(s.startSec)}
+                        </span>
+                        <span className="flex-1 truncate">{s.title}</span>
+                        {active && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse flex-shrink-0" aria-hidden="true" />}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ol>
+            )}
+            <p className="mt-1 px-2 text-[11px] leading-relaxed text-text-muted">
+              Tip: tap any section heading in the article to listen from there.
+            </p>
+          </div>
+        )}
       </div>
+      <ReadingHighlighter
+        slug={slug}
+        sectionIdx={sectionIdx}
+        active={hasStarted}
+        follow={playing && follow}
+      />
     </div>
   );
+}
+
+/**
+ * ReadingHighlighter — syncs the article's soft section highlight with
+ * narration. Renders nothing; toggles `.vocolens-reading` on the matching
+ * article block and, when follow is on, scrolls it into view on change.
+ */
+function ReadingHighlighter({
+  slug,
+  sectionIdx,
+  active,
+  follow,
+}: {
+  slug: string;
+  sectionIdx: number;
+  active: boolean;
+  follow: boolean;
+}) {
+  const lastElRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const blocks = articleBlocks();
+    const prev = lastElRef.current;
+    if (prev) {
+      prev.classList.remove("vocolens-reading");
+      lastElRef.current = null;
+    }
+    if (!active || sectionIdx < 0 || sectionIdx >= blocks.length) return;
+    const el = blocks[sectionIdx];
+    el.classList.add("vocolens-reading");
+    lastElRef.current = el;
+    if (follow) {
+      const reduced =
+        typeof window !== "undefined" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      try {
+        el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+      } catch {
+        /* non-fatal */
+      }
+    }
+    return () => {
+      el.classList.remove("vocolens-reading");
+      if (lastElRef.current === el) lastElRef.current = null;
+    };
+  }, [slug, sectionIdx, active, follow]);
+
+  return null;
 }
 
 function formatClock(seconds: number): string {

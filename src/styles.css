@@ -123,6 +123,38 @@
   }
 }
 
+/* ============== Read-along (ListenToArticle) ============== */
+
+/* Soft theme-color highlight for the article section currently being narrated.
+ * Background + inset bar only (no padding/border changes) so toggling the
+ * class never shifts layout. Toggled from ListenToArticle via DOM query. */
+#article-root .vocolens-reading {
+  background: linear-gradient(180deg, rgba(142, 107, 255, 0.1), rgba(142, 107, 255, 0.05));
+  border-radius: 1rem;
+  box-shadow: inset 3px 0 0 var(--primary);
+  scroll-margin-top: 5.5rem;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#article-root section[aria-labelledby] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Headings wired as tap-to-listen targets by ListenToArticle. */
+#article-root .vocolens-listenable {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+#article-root .vocolens-listenable:hover {
+  color: var(--primary);
+  background-color: rgba(142, 107, 255, 0.06);
+}
+#article-root .vocolens-listenable:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
 /* ============== Animations ============== */
 
 @keyframes scroll-left {
