@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pause, Play, Volume2 } from "lucide-react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
-import { ARTICLE_SECTIONS, sectionAt, sectionStarts } from "../../lib/articleSections";
+import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
@@ -35,7 +35,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const src = voiceIdx === 0 ? `/audio/${slug}.mp3` : `/audio/${slug}-male.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
-  const starts = sectionStarts(sections);
 
   // Force metadata load on mount so duration is available before play.
   useEffect(() => {
@@ -186,11 +185,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const fraction = duration > 0 ? Math.min(Math.max(currentTime / duration, 0), 1) : 0;
   const speed = SPEEDS[speedIdx];
-  const sectionIdx = sections.length > 0 ? sectionAt(sections, fraction) : -1;
+  const sectionIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
 
   const tipTime = scrubbing ? currentTime : hoverTime;
-  const tipFraction = tipTime !== null && duration > 0 ? Math.min(Math.max(tipTime / duration, 0), 1) : null;
-  const tipSection = tipFraction !== null && sections.length > 0 ? sections[sectionAt(sections, tipFraction)].title : null;
+  const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
 
   return (
     <div
@@ -269,11 +267,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
         >
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
-            {starts.slice(1).map((s, i) => (
+            {sections.slice(1).map((s, i) => (
               <span
                 key={i}
                 className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/40 pointer-events-none"
-                style={{ left: `${s * 100}%` }}
+                style={{ left: `${(s.startSec / duration) * 100}%` }}
                 aria-hidden="true"
               />
             ))}
@@ -282,10 +280,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
               style={{ left: `${fraction * 100}%` }}
             />
           </div>
-          {tipFraction !== null && tipTime !== null && (
+          {tipTime !== null && (
             <div
               className="absolute -top-1 -translate-y-full pointer-events-none whitespace-nowrap rounded-lg bg-text-primary text-white text-[11px] font-medium px-2 py-1 shadow-md"
-              style={{ left: `clamp(56px, ${tipFraction * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
+              style={{ left: `clamp(56px, ${(tipTime / duration) * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
               aria-hidden="true"
             >
               {formatClock(tipTime)}

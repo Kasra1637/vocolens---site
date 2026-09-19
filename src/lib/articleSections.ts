@@ -1,112 +1,114 @@
 /**
- * Estimated narration chapters per article, used to render section ticks on
- * the ListenToArticle scrubber and the live "current section" label.
+ * Precise narration chapter timestamps per article.
  *
- * Each `ratio` is the section's share of the narrated text (characters of
- * h1/h2/h3/p/li blocks before the excluded FAQ + closing CTA, matching what
- * scripts/generate-article-audio.cjs feeds to TTS). Positions are
- * proportional estimates and may drift ~10-30s on long articles — good
- * enough for browsing, not frame-accurate.
+ * Computed from:
+ *  - Actual MP3 durations measured via ffmpeg (ffprobe)
+ *  - Per-section word counts extracted from production HTML
+ *  - Same extraction rules as scripts/generate-article-audio.cjs
+ *    (h1/h2/h3/p/li blocks before data-listen-exclude)
  *
- * To regenerate ratios after article edits, extract per-h2 character counts
- * with the same block rules and divide by the total.
+ * Both female (Aria) and male (Guy) voices read the same text at
+ * similar rates, so the same timestamps apply to both.
+ *
+ * To regenerate after article edits:
+ *   1. Ensure the production site is live
+ *   2. Run scripts/generate-article-audio.cjs --force
+ *   3. Measure new durations with ffprobe
+ *   4. Re-run the extraction + timestamp computation
  */
 
 export interface ArticleSection {
-  /** Short display title for the scrubber label. */
+  /** Display title for the scrubber label. */
   title: string;
-  /** Share of total narration length, 0-1. Sections must sum to ~1. */
-  ratio: number;
+  /** Absolute start time in seconds from the beginning of the MP3. */
+  startSec: number;
 }
 
 export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
+  "adhd-time-blindness": [
+    { title: "Introduction", startSec: 0 },
+    { title: "Two clocks", startSec: 47.9 },
+    { title: "Two-way distortion", startSec: 138.2 },
+    { title: "Why alarms fail", startSec: 231.9 },
+    { title: "External clock", startSec: 315.9 },
+    { title: "Time-anchor habit", startSec: 410.6 },
+  ],
   "alexithymia-emotional-vocabulary": [
-    { title: "Introduction", ratio: 0.165 },
-    { title: "What is alexithymia?", ratio: 0.161 },
-    { title: "Why journaling fails", ratio: 0.151 },
-    { title: "Voice + AI vocabulary", ratio: 0.185 },
-    { title: "The body is talking", ratio: 0.152 },
-    { title: "Emotional granularity", ratio: 0.186 },
+    { title: "Introduction", startSec: 0 },
+    { title: "What is alexithymia?", startSec: 49.3 },
+    { title: "Why journaling fails", startSec: 159.8 },
+    { title: "Voice + AI vocabulary", startSec: 270.3 },
+    { title: "The body is talking", startSec: 404.3 },
+    { title: "Emotional granularity", startSec: 512.5 },
   ],
   "autism-emotional-regulation": [
-    { title: "Introduction", ratio: 0.192 },
-    { title: "Alexithymia", ratio: 0.153 },
-    { title: "Sensory-emotional link", ratio: 0.151 },
-    { title: "Why voice journaling works", ratio: 0.215 },
-    { title: "Early warning system", ratio: 0.14 },
-    { title: "The cost of masking", ratio: 0.149 },
+    { title: "Introduction", startSec: 0 },
+    { title: "Alexithymia", startSec: 28.5 },
+    { title: "Sensory-emotional link", startSec: 105.8 },
+    { title: "Why voice journaling works", startSec: 182.6 },
+    { title: "Early warning system", startSec: 284.8 },
+    { title: "The cost of masking", startSec: 359 },
   ],
   "burnout-recovery-signs": [
-    { title: "Introduction", ratio: 0.206 },
-    { title: "The hidden ledger", ratio: 0.153 },
-    { title: "Three warning signs", ratio: 0.162 },
-    { title: "The vacation fallacy", ratio: 0.15 },
-    { title: "A visible running total", ratio: 0.166 },
-    { title: "Daily load check", ratio: 0.164 },
+    { title: "Introduction", startSec: 0 },
+    { title: "The hidden ledger", startSec: 43.6 },
+    { title: "Three warning signs", startSec: 124.8 },
+    { title: "The vacation fallacy", startSec: 210.9 },
+    { title: "A visible running total", startSec: 290.6 },
+    { title: "Daily load check", startSec: 376 },
   ],
   "distress-detection": [
-    { title: "Introduction", ratio: 0.164 },
-    { title: "The body speaks first", ratio: 0.165 },
-    { title: "Interoception", ratio: 0.181 },
-    { title: "Early signs of overwhelm", ratio: 0.176 },
-    { title: "Mapping the body", ratio: 0.161 },
-    { title: "The 60-second practice", ratio: 0.153 },
+    { title: "Introduction", startSec: 0 },
+    { title: "The body speaks first", startSec: 25.1 },
+    { title: "Interoception", startSec: 84 },
+    { title: "Early signs of overwhelm", startSec: 145.5 },
+    { title: "Mapping the body", startSec: 212 },
+    { title: "The 60-second practice", startSec: 273.8 },
   ],
   "emotional-awareness-patterns": [
-    { title: "Introduction", ratio: 0.15 },
-    { title: "Metacognitive awareness", ratio: 0.166 },
-    { title: "Expressive disclosure", ratio: 0.18 },
-    { title: "Moments into patterns", ratio: 0.167 },
-    { title: "Emotional triggers", ratio: 0.182 },
-    { title: "Accelerating growth", ratio: 0.154 },
+    { title: "Introduction", startSec: 0 },
+    { title: "Metacognitive awareness", startSec: 22.9 },
+    { title: "Expressive disclosure", startSec: 94 },
+    { title: "Moments into patterns", startSec: 168.9 },
+    { title: "Emotional triggers", startSec: 242.9 },
+    { title: "Accelerating growth", startSec: 323.8 },
   ],
   "emotional-granularity": [
-    { title: "Introduction", ratio: 0.299 },
-    { title: "What is granularity?", ratio: 0.165 },
-    { title: "Why finer words work", ratio: 0.19 },
-    { title: "Getting more specific", ratio: 0.189 },
-    { title: "Words worth keeping", ratio: 0.156 },
+    { title: "Introduction", startSec: 0 },
+    { title: "What is granularity?", startSec: 47.6 },
+    { title: "Why finer words work", startSec: 121.7 },
+    { title: "Getting more specific", startSec: 205.4 },
+    { title: "Words worth keeping", startSec: 293.6 },
   ],
   "overthinking-rumination": [
-    { title: "Introduction", ratio: 0.188 },
-    { title: "Unfinished thoughts", ratio: 0.137 },
-    { title: "Default mode network", ratio: 0.168 },
-    { title: "Why suppression backfires", ratio: 0.134 },
-    { title: "Completion signal", ratio: 0.165 },
-    { title: "Worry time practice", ratio: 0.208 },
+    { title: "Introduction", startSec: 0 },
+    { title: "Unfinished thoughts", startSec: 42.6 },
+    { title: "Default mode network", startSec: 119.5 },
+    { title: "Why suppression backfires", startSec: 208.2 },
+    { title: "Completion signal", startSec: 285.1 },
+    { title: "Worry time practice", startSec: 378.7 },
   ],
   "science-of-reflection": [
-    { title: "Introduction", ratio: 0.235 },
-    { title: "Neuroscience of labeling", ratio: 0.191 },
-    { title: "The Vocolens approach", ratio: 0.175 },
-    { title: "Breaking worry loops", ratio: 0.203 },
-    { title: "Long-term resilience", ratio: 0.196 },
-  ],
-  "adhd-time-blindness": [
-    { title: "Introduction", ratio: 0.204 },
-    { title: "Two clocks", ratio: 0.164 },
-    { title: "Two-way distortion", ratio: 0.17 },
-    { title: "Why alarms fail", ratio: 0.147 },
-    { title: "External clock", ratio: 0.163 },
-    { title: "Time-anchor habit", ratio: 0.151 },
+    { title: "Introduction", startSec: 0 },
+    { title: "Neuroscience of labeling", startSec: 23.6 },
+    { title: "The Vocolens approach", startSec: 90.8 },
+    { title: "Breaking worry loops", startSec: 150.3 },
+    { title: "Long-term resilience", startSec: 227.4 },
   ],
 };
 
-/** Cumulative section start fractions (0-1), first entry always 0. */
-export function sectionStarts(sections: readonly ArticleSection[]): number[] {
-  const starts: number[] = [0];
-  for (let i = 0; i < sections.length - 1; i += 1) {
-    starts.push(starts[i] + sections[i].ratio);
-  }
-  return starts;
-}
-
-/** Index of the section containing the given playback fraction (0-1). */
-export function sectionAt(sections: readonly ArticleSection[], fraction: number): number {
-  const starts = sectionStarts(sections);
+/** Index of the section containing the given time (seconds). */
+export function sectionAt(sections: readonly ArticleSection[], currentTime: number): number {
   let idx = 0;
-  for (let i = 0; i < starts.length; i += 1) {
-    if (fraction >= starts[i]) idx = i;
+  for (let i = 0; i < sections.length; i += 1) {
+    if (currentTime >= sections[i].startSec) idx = i;
   }
   return idx;
+}
+
+/** Start time of the next section, or Infinity if at the last section. */
+export function nextSectionStart(sections: readonly ArticleSection[], currentTime: number): number {
+  const idx = sectionAt(sections, currentTime);
+  if (idx + 1 < sections.length) return sections[idx + 1].startSec;
+  return Infinity;
 }
