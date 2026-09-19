@@ -3,6 +3,7 @@ import { ListenToArticle } from './ListenToArticle';
 import { Brain, ArrowUpRight, Clock, ChevronRight, HelpCircle, Heart } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
+import { BackToTop } from './BackToTop';
 
 const faqData = [
   {
@@ -105,6 +106,7 @@ export function AlexithymiaEmotionalVocabulary() {
       itemType="https://schema.org/Article"
       className="max-w-3xl mx-auto px-6 py-16 lg:py-24"
     >
+      <BackToTop />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}

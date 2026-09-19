@@ -3,6 +3,7 @@ import { ListenToArticle } from './ListenToArticle';
 import { Heart, ArrowUpRight, Clock, ChevronRight, HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
+import { BackToTop } from './BackToTop';
 
 const faqData = [
   {
@@ -90,6 +91,7 @@ export function EmotionalGranularity() {
       itemType="https://schema.org/Article"
       className="max-w-3xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24"
     >
+      <BackToTop />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
