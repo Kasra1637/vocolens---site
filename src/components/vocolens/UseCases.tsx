@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router';
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
 import { Zap, Brain, Circle as HelpCircle, Mic, Sparkles, TrendingUp, ArrowRight, CircleCheck as CheckCircle2 } from 'lucide-react';
 
@@ -195,18 +195,19 @@ export function UseCases() {
           className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
-            Be the first to try Vocolens
+            Get Vocolens on Google Play
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Private. Patient. Neurodivergent-first. Join the waitlist and be among the first to experience it.
+            Private. Patient. Neurodivergent-first. Download it on Google Play and be among the first to experience it.
           </p>
-          <Link
-            to="/join"
+          <a
+            href={GOOGLE_PLAY_URL}
+            {...STORE_LINK_ATTRS}
             className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
-            Join Waitlist
+            Get it on Google Play
             <ArrowRight className="w-5 h-5" />
-          </Link>
+          </a>
         </AnimatedSection>
       </section>
     </div>

@@ -78,6 +78,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Distress Detection: https://vocolens.com/resources/distress-detection
 - Privacy Policy: https://vocolens.com/privacy
 - Terms of Service: https://vocolens.com/terms
+- Get the app (Google Play): https://play.google.com/store/apps/details?id=com.vocolens.app
 - Join Waitlist: https://vocolens.com/join
 
 ## Contact & Social

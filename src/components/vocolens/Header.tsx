@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, Brain, Radar, ChevronDown } from 'lucide-react';
 import { Link, useNavigate, useLocation } from '@tanstack/react-router';
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 
 const resourcesDropdown = [
   { to: '/resources/science-of-reflection', icon: Brain, label: 'Science of Reflection' },
@@ -152,10 +153,11 @@ export function Header() {
             </nav>
 
             <a
-              href="/join"
+              href={GOOGLE_PLAY_URL}
+              {...STORE_LINK_ATTRS}
               className="bg-gradient-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
             >
-              Join Waitlist
+              Get the App
             </a>
           </div>
 
@@ -230,10 +232,11 @@ export function Header() {
               ))}
               <div className="pt-2 px-1 pb-1">
                 <a
-                  href="/join"
+                  href={GOOGLE_PLAY_URL}
+                  {...STORE_LINK_ATTRS}
                   className="block w-full bg-gradient-primary text-white py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary/20 active:scale-[0.98] transition-transform text-center"
                 >
-                  Join Waitlist
+                  Get the App
                 </a>
               </div>
             </div>

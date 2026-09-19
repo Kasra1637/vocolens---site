@@ -2,6 +2,7 @@ import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { RefreshCw, ArrowUpRight, Clock, ChevronRight, HelpCircle } from 'lucide-react';
 import { useNavigate } from '@tanstack/react-router';
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 
 const faqData = [
   {
@@ -424,10 +425,11 @@ export function OverthinkingRumination() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="/join"
+                href={GOOGLE_PLAY_URL}
+                {...STORE_LINK_ATTRS}
                 className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-md shadow-primary/20"
               >
-                Join Waitlist
+                Get it on Google Play
                 <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <button

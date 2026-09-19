@@ -6,6 +6,7 @@ import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
 import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
 import { PrivacySection } from '@/components/vocolens/PrivacySection';
 import { FAQSection } from '@/components/vocolens/FAQSection';
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 
 const speakableLd = {
   "@context": "https://schema.org",
@@ -21,15 +22,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
+      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
       { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
+      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Join Waitlist today." },
+      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
@@ -270,16 +271,17 @@ function Home() {
       <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
-            Join Waitlist to be first to try Vocolens
+            Get Vocolens on Google Play
           </h3>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            One email when we launch. Nothing else.
+            AI voice journaling for ADHD, autism &amp; alexithymia. Free to try.
           </p>
           <a
-            href="/join"
+            href={GOOGLE_PLAY_URL}
+            {...STORE_LINK_ATTRS}
             className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-2xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
-            Join Waitlist
+            Get it on Google Play
           </a>
         </AnimatedSection>
       </section>

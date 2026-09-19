@@ -3,6 +3,7 @@
  */
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useCallback } from "react";
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 
 export const Route = createFileRoute("/join")({
   head: () => ({
@@ -554,6 +555,9 @@ function JoinPage() {
                     Get early access
                     <ArrowIcon />
                   </button>
+                  <a href={GOOGLE_PLAY_URL} {...STORE_LINK_ATTRS} className="join-store-link">
+                    Or get it now on Google Play
+                  </a>
                   <p className="join-gmail-note">
                     Gmail only — required for beta access.
                   </p>
@@ -711,6 +715,10 @@ function JoinPage() {
             <p>Join the waitlist to get early access.</p>
             <a href="#waitlist" className="join-btn-bottom">
               Get early access
+              <ArrowIcon />
+            </a>
+            <a href={GOOGLE_PLAY_URL} {...STORE_LINK_ATTRS} className="join-btn-bottom join-btn-store">
+              Get it on Google Play
               <ArrowIcon />
             </a>
           </section>
@@ -875,6 +883,22 @@ const joinPageStyles = `
 
   .join-btn:hover { background: #6a4dab; }
   .join-btn:active { transform: scale(0.98); }
+
+  .join-store-link {
+    display: block;
+    margin-top: 0.6rem;
+    padding: 0.7rem 1rem;
+    border: 0.5px solid rgba(124, 92, 191, 0.4);
+    border-radius: 8px;
+    color: var(--join-purple-light);
+    font-size: 13px;
+    font-weight: 500;
+    font-family: var(--join-sans);
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .join-store-link:hover { background: rgba(124, 92, 191, 0.12); }
 
   .join-form-note {
     margin-top: 0.85rem;
@@ -1210,6 +1234,15 @@ const joinPageStyles = `
   }
 
   .join-btn-bottom:hover { background: #6a4dab; }
+  .join-btn-store {
+    margin-top: 0.9rem;
+    background: transparent;
+    border: 0.5px solid rgba(124, 92, 191, 0.45);
+    color: var(--join-purple-light);
+  }
+  .join-btn-store:hover {
+    background: rgba(124, 92, 191, 0.12);
+  }
 
 
 
