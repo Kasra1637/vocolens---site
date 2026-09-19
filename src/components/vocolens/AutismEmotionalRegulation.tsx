@@ -383,10 +383,10 @@ export function AutismEmotionalRegulation() {
         <AnimatedSection animation="fade-in-up" delay={0.65}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Finally understand what you feel — on your terms
+              Regulate on your terms
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              No masking. No performance. Just your voice, building the bridge between feeling and understanding — one entry at a time.
+              No masking, no performance. Speak freely and let Vocolens help you process emotions the way your brain actually works.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

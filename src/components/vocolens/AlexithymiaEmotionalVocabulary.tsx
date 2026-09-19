@@ -439,10 +439,10 @@ export function AlexithymiaEmotionalVocabulary() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Your feelings exist — even without words for them yet
+              Name what you feel
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              You don't need to show up with a vocabulary already built. You just need to start talking. The words come one entry at a time — Vocolens is built to help them arrive faster.
+              Can't name it? Say it anyway. Vocolens turns your voice into a vocabulary you were never taught — one entry at a time.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

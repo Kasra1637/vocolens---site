@@ -367,10 +367,10 @@ export function ScienceOfReflection() {
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Sleep better. Worry less. Think clearer
+              Name it to ease it
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              People who reflect daily report less anxiety, better sleep, and sharper decisions. Your voice is the fastest way in.
+              Naming your emotions reduces stress. Speak your day and Vocolens turns that naming into a habit that builds resilience.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

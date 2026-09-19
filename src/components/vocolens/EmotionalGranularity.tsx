@@ -367,10 +367,10 @@ export function EmotionalGranularity() {
 <AnimatedSection animation="fade-in-up" delay={0.6}>
         <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
           <h2 className="text-lg font-bold text-text-primary mb-3">
-            You don't need a bigger vocabulary. You need a truer one.
+            Find the exact word
           </h2>
           <p className="text-text-secondary mb-5 text-base leading-relaxed">
-            You don't have to show up with the words already built. Start talking, and let the labels sharpen one entry at a time — Vocolens offers candidates from your own voice, and your confirmations and rejections teach it what "true" means for you.
+            Specific words change what you feel. Speak, and let Vocolens sharpen your emotional vocabulary with every entry.
           </p>
           <div className="flex flex-wrap gap-3">
             <a

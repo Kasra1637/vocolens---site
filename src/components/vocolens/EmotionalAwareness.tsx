@@ -368,10 +368,10 @@ export function EmotionalAwareness() {
         <AnimatedSection animation="fade-in-up" delay={0.65}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Finally understand why you feel what you feel
+              Stop guessing why
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Stop guessing. Start knowing. Get clarity on your emotional patterns so you can grow with intention.
+              Stop guessing. Start seeing the pattern — Vocolens turns your voice into clarity you can grow from.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

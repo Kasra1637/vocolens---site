@@ -400,10 +400,10 @@ export function TimeBlindness() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Give your brain a clock it can trust
+              See time clearly
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              You don't need a stricter alarm. You need a record. Let Vocolens help you timestamp your day in your own voice, so the gap between "felt like ten minutes" and "was actually ninety" finally becomes visible.
+              Felt like ten minutes? Was actually ninety. Speak your day and Vocolens builds the timestamp your internal clock can't.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

@@ -418,10 +418,10 @@ export function OverthinkingRumination() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Give the loop somewhere to go
+              Break the loop
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              You don't need to win the argument in your head at 2am. Say it out loud, let Vocolens help you name it, and give your brain the closure it's been asking for.
+              The 2am argument ends when you say it out loud. Vocolens gives the loop somewhere to go — and helps you name it.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

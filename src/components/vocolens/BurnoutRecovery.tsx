@@ -396,10 +396,10 @@ export function BurnoutRecovery() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
             <h2 className="text-lg font-bold text-text-primary mb-3">
-              Start keeping the ledger
+              Catch the load early
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              You don't need a vacation to see the pattern. You need sixty seconds and your own voice. Let Vocolens help you name today's load before it becomes tomorrow's crash.
+              Sixty seconds a day. Speak today's weight and Vocolens surfaces the pattern before it becomes tomorrow's crash.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
