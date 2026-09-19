@@ -1,8 +1,7 @@
 import { Brain, Clock, BookOpen, Radar, Activity, Puzzle, Heart, RefreshCw, Flame, Timer } from 'lucide-react';
-import { useNavigate } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 
 export function Resources() {
-  const navigate = useNavigate();
   return (
     <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <script
@@ -61,8 +60,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/emotional-granularity' })}
+          <Link
+            to="/resources/emotional-granularity"
             aria-label="Read: Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -102,7 +101,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -120,8 +119,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/adhd-time-blindness' })}
+          <Link
+            to="/resources/adhd-time-blindness"
             aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -161,7 +160,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -179,8 +178,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/burnout-recovery-signs' })}
+          <Link
+            to="/resources/burnout-recovery-signs"
             aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -220,7 +219,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -238,8 +237,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/overthinking-rumination' })}
+          <Link
+            to="/resources/overthinking-rumination"
             aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -279,7 +278,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -297,8 +296,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/autism-emotional-regulation' })}
+          <Link
+            to="/resources/autism-emotional-regulation"
             aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -338,7 +337,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -356,8 +355,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/alexithymia-emotional-vocabulary' })}
+          <Link
+            to="/resources/alexithymia-emotional-vocabulary"
             aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -397,7 +396,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -415,8 +414,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/distress-detection' })}
+          <Link
+            to="/resources/distress-detection"
             aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -456,7 +455,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -474,8 +473,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/emotional-awareness-patterns' })}
+          <Link
+            to="/resources/emotional-awareness-patterns"
             aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -515,7 +514,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
 
         <article
@@ -533,8 +532,8 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
-          <button
-            onClick={() => navigate({ to: '/resources/science-of-reflection' })}
+          <Link
+            to="/resources/science-of-reflection"
             aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
@@ -574,7 +573,7 @@ export function Resources() {
                 </div>
               </div>
             </div>
-          </button>
+          </Link>
         </article>
       </div>
     </main>

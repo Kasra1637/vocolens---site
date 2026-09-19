@@ -1,7 +1,7 @@
 import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Puzzle, ArrowUpRight, Clock, ChevronRight, Circle as HelpCircle } from 'lucide-react';
-import { useNavigate } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { BackToTop } from './BackToTop';
 
@@ -29,7 +29,6 @@ const faqData = [
 ];
 
 export function AutismEmotionalRegulation() {
-  const navigate = useNavigate();
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -114,13 +113,13 @@ export function AutismEmotionalRegulation() {
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <button
-                onClick={() => navigate({ to: '/resources' })}
+              <Link
+                to="/resources"
                 className="hover:text-primary transition-colors"
                 itemProp="name"
               >
                 Resources
-              </button>
+              </Link>
               <meta itemProp="item" content="https://vocolens.com/resources" />
               <meta itemProp="position" content="1" />
             </li>
@@ -348,8 +347,8 @@ export function AutismEmotionalRegulation() {
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
             <div className="space-y-4">
-              <button
-                onClick={() => navigate({ to: '/resources/science-of-reflection' })}
+              <Link
+                to="/resources/science-of-reflection"
                 className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
@@ -362,9 +361,9 @@ export function AutismEmotionalRegulation() {
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                 </div>
-              </button>
-              <button
-                onClick={() => navigate({ to: '/resources/distress-detection' })}
+              </Link>
+              <Link
+                to="/resources/distress-detection"
                 className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
@@ -377,7 +376,7 @@ export function AutismEmotionalRegulation() {
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </AnimatedSection>
@@ -399,12 +398,12 @@ export function AutismEmotionalRegulation() {
                 Get it on Google Play
                 <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
               </a>
-              <button
-                onClick={() => navigate({ to: '/resources' })}
+              <Link
+                to="/resources"
                 className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
               >
                 Back to Resources
-              </button>
+              </Link>
             </div>
           </div>
         </AnimatedSection>
