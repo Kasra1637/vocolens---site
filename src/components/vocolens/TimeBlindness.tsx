@@ -399,11 +399,11 @@ export function TimeBlindness() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
-            <h2 className="text-lg font-bold text-text-primary mb-3">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               See time clearly
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Felt like ten minutes? Was actually ninety. Speak your day and Vocolens builds the timestamp your internal clock can't.
+              Felt like ten minutes? Was ninety. Vocolens shows the gap your clock can&#x27;t.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

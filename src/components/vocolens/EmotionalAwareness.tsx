@@ -367,11 +367,11 @@ export function EmotionalAwareness() {
 
         <AnimatedSection animation="fade-in-up" delay={0.65}>
           <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
-            <h2 className="text-lg font-bold text-text-primary mb-3">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Stop guessing why
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
-              Stop guessing. Start seeing the pattern — Vocolens turns your voice into clarity you can grow from.
+              Stop guessing. Vocolens turns your voice into clarity you can grow from.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
