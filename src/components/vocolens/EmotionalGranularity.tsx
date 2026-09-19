@@ -66,8 +66,8 @@ export function EmotionalGranularity() {
       { "@type": "Thing", "name": "Alexithymia", "description": "A trait involving difficulty identifying and describing emotions" },
     ],
     "mentions": [
-      { "@type": "ScholarlyArticle", "name": "Putting Feelings Into Words: Affect Labeling Disconfirms Neural Markers of Distress", "author": { "@type": "Person", "name": "Matthew D. Lieberman" }, "datePublished": "2007" },
-      { "@type": "ScholarlyArticle", "name": "Conceptual Act Theory", "author": { "@type": "Person", "name": "Lisa Feldman Barrett" }, "datePublished": "2006" },
+      { "@type": "ScholarlyArticle", "name": "Putting Feelings Into Words: Affect Labeling Disconfirms Neural Markers of Distress", "author": { "@type": "Person", "name": "Matthew D. Lieberman" }, "datePublished": "2007", "url": "https://pubmed.ncbi.nlm.nih.gov/17576282/" },
+      { "@type": "ScholarlyArticle", "name": "Conceptual Act Theory", "author": { "@type": "Person", "name": "Lisa Feldman Barrett" }, "datePublished": "2006", "url": "https://pubmed.ncbi.nlm.nih.gov/16430327/" },
       { "@type": "ScholarlyArticle", "name": "The Toronto Alexithymia Scale", "author": { "@type": "Person", "name": "Graeme J. Taylor" }, "datePublished": "1985" },
     ],
     "speakable": {
@@ -209,11 +209,21 @@ export function EmotionalGranularity() {
             </p>
             <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "In the how of emotion, then, become specific and you can change the what of experience."
-              <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barrett, 2006, Psychological Inquiry</cite>
+              <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barrett, 2006, Personality and Social Psychology Review</cite>
             </blockquote>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: granularity is not the same as having a big vocabulary. "I feel emotionally complex" is long and vague. "I feel apprehensive and unfinished" is short and specific — and specific is what makes a label usable.
             </p>
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/16430327/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Read Barrett (2006) on categorization and the experience of emotion — PubMed"
+              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+            >
+              <span className="underline underline-offset-2">Read the research: Solving the emotion paradox — PubMed</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+            </a>
           </section>
         </AnimatedSection>
 <AnimatedSection animation="fade-in-up" delay={0.2}>
@@ -237,6 +247,16 @@ export function EmotionalGranularity() {
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: naming isn't a magic eraser. It's a targeting system — and a specific target beats a vague one.
             </p>
+            <a
+              href="https://pubmed.ncbi.nlm.nih.gov/17576282/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Read Lieberman et al. (2007) on affect labeling and reduced amygdala response — PubMed"
+              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+            >
+              <span className="underline underline-offset-2">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+            </a>
           </section>
         </AnimatedSection>
 
@@ -257,6 +277,16 @@ export function EmotionalGranularity() {
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: don't hunt for the perfect word. Compare two plausible ones and keep the truer — the comparison is the skill.
             </p>
+            <a
+              href="https://journals.sagepub.com/doi/abs/10.1177/0963721414550708"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Read Kashdan, Barrett & McKnight (2015) on emotion differentiation — Current Directions in Psychological Science"
+              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+            >
+              <span className="underline underline-offset-2">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+            </a>
           </section>
         </AnimatedSection>
         <AnimatedSection animation="fade-in-up" delay={0.4}>
