@@ -195,10 +195,10 @@ export function UseCases() {
           className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
-            Get Vocolens on Google Play
+            Understand yourself, one conversation at a time.
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Private. Patient. Neurodivergent-first. Download it on Google Play and be among the first to experience it.
+            Speak instead of typing — Vocolens turns your voice into mood insights and emotional clarity. Private, patient, neurodivergent-first. Free to try on Google Play.
           </p>
           <a
             href={GOOGLE_PLAY_URL}
