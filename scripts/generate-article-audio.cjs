@@ -11,6 +11,11 @@
  * Output: public/audio/<slug>.mp3 plus public/audio/manifest.json, which
  * records a content hash per article so unchanged posts are skipped.
  *
+ * NOTE: keep MP3s small for Workers deploys — after generating, downsample
+ * to 24 kHz mono 32 kbps and refresh manifest bytes/minutes, e.g.:
+ *   ffmpeg -i in.mp3 -ar 24000 -ac 1 -b:a 32k out.mp3
+ * (Committed files are ~16 MB total; 48 kbps originals exceed that.)
+ *
  * Usage (worker must be running):
  *   node scripts/generate-article-audio.cjs
  *   node scripts/generate-article-audio.cjs --force
