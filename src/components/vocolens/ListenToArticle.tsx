@@ -33,23 +33,12 @@ function articleBlocks(): HTMLElement[] {
   return blocks;
 }
 
-/** Narrated h2 headings in order; heading[i] maps to sections[i + 1]. */
-function articleHeadings(): HTMLElement[] {
-  if (typeof document === "undefined") return [];
-  const root = document.getElementById("article-root");
-  if (!root) return [];
-  return Array.from(
-    root.querySelectorAll('h2[id^="section-"]:not(#section-faq)'),
-  ) as HTMLElement[];
-}
-
 /**
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
  * - scrubber with click + drag seeking and section ticks
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly)
- * - tap any article h2 heading to hear that section
  * - live soft-highlight of the section being narrated + Follow auto-scroll
  * Regenerate audio with: node scripts/generate-article-audio.cjs
  */
@@ -164,44 +153,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const target = Math.min(sections.length - 1, idx + 1);
     seekAndPlay(sections[target].startSec);
   }, [sections, currentTime, seekAndPlay]);
-
-  // Tap an article h2 heading to hear that section. The chapter list below
-  // remains the fully-accessible equivalent (real buttons).
-  useEffect(() => {
-    const heads = articleHeadings();
-    if (heads.length === 0) return;
-    const cleanups = heads.map((h, i) => {
-      if (!sections[i + 1]) return () => {};
-      const t = sections[i + 1].startSec;
-      h.classList.add("vocolens-listenable");
-      h.setAttribute("title", "Listen from here");
-      h.setAttribute("tabindex", "0");
-      const go = () => seekAndPlay(t);
-      const onClick = (e: MouseEvent) => {
-        if ((e.target as HTMLElement).closest("a,button")) return;
-        e.preventDefault();
-        go();
-      };
-      const onKey = (e: KeyboardEvent) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          go();
-        }
-      };
-      h.addEventListener("click", onClick);
-      h.addEventListener("keydown", onKey);
-      return () => {
-        h.classList.remove("vocolens-listenable");
-        h.removeAttribute("title");
-        h.removeAttribute("tabindex");
-        h.removeEventListener("click", onClick);
-        h.removeEventListener("keydown", onKey);
-      };
-    });
-    return () => {
-      cleanups.forEach((c) => c());
-    };
-  }, [slug, sections, seekAndPlay]);
 
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
@@ -450,9 +401,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
                 })}
               </ol>
             )}
-            <p className="mt-1 px-2 text-[11px] leading-relaxed text-text-muted">
-              Tip: tap any section heading in the article to listen from there.
-            </p>
           </div>
         )}
       </div>
