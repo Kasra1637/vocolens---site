@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Pause, Play, Volume2 } from "lucide-react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt, sectionStarts } from "../../lib/articleSections";
@@ -36,6 +36,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const src = voiceIdx === 0 ? `/audio/${slug}.mp3` : `/audio/${slug}-male.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
   const starts = sectionStarts(sections);
+
+  // Force metadata load on mount so duration is available before play.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.load();
+  }, [src]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -90,13 +97,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
     }
   };
 
-  const seek = (t: number) => {
+  const seek = useCallback((t: number) => {
     const audio = audioRef.current;
     if (!audio || !Number.isFinite(duration) || duration <= 0) return;
     const clamped = Math.min(Math.max(t, 0), duration);
     audio.currentTime = clamped;
     setCurrentTime(clamped);
-  };
+  }, [duration]);
 
   const switchVoice = (i: number) => {
     if (i === voiceIdx) return;
@@ -108,17 +115,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
     setVoiceIdx(i);
   };
 
-  const timeFromClientX = (clientX: number): number | null => {
+  const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
     if (!track || !Number.isFinite(duration) || duration <= 0) return null;
     const rect = track.getBoundingClientRect();
     if (rect.width <= 0) return null;
     const ratio = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
     return ratio * duration;
-  };
+  }, [duration]);
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    const t = timeFromClientX(e.clientX);
+    const t = getTimeFromPointer(e.clientX);
     if (t === null) return;
     e.currentTarget.setPointerCapture(e.pointerId);
     setScrubbing(true);
@@ -126,17 +133,37 @@ export function ListenToArticle({ slug }: { slug: string }) {
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const t = getTimeFromPointer(e.clientX);
+    if (t === null) return;
     if (scrubbing) {
-      const t = timeFromClientX(e.clientX);
-      if (t !== null) seek(t);
+      seek(t);
     } else if (e.pointerType === "mouse") {
-      setHoverTime(timeFromClientX(e.clientX));
+      setHoverTime(t);
     }
   };
 
   const endScrub = () => {
     setScrubbing(false);
     setHoverTime(null);
+  };
+
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const t = getTimeFromPointer(e.clientX);
+    if (t === null) return;
+    seek(t);
+    setScrubbing(true);
+
+    const onMove = (ev: MouseEvent) => {
+      const tt = getTimeFromPointer(ev.clientX);
+      if (tt !== null) seek(tt);
+    };
+    const onUp = () => {
+      setScrubbing(false);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -221,7 +248,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         </button>
       </div>
 
-      <div className="mt-2">
+      <div className="mt-3">
         <div
           ref={trackRef}
           role="slider"
@@ -235,24 +262,23 @@ export function ListenToArticle({ slug }: { slug: string }) {
           onPointerMove={onPointerMove}
           onPointerUp={endScrub}
           onPointerCancel={endScrub}
-          onPointerLeave={() => {
-            if (!scrubbing) setHoverTime(null);
-          }}
+          onPointerLeave={() => { if (!scrubbing) setHoverTime(null); }}
+          onMouseDown={onMouseDown}
           onKeyDown={onKeyDown}
-          className="relative flex items-center h-7 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="relative py-3 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
-            <div className="absolute left-0 top-0 h-full rounded-full bg-primary" style={{ width: `${fraction * 100}%` }} />
+            <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
             {starts.slice(1).map((s, i) => (
               <span
                 key={i}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/60 pointer-events-none"
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/40 pointer-events-none"
                 style={{ left: `${s * 100}%` }}
                 aria-hidden="true"
               />
             ))}
             <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white border-[2.5px] border-primary shadow-sm"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white border-[2.5px] border-primary shadow-sm pointer-events-none"
               style={{ left: `${fraction * 100}%` }}
             />
           </div>
@@ -267,7 +293,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
             </div>
           )}
         </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-text-muted">
+        <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-0.5">
           <span className="min-w-0 truncate">
             {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {sections[sectionIdx].title}</span> : <span>&nbsp;</span>}
           </span>
