@@ -1,0 +1,92 @@
+{
+  "adhd-time-blindness": {
+    "file": "/audio/adhd-time-blindness.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "ec587dcbba72c776",
+    "chars": 8506,
+    "words": 1412,
+    "bytes": 3147840,
+    "minutes": 8.7,
+    "generatedAt": "2026-09-18T08:08:52.042Z"
+  },
+  "alexithymia-emotional-vocabulary": {
+    "file": "/audio/alexithymia-emotional-vocabulary.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "52c0a4dd8f8a22f1",
+    "chars": 10304,
+    "words": 1682,
+    "bytes": 4011840,
+    "minutes": 11.1,
+    "generatedAt": "2026-09-18T08:09:04.767Z"
+  },
+  "burnout-recovery-signs": {
+    "file": "/audio/burnout-recovery-signs.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "3a80c42f358c00c8",
+    "chars": 7942,
+    "words": 1310,
+    "bytes": 2954448,
+    "minutes": 8.2,
+    "generatedAt": "2026-09-18T08:09:14.785Z"
+  },
+  "overthinking-rumination": {
+    "file": "/audio/overthinking-rumination.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "5567f0d289883158",
+    "chars": 8606,
+    "words": 1405,
+    "bytes": 3208608,
+    "minutes": 8.9,
+    "generatedAt": "2026-09-18T08:09:25.220Z"
+  },
+  "autism-emotional-regulation": {
+    "file": "/audio/autism-emotional-regulation.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "06c4f98af802c6a6",
+    "chars": 7021,
+    "words": 1010,
+    "bytes": 2739024,
+    "minutes": 7.6,
+    "generatedAt": "2026-09-18T08:09:39.364Z"
+  },
+  "distress-detection": {
+    "file": "/audio/distress-detection.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "27c721e347c2be77",
+    "chars": 5359,
+    "words": 846,
+    "bytes": 2121840,
+    "minutes": 5.9,
+    "generatedAt": "2026-09-18T08:09:51.269Z"
+  },
+  "emotional-awareness-patterns": {
+    "file": "/audio/emotional-awareness-patterns.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "2a3c0c5df2f53100",
+    "chars": 6524,
+    "words": 875,
+    "bytes": 2555712,
+    "minutes": 7.1,
+    "generatedAt": "2026-09-18T08:10:03.045Z"
+  },
+  "science-of-reflection": {
+    "file": "/audio/science-of-reflection.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "a4463e0d66d0a750",
+    "chars": 5147,
+    "words": 752,
+    "bytes": 1932048,
+    "minutes": 5.4,
+    "generatedAt": "2026-09-18T08:10:11.195Z"
+  },
+  "emotional-granularity": {
+    "file": "/audio/emotional-granularity.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "43627357ff46c916",
+    "chars": 6156,
+    "words": 1033,
+    "bytes": 2378448,
+    "minutes": 6.6,
+    "generatedAt": "2026-09-18T08:10:22.802Z"
+  }
+}

@@ -147,7 +147,7 @@ export function EmotionalAwareness() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
 
-          <ListenToArticle />
+          <ListenToArticle slug="emotional-awareness-patterns" />
 
           <div className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>

@@ -168,7 +168,7 @@ export function AlexithymiaEmotionalVocabulary() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
 
-          <ListenToArticle />
+          <ListenToArticle slug="alexithymia-emotional-vocabulary" />
 
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
