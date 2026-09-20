@@ -156,7 +156,7 @@ export function BurnoutRecovery() {
           >
             Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
             Burnout doesn't arrive the day you finally break. It arrives months earlier, one unlogged stressor at a time, and your nervous system has been keeping a running total the whole way. Here's the science of <strong className="text-text-primary font-semibold">allostatic load</strong>, why a vacation alone rarely fixes it, and how a daily voice-journaled load check catches the accumulation before it becomes collapse.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -173,15 +173,15 @@ export function BurnoutRecovery() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Burnout is a running total, not a single event.</strong> Allostatic load explains how small, ordinary stressors compound silently until the body crosses a threshold.
+                <strong className="font-semibold text-text-primary">Burnout is a running total, not a single event.</strong> Allostatic load explains how small, ordinary stressors compound silently until the body crosses a threshold.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Exhaustion is the last symptom to show up, not the first.</strong> Cynicism and a creeping sense of inefficacy typically arrive earlier, and they're easy to mistake for a personality change instead of a warning sign.
+                <strong className="font-semibold text-text-primary">Exhaustion is the last symptom to show up, not the first.</strong> Cynicism and a creeping sense of inefficacy typically arrive earlier, and they're easy to mistake for a personality change instead of a warning sign.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">A vacation resets your energy, not your ledger.</strong> Naming the load daily — out loud — is what actually keeps the running total visible before it becomes a crash.
+                <strong className="font-semibold text-text-primary">A vacation resets your energy, not your ledger.</strong> Naming the load daily — out loud — is what actually keeps the running total visible before it becomes a crash.
               </li>
             </ul>
       </div>
@@ -202,10 +202,10 @@ export function BurnoutRecovery() {
             <h2 id="section-allostatic-load" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Your body is keeping a ledger you can't see
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In the early 1990s, neuroscientists Bruce McEwen and Eliot Stellar coined a term for something the body does constantly and invisibly: <strong className="text-text-primary font-semibold">allostatic load</strong> — the cumulative physiological wear of adapting, again and again, to demand. Your cortisol, blood pressure, and inflammation systems aren't built to reset to zero between stressors. They're built to stay slightly elevated, ready for the next one, and that readiness has a cost that compounds.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A single stressful meeting doesn't burn you out. Neither does one bad night of sleep, one difficult client, or one missed workout. The problem is that none of these register individually as a big deal, so nothing in your daily experience flags the pattern. Meanwhile, the ledger doesn't care whether any single entry felt significant — it only cares about the running total.
             </p>
             <p>
@@ -222,13 +222,13 @@ export function BurnoutRecovery() {
             <h2 id="section-maslach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The three warning signs — and why exhaustion is the last one to show up
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Psychologist Christina Maslach spent decades studying burnout and found it isn't a single symptom but a pattern of three: <strong className="text-text-primary font-semibold">emotional exhaustion</strong>, <strong className="text-text-primary font-semibold">cynicism</strong> (a growing detachment or negativity toward the work itself), and <strong className="text-text-primary font-semibold">reduced sense of efficacy</strong> — a creeping belief that nothing you do matters or works anymore.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Most people assume exhaustion comes first, because it's the loudest and most physical. In practice, cynicism and doubt about your own competence often arrive earlier, and they're far easier to misread. You start rolling your eyes at meetings you used to care about. You catch yourself thinking, quietly, "why bother." It doesn't feel like burnout. It feels like you've just stopped liking your job, or stopped being good at it — which is exactly why so many people miss the window where intervention is easiest.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "Burnout is a syndrome of emotional exhaustion, depersonalization, and reduced personal accomplishment that can occur among individuals who work with people in some capacity."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Maslach & Jackson, 1981, Journal of Occupational Behaviour</cite>
             </blockquote>
@@ -250,10 +250,10 @@ export function BurnoutRecovery() {
             <h2 id="section-vacation-fallacy" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why a vacation resets your energy but not your ledger
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Here's the frustrating pattern almost everyone who's burned out eventually recognizes: you take a week off, you feel noticeably better, and within days of returning, it's like the break never happened. This isn't a failure of the vacation. It's a mismatch between what rest restores and what burnout actually depletes.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A week away lowers your acute stress hormones and gives your body genuine short-term recovery — that part is real. But it doesn't touch the cynicism or the eroded sense of efficacy, because those dimensions aren't about energy. They're about trust: trust that your effort produces results, trust that the environment you're returning to won't simply refill the ledger at the same rate. Rest addresses the numerator. It does nothing to the conditions generating the load in the first place.
             </p>
             <p>
@@ -270,13 +270,13 @@ export function BurnoutRecovery() {
             <h2 id="section-daily-load-check" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your nervous system a running total it can actually see
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If burnout builds because small stressors go unlogged, then the fix has to involve something that actually logs them — consistently, before the total gets large enough to notice on its own. Waiting until you feel overwhelmed to reflect on why is like checking your bank balance only after it's already overdrawn.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Speaking your day out loud — even briefly — does something a mental recap doesn't: it forces you to notice specifics instead of averaging everything into a vague "fine" or "exhausted." Naming what actually happened ("three back-to-back meetings, skipped lunch, didn't hear back on the thing I've been anxious about") turns a diffuse feeling into a countable event. That specificity is what makes the running total visible at all.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is the same mechanism behind <strong className="text-text-primary font-semibold">expressive disclosure</strong> — the well-documented finding that structured verbal or written processing of stressful experiences produces measurable physiological benefits, not just a subjective sense of relief. Voice journaling applies that mechanism directly to burnout: you're not just venting about a hard day, you're logging load in a way your nervous system can actually reference later.
             </p>
             <a
@@ -297,10 +297,10 @@ export function BurnoutRecovery() {
             <h2 id="section-load-check-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a daily load check that catches burnout before it catches you
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Researchers studying burnout recovery consistently find the same thing: early intervention, while the load is still moderate, is far more effective than intervention after collapse. The problem has never been a lack of good advice for burned-out people — it's that most people don't realize they're accumulating load until the exhaustion dimension is already severe.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A daily load check closes that gap. At the end of each day, take 60-90 seconds and answer three questions out loud: <em>What drained me today? What, if anything, actually restored me? On a scale of "manageable" to "running on empty," where am I right now?</em> You're not trying to solve anything in this moment — you're just making today's entry in a ledger that's been running whether you tracked it or not.
             </p>
             <p>
@@ -343,7 +343,7 @@ export function BurnoutRecovery() {
 
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/distress-detection"
@@ -351,7 +351,7 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness &amp; Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
@@ -366,7 +366,7 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Anxiety &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Anxiety &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       The overthinking trap: why your brain won't stop
                     </h4>
@@ -381,7 +381,7 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>

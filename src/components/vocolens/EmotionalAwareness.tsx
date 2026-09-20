@@ -183,13 +183,13 @@ export function EmotionalAwareness() {
             <h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The power of metacognitive awareness: thinking about your thinking
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Metacognition—the ability to observe and reflect on your own thoughts and emotions—is one of the most powerful tools for personal growth. Unlike simple thinking, which is automatic and reactive, metacognitive awareness gives you the psychological distance needed to understand <em>why</em> you think and feel the way you do.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Research on metacognitive awareness demonstrates that individuals who regularly engage in reflective practice show significantly enhanced emotional regulation abilities. A study on metacognitive awareness and emotional development found that improving metacognitive awareness through structured reflection directly enhances emotional regulation capacity and concentration, with effects that persist over time.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "The faculty to observe one's own thoughts is a fundamental human capacity, yet most of us go through life without fully developing it. Metacognitive awareness is where genuine change begins."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Research on Metacognitive Awareness in Emotional Regulation</cite>
             </blockquote>
@@ -204,10 +204,10 @@ export function EmotionalAwareness() {
             <h2 id="section-expressive-writing" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Expressive disclosure: why speaking your emotions unlocks insight
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Talking through your experiences isn't just emotionally cathartic—it's neurologically transformative. Research by Pennebaker and Beall (1986) showed that expressive writing about emotional experiences leads to measurable gains in clarity and insight into emotional patterns. Later meta-analyses by Frattaroli (2006) examining 146 studies confirmed that expressive disclosure produces lasting improvements in psychological health outcomes.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               What makes voice journaling uniquely powerful is that speaking engages different neural pathways than writing. When you articulate your emotions aloud, you're encoding them through multiple sensory channels—auditory, motor, and linguistic—creating stronger memory traces and deeper insight. This is why a 10-minute voice journal can sometimes unlock clarity that writing alone might take much longer to achieve.
             </p>
             <p>
@@ -235,10 +235,10 @@ export function EmotionalAwareness() {
             <h2 id="section-pattern-recognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               From single moments to patterns: the real power of voice journaling
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               An isolated emotional reaction is just data. But when you journal consistently, something remarkable happens: patterns emerge. You notice that frustration tends to spike on Monday mornings. Anxiety about judgment clusters around social situations. Energy crashes after intense focus periods.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is where pattern recognition—one of the highest-level cognitive functions—transforms self-awareness into actionable insight. By reviewing your voice journals over weeks and months, you start to see the architecture of your emotional life. Triggers become visible. Behavioral cycles crystallize. You understand not just <em>what</em> you're feeling, but <em>when</em>, <em>why</em>, and <em>under what conditions</em>.
             </p>
             <p>
@@ -252,13 +252,13 @@ export function EmotionalAwareness() {
             <h2 id="section-emotional-triggers" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Identifying your emotional triggers: the foundation of self-regulation
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               You can't regulate an emotional response you don't understand. The first step to genuine emotional control is precise trigger identification—and voice journaling accelerates this process dramatically.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               When you pause to voice journal immediately after an emotional spike, you capture the full context: what happened beforehand, what you were thinking, what your body felt like. Over time, patterns emerge. You realize that criticism from authority figures triggers shame. Uncertainty about the future activates anxiety. Feeling unheard in relationships activates frustration.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Once a trigger is identified and named, your nervous system begins to respond differently to it. There's research showing that simply labeling an emotional trigger reduces its automatic power—the same affect labeling mechanism that names emotions also works for understanding the conditions that activate them. This knowledge becomes your leverage point for change.
             </p>
             <p>
@@ -272,10 +272,10 @@ export function EmotionalAwareness() {
             <h2 id="section-accelerating-growth" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Accelerating personal growth through reflective insight
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               The research is clear: individuals who engage in regular reflective practice—pausing to think about their experiences, emotions, and reactions—progress faster in therapy, coaching, and personal development than those who don't. Why? Because reflection bridges the gap between experience and learning.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Without reflection, you repeat the same patterns. With consistent voice journaling, each experience becomes an opportunity for insight. You're not just living your life—you're learning from it. Over months and years, this compounding effect transforms your emotional intelligence, resilience, and capacity for meaningful change.
             </p>
             <p>
@@ -315,7 +315,7 @@ export function EmotionalAwareness() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
@@ -323,7 +323,7 @@ export function EmotionalAwareness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -338,7 +338,7 @@ export function EmotionalAwareness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
@@ -353,7 +353,7 @@ export function EmotionalAwareness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">ADHD & Time Perception</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">ADHD & Time Perception</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Time blindness isn't a focus problem — it's a missing internal clock
                     </h4>

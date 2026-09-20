@@ -183,13 +183,13 @@ export function DistressDetection() {
             <h2 id="section-body-first" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The body speaks first: the neuroscience of early distress signals
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Your autonomic nervous system is constantly scanning your environment for threat and demand—a process Stephen Porges called <em>neuroception</em>. It operates below awareness, and it operates fast. Before your prefrontal cortex finishes interpreting a difficult email, your heart rate has already shifted, your breath has shortened, and your shoulders have begun to lift toward your ears.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Antonio Damasio's somatic marker hypothesis points to the same truth from a different angle: the body's physiological state shapes decision-making and emotion long before conscious reasoning catches up. Distress isn't an idea you arrive at. It's a physical event you eventually notice.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "The body is not separate from emotion. It is the medium through which emotion is built."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Adapted from research on interoception and emotional awareness</cite>
             </blockquote>
@@ -204,10 +204,10 @@ export function DistressDetection() {
             <h2 id="section-interoception" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Interoception: your built-in early warning system
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Interoception is your capacity to sense what's happening inside your body—heartbeat, breath, muscle tension, gut sensation, temperature. Research by Sarah Garfinkel and colleagues has shown that people with higher interoceptive accuracy regulate emotion more effectively, recover from stress faster, and make decisions that align better with their actual needs.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               The opposite is also true. When interoception is dulled—by chronic stress, dissociation, or simply a culture that rewards ignoring the body—distress accumulates silently. You don't notice the tight chest, the clenched jaw, the held breath. You only notice the crash: the sudden tears, the snap at a colleague, the night you couldn't sleep.
             </p>
             <p>
@@ -235,10 +235,10 @@ export function DistressDetection() {
             <h2 id="section-warning-signs" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The common early signs of overwhelm — and why you miss them
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Most people share the same handful of early signals. Chest tightness or shallow breathing. A clenched stomach or sudden loss of appetite. Tension in the neck and shoulders. Restless hands. Heaviness in the legs. None of these are dramatic on their own, which is exactly why they're easy to dismiss.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Your brain has a strong bias toward continuing whatever you're already doing. So when your stomach knots in the third meeting of the day, your mind narrates it away: "It's nothing. Push through." The signal doesn't disappear. It compounds. And by the time it becomes loud enough to interrupt you, you're already past the point where a small intervention would have worked.
             </p>
             <p>
@@ -252,10 +252,10 @@ export function DistressDetection() {
             <h2 id="section-mapping" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Mapping the body: turning sensation into information
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A single body sensation in isolation is just a moment. But the same sensations, tracked across days and weeks, become a map. You start to see that your chest tightens before difficult conversations, your stomach drops in the hour before a deadline, your hands go cold when you're masking emotion in a social setting.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is where Vocolens' body sensation tracking comes in. As you voice journal, you can tag where the feeling lives in your body—chest, stomach, neck, hands, and more. Over time, the body map becomes one of the most honest pieces of feedback you have. Your mind may rationalize. Your body keeps the receipts.
             </p>
             <p>
@@ -269,10 +269,10 @@ export function DistressDetection() {
             <h2 id="section-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               A simple practice: catching overwhelm in the first 60 seconds
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Try this the next time something feels "off" without an obvious reason. Pause. Close your eyes if you can. Scan from head to feet and answer one question: <em>where in my body is something asking for attention?</em> Then voice journal what you noticed—out loud, for one minute, no editing.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               You'll often discover that the sensation already had a story attached to it: a worry, a memory, a need. Naming the body brings the mind along with it. This is the reverse of how most of us were taught to handle stress, and it works precisely because it follows the order your nervous system actually uses.
             </p>
             <p>
@@ -312,7 +312,7 @@ export function DistressDetection() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
@@ -320,7 +320,7 @@ export function DistressDetection() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -335,7 +335,7 @@ export function DistressDetection() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>

@@ -156,7 +156,7 @@ export function EmotionalGranularity() {
           >
             Emotional Granularity: Why Specific Words Change What You Feel
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
             Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -172,15 +172,15 @@ export function EmotionalGranularity() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Emotional granularity is the skill of telling similar feelings apart, not just noticing that something is happening.</strong> "Bad" collapses a lot of different states into one word. "Apprehensively braced and resentfully tired" keeps the information that makes a feeling handleable.
+                <strong className="font-semibold text-text-primary">Emotional granularity is the skill of telling similar feelings apart, not just noticing that something is happening.</strong> "Bad" collapses a lot of different states into one word. "Apprehensively braced and resentfully tired" keeps the information that makes a feeling handleable.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Finer labels are linked to better regulation because they give the brain a more specific target.</strong> Research on affect labeling associates naming an emotion with reduced amygdala reactivity and increased activity in regions tied to cognitive control — the label appears to be part of the regulation, not just a report of it.
+                <strong className="font-semibold text-text-primary">Finer labels are linked to better regulation because they give the brain a more specific target.</strong> Research on affect labeling associates naming an emotion with reduced amygdala reactivity and increased activity in regions tied to cognitive control — the label appears to be part of the regulation, not just a report of it.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.
+                <strong className="font-semibold text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.
               </li>
             </ul>
       </div>
@@ -201,13 +201,13 @@ export function EmotionalGranularity() {
             <h2 id="section-what-is-granularity" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               So what is emotional granularity, exactly?
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               The term names a specific skill: the ability to make fine distinctions between emotional states rather than collapsing them into a single broad label. Psychologist Lisa Feldman Barrett has argued that emotions are not fixed programs that fire automatically — they are constructed, in part, from the emotion concepts you have available. In that framing, a word for a feeling isn't a sticker you put on something already finished. It's part of how the brain makes sense of what the body is doing.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If concepts are tools, then the size of your toolbox matters. "I feel stressed" is a hammer: it can strike almost anything, and it tells you very little. "I feel apprehensively braced, already behind, and restless with unfinished things" is a set of finer tools — each one pointing at a different part of the experience, and each one suggesting a different thing to do about it.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "In the how of emotion, then, become specific and you can change the what of experience."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barrett, 2006, Personality and Social Psychology Review</cite>
             </blockquote>
@@ -231,17 +231,17 @@ export function EmotionalGranularity() {
             <h2 id="section-why-it-helps" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why a finer word does something, not just describes something
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               It's tempting to think of emotion words as labels applied after the fact — the feeling happens, then you name it, for someone else's benefit. The research points somewhere more interesting. In a widely cited neuroimaging study, Lieberman and colleagues found that putting feelings into words was associated with reduced activity in the amygdala, the structure that helps drive the body's alarm response, alongside increased activity in the prefrontal regions involved in control.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In other words, naming looks less like reporting and more like regulating. The word becomes a handle the system can grip. And the finer the handle, the more specific the grip: "I'm stressed" points vaguely at everything, while "I'm braced for a conversation I haven't had yet" points at one thing — which is a thing you can actually prepare for.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "Putting feelings into words... reduces the response of the amygdala."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Lieberman et al., 2007, Psychological Science</cite>
             </blockquote>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is worth being honest about, though: a better word does not delete the feeling, and nobody should expect one label to solve anything. What it does is narrow the problem from "everything is wrong" to something with edges. Narrower problems are easier to act on. That is the whole claim, and it is enough.
             </p>
             <p className="mt-4 text-sm text-text-muted italic">
@@ -265,13 +265,13 @@ export function EmotionalGranularity() {
             <h2 id="section-how-to-get-specific" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               How to get more specific without guessing
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Granularity is often taught as vocabulary homework — memorize an emotion wheel, learn forty words, call it done. That approach tends to fail for the same reason a thesaurus doesn't make you a better writer: selecting a word you don't actually feel is just a more elaborate kind of guessing.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               What works better is narrower and more personal. Instead of asking "what is this feeling called?", ask what makes this instance different from the last time you used the same word. Is it heavy or wired? Does it sit in your chest or your jaw? Is it about something that already happened, or something you're braced for? Is it a feeling about a person, or about a situation you can name?
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Answering those questions doesn't require a list. It requires two or three candidates to compare — which is where a sounding board helps, and where a voice journal earns its place. You speak the experience in your own words, and the system offers a couple of candidate labels. You keep the one that rings truer and reject the one that doesn't. The rejection matters as much as the acceptance, because it tells the system where the edge of your category sits.
             </p>
             <p className="mt-4 text-sm text-text-muted italic">
@@ -294,14 +294,14 @@ export function EmotionalGranularity() {
             <h2 id="section-few-words" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               A few words worth keeping
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               You don't need forty. A handful of specific labels, used when they actually fit, goes further than a long list used loosely. These four cover a surprising amount of everyday territory:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed">
-              <li><strong className="text-text-primary">Apprehensive</strong> — braced for something uncertain and unpleasant before it arrives. More precise than "anxious" when the feeling is anticipatory.</li>
-              <li><strong className="text-text-primary">Resentfully tired</strong> — exhaustion with an edge, tired partly because something unfair has been carried too long. More precise than "exhausted."</li>
-              <li><strong className="text-text-primary">Restless</strong> — energy with nowhere to go, often felt in the body before it has a name. More precise than "bored" or "wound up."</li>
-              <li><strong className="text-text-primary">Heavy and unfinished</strong> — the weight of something unresolved. More precise than "sad," and it points somewhere useful: at the thing still open.</li>
+              <li><strong className="text-text-primary font-semibold">Apprehensive</strong> — braced for something uncertain and unpleasant before it arrives. More precise than "anxious" when the feeling is anticipatory.</li>
+              <li><strong className="text-text-primary font-semibold">Resentfully tired</strong> — exhaustion with an edge, tired partly because something unfair has been carried too long. More precise than "exhausted."</li>
+              <li><strong className="text-text-primary font-semibold">Restless</strong> — energy with nowhere to go, often felt in the body before it has a name. More precise than "bored" or "wound up."</li>
+              <li><strong className="text-text-primary font-semibold">Heavy and unfinished</strong> — the weight of something unresolved. More precise than "sad," and it points somewhere useful: at the thing still open.</li>
             </ul>
             <p className="mt-4 text-base leading-relaxed">
               None of these is a diagnosis, and none is mandatory. They're demonstrations of a move: taking a broad word and asking what it's actually made of. Once you can make that move, you can generate your own words.
@@ -343,7 +343,7 @@ export function EmotionalGranularity() {
 
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/alexithymia-emotional-vocabulary"
@@ -351,7 +351,7 @@ export function EmotionalGranularity() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Why you can't name what you're feeling: alexithymia and the emotional vocabulary you were never taught
                     </h4>
@@ -366,7 +366,7 @@ export function EmotionalGranularity() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -381,7 +381,7 @@ export function EmotionalGranularity() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness &amp; Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>

@@ -160,7 +160,7 @@ export function TimeBlindness() {
           >
             Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
             Time blindness doesn't mean you don't care about the clock. It means your brain isn't reliably generating the internal signal that tells you how much time has actually passed. Here's the science of <strong className="text-text-primary font-semibold">interval timing</strong> in ADHD, why alarms and willpower alone don't fix it, and how a simple voice-logged time-anchor habit gives your brain the external clock it's missing.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -177,15 +177,15 @@ export function TimeBlindness() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Time blindness is a measurable timing deficit, not a character flaw.</strong> Meta-analyses across children and adults with ADHD show consistent, testable differences in how accurately time is perceived.
+                <strong className="font-semibold text-text-primary">Time blindness is a measurable timing deficit, not a character flaw.</strong> Meta-analyses across children and adults with ADHD show consistent, testable differences in how accurately time is perceived.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Time distorts in two directions, not one.</strong> A task's length gets underestimated before you start, then disappears almost entirely once you're absorbed in it.
+                <strong className="font-semibold text-text-primary">Time distorts in two directions, not one.</strong> A task's length gets underestimated before you start, then disappears almost entirely once you're absorbed in it.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Alarms remind you to check the clock — they don't fix the broken sense of duration.</strong> What actually helps is feeding your brain accurate, spoken data about time until its own estimate improves.
+                <strong className="font-semibold text-text-primary">Alarms remind you to check the clock — they don't fix the broken sense of duration.</strong> What actually helps is feeding your brain accurate, spoken data about time until its own estimate improves.
               </li>
             </ul>
       </div>
@@ -206,13 +206,13 @@ export function TimeBlindness() {
             <h2 id="section-two-clocks" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Your brain has two clocks, and ADHD affects the one you can't see
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               There's the clock on your wall, and then there's the one your brain builds internally — a felt sense of duration that lets you sense, without checking anything, that "this has been about ten minutes" or "I should wrap this up soon." Psychologist Russell Barkley, whose self-regulation model has shaped decades of ADHD research, described ADHD as disrupting exactly this internal mechanism — pulling behavior back to what he called <strong className="text-text-primary font-semibold">"the temporal now,"</strong> a present-focused mode where the future doesn't carry much felt weight until it's no longer the future.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This isn't a loose metaphor. A 2021 meta-analysis pooling more than 1,600 children and adolescents with ADHD against nearly 1,250 peers found consistent deficits in how accurately and precisely time was judged, regardless of the specific timing task used. Separate research on adults describes time perception as a <strong className="text-text-primary font-semibold">focal, central symptom</strong> of adult ADHD in its own right — not a downstream side effect of being distracted, but a core piece of how the condition works.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "ADHD disrupts this process and returns control of behavior to the temporal now... a blindness to past, future, and time more generally."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barkley, 1997, Journal of Developmental &amp; Behavioral Pediatrics</cite>
             </blockquote>
@@ -230,10 +230,10 @@ export function TimeBlindness() {
             <h2 id="section-two-way-distortion" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The two-way distortion: shrinking before, vanishing during
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Time blindness rarely shows up as one clean symptom — it shows up as two related distortions that happen at opposite ends of a task. Before you start, duration gets compressed: a task that will realistically take ninety minutes gets mentally filed as "twenty minutes, no problem," which is part of why deadlines two weeks out don't feel urgent until they're two hours out. This isn't optimism or carelessness — the meta-analytic data on children with ADHD specifically found a tendency to misjudge duration in ways that weren't explained by the type of task or the kind of stimulus used, suggesting something more basic than a planning habit.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Then, once a task actually starts and captures attention — especially one you find engaging — time can disappear almost entirely in the other direction. Research on adults with ADHD describes time as subjectively speeding up during focused activity, with duration becoming genuinely difficult to track from the inside while it's happening. That's why "I'll just do fifteen more minutes of this" can dissolve into three hours without a single moment that felt like a decision to keep going.
             </p>
             <p>
@@ -254,10 +254,10 @@ export function TimeBlindness() {
             <h2 id="section-alarms-fail" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why alarms, planners, and willpower keep failing the same way
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               The standard advice — set more alarms, use a planner, try harder to "be aware" of the time — treats time blindness like a memory problem: you just need a better prompt. But an alarm only solves the problem of remembering to glance at a clock. It does nothing to fix the part that's actually missing, which is an accurate felt sense of how much time an activity will consume or how much has already gone by.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is why so many people with time blindness can silence an alarm mid-task and walk straight back into the exact same absorbed state thirty seconds later — the interruption registered, but it didn't create the missing internal urgency, because urgency was never the thing that was broken. You already knew, intellectually, that time was passing. What you didn't have was a felt sense that translated that knowledge into "stop now."
             </p>
             <p>
@@ -274,13 +274,13 @@ export function TimeBlindness() {
             <h2 id="section-external-clock" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your brain an external clock it can actually borrow
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If the core problem is a felt sense of duration that isn't reliable, the most direct fix isn't a louder reminder — it's feeding your brain accurate, real data about time until its own estimate gets closer to reality. That requires a record, not just a nudge: something that captures what you guessed a task would take, and later, what it actually took, so the gap between the two becomes visible instead of invisible.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Speaking a quick timestamp out loud does this with almost no friction — "it's 2:04, starting the email draft, I think this is a ten-minute thing" — and then again when you resurface: "okay, it's 3:40." You're not journaling about your feelings here; you're building a spoken, timestamped ledger your internal clock can eventually learn from, the same way any system improves once it gets real feedback instead of a guess.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is the same underlying mechanism that makes voice journaling useful for tracking mood over time: your entries carry a real timestamp automatically, and reviewing when things happened — not just what happened — starts to reveal patterns your felt sense of time consistently misses, like the tasks that reliably run three times longer than you expect, or the hours where focus reliably runs away from you.
             </p>
             <a
@@ -301,10 +301,10 @@ export function TimeBlindness() {
             <h2 id="section-time-anchor-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a time-anchor habit that actually recalibrates you
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A time-anchor practice is small on purpose, because the goal isn't to fix every task — it's to slowly close the gap between how long things feel like they'll take and how long they actually take. At the start of anything that matters — a work block, a chore, a "quick" errand — say your guess out loud: <em>what time is it, and how long do I think this will take?</em> When you resurface, say the actual time back.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Do this for two or three weeks and a pattern usually appears fast: certain categories of task — anything on a screen, anything you find genuinely absorbing — consistently run two or three times longer than the guess, while other categories are estimated almost perfectly. That asymmetry is useful information you can actually plan around, instead of a vague, demoralizing sense that you're "just bad with time" across the board.
             </p>
             <p>
@@ -347,7 +347,7 @@ export function TimeBlindness() {
 
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/emotional-awareness-patterns"
@@ -355,7 +355,7 @@ export function TimeBlindness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
@@ -370,7 +370,7 @@ export function TimeBlindness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Anxiety &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Anxiety &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       The overthinking trap: why your brain won't stop
                     </h4>
@@ -385,7 +385,7 @@ export function TimeBlindness() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>

@@ -160,7 +160,7 @@ export function OverthinkingRumination() {
           >
             The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
             Overthinking isn't a willpower problem. It's what happens when your brain treats a thought as unfinished business and keeps reopening the file. Here's the neuroscience of <strong className="text-text-primary font-semibold">rumination</strong>, why "just stop thinking about it" tends to backfire, and how giving your brain a real completion signal — out loud — actually closes the loop.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -177,15 +177,15 @@ export function OverthinkingRumination() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Your brain reopens unfinished thoughts on purpose.</strong> The Zeigarnik effect explains why unresolved worries intrude — they're not closed files, so your mind keeps pulling them back up.
+                <strong className="font-semibold text-text-primary">Your brain reopens unfinished thoughts on purpose.</strong> The Zeigarnik effect explains why unresolved worries intrude — they're not closed files, so your mind keeps pulling them back up.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Fighting a thought often strengthens it.</strong> Suppression tends to backfire; what actually reduces intrusive thoughts is structured processing, not avoidance.
+                <strong className="font-semibold text-text-primary">Fighting a thought often strengthens it.</strong> Suppression tends to backfire; what actually reduces intrusive thoughts is structured processing, not avoidance.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Speaking a thought out loud closes the loop faster than replaying it silently.</strong> Voice journaling gives your brain the external "handled" signal that silent rumination never provides.
+                <strong className="font-semibold text-text-primary">Speaking a thought out loud closes the loop faster than replaying it silently.</strong> Voice journaling gives your brain the external "handled" signal that silent rumination never provides.
               </li>
             </ul>
       </div>
@@ -206,10 +206,10 @@ export function OverthinkingRumination() {
             <h2 id="section-zeigarnik" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why your brain won't let go of unfinished thoughts
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In the 1920s, psychologist Bluma Zeigarnik noticed something odd while watching waiters in a Vienna café: they could recall complicated, unpaid orders in vivid detail, but forgot the details almost immediately once the bill was settled. She ran it as a formal experiment, and the pattern held — people remember interrupted, unfinished tasks far better than completed ones. Today it's known as the <strong className="text-text-primary font-semibold">Zeigarnik effect</strong>.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Your brain treats emotional loose ends the same way it treats an unpaid tab. An argument that ended without resolution, a decision you haven't made, a worry you haven't addressed — these stay active in memory precisely because they're incomplete. They resurface not to torment you, but because some part of your mind is still, quite literally, waiting for closure.
             </p>
             <p>
@@ -226,13 +226,13 @@ export function OverthinkingRumination() {
             <h2 id="section-dmn" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Meet the default mode network: your brain's rumination engine
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               There's a specific set of brain regions that light up when you're not actively focused on a task — when you're in the shower, staring at the ceiling, or driving a familiar route on autopilot. Neuroscientists call this the <strong className="text-text-primary font-semibold">default mode network (DMN)</strong>, and it's responsible for mind-wandering, daydreaming, and self-referential thought — the running commentary about yourself and your life.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In a widely cited 2010 study, Harvard researchers Matthew Killingsworth and Daniel Gilbert tracked thousands of people in real time and found that people spend nearly half their waking hours mind-wandering — and that wandering minds are, on average, unhappier minds, regardless of what they were wandering to. The DMN isn't inherently a problem. But in people prone to rumination, it can get stuck in a self-critical loop, replaying the same material without ever producing an answer.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "A human mind is a wandering mind, and a wandering mind is an unhappy mind."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Killingsworth & Gilbert, 2010, Science</cite>
             </blockquote>
@@ -254,10 +254,10 @@ export function OverthinkingRumination() {
             <h2 id="section-suppression-backfires" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why "just stop thinking about it" makes things worse
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Here's the frustrating irony: telling yourself not to think about something usually makes you think about it more. This isn't just anecdotal — it's one of the more replicated findings in cognitive psychology, sometimes summarized as the "white bear problem," after an experiment in which people told to avoid thinking about a white bear for five minutes thought about it more than people given no instruction at all.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Suppression takes effort, and that effort is itself a kind of monitoring — to successfully avoid a thought, some part of your brain has to keep checking whether you're thinking about it, which means the thought never actually leaves. You end up spending energy maintaining the very loop you're trying to escape.
             </p>
             <p>
@@ -274,13 +274,13 @@ export function OverthinkingRumination() {
             <h2 id="section-completion-signal" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your brain a completion signal it can actually register
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If overthinking is your brain treating a thought as unfinished, then the fix has to involve something that convincingly says: <em>this has been handled</em>. Thinking about the problem again, silently, in the same loop that produced it, doesn't send that signal — nothing new has happened. The file looks exactly as open as it did the first time.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Speaking the thought out loud does something different. To turn a vague, circling worry into spoken language, your brain has to organize it — pick a starting point, name what's actually bothering you, and follow it somewhere. That act of structuring is itself a form of processing that silent replay can't offer. Ever notice how a problem that felt unsolvable in your head suddenly has an obvious next step the moment you say it to a friend? You didn't get new information. You got structure.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This is the same principle behind <strong className="text-text-primary font-semibold">affect labeling</strong> — the well-documented finding that putting feelings into words calms the brain's threat response. Voice journaling applies that mechanism directly to overthinking: you're not just naming an emotion, you're narrating a whole loop out into the open, where your brain can finally treat it as something that happened rather than something still happening.
             </p>
             <a
@@ -301,13 +301,13 @@ export function OverthinkingRumination() {
             <h2 id="section-worry-time" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a worry time practice that actually holds up
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In the early 1980s, researcher Thomas Borkovec tested a deceptively simple intervention for chronic worriers: instead of trying to eliminate worry, schedule it. Set aside a specific 15-20 minute window each day — not right before bed — as dedicated <strong className="text-text-primary font-semibold">worry time</strong>. When an anxious thought shows up outside that window, you don't fight it or indulge it. You note it in a sentence and consciously postpone it: "I'll think about this at 6pm."
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               The results were consistent: postponement reduced both how often people worried and how intense the worry felt, because it taught their nervous system something it didn't previously believe — that a concern would get addressed, just not right now. That "just not right now" is doing a lot of work. It gives the brain permission to stand down without demanding that the problem disappear entirely.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Voice journaling turns this into daily practice with less friction than writing. Throughout the day, you capture a worry the moment it surfaces — a 20-second voice note is enough. Then, during your scheduled window, you review each one and ask a single question: <em>is there an action I can take, or is this something I need to accept?</em> Some entries lead to a concrete next step. Others simply get marked as processed, which — per the Zeigarnik effect — is sometimes all a thought needed to stop resurfacing.
             </p>
             <p>
@@ -350,7 +350,7 @@ export function OverthinkingRumination() {
 
         <AnimatedSection animation="fade-in-up" delay={0.56}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
@@ -358,7 +358,7 @@ export function OverthinkingRumination() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -373,7 +373,7 @@ export function OverthinkingRumination() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness &amp; Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
@@ -388,7 +388,7 @@ export function OverthinkingRumination() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
@@ -403,7 +403,7 @@ export function OverthinkingRumination() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Stress &amp; Burnout Recovery</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Stress &amp; Burnout Recovery</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Burnout doesn't start in your job — it starts in your nervous system
                     </h4>

@@ -155,7 +155,7 @@ export function AutismEmotionalRegulation() {
           >
             Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
             Autistic adults face unique emotional regulation challenges — from <strong className="text-text-primary font-semibold">alexithymia</strong> (difficulty naming emotions) to sensory overload and meltdown cycles. Discover how daily voice journaling builds emotional vocabulary, tracks overwhelm patterns, and provides a private space to process without social pressure.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -172,15 +172,15 @@ export function AutismEmotionalRegulation() {
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Alexithymia affects up to 50% of autistic adults.</strong> Voice journaling builds the emotional vocabulary bridge between felt experience and language — without social pressure.
+                <strong className="font-semibold text-text-primary">Alexithymia affects up to 50% of autistic adults.</strong> Voice journaling builds the emotional vocabulary bridge between felt experience and language — without social pressure.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Meltdowns have predictable precursors.</strong> Tracking body sensations and energy levels through daily voice entries reveals patterns that make early intervention possible.
+                <strong className="font-semibold text-text-primary">Meltdowns have predictable precursors.</strong> Tracking body sensations and energy levels through daily voice entries reveals patterns that make early intervention possible.
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-medium text-text-primary">Private reflection removes masking pressure.</strong> Unlike social interaction, voice journaling requires no audience management — you can process at your own pace, in your own words.
+                <strong className="font-semibold text-text-primary">Private reflection removes masking pressure.</strong> Unlike social interaction, voice journaling requires no audience management — you can process at your own pace, in your own words.
               </li>
             </ul>
       </div>
@@ -198,13 +198,13 @@ export function AutismEmotionalRegulation() {
             <h2 id="section-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Alexithymia: when you feel everything but can't name it
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Research estimates that <strong className="text-text-primary font-semibold">alexithymia affects approximately 50% of autistic adults</strong>, compared to roughly 10% of the general population. Alexithymia isn't the absence of emotion — it's the difficulty in identifying, differentiating, and verbally expressing what you feel. You might experience intense internal states without knowing whether it's anger, anxiety, excitement, or hunger.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This creates a cascade of downstream challenges. Without precise emotional labeling, the brain's regulatory systems can't engage effectively — the same affect labeling mechanism that Lieberman's research shows reduces amygdala activity requires that you first <em>have</em> the words. For autistic adults with alexithymia, emotional regulation doesn't fail at the regulation step. It fails at the identification step.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
               "Alexithymia is not a failure to feel. It is a failure of the bridge between feeling and language — and that bridge can be built with practice."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Contemporary research on alexithymia and autism</cite>
             </blockquote>
@@ -219,10 +219,10 @@ export function AutismEmotionalRegulation() {
             <h2 id="section-sensory-emotional" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The sensory-emotional connection: why overwhelm builds invisibly
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               For autistic people, sensory processing and emotional processing are deeply intertwined. A flickering light, background noise, an unexpected texture, or a crowded room doesn't just cause sensory discomfort — it depletes the same cognitive resources used for emotional regulation. This is why overwhelm often seems to "come from nowhere": the load has been accumulating across sensory, social, and emotional channels simultaneously.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Research on autistic burnout describes this pattern clearly: the combination of masking effort, sensory demands, and unprocessed emotions creates a cumulative debt that eventually collapses into exhaustion, skill regression, or shutdown. The problem isn't any single stressor — it's that the total load is invisible until it crosses a threshold.
             </p>
             <p>
@@ -250,10 +250,10 @@ export function AutismEmotionalRegulation() {
             <h2 id="section-voice-journaling" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why voice journaling works for autistic emotional processing
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Traditional emotional regulation advice — "talk to a friend," "write in a journal," "practice mindfulness" — often fails autistic adults because it doesn't account for the specific barriers they face. Social conversation requires real-time processing and masking. Written journaling can feel rigid and slow. Mindfulness may heighten already-intense sensory awareness without providing the language framework needed to make sense of it.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Voice journaling occupies a unique position: it's private (no audience to manage), verbal (building the language-emotion bridge), unstructured (no rigid format requirements), and fast (lower friction than writing). For autistic adults specifically, it offers:
             </p>
             <ul className="space-y-3 mb-4">
@@ -285,10 +285,10 @@ export function AutismEmotionalRegulation() {
             <h2 id="section-meltdown-prevention" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               From meltdown cycles to early intervention: building your personal warning system
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Meltdowns and shutdowns don't happen randomly — they follow predictable trajectories that become visible with consistent tracking. The challenge is that autistic interoception (the ability to sense internal body states) is often atypical: you may not notice rising distress until it's already severe.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Daily voice journaling builds a personal early warning system. Over weeks, you start recognizing the precursors: "When I notice jaw tension and irritability by mid-afternoon, a meltdown is likely by evening if I don't reduce my load." "When I've had three consecutive days of heavy masking, I need a recovery day or I'll shut down." These aren't abstract insights — they're actionable rules that prevent crisis.
             </p>
             <p>
@@ -302,10 +302,10 @@ export function AutismEmotionalRegulation() {
             <h2 id="section-masking-cost" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Processing the cost of masking: a private space for unmasked reflection
             </h2>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Masking — the conscious or unconscious suppression of autistic traits to fit neurotypical expectations — is emotionally exhausting. Research consistently links long-term masking to anxiety, depression, identity confusion, and burnout. Yet the emotional residue of a day spent masking often goes unprocessed because there's no safe outlet for it.
             </p>
-            <p className="mb-4 text-base leading-relaxed">
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Voice journaling provides that outlet. At the end of a demanding day, you can speak freely about how masking felt: what it cost you, which interactions drained you most, what you suppressed. This isn't just emotional venting — it's the affect labeling that neuroscience shows produces genuine regulation. Naming "I felt exhausted from pretending interest in small talk" is fundamentally different from simply carrying that exhaustion in silence.
             </p>
             <p>
@@ -345,7 +345,7 @@ export function AutismEmotionalRegulation() {
 
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="py-8 border-t border-primary/10">
-            <h3 className="font-bold text-text-primary mb-6 text-xl">Explore related articles</h3>
+            <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
@@ -353,7 +353,7 @@ export function AutismEmotionalRegulation() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Neuroscience & Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -368,7 +368,7 @@ export function AutismEmotionalRegulation() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-base leading-relaxed">Body Awareness & Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness & Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
