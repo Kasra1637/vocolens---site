@@ -9,7 +9,7 @@ export function PrivacyPolicy() {
           <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
             <Shield className="w-10 h-10 text-[#9b87f5]" />
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-2">
+          <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-2">
             Privacy Policy
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
@@ -22,7 +22,7 @@ export function PrivacyPolicy() {
       <div className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 space-y-12">
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <div className="bg-gradient-to-br from-primary/10 to-transparent rounded-2xl p-6 border border-primary/20">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Our Core Commitment</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Our Core Commitment</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               Vocolens is built on a simple principle: your personal reflections belong to you. We designed the app so your journal entries are stored only on your device. We do not operate user accounts, we do not store your journal data on our servers, and we do not sell or share your information with advertisers.
             </p>
@@ -39,7 +39,7 @@ export function PrivacyPolicy() {
                 <Smartphone className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   1. Data That Stays on Your Device
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -92,7 +92,7 @@ export function PrivacyPolicy() {
                 <Users className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   2. Data Sent to Third-Party Services
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -168,7 +168,7 @@ export function PrivacyPolicy() {
                 <Lock className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   3. Audio Data
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -214,7 +214,7 @@ export function PrivacyPolicy() {
                 <Activity className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   4. Usage Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -232,7 +232,7 @@ export function PrivacyPolicy() {
                 <Bell className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   5. Local Notifications
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -269,7 +269,7 @@ export function PrivacyPolicy() {
                 <Database className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   6. In-App Purchases
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -293,7 +293,7 @@ export function PrivacyPolicy() {
                 <Eye className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   7. No Analytics or Tracking
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -338,7 +338,7 @@ export function PrivacyPolicy() {
                 <Shield className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   8. Security
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -383,7 +383,7 @@ export function PrivacyPolicy() {
                 <FileText className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   9. Your Rights & Controls
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -437,7 +437,7 @@ export function PrivacyPolicy() {
                 <Users className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   10. Children's Privacy
                 </h2>
                 <p className="text-text-secondary mb-3 text-base leading-relaxed">
@@ -458,7 +458,7 @@ export function PrivacyPolicy() {
                 <AlertCircle className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   11. Changes to This Policy
                 </h2>
                 <p className="text-text-secondary mb-3 text-base leading-relaxed">
@@ -474,7 +474,7 @@ export function PrivacyPolicy() {
 
         <AnimatedSection animation="fade-in-up" delay={1.1}>
           <div className="bg-gradient-to-br from-primary/10 to-transparent rounded-2xl p-6 border border-primary/20">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Contact Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Contact Us</h2>
             <p className="text-text-secondary mb-3 text-base leading-relaxed">
               If you have questions about this Privacy Policy or how your data is handled, please contact us at:
             </p>

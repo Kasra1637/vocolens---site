@@ -1014,7 +1014,7 @@ export function FeaturesShowcase() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-10 py-5 rounded-full text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-10 py-5 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               Get it on Google Play
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

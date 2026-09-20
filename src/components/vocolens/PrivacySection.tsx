@@ -47,9 +47,9 @@ export function PrivacySection() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6">
               <Shield className="w-4 h-4 text-primary-muted" />
-              <span className="text-sm text-white/70 font-medium tracking-wide uppercase">Privacy</span>
+              <span className="text-sm text-white/70 font-semibold tracking-widest uppercase">Privacy</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
               Your journal. Your privacy.
             </h2>
             <p className="text-white/60 max-w-xl mx-auto text-base leading-relaxed">
@@ -71,7 +71,7 @@ export function PrivacySection() {
               <div className="w-11 h-11 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors duration-300">
                 <Icon className="w-5 h-5 text-primary-muted" />
               </div>
-              <h3 className="text-white font-semibold mb-2 text-xl">{title}</h3>
+              <h3 className="text-white font-bold mb-2 text-xl">{title}</h3>
               <p className="text-white/55 text-base leading-relaxed">{description}</p>
             </div>
           ))}

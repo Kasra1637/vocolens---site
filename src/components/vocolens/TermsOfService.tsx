@@ -9,7 +9,7 @@ export function TermsOfService() {
           <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
             <FileText className="w-10 h-10 text-[#9b87f5]" />
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-4">
+          <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-4">
             Terms of Service
           </h1>
           <div className="space-y-2 text-text-muted text-base">
@@ -23,7 +23,7 @@ export function TermsOfService() {
       <div className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 space-y-12">
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary">Acceptance of Terms</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Acceptance of Terms</h2>
             <p className="text-text-secondary text-base leading-relaxed">
               By downloading or using Vocolens, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the app.
             </p>
@@ -35,7 +35,7 @@ export function TermsOfService() {
 
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary">Description of Service</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Description of Service</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               Vocolens is a voice-based journaling application that allows you to record audio entries, have them transcribed to text, and receive AI-powered emotional analysis. The app provides:
             </p>
@@ -75,7 +75,7 @@ export function TermsOfService() {
                 <CreditCard className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Subscriptions & Free Trial
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -110,7 +110,7 @@ export function TermsOfService() {
 
         <AnimatedSection animation="fade-in-up" delay={0.4}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Permitted Use</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Permitted Use</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               You may use Vocolens for lawful personal journaling purposes only. You agree not to:
             </p>
@@ -146,7 +146,7 @@ export function TermsOfService() {
                 <AlertCircle className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Not a Medical Service
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -184,7 +184,7 @@ export function TermsOfService() {
                 <Lock className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Your Content
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -221,7 +221,7 @@ export function TermsOfService() {
                 <Globe className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Third-Party Services
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -260,7 +260,7 @@ export function TermsOfService() {
                 <Activity className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Usage Tracking
                 </h2>
                 <p className="text-text-secondary text-base leading-relaxed">
@@ -278,7 +278,7 @@ export function TermsOfService() {
                 <Trash2 className="w-6 h-6 text-[#9b87f5]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-text-primary mb-3">
+                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Data Loss Disclaimer
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -309,7 +309,7 @@ export function TermsOfService() {
 
         <AnimatedSection animation="fade-in-up" delay={1.0}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Disclaimers & Limitation of Liability</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Disclaimers & Limitation of Liability</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               Vocolens is provided "as is" without warranties of any kind, express or implied.
             </p>
@@ -324,7 +324,7 @@ export function TermsOfService() {
 
         <AnimatedSection animation="fade-in-up" delay={1.1}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Governing Law</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Governing Law</h2>
             <p className="text-text-secondary text-base leading-relaxed">
               These Terms shall be governed by and construed in accordance with applicable laws. Disputes will be resolved through good-faith negotiation first; if unresolved, through binding arbitration or a court of competent jurisdiction.
             </p>
@@ -333,7 +333,7 @@ export function TermsOfService() {
 
         <AnimatedSection animation="fade-in-up" delay={1.2}>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-text-primary mb-4">Changes to These Terms</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Changes to These Terms</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               We may update these Terms of Service. Continued use of the app after changes constitutes your acceptance of the revised terms. We will notify you of material changes through an in-app prompt.
             </p>

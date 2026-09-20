@@ -1007,7 +1007,7 @@ const joinPageStyles = `
   .join-features-heading {
     font-family: var(--join-serif) !important;
     font-size: clamp(2rem, 4.5vw, 2.75rem) !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     line-height: 1.15 !important;
     color: var(--join-text) !important;
     margin-bottom: 3rem !important;
@@ -1035,7 +1035,7 @@ const joinPageStyles = `
 
   .join-feature-card h3 {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--join-text) !important;
     margin-bottom: 0.4rem;
     font-family: var(--join-sans) !important;
@@ -1199,7 +1199,7 @@ const joinPageStyles = `
   .join-bottom-cta h2 {
     font-family: var(--join-serif) !important;
     font-size: clamp(2rem, 4.5vw, 2.75rem) !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     line-height: 1.15 !important;
     color: var(--join-text) !important;
     margin-bottom: 1rem !important;

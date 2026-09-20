@@ -48,7 +48,7 @@ function Home() {
         <div className="grid lg:grid-cols-2 gap-0 items-center">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
-              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ fontSize: 'clamp(36px, 8vw, 58px)', color: '#1e293b' }}>
+              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#1e293b' }}>
                 <span className="block">AI voice journal</span>
                 <span className="block">that reflects</span>
                 <span className="block"><span className="font-bold" style={{ color: '#1e293b' }}>your true self</span></span>
@@ -167,7 +167,7 @@ function Home() {
               className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
             />
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
@@ -252,7 +252,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-full text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 13 features
             <ArrowRight className="w-6 h-6" />
@@ -279,7 +279,7 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-2xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
           </a>

@@ -35,7 +35,7 @@ export function Resources() {
             <BookOpen className="w-3.5 h-3.5" />
             Learning Hub
           </span>
-          <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-5 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-5 leading-tight">
             Resources & Guides
           </h1>
           <p className="text-text-secondary max-w-2xl mx-auto text-base leading-relaxed">
