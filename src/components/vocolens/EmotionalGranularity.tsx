@@ -163,8 +163,10 @@ export function EmotionalGranularity() {
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
+        </div>
+      </AnimatedSection>
 
-          <ListenToArticle slug="emotional-granularity" />
+      <ListenToArticle slug="emotional-granularity" />
 <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
@@ -181,9 +183,7 @@ export function EmotionalGranularity() {
                 <strong className="font-medium text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.
               </li>
             </ul>
-          </div>
-        </div>
-      </AnimatedSection>
+      </div>
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 

@@ -147,8 +147,10 @@ export function EmotionalAwareness() {
             <time dateTime="2026-03-30" itemProp="datePublished">March 30, 2026</time>
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
+        </div>
+      </AnimatedSection>
 
-          <ListenToArticle slug="emotional-awareness-patterns" />
+      <ListenToArticle slug="emotional-awareness-patterns" />
 
           <div className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
@@ -166,9 +168,7 @@ export function EmotionalAwareness() {
                 Consistent reflective practice rewires neural pathways, strengthening prefrontal regions and enhancing emotional regulation capacity.
               </li>
             </ul>
-          </div>
-        </div>
-      </AnimatedSection>
+      </div>
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 

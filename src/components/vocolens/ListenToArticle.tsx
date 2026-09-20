@@ -10,12 +10,14 @@ import {
   SkipBack,
   SkipForward,
   Volume2,
-  X,
 } from "lucide-react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
+
+// Must match the `top-20` pin offset on the player container.
+const STICKY_TOP = 80;
 
 /**
  * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
@@ -57,9 +59,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [showChapters, setShowChapters] = useState(false);
   const [follow, setFollow] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
-  const [inlineInView, setInlineInView] = useState(true);
-  const [dismissed, setDismissed] = useState(false);
-  const [nearBottom, setNearBottom] = useState(false);
+  // True once the player has pinned to the top of the viewport.
+  // Drives the collapsed stuck style + wider scroll-margin for followed sections.
+  const [stuck, setStuck] = useState(false);
 
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
@@ -110,32 +112,21 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [slug],
   );
 
-  // Track whether the inline player is visible — sticky shows only when scrolled past.
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
-    const obs = new IntersectionObserver(
-      ([entry]) => setInlineInView(entry.isIntersecting),
-      { threshold: 0, rootMargin: "-80px 0px 0px 0px" },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [slug]);
-
-  // Hide sticky near page bottom so it never covers the final CTA / footer.
+  // Stuck detection: the container is `sticky top-20`, so once its top edge
+  // reaches the pin offset it stays there — mirror that into state for styling.
   useEffect(() => {
     if (typeof window === "undefined") return;
     let raf = 0;
+    const update = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      setStuck(el.getBoundingClientRect().top <= STICKY_TOP + 1);
+    };
     const onScroll = () => {
       cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const doc = document.documentElement;
-        const distanceToBottom =
-          doc.scrollHeight - (window.scrollY + window.innerHeight);
-        setNearBottom(distanceToBottom < 180);
-      });
+      raf = requestAnimationFrame(update);
     };
-    onScroll();
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
@@ -143,34 +134,27 @@ export function ListenToArticle({ slug }: { slug: string }) {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, []);
+  }, [slug]);
+
+  // Give followed sections clearance under header + stuck player.
+  useEffect(() => {
+    const root = document.getElementById("article-root");
+    if (!root) return;
+    if (stuck) root.dataset.playerStuck = "true";
+    else delete root.dataset.playerStuck;
+    return () => {
+      delete document.getElementById("article-root")?.dataset.playerStuck;
+    };
+  }, [stuck]);
 
   const play = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
-    setDismissed(false);
     void audio.play().then(
       () => setPlaying(true),
       () => setPlaying(false),
     );
-  }, []);
-
-  const scrollToInline = useCallback(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    try {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    } catch {
-      el.scrollIntoView();
-    }
-  }, []);
-
-  const dismissSticky = useCallback(() => {
-    const audio = audioRef.current;
-    if (audio) audio.pause();
-    setPlaying(false);
-    setDismissed(true);
   }, []);
 
   const toggle = () => {
@@ -288,31 +272,48 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const tipTime = scrubbing ? currentTime : hoverTime;
   const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
 
-  // Non-intrusive sticky: only while playing, inline scrolled away,
-  // not dismissed, and not over the bottom CTA/footer.
-  const showSticky =
-    !missing && hasStarted && playing && !inlineInView && !dismissed && !nearBottom;
-
+  // Compact stuck style: same component, slimmed once pinned under the nav.
+  // Chapters + scrubber stay available in the full state at the top.
   return (
-    <>
     <div
       ref={containerRef}
-      className="mt-4 mb-8 rounded-2xl border border-primary/15 bg-primary/[0.04] p-4"
+      data-stuck={stuck}
+      className={[
+        "sticky top-20 z-30 mt-4 mb-8 rounded-2xl border transition-all duration-300",
+        stuck
+          ? "border-primary/20 bg-white/95 backdrop-blur shadow-lg shadow-primary/10 p-3"
+          : "border-primary/15 bg-primary/[0.04] p-4",
+      ].join(" ")}
       role="region"
       aria-label="Listen to this article"
       {...{ [EXCLUDE_ATTR]: true }}
     >
       <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
       <div className="flex flex-wrap items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-          <Volume2 className="w-4 h-4 text-primary" />
-        </div>
+        {!stuck && (
+          <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <Volume2 className="w-4 h-4 text-primary" />
+          </div>
+        )}
         <div className="min-w-0 flex-1 basis-32">
-          <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
-          <p className="text-xs text-text-muted mt-0.5">
-            Human narration
-            {duration > 0 ? ` · ${formatClock(duration)}` : ""}
-          </p>
+          {stuck ? (
+            <>
+              <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight truncate">
+                {sectionIdx >= 0 ? `§ ${sections[sectionIdx].title}` : "Listen to this article"}
+              </p>
+              <p className="text-xs text-text-muted mt-0.5 tabular-nums">
+                {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
+              <p className="text-xs text-text-muted mt-0.5">
+                Human narration
+                {duration > 0 ? ` · ${formatClock(duration)}` : ""}
+              </p>
+            </>
+          )}
         </div>
         <div className="flex items-center gap-1 flex-shrink-0" role="group" aria-label="Narration section controls">
           <button
@@ -370,6 +371,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
         </button>
       </div>
 
+      {stuck && (
+        <div className="mt-2 h-1 rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
+          <div className="h-full bg-primary rounded-full" style={{ width: `${fraction * 100}%` }} />
+        </div>
+      )}
+
+      {!stuck && (
       <div className="mt-3">
         <div
           ref={trackRef}
@@ -469,6 +477,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           </div>
         )}
       </div>
+      )}
       <ReadingHighlighter
         slug={slug}
         sectionIdx={sectionIdx}
@@ -476,66 +485,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
         follow={playing && follow}
       />
     </div>
-
-    {/* Sticky mini-player: compact, dismissible, never covers inline player or bottom CTA */}
-    <div
-      aria-hidden={!showSticky}
-      className={[
-        "fixed z-40 bottom-4 inset-x-4 mr-14 sm:mr-0 sm:inset-x-auto sm:left-1/2 sm:w-[480px] sm:-translate-x-1/2",
-        "transition-all duration-300 pointer-events-none",
-        showSticky ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
-      ].join(" ")}
-      style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
-      {...{ [EXCLUDE_ATTR]: true }}
-    >
-      <div
-        role="region"
-        aria-label="Narration mini player"
-        className={[
-          "flex items-center gap-2 rounded-full border border-primary/15 bg-white/95 backdrop-blur px-2 py-1.5 shadow-lg shadow-primary/10",
-          showSticky ? "pointer-events-auto" : "pointer-events-none",
-        ].join(" ")}
-      >
-        <button
-          type="button"
-          onClick={toggle}
-          tabIndex={showSticky ? 0 : -1}
-          aria-label={(playing ? "Pause" : "Play") + " article narration"}
-          className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors flex-shrink-0"
-        >
-          {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
-        </button>
-        <button
-          type="button"
-          onClick={scrollToInline}
-          tabIndex={showSticky ? 0 : -1}
-          aria-label="Back to full narration player"
-          title="Back to full player"
-          className="min-w-0 flex-1 text-left rounded-full px-1 py-1 hover:bg-primary/5 transition-colors"
-        >
-          <span className="block truncate text-[13px] font-semibold text-text-primary leading-tight">
-            {sectionIdx >= 0 ? sections[sectionIdx].title : "Narration"}
-          </span>
-          <span className="block tabular-nums text-[11px] text-text-muted leading-tight">
-            {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
-          </span>
-        </button>
-        <span className="w-16 h-1 rounded-full bg-primary/10 overflow-hidden flex-shrink-0" aria-hidden="true">
-          <span className="block h-full bg-primary rounded-full" style={{ width: `${fraction * 100}%` }} />
-        </span>
-        <button
-          type="button"
-          onClick={dismissSticky}
-          tabIndex={showSticky ? 0 : -1}
-          aria-label="Hide mini player and pause narration"
-          title="Hide and pause"
-          className="inline-flex items-center justify-center w-8 h-8 rounded-full text-text-muted hover:bg-primary/10 hover:text-primary transition-colors flex-shrink-0"
-        >
-          <X className="w-4 h-4" aria-hidden="true" />
-        </button>
-      </div>
-    </div>
-    </>
   );
 }
 

@@ -140,6 +140,12 @@
   scroll-margin-top: 5.5rem;
 }
 
+/* Extra clearance under the fixed header + stuck narration player
+ * (ListenToArticle pins top-20 and collapses to ~64px when stuck). */
+#article-root[data-player-stuck="true"] section[aria-labelledby] {
+  scroll-margin-top: 11rem;
+}
+
 /* ============== Animations ============== */
 
 @keyframes scroll-left {

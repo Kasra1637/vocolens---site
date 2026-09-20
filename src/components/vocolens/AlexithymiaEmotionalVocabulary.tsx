@@ -168,8 +168,10 @@ export function AlexithymiaEmotionalVocabulary() {
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
+        </div>
+      </AnimatedSection>
 
-          <ListenToArticle slug="alexithymia-emotional-vocabulary" />
+      <ListenToArticle slug="alexithymia-emotional-vocabulary" />
 
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
@@ -188,9 +190,7 @@ export function AlexithymiaEmotionalVocabulary() {
                 <strong className="font-medium text-text-primary">AI offers the labels; you build the dictionary.</strong> Confirm, correct, or shrug — every response teaches the system your emotional language, one entry at a time.
               </li>
             </ul>
-          </div>
-        </div>
-      </AnimatedSection>
+      </div>
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 

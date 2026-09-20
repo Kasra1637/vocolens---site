@@ -167,8 +167,10 @@ export function TimeBlindness() {
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
+        </div>
+      </AnimatedSection>
 
-          <ListenToArticle slug="adhd-time-blindness" />
+      <ListenToArticle slug="adhd-time-blindness" />
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
@@ -186,9 +188,7 @@ export function TimeBlindness() {
                 <strong className="font-medium text-text-primary">Alarms remind you to check the clock — they don't fix the broken sense of duration.</strong> What actually helps is feeding your brain accurate, spoken data about time until its own estimate improves.
               </li>
             </ul>
-          </div>
-        </div>
-      </AnimatedSection>
+      </div>
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
