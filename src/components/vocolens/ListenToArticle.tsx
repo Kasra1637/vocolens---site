@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
   ListMusic,
-  LocateFixed,
   Pause,
   Play,
   SkipBack,
@@ -15,9 +14,6 @@ import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
-
-// Must match the `top-20` pin offset on the player container.
-const STICKY_TOP = 80;
 
 /**
  * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
@@ -42,13 +38,13 @@ function articleBlocks(): HTMLElement[] {
  * en-US-AriaNeural). Features:
  * - scrubber with click + drag seeking and section ticks
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly)
- * - live soft-highlight of the section being narrated + Follow auto-scroll
+ * - live soft-highlight of the section being narrated + auto-scroll that
+ *   follows along as playback advances
  * Regenerate audio with: node scripts/generate-article-audio.cjs
  */
 export function ListenToArticle({ slug }: { slug: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -57,11 +53,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [scrubbing, setScrubbing] = useState(false);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [showChapters, setShowChapters] = useState(false);
-  const [follow, setFollow] = useState(true);
   const [hasStarted, setHasStarted] = useState(false);
-  // True once the player has pinned to the top of the viewport.
-  // Drives the collapsed stuck style + wider scroll-margin for followed sections.
-  const [stuck, setStuck] = useState(false);
 
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
@@ -111,41 +103,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     },
     [slug],
   );
-
-  // Stuck detection: the container is `sticky top-20`, so once its top edge
-  // reaches the pin offset it stays there — mirror that into state for styling.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    let raf = 0;
-    const update = () => {
-      const el = containerRef.current;
-      if (!el) return;
-      setStuck(el.getBoundingClientRect().top <= STICKY_TOP + 1);
-    };
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
-  }, [slug]);
-
-  // Give followed sections clearance under header + stuck player.
-  useEffect(() => {
-    const root = document.getElementById("article-root");
-    if (!root) return;
-    if (stuck) root.dataset.playerStuck = "true";
-    else delete root.dataset.playerStuck;
-    return () => {
-      delete document.getElementById("article-root")?.dataset.playerStuck;
-    };
-  }, [stuck]);
 
   const play = useCallback(() => {
     const audio = audioRef.current;
@@ -272,48 +229,24 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const tipTime = scrubbing ? currentTime : hoverTime;
   const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
 
-  // Compact stuck style: same component, slimmed once pinned under the nav.
-  // Chapters + scrubber stay available in the full state at the top.
   return (
     <div
-      ref={containerRef}
-      data-stuck={stuck}
-      className={[
-        "sticky top-20 z-30 mt-4 mb-8 rounded-2xl border transition-all duration-300",
-        stuck
-          ? "border-primary/20 bg-white/95 backdrop-blur shadow-lg shadow-primary/10 p-3"
-          : "border-primary/15 bg-primary/[0.04] p-4",
-      ].join(" ")}
+      className="mt-4 mb-8 rounded-2xl border border-primary/15 bg-primary/[0.04] p-4"
       role="region"
       aria-label="Listen to this article"
       {...{ [EXCLUDE_ATTR]: true }}
     >
       <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
       <div className="flex flex-wrap items-center gap-3">
-        {!stuck && (
-          <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-            <Volume2 className="w-4 h-4 text-primary" />
-          </div>
-        )}
+        <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <Volume2 className="w-4 h-4 text-primary" />
+        </div>
         <div className="min-w-0 flex-1 basis-32">
-          {stuck ? (
-            <>
-              <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight truncate">
-                {sectionIdx >= 0 ? `§ ${sections[sectionIdx].title}` : "Listen to this article"}
-              </p>
-              <p className="text-xs text-text-muted mt-0.5 tabular-nums">
-                {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
-              <p className="text-xs text-text-muted mt-0.5">
-                Human narration
-                {duration > 0 ? ` · ${formatClock(duration)}` : ""}
-              </p>
-            </>
-          )}
+          <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
+          <p className="text-xs text-text-muted mt-0.5">
+            Human narration
+            {duration > 0 ? ` · ${formatClock(duration)}` : ""}
+          </p>
         </div>
         <div className="flex items-center gap-1 flex-shrink-0" role="group" aria-label="Narration section controls">
           <button
@@ -355,29 +288,8 @@ export function ListenToArticle({ slug }: { slug: string }) {
         >
           {speed}x
         </button>
-        <button
-          type="button"
-          onClick={() => setFollow((v) => !v)}
-          aria-pressed={follow}
-          title={follow ? "Stop auto-scrolling to the narrated section" : "Auto-scroll to the narrated section"}
-          className={
-            follow
-              ? "inline-flex items-center gap-1 h-8 px-2.5 rounded-full text-xs font-semibold bg-primary/10 text-primary transition-colors flex-shrink-0"
-              : "inline-flex items-center gap-1 h-8 px-2.5 rounded-full text-xs font-semibold text-text-muted hover:bg-primary/10 hover:text-primary transition-colors flex-shrink-0"
-          }
-        >
-          <LocateFixed className="w-3.5 h-3.5" aria-hidden="true" />
-          Follow
-        </button>
       </div>
 
-      {stuck && (
-        <div className="mt-2 h-1 rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
-          <div className="h-full bg-primary rounded-full" style={{ width: `${fraction * 100}%` }} />
-        </div>
-      )}
-
-      {!stuck && (
       <div className="mt-3">
         <div
           ref={trackRef}
@@ -477,12 +389,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
           </div>
         )}
       </div>
-      )}
       <ReadingHighlighter
         slug={slug}
         sectionIdx={sectionIdx}
         active={hasStarted}
-        follow={playing && follow}
+        follow={playing}
       />
     </div>
   );
@@ -491,7 +402,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
 /**
  * ReadingHighlighter — syncs the article's soft section highlight with
  * narration. Renders nothing; toggles `.vocolens-reading` on the matching
- * article block and, when follow is on, scrolls it into view on change.
+ * article block and, while playing, auto-scrolls it into view on change.
  */
 function ReadingHighlighter({
   slug,
