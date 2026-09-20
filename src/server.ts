@@ -37,6 +37,17 @@ function httpsRedirectResponse(request: Request): Response | null {
   return Response.redirect(url.toString(), 301);
 }
 
+// The /join waitlist page was removed. Permanently redirect it (and any
+// sub-path, e.g. shared links with trailing slashes) to the homepage so
+// visitors and link equity land somewhere useful instead of a 404.
+function joinRedirectResponse(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (url.pathname === "/join" || url.pathname.startsWith("/join/")) {
+    return Response.redirect(new URL("/", url).toString(), 301);
+  }
+  return null;
+}
+
 function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
   let payload: unknown;
   try {
@@ -82,6 +93,9 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const redirect = httpsRedirectResponse(request);
     if (redirect) return redirect;
+
+    const joinRedirect = joinRedirectResponse(request);
+    if (joinRedirect) return joinRedirect;
 
     try {
       const handler = await getServerEntry();
