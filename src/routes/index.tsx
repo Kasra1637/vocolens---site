@@ -270,9 +270,9 @@ function Home() {
 
       <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Understand yourself, one conversation at a time.
-          </h3>
+          </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
             Speak instead of typing — Vocolens turns your voice into mood insights and emotional clarity. Free to try on Google Play.
           </p>

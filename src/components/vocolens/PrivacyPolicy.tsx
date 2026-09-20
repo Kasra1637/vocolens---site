@@ -9,7 +9,7 @@ export function PrivacyPolicy() {
           <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
             <Shield className="w-10 h-10 text-[#9b87f5]" />
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-2">
+          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-2">
             Privacy Policy
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
