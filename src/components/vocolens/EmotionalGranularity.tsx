@@ -32,7 +32,7 @@ export function EmotionalGranularity() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel",
+    "headline": "Emotional Granularity: Why Specific Words Change What You Feel",
     "alternativeHeadline": "Emotional Granularity: Why Saying 'Anxious' or 'Stressed' Is Not Enough — and How More Specific Words Change the Feeling",
     "description": "Once you can name an emotion, the next question is how specific to get. Learn what emotional granularity is, why more specific labels change what you feel, and how voice journaling helps build a personal emotional vocabulary.",
     "image": "https://vocolens.com/vocolens_-_preview.png",
@@ -154,7 +154,7 @@ export function EmotionalGranularity() {
             itemProp="headline"
             className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
           >
-            Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel
+            Emotional Granularity: Why Specific Words Change What You Feel
           </h1>
           <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
             Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.
