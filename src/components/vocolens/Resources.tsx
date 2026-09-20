@@ -62,7 +62,7 @@ export function Resources() {
           </span>
           <Link
             to="/resources/emotional-granularity"
-            aria-label="Read: Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel"
+            aria-label="Read: Emotional Granularity: Why Specific Words Change What You Feel"
             className="w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex items-start gap-6">
@@ -83,7 +83,7 @@ export function Resources() {
                   itemProp="headline"
                   className="text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
                 >
-                  Once You Can Name an Emotion, What Comes Next: Emotional Granularity and Why Specific Words Change What You Feel
+                  Emotional Granularity: Why Specific Words Change What You Feel
                 </h2>
                 <p className="text-text-secondary line-clamp-3 text-base leading-relaxed" itemProp="description">
                   Anxious, stressed, overwhelmed — broad words can all be true and still be too vague to act on. Learn what emotional granularity is, why finer labels are linked to better regulation, and how voice journaling builds a personal emotional vocabulary.
