@@ -167,7 +167,7 @@ export function AutismEmotionalRegulation() {
 
       <ListenToArticle slug="autism-emotional-regulation" />
 
-          <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5">
+          <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
             <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
