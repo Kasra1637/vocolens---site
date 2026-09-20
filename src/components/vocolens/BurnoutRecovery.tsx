@@ -347,7 +347,7 @@ export function BurnoutRecovery() {
             <div className="space-y-4">
               <Link
                 to="/resources/distress-detection"
-                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -362,7 +362,7 @@ export function BurnoutRecovery() {
               </Link>
               <Link
                 to="/resources/overthinking-rumination"
-                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -377,7 +377,7 @@ export function BurnoutRecovery() {
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
