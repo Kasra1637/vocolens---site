@@ -154,18 +154,18 @@ export function DistressDetection() {
 
           <div className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Your autonomic nervous system detects threat and overload several seconds before conscious thought registers it.
+                <div className="min-w-0">Your autonomic nervous system detects threat and overload several seconds before conscious thought registers it.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Interoception—the felt sense of your internal state—is the most reliable early warning system you have for overwhelm.
+                <div className="min-w-0">Interoception—the felt sense of your internal state—is the most reliable early warning system you have for overwhelm.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Mapping body sensations during voice journaling helps you catch distress while it's still manageable, not after it explodes.
+                <div className="min-w-0">Mapping body sensations during voice journaling helps you catch distress while it's still manageable, not after it explodes.</div>
               </li>
             </ul>
       </div>

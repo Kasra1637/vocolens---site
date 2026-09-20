@@ -154,18 +154,18 @@ export function EmotionalAwareness() {
 
           <div className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Metacognitive awareness—thinking about your thinking—is the foundation of emotional intelligence and accelerates personal growth.
+                <div className="min-w-0">Metacognitive awareness—thinking about your thinking—is the foundation of emotional intelligence and accelerates personal growth.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Pattern recognition through voice journaling reveals hidden emotional triggers and behavioral cycles you can't see alone.
+                <div className="min-w-0">Pattern recognition through voice journaling reveals hidden emotional triggers and behavioral cycles you can't see alone.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                Consistent reflective practice rewires neural pathways, strengthening prefrontal regions and enhancing emotional regulation capacity.
+                <div className="min-w-0">Consistent reflective practice rewires neural pathways, strengthening prefrontal regions and enhancing emotional regulation capacity.</div>
               </li>
             </ul>
       </div>

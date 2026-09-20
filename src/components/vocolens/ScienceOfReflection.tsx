@@ -173,18 +173,18 @@ export function ScienceOfReflection() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Affect labeling reduces amygdala activity.</strong> Naming emotions measurably calms the brain's stress response, producing genuine regulation — not suppression.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Affect labeling reduces amygdala activity.</strong> Naming emotions measurably calms the brain's stress response, producing genuine regulation — not suppression.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Scheduled worry time prevents rumination.</strong> A daily 5-10 minute voice journaling slot stops anxious thoughts from hijacking your entire day.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Scheduled worry time prevents rumination.</strong> A daily 5-10 minute voice journaling slot stops anxious thoughts from hijacking your entire day.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Consistent practice rewires neural pathways.</strong> Daily voice journaling with Vocolens builds long-term emotional resilience through repeated prefrontal cortex engagement.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Consistent practice rewires neural pathways.</strong> Daily voice journaling with Vocolens builds long-term emotional resilience through repeated prefrontal cortex engagement.</div>
               </li>
             </ul>
       </div>

@@ -176,18 +176,18 @@ export function AlexithymiaEmotionalVocabulary() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Alexithymia is a labeling problem, not a feeling problem.</strong> People with this trait feel emotions just as intensely as anyone — they just can't find the words for them.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Alexithymia is a labeling problem, not a feeling problem.</strong> People with this trait feel emotions just as intensely as anyone — they just can't find the words for them.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">"Just write down how you feel" assumes the skill it's trying to teach.</strong> A blank page needs words you don't have yet. Voice journaling skips that step entirely.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">"Just write down how you feel" assumes the skill it's trying to teach.</strong> A blank page needs words you don't have yet. Voice journaling skips that step entirely.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">AI offers the labels; you build the dictionary.</strong> Confirm, correct, or shrug — every response teaches the system your emotional language, one entry at a time.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">AI offers the labels; you build the dictionary.</strong> Confirm, correct, or shrug — every response teaches the system your emotional language, one entry at a time.</div>
               </li>
             </ul>
       </div>

@@ -174,18 +174,18 @@ export function OverthinkingRumination() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Your brain reopens unfinished thoughts on purpose.</strong> The Zeigarnik effect explains why unresolved worries intrude — they're not closed files, so your mind keeps pulling them back up.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Your brain reopens unfinished thoughts on purpose.</strong> The Zeigarnik effect explains why unresolved worries intrude — they're not closed files, so your mind keeps pulling them back up.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Fighting a thought often strengthens it.</strong> Suppression tends to backfire; what actually reduces intrusive thoughts is structured processing, not avoidance.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Fighting a thought often strengthens it.</strong> Suppression tends to backfire; what actually reduces intrusive thoughts is structured processing, not avoidance.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Speaking a thought out loud closes the loop faster than replaying it silently.</strong> Voice journaling gives your brain the external "handled" signal that silent rumination never provides.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Speaking a thought out loud closes the loop faster than replaying it silently.</strong> Voice journaling gives your brain the external "handled" signal that silent rumination never provides.</div>
               </li>
             </ul>
       </div>

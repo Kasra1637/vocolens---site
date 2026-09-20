@@ -169,18 +169,18 @@ export function AutismEmotionalRegulation() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Alexithymia affects up to 50% of autistic adults.</strong> Voice journaling builds the emotional vocabulary bridge between felt experience and language — without social pressure.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Alexithymia affects up to 50% of autistic adults.</strong> Voice journaling builds the emotional vocabulary bridge between felt experience and language — without social pressure.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Meltdowns have predictable precursors.</strong> Tracking body sensations and energy levels through daily voice entries reveals patterns that make early intervention possible.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Meltdowns have predictable precursors.</strong> Tracking body sensations and energy levels through daily voice entries reveals patterns that make early intervention possible.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Private reflection removes masking pressure.</strong> Unlike social interaction, voice journaling requires no audience management — you can process at your own pace, in your own words.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Private reflection removes masking pressure.</strong> Unlike social interaction, voice journaling requires no audience management — you can process at your own pace, in your own words.</div>
               </li>
             </ul>
       </div>

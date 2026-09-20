@@ -169,18 +169,18 @@ export function EmotionalGranularity() {
       <ListenToArticle slug="emotional-granularity" />
 <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Emotional granularity is the skill of telling similar feelings apart, not just noticing that something is happening.</strong> "Bad" collapses a lot of different states into one word. "Apprehensively braced and resentfully tired" keeps the information that makes a feeling handleable.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Emotional granularity is the skill of telling similar feelings apart, not just noticing that something is happening.</strong> "Bad" collapses a lot of different states into one word. "Apprehensively braced and resentfully tired" keeps the information that makes a feeling handleable.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Finer labels are linked to better regulation because they give the brain a more specific target.</strong> Research on affect labeling associates naming an emotion with reduced amygdala reactivity and increased activity in regions tied to cognitive control — the label appears to be part of the regulation, not just a report of it.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Finer labels are linked to better regulation because they give the brain a more specific target.</strong> Research on affect labeling associates naming an emotion with reduced amygdala reactivity and increased activity in regions tied to cognitive control — the label appears to be part of the regulation, not just a report of it.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.</div>
               </li>
             </ul>
       </div>

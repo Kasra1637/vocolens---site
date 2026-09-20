@@ -170,18 +170,18 @@ export function BurnoutRecovery() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Burnout is a running total, not a single event.</strong> Allostatic load explains how small, ordinary stressors compound silently until the body crosses a threshold.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Burnout is a running total, not a single event.</strong> Allostatic load explains how small, ordinary stressors compound silently until the body crosses a threshold.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Exhaustion is the last symptom to show up, not the first.</strong> Cynicism and a creeping sense of inefficacy typically arrive earlier, and they're easy to mistake for a personality change instead of a warning sign.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Exhaustion is the last symptom to show up, not the first.</strong> Cynicism and a creeping sense of inefficacy typically arrive earlier, and they're easy to mistake for a personality change instead of a warning sign.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">A vacation resets your energy, not your ledger.</strong> Naming the load daily — out loud — is what actually keeps the running total visible before it becomes a crash.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">A vacation resets your energy, not your ledger.</strong> Naming the load daily — out loud — is what actually keeps the running total visible before it becomes a crash.</div>
               </li>
             </ul>
       </div>

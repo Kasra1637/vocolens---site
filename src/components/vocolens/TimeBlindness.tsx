@@ -174,18 +174,18 @@ export function TimeBlindness() {
 
           <div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
-            <ul className="space-y-2 text-sm text-text-secondary leading-relaxed">
+            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Time blindness is a measurable timing deficit, not a character flaw.</strong> Meta-analyses across children and adults with ADHD show consistent, testable differences in how accurately time is perceived.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Time blindness is a measurable timing deficit, not a character flaw.</strong> Meta-analyses across children and adults with ADHD show consistent, testable differences in how accurately time is perceived.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Time distorts in two directions, not one.</strong> A task's length gets underestimated before you start, then disappears almost entirely once you're absorbed in it.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Time distorts in two directions, not one.</strong> A task's length gets underestimated before you start, then disappears almost entirely once you're absorbed in it.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <strong className="font-semibold text-text-primary">Alarms remind you to check the clock — they don't fix the broken sense of duration.</strong> What actually helps is feeding your brain accurate, spoken data about time until its own estimate improves.
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Alarms remind you to check the clock — they don't fix the broken sense of duration.</strong> What actually helps is feeding your brain accurate, spoken data about time until its own estimate improves.</div>
               </li>
             </ul>
       </div>
