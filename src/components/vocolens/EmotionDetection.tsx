@@ -115,7 +115,7 @@ export function EmotionDetection() {
              <div className="w-14 h-14 rounded-full bg-white shadow-clay flex items-center justify-center mb-6">
                 <Sparkles className="w-7 h-7 text-[#9b87f5]" />
              </div>
-             <h3 className="text-2xl font-bold mb-3">Built for emotional clarity</h3>
+             <h3 className="text-xl font-bold mb-3">Built for emotional clarity</h3>
              <p className="text-text-secondary text-lg leading-relaxed">
                This is designed to feel reflective, supportive, and premium, not clinical or robotic. You get a clearer view of what you felt, why it matters, and how your emotional patterns evolve over time.
              </p>
