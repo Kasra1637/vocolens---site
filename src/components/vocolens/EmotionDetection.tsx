@@ -8,11 +8,11 @@ const whyItMatters = [
   },
   {
     icon: <Activity className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'Multiple emotions can appear at once, with intensity levels that shift over time.',
+    desc: 'Several emotions can appear together, shifting in intensity.',
   },
   {
     icon: <Edit3 className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'User corrections help personalize future insights without replacing the original analysis.',
+    desc: 'Your corrections tune insights, while originals stay intact.',
   },
   {
     icon: <Brain className="w-5 h-5 text-[#6A3FC0]" />,
