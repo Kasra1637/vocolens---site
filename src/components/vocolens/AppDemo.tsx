@@ -3,7 +3,7 @@ import { RecordingScreen } from './demo/RecordingScreen';
 import { JournalScreen } from './demo/JournalScreen';
 import { InsightsScreen } from './demo/InsightsScreen';
 
-const SCREEN_DURATION = 3000;
+const SCREEN_DURATION = 3500;
 
 // Live-coded recreations of the app's current screens (Record, Entries,
 // Insights — see src/app/(tabs)/*.tsx and entry-detail.tsx in the mobile
