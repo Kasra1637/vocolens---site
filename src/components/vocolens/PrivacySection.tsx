@@ -16,17 +16,17 @@ const features = [
   {
     icon: Shield,
     title: 'Encrypted in transit',
-    description: 'Audio and transcripts travel over encrypted HTTPS for transcription and emotion analysis, then disappear. Nothing is stored.',
+    description: 'Audio and transcripts travel over encrypted HTTPS for transcription and analysis. Neither our backend nor vendors keep them.',
   },
   {
     icon: Eye,
     title: 'No ads, no selling data',
-    description: 'No advertising SDKs, ad identifiers, location tracking, or analytics. Your data is never sold or shared with anyone, ever.',
+    description: 'No advertising SDKs, ad identifiers, location tracking, or analytics. Never sold; shared only to transcribe and analyze.',
   },
   {
     icon: Database,
     title: 'No account database',
-    description: 'Vocolens runs no central user store and no accounts. There is simply nothing on our servers for anyone to breach — ever.',
+    description: 'Vocolens runs no central user store and no accounts. None of your journal lives on our servers for anyone to breach — ever.',
   },
   {
     icon: Trash2,
