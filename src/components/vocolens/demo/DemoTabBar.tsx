@@ -7,7 +7,7 @@ import type React from 'react';
  * "Settings" — not the generic "Journal"/"Milestones" used by the old demo),
  * the app's own hand-drawn icon shapes (not a generic icon library), and the
  * Midnight Glow theme's active-tab treatment: white icon/label + a small dot
- * above the icon, primary-tinted glass background.
+ * above the icon (the round icon wash behind the active icon is omitted).
  */
 
 type TabId = 'Record' | 'Entries' | 'Insights' | 'Awards' | 'Settings';
@@ -112,12 +112,8 @@ export function DemoTabBar({ active }: { active: TabId }) {
               />
             )}
             <div
-              className="flex items-center justify-center rounded-full"
-              style={{
-                width: 20,
-                height: 20,
-                background: isActive ? 'rgba(147,112,219,0.25)' : 'transparent',
-              }}
+              className="flex items-center justify-center"
+              style={{ width: 20, height: 20 }}
             >
               <Icon active={isActive} />
             </div>
