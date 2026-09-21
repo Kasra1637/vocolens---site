@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CaretDown as ChevronDown,
   Playlist as ListMusic,
@@ -15,11 +15,12 @@ import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
-// Lead-in before each section start so taps land on the section's H2/H3
-// headline instead of mid-paragraph. Section timestamps are estimated from
-// word counts, so without this the short spoken headline is routinely
-// skipped past. First section (intro) always starts at 0.
-const HEADER_BACKOFF = 3; // seconds
+// Small lead-in before each section start so taps land on the section's
+// H2/H3 headline instead of mid-paragraph. Section timestamps are estimated
+// from word counts (accurate within a few seconds either way), so the
+// lead-in stays small: large enough to catch the headline, small enough to
+// never drag playback back into the previous section. Intro starts at 0.
+const HEADER_BACKOFF = 1.5; // seconds
 
 
 
@@ -44,9 +45,9 @@ function articleBlocks(): HTMLElement[] {
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
- * - chapter-only timeline: taps jump to the enclosing section's H2/H3
- *   (with a short lead-in) so the headline is never skipped; drags step
- *   across section boundaries; arrows move by chapter; no arbitrary scrub
+ * - chapter-only timeline: taps/drags resolve to section starts with a
+ *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
+ *   highlight, hover, chapters) always uses the mapped times directly
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -69,17 +70,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
 
-  // Header-resolved section starts: every section (except the intro) is
-  // pulled earlier by HEADER_BACKOFF so timeline ticks, chapters, and
-  // highlight boundaries coincide with the spoken H2/H3, not the paragraph.
-  const resolvedSections = useMemo(
-    () =>
-      sections.map((s, i) => ({
-        ...s,
-        startSec: i === 0 ? 0 : Math.max(0, s.startSec - HEADER_BACKOFF),
-      })),
+  // Header-resolved start for a section: the mapped timestamp pulled
+  // earlier by HEADER_BACKOFF. Display (ticks, highlight, hover, chapters)
+  // always uses the raw mapped times; only seek targets use this.
+  const headerStart = useCallback(
+    (i: number) => (i === 0 ? 0 : Math.max(0, sections[i].startSec - HEADER_BACKOFF)),
     [sections],
   );
+
+  // Tap ratio waiting on audio metadata (slow networks): applied as a
+  // header-resolved seek the moment duration becomes known.
+  const pendingRatioRef = useRef<number | null>(null);
 
   // Force metadata load on mount so duration is available before play.
   useEffect(() => {
@@ -93,7 +94,23 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     const onTime = () => setCurrentTime(audio.currentTime);
     const onMeta = () => {
-      setDuration(audio.duration || 0);
+      const d = audio.duration || 0;
+      setDuration(d);
+      // A tap arrived before metadata was ready: resolve it now against
+      // the real duration instead of stranding playback at 0.
+      const pending = pendingRatioRef.current;
+      pendingRatioRef.current = null;
+      if (pending === null || !(d > 0)) return;
+      const list = ARTICLE_SECTIONS[slug] ?? [];
+      if (list.length === 0) return;
+      const idx = sectionAt(list, pending * d);
+      const target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
+      try {
+        audio.currentTime = target;
+      } catch {
+        /* non-fatal */
+      }
+      setCurrentTime(target);
     };
     const onEnd = () => {
       setPlaying(false);
@@ -150,7 +167,18 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const seek = useCallback((t: number) => {
     const audio = audioRef.current;
-    if (!audio || !Number.isFinite(duration) || duration <= 0) return;
+    if (!audio) return;
+    if (!Number.isFinite(duration) || duration <= 0) {
+      // Metadata not ready yet (slow networks): set optimistically — the
+      // seek lands once data arrives instead of silently playing from 0.
+      try {
+        audio.currentTime = Math.max(0, t);
+      } catch {
+        /* not ready — non-fatal */
+      }
+      setCurrentTime(Math.max(0, t));
+      return;
+    }
     const clamped = Math.min(Math.max(t, 0), duration);
     audio.currentTime = clamped;
     setCurrentTime(clamped);
@@ -162,19 +190,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
   }, [seek, play]);
 
   const prevSection = useCallback(() => {
-    if (resolvedSections.length === 0) return;
-    const idx = sectionAt(resolvedSections, currentTime);
-    const intoSection = currentTime - resolvedSections[idx].startSec;
+    if (sections.length === 0) return;
+    const idx = sectionAt(sections, currentTime);
+    const intoSection = currentTime - sections[idx].startSec;
     const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
-    seekAndPlay(resolvedSections[target].startSec);
-  }, [resolvedSections, currentTime, seekAndPlay]);
+    seekAndPlay(headerStart(target));
+  }, [sections, currentTime, seekAndPlay, headerStart]);
 
   const nextSection = useCallback(() => {
-    if (resolvedSections.length === 0) return;
-    const idx = sectionAt(resolvedSections, currentTime);
-    const target = Math.min(resolvedSections.length - 1, idx + 1);
-    seekAndPlay(resolvedSections[target].startSec);
-  }, [resolvedSections, currentTime, seekAndPlay]);
+    if (sections.length === 0) return;
+    const idx = sectionAt(sections, currentTime);
+    const target = Math.min(sections.length - 1, idx + 1);
+    seekAndPlay(headerStart(target));
+  }, [sections, currentTime, seekAndPlay, headerStart]);
 
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
@@ -193,17 +221,31 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const scrubbingRef = useRef(false);
   const snappedIdxRef = useRef<number | null>(null);
 
+  const ratioFromPointer = useCallback((clientX: number): number | null => {
+    const track = trackRef.current;
+    if (!track) return null;
+    const rect = track.getBoundingClientRect();
+    if (rect.width <= 0) return null;
+    return Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+  }, []);
+
   const snapToSectionAt = useCallback(
     (clientX: number) => {
-      const t = getTimeFromPointer(clientX);
-      if (t === null || resolvedSections.length === 0) return;
-      const idx = sectionAt(resolvedSections, t);
+      const ratio = ratioFromPointer(clientX);
+      if (ratio === null || sections.length === 0) return;
+      if (!Number.isFinite(duration) || duration <= 0) {
+        // Metadata pending: park the tap and resolve it in onMeta.
+        pendingRatioRef.current = ratio;
+        audioRef.current?.load();
+        return;
+      }
+      const idx = sectionAt(sections, ratio * duration);
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
-        seek(resolvedSections[idx].startSec);
+        seek(headerStart(idx));
       }
     },
-    [getTimeFromPointer, resolvedSections, seek],
+    [ratioFromPointer, duration, sections, headerStart, seek],
   );
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -253,11 +295,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
       nextSection();
     } else if (e.key === "Home") {
       e.preventDefault();
-      if (resolvedSections.length > 0) seekAndPlay(resolvedSections[0].startSec);
+      if (sections.length > 0) seekAndPlay(headerStart(0));
     } else if (e.key === "End") {
       e.preventDefault();
-      if (resolvedSections.length > 0) {
-        seekAndPlay(resolvedSections[resolvedSections.length - 1].startSec);
+      if (sections.length > 0) {
+        seekAndPlay(headerStart(sections.length - 1));
       }
     }
   };
@@ -266,10 +308,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const fraction = duration > 0 ? Math.min(Math.max(currentTime / duration, 0), 1) : 0;
   const speed = SPEEDS[speedIdx];
-  const sectionIdx = resolvedSections.length > 0 ? sectionAt(resolvedSections, currentTime) : -1;
+  const sectionIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
 
   const tipTime = scrubbing ? currentTime : hoverTime;
-  const tipSection = tipTime !== null && resolvedSections.length > 0 ? resolvedSections[sectionAt(resolvedSections, tipTime)].title : null;
+  const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
 
   return (
     <div
@@ -294,7 +336,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={prevSection}
-            disabled={resolvedSections.length === 0}
+            disabled={sections.length === 0}
             className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
             aria-label="Previous section"
             title="Previous section"
@@ -313,7 +355,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={nextSection}
-            disabled={resolvedSections.length === 0}
+            disabled={sections.length === 0}
             className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
             aria-label="Next section"
             title="Next section"
@@ -343,7 +385,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           aria-valuenow={Math.round(currentTime)}
           aria-valuetext={
             sectionIdx >= 0
-              ? `Chapter ${sectionIdx + 1} of ${resolvedSections.length}: ${resolvedSections[sectionIdx].title}, ${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
+              ? `Chapter ${sectionIdx + 1} of ${sections.length}: ${sections[sectionIdx].title}, ${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
               : `${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
           }
           onPointerDown={onPointerDown}
@@ -357,7 +399,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         >
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
-            {resolvedSections.slice(1).map((s, i) => (
+            {sections.slice(1).map((s, i) => (
               <span
                 key={i}
                 className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/40 pointer-events-none"
@@ -383,14 +425,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
         </div>
         <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-0.5">
           <span className="min-w-0 truncate">
-            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {resolvedSections[sectionIdx].title}</span> : <span>&nbsp;</span>}
+            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {sections[sectionIdx].title}</span> : <span>&nbsp;</span>}
           </span>
           <span className="tabular-nums flex-shrink-0">
             {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
           </span>
         </div>
 
-        {resolvedSections.length > 0 && (
+        {sections.length > 0 && (
           <div className="mt-2 border-t border-primary/10 pt-1">
             <button
               type="button"
@@ -399,21 +441,21 @@ export function ListenToArticle({ slug }: { slug: string }) {
               className="flex w-full items-center gap-2 rounded-lg px-2 min-h-[44px] py-2 text-left text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
             >
               <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-              <span className="flex-shrink-0">Chapters · {resolvedSections.length}</span>
+              <span className="flex-shrink-0">Chapters · {sections.length}</span>
               <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
-                {sectionIdx >= 0 ? resolvedSections[sectionIdx].title : ""}
+                {sectionIdx >= 0 ? sections[sectionIdx].title : ""}
               </span>
               <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {showChapters && (
               <ol className="mt-1 space-y-0.5">
-                {resolvedSections.map((s, i) => {
+                {sections.map((s, i) => {
                   const active = i === sectionIdx;
                   return (
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => seekAndPlay(s.startSec)}
+                        onClick={() => seekAndPlay(headerStart(i))}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
