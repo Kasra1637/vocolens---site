@@ -1,5 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic } from '@phosphor-icons/react';
+import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic, Crosshair } from '@phosphor-icons/react';
 
 const whyItMatters = [
   {
@@ -27,9 +27,8 @@ export function EmotionDetection() {
       {/* Header */}
       <AnimatedSection animation="fade-in-up" className="text-center mb-16 max-w-4xl mx-auto">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="9" /><path d="M12 3v18M3 12h18" />
-          </svg>
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
+          <Crosshair className="w-3.5 h-3.5" />
           AI + Your Corrections
         </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4">

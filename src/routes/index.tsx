@@ -44,8 +44,9 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-surface">
-      <section id="home" className="max-w-7xl mx-auto px-6 pt-32 pb-12 lg:pt-40 lg:pb-16">
-        <div className="grid lg:grid-cols-2 gap-0 items-center">
+      <section id="home" className="relative max-w-7xl mx-auto px-6 pt-32 pb-12 lg:pt-40 lg:pb-16">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.08) 0%, transparent 70%)' }} aria-hidden="true" />
+        <div className="grid lg:grid-cols-2 gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
               <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#1e293b' }}>
@@ -182,11 +183,13 @@ function Home() {
       <section id="story" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="scale-in">
           <div className="flex items-center justify-center mb-4">
-            <img
-              src="/2e7f4e7c-9a75-4292-9b1d-399ac3f34923.jpg"
-              alt="Vocolens founder - Creator of AI voice journal app"
-              className="w-40 h-40 rounded-full object-cover shadow-clay hover-scale"
-            />
+            <div className="rounded-full p-1.5 chip-app shadow-clay hover-scale">
+              <img
+                src="/2e7f4e7c-9a75-4292-9b1d-399ac3f34923.jpg"
+                alt="Vocolens founder - Creator of AI voice journal app"
+                className="w-36 h-36 rounded-full object-cover"
+              />
+            </div>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
             A personal mission
@@ -390,28 +393,28 @@ function Home() {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
+          <div className="card-app rounded-full px-6 py-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
             <Link
               to="/terms"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Terms of Service
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/privacy"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/resources"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Resources
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/use-cases"
               className="text-sm text-text-muted hover:text-primary transition-colors"
@@ -421,7 +424,7 @@ function Home() {
           </div>
 
           <div className="border-t border-primary/10 pt-8">
-            <p className="text-center text-text-muted/60 text-base leading-relaxed">
+            <p className="text-center text-text-muted/60 text-sm leading-relaxed">
               2026 Vocolens. All rights reserved.
             </p>
           </div>

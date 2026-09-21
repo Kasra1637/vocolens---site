@@ -56,10 +56,12 @@ export function AppDemo() {
         <div className="absolute -inset-12 rounded-full blur-3xl -z-10 pointer-events-none animate-app-glow bg-[rgba(167,139,250,0.12)]" />
       </div>
 
-      <div className="flex justify-center gap-3 mt-6">
+      <div className="card-app rounded-full px-2 py-1.5 flex gap-1.5 mt-6" role="tablist" aria-label="Demo screens">
         {screens.map((_, index) => (
           <button
             key={index}
+            role="tab"
+            aria-selected={activeScreen === index}
             onClick={() => goToScreen(index)}
             aria-label={`Go to step ${index + 1}`}
             className={`h-2 rounded-full transition-all duration-500 ${

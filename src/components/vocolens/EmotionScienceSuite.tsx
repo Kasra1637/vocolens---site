@@ -1,5 +1,5 @@
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History } from '@phosphor-icons/react';
+import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History, Smiley, Bone, Butterfly, Hand, HandsClapping, Footprints, Heartbeat } from '@phosphor-icons/react';
 
 const plutchikEmotions = [
   { name: 'Happiness', icon: Smile, color: '#F5B700', ladder: ['Content', 'Joyful', 'Elated'] },
@@ -13,14 +13,14 @@ const plutchikEmotions = [
 ];
 
 const bodyRegions = [
-  { name: 'Head', emoji: '🧠' },
-  { name: 'Face', emoji: '😶' },
-  { name: 'Neck', emoji: '🦴' },
-  { name: 'Chest', emoji: '🫀' },
-  { name: 'Stomach', emoji: '🦋' },
-  { name: 'Arms', emoji: '💪' },
-  { name: 'Hands', emoji: '👐' },
-  { name: 'Legs', emoji: '🦵' }
+  { name: 'Head', Icon: Brain },
+  { name: 'Face', Icon: Smiley },
+  { name: 'Neck', Icon: Bone },
+  { name: 'Chest', Icon: Heartbeat },
+  { name: 'Stomach', Icon: Butterfly },
+  { name: 'Arms', Icon: Hand },
+  { name: 'Hands', Icon: HandsClapping },
+  { name: 'Legs', Icon: Footprints }
 ];
 
 const distressLevels = [
@@ -178,8 +178,8 @@ export function EmotionScienceSuite() {
                     key={region.name}
                     className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
                   >
-                    <span className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-base">
-                      {region.emoji}
+                    <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center">
+                      <region.Icon className="w-4 h-4 text-[#6A3FC0]" weight="bold" />
                     </span>
                     {region.name}
                   </span>
@@ -201,34 +201,38 @@ export function EmotionScienceSuite() {
               </p>
 
               <div className="grid grid-cols-1 gap-4">
-                <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-primary/5 to-white">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-primary/70 mb-2">Model accuracy</p>
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-4xl font-bold text-primary">80<span className="text-2xl">%</span></span>
-                    <span className="text-text-muted text-base leading-relaxed">ceiling</span>
+                <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                      <span className="font-bold text-base text-[#6A3FC0] tabular-nums">80</span>
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">Model accuracy</p>
+                      <p className="text-text-muted text-sm leading-relaxed">% ceiling · recency-weighted</p>
+                    </div>
                   </div>
-                  <div className="h-2 rounded-full bg-primary/10 overflow-hidden">
-                    <div className="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary" style={{ width: '80%' }} />
+                  <div className="h-[5px] rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
+                    <div className="h-full rounded-full bg-primary" style={{ width: '80%' }} />
                   </div>
                   <p className="text-text-muted mt-2 text-base leading-relaxed">Recency-weighted, learns continuously.</p>
                 </div>
 
-                <div className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-amber-50/60 to-white">
+                <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
                   <p className="text-sm font-semibold uppercase tracking-wider text-amber-600/90 mb-2 flex items-center gap-2">
                     <History className="w-3.5 h-3.5" /> Correction history
                   </p>
-                  <ul className="space-y-1.5">
-                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                  <ul className="divide-y divide-primary/10">
+                    <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
                       <span>Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
-                      <span className="text-sm text-text-muted">Tue</span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Tue</span>
                     </li>
-                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                    <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
                       <span>Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
-                      <span className="text-sm text-text-muted">Mon</span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Mon</span>
                     </li>
-                    <li className="flex items-center justify-between text-base text-text-secondary leading-relaxed">
+                    <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
                       <span>Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
-                      <span className="text-sm text-text-muted">Sun</span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Sun</span>
                     </li>
                   </ul>
                 </div>

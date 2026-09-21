@@ -73,7 +73,7 @@ export function FAQSection() {
                   aria-expanded={isOpen}
                 >
                   <span className="font-bold text-text-primary text-lg pr-4">{faq.q}</span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'chip-app text-[#6A3FC0]' : 'bg-gray-50 text-text-muted'}`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'chip-app text-[#6A3FC0]' : 'chip-app text-text-muted'}`}>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
                 </button>
