@@ -125,7 +125,7 @@
   .card-app {
     background: #FFFFFF;
     border: 1.5px solid rgba(155, 135, 245, 0.25);
-    box-shadow: 0 8px 24px rgba(147, 112, 219, 0.15);
+    box-shadow: 0 4px 14px rgba(147, 112, 219, 0.08);
   }
   .chip-app {
     background: linear-gradient(135deg, rgba(147, 112, 219, 0.28) 0%, rgba(147, 112, 219, 0.08) 100%);
