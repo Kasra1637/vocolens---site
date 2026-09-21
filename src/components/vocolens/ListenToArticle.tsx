@@ -402,7 +402,8 @@ export function ListenToArticle({ slug }: { slug: string }) {
             {sections.slice(1).map((s, i) => (
               <span
                 key={i}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/40 pointer-events-none"
+                title={s.title}
+                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-4 rounded-full bg-primary/60 ring-2 ring-white pointer-events-none"
                 style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
                 aria-hidden="true"
               />
