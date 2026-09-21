@@ -10,12 +10,6 @@ interface Props {
 const GLASS_BG = 'rgba(255,255,255,0.08)';
 const GLASS_BORDER = 'rgba(255,255,255,0.18)';
 
-const CALENDAR_DAYS = [
-  { n: 2 }, { n: 3, dot: true }, { n: 4 }, { n: 5 }, { n: 6, dot: true }, { n: 7 }, { n: 8 },
-  { n: 9 }, { n: 10 }, { n: 11 }, { n: 12, dot: true }, { n: 13 }, { n: 14 }, { n: 15, dot: true },
-  { n: 16 }, { n: 17 }, { n: 18, dot: true }, { n: 19 }, { n: 20, dot: true }, { n: 21 }, { n: 22, dot: true },
-];
-
 export function InsightsScreen({ isActive }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bodyMapRef = useRef<HTMLDivElement | null>(null);
@@ -112,20 +106,6 @@ export function InsightsScreen({ isActive }: Props) {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Calendar strip */}
-        <div className="grid grid-cols-7 gap-0.5 mb-2">
-          {CALENDAR_DAYS.map((d, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center justify-center rounded-md"
-              style={{ aspectRatio: '1', background: 'rgba(255,255,255,0.08)' }}
-            >
-              <span className="text-[6.5px] font-semibold leading-none text-white/65">{d.n}</span>
-              {d.dot && <div className="rounded-full mt-0.5" style={{ width: 2.5, height: 2.5, background: 'rgba(255,255,255,0.5)' }} />}
-            </div>
-          ))}
         </div>
 
         {/* Body sensation map — mirrors the app's BodyHeatmapCard section */}
