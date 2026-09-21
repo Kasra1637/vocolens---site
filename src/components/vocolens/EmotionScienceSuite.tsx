@@ -109,26 +109,32 @@ export function EmotionScienceSuite() {
                 Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
               </p>
 
-              <div className="relative aspect-[5/4] sm:aspect-[21/9] lg:aspect-[5/3] rounded-2xl bg-surface border border-primary/10 overflow-hidden">
-                {/* axes */}
-                <div className="absolute inset-y-6 left-1/2 w-px bg-primary/15" />
-                <div className="absolute inset-x-6 top-1/2 h-px bg-primary/15" />
-                {/* labels */}
-                <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Activated</span>
-                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-sm font-semibold text-text-muted">Calm</span>
-                <span className="absolute top-1/2 left-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Unpleasant</span>
-                <span className="absolute top-1/2 right-2 -translate-y-1/2 text-sm font-semibold text-text-muted">Pleasant</span>
-                {/* quadrants */}
-                <span className="absolute top-[18%] left-[18%] text-sm font-semibold text-rose-400/80">Stressed</span>
-                <span className="absolute top-[18%] right-[18%] text-sm font-semibold text-amber-500/80">Excited</span>
-                <span className="absolute bottom-[18%] left-[18%] text-sm font-semibold text-indigo-400/80">Depressed</span>
-                <span className="absolute bottom-[18%] right-[18%] text-sm font-semibold text-emerald-500/80">Serene</span>
-                {/* point */}
-                <div
-                  className="absolute w-4 h-4 rounded-full bg-primary shadow-clay-sm ring-4 ring-primary/20"
-                  style={{ top: '32%', left: '63%' }}
-                  aria-label="Your current emotional state — pleasant and slightly activated"
-                />
+              <div className="rounded-2xl bg-surface border border-primary/10 overflow-hidden">
+                <svg
+                  viewBox="0 0 300 300"
+                  className="w-full max-w-[420px] mx-auto block"
+                  role="img"
+                  aria-label="Emotional landscape: one entry plotted as pleasant and slightly activated"
+                >
+                  {/* quadrant corner labels, like the app */}
+                  <text x="10" y="20" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">TENSE</text>
+                  <text x="156" y="20" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">EXCITED</text>
+                  <text x="10" y="292" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">DOWN</text>
+                  <text x="156" y="292" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">CALM</text>
+                  {/* dashed axes */}
+                  <line x1="150" y1="0" x2="150" y2="300" stroke="rgba(147,112,219,0.25)" strokeWidth="1" strokeDasharray="4 4" />
+                  <line x1="0" y1="150" x2="300" y2="150" stroke="rgba(147,112,219,0.25)" strokeWidth="1" strokeDasharray="4 4" />
+                  {/* centre crosshair dot */}
+                  <circle cx="150" cy="150" r="3" fill="rgba(147,112,219,0.2)" />
+                  {/* data point: soft fill + ring + centred emoji */}
+                  <circle cx="195" cy="105" r="15" fill="rgba(147,112,219,0.10)" />
+                  <circle cx="195" cy="105" r="15" fill="none" stroke="#9370DB" strokeWidth="1.5" strokeOpacity="0.75" />
+                  <text x="195" y="110" fontSize="15" textAnchor="middle" aria-hidden="true">😊</text>
+                </svg>
+                <div className="flex items-center justify-between px-4 pb-3 text-[11px] font-medium text-text-muted">
+                  <span>← Unpleasant</span>
+                  <span>Pleasant →</span>
+                </div>
               </div>
             </div>
           </AnimatedSection>
