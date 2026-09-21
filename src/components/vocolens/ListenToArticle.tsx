@@ -262,7 +262,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={toggle}
-            className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+            className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
             aria-label={(playing ? "Pause" : "Play") + " article narration"}
           >
             {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
@@ -307,7 +307,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           onPointerLeave={() => { if (!scrubbing) setHoverTime(null); }}
           onMouseDown={onMouseDown}
           onKeyDown={onKeyDown}
-          className="relative py-3 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
+          className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
@@ -320,13 +320,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
               />
             ))}
             <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white border-[2.5px] border-primary shadow-sm pointer-events-none"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-[2.5px] border-primary shadow-sm pointer-events-none"
               style={{ left: `${fraction * 100}%` }}
             />
           </div>
           {tipTime !== null && (
             <div
-              className="absolute -top-1 -translate-y-full pointer-events-none whitespace-nowrap rounded-lg bg-text-primary text-white text-[11px] font-medium px-2 py-1 shadow-md"
+              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-lg bg-text-primary text-white text-[11px] font-medium px-2 py-1 shadow-md"
               style={{ left: `clamp(56px, ${(tipTime / duration) * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
               aria-hidden="true"
             >

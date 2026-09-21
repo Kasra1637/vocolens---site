@@ -150,6 +150,7 @@ function MoodStoryVisual() {
 
       <p className="text-[13px] text-text-muted mb-5 relative">Dominant emotion each day</p>
 
+      <div className="overflow-x-auto -mx-6 px-6"><div className="min-w-[480px]">
       <div className="grid grid-cols-7 gap-2.5 items-end h-40 mb-3 relative">
         {week.map((w) => (
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
@@ -181,6 +182,7 @@ function MoodStoryVisual() {
           </div>
         ))}
       </div>
+      </div></div>
 
       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/8 relative">
         <div className="flex -space-x-1">
@@ -452,7 +454,7 @@ function DeepInsightsVisual() {
           your happiness vocabulary. A gentle invitation: name one good thing
           before naming the worry.
         </p>
-<button className="mt-4 text-sm font-semibold text-[#6A3FC0] flex items-center gap-1 transition-all duration-200 hover:gap-2">
+<button className="mt-4 py-2 -my-1 min-h-[28px] text-sm font-semibold text-[#6A3FC0] flex items-center gap-1 transition-all duration-200 hover:gap-2">
             See more <CaretRight className="w-3.5 h-3.5" />
           </button>
       </div>
@@ -907,7 +909,7 @@ export function FeaturesShowcase() {
   return (
     <div className="min-h-screen bg-surface">
       {/* Hero */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
         <AnimatedSection animation="fade-in-up" className="relative text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
@@ -950,7 +952,7 @@ export function FeaturesShowcase() {
       <FeatureNav activeId={activeFeature} />
 
       {/* Feature sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-24 lg:pb-40 space-y-32 lg:space-y-48">
+      <div className="max-w-6xl mx-auto px-6 pb-24 lg:pb-40 space-y-20 sm:space-y-32 lg:space-y-48">
         {features.map((f, i) => {
           const Icon = f.icon;
           const reverse = i % 2 === 1;
@@ -1014,7 +1016,7 @@ export function FeaturesShowcase() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-10 py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-8 py-4 sm:px-10 sm:py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 group"
             >
               Get it on Google Play
               <CaretRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />

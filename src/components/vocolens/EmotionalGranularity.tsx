@@ -88,7 +88,7 @@ export function EmotionalGranularity() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
     >
       <BackToTop />
       <script
@@ -139,7 +139,7 @@ export function EmotionalGranularity() {
               <Heart className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
                 Neuroscience &amp; Emotional Intelligence
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -221,7 +221,7 @@ export function EmotionalGranularity() {
               title="Read Barrett (2006) on categorization and the experience of emotion — PubMed"
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
-              <span className="underline underline-offset-2">Read the research: Solving the emotion paradox — PubMed</span>
+              <span className="min-w-0 underline underline-offset-2">Read the research: Solving the emotion paradox — PubMed</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
@@ -254,7 +254,7 @@ export function EmotionalGranularity() {
               title="Read Lieberman et al. (2007) on affect labeling and reduced amygdala response — PubMed"
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
-              <span className="underline underline-offset-2">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
+              <span className="min-w-0 underline underline-offset-2">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
@@ -284,7 +284,7 @@ export function EmotionalGranularity() {
               title="Read Kashdan, Barrett & McKnight (2015) on emotion differentiation — Current Directions in Psychological Science"
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
-              <span className="underline underline-offset-2">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
+              <span className="min-w-0 underline underline-offset-2">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
@@ -396,14 +396,14 @@ export function EmotionalGranularity() {
 
       </div>
 <AnimatedSection animation="fade-in-up" delay={0.6}>
-        <div data-listen-exclude className="card-app rounded-3xl p-8 lg:p-12 text-center">
+        <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
           <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
             Find the exact word
           </h2>
           <p className="text-text-secondary mb-5 text-base leading-relaxed">
             Specific words change what you feel. Vocolens sharpens your vocabulary.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}

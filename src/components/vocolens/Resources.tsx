@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router';
 
 export function Resources() {
   return (
-    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -71,7 +71,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Emotional Intelligence
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -95,7 +95,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Emotional Granularity · Affect Labeling · Voice Journaling
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/adhd-time-blindness" />
           <meta itemProp="datePublished" content="2026-09-09" />
@@ -130,7 +130,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     ADHD &amp; Time Perception
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -154,7 +154,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     ADHD · Time Blindness · Interval Timing
                   </span>
                 </div>
@@ -166,7 +166,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/burnout-recovery-signs" />
           <meta itemProp="datePublished" content="2026-08-04" />
@@ -189,7 +189,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Stress &amp; Burnout Recovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -213,7 +213,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Burnout · Allostatic Load · Stress Recovery
                   </span>
                 </div>
@@ -225,7 +225,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
           <meta itemProp="datePublished" content="2026-07-14" />
@@ -248,7 +248,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Anxiety &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -272,7 +272,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Overthinking · Rumination · Worry Time
                   </span>
                 </div>
@@ -284,7 +284,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/autism-emotional-regulation" />
           <meta itemProp="datePublished" content="2026-06-29" />
@@ -307,7 +307,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Autism &amp; Neurodivergent Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -331,7 +331,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Autism · Alexithymia · Emotional Regulation
                   </span>
                 </div>
@@ -343,7 +343,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/alexithymia-emotional-vocabulary" />
           <meta itemProp="datePublished" content="2026-06-28" />
@@ -366,7 +366,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Emotional Intelligence
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -390,7 +390,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Alexithymia · Emotional Vocabulary · AI Journaling
                   </span>
                 </div>
@@ -402,7 +402,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/distress-detection" />
           <meta itemProp="datePublished" content="2026-06-11" />
@@ -425,7 +425,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Body Awareness &amp; Distress Detection
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -449,7 +449,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Interoception · Body Awareness · Overwhelm
                   </span>
                 </div>
@@ -461,7 +461,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/emotional-awareness-patterns" />
           <meta itemProp="datePublished" content="2026-03-30" />
@@ -484,7 +484,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Mental Wellness &amp; Self-Discovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -508,7 +508,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Pattern Recognition · Emotional Intelligence · Self-Awareness
                   </span>
                 </div>
@@ -520,7 +520,7 @@ export function Resources() {
         <article
           itemScope
           itemType="https://schema.org/Article"
-          className="w-full mt-8"
+          className="w-full mt-5 sm:mt-8"
         >
           <meta itemProp="url" content="https://vocolens.com/resources/science-of-reflection" />
           <meta itemProp="datePublished" content="2026-02-28" />
@@ -543,7 +543,7 @@ export function Resources() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
+                  <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -567,7 +567,7 @@ export function Resources() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
                     Emotion Labeling · Stress Relief Journaling · Resilience
                   </span>
                 </div>

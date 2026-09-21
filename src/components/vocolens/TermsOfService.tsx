@@ -3,7 +3,7 @@ import { AnimatedSection } from './AnimatedSection';
 
 export function TermsOfService() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24">
       <AnimatedSection animation="fade-in-up">
         <div className="text-center mb-12">
           <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
@@ -20,7 +20,7 @@ export function TermsOfService() {
         </div>
       </AnimatedSection>
 
-      <div className="card-app rounded-3xl p-8 lg:p-12 space-y-12">
+      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12">
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Acceptance of Terms</h2>
@@ -74,7 +74,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <CreditCard className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Subscriptions & Free Trial
                 </h2>
@@ -145,7 +145,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <AlertCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Not a Medical Service
                 </h2>
@@ -183,7 +183,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lock className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Your Content
                 </h2>
@@ -220,7 +220,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Globe className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Third-Party Services
                 </h2>
@@ -259,7 +259,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Usage Tracking
                 </h2>
@@ -277,7 +277,7 @@ export function TermsOfService() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Trash2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0 break-words">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
                   Data Loss Disclaimer
                 </h2>

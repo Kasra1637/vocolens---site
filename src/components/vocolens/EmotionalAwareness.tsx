@@ -47,7 +47,7 @@ export function EmotionalAwareness() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
     >
       <BackToTop />
       <script
@@ -126,7 +126,7 @@ export function EmotionalAwareness() {
               <Radar className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
                 Mental Wellness &amp; Self-Discovery
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -220,7 +220,7 @@ export function EmotionalAwareness() {
               title="Read the Frattaroli (2006) meta-analysis on experimental disclosure and its health effects — PubMed"
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
-              <span className="underline underline-offset-2">Read the meta-analysis: Experimental Disclosure and Its Moderators — PubMed</span>
+              <span className="min-w-0 underline underline-offset-2">Read the meta-analysis: Experimental Disclosure and Its Moderators — PubMed</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
@@ -367,14 +367,14 @@ export function EmotionalAwareness() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={0.65}>
-          <div data-listen-exclude className="card-app rounded-3xl p-8 lg:p-12 text-center">
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Stop guessing why
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
               Stop guessing. Vocolens turns your voice into clarity you can grow from.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <a
                 href={GOOGLE_PLAY_URL}
                 {...STORE_LINK_ATTRS}
