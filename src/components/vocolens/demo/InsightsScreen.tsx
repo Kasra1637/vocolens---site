@@ -16,28 +16,6 @@ const CALENDAR_DAYS = [
   { n: 16 }, { n: 17 }, { n: 18, dot: true }, { n: 19 }, { n: 20, dot: true }, { n: 21 }, { n: 22, dot: true },
 ];
 
-/** Simplified stand-in for EmotionalCompanion — a soft glowing orb, matching
- * its circular, theme-tinted glow treatment without the full animation. */
-function CompanionOrb() {
-  return (
-    <div className="relative flex items-center justify-center" style={{ width: 56, height: 56 }}>
-      <div
-        className="absolute rounded-full"
-        style={{ width: 56, height: 56, background: 'radial-gradient(circle, rgba(167,139,250,0.35) 0%, transparent 70%)' }}
-      />
-      <div
-        className="rounded-full"
-        style={{
-          width: 34,
-          height: 34,
-          background: 'linear-gradient(180deg, #A78BFA 0%, #9370DB 100%)',
-          boxShadow: '0 0 16px rgba(147,112,219,0.5)',
-        }}
-      />
-    </div>
-  );
-}
-
 export function InsightsScreen({ isActive }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bodyMapRef = useRef<HTMLDivElement | null>(null);
@@ -97,7 +75,6 @@ export function InsightsScreen({ isActive }: Props) {
     >
       <div ref={scrollRef} className="relative px-3.5 pt-9 pb-1 overflow-y-auto demo-screen-scroll flex-1 min-h-0">
         <div className="flex flex-col items-center mb-3">
-          <CompanionOrb />
           <h3 className="text-white text-[15px] font-bold mt-1.5 text-center" style={{ fontFamily: 'Fraunces, serif' }}>
             Good morning, Alex!
           </h3>
