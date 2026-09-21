@@ -21,9 +21,7 @@ const SPEEDS = [1, 1.25, 1.5, 2];
 // skipped past. First section (intro) always starts at 0.
 const HEADER_BACKOFF = 3; // seconds
 
-// Max pointer travel that still counts as a tap (snaps to section header)
-// rather than a drag (continuous precision scrub).
-const TAP_SLOP = 8; // px
+
 
 /**
  * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
@@ -46,9 +44,9 @@ function articleBlocks(): HTMLElement[] {
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
- * - scrubber with drag seeking, section ticks, and tap-to-snap: taps land
- *   on the enclosing section's H2/H3 (with a short lead-in) so the headline
- *   is never skipped; drags stay continuous for precision
+ * - chapter-only timeline: taps jump to the enclosing section's H2/H3
+ *   (with a short lead-in) so the headline is never skipped; drags step
+ *   across section boundaries; arrows move by chapter; no arbitrary scrub
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -187,37 +185,46 @@ export function ListenToArticle({ slug }: { slug: string }) {
     return ratio * duration;
   }, [duration]);
 
-  // Single unified scrub path for mouse, touch, and pen. (A separate mouse
-  // fallback was removed: on touch devices the browser replays emulated
-  // mouse events after every gesture, which double-seeked and yanked
-  // playback back to the touch-start point on mobile.)
+  // Chapter-only timeline: every gesture resolves to a section header —
+  // there is no arbitrary scrubbing. Taps jump straight to the enclosing
+  // section; drags step across boundaries as the pointer crosses them.
+  // (A legacy mouse fallback was removed earlier: touch browsers replay
+  // emulated mouse events after gestures, which double-seeked on mobile.)
   const scrubbingRef = useRef(false);
+  const snappedIdxRef = useRef<number | null>(null);
 
-  // X of the gesture start — used to tell taps (snap to section header)
-  // apart from drags (continuous precision scrub).
-  const downXRef = useRef<number | null>(null);
+  const snapToSectionAt = useCallback(
+    (clientX: number) => {
+      const t = getTimeFromPointer(clientX);
+      if (t === null || resolvedSections.length === 0) return;
+      const idx = sectionAt(resolvedSections, t);
+      if (idx !== snappedIdxRef.current) {
+        snappedIdxRef.current = idx;
+        seek(resolvedSections[idx].startSec);
+      }
+    },
+    [getTimeFromPointer, resolvedSections, seek],
+  );
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     // Ignore emulated extra buttons; primary button / touch contact only.
     if (e.pointerType === "mouse" && e.button !== 0) return;
-    const t = getTimeFromPointer(e.clientX);
-    if (t === null) return;
+    if (getTimeFromPointer(e.clientX) === null) return;
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
     } catch {
       /* already released — non-fatal */
     }
-    downXRef.current = e.clientX;
     scrubbingRef.current = true;
     setScrubbing(true);
-    seek(t);
+    snapToSectionAt(e.clientX);
   };
 
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const t = getTimeFromPointer(e.clientX);
     if (t === null) return;
     if (scrubbingRef.current) {
-      seek(t);
+      snapToSectionAt(e.clientX);
     } else if (e.pointerType === "mouse") {
       setHoverTime(t);
     }
@@ -231,38 +238,27 @@ export function ListenToArticle({ slug }: { slug: string }) {
         /* already released — non-fatal */
       }
     }
-    const downX = downXRef.current;
-    downXRef.current = null;
+    snappedIdxRef.current = null;
     scrubbingRef.current = false;
     setScrubbing(false);
     setHoverTime(null);
-    // Tap (not drag) on the timeline snaps to the enclosing section's
-    // header so playback starts on the H2/H3 instead of mid-paragraph.
-    // Drags keep their continuous position for precision.
-    if (e && e.type === "pointerup" && downX !== null && resolvedSections.length > 0) {
-      if (Math.abs(e.clientX - downX) <= TAP_SLOP) {
-        const t = getTimeFromPointer(e.clientX);
-        if (t !== null) {
-          const idx = sectionAt(resolvedSections, t);
-          seek(resolvedSections[idx].startSec);
-        }
-      }
-    }
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft") {
       e.preventDefault();
-      seek(currentTime - 5);
+      prevSection();
     } else if (e.key === "ArrowRight") {
       e.preventDefault();
-      seek(currentTime + 5);
+      nextSection();
     } else if (e.key === "Home") {
       e.preventDefault();
-      seek(0);
+      if (resolvedSections.length > 0) seekAndPlay(resolvedSections[0].startSec);
     } else if (e.key === "End") {
       e.preventDefault();
-      if (Number.isFinite(duration)) seek(duration);
+      if (resolvedSections.length > 0) {
+        seekAndPlay(resolvedSections[resolvedSections.length - 1].startSec);
+      }
     }
   };
 
@@ -345,7 +341,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
           aria-valuemin={0}
           aria-valuemax={Math.round(duration || 0)}
           aria-valuenow={Math.round(currentTime)}
-          aria-valuetext={`${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`}
+          aria-valuetext={
+            sectionIdx >= 0
+              ? `Chapter ${sectionIdx + 1} of ${resolvedSections.length}: ${resolvedSections[sectionIdx].title}, ${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
+              : `${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
+          }
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={endScrub}
