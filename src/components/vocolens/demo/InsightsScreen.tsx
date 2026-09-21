@@ -1,5 +1,6 @@
 import { Flame, Trophy, BookOpen } from 'lucide-react';
 import { DemoTabBar } from './DemoTabBar';
+import { BodyMapCard } from './BodyMapCard';
 
 interface Props {
   isActive: boolean;
@@ -80,7 +81,7 @@ export function InsightsScreen({ isActive }: Props) {
         background: 'linear-gradient(180deg, #181624 0%, #0F0E1A 100%)',
       }}
     >
-      <div className="px-3.5 pt-9 pb-1 overflow-hidden flex-1">
+      <div className="px-3.5 pt-9 pb-1 overflow-y-auto demo-screen-scroll flex-1">
         <div className="flex flex-col items-center mb-3">
           <CompanionOrb />
           <h3 className="text-white text-[15px] font-bold mt-1.5 text-center" style={{ fontFamily: 'Fraunces, serif' }}>
@@ -148,6 +149,9 @@ export function InsightsScreen({ isActive }: Props) {
           </div>
           <MoodChart isActive={isActive} />
         </div>
+
+        {/* Body sensation map — mirrors the app's BodyHeatmapCard section */}
+        <BodyMapCard />
       </div>
 
       <DemoTabBar active="Insights" />

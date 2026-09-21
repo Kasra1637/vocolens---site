@@ -235,6 +235,9 @@
   pointer-events: none;
 }
 .demo-screen-layer.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+/* Scrollable demo-screen content (hides the scrollbar for a clean mock look) */
+.demo-screen-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.demo-screen-scroll::-webkit-scrollbar { display: none; }
 
 @keyframes demo-float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-4px);} }
 .demo-phone-float { animation: demo-float 5s ease-in-out infinite; }

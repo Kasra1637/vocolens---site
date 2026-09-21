@@ -8,8 +8,8 @@ interface Props {
 /**
  * Recreates the app's Record tab (src/app/(tabs)/index.tsx) in its idle
  * state: "Speak your mind" title, rotating prompt line, the large gradient
- * mic button with sonar ripples + halo glow (MicButton.tsx), the "Tap to
- * start" caption, and the minimum-duration hint. Uses the app's actual
+ * mic button with sonar ripples + halo glow (MicButton.tsx) and the "Tap to
+ * start" caption. Uses the app's actual
  * Midnight Glow theme colors (THEME_COLORS.darkMode in
  * lib/state/onboarding-store.ts) rather than the site's own brand purple.
  */
@@ -81,9 +81,6 @@ export function RecordingScreen({ isActive }: Props) {
           </div>
         </div>
         <p className="text-white text-[11px] mt-4">Tap to start</p>
-        <p className="text-white/45 text-[9px] mt-1.5 text-center px-8 leading-snug">
-          Record for at least 50s for accurate emotional insights
-        </p>
       </div>
 
       <DemoTabBar active="Record" />

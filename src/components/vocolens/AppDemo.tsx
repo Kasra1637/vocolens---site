@@ -12,7 +12,7 @@ const SCREEN_DURATION = 4500;
 const screens = [
   { Component: RecordingScreen, alt: 'Record tab with the voice recording button' },
   { Component: JournalScreen, alt: 'Journal entry with AI emotion breakdown' },
-  { Component: InsightsScreen, alt: 'Insights tab with streak and mood story' },
+  { Component: InsightsScreen, alt: 'Insights tab with streak, mood story, and body sensation map' },
 ];
 
 export function AppDemo() {
