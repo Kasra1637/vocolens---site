@@ -123,7 +123,7 @@
    * adapted for the light site): lavender-tinted fill, primary border,
    * single soft primary shadow instead of the clay treatment. */
   .card-app {
-    background: linear-gradient(180deg, #FBF9FF 0%, #F5F0FF 100%);
+    background: #FFFFFF;
     border: 1.5px solid rgba(155, 135, 245, 0.25);
     box-shadow: 0 8px 24px rgba(147, 112, 219, 0.15);
   }
