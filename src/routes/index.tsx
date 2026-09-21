@@ -393,7 +393,7 @@ function Home() {
             </a>
           </div>
 
-          <div className="card-app rounded-full px-6 py-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
             <Link
               to="/terms"
               className="text-sm text-text-muted hover:text-primary transition-colors"

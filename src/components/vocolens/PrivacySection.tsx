@@ -68,7 +68,7 @@ export function PrivacySection() {
               key={title}
               className="group bg-white/[0.06] hover:bg-white/[0.10] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300"
             >
-              <div className="w-11 h-11 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors duration-300">
+              <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors duration-300">
                 <Icon className="w-5 h-5 text-primary-muted" />
               </div>
               <h3 className="text-white font-bold mb-2 text-xl">{title}</h3>
