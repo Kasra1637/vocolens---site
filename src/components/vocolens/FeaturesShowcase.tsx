@@ -138,7 +138,7 @@ function MoodStoryVisual() {
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-cyan-50/40 to-transparent rounded-tr-full pointer-events-none" />
 
-      <div className="flex items-center justify-between mb-2 relative">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood story · This week
         </p>
@@ -150,8 +150,7 @@ function MoodStoryVisual() {
 
       <p className="text-[13px] text-text-muted mb-5 relative">Dominant emotion each day</p>
 
-      <div className="overflow-x-auto -mx-6 px-6"><div className="min-w-[480px]">
-      <div className="grid grid-cols-7 gap-2.5 items-end h-40 mb-3 relative">
+      <div className="grid grid-cols-7 gap-1 sm:gap-2.5 items-end h-40 mb-3 relative">
         {week.map((w) => (
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
@@ -172,9 +171,9 @@ function MoodStoryVisual() {
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/5 to-white/20" />
               </div>
             </div>
-            <span className="text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
+            <span className="text-[8px] sm:text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
             <span
-              className="text-[9px] font-medium leading-tight text-center px-0.5 transition-colors duration-200"
+              className="text-[8px] sm:text-[9px] font-medium leading-tight text-center px-0.5 transition-colors duration-200"
               style={{ color: w.c }}
             >
               {w.e}
@@ -182,7 +181,6 @@ function MoodStoryVisual() {
           </div>
         ))}
       </div>
-      </div></div>
 
       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/8 relative">
         <div className="flex -space-x-1">
