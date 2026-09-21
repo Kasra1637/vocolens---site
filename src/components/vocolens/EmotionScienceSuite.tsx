@@ -1,5 +1,5 @@
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import { Smile, Frown, Flame, Shield, Sparkles, TriangleAlert as AlertTriangle, Handshake, Compass, Activity, HeartPulse, Brain, History } from 'lucide-react';
+import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History } from '@phosphor-icons/react';
 
 const plutchikEmotions = [
   { name: 'Happiness', icon: Smile, color: '#F5B700', ladder: ['Content', 'Joyful', 'Elated'] },

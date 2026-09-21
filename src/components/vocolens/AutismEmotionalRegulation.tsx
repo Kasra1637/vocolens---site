@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
-import { Puzzle, ArrowUpRight, Clock, ChevronRight, Circle as HelpCircle } from 'lucide-react';
+import { PuzzlePiece as Puzzle, ArrowUpRight, Clock, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { BackToTop } from './BackToTop';

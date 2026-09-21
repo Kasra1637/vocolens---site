@@ -2,14 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  ChevronDown,
-  ListMusic,
+  CaretDown as ChevronDown,
+  Playlist as ListMusic,
   Pause,
   Play,
   SkipBack,
   SkipForward,
-  Volume2,
-} from "lucide-react";
+  SpeakerHigh as Volume2,
+} from "@phosphor-icons/react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 

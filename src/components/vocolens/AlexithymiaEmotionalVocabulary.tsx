@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
-import { Brain, ArrowUpRight, Clock, ChevronRight, HelpCircle, Heart } from 'lucide-react';
+import { Brain, ArrowUpRight, Clock, CaretRight as ChevronRight, Question as HelpCircle, Heart } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { BackToTop } from './BackToTop';

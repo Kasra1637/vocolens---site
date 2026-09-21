@@ -1,4 +1,4 @@
-import { Shield, Eye, Lock, Database, Users, Globe, Trash2, FileText, CircleAlert as AlertCircle, Smartphone, Bell, Activity } from 'lucide-react';
+import { Shield, Eye, Lock, Database, Users, Globe, Trash as Trash2, FileText, WarningCircle as AlertCircle, DeviceMobile as Smartphone, Bell, Pulse as Activity } from '@phosphor-icons/react';
 import { AnimatedSection } from './AnimatedSection';
 
 export function PrivacyPolicy() {

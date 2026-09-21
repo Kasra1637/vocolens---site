@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Flame, Trophy } from 'lucide-react';
+import { Flame, Trophy } from '@phosphor-icons/react';
 import { DemoTabBar } from './DemoTabBar';
 import { BodyMapCard } from './BodyMapCard';
 

@@ -1,15 +1,15 @@
 import {
   ArrowLeft,
   Pencil,
-  Trash2,
+  Trash as Trash2,
   Calendar,
   Clock,
-  Activity,
-  ChevronUp,
-  ChevronDown,
-  MessageSquareText,
+  Pulse as Activity,
+  CaretUp as ChevronUp,
+  CaretDown as ChevronDown,
+  ChatTeardropText as MessageSquareText,
   ChartBar,
-} from 'lucide-react';
+} from '@phosphor-icons/react';
 import { DemoTabBar } from './DemoTabBar';
 
 interface Props {

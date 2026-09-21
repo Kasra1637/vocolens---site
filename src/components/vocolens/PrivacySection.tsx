@@ -1,4 +1,4 @@
-import { Smartphone, Eye, Lock, Database, Trash2, Shield } from 'lucide-react';
+import { DeviceMobile as Smartphone, Eye, Lock, Database, Trash as Trash2, Shield } from '@phosphor-icons/react';
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
 import { Link } from '@tanstack/react-router';
 

@@ -1,4 +1,4 @@
-import { Mic } from 'lucide-react';
+import { Microphone as Mic } from '@phosphor-icons/react';
 import { DemoTabBar } from './DemoTabBar';
 
 interface Props {
@@ -76,7 +76,7 @@ export function RecordingScreen({ isActive }: Props) {
                 boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
               }}
             >
-              <Mic className="w-8 h-8 text-white" strokeWidth={2} />
+              <Mic className="w-8 h-8 text-white" weight="bold" />
             </div>
           </div>
         </div>

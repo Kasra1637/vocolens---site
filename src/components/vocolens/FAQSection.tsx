@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
-import { ChevronDown, MessageCircleQuestionMark as MessageCircleQuestion } from 'lucide-react';
+import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@phosphor-icons/react';
 
 const faqs = [
   {

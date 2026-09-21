@@ -1,5 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Layers, Activity, Edit3, Brain, Sparkles, Mic } from 'lucide-react';
+import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic } from '@phosphor-icons/react';
 
 const whyItMatters = [
   {

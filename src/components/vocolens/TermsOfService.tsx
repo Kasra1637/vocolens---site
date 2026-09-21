@@ -1,4 +1,4 @@
-import { FileText, CircleAlert as AlertCircle, CreditCard, Globe, Lock, Trash2, Activity } from 'lucide-react';
+import { FileText, WarningCircle as AlertCircle, CreditCard, Globe, Lock, Trash as Trash2, Pulse as Activity } from '@phosphor-icons/react';
 import { AnimatedSection } from './AnimatedSection';
 
 export function TermsOfService() {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { CalendarDays, BookOpenText, ChartBar as BarChart3, CircleChevronDown as ChevronDownCircle, Map, Activity, Sparkles, Zap, Repeat, Clock, ArrowRight, SlidersHorizontal, Award, HeartHandshake } from 'lucide-react';
+import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, ArrowRight, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake } from '@phosphor-icons/react';
 
 type Feature = {
   id: string;

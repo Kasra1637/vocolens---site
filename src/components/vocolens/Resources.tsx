@@ -1,4 +1,4 @@
-import { Brain, Clock, BookOpen, Radar, Activity, Puzzle, Heart, RefreshCw, Flame, Timer } from 'lucide-react';
+import { Brain, Clock, BookOpen, Target as Radar, Pulse as Activity, PuzzlePiece as Puzzle, Heart, ArrowClockwise as RefreshCw, Flame, Timer } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 
 export function Resources() {

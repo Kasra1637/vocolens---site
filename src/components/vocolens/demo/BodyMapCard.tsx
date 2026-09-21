@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Scan } from 'lucide-react';
+import { Scan } from '@phosphor-icons/react';
 
 /**
  * Faithful recreation of the mobile app's Body Sensation Heatmap section

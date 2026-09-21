@@ -1,6 +1,6 @@
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import { Zap, Brain, Circle as HelpCircle, Mic, Sparkles, TrendingUp, ArrowRight, CircleCheck as CheckCircle2 } from 'lucide-react';
+import { Lightning as Zap, Brain, Question as HelpCircle, Microphone as Mic, Sparkle as Sparkles, TrendUp as TrendingUp, ArrowRight, CheckCircle as CheckCircle2 } from '@phosphor-icons/react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
  * Types

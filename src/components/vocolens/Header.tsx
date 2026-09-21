@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Menu, X, Brain, Radar, ChevronDown } from 'lucide-react';
+import { List as Menu, X, Brain, Target as Radar, CaretDown as ChevronDown } from '@phosphor-icons/react';
 import { Link, useNavigate, useLocation } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 
