@@ -42,8 +42,9 @@ export function InsightsScreen({ isActive }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bodyMapRef = useRef<HTMLDivElement | null>(null);
 
-  // When this screen rotates into view, glide down to the body map section.
-  // Manual scrolling still works — this only runs on screen activation.
+  // When this screen rotates into view, glide down to the body map section
+  // with a slow eased animation (native smooth-scroll timing feels abrupt).
+  // Any manual scroll/touch interrupts the glide. Only runs on activation.
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -54,15 +55,37 @@ export function InsightsScreen({ isActive }: Props) {
     const reduced =
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let raf = 0;
+    const cancel = () => cancelAnimationFrame(raf);
     const t = setTimeout(() => {
       const card = bodyMapRef.current;
       if (!card) return;
-      container.scrollTo({
-        top: Math.max(card.offsetTop - 36, 0),
-        behavior: reduced ? 'auto' : 'smooth',
-      });
+      const target = Math.max(card.offsetTop - 36, 0);
+      const start = container.scrollTop;
+      const dist = target - start;
+      if (reduced || dist <= 0) {
+        container.scrollTop = target;
+        return;
+      }
+      const DURATION = 1600;
+      const easeInOutCubic = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      let startTs: number | null = null;
+      const step = (ts: number) => {
+        if (startTs === null) startTs = ts;
+        const p = Math.min((ts - startTs) / DURATION, 1);
+        container.scrollTop = start + dist * easeInOutCubic(p);
+        if (p < 1) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
     }, 450);
-    return () => clearTimeout(t);
+    container.addEventListener('wheel', cancel, { passive: true });
+    container.addEventListener('touchmove', cancel, { passive: true });
+    return () => {
+      clearTimeout(t);
+      cancel();
+      container.removeEventListener('wheel', cancel);
+      container.removeEventListener('touchmove', cancel);
+    };
   }, [isActive]);
 
   return (
