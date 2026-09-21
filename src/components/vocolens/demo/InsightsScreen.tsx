@@ -1,4 +1,5 @@
-import { Flame, Trophy, BookOpen } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { Flame, Trophy } from 'lucide-react';
 import { DemoTabBar } from './DemoTabBar';
 import { BodyMapCard } from './BodyMapCard';
 
@@ -14,42 +15,6 @@ const CALENDAR_DAYS = [
   { n: 9 }, { n: 10 }, { n: 11 }, { n: 12, dot: true }, { n: 13 }, { n: 14 }, { n: 15, dot: true },
   { n: 16 }, { n: 17 }, { n: 18, dot: true }, { n: 19 }, { n: 20, dot: true }, { n: 21 }, { n: 22, dot: true },
 ];
-
-const CHART_POINTS = [
-  { x: 4, y: 60 }, { x: 20, y: 55 }, { x: 36, y: 45 }, { x: 52, y: 32 },
-  { x: 68, y: 26 }, { x: 84, y: 34 }, { x: 96, y: 40 },
-];
-
-function MoodChart({ isActive }: { isActive: boolean }) {
-  const polyline = CHART_POINTS.map((p) => `${p.x},${p.y}`).join(' ');
-  return (
-    <svg viewBox="0 0 100 68" className="w-full" style={{ height: 44, overflow: 'visible' }}>
-      <polyline
-        fill="none"
-        stroke="rgba(255,255,255,0.55)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        points={polyline}
-        style={{
-          strokeDasharray: 200,
-          strokeDashoffset: isActive ? 0 : 200,
-          transition: 'stroke-dashoffset 1.3s ease',
-        }}
-      />
-      {CHART_POINTS.map((p, i) => (
-        <circle
-          key={i}
-          cx={p.x}
-          cy={p.y}
-          r={i === 4 ? 3 : 1.8}
-          fill={i === 4 ? '#FFFFFF' : 'rgba(255,255,255,0.45)'}
-          style={{ opacity: isActive ? 1 : 0, transition: `opacity 0.4s ease ${0.5 + i * 0.08}s` }}
-        />
-      ))}
-    </svg>
-  );
-}
 
 /** Simplified stand-in for EmotionalCompanion — a soft glowing orb, matching
  * its circular, theme-tinted glow treatment without the full animation. */
@@ -74,6 +39,32 @@ function CompanionOrb() {
 }
 
 export function InsightsScreen({ isActive }: Props) {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const bodyMapRef = useRef<HTMLDivElement | null>(null);
+
+  // When this screen rotates into view, glide down to the body map section.
+  // Manual scrolling still works — this only runs on screen activation.
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    if (!isActive) {
+      container.scrollTop = 0;
+      return;
+    }
+    const reduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const t = setTimeout(() => {
+      const card = bodyMapRef.current;
+      if (!card) return;
+      container.scrollTo({
+        top: Math.max(card.offsetTop - 36, 0),
+        behavior: reduced ? 'auto' : 'smooth',
+      });
+    }, 450);
+    return () => clearTimeout(t);
+  }, [isActive]);
+
   return (
     <div
       className="h-full flex flex-col overflow-hidden"
@@ -81,7 +72,7 @@ export function InsightsScreen({ isActive }: Props) {
         background: 'linear-gradient(180deg, #181624 0%, #0F0E1A 100%)',
       }}
     >
-      <div className="px-3.5 pt-9 pb-1 overflow-y-auto demo-screen-scroll flex-1">
+      <div ref={scrollRef} className="relative px-3.5 pt-9 pb-1 overflow-y-auto demo-screen-scroll flex-1 min-h-0">
         <div className="flex flex-col items-center mb-3">
           <CompanionOrb />
           <h3 className="text-white text-[15px] font-bold mt-1.5 text-center" style={{ fontFamily: 'Fraunces, serif' }}>
@@ -137,21 +128,10 @@ export function InsightsScreen({ isActive }: Props) {
           ))}
         </div>
 
-        {/* Mood story card */}
-        <div className="rounded-xl p-2.5" style={{ background: GLASS_BG, border: `1.5px solid ${GLASS_BORDER}` }}>
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <BookOpen className="w-2.5 h-2.5 text-white/60" />
-            <span className="text-white text-[9.5px] font-semibold">Mood Story</span>
-          </div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-white/45 text-[7px]">— Stable</span>
-            <span className="text-white/35 text-[6.5px]">vs prior 4 days</span>
-          </div>
-          <MoodChart isActive={isActive} />
-        </div>
-
         {/* Body sensation map — mirrors the app's BodyHeatmapCard section */}
-        <BodyMapCard />
+        <div ref={bodyMapRef}>
+          <BodyMapCard />
+        </div>
       </div>
 
       <DemoTabBar active="Insights" />
