@@ -204,7 +204,7 @@ function Home() {
           staggerDelay={0.15}
         >
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -218,7 +218,7 @@ function Home() {
           </div>
 
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -232,7 +232,7 @@ function Home() {
           </div>
 
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -283,7 +283,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-8 py-4 sm:px-10 sm:py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 13 features
             <CaretRight className="w-6 h-6" />
@@ -310,7 +310,7 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-8 py-4 sm:px-12 sm:py-6 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
