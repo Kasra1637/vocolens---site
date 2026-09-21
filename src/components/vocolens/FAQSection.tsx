@@ -62,17 +62,14 @@ export function FAQSection() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-in-up" delay={0.1}>
-        <div className="space-y-4">
+        <div className="card-app rounded-3xl p-2 sm:p-3 divide-y divide-primary/10">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div 
-                key={index} 
-                className={`bg-white rounded-2xl border transition-all duration-300 ${isOpen ? 'border-[#9b87f5]/30 shadow-clay-sm' : 'border-primary/10 hover:border-primary/20'}`}
-              >
+              <div key={index}>
                 <button 
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full px-4 sm:px-5 py-5 flex items-center justify-between text-left focus:outline-none rounded-2xl hover:bg-primary/[0.04] transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span className="font-bold text-text-primary text-lg pr-4">{faq.q}</span>
@@ -84,7 +81,7 @@ export function FAQSection() {
                   className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 pt-1 text-text-secondary text-base leading-relaxed">
+                    <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed">
                       {faq.a}
                     </div>
                   </div>

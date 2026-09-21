@@ -59,28 +59,28 @@ function Home() {
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Private by design</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Private by design</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Just speak - no typing</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Just speak - no typing</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Neurodivergent-friendly</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
                 </div>
-                <span className="text-sm text-text-primary font-medium whitespace-nowrap">Granular emotion mapping</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>
               </div>
             </div>
           </AnimatedSection>
@@ -108,9 +108,16 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Jordan</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">ADHD & Creative</p>
-            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <span className="font-bold text-lg text-[#6A3FC0]">J</span>
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-bold text-lg leading-tight">Jordan</h4>
+                <p className="text-text-muted text-sm leading-relaxed">ADHD & Creative</p>
+              </div>
+            </div>
+            <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "I hit record on my commute, talked for 90 seconds about my morning frustration, and the AI showed me it wasn't anger — it was decision fatigue. Three weeks in, I can see my energy crashes always follow overstimulating meetings."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
@@ -126,9 +133,16 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Riley</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">Autistic & Graduate Student</p>
-            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <span className="font-bold text-lg text-[#6A3FC0]">R</span>
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-bold text-lg leading-tight">Riley</h4>
+                <p className="text-text-muted text-sm leading-relaxed">Autistic & Graduate Student</p>
+              </div>
+            </div>
+            <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "After a meltdown last month, I went back through my entries and saw the body map lighting up my shoulders and chest for five days straight before it happened. Now I check my weekly pattern and take a rest day when I see it building."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
@@ -144,9 +158,16 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <h4 className="font-bold mb-1 text-lg">Sam</h4>
-            <p className="text-text-muted mb-4 text-base leading-relaxed">Alexithymia & Designer</p>
-            <p className="text-text-secondary mb-4 text-base leading-relaxed">
+            <div className="flex items-center gap-3 mb-1">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <span className="font-bold text-lg text-[#6A3FC0]">S</span>
+              </div>
+              <div className="min-w-0">
+                <h4 className="font-bold text-lg leading-tight">Sam</h4>
+                <p className="text-text-muted text-sm leading-relaxed">Alexithymia & Designer</p>
+              </div>
+            </div>
+            <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "The AI labeled my entry as 'grief' and I almost corrected it — but then I sat with it and realized it was right. I'd been carrying that for weeks without a word for it. The emotion wheel helped me learn the difference between sadness and loss."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
@@ -180,38 +201,44 @@ function Home() {
           staggerDelay={0.15}
         >
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Frown className="w-8 h-8 text-[#9b87f5]" />
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Frown className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <h3 className="font-bold mb-3 text-xl">The problem</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, never truly me.
-              </p>
+              <div className="min-w-0">
+                <h3 className="font-bold mb-2 text-xl">The problem</h3>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, never truly me.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
-              </p>
+              <div className="min-w-0">
+                <h3 className="font-bold mb-2 text-xl">Daily struggle</h3>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="card-app rounded-[28px] p-8 hover-lift">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
-                <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
+            <div className="flex items-start gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
-              </p>
+              <div className="min-w-0">
+                <h3 className="font-bold mb-2 text-xl">The breakthrough</h3>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
+                </p>
+              </div>
             </div>
           </div>
         </AnimatedGrid>
@@ -240,9 +267,9 @@ function Home() {
             { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
             { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
           ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="card-app rounded-2xl p-5 hover-lift">
-              <div className="w-10 h-10 rounded-xl chip-app flex items-center justify-center mb-3">
-                <Icon className="w-5 h-5 text-primary" />
+            <div key={label} className="card-app rounded-2xl p-5 hover-lift text-center">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
+                <Icon className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <p className="font-bold text-text-primary mb-1">{label}</p>
               <p className="text-sm text-text-secondary leading-relaxed">{desc}</p>
