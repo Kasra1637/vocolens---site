@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   CaretDown as ChevronDown,
   Playlist as ListMusic,
@@ -14,6 +14,16 @@ import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
+
+// Lead-in before each section start so taps land on the section's H2/H3
+// headline instead of mid-paragraph. Section timestamps are estimated from
+// word counts, so without this the short spoken headline is routinely
+// skipped past. First section (intro) always starts at 0.
+const HEADER_BACKOFF = 3; // seconds
+
+// Max pointer travel that still counts as a tap (snaps to section header)
+// rather than a drag (continuous precision scrub).
+const TAP_SLOP = 8; // px
 
 /**
  * Article DOM blocks in ARTICLE_SECTIONS order: intro wrapper first, then each
@@ -36,8 +46,11 @@ function articleBlocks(): HTMLElement[] {
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
- * - scrubber with click + drag seeking and section ticks
- * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly)
+ * - scrubber with drag seeking, section ticks, and tap-to-snap: taps land
+ *   on the enclosing section's H2/H3 (with a short lead-in) so the headline
+ *   is never skipped; drags stay continuous for precision
+ * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
+ *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
  *   follows along as playback advances
  * Regenerate audio with: node scripts/generate-article-audio.cjs
@@ -57,6 +70,18 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
+
+  // Header-resolved section starts: every section (except the intro) is
+  // pulled earlier by HEADER_BACKOFF so timeline ticks, chapters, and
+  // highlight boundaries coincide with the spoken H2/H3, not the paragraph.
+  const resolvedSections = useMemo(
+    () =>
+      sections.map((s, i) => ({
+        ...s,
+        startSec: i === 0 ? 0 : Math.max(0, s.startSec - HEADER_BACKOFF),
+      })),
+    [sections],
+  );
 
   // Force metadata load on mount so duration is available before play.
   useEffect(() => {
@@ -139,19 +164,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
   }, [seek, play]);
 
   const prevSection = useCallback(() => {
-    if (sections.length === 0) return;
-    const idx = sectionAt(sections, currentTime);
-    const intoSection = currentTime - sections[idx].startSec;
+    if (resolvedSections.length === 0) return;
+    const idx = sectionAt(resolvedSections, currentTime);
+    const intoSection = currentTime - resolvedSections[idx].startSec;
     const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
-    seekAndPlay(sections[target].startSec);
-  }, [sections, currentTime, seekAndPlay]);
+    seekAndPlay(resolvedSections[target].startSec);
+  }, [resolvedSections, currentTime, seekAndPlay]);
 
   const nextSection = useCallback(() => {
-    if (sections.length === 0) return;
-    const idx = sectionAt(sections, currentTime);
-    const target = Math.min(sections.length - 1, idx + 1);
-    seekAndPlay(sections[target].startSec);
-  }, [sections, currentTime, seekAndPlay]);
+    if (resolvedSections.length === 0) return;
+    const idx = sectionAt(resolvedSections, currentTime);
+    const target = Math.min(resolvedSections.length - 1, idx + 1);
+    seekAndPlay(resolvedSections[target].startSec);
+  }, [resolvedSections, currentTime, seekAndPlay]);
 
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
@@ -168,6 +193,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
   // playback back to the touch-start point on mobile.)
   const scrubbingRef = useRef(false);
 
+  // X of the gesture start — used to tell taps (snap to section header)
+  // apart from drags (continuous precision scrub).
+  const downXRef = useRef<number | null>(null);
+
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     // Ignore emulated extra buttons; primary button / touch contact only.
     if (e.pointerType === "mouse" && e.button !== 0) return;
@@ -178,6 +207,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
     } catch {
       /* already released — non-fatal */
     }
+    downXRef.current = e.clientX;
     scrubbingRef.current = true;
     setScrubbing(true);
     seek(t);
@@ -201,9 +231,23 @@ export function ListenToArticle({ slug }: { slug: string }) {
         /* already released — non-fatal */
       }
     }
+    const downX = downXRef.current;
+    downXRef.current = null;
     scrubbingRef.current = false;
     setScrubbing(false);
     setHoverTime(null);
+    // Tap (not drag) on the timeline snaps to the enclosing section's
+    // header so playback starts on the H2/H3 instead of mid-paragraph.
+    // Drags keep their continuous position for precision.
+    if (e && e.type === "pointerup" && downX !== null && resolvedSections.length > 0) {
+      if (Math.abs(e.clientX - downX) <= TAP_SLOP) {
+        const t = getTimeFromPointer(e.clientX);
+        if (t !== null) {
+          const idx = sectionAt(resolvedSections, t);
+          seek(resolvedSections[idx].startSec);
+        }
+      }
+    }
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -226,10 +270,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const fraction = duration > 0 ? Math.min(Math.max(currentTime / duration, 0), 1) : 0;
   const speed = SPEEDS[speedIdx];
-  const sectionIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
+  const sectionIdx = resolvedSections.length > 0 ? sectionAt(resolvedSections, currentTime) : -1;
 
   const tipTime = scrubbing ? currentTime : hoverTime;
-  const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
+  const tipSection = tipTime !== null && resolvedSections.length > 0 ? resolvedSections[sectionAt(resolvedSections, tipTime)].title : null;
 
   return (
     <div
@@ -254,7 +298,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={prevSection}
-            disabled={sections.length === 0}
+            disabled={resolvedSections.length === 0}
             className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
             aria-label="Previous section"
             title="Previous section"
@@ -273,7 +317,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={nextSection}
-            disabled={sections.length === 0}
+            disabled={resolvedSections.length === 0}
             className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
             aria-label="Next section"
             title="Next section"
@@ -313,11 +357,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
         >
           <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
-            {sections.slice(1).map((s, i) => (
+            {resolvedSections.slice(1).map((s, i) => (
               <span
                 key={i}
                 className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[3px] h-3 rounded-full bg-primary/40 pointer-events-none"
-                style={{ left: `${(s.startSec / duration) * 100}%` }}
+                style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
                 aria-hidden="true"
               />
             ))}
@@ -339,14 +383,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
         </div>
         <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-0.5">
           <span className="min-w-0 truncate">
-            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {sections[sectionIdx].title}</span> : <span>&nbsp;</span>}
+            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {resolvedSections[sectionIdx].title}</span> : <span>&nbsp;</span>}
           </span>
           <span className="tabular-nums flex-shrink-0">
             {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
           </span>
         </div>
 
-        {sections.length > 0 && (
+        {resolvedSections.length > 0 && (
           <div className="mt-2 border-t border-primary/10 pt-1">
             <button
               type="button"
@@ -355,15 +399,15 @@ export function ListenToArticle({ slug }: { slug: string }) {
               className="flex w-full items-center gap-2 rounded-lg px-2 min-h-[44px] py-2 text-left text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
             >
               <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-              <span className="flex-shrink-0">Chapters · {sections.length}</span>
+              <span className="flex-shrink-0">Chapters · {resolvedSections.length}</span>
               <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
-                {sectionIdx >= 0 ? sections[sectionIdx].title : ""}
+                {sectionIdx >= 0 ? resolvedSections[sectionIdx].title : ""}
               </span>
               <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {showChapters && (
               <ol className="mt-1 space-y-0.5">
-                {sections.map((s, i) => {
+                {resolvedSections.map((s, i) => {
                   const active = i === sectionIdx;
                   return (
                     <li key={i}>
