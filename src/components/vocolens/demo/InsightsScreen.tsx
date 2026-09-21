@@ -49,7 +49,7 @@ export function InsightsScreen({ isActive }: Props) {
         if (p < 1) raf = requestAnimationFrame(step);
       };
       raf = requestAnimationFrame(step);
-    }, 450);
+    }, 950);
     container.addEventListener('wheel', cancel, { passive: true });
     container.addEventListener('touchmove', cancel, { passive: true });
     return () => {
