@@ -96,7 +96,7 @@ export function EmotionDetection() {
             <div className="grid sm:grid-cols-2 gap-6">
               {whyItMatters.map((item, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                  <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                     {item.icon}
                   </div>
                   <div>
