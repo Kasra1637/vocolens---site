@@ -52,7 +52,7 @@ export function EmotionDetection() {
                   <Mic className="w-6 h-6" />
                </div>
                <h4 className="text-center font-bold text-xl mb-4">1. You Speak Freely</h4>
-               <div className="bg-gray-50/80 rounded-2xl p-5 text-center text-text-secondary italic border border-gray-100 shadow-inner text-base leading-relaxed">
+               <div className="bg-primary/[0.04] rounded-2xl p-5 text-center text-text-secondary italic border border-primary/10 text-base leading-relaxed">
                  "I'm excited about the promotion, but terrified of failing."
                </div>
             </div>
@@ -80,8 +80,8 @@ export function EmotionDetection() {
                </div>
                <h4 className="text-center font-bold text-xl mb-4 relative z-10">3. You Define the Truth</h4>
                <div className="bg-white rounded-2xl p-5 text-center shadow-sm border border-primary/10 relative z-10">
-                  <span className="block text-xs uppercase tracking-widest text-[#9b87f5]/70 font-bold mb-2">Refined by you</span>
-                  <span className="text-xl font-extrabold text-[#9b87f5]">"Cautiously Optimistic"</span>
+                  <span className="block text-xs uppercase tracking-widest text-primary/70 font-bold mb-2">Refined by you</span>
+                  <span className="text-xl font-extrabold text-primary">"Cautiously Optimistic"</span>
                </div>
             </div>
           </div>

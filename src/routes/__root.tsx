@@ -17,7 +17,7 @@ function NotFoundComponent() {
       <Header />
       <div className="flex min-h-screen items-center justify-center px-4">
         <div className="max-w-md text-center">
-          <h1 className="text-7xl font-bold text-primary">404</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary">404</h1>
           <h2 className="mt-4 text-xl font-semibold text-text-primary">Page not found</h2>
           <p className="mt-2 text-sm text-text-muted">
             The page you're looking for doesn't exist or has been moved.
@@ -25,7 +25,7 @@ function NotFoundComponent() {
           <div className="mt-6">
             <Link
               to="/"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-primary px-5 py-2 text-sm font-semibold text-white shadow-md shadow-primary/20 hover:shadow-lg transition-all"
+              className="inline-flex items-center justify-center rounded-full bg-primary/15 border-2 border-primary/60 px-5 py-2 text-sm font-semibold text-[#6A3FC0] btn-app-glow transition-all"
             >
               Go home
             </Link>
@@ -42,22 +42,22 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-surface px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-text-primary">
-          This page didn't load
-        </h1>
+          <h2 className="text-xl font-semibold tracking-tight text-text-primary">
+            This page didn't load
+          </h2>
         <p className="mt-2 text-sm text-text-muted">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-primary px-5 py-2 text-sm font-semibold text-white"
+              className="inline-flex items-center justify-center rounded-full bg-primary/15 border-2 border-primary/60 px-5 py-2 text-sm font-semibold text-[#6A3FC0] btn-app-glow"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-primary/20 bg-white px-5 py-2 text-sm font-medium text-text-primary hover:bg-primary/5"
+              className="inline-flex items-center justify-center rounded-full card-app px-5 py-2 text-sm font-medium text-text-primary hover:bg-primary/5"
           >
             Go home
           </a>

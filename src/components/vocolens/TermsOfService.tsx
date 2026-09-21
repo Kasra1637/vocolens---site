@@ -6,10 +6,10 @@ export function TermsOfService() {
     <section className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <AnimatedSection animation="fade-in-up">
         <div className="text-center mb-12">
-          <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
-            <FileText className="w-10 h-10 text-[#9b87f5]" />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
+            <FileText className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
             Terms of Service
           </h1>
           <div className="space-y-2 text-text-muted text-base">
@@ -20,7 +20,7 @@ export function TermsOfService() {
         </div>
       </AnimatedSection>
 
-      <div className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 space-y-12">
+      <div className="card-app rounded-3xl p-8 lg:p-12 space-y-12">
         <AnimatedSection animation="fade-in-up" delay={0.1}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Acceptance of Terms</h2>
@@ -71,8 +71,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.3}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <CreditCard className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <CreditCard className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -142,8 +142,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.5}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <AlertCircle className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <AlertCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -180,8 +180,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Lock className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Lock className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -217,8 +217,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.7}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Globe className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Globe className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -256,8 +256,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.8}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Activity className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -274,8 +274,8 @@ export function TermsOfService() {
         <AnimatedSection animation="fade-in-up" delay={0.9}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Trash2 className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Trash2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">

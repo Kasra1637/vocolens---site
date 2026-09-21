@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight } from '@phosphor-icons/react';
+import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -61,25 +61,25 @@ function Home() {
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                  <Lock className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Private by design</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                  <Clock className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Just speak - no typing</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
+                  <Sparkle className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
-                  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
+                  <Crosshair className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>
               </div>
@@ -94,7 +94,7 @@ function Home() {
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <AnimatedSection animation="fade-in-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
             Real stories, real impact
           </h2>
         </AnimatedSection>
@@ -339,58 +339,6 @@ function Home() {
             <p className="text-text-muted text-base leading-relaxed">
               AI voice journaling for ADHD, autism & alexithymia
             </p>
-          </div>
-
-          <div className="hidden">
-            <a
-              href="https://www.instagram.com/vocolensapp/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Vocolens on Instagram"
-              className="group w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white shadow-clay border border-primary/10 flex items-center justify-center hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-text-muted group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a
-              href="https://www.youtube.com/@vocolens"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Vocolens on YouTube"
-              className="group w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white shadow-clay border border-primary/10 flex items-center justify-center hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-text-muted group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/vocolens/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Vocolens on LinkedIn"
-              className="group w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white shadow-clay border border-primary/10 flex items-center justify-center hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-text-muted group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
-            <a
-              href="https://www.tiktok.com/@vocolensapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Vocolens on TikTok"
-              className="group w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white shadow-clay border border-primary/10 flex items-center justify-center hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-text-muted group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-              </svg>
-            </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">

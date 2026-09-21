@@ -67,7 +67,7 @@ export function EmotionScienceSuite() {
             {plutchikEmotions.map(({ name, icon: Icon, color, ladder }) => (
               <article
                 key={name}
-                className="rounded-2xl p-4 border border-primary/10 bg-gradient-to-br from-white to-primary/[0.02] hover:-translate-y-0.5 transition-transform duration-300"
+                className="rounded-2xl p-4 border border-primary/10 bg-white hover:-translate-y-0.5 transition-transform duration-300"
               >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${color}1A` }}>
@@ -152,7 +152,7 @@ export function EmotionScienceSuite() {
               </p>
               <ul className="space-y-3">
                 {distressLevels.map(({ level, color, response }) => (
-                  <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-gradient-to-r from-white to-primary/[0.02]">
+                  <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-white">
                     <span className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0" style={{ background: color }} />
                     <div>
                       <p className="font-bold text-text-primary text-lg">{level} distress</p>

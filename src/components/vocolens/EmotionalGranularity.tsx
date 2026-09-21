@@ -1,6 +1,6 @@
 import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
-import { Heart, ArrowUpRight, Clock, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
+import { Heart, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { BackToTop } from './BackToTop';
@@ -135,11 +135,11 @@ export function EmotionalGranularity() {
 
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-              <Heart className="w-6 h-6 text-primary" />
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
+              <Heart className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider block" itemProp="articleSection">
+              <span className="text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
                 Neuroscience &amp; Emotional Intelligence
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -156,7 +156,7 @@ export function EmotionalGranularity() {
           >
             Emotional Granularity: Why Specific Words Change What You Feel
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-lg leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base lg:text-lg leading-relaxed">
             Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -167,8 +167,8 @@ export function EmotionalGranularity() {
       </AnimatedSection>
 
       <ListenToArticle slug="emotional-granularity" />
-<div data-speakable="key-takeaways" className="bg-primary/5 border border-primary/15 rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-wide text-base leading-relaxed">Key takeaways</p>
+<div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
+            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -315,8 +315,8 @@ export function EmotionalGranularity() {
         <AnimatedSection animation="fade-in-up" delay={0.52}>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <HelpCircle className="w-5 h-5 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
                 Frequently asked questions about emotional granularity and voice journaling
@@ -326,7 +326,7 @@ export function EmotionalGranularity() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group bg-white border border-primary/10 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  className="group card-app rounded-xl overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -347,11 +347,11 @@ export function EmotionalGranularity() {
             <div className="space-y-4">
               <Link
                 to="/resources/alexithymia-emotional-vocabulary"
-                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
+                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       Why you can't name what you're feeling: alexithymia and the emotional vocabulary you were never taught
                     </h4>
@@ -362,11 +362,11 @@ export function EmotionalGranularity() {
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
+                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
@@ -377,11 +377,11 @@ export function EmotionalGranularity() {
               </Link>
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 rounded-xl border border-primary/15 bg-primary/3 hover:bg-primary/5 hover:border-primary/25 transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-wider mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
+                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
@@ -396,7 +396,7 @@ export function EmotionalGranularity() {
 
       </div>
 <AnimatedSection animation="fade-in-up" delay={0.6}>
-        <div data-listen-exclude className="bg-gradient-to-br from-primary/8 to-primary/3 border border-primary/15 rounded-2xl p-6 lg:p-8">
+        <div data-listen-exclude className="card-app rounded-3xl p-8 lg:p-12 text-center">
           <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
             Find the exact word
           </h2>
@@ -407,10 +407,10 @@ export function EmotionalGranularity() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-colors shadow-md shadow-primary/20"
+              className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
             >
               Get it on Google Play
-              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+              <CaretRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <Link
               to="/resources"

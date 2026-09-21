@@ -6,10 +6,10 @@ export function PrivacyPolicy() {
     <section className="max-w-5xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <AnimatedSection animation="fade-in-up">
         <div className="text-center mb-12">
-          <div className="w-20 h-20 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
-            <Shield className="w-10 h-10 text-[#9b87f5]" />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
+            <Shield className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-2">
             Privacy Policy
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
@@ -19,9 +19,9 @@ export function PrivacyPolicy() {
         </div>
       </AnimatedSection>
 
-      <div className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 space-y-12">
+      <div className="card-app rounded-3xl p-8 lg:p-12 space-y-12">
         <AnimatedSection animation="fade-in-up" delay={0.1}>
-          <div className="bg-gradient-to-br from-primary/10 to-transparent rounded-2xl p-6 border border-primary/20">
+          <div className="card-app rounded-2xl p-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Our Core Commitment</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               Vocolens is built on a simple principle: your personal reflections belong to you. We designed the app so your journal entries are stored only on your device. We do not operate user accounts, we do not store your journal data on our servers, and we do not sell or share your information with advertisers.
@@ -35,8 +35,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.2}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Smartphone className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Smartphone className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -88,8 +88,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.3}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Users className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Users className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -100,7 +100,7 @@ export function PrivacyPolicy() {
                 </p>
 
                 <div className="space-y-4">
-                  <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
+                  <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h4 className="font-bold text-text-primary mb-2 text-lg">1. Deepgram (Speech-to-Text)</h4>
@@ -126,7 +126,7 @@ export function PrivacyPolicy() {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
+                  <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h4 className="font-bold text-text-primary mb-2 text-lg">2. OpenAI GPT-5.4 Mini (Emotional Analysis) via OpenRouter</h4>
@@ -164,8 +164,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.4}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Lock className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Lock className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -210,8 +210,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.45}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Activity className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -228,8 +228,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.5}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Bell className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Bell className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -265,8 +265,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.55}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Database className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Database className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -289,8 +289,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.6}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Eye className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Eye className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -334,8 +334,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.7}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Shield className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Shield className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -379,8 +379,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.8}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <FileText className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <FileText className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -433,8 +433,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={0.9}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <Users className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <Users className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -454,8 +454,8 @@ export function PrivacyPolicy() {
         <AnimatedSection animation="fade-in-up" delay={1.0}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-clay">
-                <AlertCircle className="w-6 h-6 text-[#9b87f5]" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                <AlertCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -473,7 +473,7 @@ export function PrivacyPolicy() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-in-up" delay={1.1}>
-          <div className="bg-gradient-to-br from-primary/10 to-transparent rounded-2xl p-6 border border-primary/20">
+          <div className="card-app rounded-2xl p-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Contact Us</h2>
             <p className="text-text-secondary mb-3 text-base leading-relaxed">
               If you have questions about this Privacy Policy or how your data is handled, please contact us at:
