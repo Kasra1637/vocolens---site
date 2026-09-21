@@ -6,32 +6,32 @@ const features = [
   {
     icon: Smartphone,
     title: 'Lives on your device',
-    description: 'Your entries, audio, stats, and preferences are stored locally — there is no cloud account or synced journal, so your reflections are never sitting on a server waiting to be breached.',
+    description: 'Entries, audio, stats, and preferences stay on your phone. No cloud account or journal sync — nothing on a server to breach.',
   },
   {
     icon: Lock,
     title: 'Biometric lock',
-    description: 'Your journal is protected by biometrics the moment you enable them. A secure PIN acts as your backup — so your entries stay private no matter what.',
+    description: 'Unlock with Face ID, fingerprint, or a secure PIN backup. Your journal stays private from the moment you enable protection.',
   },
   {
     icon: Shield,
     title: 'Encrypted in transit',
-    description: 'All network calls use HTTPS / TLS. Audio and transcripts are sent transiently for transcription and emotion analysis, and are not permanently stored by either service.',
+    description: 'Audio and transcripts travel over encrypted HTTPS for transcription and emotion analysis, then disappear. Nothing is stored.',
   },
   {
     icon: Eye,
     title: 'No ads, no selling data',
-    description: 'No advertising SDKs, no ad IDs, no location tracking, and we never sell or share your data. No analytics or usage tracking is active in the app.',
+    description: 'No advertising SDKs, ad identifiers, location tracking, or analytics. Your data is never sold or shared with anyone, ever.',
   },
   {
     icon: Database,
     title: 'No account database',
-    description: 'Vocolens runs no centralised user store. There is nothing on our servers to breach.',
+    description: 'Vocolens runs no central user store and no accounts. There is simply nothing on our servers for anyone to breach — ever.',
   },
   {
     icon: Trash2,
     title: 'Full data control',
-    description: 'Full control means your data answers to you. Because there is no account and no central database, deleting happens where your journal lives: on your device. Remove a single entry — words, audio, and its analysis together — export your entire history as JSON for your own records, or wipe the application entirely; every option sits inside Settings and takes effect immediately. Nothing lingers on a server afterwards, since there is no server copy to chase: transcription and emotion analysis run transiently over encrypted HTTPS and retain nothing. No recovery queues, no hidden backups, no support tickets, no waiting periods. Change your mind later and journaling simply starts fresh, with the same guarantees as day one. Face ID or fingerprint keeps the door locked.',
+    description: 'Export everything as JSON, delete single entries, or wipe the app entirely from Settings. Your data answers only to you.',
   },
 ];
 
