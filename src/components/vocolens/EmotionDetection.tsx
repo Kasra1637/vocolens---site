@@ -107,7 +107,7 @@ export function EmotionDetection() {
             </div>
           </div>
           
-           <div className="lg:col-span-2 bg-white rounded-3xl p-8 border border-[#9b87f5]/20 flex flex-col justify-center">
+           <div className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-[#9b87f5]/20 flex flex-col justify-center">
               <div className="relative flex items-center justify-center mb-6" style={{ width: 44, height: 44 }}>
                  <div className="absolute rounded-full demo-mic-pulse" style={{ width: 44, height: 44, border: '1.5px solid rgba(147,139,250,0.35)' }} aria-hidden="true" />
                  <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center relative shadow-clay">

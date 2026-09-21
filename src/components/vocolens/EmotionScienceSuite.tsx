@@ -63,7 +63,7 @@ export function EmotionScienceSuite() {
             </p>
           </div>
 
-          <AnimatedGrid className="grid grid-cols-2 sm:grid-cols-4 gap-3" animation="fade-in-up" staggerDelay={0.04}>
+          <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" animation="fade-in-up" staggerDelay={0.04}>
             {plutchikEmotions.map(({ name, icon: Icon, color, ladder }) => (
               <article
                 key={name}
@@ -229,15 +229,15 @@ export function EmotionScienceSuite() {
                   </p>
                   <ul className="divide-y divide-primary/10">
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span>Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
+                      <span className="min-w-0">Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
                       <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Tue</span>
                     </li>
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span>Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
+                      <span className="min-w-0">Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
                       <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Mon</span>
                     </li>
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span>Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
+                      <span className="min-w-0">Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
                       <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Sun</span>
                     </li>
                   </ul>

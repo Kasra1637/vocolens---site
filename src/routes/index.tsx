@@ -44,9 +44,9 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-surface">
-      <section id="home" className="relative max-w-7xl mx-auto px-6 pt-32 pb-12 lg:pt-40 lg:pb-16">
+      <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.08) 0%, transparent 70%)' }} aria-hidden="true" />
-        <div className="grid lg:grid-cols-2 gap-0 items-center relative">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
               <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#1e293b' }}>
@@ -263,7 +263,7 @@ function Home() {
           </p>
         </AnimatedSection>
 
-        <AnimatedGrid className="grid grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto" animation="fade-in-up" staggerDelay={0.08}>
+        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto" animation="fade-in-up" staggerDelay={0.08}>
           {[
             { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
             { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
@@ -283,7 +283,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-10 py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-8 py-4 sm:px-10 sm:py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 13 features
             <CaretRight className="w-6 h-6" />
@@ -310,7 +310,7 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-12 py-6 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-8 py-4 sm:px-12 sm:py-6 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
@@ -344,28 +344,28 @@ function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
             <Link
               to="/terms"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
+              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
             >
               Terms of Service
             </Link>
             <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/privacy"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
+              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
             >
               Privacy Policy
             </Link>
             <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/resources"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
+              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
             >
               Resources
             </Link>
             <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/use-cases"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
+              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
             >
               Use Cases
             </Link>

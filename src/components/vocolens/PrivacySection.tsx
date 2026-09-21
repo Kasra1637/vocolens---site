@@ -78,7 +78,7 @@ export function PrivacySection() {
         </AnimatedGrid>
 
         <AnimatedSection animation="fade-in-up" delay={0.3}>
-          <div className="border border-white/10 rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/[0.04]">
+          <div className="border border-white/10 rounded-2xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/[0.04]">
             <p className="text-white/70 text-center sm:text-left text-base leading-relaxed">
               <span className="text-white font-semibold">"Your personal reflections belong to you."</span>
               {' '}— Vocolens Privacy Policy

@@ -64,12 +64,17 @@ export function AppDemo() {
             aria-selected={activeScreen === index}
             onClick={() => goToScreen(index)}
             aria-label={`Go to step ${index + 1}`}
-            className={`h-2 rounded-full transition-all duration-500 ${
-              activeScreen === index
-                ? 'w-8 bg-primary'
-                : 'w-2 bg-primary/20 hover:bg-primary/40'
-            }`}
-          />
+            className="min-h-[28px] min-w-[28px] flex items-center justify-center"
+          >
+            <span
+              aria-hidden="true"
+              className={`h-2 rounded-full transition-all duration-500 ${
+                activeScreen === index
+                  ? 'w-8 bg-primary'
+                  : 'w-2 bg-primary/20 hover:bg-primary/40'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
