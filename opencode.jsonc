@@ -1,0 +1,13 @@
+{
+  // Cross-repo session config: this session lives in vocolens---site and
+  // also sees the Vocolens mobile app. Rules: read both freely; commit and
+  // push each repo separately (never mixed); show git status/diff per folder
+  // before committing; never force-push; never commit secrets.
+  "references": {
+    "vocolens-app": { "path": "../Vocolens-app" }
+  },
+  "permission": {
+    "external_directory": { "../Vocolens-app/**": "allow" },
+    "bash": { "git *": "allow" }
+  }
+}
