@@ -43,14 +43,13 @@ export function EmotionDetection() {
       <AnimatedSection animation="fade-in-up" delay={0.1} className="mb-20">
         <div className="relative">
           {/* Subtle connecting background element for desktop */}
-          <div className="hidden md:block absolute top-[5rem] left-[15%] right-[15%] h-1 bg-gradient-to-r from-transparent via-[#9b87f5]/20 to-transparent z-0 rounded-full"></div>
+          <div className="hidden md:block absolute top-[5rem] left-[15%] right-[15%] h-1 bg-gradient-to-r from-transparent via-primary/25 to-transparent z-0 rounded-full"></div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-10 relative z-10">
             {/* Step 1 */}
             <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
-               <div className="w-11 h-11 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
-                  <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
-                  <Mic className="w-5 h-5 relative z-10" />
+               <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
+                  <Mic className="w-6 h-6" />
                </div>
                <h4 className="text-center font-bold text-xl mb-4">1. You Speak Freely</h4>
                <div className="bg-gray-50/80 rounded-2xl p-5 text-center text-text-secondary italic border border-gray-100 shadow-inner text-base leading-relaxed">
@@ -60,9 +59,8 @@ export function EmotionDetection() {
 
             {/* Step 2 */}
             <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
-               <div className="w-11 h-11 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
-                  <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
-                  <Brain className="w-5 h-5 relative z-10" />
+               <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
+                  <Brain className="w-6 h-6" />
                </div>
                <h4 className="text-center font-bold text-xl mb-4">2. AI Sees Layers</h4>
                <div className="flex flex-col gap-3">
@@ -76,15 +74,14 @@ export function EmotionDetection() {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-gradient-to-b from-[#E9DFFE]/30 to-[#9b87f5]/10 rounded-3xl p-6 lg:p-8 shadow-clay-lg border-2 border-[#9b87f5]/20 hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
-               <div className="absolute -top-10 -right-10 w-32 h-32 bg-white rounded-full blur-2xl opacity-50"></div>
-               <div className="w-14 h-14 rounded-2xl bg-white shadow-md text-[#9b87f5] flex items-center justify-center mb-6 mx-auto relative z-10">
-                  <Sparkles className="w-7 h-7" />
+            <div className="card-app rounded-3xl p-6 lg:p-8 border-2 border-primary/40 btn-app-glow hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+               <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay relative z-10">
+                  <Sparkles className="w-6 h-6" />
                </div>
                <h4 className="text-center font-bold text-xl mb-4 relative z-10">3. You Define the Truth</h4>
                <div className="bg-white rounded-2xl p-5 text-center shadow-sm border border-primary/10 relative z-10">
-                 <span className="block text-xs uppercase tracking-widest text-[#9b87f5]/70 font-bold mb-2">Refined by you</span>
-                 <span className="text-xl font-extrabold text-[#9b87f5]">"Cautiously Optimistic"</span>
+                  <span className="block text-xs uppercase tracking-widest text-[#9b87f5]/70 font-bold mb-2">Refined by you</span>
+                  <span className="text-xl font-extrabold text-[#9b87f5]">"Cautiously Optimistic"</span>
                </div>
             </div>
           </div>
@@ -99,7 +96,7 @@ export function EmotionDetection() {
             <div className="grid sm:grid-cols-2 gap-6">
               {whyItMatters.map((item, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                  <div className="w-12 h-12 rounded-2xl chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                     {item.icon}
                   </div>
                   <div>
@@ -110,7 +107,7 @@ export function EmotionDetection() {
             </div>
           </div>
           
-           <div className="lg:col-span-2 bg-gradient-to-br from-[#E9DFFE]/40 to-transparent rounded-3xl p-8 border border-[#9b87f5]/20 flex flex-col justify-center">
+           <div className="lg:col-span-2 bg-white rounded-3xl p-8 border border-[#9b87f5]/20 flex flex-col justify-center">
               <div className="relative flex items-center justify-center mb-6" style={{ width: 44, height: 44 }}>
                  <div className="absolute rounded-full demo-mic-pulse" style={{ width: 44, height: 44, border: '1.5px solid rgba(147,139,250,0.35)' }} aria-hidden="true" />
                  <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center relative shadow-clay">
