@@ -109,7 +109,7 @@ export function EmotionScienceSuite() {
                 Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
               </p>
 
-              <div className="relative aspect-[5/4] sm:aspect-[21/9] lg:aspect-[5/3] rounded-2xl bg-gradient-to-br from-amber-50 via-white to-blue-50 border border-primary/10 overflow-hidden">
+              <div className="relative aspect-[5/4] sm:aspect-[21/9] lg:aspect-[5/3] rounded-2xl bg-surface border border-primary/10 overflow-hidden">
                 {/* axes */}
                 <div className="absolute inset-y-6 left-1/2 w-px bg-primary/15" />
                 <div className="absolute inset-x-6 top-1/2 h-px bg-primary/15" />
