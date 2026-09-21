@@ -60,25 +60,25 @@ function Home() {
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Private by design</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Just speak - no typing</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
-                <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+                <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>

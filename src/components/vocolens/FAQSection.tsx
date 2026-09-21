@@ -52,8 +52,8 @@ export function FAQSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <AnimatedSection animation="fade-in-up" className="text-center mb-12">
-        <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
-          <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />
+        <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
+          <MessageCircleQuestion className="w-5 h-5 text-[#6A3FC0]" />
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Frequently asked questions
