@@ -162,10 +162,23 @@ export function ListenToArticle({ slug }: { slug: string }) {
     return ratio * duration;
   }, [duration]);
 
+  // Single unified scrub path for mouse, touch, and pen. (A separate mouse
+  // fallback was removed: on touch devices the browser replays emulated
+  // mouse events after every gesture, which double-seeked and yanked
+  // playback back to the touch-start point on mobile.)
+  const scrubbingRef = useRef(false);
+
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Ignore emulated extra buttons; primary button / touch contact only.
+    if (e.pointerType === "mouse" && e.button !== 0) return;
     const t = getTimeFromPointer(e.clientX);
     if (t === null) return;
-    e.currentTarget.setPointerCapture(e.pointerId);
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      /* already released — non-fatal */
+    }
+    scrubbingRef.current = true;
     setScrubbing(true);
     seek(t);
   };
@@ -173,35 +186,24 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const t = getTimeFromPointer(e.clientX);
     if (t === null) return;
-    if (scrubbing) {
+    if (scrubbingRef.current) {
       seek(t);
     } else if (e.pointerType === "mouse") {
       setHoverTime(t);
     }
   };
 
-  const endScrub = () => {
+  const endScrub = (e?: React.PointerEvent<HTMLDivElement>) => {
+    if (e && e.currentTarget.hasPointerCapture?.(e.pointerId)) {
+      try {
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      } catch {
+        /* already released — non-fatal */
+      }
+    }
+    scrubbingRef.current = false;
     setScrubbing(false);
     setHoverTime(null);
-  };
-
-  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    const t = getTimeFromPointer(e.clientX);
-    if (t === null) return;
-    seek(t);
-    setScrubbing(true);
-
-    const onMove = (ev: MouseEvent) => {
-      const tt = getTimeFromPointer(ev.clientX);
-      if (tt !== null) seek(tt);
-    };
-    const onUp = () => {
-      setScrubbing(false);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseup", onUp);
-    };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -304,8 +306,8 @@ export function ListenToArticle({ slug }: { slug: string }) {
           onPointerMove={onPointerMove}
           onPointerUp={endScrub}
           onPointerCancel={endScrub}
-          onPointerLeave={() => { if (!scrubbing) setHoverTime(null); }}
-          onMouseDown={onMouseDown}
+          onLostPointerCapture={endScrub}
+          onPointerLeave={() => { if (!scrubbingRef.current) setHoverTime(null); }}
           onKeyDown={onKeyDown}
           className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
