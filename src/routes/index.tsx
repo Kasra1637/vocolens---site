@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, ArrowRight } from '@phosphor-icons/react';
+import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight } from '@phosphor-icons/react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -58,26 +58,26 @@ function Home() {
               Put a name to the emotions your mind overlooks - just speak, and let the words you say do the rest.
             </p>
             <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
+                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><rect x="2" y="6" width="10" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.2"/><path d="M4.5 6V4.5a2.5 2.5 0 015 0V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Private by design</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
+                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Just speak - no typing</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
+                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><path d="M7 1.5l1.5 3 3.5.5-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5L7 1.5z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Neurodivergent-friendly</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full shadow-sm border border-primary/10">
-                <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
+                <div className="w-6 h-6 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 text-primary"><circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.2"/><circle cx="7" cy="7" r="2" stroke="currentColor" strokeWidth="1.2"/><path d="M7 2v1M7 11v1M2 7h1M11 7h1" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/></svg>
                 </div>
                 <span className="text-sm text-text-primary font-medium whitespace-nowrap">Granular emotion mapping</span>
@@ -102,7 +102,7 @@ function Home() {
           animation="fade-in-up"
           staggerDelay={0.15}
         >
-          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -120,7 +120,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -138,7 +138,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-clay p-8 border border-primary/10 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -179,9 +179,9 @@ function Home() {
           animation="fade-in-up"
           staggerDelay={0.15}
         >
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+          <div className="card-app rounded-[28px] p-8 hover-lift">
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Frown className="w-8 h-8 text-[#9b87f5]" />
               </div>
               <h3 className="font-bold mb-3 text-xl">The problem</h3>
@@ -191,9 +191,9 @@ function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+          <div className="card-app rounded-[28px] p-8 hover-lift">
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <MessageSquare className="w-8 h-8 text-[#9b87f5]" />
               </div>
               <h3 className="font-bold mb-3 text-xl">Daily struggle</h3>
@@ -203,9 +203,9 @@ function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-[28px] p-8 shadow-clay border border-primary/10 hover-lift">
+          <div className="card-app rounded-[28px] p-8 hover-lift">
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
                 <Lightbulb className="w-8 h-8 text-[#9b87f5]" />
               </div>
               <h3 className="font-bold mb-3 text-xl">The breakthrough</h3>
@@ -222,6 +222,7 @@ function Home() {
       <section id="features-preview" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
@@ -239,8 +240,8 @@ function Home() {
             { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
             { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
           ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="bg-white rounded-2xl p-5 border border-primary/10 shadow-clay-sm hover-lift">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+            <div key={label} className="card-app rounded-2xl p-5 hover-lift">
+              <div className="w-10 h-10 rounded-xl chip-app flex items-center justify-center mb-3">
                 <Icon className="w-5 h-5 text-primary" />
               </div>
               <p className="font-bold text-text-primary mb-1">{label}</p>
@@ -252,10 +253,10 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-10 py-5 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-10 py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 13 features
-            <ArrowRight className="w-6 h-6" />
+            <CaretRight className="w-6 h-6" />
           </Link>
           <p className="text-text-muted text-base mt-5">
             Curious how it fits your mind specifically?{' '}
@@ -269,7 +270,7 @@ function Home() {
       <EmotionScienceSuite />
 
       <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
-        <AnimatedSection animation="fade-in-up" className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center">
+        <AnimatedSection animation="fade-in-up" className="card-app rounded-3xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Understand yourself, one conversation at a time.
           </h2>
@@ -279,9 +280,10 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-gradient-primary text-white px-12 py-6 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-12 py-6 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
+            <CaretRight className="w-6 h-6" />
           </a>
         </AnimatedSection>
       </section>

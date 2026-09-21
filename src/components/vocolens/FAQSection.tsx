@@ -52,7 +52,7 @@ export function FAQSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <AnimatedSection animation="fade-in-up" className="text-center mb-12">
-        <div className="w-16 h-16 rounded-full bg-[#E9DFFE] flex items-center justify-center mx-auto mb-6 shadow-clay">
+        <div className="w-16 h-16 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-8 h-8 text-[#9b87f5]" />
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
@@ -76,7 +76,7 @@ export function FAQSection() {
                   aria-expanded={isOpen}
                 >
                   <span className="font-bold text-text-primary text-lg pr-4">{faq.q}</span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'bg-[#E9DFFE] text-[#9b87f5]' : 'bg-gray-50 text-text-muted'}`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'chip-app text-[#6A3FC0]' : 'bg-gray-50 text-text-muted'}`}>
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                   </div>
                 </button>

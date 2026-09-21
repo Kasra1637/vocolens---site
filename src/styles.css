@@ -46,8 +46,8 @@
 :root {
   --radius: 0.625rem;
 
-  /* Vocolens brand */
-  --primary: #8E6BFF;
+  /* Vocolens brand — hue family aligned with the mobile app (primary #9370DB) */
+  --primary: #9370DB;
   --primary-foreground: #ffffff;
   --primary-light: #A88AFF;
   --primary-dark: #7B5FE8;
@@ -73,7 +73,7 @@
   --destructive-foreground: #ffffff;
   --border: rgba(142, 107, 255, 0.12);
   --input: rgba(142, 107, 255, 0.12);
-  --ring: #8E6BFF;
+  --ring: #9370DB;
 }
 
 @layer base {
@@ -116,7 +116,22 @@
   .font-comfortaa { font-family: 'Fraunces', serif; }
 
   .bg-gradient-primary {
-    background-image: linear-gradient(135deg, #7B5FE8 0%, #A88AFF 100%);
+    background-image: linear-gradient(135deg, #9370DB 0%, #6A3FC0 100%);
+  }
+
+  /* App-aligned glass surfaces (mobile app's Midnight Glow card language,
+   * adapted for the light site): lavender-tinted fill, primary border,
+   * single soft primary shadow instead of the clay treatment. */
+  .card-app {
+    background: linear-gradient(180deg, #FBF9FF 0%, #F5F0FF 100%);
+    border: 1.5px solid rgba(155, 135, 245, 0.25);
+    box-shadow: 0 8px 24px rgba(147, 112, 219, 0.15);
+  }
+  .chip-app {
+    background: linear-gradient(135deg, rgba(147, 112, 219, 0.28) 0%, rgba(147, 112, 219, 0.08) 100%);
+  }
+  .btn-app-glow {
+    box-shadow: 0 6px 14px rgba(147, 112, 219, 0.35);
   }
   .bg-gradient-soft {
     background-image: linear-gradient(135deg, #A88AFF 0%, #BEA3FF 100%);
@@ -243,6 +258,8 @@
 .demo-phone-float { animation: demo-float 5s ease-in-out infinite; }
 
 @keyframes demo-mic-pulse { 0% { transform: scale(1); opacity: 0.4;} 100% { transform: scale(2); opacity: 0;} }
+@keyframes app-glow-breathe { 0%,100% { opacity: 0.55; transform: scale(1);} 50% { opacity: 0.9; transform: scale(1.04);} }
+.animate-app-glow { animation: app-glow-breathe 2.2s ease-in-out infinite; }
 .demo-mic-pulse { animation: demo-mic-pulse 2s ease-out infinite; }
 .demo-mic-pulse-delayed { animation: demo-mic-pulse 2s ease-out infinite 0.7s; }
 
@@ -270,7 +287,7 @@
     animation: none; opacity: 1; transform: none; filter: none;
   }
   .hero-line-1, .hero-line-2, .hero-emphasis { -webkit-text-fill-color: #1e293b; }
-  .demo-phone-float, .demo-mic-pulse, .demo-mic-pulse-delayed,
+  .demo-phone-float, .demo-mic-pulse, .demo-mic-pulse-delayed, .animate-app-glow,
   .emotion-core-pulse, .emotion-ring-rotate, .emotion-ring-rotate-reverse,
   .emotion-node, .emotion-node-glow, .emotion-connection-line { animation: none; }
 }

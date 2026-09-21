@@ -48,8 +48,8 @@ export function EmotionDetection() {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-10 relative z-10">
             {/* Step 1 */}
-            <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-clay border border-primary/10 hover:-translate-y-1 transition-transform duration-300">
-               <div className="w-14 h-14 rounded-2xl bg-[#E9DFFE] text-[#9b87f5] flex items-center justify-center mb-6 mx-auto shadow-sm relative bg-white">
+            <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
+               <div className="w-14 h-14 rounded-2xl chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-sm relative">
                   <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
                   <Mic className="w-7 h-7 relative z-10" />
                </div>
@@ -60,8 +60,8 @@ export function EmotionDetection() {
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-clay border border-primary/10 hover:-translate-y-1 transition-transform duration-300">
-               <div className="w-14 h-14 rounded-2xl bg-[#E9DFFE] text-[#9b87f5] flex items-center justify-center mb-6 mx-auto shadow-sm relative bg-white">
+            <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
+               <div className="w-14 h-14 rounded-2xl chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-sm relative">
                   <div className="absolute inset-0 bg-[#E9DFFE] rounded-2xl opacity-50"></div>
                   <Brain className="w-7 h-7 relative z-10" />
                </div>
@@ -100,7 +100,7 @@ export function EmotionDetection() {
             <div className="grid sm:grid-cols-2 gap-6">
               {whyItMatters.map((item, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#E9DFFE] flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <div className="w-12 h-12 rounded-xl chip-app flex items-center justify-center flex-shrink-0 shadow-sm">
                     {item.icon}
                   </div>
                   <div>

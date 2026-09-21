@@ -52,7 +52,7 @@ export function EmotionScienceSuite() {
 
       {/* 8 Plutchik emotions */}
       <AnimatedSection animation="fade-in-up" delay={0.05} className="mb-10">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8">
+        <div className="card-app rounded-3xl p-6 sm:p-8">
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
             <div>
               <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
@@ -99,7 +99,7 @@ export function EmotionScienceSuite() {
         <div className="lg:col-span-3 flex flex-col gap-5">
           {/* Valence & Arousal */}
           <AnimatedSection animation="fade-in-up" delay={0.1}>
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8">
+            <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Brain className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
@@ -135,7 +135,7 @@ export function EmotionScienceSuite() {
 
           {/* Distress Detection */}
           <AnimatedSection animation="fade-in-up" delay={0.2}>
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8">
+            <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <HeartPulse className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
@@ -163,7 +163,7 @@ export function EmotionScienceSuite() {
         <div className="lg:col-span-2 flex flex-col gap-5">
           {/* Body Mapping */}
           <AnimatedSection animation="fade-in-up" delay={0.15}>
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8">
+            <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Activity className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
@@ -190,7 +190,7 @@ export function EmotionScienceSuite() {
 
           {/* Personalization AI */}
           <AnimatedSection animation="fade-in-up" delay={0.25}>
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-clay border border-primary/8">
+            <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>

@@ -53,7 +53,7 @@ export function AppDemo() {
             ))}
           </div>
         </div>
-        <div className="absolute -inset-12 bg-primary/10 rounded-full blur-3xl -z-10 pointer-events-none" />
+        <div className="absolute -inset-12 rounded-full blur-3xl -z-10 pointer-events-none animate-app-glow bg-[rgba(167,139,250,0.25)]" />
       </div>
 
       <div className="flex justify-center gap-3 mt-6">
