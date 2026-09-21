@@ -31,7 +31,7 @@ const features = [
   {
     icon: Trash2,
     title: 'Full data control',
-    description: 'Export everything as JSON, delete individual entries, or wipe the app entirely — all from Settings.',
+    description: 'Full control means your data answers to you. Because there is no account and no central database, deleting happens where your journal lives: on your device. Remove a single entry — words, audio, and its analysis together — export your entire history as JSON for your own records, or wipe the application entirely; every option sits inside Settings and takes effect immediately. Nothing lingers on a server afterwards, since there is no server copy to chase: transcription and emotion analysis run transiently over encrypted HTTPS and retain nothing. No recovery queues, no hidden backups, no support tickets, no waiting periods. Change your mind later and journaling simply starts fresh, with the same guarantees as day one. Face ID or fingerprint keeps the door locked.',
   },
 ];
 
