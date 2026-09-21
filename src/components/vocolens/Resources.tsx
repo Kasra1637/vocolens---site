@@ -1,4 +1,4 @@
-import { Brain, Clock, BookOpen, Target as Radar, Pulse as Activity, PuzzlePiece as Puzzle, Heart, ArrowClockwise as RefreshCw, Flame, Timer } from '@phosphor-icons/react';
+import { Brain, Clock, Target as Radar, Pulse as Activity, PuzzlePiece as Puzzle, Heart, ArrowClockwise as RefreshCw, Flame, Timer } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 
 export function Resources() {
@@ -31,8 +31,8 @@ export function Resources() {
 
       <div>
         <div className="text-center mb-6">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-            <BookOpen className="w-3.5 h-3.5" />
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Learning Hub
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-5 leading-tight">
@@ -63,15 +63,15 @@ export function Resources() {
           <Link
             to="/resources/emotional-granularity"
             aria-label="Read: Emotional Granularity: Why Specific Words Change What You Feel"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Heart className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Emotional Intelligence
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -81,7 +81,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Emotional Granularity: Why Specific Words Change What You Feel
                 </h2>
@@ -89,13 +89,13 @@ export function Resources() {
                   Anxious, stressed, overwhelmed — broad words can all be true and still be too vague to act on. Learn what emotional granularity is, why finer labels are linked to better regulation, and how voice journaling builds a personal emotional vocabulary.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Emotional Granularity · Affect Labeling · Voice Journaling
                   </span>
                 </div>
@@ -122,15 +122,15 @@ export function Resources() {
           <Link
             to="/resources/adhd-time-blindness"
             aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Timer className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Timer className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     ADHD &amp; Time Perception
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -140,7 +140,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
                 </h2>
@@ -148,13 +148,13 @@ export function Resources() {
                   ADHD time blindness isn't laziness — it's a measurable gap in how the brain tracks duration. Learn the science of interval timing, why alarms alone don't fix it, and how a daily voice-logged time-anchor habit recalibrates your internal clock.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     ADHD · Time Blindness · Interval Timing
                   </span>
                 </div>
@@ -181,15 +181,15 @@ export function Resources() {
           <Link
             to="/resources/burnout-recovery-signs"
             aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Flame className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Flame className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Stress &amp; Burnout Recovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -199,7 +199,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
                 </h2>
@@ -207,13 +207,13 @@ export function Resources() {
                   Burnout builds through unlogged accumulation, not a single bad week. Learn the science of allostatic load, why a vacation alone doesn't fix it, and how a daily voice-journaled load check catches burnout before it becomes collapse.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Burnout · Allostatic Load · Stress Recovery
                   </span>
                 </div>
@@ -240,15 +240,15 @@ export function Resources() {
           <Link
             to="/resources/overthinking-rumination"
             aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <RefreshCw className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <RefreshCw className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Anxiety &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -258,7 +258,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
                 </h2>
@@ -266,13 +266,13 @@ export function Resources() {
                   Overthinking isn't a willpower problem — it's what happens when your brain treats a thought as unfinished business. Learn the neuroscience of rumination, why "just stop thinking about it" backfires, and how voice journaling gives your brain the completion signal it's been missing.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Overthinking · Rumination · Worry Time
                   </span>
                 </div>
@@ -299,15 +299,15 @@ export function Resources() {
           <Link
             to="/resources/autism-emotional-regulation"
             aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Puzzle className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Puzzle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Autism &amp; Neurodivergent Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -317,7 +317,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions
                 </h2>
@@ -325,13 +325,13 @@ export function Resources() {
                   Autistic adults face unique emotional regulation challenges including alexithymia, sensory overload, and meltdown cycles. Discover how voice journaling builds emotional vocabulary, tracks overwhelm patterns, and provides a safe space to process without masking pressure.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Autism · Alexithymia · Emotional Regulation
                   </span>
                 </div>
@@ -358,15 +358,15 @@ export function Resources() {
           <Link
             to="/resources/alexithymia-emotional-vocabulary"
             aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Heart className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Heart className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Emotional Intelligence
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -376,7 +376,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught
                 </h2>
@@ -384,13 +384,13 @@ export function Resources() {
                   Around 10% of people struggle to identify and describe their own emotions — a trait called alexithymia. Learn the neuroscience of emotional blindness, why traditional journaling fails, and how AI-assisted voice journaling creates a personal emotional vocabulary from scratch.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Alexithymia · Emotional Vocabulary · AI Journaling
                   </span>
                 </div>
@@ -417,15 +417,15 @@ export function Resources() {
           <Link
             to="/resources/distress-detection"
             aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Activity className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Body Awareness &amp; Distress Detection
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -435,7 +435,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   How Your Body Tells You Are Overwhelmed Before Your Mind Does
                 </h2>
@@ -443,13 +443,13 @@ export function Resources() {
                   Your body registers distress seconds before your conscious mind catches up. Learn the neuroscience of interoception, body-based early warning signs, and how voice journaling with body-sensation mapping helps you catch overwhelm before it escalates.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Interoception · Body Awareness · Overwhelm
                   </span>
                 </div>
@@ -476,15 +476,15 @@ export function Resources() {
           <Link
             to="/resources/emotional-awareness-patterns"
             aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Radar className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Radar className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Mental Wellness &amp; Self-Discovery
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -494,7 +494,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding
                 </h2>
@@ -502,13 +502,13 @@ export function Resources() {
                   Discover how metacognitive awareness and pattern recognition through daily voice journaling rewire your brain for emotional intelligence. Learn to identify triggers and behavioral cycles with Vocolens' emotion tracking.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Pattern Recognition · Emotional Intelligence · Self-Awareness
                   </span>
                 </div>
@@ -535,15 +535,15 @@ export function Resources() {
           <Link
             to="/resources/science-of-reflection"
             aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
-            className="block w-full text-left bg-white rounded-3xl shadow-clay-lg border border-primary/10 p-5 sm:p-8 lg:p-10 hover:shadow-clay-xl hover:-translate-y-1 transition-all duration-300 group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-xl sm:w-14 sm:h-14 sm:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors" aria-hidden="true">
-                <Brain className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Brain className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="text-sm font-semibold text-primary uppercase tracking-wider" itemProp="articleSection">
+                  <span className="text-sm font-semibold text-primary uppercase tracking-widest" itemProp="articleSection">
                     Neuroscience &amp; Mental Wellness
                   </span>
                   <span className="flex items-center gap-1 text-sm text-text-muted">
@@ -553,7 +553,7 @@ export function Resources() {
                 </div>
                 <h2
                   itemProp="headline"
-                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug group-hover:text-primary transition-colors"
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
                 >
                   How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience
                 </h2>
@@ -561,13 +561,13 @@ export function Resources() {
                   Neuroscience research by Lieberman (2007) proves that labeling emotions reduces amygdala activity and calms the nervous system. Discover how daily voice journaling with Vocolens uses this science to help you reduce anxiety, create mental space, and build lasting emotional resilience.
                 </p>
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 bg-primary/5 rounded-2xl sm:rounded-full border border-primary/10 leading-relaxed">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-full leading-relaxed">
                     Emotion Labeling · Stress Relief Journaling · Resilience
                   </span>
                 </div>

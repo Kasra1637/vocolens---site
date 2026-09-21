@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, ArrowRight, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake } from '@phosphor-icons/react';
+import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake } from '@phosphor-icons/react';
 
 type Feature = {
   id: string;
@@ -21,7 +21,7 @@ function CalendarVisual() {
   const active = new Set([1, 2, 4, 5, 8, 10, 11, 14, 17, 18, 19, 22, 25, 28]);
   const pulse = new Set([18, 25]);
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-amber-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+    <div className="card-app rounded-2xl p-6">
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <p className="text-4xl font-bold text-primary leading-none">14</p>
@@ -63,11 +63,11 @@ function WeeklyReflectionVisual() {
   ];
 
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/60 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-bl-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-4">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your week · Mar 18 – 24
         </p>
         <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
@@ -114,7 +114,7 @@ function WeeklyReflectionVisual() {
         ))}
       </div>
 
-      <div className="rounded-xl bg-gradient-to-r from-primary/[0.03] to-white border border-primary/12 px-4 py-3.5 shadow-sm relative">
+      <div className="bg-primary/5 rounded-xl px-4 py-3.5 relative">
         <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary/40" />
         <p className="text-sm text-text-secondary italic leading-relaxed pl-2">
           &ldquo;You spoke kindly to yourself three times this week. Try one more.&rdquo;
@@ -135,11 +135,11 @@ function MoodStoryVisual() {
     { d: 'Sun', e: 'Trust', c: '#10B981', intensity: 78 },
   ];
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-cyan-50/40 to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-2 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood story · This week
         </p>
         <div className="flex items-center gap-1.5">
@@ -212,11 +212,11 @@ function ExploreDeeperVisual() {
   ];
 
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-8 -right-8 w-24 h-24 bg-emerald-100/30 rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-4 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your dashboard
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
@@ -284,11 +284,11 @@ function EmotionalLandscapeVisual() {
   ];
 
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/40 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-50/50 to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-3 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Emotional landscape
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
@@ -379,11 +379,11 @@ function BodyMapVisual() {
   const highStress = regions.filter((r) => r.heat >= 0.7);
 
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-rose-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-1 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Where stress lives
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
@@ -438,9 +438,9 @@ function BodyMapVisual() {
 
 function DeepInsightsVisual() {
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.07] via-white to-amber-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+    <div className="card-app rounded-2xl p-6">
       <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-3 flex items-center gap-2">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           One insight · this week
         </p>
@@ -452,9 +452,9 @@ function DeepInsightsVisual() {
           your happiness vocabulary. A gentle invitation: name one good thing
           before naming the worry.
         </p>
-        <button className="mt-4 text-sm font-semibold text-primary flex items-center gap-1 transition-all duration-200 hover:gap-2">
-          See more <ArrowRight className="w-3.5 h-3.5" />
-        </button>
+<button className="mt-4 text-sm font-semibold text-[#6A3FC0] flex items-center gap-1 transition-all duration-200 hover:gap-2">
+            See more <CaretRight className="w-3.5 h-3.5" />
+          </button>
       </div>
     </div>
   );
@@ -468,11 +468,11 @@ function TriggersVisual() {
     { topic: 'Family', emoji: '👨‍👩‍👧', shift: '+18%', dir: 'up', bar: 0.18 },
   ];
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-rose-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-rose-50/40 rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-2 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Trigger analysis
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
@@ -486,7 +486,7 @@ function TriggersVisual() {
             key={r}
             className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all duration-200 cursor-pointer ${
               i === 1
-                ? 'bg-primary text-white shadow-md shadow-primary/25'
+                ? 'chip-app text-[#6A3FC0] shadow-sm'
                 : 'bg-primary/8 text-primary/60 hover:bg-primary/15 hover:text-primary/80'
             }`}
           >
@@ -557,8 +557,8 @@ function ThemesVisual() {
   ];
   const max = 12;
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
+    <div className="card-app rounded-2xl p-6">
+      <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Themes · this month
       </p>
       <ul className="space-y-3 mb-5">
@@ -576,7 +576,7 @@ function ThemesVisual() {
         ))}
       </ul>
       <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm">
-        <p className="text-xs uppercase tracking-widest font-semibold text-primary/70 mb-1">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Micro-action
         </p>
         <p className="text-sm text-text-secondary">
@@ -598,11 +598,11 @@ function TimeOfDayVisual() {
   ];
   const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay relative overflow-hidden">
+    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-amber-100/30 rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-1 relative">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood by hour
         </p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
@@ -635,7 +635,7 @@ function TimeOfDayVisual() {
       </div>
 
       <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm relative">
-        <p className="text-xs uppercase tracking-widest font-semibold text-primary/70 mb-1">
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Insight
         </p>
         <p className="text-sm text-text-secondary">
@@ -648,8 +648,8 @@ function TimeOfDayVisual() {
 
 function RefineAnalysisVisual() {
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.07] via-white to-cyan-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
-      <p className="text-xs font-semibold uppercase tracking-widest text-primary/70 mb-4">
+    <div className="card-app rounded-2xl p-6">
+      <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Emotion breakdown
       </p>
       <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm space-y-4">
@@ -686,9 +686,9 @@ function MilestonesVisual() {
     { emoji: '🏆', name: '100 Entries', unlocked: false },
   ];
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-amber-50/50 via-white to-primary/[0.06] border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+    <div className="card-app rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
-        <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">Your milestones</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">Your milestones</p>
         <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
@@ -711,7 +711,7 @@ function MilestonesVisual() {
 
 function TherapistShareVisual() {
   return (
-    <div className="rounded-2xl p-6 bg-gradient-to-br from-primary/[0.06] via-white to-emerald-50/30 border border-primary/10 shadow-clay-sm transition-shadow duration-300 hover:shadow-clay">
+    <div className="card-app rounded-2xl p-6">
       <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-2xl">🩺</span>
@@ -909,8 +909,8 @@ export function FeaturesShowcase() {
       {/* Hero */}
       <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
         <AnimatedSection animation="fade-in-up" className="relative text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6 border border-primary/10">
-            <Sparkles className="w-3.5 h-3.5" />
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -933,7 +933,7 @@ export function FeaturesShowcase() {
                 <a
                   key={f.id}
                   href={`#${f.id}`}
-                  className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 shadow-sm transition-all duration-300 hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5"
+                  className="group flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <Icon className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
                   <span className="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors hidden sm:inline">
@@ -969,10 +969,10 @@ export function FeaturesShowcase() {
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center shadow-sm">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center shadow-clay">
+                        <Icon className="w-5 h-5 text-[#6A3FC0]" />
                       </span>
-                      <span className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+                      <span className="text-sm font-semibold uppercase tracking-widest text-primary">
                         {f.eyebrow}
                       </span>
                     </div>
@@ -1000,7 +1000,7 @@ export function FeaturesShowcase() {
       <section className="max-w-3xl mx-auto px-6 pb-24">
         <AnimatedSection
           animation="fade-in-up"
-          className="relative overflow-hidden bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
+          className="relative overflow-hidden card-app rounded-3xl p-8 lg:p-12 text-center"
         >
           <div className="absolute -top-16 -right-16 w-48 h-48 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
@@ -1014,10 +1014,10 @@ export function FeaturesShowcase() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-10 py-5 rounded-full text-lg sm:text-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-10 py-5 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 group"
             >
               Get it on Google Play
-              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              <CaretRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </AnimatedSection>
@@ -1042,28 +1042,28 @@ export function FeaturesShowcase() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
             <Link
               to="/terms"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Terms of Service
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/privacy"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/resources"
               className="text-sm text-text-muted hover:text-primary transition-colors"
             >
               Resources
             </Link>
-            <span className="text-text-muted/30 hidden sm:inline">|</span>
+            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
             <Link
               to="/use-cases"
               className="text-sm text-text-muted hover:text-primary transition-colors"
@@ -1073,7 +1073,7 @@ export function FeaturesShowcase() {
           </div>
 
           <div className="border-t border-primary/10 pt-8">
-            <p className="text-center text-text-muted/60 text-base leading-relaxed">
+            <p className="text-center text-text-muted/60 text-sm leading-relaxed">
               2026 Vocolens. All rights reserved.
             </p>
           </div>

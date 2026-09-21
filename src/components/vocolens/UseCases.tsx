@@ -1,6 +1,6 @@
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
-import { Lightning as Zap, Brain, Question as HelpCircle, Microphone as Mic, Sparkle as Sparkles, TrendUp as TrendingUp, ArrowRight, CheckCircle as CheckCircle2 } from '@phosphor-icons/react';
+import { Lightning as Zap, Brain, Question as HelpCircle, Microphone as Mic, Sparkle as Sparkles, TrendUp as TrendingUp, CaretRight, CheckCircle as CheckCircle2 } from '@phosphor-icons/react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
  * Types
@@ -113,7 +113,7 @@ export function UseCases() {
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-12 lg:pt-40 lg:pb-16">
         <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Find your condition below ↓
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
@@ -133,7 +133,7 @@ export function UseCases() {
                 <a
                   key={c.id}
                   href={`#${c.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-clay-sm border border-primary/10 hover-lift transition-all duration-200 hover:border-primary/30"
+                  className="inline-flex items-center gap-2 px-4 py-2 card-app rounded-full hover-lift transition-all duration-200"
                 >
                   <Icon className="w-4 h-4" style={{ color: c.color }} />
                   <span className="text-sm font-semibold text-text-primary">{c.name}</span>
@@ -151,27 +151,27 @@ export function UseCases() {
           animation="fade-in-up"
           staggerDelay={0.12}
         >
-          <div className="bg-white rounded-3xl p-8 shadow-clay border border-primary/10 text-center hover-lift">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Mic className="w-7 h-7 text-primary" />
+          <div className="card-app rounded-3xl p-8 text-center hover-lift">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <Mic className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">Speak, don't write</h3>
             <p className="text-text-secondary text-base leading-relaxed">
               No executive-function barrier. No blank page. Just talk — the app captures everything.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 shadow-clay border border-primary/10 text-center hover-lift">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Sparkles className="w-7 h-7 text-primary" />
+          <div className="card-app rounded-3xl p-8 text-center hover-lift">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">AI names your emotions</h3>
             <p className="text-text-secondary text-base leading-relaxed">
               When feelings are hard to identify, the AI does it for you — and learns your unique vocabulary over time.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 shadow-clay border border-primary/10 text-center hover-lift">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <TrendingUp className="w-7 h-7 text-primary" />
+          <div className="card-app rounded-3xl p-8 text-center hover-lift">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+              <TrendingUp className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">Patterns emerge privately</h3>
             <p className="text-text-secondary text-base leading-relaxed">
@@ -192,7 +192,7 @@ export function UseCases() {
       <section className="max-w-3xl mx-auto px-6 pb-20">
         <AnimatedSection
           animation="fade-in-up"
-          className="bg-white rounded-3xl shadow-clay-lg p-8 lg:p-12 border border-primary/10 text-center"
+          className="card-app rounded-3xl p-8 lg:p-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Talk it out. See your patterns.
@@ -203,10 +203,10 @@ export function UseCases() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-2 bg-gradient-primary text-white px-8 py-4 rounded-full text-lg sm:text-xl font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-12 py-6 rounded-full text-lg sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
-            <ArrowRight className="w-5 h-5" />
+            <CaretRight className="w-6 h-6" />
           </a>
         </AnimatedSection>
       </section>
@@ -233,14 +233,11 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
       >
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
-          <div
-            className="w-12 h-12 rounded-2xl flex items-center justify-center"
-            style={{ backgroundColor: condition.colorLight }}
-          >
-            <Icon className="w-6 h-6" style={{ color: condition.color }} />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center shadow-clay">
+            <Icon className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
               {condition.name}
             </h2>
             <p className="text-text-secondary text-base mt-1">{condition.tagline}</p>
@@ -249,19 +246,15 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
 
         {/* Challenges */}
         <div className="mb-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-text-muted mb-3">
+          <p className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Challenges this addresses
           </p>
           <div className="flex flex-wrap gap-2">
             {condition.challenges.map((challenge) => (
               <span
                 key={challenge}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border"
-                style={{
-                  backgroundColor: `${condition.color}08`,
-                  borderColor: `${condition.color}20`,
-                  color: condition.color,
-                }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold text-text-primary card-app"
               >
                 {challenge}
               </span>
@@ -274,14 +267,11 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
           {condition.features.map((item) => (
             <div
               key={item.feature}
-              className="bg-white rounded-2xl p-5 border border-primary/10 shadow-clay-sm hover-lift"
+              className="card-app rounded-2xl p-5 hover-lift"
             >
               <div className="flex items-start gap-3">
-                <div
-                  className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ backgroundColor: condition.colorLight }}
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5" style={{ color: condition.color }} />
+                <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#6A3FC0]" />
                 </div>
                 <div>
                   <p className="font-bold text-text-primary text-sm mb-1">{item.feature}</p>
@@ -293,13 +283,7 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
         </div>
 
         {/* Quote */}
-        <div
-          className="rounded-2xl px-6 py-5 border-l-4"
-          style={{
-            backgroundColor: `${condition.color}06`,
-            borderLeftColor: condition.color,
-          }}
-        >
+        <div className="bg-primary/5 rounded-2xl px-6 py-5 border-l-4 border-primary">
           <p className="text-text-primary text-base leading-relaxed italic mb-2">
             "{condition.quote}"
           </p>
