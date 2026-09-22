@@ -109,8 +109,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   // Seek parked while audio metadata is missing (slow networks): applied
   // the moment duration becomes known, so pre-load taps never strand
-  // playback at 0. Either an absolute time or a track ratio.
-  const pendingRef = useRef<{ kind: "time"; t: number } | { kind: "ratio"; r: number } | null>(null);
+  // playback at 0. Either an absolute time or a track ratio. idx is the
+  // chapter the tap resolved to (when known); shouldPlay replays the
+  // intent (arm-only timeline tap vs explicit play) once metadata lands.
+  const pendingRef = useRef<
+    | { kind: "time"; t: number; idx: number | null; shouldPlay: boolean }
+    | { kind: "ratio"; r: number; shouldPlay: boolean }
+    | null
+  >(null);
 
   // Force metadata load on mount so duration is available before play.
   useEffect(() => {
@@ -138,25 +144,36 @@ export function ListenToArticle({ slug }: { slug: string }) {
       setDuration(d);
       // Seeks that arrived before metadata was ready: resolve them now
       // against the real duration instead of stranding playback at 0.
+      // Replays the tap intent: arm-only taps highlight, play taps resume.
       const pending = pendingRef.current;
       pendingRef.current = null;
       if (pending === null || !(d > 0)) return;
       const list = ARTICLE_SECTIONS[slug] ?? [];
+      if (list.length === 0) return;
       let target = 0;
+      let idx: number | null = null;
       if (pending.kind === "time") {
         target = Math.min(Math.max(pending.t, 0), d);
+        idx = pending.idx ?? sectionAt(list, target);
       } else {
-        if (list.length === 0) return;
-        const idx = sectionAt(list, pending.r * d);
+        idx = sectionAt(list, pending.r * d);
         target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
-        boundEndRef.current = idx + 1 < list.length ? list[idx + 1].startSec : d;
       }
+      boundEndRef.current = idx + 1 < list.length ? list[idx + 1].startSec : d;
+      if (!pending.shouldPlay) setArmedIdx(idx);
       try {
         audio.currentTime = target;
       } catch {
         /* non-fatal */
       }
       setCurrentTime(target);
+      if (pending.shouldPlay && audio.paused) {
+        setHasStarted(true);
+        void audio.play().then(
+          () => setPlaying(true),
+          () => setPlaying(false),
+        );
+      }
     };
     const onEnd = () => {
       setPlaying(false);
@@ -195,6 +212,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     setHasStarted(true);
     setArmedIdx(null);
+    // A tap parked before metadata landed: carry the play intent into
+    // onMeta so Listen pressed after arming still starts playback.
+    if (pendingRef.current) pendingRef.current.shouldPlay = true;
     void audio.play().then(
       () => setPlaying(true),
       () => setPlaying(false),
@@ -212,41 +232,52 @@ export function ListenToArticle({ slug }: { slug: string }) {
     }
   };
 
-  const seek = useCallback((t: number) => {
+  const seek = useCallback((t: number, idx: number | null = null, shouldPlay = false) => {
     const audio = audioRef.current;
     if (!audio) return;
     if (!Number.isFinite(duration) || duration <= 0) {
       // Metadata not ready yet (slow networks): park the absolute target
-      // for onMeta AND try the element optimistically — one of the two
-      // always lands instead of silently playing from 0.
-      pendingRef.current = { kind: "time", t: Math.max(0, t) };
+      // for onMeta (which replays the arm/play intent) and update the UI
+      // optimistically. Only kick off the fetch when nothing started yet —
+      // never load() after setting currentTime, which discards the seek
+      // and aborts a subsequent play().
+      pendingRef.current = { kind: "time", t: Math.max(0, t), idx, shouldPlay };
+      setCurrentTime(Math.max(0, t));
       try {
-        audio.currentTime = Math.max(0, t);
-        audio.load();
+        if (audio.networkState === 0) audio.load();
       } catch {
         /* not ready — non-fatal */
       }
-      setCurrentTime(Math.max(0, t));
       return;
     }
     const clamped = Math.min(Math.max(t, 0), duration);
-    audio.currentTime = clamped;
+    try {
+      audio.currentTime = clamped;
+    } catch {
+      /* non-fatal */
+    }
     setCurrentTime(clamped);
     // Verify-and-repair: if the element didn't take the seek (observed on
-    // some mobile browsers pre-playback), re-apply on the next frame.
-    requestAnimationFrame(() => {
+    // some mobile browsers pre-playback), re-apply across a few frames.
+    let attempts = 0;
+    const repair = () => {
       const el = audioRef.current;
       if (!el) return;
+      attempts += 1;
       try {
-        if (Math.abs(el.currentTime - clamped) > 1.0) el.currentTime = clamped;
+        if (Math.abs(el.currentTime - clamped) > 1.0) {
+          el.currentTime = clamped;
+          if (attempts < 4) requestAnimationFrame(repair);
+        }
       } catch {
-        /* non-fatal */
+        if (attempts < 4) requestAnimationFrame(repair);
       }
-    });
+    };
+    requestAnimationFrame(repair);
   }, [duration]);
 
-  const seekAndPlay = useCallback((t: number) => {
-    seek(t);
+  const seekAndPlay = useCallback((t: number, idx: number | null = null) => {
+    seek(t, idx, true);
     play();
   }, [seek, play]);
 
@@ -258,7 +289,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
     (target: number) => {
       setArmedIdx(target);
       setBoundFor(target);
-      seek(headerStart(target));
+      seek(headerStart(target), target, false);
     },
     [seek, headerStart, setBoundFor],
   );
@@ -269,7 +300,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const playChapter = useCallback(
     (target: number) => {
       setBoundFor(target);
-      seekAndPlay(headerStart(target));
+      seekAndPlay(headerStart(target), target);
     },
     [setBoundFor, seekAndPlay, headerStart],
   );
@@ -331,8 +362,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
       if (ratio === null || sections.length === 0) return;
       if (!Number.isFinite(duration) || duration <= 0) {
         // Metadata pending: park the tap and resolve it in onMeta.
-        pendingRef.current = { kind: "ratio", r: ratio };
-        audioRef.current?.load();
+        // Highlight a proportional estimate instantly so the tap feels
+        // alive; onMeta corrects it against the real duration.
+        const estimate = Math.min(Math.floor(ratio * sections.length), sections.length - 1);
+        setArmedIdx(estimate);
+        snappedIdxRef.current = estimate;
+        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: false };
+        try {
+          if (audioRef.current?.networkState === 0) audioRef.current?.load();
+        } catch {
+          /* non-fatal */
+        }
         return;
       }
       const idx = sectionAt(sections, ratio * duration);
@@ -340,7 +380,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
         setBoundFor(idx);
-        seek(headerStart(idx));
+        seek(headerStart(idx), idx, false);
       }
     },
     [ratioFromPointer, duration, sections, headerStart, seek, setBoundFor],
@@ -348,8 +388,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     // Ignore emulated extra buttons; primary button / touch contact only.
+    // Gate on track geometry (not duration) so pre-metadata taps park
+    // instead of dying silently.
     if (e.pointerType === "mouse" && e.button !== 0) return;
-    if (getTimeFromPointer(e.clientX) === null) return;
+    if (ratioFromPointer(e.clientX) === null || sections.length === 0) return;
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
     } catch {
@@ -499,7 +541,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
           <div className="relative w-full h-2 rounded-full bg-primary/10" aria-hidden="true">
-            <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
+            <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none pointer-events-none" style={{ width: `${fraction * 100}%` }} />
             {sections.slice(1).map((s, i) => {
               const isCurrent = i + 1 === sectionIdx;
               return (
