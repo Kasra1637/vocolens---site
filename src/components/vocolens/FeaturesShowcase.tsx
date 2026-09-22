@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, CaretUp, CaretDown, TrendUp, TrendDown, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake, Briefcase, Bed, CurrencyCircleDollar, Users, Microphone, Fire, ChatCircle, Plant, Trophy, Compass, Stethoscope, Brain, Smiley, Bone, Heartbeat, Butterfly, Hand, HandsClapping, Footprints } from '@phosphor-icons/react';
+import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, CaretUp, CaretDown, TrendUp, TrendDown, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake, Briefcase, Bed, CurrencyCircleDollar, Users, Microphone, Fire, ChatCircle, Compass, SunHorizon, Stethoscope, Brain, Smiley, Bone, Heartbeat, Butterfly, Hand, HandsClapping, Footprints } from '@phosphor-icons/react';
 
 type Feature = {
   id: string;
@@ -106,7 +106,7 @@ function CalendarVisual() {
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-5 italic">No streaks, no guilt — just presence</p>
+      <p className="text-xs text-text-muted mt-5 italic">Presence first — a missed day never punishes you</p>
     </div>
   );
 }
@@ -264,7 +264,7 @@ function ExploreDeeperVisual() {
   ];
   const hiddenSections = [
     'Emotional landscape', 'Body map', 'Deep insights', 'Triggers',
-    'Themes', 'Time of day', 'Growth moments',
+    'Themes', 'Time of day',
   ];
 
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
@@ -278,7 +278,7 @@ function ExploreDeeperVisual() {
           Your dashboard
         </p>
         <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
-          3 of 13 active
+          3 pinned to top
         </span>
       </div>
 
@@ -321,7 +321,7 @@ function ExploreDeeperVisual() {
 
       <button className="w-full rounded-xl border border-dashed border-primary/25 bg-gradient-to-r from-primary/[0.03] to-primary/[0.06] px-4 py-3.5 flex items-center justify-center gap-2.5 text-primary text-sm font-semibold transition-all duration-300 hover:bg-primary/[0.08] hover:border-primary/40 hover:shadow-sm group relative">
         <ChevronDownCircle className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-        Explore deeper · 7 more
+        Explore deeper · 6 more
       </button>
     </div>
   );
@@ -644,12 +644,10 @@ function ThemesVisual() {
 
 function TimeOfDayVisual() {
   const slots = [
-    { t: '6a', v: 35, label: 'Dawn' },
-    { t: '9a', v: 78, label: 'Morning' },
-    { t: '12p', v: 55, label: 'Noon' },
-    { t: '3p', v: 40, label: 'Afternoon' },
-    { t: '6p', v: 62, label: 'Evening' },
-    { t: '9p', v: 85, label: 'Night' },
+    { t: 'Morning', range: '5–12', v: 72 },
+    { t: 'Afternoon', range: '12–17', v: 45 },
+    { t: 'Evening', range: '17–21', v: 60 },
+    { t: 'Night', range: '21–5', v: 85 },
   ];
   const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
@@ -684,7 +682,8 @@ function TimeOfDayVisual() {
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
               </div>
             </div>
-            <span className="text-[11px] font-semibold text-text-muted" aria-label={s.label}>{s.t}</span>
+            <span className="text-[11px] font-semibold text-text-muted">{s.t}</span>
+            <span className="text-[11px] text-text-muted tabular-nums">{s.range}</span>
           </div>
         ))}
       </div>
@@ -694,7 +693,7 @@ function TimeOfDayVisual() {
           Insight
         </p>
         <p className="text-sm text-text-secondary">
-          Peaks at 9am & 9pm — dip mid-afternoon suggests energy depletion pattern.
+          Strongest at night — afternoons dip, suggesting an energy pattern to plan around.
         </p>
       </div>
     </div>
@@ -736,18 +735,18 @@ function RefineAnalysisVisual() {
 function MilestonesVisual() {
   const badges = [
     { Icon: Microphone, name: 'First Entry', unlocked: true },
-    { Icon: Fire, name: '7-Day Presence', unlocked: true },
-    { Icon: ChatCircle, name: '30 Entries', unlocked: true },
-    { Icon: Compass, name: 'Self-Aware', unlocked: false },
-    { Icon: Plant, name: 'Growth Streak', unlocked: false },
-    { Icon: Trophy, name: '100 Entries', unlocked: false },
+    { Icon: Fire, name: '7-Day Streak', unlocked: true },
+    { Icon: ChatCircle, name: '10 Entries', unlocked: true },
+    { Icon: SunHorizon, name: 'Early Bird', unlocked: false },
+    { Icon: Compass, name: 'Emotional Explorer', unlocked: false },
+    { Icon: CalendarDays, name: 'Weekly Ritual', unlocked: false },
   ];
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
     <div ref={ref} className="card-app rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">Your milestones</p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">21 badges to earn</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
         {badges.map((b, i) => (
@@ -781,7 +780,7 @@ function TherapistShareVisual() {
           </span>
           <div>
             <p className="font-bold text-text-primary text-base leading-tight">Insights report</p>
-            <p className="text-[11px] text-text-muted">Ready to share as PDF</p>
+            <p className="text-[11px] text-text-muted">Ready to share — prints to PDF</p>
           </div>
         </div>
         <div className="space-y-2">
@@ -815,7 +814,7 @@ const features: Feature[] = [
     icon: CalendarDays,
     headline: 'Easily track your progress',
     body:
-      'No streaks. No guilt. Just dots on a calendar showing you showed up for yourself. Miss a day? Nothing breaks. Come back any time. It celebrates presence only.',
+      'Presence first. Dots on a calendar show you showed up for yourself — streaks and totals are there when you want them, and a missed day never punishes you. Come back any time.',
     outcome: '\u201CI journaled 14 times this month without once feeling like I failed.\u201D',
     visual: <CalendarVisual />,
   },
@@ -846,7 +845,7 @@ const features: Feature[] = [
     icon: ChevronDownCircle,
     headline: 'Go as deep as you want',
     body:
-      'Three sections by default \u2014 enough to understand your week. Want more? Tap Explore Deeper for landscape mapping, body heatmap, and pattern detection on demand.',
+      'Three sections pinned up top \u2014 enough to understand your week. Want more? Tap Explore Deeper to reveal six more: landscape mapping, body heatmap, and pattern detection on demand.',
     outcome:
       'Full control over your cognitive load. See more when you\u2019re sharp. See less when you\u2019re overstimulated.',
     visual: <ExploreDeeperVisual />,
@@ -906,9 +905,9 @@ const features: Feature[] = [
     id: 'time-of-day',
     eyebrow: 'Time of day',
     icon: Clock,
-    headline: 'Track your mood by the hour',
+    headline: 'Track your mood by time of day',
     body:
-      'Your mood has a schedule. Vocolens maps peaks, dips, and entry clusters by hour \u2014 turning timestamps you already left into patterns you can plan your day around.',
+      'Your mood has a schedule. Vocolens maps peaks and dips across morning, afternoon, evening, and night \u2014 turning timestamps you already left into patterns you can plan your day around.',
     outcome: 'Schedule hard conversations for your strong hours. Protect the weak ones.',
     visual: <TimeOfDayVisual />,
   },
@@ -930,7 +929,7 @@ const features: Feature[] = [
     headline: 'Celebrate the moments that matter',
     body:
       'Unlock badges as you build your practice \u2014 first entry, consistency streaks, breakthroughs. Each comes with a story and a tip. Share any the moment it unlocks.',
-    outcome: '\u201CSeeing \u201830 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D',
+    outcome: '\u201CSeeing \u201810 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D',
     visual: <MilestonesVisual />,
   },
   {
@@ -939,7 +938,7 @@ const features: Feature[] = [
     icon: HeartHandshake,
     headline: 'Bring your data into the room',
     body:
-      'Generate a personalised wellness report \u2014 mood trends, dominant emotions, key patterns \u2014 and share it as a PDF with a therapist, counselor, or doctor in one tap.',
+      'Generate a personalised wellness report \u2014 mood trends, dominant emotions, key patterns \u2014 and share it with a therapist, counselor, or doctor in one tap. Print to PDF anywhere.',
     outcome:
       '\u201CI stopped trying to summarise three weeks of feelings in five minutes. I just handed my therapist the report.\u201D',
     visual: <TherapistShareVisual />,
