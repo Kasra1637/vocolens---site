@@ -129,7 +129,7 @@ export function EmotionScienceSuite() {
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          8 core emotions, valence, distress, body mapping, and AI that adapts to you — your journal stays on your device, behind your biometric lock.
+          See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that adapts to you — stays on your device, behind your biometrics.
         </p>
       </AnimatedSection>
 
