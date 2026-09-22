@@ -1,19 +1,20 @@
 /**
  * Precise narration chapter timestamps per article.
  *
- * Computed from:
- *  - Actual MP3 durations measured via ffmpeg (ffprobe)
- *  - Per-section word counts extracted from production HTML
- *  - Same extraction rules as scripts/generate-article-audio.cjs
- *    (h1/h2/h3/p/li blocks before data-listen-exclude)
+ * Measured from the actual MP3s (2026-09-22), not estimated:
+ *  - Speech blocks extracted with the same rules as
+ *    scripts/generate-article-audio.cjs (h1/h2/h3/p/li before
+ *    data-listen-exclude), fitted to per-article speech rate
+ *  - Each section start snapped to the measured silence boundary
+ *    (ffmpeg silencedetect) preceding its H2/H3 block
+ *  - Residual error is ~±1s; the player adds a short header lead-in
  *
  * Timestamps match the single female (Aria) narration MP3 per article.
  *
  * To regenerate after article edits:
- *   1. Ensure the production site is live
- *   2. Run scripts/generate-article-audio.cjs --force
- *   3. Measure new durations with ffprobe
- *   4. Re-run the extraction + timestamp computation
+ *   1. Run scripts/generate-article-audio.cjs --force (rebuilds MP3s)
+ *   2. Re-measure section starts from the new MP3 silences (same method)
+ *   3. Never hand-tweak individual values to "fix" playback
  */
 
 export interface ArticleSection {
@@ -26,73 +27,73 @@ export interface ArticleSection {
 export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
   "adhd-time-blindness": [
     { title: "Introduction", startSec: 0 },
-    { title: "Two clocks", startSec: 47.9 },
-    { title: "Two-way distortion", startSec: 138.2 },
-    { title: "Why alarms fail", startSec: 231.9 },
-    { title: "External clock", startSec: 315.9 },
-    { title: "Time-anchor habit", startSec: 410.6 },
+    { title: "Two clocks", startSec: 44.5 },
+    { title: "Two-way distortion", startSec: 133.9 },
+    { title: "Why alarms fail", startSec: 229.6 },
+    { title: "External clock", startSec: 309.3 },
+    { title: "Time-anchor habit", startSec: 405.3 },
   ],
   "alexithymia-emotional-vocabulary": [
     { title: "Introduction", startSec: 0 },
-    { title: "What is alexithymia?", startSec: 49.3 },
-    { title: "Why journaling fails", startSec: 159.8 },
-    { title: "Voice + AI vocabulary", startSec: 270.3 },
-    { title: "The body is talking", startSec: 404.3 },
-    { title: "Emotional granularity", startSec: 512.5 },
+    { title: "What is alexithymia?", startSec: 48.5 },
+    { title: "Why journaling fails", startSec: 158.5 },
+    { title: "Voice + AI vocabulary", startSec: 268.6 },
+    { title: "The body is talking", startSec: 399.7 },
+    { title: "Emotional granularity", startSec: 509.7 },
   ],
   "autism-emotional-regulation": [
     { title: "Introduction", startSec: 0 },
-    { title: "Alexithymia", startSec: 28.5 },
-    { title: "Sensory-emotional link", startSec: 105.8 },
-    { title: "Why voice journaling works", startSec: 182.6 },
-    { title: "Early warning system", startSec: 284.8 },
-    { title: "The cost of masking", startSec: 359 },
+    { title: "Alexithymia", startSec: 26.3 },
+    { title: "Sensory-emotional link", startSec: 103.9 },
+    { title: "Why voice journaling works", startSec: 179.5 },
+    { title: "Early warning system", startSec: 283.1 },
+    { title: "The cost of masking", startSec: 355.5 },
   ],
   "burnout-recovery-signs": [
     { title: "Introduction", startSec: 0 },
-    { title: "The hidden ledger", startSec: 43.6 },
-    { title: "Three warning signs", startSec: 124.8 },
-    { title: "The vacation fallacy", startSec: 210.9 },
-    { title: "A visible running total", startSec: 290.6 },
-    { title: "Daily load check", startSec: 376 },
+    { title: "The hidden ledger", startSec: 41.9 },
+    { title: "Three warning signs", startSec: 123.4 },
+    { title: "The vacation fallacy", startSec: 207.8 },
+    { title: "A visible running total", startSec: 287.3 },
+    { title: "Daily load check", startSec: 371.4 },
   ],
   "distress-detection": [
     { title: "Introduction", startSec: 0 },
-    { title: "The body speaks first", startSec: 25.1 },
-    { title: "Interoception", startSec: 84 },
-    { title: "Early signs of overwhelm", startSec: 145.5 },
-    { title: "Mapping the body", startSec: 212 },
-    { title: "The 60-second practice", startSec: 273.8 },
+    { title: "The body speaks first", startSec: 22.4 },
+    { title: "Interoception", startSec: 84.6 },
+    { title: "Early signs of overwhelm", startSec: 144.5 },
+    { title: "Mapping the body", startSec: 208.9 },
+    { title: "The 60-second practice", startSec: 269.7 },
   ],
   "emotional-awareness-patterns": [
     { title: "Introduction", startSec: 0 },
-    { title: "Metacognitive awareness", startSec: 22.9 },
-    { title: "Expressive disclosure", startSec: 94 },
-    { title: "Moments into patterns", startSec: 168.9 },
-    { title: "Emotional triggers", startSec: 242.9 },
-    { title: "Accelerating growth", startSec: 323.8 },
+    { title: "Metacognitive awareness", startSec: 23.8 },
+    { title: "Expressive disclosure", startSec: 91 },
+    { title: "Moments into patterns", startSec: 168.6 },
+    { title: "Emotional triggers", startSec: 239.6 },
+    { title: "Accelerating growth", startSec: 320.1 },
   ],
   "emotional-granularity": [
     { title: "Introduction", startSec: 0 },
-    { title: "What is granularity?", startSec: 47.6 },
-    { title: "Why finer words work", startSec: 121.7 },
-    { title: "Getting more specific", startSec: 205.4 },
-    { title: "Words worth keeping", startSec: 293.6 },
+    { title: "What is granularity?", startSec: 47 },
+    { title: "Why finer words work", startSec: 120.1 },
+    { title: "Getting more specific", startSec: 200 },
+    { title: "Words worth keeping", startSec: 290 },
   ],
   "overthinking-rumination": [
     { title: "Introduction", startSec: 0 },
-    { title: "Unfinished thoughts", startSec: 42.6 },
-    { title: "Default mode network", startSec: 119.5 },
-    { title: "Why suppression backfires", startSec: 208.2 },
-    { title: "Completion signal", startSec: 285.1 },
-    { title: "Worry time practice", startSec: 378.7 },
+    { title: "Unfinished thoughts", startSec: 40.3 },
+    { title: "Default mode network", startSec: 118.1 },
+    { title: "Why suppression backfires", startSec: 209.1 },
+    { title: "Completion signal", startSec: 280.6 },
+    { title: "Worry time practice", startSec: 374.4 },
   ],
   "science-of-reflection": [
     { title: "Introduction", startSec: 0 },
-    { title: "Neuroscience of labeling", startSec: 23.6 },
-    { title: "The Vocolens approach", startSec: 90.8 },
-    { title: "Breaking worry loops", startSec: 150.3 },
-    { title: "Long-term resilience", startSec: 227.4 },
+    { title: "Neuroscience of labeling", startSec: 23.7 },
+    { title: "The Vocolens approach", startSec: 90.6 },
+    { title: "Breaking worry loops", startSec: 146.2 },
+    { title: "Long-term resilience", startSec: 226 },
   ],
 };
 
