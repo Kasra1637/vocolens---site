@@ -1,15 +1,16 @@
-import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
+import { useState } from 'react';
+import { AnimatedSection } from './AnimatedSection';
 import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History, Smiley, Bone, Butterfly, Hand, HandsClapping, Footprints, Heartbeat } from '@phosphor-icons/react';
 
 const plutchikEmotions = [
-  { name: 'Happiness', icon: Smile, color: '#F5B700', ladder: ['Content', 'Joyful', 'Elated'] },
-  { name: 'Sadness',   icon: Frown, color: '#3B82F6', ladder: ['Wistful', 'Sad', 'Grief'] },
-  { name: 'Anger',     icon: Flame, color: '#EF4444', ladder: ['Annoyed', 'Frustrated', 'Furious'] },
-  { name: 'Fear',      icon: Shield, color: '#8E6BFF', ladder: ['Uneasy', 'Anxious', 'Terrified'] },
-  { name: 'Surprise',  icon: Sparkles, color: '#06B6D4', ladder: ['Curious', 'Surprised', 'Astonished'] },
-  { name: 'Disgust',   icon: AlertTriangle, color: '#84CC16', ladder: ['Dislike', 'Disgusted', 'Repulsed'] },
-  { name: 'Trust',     icon: Handshake, color: '#10B981', ladder: ['Accepting', 'Trusting', 'Devoted'] },
-  { name: 'Anticipation', icon: Compass, color: '#F97316', ladder: ['Interested', 'Anticipating', 'Vigilant'] },
+  { name: 'Happiness', icon: Smile, ladder: ['Content', 'Joyful', 'Elated'], scores: [34, 62, 85] },
+  { name: 'Sadness',   icon: Frown, ladder: ['Wistful', 'Sad', 'Grief'], scores: [29, 57, 81] },
+  { name: 'Anger',     icon: Flame, ladder: ['Annoyed', 'Frustrated', 'Furious'], scores: [31, 60, 88] },
+  { name: 'Fear',      icon: Shield, ladder: ['Uneasy', 'Anxious', 'Terrified'], scores: [27, 55, 83] },
+  { name: 'Surprise',  icon: Sparkles, ladder: ['Curious', 'Surprised', 'Astonished'], scores: [33, 59, 84] },
+  { name: 'Disgust',   icon: AlertTriangle, ladder: ['Dislike', 'Disgusted', 'Repulsed'], scores: [25, 52, 79] },
+  { name: 'Trust',     icon: Handshake, ladder: ['Accepting', 'Trusting', 'Devoted'], scores: [36, 64, 87] },
+  { name: 'Anticipation', icon: Compass, ladder: ['Interested', 'Anticipating', 'Vigilant'], scores: [30, 58, 82] },
 ];
 
 const bodyRegions = [
@@ -27,6 +28,88 @@ const distressLevels = [
   { level: 'Moderate', color: '#F59E0B', response: 'A gentle on-screen note during reflection' },
   { level: 'High',     color: '#EF4444', response: 'A gentle on-screen note during reflection' },
 ];
+
+/**
+ * PlutchikExplorer — interactive emotion-ladder explorer in the site's
+ * design language: chip-app emblem selector row + scored intensity bars
+ * in brand primary, mirroring the app's EmotionBar ranking treatment.
+ * Scores illustrate one example entry; they are not a live analysis.
+ */
+function PlutchikExplorer() {
+  const [selected, setSelected] = useState(0);
+  const active = plutchikEmotions[selected];
+  const ActiveIcon = active.icon;
+
+  return (
+    <div>
+      <div
+        role="tablist"
+        aria-label="Emotion families"
+        className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1"
+      >
+        {plutchikEmotions.map(({ name, icon: Icon }, i) => {
+          const isActive = i === selected;
+          return (
+            <button
+              key={name}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setSelected(i)}
+              className={`flex flex-col items-center gap-1.5 rounded-2xl px-3 py-3 min-w-[76px] min-h-[44px] flex-shrink-0 transition-all duration-200 ${
+                isActive
+                  ? 'bg-primary/10 ring-2 ring-primary/60'
+                  : 'hover:bg-primary/5 ring-1 ring-transparent hover:ring-primary/20'
+              }`}
+            >
+              <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <Icon className="w-5 h-5 text-[#6A3FC0]" weight={isActive ? 'fill' : 'regular'} />
+              </span>
+              <span className={`text-xs font-semibold leading-tight text-center ${isActive ? 'text-text-primary' : 'text-text-muted'}`}>
+                {name}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div
+        role="tabpanel"
+        aria-label={`${active.name} intensity ladder`}
+        className="mt-4 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 sm:p-6"
+      >
+        <div className="flex items-center gap-3 mb-1">
+          <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <ActiveIcon className="w-5 h-5 text-[#6A3FC0]" weight="fill" />
+          </span>
+          <div className="min-w-0">
+            <h4 className="font-bold text-lg text-text-primary leading-tight">{active.name}</h4>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">Intensity ladder · example entry</p>
+          </div>
+          <span className="ml-auto text-2xl font-bold text-[#6A3FC0] tabular-nums flex-shrink-0">
+            {active.scores[active.scores.length - 1]}
+          </span>
+        </div>
+        <ol className="mt-4 space-y-3">
+          {active.ladder.map((step, i) => (
+            <li key={step}>
+              <div className="flex items-baseline justify-between gap-3 mb-1">
+                <span className="text-sm font-semibold text-text-primary">{step}</span>
+                <span className="text-sm text-text-muted tabular-nums">{active.scores[i]}</span>
+              </div>
+              <div className="h-2 rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
+                <div
+                  className="h-full rounded-full bg-primary transition-all duration-500"
+                  style={{ width: `${active.scores[i]}%`, opacity: 0.45 + i * 0.275 }}
+                />
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  );
+}
 
 export function EmotionScienceSuite() {
   return (
@@ -50,7 +133,7 @@ export function EmotionScienceSuite() {
         </p>
       </AnimatedSection>
 
-      {/* 8 Plutchik emotions */}
+      {/* 8 Plutchik emotions — interactive explorer */}
       <AnimatedSection animation="fade-in-up" delay={0.05} className="mb-10">
         <div className="card-app rounded-3xl p-6 sm:p-8">
           <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
@@ -59,36 +142,11 @@ export function EmotionScienceSuite() {
               <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
-              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
+              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on. Select an emotion to see its ladder.
             </p>
           </div>
 
-          <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" animation="fade-in-up" staggerDelay={0.04}>
-            {plutchikEmotions.map(({ name, icon: Icon, color, ladder }) => (
-              <article
-                key={name}
-                className="rounded-2xl p-4 border border-primary/10 bg-white hover:-translate-y-0.5 transition-transform duration-300"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: `${color}1A` }}>
-                    <Icon className="w-4.5 h-4.5" style={{ color }} />
-                  </span>
-                  <h4 className="font-bold text-lg">{name}</h4>
-                </div>
-                <ol className="space-y-1">
-                  {ladder.map((step, i) => (
-                    <li key={step} className="flex items-center gap-2 text-text-secondary text-base leading-relaxed">
-                      <span
-                        className="h-1 rounded-full"
-                        style={{ width: `${(i + 1) * 18}px`, background: color, opacity: 0.4 + i * 0.25 }}
-                      />
-                      {step}
-                    </li>
-                  ))}
-                </ol>
-              </article>
-            ))}
-          </AnimatedGrid>
+          <PlutchikExplorer />
         </div>
       </AnimatedSection>
 
@@ -126,10 +184,14 @@ export function EmotionScienceSuite() {
                   <line x1="0" y1="150" x2="300" y2="150" stroke="rgba(147,112,219,0.25)" strokeWidth="1" strokeDasharray="4 4" />
                   {/* centre crosshair dot */}
                   <circle cx="150" cy="150" r="3" fill="rgba(147,112,219,0.2)" />
-                  {/* data point: soft fill + ring + centred emoji */}
+                  {/* data point: soft fill + ring + smile marker */}
                   <circle cx="195" cy="105" r="15" fill="rgba(147,112,219,0.10)" />
                   <circle cx="195" cy="105" r="15" fill="none" stroke="#9370DB" strokeWidth="1.5" strokeOpacity="0.75" />
-                  <text x="195" y="110" fontSize="15" textAnchor="middle" aria-hidden="true">😊</text>
+                  <g stroke="#6A3FC0" strokeWidth="1.4" strokeLinecap="round" aria-hidden="true">
+                    <circle cx="190" cy="101" r="1.1" fill="#6A3FC0" stroke="none" />
+                    <circle cx="200" cy="101" r="1.1" fill="#6A3FC0" stroke="none" />
+                    <path d="M 188 107 Q 195 113 202 107" fill="none" />
+                  </g>
                 </svg>
                 <div className="flex items-center justify-between px-4 pb-3 text-[11px] font-medium text-text-muted">
                   <span>← Unpleasant</span>
