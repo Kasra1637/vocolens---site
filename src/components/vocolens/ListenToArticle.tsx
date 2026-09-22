@@ -48,9 +48,11 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
- * - chapters/buttons/keys jump-and-play while playing, or arm the position
- *   while paused so Listen starts from the visibly selected chapter
- *   (seeks are verified on the next frame against element desync)
+ * - every chapter selection (timeline, chapter list, buttons, keys)
+ *   jumps to that chapter and plays it, whether playing or paused
+ *   (seeks are verified across frames against element desync; the
+ *   chapter-bound auto-pause is suppressed briefly after each jump so a
+ *   stale timeupdate can't pause instead of moving)
  * - any explicitly selected chapter plays ONLY itself, then auto-pauses at
  *   the next chapter's start; a fresh Listen with no selection plays through
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
@@ -71,9 +73,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [showChapters, setShowChapters] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
-  // Chapter armed while paused (via track, chapters, buttons, or keys).
-  // Cleared on play; the chapter list highlights it so the selection that
-  // Listen will start from is unmistakable.
+  // Chapter highlighted the moment a tap lands, before playback catches
+  // up (pre-metadata estimate or the play-promise gap). Cleared on play;
+  // while playing the live section owns the highlight.
   const [armedIdx, setArmedIdx] = useState<number | null>(null);
 
   const src = `/audio/${slug}.mp3`;
@@ -91,6 +93,20 @@ export function ListenToArticle({ slug }: { slug: string }) {
   // auto-pauses at the next chapter's start (a fresh Listen with no
   // selection plays through unbounded). Null = unbounded.
   const boundEndRef = useRef<number | null>(null);
+  // Guard against the chapter-bound auto-pause racing an explicit jump: a
+  // timeupdate can fire with the stale pre-seek position after the new
+  // (lower) bound is set but before the seek lands, which would wrongly
+  // pause instead of moving to the selected chapter. Suppressed briefly
+  // after every explicit chapter jump; a fresh chapter start is always
+  // far from its bound so legit end-of-chapter pauses are unaffected.
+  const suppressBoundUntilRef = useRef(0);
+  const armBoundSuppress = useCallback(() => {
+    try {
+      suppressBoundUntilRef.current = performance.now() + 800;
+    } catch {
+      suppressBoundUntilRef.current = 0;
+    }
+  }, []);
   const setBoundFor = useCallback(
     (idx: number) => {
       if (sections.length === 0) {
@@ -132,12 +148,20 @@ export function ListenToArticle({ slug }: { slug: string }) {
       setCurrentTime(audio.currentTime);
       // End of an explicitly selected chapter: stop instead of spilling
       // into the next one. Reads element state directly (no stale closure).
+      // Skipped briefly after an explicit jump so a stale pre-seek
+      // timeupdate can't pause playback instead of moving chapters.
       const bound = boundEndRef.current;
-      if (bound !== null && !audio.paused && !audio.ended && audio.currentTime >= bound) {
-        audio.pause();
-        setPlaying(false);
-        boundEndRef.current = null;
+      if (bound === null || audio.paused || audio.ended || audio.currentTime < bound) return;
+      let suppressed = false;
+      try {
+        suppressed = performance.now() < suppressBoundUntilRef.current;
+      } catch {
+        suppressed = false;
       }
+      if (suppressed) return;
+      audio.pause();
+      setPlaying(false);
+      boundEndRef.current = null;
     };
     const onMeta = () => {
       const d = audio.duration || 0;
@@ -281,39 +305,33 @@ export function ListenToArticle({ slug }: { slug: string }) {
     play();
   }, [seek, play]);
 
-  // Chapter navigation supports both orders: while playing it jumps and
-  // keeps playing; while paused it only arms the position (select first),
-  // and Listen starts from the visibly armed chapter.
-  // Track taps always arm without playing.
-  const selectSection = useCallback(
+  // Every chapter selection jumps to that chapter and plays it, whether
+  // the audio is playing or paused. While playing the element keeps
+  // playing from the new header; while paused this seeks and starts it.
+  // (The bound suppress guard above keeps backward jumps from tripping
+  // the previous chapter's auto-pause on a stale timeupdate.)
+  const jumpToChapter = useCallback(
     (target: number) => {
-      setArmedIdx(target);
       setBoundFor(target);
-      seek(headerStart(target), target, false);
+      armBoundSuppress();
+      const el = audioRef.current;
+      if (el && !el.paused) {
+        seek(headerStart(target), target, false);
+      } else {
+        seekAndPlay(headerStart(target), target);
+      }
     },
-    [seek, headerStart, setBoundFor],
+    [seek, seekAndPlay, headerStart, setBoundFor, armBoundSuppress],
   );
 
-  // Chapters always play instantly from the header (bounded to that
-  // chapter). Transport/buttons/keys jump-and-play while playing, or arm
-  // while paused so Listen starts from the visibly selected chapter.
-  const playChapter = useCallback(
-    (target: number) => {
-      setBoundFor(target);
-      seekAndPlay(headerStart(target), target);
-    },
-    [setBoundFor, seekAndPlay, headerStart],
-  );
+  // Chapters, timeline taps, transport buttons, and keys all jump-and-play.
+  const playChapter = jumpToChapter;
 
   const goToSection = useCallback(
     (target: number) => {
-      if (playing) {
-        playChapter(target);
-      } else {
-        selectSection(target);
-      }
+      playChapter(target);
     },
-    [playing, playChapter, selectSection],
+    [playChapter],
   );
 
   const prevSection = useCallback(() => {
@@ -361,13 +379,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
       const ratio = ratioFromPointer(clientX);
       if (ratio === null || sections.length === 0) return;
       if (!Number.isFinite(duration) || duration <= 0) {
-        // Metadata pending: park the tap and resolve it in onMeta.
-        // Highlight a proportional estimate instantly so the tap feels
-        // alive; onMeta corrects it against the real duration.
+        // Metadata pending: park the tap and resolve it in onMeta (which
+        // replays the play intent). Highlight a proportional estimate
+        // instantly so the tap feels alive; onMeta corrects it.
         const estimate = Math.min(Math.floor(ratio * sections.length), sections.length - 1);
         setArmedIdx(estimate);
         snappedIdxRef.current = estimate;
-        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: false };
+        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: true };
+        armBoundSuppress();
         try {
           if (audioRef.current?.networkState === 0) audioRef.current?.load();
         } catch {
@@ -379,11 +398,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
       setArmedIdx(idx);
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
-        setBoundFor(idx);
-        seek(headerStart(idx), idx, false);
+        jumpToChapter(idx);
       }
     },
-    [ratioFromPointer, duration, sections, headerStart, seek, setBoundFor],
+    [ratioFromPointer, duration, sections, jumpToChapter],
   );
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -424,8 +442,8 @@ export function ListenToArticle({ slug }: { slug: string }) {
     scrubbingRef.current = false;
     setScrubbing(false);
     setHoverTime(null);
-    // While playing, live progress owns the highlight; while paused, the
-    // just-armed chapter stays highlighted until Listen starts.
+    // While playing, live progress owns the highlight; a pre-metadata tap
+    // keeps its estimated highlight until playback catches up.
     if (playing) setArmedIdx(null);
   };
 
