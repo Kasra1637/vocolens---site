@@ -142,7 +142,7 @@ export function EmotionScienceSuite() {
               <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
             </div>
             <p className="text-text-muted text-base leading-relaxed max-w-md">
-              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on. Select an emotion to see its ladder.
+              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
             </p>
           </div>
 
