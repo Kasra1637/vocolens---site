@@ -27,7 +27,6 @@ export function EmotionDetection() {
       {/* Header */}
       <AnimatedSection animation="fade-in-up" className="text-center mb-16 max-w-4xl mx-auto">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
           <Crosshair className="w-3.5 h-3.5" />
           AI + Your Corrections
         </span>
