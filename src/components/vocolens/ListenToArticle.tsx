@@ -346,7 +346,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={toggle}
-            className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+            className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
             aria-label={(playing ? "Pause" : "Play") + " article narration"}
           >
             {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
