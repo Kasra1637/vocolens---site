@@ -980,10 +980,10 @@ export function FeaturesShowcase() {
           <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
           <div className="relative">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              All 13 features. One quiet app.
+              Understand yourself, one conversation at a time.
             </h2>
             <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Private. Powerful. Available now on Google Play.
+              Talk for 60 seconds. Spot the patterns you&apos;re missing. Free to try — private by design.
             </p>
             <a
               href={GOOGLE_PLAY_URL}
