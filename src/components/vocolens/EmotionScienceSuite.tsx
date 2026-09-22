@@ -45,7 +45,7 @@ function PlutchikExplorer() {
       <div
         role="tablist"
         aria-label="Emotion families"
-        className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1"
+        className="flex gap-2 overflow-x-auto py-2 -mx-1 px-1"
       >
         {plutchikEmotions.map(({ name, icon: Icon }, i) => {
           const isActive = i === selected;
