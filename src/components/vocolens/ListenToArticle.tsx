@@ -48,8 +48,10 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
- * - both orders supported: chapters/buttons jump-and-play while playing,
- *   or arm the position while paused so Listen starts from the selection
+ * - chapter taps always switch instantly and play from the header;
+ *   transport buttons/keys jump-and-play while playing, or arm the position
+ *   while paused so Listen starts from the selection; pre-metadata taps of
+ *   any kind are parked and applied once duration loads
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -80,9 +82,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [sections],
   );
 
-  // Tap ratio waiting on audio metadata (slow networks): applied as a
-  // header-resolved seek the moment duration becomes known.
-  const pendingRatioRef = useRef<number | null>(null);
+  // Seek parked while audio metadata is missing (slow networks): applied
+  // the moment duration becomes known, so pre-load taps never strand
+  // playback at 0. Either an absolute time or a track ratio.
+  const pendingRef = useRef<{ kind: "time"; t: number } | { kind: "ratio"; r: number } | null>(null);
 
   // Force metadata load on mount so duration is available before play.
   useEffect(() => {
@@ -98,15 +101,20 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const onMeta = () => {
       const d = audio.duration || 0;
       setDuration(d);
-      // A tap arrived before metadata was ready: resolve it now against
-      // the real duration instead of stranding playback at 0.
-      const pending = pendingRatioRef.current;
-      pendingRatioRef.current = null;
+      // Seeks that arrived before metadata was ready: resolve them now
+      // against the real duration instead of stranding playback at 0.
+      const pending = pendingRef.current;
+      pendingRef.current = null;
       if (pending === null || !(d > 0)) return;
       const list = ARTICLE_SECTIONS[slug] ?? [];
-      if (list.length === 0) return;
-      const idx = sectionAt(list, pending * d);
-      const target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
+      let target = 0;
+      if (pending.kind === "time") {
+        target = Math.min(Math.max(pending.t, 0), d);
+      } else {
+        if (list.length === 0) return;
+        const idx = sectionAt(list, pending.r * d);
+        target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
+      }
       try {
         audio.currentTime = target;
       } catch {
@@ -171,10 +179,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     if (!Number.isFinite(duration) || duration <= 0) {
-      // Metadata not ready yet (slow networks): set optimistically — the
-      // seek lands once data arrives instead of silently playing from 0.
+      // Metadata not ready yet (slow networks): park the absolute target
+      // for onMeta AND try the element optimistically — one of the two
+      // always lands instead of silently playing from 0.
+      pendingRef.current = { kind: "time", t: Math.max(0, t) };
       try {
         audio.currentTime = Math.max(0, t);
+        audio.load();
       } catch {
         /* not ready — non-fatal */
       }
@@ -258,7 +269,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       if (ratio === null || sections.length === 0) return;
       if (!Number.isFinite(duration) || duration <= 0) {
         // Metadata pending: park the tap and resolve it in onMeta.
-        pendingRatioRef.current = ratio;
+        pendingRef.current = { kind: "ratio", r: ratio };
         audioRef.current?.load();
         return;
       }
@@ -420,19 +431,24 @@ export function ListenToArticle({ slug }: { slug: string }) {
           onKeyDown={onKeyDown}
           className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
-          <div className="relative w-full h-1.5 rounded-full bg-primary/10" aria-hidden="true">
+          <div className="relative w-full h-2 rounded-full bg-primary/10" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none" style={{ width: `${fraction * 100}%` }} />
-            {sections.slice(1).map((s, i) => (
-              <span
-                key={i}
-                title={s.title}
-                className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-2 h-4 rounded-full bg-primary/60 ring-2 ring-white pointer-events-none"
-                style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
-                aria-hidden="true"
-              />
-            ))}
+            {sections.slice(1).map((s, i) => {
+              const isCurrent = i + 1 === sectionIdx;
+              return (
+                <span
+                  key={i}
+                  title={s.title}
+                  className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full ring-2 ring-white pointer-events-none ${
+                    isCurrent ? "w-2.5 h-5 bg-primary" : "w-2 h-4 bg-primary/60"
+                  }`}
+                  style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
+                  aria-hidden="true"
+                />
+              );
+            })}
             <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-[2.5px] border-primary shadow-sm pointer-events-none"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-[3px] border-white shadow-md pointer-events-none"
               style={{ left: `${fraction * 100}%` }}
             />
           </div>
@@ -479,7 +495,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => goToSection(i)}
+                        onClick={() => seekAndPlay(headerStart(i))}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
