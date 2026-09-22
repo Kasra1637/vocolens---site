@@ -48,6 +48,8 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
+ * - both orders supported: chapters/buttons jump-and-play while playing,
+ *   or arm the position while paused so Listen starts from the selection
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -189,20 +191,41 @@ export function ListenToArticle({ slug }: { slug: string }) {
     play();
   }, [seek, play]);
 
+  // Chapter navigation supports both orders: while playing it jumps and
+  // keeps playing; while paused it only arms the position (select first),
+  // and Listen starts from there. Track taps always arm without playing.
+  const selectSection = useCallback(
+    (target: number) => {
+      seek(headerStart(target));
+    },
+    [seek, headerStart],
+  );
+
+  const goToSection = useCallback(
+    (target: number) => {
+      if (playing) {
+        seekAndPlay(headerStart(target));
+      } else {
+        selectSection(target);
+      }
+    },
+    [playing, seekAndPlay, selectSection, headerStart],
+  );
+
   const prevSection = useCallback(() => {
     if (sections.length === 0) return;
     const idx = sectionAt(sections, currentTime);
     const intoSection = currentTime - sections[idx].startSec;
     const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
-    seekAndPlay(headerStart(target));
-  }, [sections, currentTime, seekAndPlay, headerStart]);
+    goToSection(target);
+  }, [sections, currentTime, goToSection]);
 
   const nextSection = useCallback(() => {
     if (sections.length === 0) return;
     const idx = sectionAt(sections, currentTime);
     const target = Math.min(sections.length - 1, idx + 1);
-    seekAndPlay(headerStart(target));
-  }, [sections, currentTime, seekAndPlay, headerStart]);
+    goToSection(target);
+  }, [sections, currentTime, goToSection]);
 
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
@@ -295,11 +318,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
       nextSection();
     } else if (e.key === "Home") {
       e.preventDefault();
-      if (sections.length > 0) seekAndPlay(headerStart(0));
+      if (sections.length > 0) goToSection(0);
     } else if (e.key === "End") {
       e.preventDefault();
       if (sections.length > 0) {
-        seekAndPlay(headerStart(sections.length - 1));
+        goToSection(sections.length - 1);
       }
     }
   };
@@ -456,7 +479,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => seekAndPlay(headerStart(i))}
+                        onClick={() => goToSection(i)}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
