@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake } from '@phosphor-icons/react';
+import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, CaretUp, CaretDown, TrendUp, TrendDown, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake, Briefcase, Bed, CurrencyCircleDollar, Users, Microphone, Fire, ChatCircle, Plant, Trophy, Compass, Stethoscope, Brain, Smiley, Bone, Heartbeat, Butterfly, Hand, HandsClapping, Footprints } from '@phosphor-icons/react';
 
 type Feature = {
   id: string;
@@ -53,13 +53,13 @@ function CalendarVisual() {
 
 function WeeklyReflectionVisual() {
   const weekArc = [
-    { day: 'M', mood: 'Tense', level: 30, color: '#ef4444' },
-    { day: 'T', mood: 'Anxious', level: 40, color: '#f97316' },
-    { day: 'W', mood: 'Calm', level: 70, color: '#10b981' },
-    { day: 'T', mood: 'Focused', level: 75, color: '#06b6d4' },
-    { day: 'F', mood: 'Relief', level: 85, color: '#10b981' },
-    { day: 'S', mood: 'Rest', level: 60, color: '#8b5cf6' },
-    { day: 'S', mood: 'Peace', level: 80, color: '#10b981' },
+    { day: 'M', mood: 'Tense', level: 30 },
+    { day: 'T', mood: 'Anxious', level: 40 },
+    { day: 'W', mood: 'Calm', level: 70 },
+    { day: 'T', mood: 'Focused', level: 75 },
+    { day: 'F', mood: 'Relief', level: 85 },
+    { day: 'S', mood: 'Rest', level: 60 },
+    { day: 'S', mood: 'Peace', level: 80 },
   ];
 
   return (
@@ -70,7 +70,7 @@ function WeeklyReflectionVisual() {
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your week · Mar 18 – 24
         </p>
-        <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+        <span className="text-[11px] font-medium text-[#6A3FC0] bg-primary/8 px-2 py-0.5 rounded-full">
           +12% wellbeing
         </span>
       </div>
@@ -85,31 +85,29 @@ function WeeklyReflectionVisual() {
         {weekArc.map((d, i) => (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
             <div
-              className="w-full rounded-md transition-all duration-300 group-hover:brightness-110 group-hover:scale-x-110"
+              className="w-full rounded-md bg-primary transition-all duration-300 group-hover:brightness-110 group-hover:scale-x-110"
               style={{
                 height: `${d.level}%`,
-                background: `linear-gradient(180deg, ${d.color}cc, ${d.color}66)`,
+                opacity: 0.35 + (d.level / 100) * 0.65,
               }}
             />
-            <span className="text-[9px] font-semibold text-text-muted">{d.day}</span>
+            <span className="text-[11px] font-semibold text-text-muted">{d.day}</span>
           </div>
         ))}
       </div>
 
       <div className="flex flex-wrap gap-2 mb-5">
         {[
-          { label: 'Work pressure', icon: '~' },
-          { label: 'Self-trust', icon: '+' },
-          { label: 'Rest', icon: '+' },
-        ].map((t) => (
+          { label: 'Work pressure', Icon: TrendDown },
+          { label: 'Self-trust', Icon: TrendUp },
+          { label: 'Rest', Icon: TrendUp },
+        ].map(({ label, Icon }) => (
           <span
-            key={t.label}
+            key={label}
             className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-all duration-200 hover:bg-primary/15 hover:-translate-y-0.5 flex items-center gap-1"
           >
-            <span className={`text-[10px] font-bold ${t.icon === '+' ? 'text-emerald-500' : 'text-amber-500'}`}>
-              {t.icon}
-            </span>
-            {t.label}
+            <Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
+            {label}
           </span>
         ))}
       </div>
@@ -126,25 +124,25 @@ function WeeklyReflectionVisual() {
 
 function MoodStoryVisual() {
   const week = [
-    { d: 'Mon', e: 'Trust', c: '#10B981', intensity: 72 },
-    { d: 'Tue', e: 'Fear', c: '#8E6BFF', intensity: 55 },
-    { d: 'Wed', e: 'Anticipation', c: '#F97316', intensity: 80 },
-    { d: 'Thu', e: 'Happiness', c: '#F5B700', intensity: 88 },
-    { d: 'Fri', e: 'Surprise', c: '#06B6D4', intensity: 65 },
-    { d: 'Sat', e: 'Happiness', c: '#F5B700', intensity: 90 },
-    { d: 'Sun', e: 'Trust', c: '#10B981', intensity: 78 },
+    { d: 'Mon', e: 'Trust', intensity: 72 },
+    { d: 'Tue', e: 'Fear', intensity: 55 },
+    { d: 'Wed', e: 'Anticipation', intensity: 80 },
+    { d: 'Thu', e: 'Happiness', intensity: 88 },
+    { d: 'Fri', e: 'Surprise', intensity: 65 },
+    { d: 'Sat', e: 'Happiness', intensity: 90 },
+    { d: 'Sun', e: 'Trust', intensity: 78 },
   ];
   return (
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-cyan-50/40 to-transparent rounded-tr-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood story · This week
         </p>
         <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-emerald-400" />
-          <span className="text-[10px] font-medium text-text-muted">Mostly positive</span>
+          <span className="w-2 h-2 rounded-full bg-primary" />
+          <span className="text-[11px] font-medium text-text-muted">Mostly positive</span>
         </div>
       </div>
 
@@ -155,27 +153,19 @@ function MoodStoryVisual() {
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
               <div
-                className="w-full max-w-[32px] rounded-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
+                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-300 group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
                 style={{
                   height: `${w.intensity}%`,
                   minHeight: '28px',
+                  opacity: 0.35 + (w.intensity / 100) * 0.65,
                 }}
                 aria-label={`${w.d}: ${w.e}`}
               >
-                <div
-                  className="absolute inset-0 rounded-xl"
-                  style={{
-                    background: `linear-gradient(180deg, ${w.c} 0%, ${w.c}88 100%)`,
-                  }}
-                />
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/5 to-white/20" />
               </div>
             </div>
-            <span className="text-[8px] sm:text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
-            <span
-              className="text-[8px] sm:text-[9px] font-medium leading-tight text-center px-0.5 transition-colors duration-200"
-              style={{ color: w.c }}
-            >
+            <span className="text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
+            <span className="text-[11px] font-medium leading-tight text-center px-0.5 text-text-muted">
               {w.e}
             </span>
           </div>
@@ -184,11 +174,11 @@ function MoodStoryVisual() {
 
       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/8 relative">
         <div className="flex -space-x-1">
-          {['#10B981', '#F5B700', '#06B6D4'].map((c, i) => (
+          {[1, 0.7, 0.4].map((o, i) => (
             <span
               key={i}
-              className="w-4 h-4 rounded-full border-2 border-white"
-              style={{ background: c }}
+              className="w-4 h-4 rounded-full border-2 border-white bg-primary"
+              style={{ opacity: o }}
             />
           ))}
         </div>
@@ -202,9 +192,9 @@ function MoodStoryVisual() {
 
 function ExploreDeeperVisual() {
   const visibleSections = [
-    { name: 'Journal calendar', icon: CalendarDays, color: '#8E6BFF' },
-    { name: 'Weekly reflection', icon: BookOpenText, color: '#F97316' },
-    { name: 'Mood story', icon: BarChart3, color: '#06B6D4' },
+    { name: 'Journal calendar', icon: CalendarDays },
+    { name: 'Weekly reflection', icon: BookOpenText },
+    { name: 'Mood story', icon: BarChart3 },
   ];
   const hiddenSections = [
     'Emotional landscape', 'Body map', 'Deep insights', 'Triggers',
@@ -213,13 +203,13 @@ function ExploreDeeperVisual() {
 
   return (
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -top-8 -right-8 w-24 h-24 bg-emerald-100/30 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-4 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your dashboard
         </p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
           3 of 13 active
         </span>
       </div>
@@ -230,19 +220,16 @@ function ExploreDeeperVisual() {
           return (
             <div
               key={s.name}
-              className="rounded-xl border border-primary/12 bg-white px-4 py-3 flex items-center justify-between shadow-sm transition-all duration-200 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group"
+              className="rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-200 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group"
             >
               <div className="flex items-center gap-3">
-                <span
-                  className="w-7 h-7 rounded-lg flex items-center justify-center transition-transform duration-200 group-hover:scale-110"
-                  style={{ background: `${s.color}15` }}
-                >
-                  <Icon className="w-3.5 h-3.5" style={{ color: s.color }} />
+                <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
+                  <Icon className="w-4 h-4 text-[#6A3FC0]" />
                 </span>
                 <span className="text-sm font-semibold text-text-primary">{s.name}</span>
               </div>
-              <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-full flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="text-[11px] text-[#6A3FC0] font-semibold bg-primary/8 px-2.5 py-1 rounded-full flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 Visible
               </span>
             </div>
@@ -254,7 +241,7 @@ function ExploreDeeperVisual() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
         <div className="pt-4 flex flex-wrap gap-1.5">
           {hiddenSections.map((s) => (
-            <span key={s} className="text-[10px] px-2 py-1 rounded-md bg-primary/[0.04] text-text-muted font-medium border border-primary/8">
+            <span key={s} className="text-[11px] px-2 py-1 rounded-md bg-primary/[0.04] text-text-muted font-medium border border-primary/8">
               {s}
             </span>
           ))}
@@ -262,7 +249,7 @@ function ExploreDeeperVisual() {
       </div>
 
       <button className="w-full rounded-xl border border-dashed border-primary/25 bg-gradient-to-r from-primary/[0.03] to-primary/[0.06] px-4 py-3.5 flex items-center justify-center gap-2.5 text-primary text-sm font-semibold transition-all duration-300 hover:bg-primary/[0.08] hover:border-primary/40 hover:shadow-sm group relative">
-        <ChevronDownCircle className="w-4.5 h-4.5 transition-transform duration-300 group-hover:translate-y-0.5" />
+        <ChevronDownCircle className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
         Explore deeper · 7 more
       </button>
     </div>
@@ -285,36 +272,36 @@ function EmotionalLandscapeVisual() {
 
   return (
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-50/50 to-transparent rounded-tr-full pointer-events-none" />
+      <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-3 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Emotional landscape
         </p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
           Last 7 days
         </span>
       </div>
 
-      <div className="relative aspect-[4/3] rounded-xl bg-gradient-to-br from-rose-50/20 via-white/80 to-emerald-50/20 border border-primary/10 overflow-hidden shadow-inner">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_30%,rgba(239,68,68,0.06)_0%,transparent_45%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_72%,rgba(16,185,129,0.06)_0%,transparent_45%)]" />
+      <div className="relative aspect-[4/3] rounded-xl bg-primary/[0.03] border border-primary/10 overflow-hidden shadow-inner">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_30%,rgba(147,112,219,0.07)_0%,transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_72%,rgba(106,63,192,0.06)_0%,transparent_45%)]" />
 
         <div className="absolute inset-y-4 left-1/2 w-px bg-gradient-to-b from-primary/5 via-primary/15 to-primary/5" />
         <div className="absolute inset-x-4 top-1/2 h-px bg-gradient-to-r from-primary/5 via-primary/15 to-primary/5" />
 
-        <span className="absolute top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Activated</span>
-        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Calm</span>
-        <span className="absolute top-1/2 left-3 -translate-y-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Unpleasant</span>
-        <span className="absolute top-1/2 right-3 -translate-y-1/2 text-[10px] font-bold text-text-muted/80 uppercase tracking-wider">Pleasant</span>
+        <span className="absolute top-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Activated</span>
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Calm</span>
+        <span className="absolute top-1/2 left-3 -translate-y-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Unpleasant</span>
+        <span className="absolute top-1/2 right-3 -translate-y-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Pleasant</span>
 
         <div className="absolute top-[18%] left-[12%] flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
-          <span className="text-[10px] font-semibold text-rose-500">Tense</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="text-[11px] font-semibold text-text-secondary">Tense</span>
         </div>
         <div className="absolute bottom-[12%] right-[10%] flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          <span className="text-[10px] font-semibold text-emerald-500">Calm</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
+          <span className="text-[11px] font-semibold text-text-secondary">Calm</span>
         </div>
 
         {clusters.map((p, i) => (
@@ -334,25 +321,25 @@ function EmotionalLandscapeVisual() {
         ))}
 
         <div
-          className="absolute rounded-full border border-dashed border-rose-300/50 pointer-events-none"
+          className="absolute rounded-full border border-dashed border-primary/40 pointer-events-none"
           style={{ top: '18%', left: '14%', width: '28%', height: '30%' }}
         />
         <div
-          className="absolute rounded-full border border-dashed border-emerald-300/50 pointer-events-none"
+          className="absolute rounded-full border border-dashed border-primary/25 pointer-events-none"
           style={{ top: '55%', left: '55%', width: '32%', height: '34%' }}
         />
       </div>
 
       <div className="flex items-center gap-4 mt-4 pt-3 border-t border-primary/8 relative">
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded-full border border-dashed border-rose-300" />
-          <span className="text-[10px] font-medium text-text-muted">Work days</span>
+          <span className="w-3 h-3 rounded-full border border-dashed border-primary/50" />
+          <span className="text-[11px] font-medium text-text-muted">Work days</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded-full border border-dashed border-emerald-300" />
-          <span className="text-[10px] font-medium text-text-muted">Weekends</span>
+          <span className="w-3 h-3 rounded-full border border-dashed border-primary/30" />
+          <span className="text-[11px] font-medium text-text-muted">Weekends</span>
         </div>
-        <p className="text-[10px] text-text-muted italic ml-auto">2 clusters detected</p>
+        <p className="text-[11px] text-text-muted italic ml-auto">2 clusters detected</p>
       </div>
     </div>
   );
@@ -360,21 +347,15 @@ function EmotionalLandscapeVisual() {
 
 function BodyMapVisual() {
   const regions = [
-    { name: 'Head', emoji: '🧠', heat: 0.2 },
-    { name: 'Face', emoji: '😶', heat: 0.15 },
-    { name: 'Neck', emoji: '🦴', heat: 0.55 },
-    { name: 'Chest', emoji: '💓', heat: 0.85 },
-    { name: 'Stomach', emoji: '🫁', heat: 0.7 },
-    { name: 'Arms', emoji: '💪', heat: 0.1 },
-    { name: 'Hands', emoji: '🤲', heat: 0.45 },
-    { name: 'Legs', emoji: '🦵', heat: 0.1 },
+    { name: 'Head', Icon: Brain, heat: 0.2 },
+    { name: 'Face', Icon: Smiley, heat: 0.15 },
+    { name: 'Neck', Icon: Bone, heat: 0.55 },
+    { name: 'Chest', Icon: Heartbeat, heat: 0.85 },
+    { name: 'Stomach', Icon: Butterfly, heat: 0.7 },
+    { name: 'Arms', Icon: Hand, heat: 0.1 },
+    { name: 'Hands', Icon: HandsClapping, heat: 0.45 },
+    { name: 'Legs', Icon: Footprints, heat: 0.1 },
   ];
-
-  const getBarColor = (heat: number) => {
-    const hue = 270 - heat * 40;
-    const saturation = 50 + heat * 30;
-    return `linear-gradient(90deg, hsl(${hue}, ${saturation}%, 72%) 0%, hsl(${hue - 10}, ${saturation + 10}%, 58%) 100%)`;
-  };
 
   const highStress = regions.filter((r) => r.heat >= 0.7);
 
@@ -386,7 +367,7 @@ function BodyMapVisual() {
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Where stress lives
         </p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
           Last 30 days
         </span>
       </div>
@@ -398,22 +379,23 @@ function BodyMapVisual() {
       <div className="space-y-2 relative">
         {regions.map((r) => (
           <div key={r.name} className="flex items-center gap-2.5 group">
-            <span className="text-sm w-5 text-center">{r.emoji}</span>
+            <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <r.Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
+            </span>
             <span className="w-14 text-[11px] font-semibold text-text-secondary">{r.name}</span>
             <div className="flex-1 h-4 rounded-full bg-primary/[0.06] overflow-hidden border border-primary/8 relative">
               <div
-                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110 group-hover:shadow-sm relative"
+                className="h-full rounded-full bg-primary transition-all duration-500 group-hover:brightness-110 group-hover:shadow-sm relative"
                 style={{
                   width: `${r.heat * 100}%`,
-                  background: getBarColor(r.heat),
+                  opacity: 0.3 + r.heat * 0.7,
                 }}
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/5 to-white/20" />
               </div>
             </div>
             <span
-              className="text-[11px] font-bold w-9 text-right"
-              style={{ color: r.heat >= 0.7 ? 'hsl(240, 50%, 55%)' : 'hsl(240, 20%, 60%)' }}
+              className={`text-[11px] font-bold w-9 text-right tabular-nums ${r.heat >= 0.7 ? 'text-[#6A3FC0]' : 'text-text-muted'}`}
             >
               {Math.round(r.heat * 100)}%
             </span>
@@ -423,14 +405,14 @@ function BodyMapVisual() {
 
       <div className="flex items-center gap-3 mt-5 pt-3 border-t border-primary/8 relative">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-2.5 rounded-full" style={{ background: getBarColor(0.2) }} />
-          <span className="text-[10px] text-text-muted">Low</span>
+          <div className="w-8 h-2.5 rounded-full bg-primary" style={{ opacity: 0.35 }} />
+          <span className="text-[11px] text-text-muted">Low</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-2.5 rounded-full" style={{ background: getBarColor(0.85) }} />
-          <span className="text-[10px] text-text-muted">High</span>
+          <div className="w-8 h-2.5 rounded-full bg-primary" />
+          <span className="text-[11px] text-text-muted">High</span>
         </div>
-        <p className="text-[10px] text-text-muted italic ml-auto">Focus: chest & stomach</p>
+        <p className="text-[11px] text-text-muted italic ml-auto">Focus: chest & stomach</p>
       </div>
     </div>
   );
@@ -439,7 +421,7 @@ function BodyMapVisual() {
 function DeepInsightsVisual() {
   return (
     <div className="card-app rounded-2xl p-6">
-      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
+      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           One insight · this week
@@ -462,20 +444,20 @@ function DeepInsightsVisual() {
 
 function TriggersVisual() {
   const triggers = [
-    { topic: 'Work', emoji: '💼', shift: '+62%', dir: 'up', bar: 0.62 },
-    { topic: 'Sleep', emoji: '😴', shift: '-28%', dir: 'down', bar: 0.28 },
-    { topic: 'Money', emoji: '💰', shift: '+41%', dir: 'up', bar: 0.41 },
-    { topic: 'Family', emoji: '👨‍👩‍👧', shift: '+18%', dir: 'up', bar: 0.18 },
+    { topic: 'Work', Icon: Briefcase, shift: '+62%', dir: 'up', bar: 0.62 },
+    { topic: 'Sleep', Icon: Bed, shift: '-28%', dir: 'down', bar: 0.28 },
+    { topic: 'Money', Icon: CurrencyCircleDollar, shift: '+41%', dir: 'up', bar: 0.41 },
+    { topic: 'Family', Icon: Users, shift: '+18%', dir: 'up', bar: 0.18 },
   ];
   return (
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-rose-50/40 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-2 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Trigger analysis
         </p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
           Correlation strength
         </span>
       </div>
@@ -499,41 +481,30 @@ function TriggersVisual() {
         {triggers.map((t) => (
           <li
             key={t.topic}
-            className="rounded-xl border border-primary/10 bg-white px-4 py-3 shadow-sm transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group"
+            className="rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group"
           >
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2.5">
-                <span className="text-sm">{t.emoji}</span>
+                <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                  <t.Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
+                </span>
                 <span className="text-sm font-semibold text-text-primary">{t.topic}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
-                    t.dir === 'up'
-                      ? 'bg-rose-50 text-rose-500'
-                      : 'bg-emerald-50 text-emerald-600'
-                  }`}
-                >
-                  {t.dir === 'up' ? '↑' : '↓'}
+                <span className="text-[11px] px-1.5 py-0.5 rounded font-semibold bg-primary/8 text-[#6A3FC0] flex items-center">
+                  {t.dir === 'up' ? <CaretUp className="w-3 h-3" weight="bold" /> : <CaretDown className="w-3 h-3" weight="bold" />}
                 </span>
-                <span
-                  className={`text-sm font-bold ${
-                    t.dir === 'up' ? 'text-rose-500' : 'text-emerald-600'
-                  }`}
-                >
+                <span className="text-sm font-bold text-text-primary tabular-nums">
                   {t.shift}
                 </span>
               </div>
             </div>
             <div className="h-1.5 rounded-full bg-primary/[0.06] overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-500 group-hover:brightness-110"
+                className="h-full rounded-full bg-primary transition-all duration-500 group-hover:brightness-110"
                 style={{
                   width: `${t.bar * 100}%`,
-                  background:
-                    t.dir === 'up'
-                      ? 'linear-gradient(90deg, hsl(350, 70%, 72%), hsl(340, 75%, 58%))'
-                      : 'linear-gradient(90deg, hsl(160, 60%, 65%), hsl(155, 65%, 50%))',
+                  opacity: 0.45 + t.bar * 0.55,
                 }}
               />
             </div>
@@ -541,7 +512,7 @@ function TriggersVisual() {
         ))}
       </ul>
 
-      <p className="text-[10px] text-text-muted italic mt-4 pt-3 border-t border-primary/8 relative">
+      <p className="text-[11px] text-text-muted italic mt-4 pt-3 border-t border-primary/8 relative">
         Top trigger: Work — strongest correlation with elevated stress
       </p>
     </div>
@@ -575,7 +546,7 @@ function ThemesVisual() {
           </li>
         ))}
       </ul>
-      <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm">
+      <div className="rounded-xl bg-primary/5 border border-primary/15 px-4 py-3">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Micro-action
         </p>
@@ -589,23 +560,23 @@ function ThemesVisual() {
 
 function TimeOfDayVisual() {
   const slots = [
-    { t: '6a', emoji: '🌅', v: 35, label: 'Dawn' },
-    { t: '9a', emoji: '☀️', v: 78, label: 'Morning' },
-    { t: '12p', emoji: '🌤️', v: 55, label: 'Noon' },
-    { t: '3p', emoji: '😮‍💨', v: 40, label: 'Afternoon' },
-    { t: '6p', emoji: '🌆', v: 62, label: 'Evening' },
-    { t: '9p', emoji: '🌙', v: 85, label: 'Night' },
+    { t: '6a', v: 35, label: 'Dawn' },
+    { t: '9a', v: 78, label: 'Morning' },
+    { t: '12p', v: 55, label: 'Noon' },
+    { t: '3p', v: 40, label: 'Afternoon' },
+    { t: '6p', v: 62, label: 'Evening' },
+    { t: '9p', v: 85, label: 'Night' },
   ];
   const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
   return (
     <div className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -top-10 -right-10 w-24 h-24 bg-amber-100/30 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-1 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood by hour
         </p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
           7-day average
         </span>
       </div>
@@ -617,7 +588,7 @@ function TimeOfDayVisual() {
       <div className="flex items-end gap-2.5 h-32 mb-3 relative">
         {slots.map((s) => (
           <div key={s.t} className="flex-1 flex flex-col items-center gap-1 group">
-            <span className="text-[10px] font-bold text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <span className="text-[11px] font-bold text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               {s.v}%
             </span>
             <div className="w-full relative">
@@ -628,13 +599,12 @@ function TimeOfDayVisual() {
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
               </div>
             </div>
-            <span className="text-xs mt-0.5">{s.emoji}</span>
-            <span className="text-[9px] font-semibold text-text-muted">{s.t}</span>
+            <span className="text-[11px] font-semibold text-text-muted" aria-label={s.label}>{s.t}</span>
           </div>
         ))}
       </div>
 
-      <div className="rounded-xl bg-white border border-primary/15 px-4 py-3 shadow-sm relative">
+      <div className="rounded-xl bg-primary/5 border border-primary/15 px-4 py-3 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Insight
         </p>
@@ -652,7 +622,7 @@ function RefineAnalysisVisual() {
       <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Emotion breakdown
       </p>
-      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm space-y-4">
+      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 space-y-4">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted mb-1">AI detected</p>
@@ -678,29 +648,31 @@ function RefineAnalysisVisual() {
 
 function MilestonesVisual() {
   const badges = [
-    { emoji: '🎙️', name: 'First Entry', unlocked: true },
-    { emoji: '🔥', name: '7-Day Presence', unlocked: true },
-    { emoji: '💬', name: '30 Entries', unlocked: true },
-    { emoji: '🧭', name: 'Self-Aware', unlocked: false },
-    { emoji: '🌱', name: 'Growth Streak', unlocked: false },
-    { emoji: '🏆', name: '100 Entries', unlocked: false },
+    { Icon: Microphone, name: 'First Entry', unlocked: true },
+    { Icon: Fire, name: '7-Day Presence', unlocked: true },
+    { Icon: ChatCircle, name: '30 Entries', unlocked: true },
+    { Icon: Compass, name: 'Self-Aware', unlocked: false },
+    { Icon: Plant, name: 'Growth Streak', unlocked: false },
+    { Icon: Trophy, name: '100 Entries', unlocked: false },
   ];
   return (
     <div className="card-app rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">Your milestones</p>
-        <span className="text-[10px] font-medium text-text-muted bg-white px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
+        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
         {badges.map((b) => (
           <div
             key={b.name}
             className={`rounded-xl p-3 text-center border transition-all duration-300 ${
-              b.unlocked ? 'bg-white border-primary/20 shadow-sm' : 'bg-primary/[0.03] border-primary/8 opacity-50'
+              b.unlocked ? 'bg-primary/[0.04] border-primary/20' : 'bg-primary/[0.03] border-primary/8 opacity-50'
             }`}
           >
-            <p className="text-2xl mb-1">{b.emoji}</p>
-            <p className="text-[10px] font-semibold text-text-secondary leading-tight">{b.name}</p>
+            <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-1.5" aria-hidden="true">
+              <b.Icon className="w-5 h-5 text-[#6A3FC0]" weight={b.unlocked ? 'fill' : 'regular'} />
+            </span>
+            <p className="text-[11px] font-semibold text-text-secondary leading-tight">{b.name}</p>
           </div>
         ))}
       </div>
@@ -712,9 +684,11 @@ function MilestonesVisual() {
 function TherapistShareVisual() {
   return (
     <div className="card-app rounded-2xl p-6">
-      <div className="rounded-xl bg-white border border-primary/15 p-5 shadow-sm">
+      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-2xl">🩺</span>
+          <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <Stethoscope className="w-5 h-5 text-[#6A3FC0]" weight="bold" />
+          </span>
           <div>
             <p className="font-bold text-text-primary text-base leading-tight">Insights report</p>
             <p className="text-[11px] text-text-muted">Ready to share as PDF</p>
@@ -728,7 +702,7 @@ function TherapistShareVisual() {
             </div>
           ))}
         </div>
-        <div className="mt-4 w-full rounded-xl bg-primary text-white text-sm font-semibold py-3 text-center shadow-sm">
+        <div className="mt-4 w-full rounded-full border-2 border-primary/60 bg-primary/15 text-[#6A3FC0] btn-app-glow text-sm font-semibold py-3 text-center">
           Share with therapist
         </div>
       </div>
