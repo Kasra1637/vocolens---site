@@ -197,7 +197,7 @@ export function UseCases() {
             Talk it out. See your patterns.
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Open the app, speak what's happening, and Vocolens turns it into mood insights and patterns you can act on. Private, patient, neurodivergent-first. Free to try on Google Play.
+            Talk for 60 seconds. Get insights that actually make sense of your day. Private, patient, built for neurodivergent minds. Free to try on Google Play.
           </p>
           <a
             href={GOOGLE_PLAY_URL}
