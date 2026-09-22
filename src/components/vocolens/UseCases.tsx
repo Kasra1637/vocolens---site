@@ -113,7 +113,6 @@ export function UseCases() {
       <section className="max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16">
         <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Find your condition below ↓
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
