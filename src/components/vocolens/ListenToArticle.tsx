@@ -48,10 +48,10 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
- * - chapter taps always switch instantly and play from the header;
- *   transport buttons/keys jump-and-play while playing, or arm the position
- *   while paused so Listen starts from the selection; pre-metadata taps of
- *   any kind are parked and applied once duration loads
+ * - chapters/buttons/keys jump-and-play while playing, or arm the position
+ *   while paused so Listen starts from the visibly selected chapter;
+ *   pre-metadata taps of any kind are parked and applied once duration loads
+ *   (seeks are verified on the next frame against element desync)
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -70,6 +70,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [showChapters, setShowChapters] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  // Chapter armed while paused (via track, chapters, buttons, or keys).
+  // Cleared on play; the chapter list highlights it so the selection that
+  // Listen will start from is unmistakable.
+  const [armedIdx, setArmedIdx] = useState<number | null>(null);
 
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
@@ -158,6 +162,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
+    setArmedIdx(null);
     void audio.play().then(
       () => setPlaying(true),
       () => setPlaying(false),
@@ -195,6 +200,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const clamped = Math.min(Math.max(t, 0), duration);
     audio.currentTime = clamped;
     setCurrentTime(clamped);
+    // Verify-and-repair: if the element didn't take the seek (observed on
+    // some mobile browsers pre-playback), re-apply on the next frame.
+    requestAnimationFrame(() => {
+      const el = audioRef.current;
+      if (!el) return;
+      try {
+        if (Math.abs(el.currentTime - clamped) > 1.0) el.currentTime = clamped;
+      } catch {
+        /* non-fatal */
+      }
+    });
   }, [duration]);
 
   const seekAndPlay = useCallback((t: number) => {
@@ -204,9 +220,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   // Chapter navigation supports both orders: while playing it jumps and
   // keeps playing; while paused it only arms the position (select first),
-  // and Listen starts from there. Track taps always arm without playing.
+  // and Listen starts from the visibly armed chapter.
+  // Track taps always arm without playing.
   const selectSection = useCallback(
     (target: number) => {
+      setArmedIdx(target);
       seek(headerStart(target));
     },
     [seek, headerStart],
@@ -274,6 +292,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         return;
       }
       const idx = sectionAt(sections, ratio * duration);
+      setArmedIdx(idx);
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
         seek(headerStart(idx));
@@ -318,6 +337,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
     scrubbingRef.current = false;
     setScrubbing(false);
     setHoverTime(null);
+    // While playing, live progress owns the highlight; while paused, the
+    // just-armed chapter stays highlighted until Listen starts.
+    if (playing) setArmedIdx(null);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -490,12 +512,12 @@ export function ListenToArticle({ slug }: { slug: string }) {
             {showChapters && (
               <ol className="mt-1 space-y-0.5">
                 {sections.map((s, i) => {
-                  const active = i === sectionIdx;
+                  const active = i === (playing ? sectionIdx : (armedIdx ?? sectionIdx));
                   return (
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => seekAndPlay(headerStart(i))}
+                        onClick={() => goToSection(i)}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
