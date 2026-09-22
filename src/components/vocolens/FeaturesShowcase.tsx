@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
@@ -16,15 +16,72 @@ type Feature = {
 
 /* ---------- Visuals ---------- */
 
+/* ---------- Scroll-driven motion (uniform across all 13 visuals) ----------
+ * Same contract as AnimatedSection: fire once when scrolled into view,
+ * render the final state immediately for prefers-reduced-motion. Bars and
+ * dots transition via CSS; headline numbers count up via rAF. */
+
+function useInViewOnce<T extends HTMLElement>(threshold = 0.25) {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return { ref, inView };
+}
+
+function useCountUp(target: number, start: boolean, duration = 1100) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!start) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setValue(target);
+      return;
+    }
+    let raf = 0;
+    const t0 = performance.now();
+    const tick = (now: number) => {
+      const p = Math.min((now - t0) / duration, 1);
+      setValue(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [start, target, duration]);
+
+  return value;
+}
+
 function CalendarVisual() {
   const days = Array.from({ length: 30 }, (_, i) => i);
   const active = new Set([1, 2, 4, 5, 8, 10, 11, 14, 17, 18, 19, 22, 25, 28]);
   const pulse = new Set([18, 25]);
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+  const daysCount = useCountUp(14, inView);
   return (
-    <div className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-2xl p-6">
       <div className="flex items-baseline justify-between mb-5">
         <div>
-          <p className="text-4xl font-bold text-primary leading-none">14</p>
+          <p className="text-4xl font-bold text-primary leading-none tabular-nums">{daysCount}</p>
           <p className="text-sm text-text-muted mt-1.5">days this month</p>
         </div>
         <div className="text-right">
@@ -36,13 +93,16 @@ function CalendarVisual() {
         {days.map((d) => (
           <span
             key={d}
-            className={`aspect-square rounded-full transition-transform duration-300 hover:scale-125 ${
+            className={`aspect-square rounded-full transition-all duration-500 hover:scale-125 ${
+              inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+            } ${
               active.has(d)
                 ? pulse.has(d)
                   ? 'bg-primary animate-pulse shadow-sm shadow-primary/30'
                   : 'bg-primary/70'
                 : 'bg-primary/10'
             }`}
+            style={{ transitionDelay: inView ? `${d * 18}ms` : '0ms' }}
           />
         ))}
       </div>
@@ -62,16 +122,19 @@ function WeeklyReflectionVisual() {
     { day: 'S', mood: 'Peace', level: 80 },
   ];
 
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+  const wellbeing = useCountUp(12, inView);
+
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-bl-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your week · Mar 18 – 24
         </p>
-        <span className="text-[11px] font-medium text-[#6A3FC0] bg-primary/8 px-2 py-0.5 rounded-full">
-          +12% wellbeing
+        <span className="text-[11px] font-medium text-[#6A3FC0] bg-primary/8 px-2 py-0.5 rounded-full tabular-nums">
+          +{wellbeing}% wellbeing
         </span>
       </div>
 
@@ -85,10 +148,11 @@ function WeeklyReflectionVisual() {
         {weekArc.map((d, i) => (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
             <div
-              className="w-full rounded-md bg-primary transition-all duration-300 group-hover:brightness-110 group-hover:scale-x-110"
+              className="w-full rounded-md bg-primary transition-all duration-700 ease-out group-hover:brightness-110 group-hover:scale-x-110"
               style={{
-                height: `${d.level}%`,
+                height: inView ? `${d.level}%` : '0%',
                 opacity: 0.35 + (d.level / 100) * 0.65,
+                transitionDelay: inView ? `${i * 60}ms` : '0ms',
               }}
             />
             <span className="text-[11px] font-semibold text-text-muted">{d.day}</span>
@@ -132,8 +196,9 @@ function MoodStoryVisual() {
     { d: 'Sat', e: 'Happiness', intensity: 90 },
     { d: 'Sun', e: 'Trust', intensity: 78 },
   ];
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2 relative">
@@ -149,15 +214,16 @@ function MoodStoryVisual() {
       <p className="text-[13px] text-text-muted mb-5 relative">Dominant emotion each day</p>
 
       <div className="grid grid-cols-7 gap-1 sm:gap-2.5 items-end h-40 mb-3 relative">
-        {week.map((w) => (
+        {week.map((w, i) => (
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
               <div
-                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-300 group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
+                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-700 ease-out group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
                 style={{
-                  height: `${w.intensity}%`,
-                  minHeight: '28px',
+                  height: inView ? `${w.intensity}%` : '0%',
+                  minHeight: inView ? '28px' : '0px',
                   opacity: 0.35 + (w.intensity / 100) * 0.65,
+                  transitionDelay: inView ? `${i * 70}ms` : '0ms',
                 }}
                 aria-label={`${w.d}: ${w.e}`}
               >
@@ -201,8 +267,10 @@ function ExploreDeeperVisual() {
     'Themes', 'Time of day', 'Growth moments',
   ];
 
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-4 relative">
@@ -215,12 +283,15 @@ function ExploreDeeperVisual() {
       </div>
 
       <div className="space-y-2.5 mb-5 relative">
-        {visibleSections.map((s) => {
+        {visibleSections.map((s, i) => {
           const Icon = s.icon;
           return (
             <div
               key={s.name}
-              className="rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-200 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group"
+              className={`rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-500 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+              }`}
+              style={{ transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
             >
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
@@ -270,8 +341,10 @@ function EmotionalLandscapeVisual() {
     { x: 48, y: 52, size: 9, opacity: 0.5, label: null },
   ];
 
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="flex items-center justify-between mb-3 relative">
@@ -307,15 +380,16 @@ function EmotionalLandscapeVisual() {
         {clusters.map((p, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-primary transition-all duration-300 hover:scale-[1.8] hover:z-10"
+            className="absolute rounded-full bg-primary transition-opacity duration-700 hover:scale-[1.8] hover:z-10"
             style={{
               top: `${p.y}%`,
               left: `${p.x}%`,
               width: `${p.size}px`,
               height: `${p.size}px`,
-              opacity: p.opacity,
+              opacity: inView ? p.opacity : 0,
               boxShadow: `0 0 ${p.size}px ${p.size / 2}px rgba(142, 107, 255, 0.15)`,
               transform: 'translate(-50%, -50%)',
+              transitionDelay: inView ? `${i * 70}ms` : '0ms',
             }}
           />
         ))}
@@ -359,8 +433,11 @@ function BodyMapVisual() {
 
   const highStress = regions.filter((r) => r.heat >= 0.7);
 
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+  const progress = useCountUp(100, inView, 1200);
+
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-1 relative">
@@ -385,9 +462,9 @@ function BodyMapVisual() {
             <span className="w-14 text-[11px] font-semibold text-text-secondary">{r.name}</span>
             <div className="flex-1 h-4 rounded-full bg-primary/[0.06] overflow-hidden border border-primary/8 relative">
               <div
-                className="h-full rounded-full bg-primary transition-all duration-500 group-hover:brightness-110 group-hover:shadow-sm relative"
+                className="h-full rounded-full bg-primary relative"
                 style={{
-                  width: `${r.heat * 100}%`,
+                  width: `${r.heat * progress}%`,
                   opacity: 0.3 + r.heat * 0.7,
                 }}
               >
@@ -395,9 +472,9 @@ function BodyMapVisual() {
               </div>
             </div>
             <span
-              className={`text-[11px] font-bold w-9 text-right tabular-nums ${r.heat >= 0.7 ? 'text-[#6A3FC0]' : 'text-text-muted'}`}
+              className={`text-[11px] font-bold w-9 text-right tabular-nums ${r.heat >= 0.7 && progress === 100 ? 'text-[#6A3FC0]' : 'text-text-muted'}`}
             >
-              {Math.round(r.heat * 100)}%
+              {Math.round(r.heat * progress)}%
             </span>
           </div>
         ))}
@@ -419,9 +496,10 @@ function BodyMapVisual() {
 }
 
 function DeepInsightsVisual() {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6">
-      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5">
+    <div ref={ref} className="card-app rounded-2xl p-6">
+      <div className={`rounded-xl bg-primary/5 border border-primary/15 p-5 transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           One insight · this week
@@ -449,8 +527,9 @@ function TriggersVisual() {
     { topic: 'Money', Icon: CurrencyCircleDollar, shift: '+41%', dir: 'up', bar: 0.41 },
     { topic: 'Family', Icon: Users, shift: '+18%', dir: 'up', bar: 0.18 },
   ];
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-2 relative">
@@ -478,10 +557,13 @@ function TriggersVisual() {
       </div>
 
       <ul className="space-y-2 relative">
-        {triggers.map((t) => (
+        {triggers.map((t, i) => (
           <li
             key={t.topic}
-            className="rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-200 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group"
+            className={`rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-500 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+            }`}
+            style={{ transitionDelay: inView ? `${i * 80}ms` : '0ms' }}
           >
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2.5">
@@ -501,10 +583,11 @@ function TriggersVisual() {
             </div>
             <div className="h-1.5 rounded-full bg-primary/[0.06] overflow-hidden">
               <div
-                className="h-full rounded-full bg-primary transition-all duration-500 group-hover:brightness-110"
+                className="h-full rounded-full bg-primary transition-[width] duration-700 ease-out group-hover:brightness-110"
                 style={{
-                  width: `${t.bar * 100}%`,
+                  width: inView ? `${t.bar * 100}%` : '0%',
                   opacity: 0.45 + t.bar * 0.55,
+                  transitionDelay: inView ? `${i * 80 + 150}ms` : '0ms',
                 }}
               />
             </div>
@@ -527,22 +610,23 @@ function ThemesVisual() {
     { name: 'Health', count: 4 },
   ];
   const max = 12;
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-2xl p-6">
       <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Themes · this month
       </p>
       <ul className="space-y-3 mb-5">
-        {themes.map((t) => (
+        {themes.map((t, i) => (
           <li key={t.name} className="flex items-center gap-3 group">
             <span className="w-24 text-sm font-semibold text-text-primary">{t.name}</span>
             <div className="flex-1 h-3 rounded-full bg-primary/10 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-all duration-500 group-hover:from-primary/60 group-hover:to-primary"
-                style={{ width: `${(t.count / max) * 100}%` }}
+                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-[width] duration-700 ease-out group-hover:from-primary/60 group-hover:to-primary"
+                style={{ width: inView ? `${(t.count / max) * 100}%` : '0%', transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
               />
             </div>
-            <span className="text-xs font-semibold text-text-muted w-6 text-right">{t.count}</span>
+            <span className="text-xs font-semibold text-text-muted w-6 text-right tabular-nums">{t.count}</span>
           </li>
         ))}
       </ul>
@@ -568,8 +652,9 @@ function TimeOfDayVisual() {
     { t: '9p', v: 85, label: 'Night' },
   ];
   const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6 relative overflow-hidden">
+    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
       <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
 
       <div className="flex items-center justify-between mb-1 relative">
@@ -586,15 +671,15 @@ function TimeOfDayVisual() {
       </p>
 
       <div className="flex items-end gap-2.5 h-32 mb-3 relative">
-        {slots.map((s) => (
+        {slots.map((s, i) => (
           <div key={s.t} className="flex-1 flex flex-col items-center gap-1 group">
             <span className="text-[11px] font-bold text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               {s.v}%
             </span>
             <div className="w-full relative">
               <div
-                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-all duration-300 group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
-                style={{ height: `${s.v}%`, minHeight: '12px' }}
+                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-[height] duration-700 ease-out group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
+                style={{ height: inView ? `${s.v}%` : '0%', minHeight: inView ? '12px' : '0px', transitionDelay: inView ? `${i * 60}ms` : '0ms' }}
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
               </div>
@@ -617,8 +702,10 @@ function TimeOfDayVisual() {
 }
 
 function RefineAnalysisVisual() {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
+  const confidence = useCountUp(78, inView);
   return (
-    <div className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-2xl p-6">
       <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Emotion breakdown
       </p>
@@ -628,7 +715,7 @@ function RefineAnalysisVisual() {
             <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted mb-1">AI detected</p>
             <p className="text-text-primary font-bold text-lg">Sadness</p>
           </div>
-          <span className="text-[10px] font-semibold text-text-muted bg-primary/[0.06] px-2 py-1 rounded-full">78% confidence</span>
+          <span className="text-[10px] font-semibold text-text-muted bg-primary/[0.06] px-2 py-1 rounded-full tabular-nums">{confidence}% confidence</span>
         </div>
         <div className="h-px bg-primary/10" />
         <div className="flex items-center justify-between">
@@ -655,19 +742,21 @@ function MilestonesVisual() {
     { Icon: Plant, name: 'Growth Streak', unlocked: false },
     { Icon: Trophy, name: '100 Entries', unlocked: false },
   ];
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">Your milestones</p>
         <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">3 of 6 unlocked</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
-        {badges.map((b) => (
+        {badges.map((b, i) => (
           <div
             key={b.name}
-            className={`rounded-xl p-3 text-center border transition-all duration-300 ${
+            className={`rounded-xl p-3 text-center border transition-all duration-500 ${
               b.unlocked ? 'bg-primary/[0.04] border-primary/20' : 'bg-primary/[0.03] border-primary/8 opacity-50'
-            }`}
+            } ${inView ? 'scale-100' : 'scale-90'}`}
+            style={{ transitionDelay: inView ? `${i * 70}ms` : '0ms', opacity: !inView ? 0 : undefined }}
           >
             <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-1.5" aria-hidden="true">
               <b.Icon className="w-5 h-5 text-[#6A3FC0]" weight={b.unlocked ? 'fill' : 'regular'} />
@@ -682,8 +771,9 @@ function MilestonesVisual() {
 }
 
 function TherapistShareVisual() {
+  const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-2xl p-6">
       <div className="rounded-xl bg-primary/5 border border-primary/15 p-5">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -695,8 +785,14 @@ function TherapistShareVisual() {
           </div>
         </div>
         <div className="space-y-2">
-          {['Mood trends (30 days)', 'Dominant emotions', 'Key patterns & triggers'].map((line) => (
-            <div key={line} className="flex items-center gap-2 text-sm text-text-secondary">
+          {['Mood trends (30 days)', 'Dominant emotions', 'Key patterns & triggers'].map((line, i) => (
+            <div
+              key={line}
+              className={`flex items-center gap-2 text-sm text-text-secondary transition-all duration-500 ${
+                inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-3'
+              }`}
+              style={{ transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
               {line}
             </div>
