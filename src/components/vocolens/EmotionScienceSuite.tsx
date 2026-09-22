@@ -136,12 +136,10 @@ export function EmotionScienceSuite() {
       {/* 8 Plutchik emotions — interactive explorer */}
       <AnimatedSection animation="fade-in-up" delay={0.05} className="mb-10">
         <div className="card-app rounded-3xl p-6 sm:p-8">
-          <div className="flex flex-wrap items-end justify-between gap-3 mb-6">
-            <div>
-              <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
-              <h3 className="font-bold text-xl">Detected and ranked in every entry</h3>
-            </div>
-            <p className="text-text-muted text-base leading-relaxed max-w-md">
+          <div className="mb-6">
+            <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
+            <h3 className="font-bold text-xl mb-2">Detected and ranked in every entry</h3>
+            <p className="text-text-muted text-base leading-relaxed max-w-2xl">
               Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
             </p>
           </div>
