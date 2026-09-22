@@ -49,9 +49,10 @@ function articleBlocks(): HTMLElement[] {
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
  * - chapters/buttons/keys jump-and-play while playing, or arm the position
- *   while paused so Listen starts from the visibly selected chapter;
- *   pre-metadata taps of any kind are parked and applied once duration loads
+ *   while paused so Listen starts from the visibly selected chapter
  *   (seeks are verified on the next frame against element desync)
+ * - any explicitly selected chapter plays ONLY itself, then auto-pauses at
+ *   the next chapter's start; a fresh Listen with no selection plays through
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -86,6 +87,26 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [sections],
   );
 
+  // Chapter scope: an explicitly selected chapter plays ONLY itself, then
+  // auto-pauses at the next chapter's start (a fresh Listen with no
+  // selection plays through unbounded). Null = unbounded.
+  const boundEndRef = useRef<number | null>(null);
+  const setBoundFor = useCallback(
+    (idx: number) => {
+      if (sections.length === 0) {
+        boundEndRef.current = null;
+        return;
+      }
+      boundEndRef.current =
+        idx + 1 < sections.length
+          ? sections[idx + 1].startSec
+          : Number.isFinite(duration) && duration > 0
+            ? duration
+            : Number.POSITIVE_INFINITY;
+    },
+    [sections, duration],
+  );
+
   // Seek parked while audio metadata is missing (slow networks): applied
   // the moment duration becomes known, so pre-load taps never strand
   // playback at 0. Either an absolute time or a track ratio.
@@ -101,7 +122,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    const onTime = () => setCurrentTime(audio.currentTime);
+    const onTime = () => {
+      setCurrentTime(audio.currentTime);
+      // End of an explicitly selected chapter: stop instead of spilling
+      // into the next one. Reads element state directly (no stale closure).
+      const bound = boundEndRef.current;
+      if (bound !== null && !audio.paused && !audio.ended && audio.currentTime >= bound) {
+        audio.pause();
+        setPlaying(false);
+        boundEndRef.current = null;
+      }
+    };
     const onMeta = () => {
       const d = audio.duration || 0;
       setDuration(d);
@@ -118,6 +149,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         if (list.length === 0) return;
         const idx = sectionAt(list, pending.r * d);
         target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
+        boundEndRef.current = idx + 1 < list.length ? list[idx + 1].startSec : d;
       }
       try {
         audio.currentTime = target;
@@ -225,20 +257,32 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const selectSection = useCallback(
     (target: number) => {
       setArmedIdx(target);
+      setBoundFor(target);
       seek(headerStart(target));
     },
-    [seek, headerStart],
+    [seek, headerStart, setBoundFor],
+  );
+
+  // Chapters always play instantly from the header (bounded to that
+  // chapter). Transport/buttons/keys jump-and-play while playing, or arm
+  // while paused so Listen starts from the visibly selected chapter.
+  const playChapter = useCallback(
+    (target: number) => {
+      setBoundFor(target);
+      seekAndPlay(headerStart(target));
+    },
+    [setBoundFor, seekAndPlay, headerStart],
   );
 
   const goToSection = useCallback(
     (target: number) => {
       if (playing) {
-        seekAndPlay(headerStart(target));
+        playChapter(target);
       } else {
         selectSection(target);
       }
     },
-    [playing, seekAndPlay, selectSection, headerStart],
+    [playing, playChapter, selectSection],
   );
 
   const prevSection = useCallback(() => {
@@ -295,10 +339,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
       setArmedIdx(idx);
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
+        setBoundFor(idx);
         seek(headerStart(idx));
       }
     },
-    [ratioFromPointer, duration, sections, headerStart, seek],
+    [ratioFromPointer, duration, sections, headerStart, seek, setBoundFor],
   );
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -517,7 +562,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => goToSection(i)}
+                        onClick={() => playChapter(i)}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
