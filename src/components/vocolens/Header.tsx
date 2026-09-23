@@ -16,6 +16,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  // Scroll-progress hairline (0→1). Skipped on blog article routes, which
+  // stay fully static by standing decision.
+  const [progress, setProgress] = useState(0);
+  const showProgress = !location.pathname.startsWith('/resources/');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastScrollY = useRef(0);
@@ -38,6 +42,8 @@ export function Header() {
         else if (y < lastScrollY.current) setIsVisible(true);
         else if (y > lastScrollY.current + 4) { setIsVisible(false); setResourcesOpen(false); }
         lastScrollY.current = y;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        setProgress(max > 0 ? Math.min(1, Math.max(0, y / max)) : 0);
         ticking.current = false;
       });
     };
@@ -69,6 +75,13 @@ export function Header() {
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        {showProgress && (
+          <div
+            aria-hidden="true"
+            className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-primary to-blue-400 rounded-r-full"
+            style={{ width: `${progress * 100}%`, transition: 'width 150ms linear' }}
+          />
+        )}
         <div className="pointer-events-auto w-full" style={{ maxWidth: 'min(92%, 1100px)' }}>
           {/* Desktop */}
           <div

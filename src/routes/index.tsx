@@ -45,7 +45,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-surface">
       <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.08) 0%, transparent 70%)' }} aria-hidden="true" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none hero-halo-breathe" style={{ background: 'radial-gradient(ellipse at center, rgba(167,139,250,0.08) 0%, transparent 70%)' }} aria-hidden="true" />
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
@@ -283,7 +283,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5"
           >
             Explore all 13 features
             <CaretRight className="w-6 h-6" />
@@ -310,7 +310,7 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
