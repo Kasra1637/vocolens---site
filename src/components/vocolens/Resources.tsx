@@ -63,7 +63,7 @@ export function Resources() {
           <Link
             to="/resources/emotional-granularity"
             aria-label="Read: Emotional Granularity: Why Specific Words Change What You Feel"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -122,7 +122,7 @@ export function Resources() {
           <Link
             to="/resources/adhd-time-blindness"
             aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -181,7 +181,7 @@ export function Resources() {
           <Link
             to="/resources/burnout-recovery-signs"
             aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -240,7 +240,7 @@ export function Resources() {
           <Link
             to="/resources/overthinking-rumination"
             aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -299,7 +299,7 @@ export function Resources() {
           <Link
             to="/resources/autism-emotional-regulation"
             aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -358,7 +358,7 @@ export function Resources() {
           <Link
             to="/resources/alexithymia-emotional-vocabulary"
             aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -417,7 +417,7 @@ export function Resources() {
           <Link
             to="/resources/distress-detection"
             aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -476,7 +476,7 @@ export function Resources() {
           <Link
             to="/resources/emotional-awareness-patterns"
             aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
@@ -535,7 +535,7 @@ export function Resources() {
           <Link
             to="/resources/science-of-reflection"
             aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
-            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 hover-lift group"
+            className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">

@@ -287,7 +287,7 @@ export function TimeBlindness() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read more about how pattern recognition builds self-understanding</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: your brain doesn't need to be scolded about the time. It needs real, repeated data about the time — and a spoken timestamp is one of the fastest ways to create it.
@@ -350,7 +350,7 @@ export function TimeBlindness() {
             <div className="space-y-4">
               <Link
                 to="/resources/emotional-awareness-patterns"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -360,12 +360,12 @@ export function TimeBlindness() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/overthinking-rumination"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -375,12 +375,12 @@ export function TimeBlindness() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover the neuroscience of rumination and how giving your brain a completion signal breaks the loop.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -390,7 +390,7 @@ export function TimeBlindness() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
             </div>

@@ -221,7 +221,7 @@ export function EmotionalGranularity() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read the research: Solving the emotion paradox — PubMed</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
         </div>
@@ -254,7 +254,7 @@ export function EmotionalGranularity() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
         </div>
@@ -284,7 +284,7 @@ export function EmotionalGranularity() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
         </div>
@@ -346,7 +346,7 @@ export function EmotionalGranularity() {
             <div className="space-y-4">
               <Link
                 to="/resources/alexithymia-emotional-vocabulary"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -356,12 +356,12 @@ export function EmotionalGranularity() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Around 10% of people struggle to identify and describe their own emotions. Learn the neuroscience of emotional blindness and how AI voice journaling builds a personal vocabulary from scratch.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -371,12 +371,12 @@ export function EmotionalGranularity() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -386,7 +386,7 @@ export function EmotionalGranularity() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
             </div>

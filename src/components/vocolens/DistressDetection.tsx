@@ -220,7 +220,7 @@ export function DistressDetection() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read the research: Knowing your own heart — interoceptive accuracy and emotion — PubMed</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
         </div>
@@ -315,7 +315,7 @@ export function DistressDetection() {
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -325,12 +325,12 @@ export function DistressDetection() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/emotional-awareness-patterns"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -340,7 +340,7 @@ export function DistressDetection() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
             </div>

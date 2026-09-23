@@ -189,11 +189,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // Blog article + listing routes stay fully static — no route fade there.
+  const routeClass = pathname.startsWith("/resources") ? "" : "route-fade";
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-surface">
         <Header />
-        <div key={pathname} className="route-fade">
+        <div key={pathname} className={routeClass}>
           <Outlet />
         </div>
       </div>

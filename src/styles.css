@@ -184,10 +184,10 @@
 }
 .animate-scroll-left:hover { animation-play-state: paused; }
 
-@keyframes fade-in-up { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
-@keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-40px);} 100% { opacity: 1; transform: translateX(0);} }
-@keyframes fade-in-right { 0% { opacity: 0; transform: translateX(40px);} 100% { opacity: 1; transform: translateX(0);} }
-@keyframes scale-in { 0% { opacity: 0; transform: scale(0.9);} 100% { opacity: 1; transform: scale(1);} }
+@keyframes fade-in-up { 0% { opacity: 0; transform: translateY(14px);} 100% { opacity: 1; transform: translateY(0);} }
+@keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-16px);} 100% { opacity: 1; transform: translateX(0);} }
+@keyframes fade-in-right { 0% { opacity: 0; transform: translateX(16px);} 100% { opacity: 1; transform: translateX(0);} }
+@keyframes scale-in { 0% { opacity: 0; transform: scale(0.96);} 100% { opacity: 1; transform: scale(1);} }
 @keyframes blur-in { 0% { opacity: 0; filter: blur(10px);} 100% { opacity: 1; filter: blur(0);} }
 
 .animate-on-scroll { opacity: 0; }
@@ -198,9 +198,9 @@
 .animate-blur-in { animation: blur-in 0.8s var(--ease-soft) forwards; }
 
 .hover-lift { transition: transform var(--dur-hover) var(--ease-soft); }
-.hover-lift:hover { transform: translateY(-2px); }
+.hover-lift:hover { transform: translateY(-1px); }
 .hover-scale { transition: transform var(--dur-hover) var(--ease-soft); }
-.hover-scale:hover { transform: scale(1.02); }
+.hover-scale:hover { transform: scale(1.01); }
 
 /* Hero */
 .hero-title-container { position: relative; }
