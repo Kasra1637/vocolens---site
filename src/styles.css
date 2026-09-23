@@ -166,6 +166,11 @@
   scroll-margin-top: 5.5rem;
 }
 
+/* Route transition — echoes the app's tab-focus remount cascades
+ * (TAB_ENTER_1..6). Keyed by pathname in __root (see .route-fade). */
+@keyframes route-fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+.route-fade { animation: route-fade 0.2s var(--ease-soft); }
+
 /* ============== Animations ============== */
 
 @keyframes scroll-left {
@@ -242,7 +247,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll, .animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right,
-  .animate-scale-in, .animate-blur-in, .animate-scroll-left {
+  .animate-scale-in, .animate-blur-in, .animate-scroll-left, .route-fade {
     animation: none; opacity: 1; transform: none; filter: none;
   }
   .demo-phone-float, .demo-mic-pulse, .demo-mic-pulse-delayed, .animate-app-glow { animation: none; }
