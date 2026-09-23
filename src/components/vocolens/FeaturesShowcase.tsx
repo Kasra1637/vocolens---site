@@ -833,7 +833,7 @@ const features: Feature[] = [
     id: 'mood-story',
     eyebrow: 'Mood story',
     icon: BarChart3,
-    headline: 'Your dominant emotion by day',
+    headline: 'Your dominant mood, daily',
     body:
       'Trust on Monday. Anticipation on Wednesday. Happiness Saturday. Vocolens maps your dominant emotion to each weekday so you see what’s rising and shifting.',
     outcome: 'Know your emotional rhythm by day — and plan your life around it.',
