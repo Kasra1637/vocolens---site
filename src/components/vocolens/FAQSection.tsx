@@ -78,7 +78,7 @@ export function FAQSection() {
                   </div>
                 </button>
                 <div 
-                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                  className={`grid transition-all duration-300 ease-soft ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="overflow-hidden">
                     <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed">

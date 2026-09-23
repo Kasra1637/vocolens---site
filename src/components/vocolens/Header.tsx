@@ -68,7 +68,7 @@ export function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="pointer-events-auto w-full" style={{ maxWidth: 'min(92%, 1100px)' }}>
           {/* Desktop */}
           <div

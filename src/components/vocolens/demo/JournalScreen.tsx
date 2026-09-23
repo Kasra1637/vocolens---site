@@ -53,7 +53,7 @@ function EmotionBar({
       </div>
       <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
         <div
-          className="h-full rounded-full transition-all ease-out"
+          className="h-full rounded-full transition-all ease-soft"
           style={{
             width: isActive ? `${score}%` : '0%',
             background: '#FFFFFF',

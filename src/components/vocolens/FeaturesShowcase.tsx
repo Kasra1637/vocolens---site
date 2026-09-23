@@ -148,7 +148,7 @@ function WeeklyReflectionVisual() {
         {weekArc.map((d, i) => (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
             <div
-              className="w-full rounded-md bg-primary transition-all duration-700 ease-out group-hover:brightness-110 group-hover:scale-x-110"
+              className="w-full rounded-md bg-primary transition-all duration-700 ease-soft group-hover:brightness-110 group-hover:scale-x-110"
               style={{
                 height: inView ? `${d.level}%` : '0%',
                 opacity: 0.35 + (d.level / 100) * 0.65,
@@ -218,7 +218,7 @@ function MoodStoryVisual() {
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
               <div
-                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-700 ease-out group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
+                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-700 ease-soft group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
                 style={{
                   height: inView ? `${w.intensity}%` : '0%',
                   minHeight: inView ? '28px' : '0px',
@@ -583,7 +583,7 @@ function TriggersVisual() {
             </div>
             <div className="h-1.5 rounded-full bg-primary/[0.06] overflow-hidden">
               <div
-                className="h-full rounded-full bg-primary transition-[width] duration-700 ease-out group-hover:brightness-110"
+                className="h-full rounded-full bg-primary transition-[width] duration-700 ease-soft group-hover:brightness-110"
                 style={{
                   width: inView ? `${t.bar * 100}%` : '0%',
                   opacity: 0.45 + t.bar * 0.55,
@@ -622,7 +622,7 @@ function ThemesVisual() {
             <span className="w-24 text-sm font-semibold text-text-primary">{t.name}</span>
             <div className="flex-1 h-3 rounded-full bg-primary/10 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-[width] duration-700 ease-out group-hover:from-primary/60 group-hover:to-primary"
+                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-[width] duration-700 ease-soft group-hover:from-primary/60 group-hover:to-primary"
                 style={{ width: inView ? `${(t.count / max) * 100}%` : '0%', transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
               />
             </div>
@@ -676,7 +676,7 @@ function TimeOfDayVisual() {
             </span>
             <div className="w-full relative">
               <div
-                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-[height] duration-700 ease-out group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
+                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-[height] duration-700 ease-soft group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
                 style={{ height: inView ? `${s.v}%` : '0%', minHeight: inView ? '12px' : '0px', transitionDelay: inView ? `${i * 60}ms` : '0ms' }}
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
