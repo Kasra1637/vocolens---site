@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { PuzzlePiece as Puzzle, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -109,7 +108,7 @@ export function AutismEmotionalRegulation() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -163,7 +162,7 @@ export function AutismEmotionalRegulation() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="autism-emotional-regulation" />
 
@@ -187,13 +186,13 @@ export function AutismEmotionalRegulation() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             You feel something intense but can't name it. Your body is sending signals you can't decode. A social situation that seemed manageable suddenly becomes unbearable. By the time you understand what happened, you're already in meltdown or shutdown. For autistic adults, the gap between feeling an emotion and understanding it isn't a minor inconvenience — it's the core challenge that shapes daily life.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-alexithymia">
             <h2 id="section-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Alexithymia: when you feel everything but can't name it
@@ -212,9 +211,9 @@ export function AutismEmotionalRegulation() {
               The critical insight is that emotional vocabulary is a skill, not a trait. It can be developed — but it requires a safe, low-pressure environment where the focus is on exploration rather than performance. Social interaction, with its real-time demands and masking pressure, is the worst possible training ground for this skill.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-sensory-emotional">
             <h2 id="section-sensory-emotional" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The sensory-emotional connection: why overwhelm builds invisibly
@@ -239,13 +238,13 @@ export function AutismEmotionalRegulation() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-voice-journaling">
             <h2 id="section-voice-journaling" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why voice journaling works for autistic emotional processing
@@ -278,9 +277,9 @@ export function AutismEmotionalRegulation() {
               Vocolens is designed to support exactly this kind of reflective practice. The emotion tracking, body-sensation mapping, and pattern visualization features create a structured but flexible system that meets autistic users where they are — without assuming pre-existing emotional fluency.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-meltdown-prevention">
             <h2 id="section-meltdown-prevention" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               From meltdown cycles to early intervention: building your personal warning system
@@ -295,9 +294,9 @@ export function AutismEmotionalRegulation() {
               The body-sensation mapping in Vocolens makes this concrete. By tagging where stress lives in your body during each entry, you create a personalized distress map that reveals your unique warning signals — the ones that precede overwhelm by minutes or hours rather than seconds.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
+        <div>
           <section aria-labelledby="section-masking-cost">
             <h2 id="section-masking-cost" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Processing the cost of masking: a private space for unmasked reflection
@@ -312,9 +311,9 @@ export function AutismEmotionalRegulation() {
               Over time, this practice also builds clarity about which masking behaviors are necessary (workplace safety) versus habitual (people-pleasing without benefit). That distinction — visible only through consistent reflection — is the foundation of sustainable autistic self-advocacy.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.55}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -341,9 +340,9 @@ export function AutismEmotionalRegulation() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -379,9 +378,9 @@ export function AutismEmotionalRegulation() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.65}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Regulate on your terms
@@ -406,9 +405,10 @@ export function AutismEmotionalRegulation() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

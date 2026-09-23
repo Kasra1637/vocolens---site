@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Heart, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -110,7 +109,7 @@ export function EmotionalGranularity() {
         }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -164,7 +163,7 @@ export function EmotionalGranularity() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="emotional-granularity" />
 <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
@@ -187,16 +186,16 @@ export function EmotionalGranularity() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             Someone asks how you are, and this time you actually have an answer. "Anxious," you say. And it's true — but as soon as the word leaves your mouth, you notice it doesn't quite land. Anxious could mean the tight-chested kind, the wired-at-3am kind, or the bracing-for-news kind. It covers a whole weather system, and you've just described all of it with one word that fits none of it exactly.
           </p>
           <p className="mt-4">
             If that sounds familiar, you're past the first problem and into the second one. The alexithymia article in this library is about not having words at all. This one is about the words you already have being too broad to be useful — and about why choosing a sharper one is worth the effort.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-what-is-granularity">
             <h2 id="section-what-is-granularity" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               So what is emotional granularity, exactly?
@@ -225,8 +224,8 @@ export function EmotionalGranularity() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
-<AnimatedSection animation="fade-in-up" delay={0.2}>
+        </div>
+<div>
           <section aria-labelledby="section-why-it-helps">
             <h2 id="section-why-it-helps" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why a finer word does something, not just describes something
@@ -258,9 +257,9 @@ export function EmotionalGranularity() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <section aria-labelledby="section-how-to-get-specific">
             <h2 id="section-how-to-get-specific" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               How to get more specific without guessing
@@ -288,8 +287,8 @@ export function EmotionalGranularity() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
-        <AnimatedSection animation="fade-in-up" delay={0.4}>
+        </div>
+        <div>
           <section aria-labelledby="section-few-words">
             <h2 id="section-few-words" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               A few words worth keeping
@@ -310,9 +309,9 @@ export function EmotionalGranularity() {
               Takeaway: you need a handful of words that fit, not a dictionary. The skill is the asking, not the list.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -339,9 +338,9 @@ export function EmotionalGranularity() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -392,10 +391,10 @@ export function EmotionalGranularity() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
-<AnimatedSection animation="fade-in-up" delay={0.6}>
+<div>
         <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
           <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
             Find the exact word
@@ -420,7 +419,7 @@ export function EmotionalGranularity() {
             </Link>
           </div>
         </div>
-      </AnimatedSection>
+      </div>
 
     </article>
   );

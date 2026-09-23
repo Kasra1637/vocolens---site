@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Flame, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -110,7 +109,7 @@ export function BurnoutRecovery() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -164,7 +163,7 @@ export function BurnoutRecovery() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="burnout-recovery-signs" />
 
@@ -188,16 +187,16 @@ export function BurnoutRecovery() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             You didn't wake up burned out. There was no single Tuesday that broke you. What actually happened is quieter and much harder to notice in the moment: for months, your days asked more of you than your nights gave back, and somewhere underneath conscious awareness, your body kept a tally of the difference.
           </p>
           <p className="mt-4">
             By the time it feels sudden — the morning you can't make yourself open your laptop, the meeting where you have to fight back tears over nothing in particular — the total has already been building for a long time. Burnout isn't a personal failing that shows up out of nowhere. It's the visible endpoint of an invisible ledger that finally came due.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-allostatic-load">
             <h2 id="section-allostatic-load" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Your body is keeping a ledger you can't see
@@ -215,9 +214,9 @@ export function BurnoutRecovery() {
               Takeaway: burnout isn't caused by one hard thing. It's caused by many ordinary things that were never subtracted from, only added to.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-maslach">
             <h2 id="section-maslach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The three warning signs — and why exhaustion is the last one to show up
@@ -239,13 +238,13 @@ export function BurnoutRecovery() {
               Takeaway: if you've started feeling cynical or ineffective about work you used to care about, that's not a mood — it's an early warning sign, arriving before the exhaustion that usually gets all the attention.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-vacation-fallacy">
             <h2 id="section-vacation-fallacy" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why a vacation resets your energy but not your ledger
@@ -263,9 +262,9 @@ export function BurnoutRecovery() {
               Takeaway: you can't rest your way out of a load you're not tracking. The environment producing the load has to change, or the tracking has to start, or both.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-daily-load-check">
             <h2 id="section-daily-load-check" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your nervous system a running total it can actually see
@@ -290,9 +289,9 @@ export function BurnoutRecovery() {
               Takeaway: your nervous system doesn't need you to eliminate stress. It needs a running total it can trust — and speaking your day out loud is one of the fastest ways to keep one.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.48}>
+        <div>
           <section aria-labelledby="section-load-check-practice">
             <h2 id="section-load-check-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a daily load check that catches burnout before it catches you
@@ -310,9 +309,9 @@ export function BurnoutRecovery() {
               Takeaway: you don't need to fix your entire life to prevent burnout. You need a daily, honest total — because the load you can see is the load you can actually act on.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -339,9 +338,9 @@ export function BurnoutRecovery() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -392,9 +391,9 @@ export function BurnoutRecovery() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Catch the load early
@@ -419,9 +418,10 @@ export function BurnoutRecovery() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

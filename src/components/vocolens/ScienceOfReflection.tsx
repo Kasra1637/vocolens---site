@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Brain, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -111,7 +110,7 @@ export function ScienceOfReflection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -167,7 +166,7 @@ export function ScienceOfReflection() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="science-of-reflection" />
 
@@ -191,13 +190,13 @@ export function ScienceOfReflection() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             In a world full of constant demands, emotional overwhelm is becoming the norm. Most of us feel our emotions deeply — but few of us have been taught to name them with precision. That gap between feeling and labeling turns out to be one of the most powerful levers for mental wellness and stress relief.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-neuroscience">
             <h2 id="section-neuroscience" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The neuroscience of emotion labeling: how affect labeling reduces stress
@@ -226,9 +225,9 @@ export function ScienceOfReflection() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-vocolens-approach">
             <h2 id="section-vocolens-approach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               How voice journaling applies affect labeling science to daily life
@@ -243,13 +242,13 @@ export function ScienceOfReflection() {
               Voice journaling is uniquely effective for this because speaking engages multiple neural pathways simultaneously — auditory, motor, and linguistic processing — creating stronger memory traces and deeper emotional regulation than silent reflection alone.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-worry-loops">
             <h2 id="section-worry-loops" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Breaking anxiety worry loops with structured voice journaling
@@ -264,9 +263,9 @@ export function ScienceOfReflection() {
               During your scheduled worry time, you review each captured thought and ask: <em>Is there an action I can take now, or can I accept this uncertainty?</em> By anchoring your attention in this structured way, you prevent rumination from hijacking your entire day. The combination of voice externalization and scheduled review directly targets the cognitive loops that sustain anxiety.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-structured-review">
             <h2 id="section-structured-review" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Pattern awareness and building long-term emotional resilience
@@ -281,9 +280,9 @@ export function ScienceOfReflection() {
               This is the bridge between short-term stress relief and long-term emotional resilience. Single sessions of affect labeling calm the amygdala; sustained practice rewires neural pathways, strengthening prefrontal regulation and building your capacity to navigate difficulty with greater composure.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.48}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -310,9 +309,9 @@ export function ScienceOfReflection() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -363,9 +362,9 @@ export function ScienceOfReflection() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Name it to ease it
@@ -390,9 +389,10 @@ export function ScienceOfReflection() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Timer, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -114,7 +113,7 @@ export function TimeBlindness() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -168,7 +167,7 @@ export function TimeBlindness() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="adhd-time-blindness" />
 
@@ -192,16 +191,16 @@ export function TimeBlindness() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             You told yourself you'd start at 2pm. You look up, certain it's been twenty minutes, and it's 4:30. Nothing dramatic happened in between — no distraction you could point to, no single moment you can blame. Time simply didn't register the way it registers for other people, and now you're left explaining, again, why something that felt instant took two and a half hours.
           </p>
           <p className="mt-4">
             If you've heard "just set an alarm" or "you need better time management" in response to this, you already know it doesn't land, because the problem was never that you forgot to check a clock. The problem is that the internal sense most people use to feel time passing — without needing to check anything — isn't generating a reliable signal in the first place.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-two-clocks">
             <h2 id="section-two-clocks" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Your brain has two clocks, and ADHD affects the one you can't see
@@ -223,9 +222,9 @@ export function TimeBlindness() {
               Takeaway: time blindness isn't inattention to the clock. It's a measurable gap in the internal sense that's supposed to make checking the clock unnecessary most of the time.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-two-way-distortion">
             <h2 id="section-two-way-distortion" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The two-way distortion: shrinking before, vanishing during
@@ -243,13 +242,13 @@ export function TimeBlindness() {
               Takeaway: you're not bad at planning and separately bad at stopping. Both problems come from the same missing signal, showing up on either side of the same task.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-alarms-fail">
             <h2 id="section-alarms-fail" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why alarms, planners, and willpower keep failing the same way
@@ -267,9 +266,9 @@ export function TimeBlindness() {
               Takeaway: an alarm interrupts you. It doesn't teach your brain what ninety minutes actually feels like — and that felt calibration is the part that's missing.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-external-clock">
             <h2 id="section-external-clock" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your brain an external clock it can actually borrow
@@ -294,9 +293,9 @@ export function TimeBlindness() {
               Takeaway: your brain doesn't need to be scolded about the time. It needs real, repeated data about the time — and a spoken timestamp is one of the fastest ways to create it.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.48}>
+        <div>
           <section aria-labelledby="section-time-anchor-practice">
             <h2 id="section-time-anchor-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a time-anchor habit that actually recalibrates you
@@ -314,9 +313,9 @@ export function TimeBlindness() {
               Takeaway: you don't need to develop a perfect internal clock. You need a running comparison between guess and reality — because the gap you can see is the gap you can actually plan around.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -343,9 +342,9 @@ export function TimeBlindness() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -396,9 +395,9 @@ export function TimeBlindness() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               See time clearly
@@ -423,9 +422,10 @@ export function TimeBlindness() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

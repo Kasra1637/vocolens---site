@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { ArrowClockwise as RefreshCw, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -114,7 +113,7 @@ export function OverthinkingRumination() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -168,7 +167,7 @@ export function OverthinkingRumination() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="overthinking-rumination" />
 
@@ -192,16 +191,16 @@ export function OverthinkingRumination() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             It's 2am. You've replayed the same five minutes of a conversation for the fourth time tonight, each pass a little more distorted than the last. Your body is exhausted. Your eyes are burning. And your brain, for reasons that feel completely outside your control, will not let it go.
           </p>
           <p className="mt-4">
             If you've ever tried to talk yourself out of this — <em>stop thinking about it, it doesn't matter, go to sleep</em> — you already know it doesn't work. That's not a failure of discipline. It's a clue about what overthinking actually is: not a bad habit, but an unfinished process your brain refuses to file away until you give it a reason to.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-zeigarnik">
             <h2 id="section-zeigarnik" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why your brain won't let go of unfinished thoughts
@@ -219,9 +218,9 @@ export function OverthinkingRumination() {
               Takeaway: the thought keeps coming back because it's unfinished, not because something is wrong with you. Closure — not suppression — is what turns it off.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-dmn">
             <h2 id="section-dmn" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Meet the default mode network: your brain's rumination engine
@@ -243,13 +242,13 @@ export function OverthinkingRumination() {
               Takeaway: mind-wandering is normal. The trouble starts when the wandering turns into looping — thinking about a problem without ever getting closer to resolving it.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-suppression-backfires">
             <h2 id="section-suppression-backfires" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why "just stop thinking about it" makes things worse
@@ -267,9 +266,9 @@ export function OverthinkingRumination() {
               Takeaway: you can't out-willpower a thought loop. The way out isn't fighting the thought — it's giving it a place to land.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-completion-signal">
             <h2 id="section-completion-signal" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Giving your brain a completion signal it can actually register
@@ -294,9 +293,9 @@ export function OverthinkingRumination() {
               Takeaway: your brain doesn't need you to solve everything. It needs proof that the thought has been processed. Speaking it out loud is often the fastest way to provide that proof.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.48}>
+        <div>
           <section aria-labelledby="section-worry-time">
             <h2 id="section-worry-time" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Building a worry time practice that actually holds up
@@ -317,9 +316,9 @@ export function OverthinkingRumination() {
               Takeaway: you don't have to solve a worry the instant it appears. You just have to promise your brain, credibly, that it will get a turn.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -346,9 +345,9 @@ export function OverthinkingRumination() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -414,9 +413,9 @@ export function OverthinkingRumination() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Break the loop
@@ -441,9 +440,10 @@ export function OverthinkingRumination() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

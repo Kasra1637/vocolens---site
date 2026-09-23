@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Target as Radar, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -97,7 +96,7 @@ export function EmotionalAwareness() {
         }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -148,7 +147,7 @@ export function EmotionalAwareness() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="emotional-awareness-patterns" />
 
@@ -172,13 +171,13 @@ export function EmotionalAwareness() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             You experience the same emotional trigger again. Your anxiety spikes in certain situations. A particular conversation pattern leaves you frustrated every time. Yet each moment feels isolated, disconnected from the pattern beneath it. That's the gap where self-awareness lives—and where the most profound personal transformation becomes possible.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-metacognition">
             <h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The power of metacognitive awareness: thinking about your thinking
@@ -197,9 +196,9 @@ export function EmotionalAwareness() {
               When you pause to reflect on an emotional reaction—to ask yourself <em>why</em> you responded that way—you activate prefrontal regions involved in self-awareness and emotional insight. Over time, this practice literally rewires your brain, strengthening the neural pathways that support emotional intelligence.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-expressive-writing">
             <h2 id="section-expressive-writing" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Expressive disclosure: why speaking your emotions unlocks insight
@@ -224,13 +223,13 @@ export function EmotionalAwareness() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-pattern-recognition">
             <h2 id="section-pattern-recognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               From single moments to patterns: the real power of voice journaling
@@ -245,9 +244,9 @@ export function EmotionalAwareness() {
               Vocolens' emotion tracking and pattern visualization features are specifically designed to support this. As you capture emotions, environmental contexts, and intensity levels in your voice entries, the app helps you recognize recurring patterns—transforming raw experience into structured self-knowledge. This is the gateway to intentional change.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-emotional-triggers">
             <h2 id="section-emotional-triggers" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Identifying your emotional triggers: the foundation of self-regulation
@@ -265,9 +264,9 @@ export function EmotionalAwareness() {
               In Vocolens, you can tag entries with trigger information, review them over time, and watch patterns crystallize. What felt random and overwhelming becomes comprehensible and manageable.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
+        <div>
           <section aria-labelledby="section-accelerating-growth">
             <h2 id="section-accelerating-growth" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Accelerating personal growth through reflective insight
@@ -282,9 +281,9 @@ export function EmotionalAwareness() {
               Vocolens is designed around this insight. Daily voice journaling isn't just a wellness habit—it's an accelerant for personal transformation. By creating a space where you can reflect, track patterns, and build metacognitive awareness, the app turns your ordinary daily experiences into extraordinary opportunities for growth.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.55}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -311,9 +310,9 @@ export function EmotionalAwareness() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -364,9 +363,9 @@ export function EmotionalAwareness() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.65}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Stop guessing why
@@ -391,9 +390,10 @@ export function EmotionalAwareness() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+

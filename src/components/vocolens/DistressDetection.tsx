@@ -1,4 +1,3 @@
-import { AnimatedSection } from './AnimatedSection';
 import { ListenToArticle } from './ListenToArticle';
 import { Pulse as Activity, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -97,7 +96,7 @@ export function DistressDetection() {
         }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -148,7 +147,7 @@ export function DistressDetection() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
+      </div>
 
       <ListenToArticle slug="distress-detection" />
 
@@ -172,13 +171,13 @@ export function DistressDetection() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             By the time your brain says "I'm overwhelmed," your body has been saying it for a while. A tight jaw at 10am. Shallow breath in a meeting. A knot in your stomach you keep ignoring. These aren't side effects of stress—they're the first draft of it. The signal arrives in the body long before the story arrives in the mind.
           </p>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <div>
           <section aria-labelledby="section-body-first">
             <h2 id="section-body-first" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The body speaks first: the neuroscience of early distress signals
@@ -197,9 +196,9 @@ export function DistressDetection() {
               The implication is practical: if you only listen for emotional words, you miss the warning. If you learn to listen to your body, you get a head start on every wave of overwhelm.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <div>
           <section aria-labelledby="section-interoception">
             <h2 id="section-interoception" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Interoception: your built-in early warning system
@@ -224,13 +223,13 @@ export function DistressDetection() {
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        <div>
           <section aria-labelledby="section-warning-signs">
             <h2 id="section-warning-signs" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               The common early signs of overwhelm — and why you miss them
@@ -245,9 +244,9 @@ export function DistressDetection() {
               Naming the sensation early—even just whispering "my chest feels tight"—is enough to shift the trajectory. You've moved the experience from background noise into conscious processing, which is where you can actually do something about it.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        <div>
           <section aria-labelledby="section-mapping">
             <h2 id="section-mapping" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Mapping the body: turning sensation into information
@@ -262,9 +261,9 @@ export function DistressDetection() {
               Once a pattern is visible, it becomes interruptible. A 30-second pause, a long exhale, a step outside—these tiny interventions only work when you catch the signal early. The map is what makes early possible.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
+        <div>
           <section aria-labelledby="section-practice">
             <h2 id="section-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               A simple practice: catching overwhelm in the first 60 seconds
@@ -279,9 +278,9 @@ export function DistressDetection() {
               Done consistently, this practice doesn't just defuse single moments of overwhelm. It rebuilds the relationship between your body and your awareness—the foundation of every other emotional skill.
             </p>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.55}>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -308,9 +307,9 @@ export function DistressDetection() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
@@ -346,9 +345,9 @@ export function DistressDetection() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
-        <AnimatedSection animation="fade-in-up" delay={0.65}>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Hear your body first
@@ -373,9 +372,10 @@ export function DistressDetection() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       </div>
     </article>
   );
 }
+
