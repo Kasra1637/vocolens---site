@@ -16,7 +16,7 @@ const faqData = [
   },
   {
     question: 'How does AI voice journaling help someone who cannot identify their emotions?',
-    answer: 'Traditional journaling requires you to already have words for what you feel — which is the exact skill alexithymia impairs. Voice journaling removes this prerequisite: you simply speak about your experience, and AI analyses the linguistic content to suggest emotion labels. Over time, the correction loop (confirm, reject, or adjust the AI suggestion) builds a personalised emotional dictionary that maps your unique expressions to specific emotional states.',
+    answer: 'Traditional journaling requires you to already have words for what you feel — which is the exact skill alexithymia impairs. Voice journaling removes this prerequisite: you simply speak about your experience, and AI analyses the linguistic content to suggest emotion labels. Over time, the correction loop (confirm, reject, or adjust the AI suggestion) shifts which labels the AI suggests later — your most recent corrections carry the most weight.',
   },
   {
     question: 'Is alexithymia the same as being emotionless?',
@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: 'How long does it take to build an emotional vocabulary?',
-    answer: 'Initial improvements in emotion identification can appear within 2-4 weeks of daily practice. Meaningful vocabulary expansion — where you consistently use specific emotion words rather than generic descriptors — typically develops over 2-3 months. The AI personalisation system in Vocolens begins adapting after approximately 10-15 corrections, with significant personalisation emerging after 50+ entries.',
+    answer: 'Initial improvements in emotion identification can appear within 2-4 weeks of daily practice. Meaningful vocabulary expansion — where you consistently use specific emotion words rather than generic descriptors — typically develops over 2-3 months. On the AI side, a pattern needs at least 3 corrections across 2 weeks before it noticeably shifts later analysis.',
   },
 ];
 
@@ -183,7 +183,7 @@ export function AlexithymiaEmotionalVocabulary() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">AI offers the labels; you build the dictionary.</strong> Confirm, correct, or shrug — every response teaches the system your emotional language, one entry at a time.</div>
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">AI offers the labels; you decide which ones are true.</strong> Confirm or correct each one, and the same labels are suggested more often next time.</div>
               </li>
             </ul>
       </div>
@@ -266,11 +266,11 @@ export function AlexithymiaEmotionalVocabulary() {
             <ul className="space-y-2 mb-4 ml-4 text-base leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">Confirm</strong> — "Yes, that's it." This locks in the connection between how you express yourself and that specific emotion.</span>
+                <span><strong className="text-text-primary font-semibold">Confirm</strong> — "Yes, that's it." This counts as agreement, and your confirmation rate is tracked over time.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, that's not anxiety, that's excitement." The AI quietly relearns your particular emotional dialect and adjusts.</span>
+                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, that's not anxiety, that's excitement." The AI is nudged away from the rejected label and toward the one you picked.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
@@ -278,7 +278,7 @@ export function AlexithymiaEmotionalVocabulary() {
               </li>
             </ul>
             <p>
-              String enough of those together — dozens of entries, weeks of small corrections — and something genuinely useful starts to take shape: a personal emotional dictionary, built entirely from your own words, your own body descriptions, your own way of telling a story. Vocolens isn't handing you a universal model of emotion and asking you to fit inside it. It's learning your language, for your feelings, on your terms.
+              String enough of those together — dozens of entries, weeks of small corrections — and something genuinely useful starts to take shape: a working map of which labels actually fit you, built from your own confirmations and corrections. Vocolens isn't handing you a universal model of emotion and asking you to fit inside it. It's weighting your choices, for your feelings, on your terms.
             </p>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: you don't need the right word to start. You just need to talk — the vocabulary catches up as you go.
@@ -326,7 +326,7 @@ export function AlexithymiaEmotionalVocabulary() {
               Getting there tends to follow a fairly predictable arc. At the start, everything negative just collapses into "bad" or "stressed" — one bucket for every hard feeling. With enough AI-assisted labeling, though, distinctions start to emerge: <em>this is frustration</em>, not anger. <em>This is disappointment</em>, not sadness. <em>This is decision fatigue</em>, not laziness — which, honestly, might be the most useful reframe of all.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Vocolens leans on Plutchik's Wheel of Emotions to speed this along, scoring 8 primary emotions across three intensity tiers. So instead of a flat "I feel fear," you start to notice the difference between <strong className="text-text-primary font-semibold">apprehension</strong> (fear, low), <strong className="text-text-primary font-semibold">fear</strong> (moderate), and <strong className="text-text-primary font-semibold">terror</strong> (high) — and because the correction system keeps learning from you, those distinctions end up reflecting your actual life, not a definition out of a textbook.
+              Vocolens leans on Plutchik's Wheel of Emotions to speed this along, scoring 8 primary emotions across three intensity tiers. So instead of a flat "I feel fear," you start to notice the difference between <strong className="text-text-primary font-semibold">apprehension</strong> (fear, low), <strong className="text-text-primary font-semibold">fear</strong> (moderate), and <strong className="text-text-primary font-semibold">terror</strong> (high) — and because the correction system keeps adjusting to you, those distinctions end up reflecting your actual life, not a definition out of a textbook.
             </p>
             <p>
               Every correction is a tiny lesson in emotional literacy, and they add up. Over months, the AI gets better at reading you — and, almost as a side effect, you get better at reading yourself. Ask yourself: what would change if "decision fatigue" and "laziness" stopped feeling like the same thing? That's the kind of shift this builds, one small correction at a time, grounded in your real emotional life rather than a study you've never read.

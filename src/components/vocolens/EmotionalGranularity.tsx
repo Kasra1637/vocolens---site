@@ -19,11 +19,11 @@ const faqData = [
   },
   {
     question: 'If I cannot name my emotions, is this still for me?',
-    answer: 'Yes, because granularity is built, not required up front. The alexithymia piece in this library is about what happens when someone cannot find words at all; this piece is about what comes next, once a word is available. Voice journaling helps here in the same way it helps with alexithymia: you speak about your experience in your own words, and the system proposes emotion labels you can confirm, reject, or adjust. Over time, the corrections build a personal emotional dictionary — and for someone working on granularity, the useful step is often moving from one broad candidate to a more specific one, rather than inventing the word from nothing.',
+    answer: 'Yes, because granularity is built, not required up front. The alexithymia piece in this library is about what happens when someone cannot find words at all; this piece is about what comes next, once a word is available. Voice journaling helps here in the same way it helps with alexithymia: you speak about your experience in your own words, and the system proposes emotion labels you can confirm, reject, or adjust. Over time, repeated corrections shift which labels the AI suggests — and for someone working on granularity, the useful step is often moving from one broad candidate to a more specific one, rather than inventing the word from nothing.',
   },
   {
     question: 'How long does it take to get better at naming emotions specifically?',
-    answer: 'Initial movement — the first time a broad word gives way to something more precise — can show up within a few weeks of regular practice, because the muscle being trained is partly attention ("what is the most true word here?") and partly vocabulary. More stable granularity, where specific labels come more readily and you notice the difference they make, typically develops over a few months. The personalization in Vocolens begins to reflect your choices after a modest number of corrections, and a clearer personal taxonomy usually emerges over dozens of entries.',
+    answer: 'Initial movement — the first time a broad word gives way to something more precise — can show up within a few weeks of regular practice, because the muscle being trained is partly attention ("what is the most true word here?") and partly vocabulary. More stable granularity, where specific labels come more readily and you notice the difference they make, typically develops over a few months. A pattern in Vocolens needs at least 3 corrections across 2 weeks before it shifts later analysis, and a clearer personal taxonomy usually emerges over dozens of entries.',
   },
 ];
 export function EmotionalGranularity() {
@@ -179,7 +179,7 @@ export function EmotionalGranularity() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and the rejections teach the system the edges of your emotional categories over time.</div>
+                <div className="min-w-0"><strong className="font-semibold text-text-primary">Granularity is trainable, and the correction loop is what trains it.</strong> Voice journaling proposes candidate labels, you confirm or reject them, and repeated rejections shift which labels the AI suggests next time.</div>
               </li>
             </ul>
       </div>
@@ -271,7 +271,7 @@ export function EmotionalGranularity() {
               What works better is narrower and more personal. Instead of asking "what is this feeling called?", ask what makes this instance different from the last time you used the same word. Is it heavy or wired? Does it sit in your chest or your jaw? Is it about something that already happened, or something you're braced for? Is it a feeling about a person, or about a situation you can name?
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Answering those questions doesn't require a list. It requires two or three candidates to compare — which is where a sounding board helps, and where a voice journal earns its place. You speak the experience in your own words, and the system offers a couple of candidate labels. You keep the one that rings truer and reject the one that doesn't. The rejection matters as much as the acceptance, because it tells the system where the edge of your category sits.
+              Answering those questions doesn't require a list. It requires two or three candidates to compare — which is where a sounding board helps, and where a voice journal earns its place. You speak the experience in your own words, and the system offers a couple of candidate labels. You keep the one that rings truer and reject the one that doesn't. The rejection matters as much as the acceptance: repeated rejections shift which labels the AI suggests next time, so the suggestions get closer to the distinctions you actually make.
             </p>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: don't hunt for the perfect word. Compare two plausible ones and keep the truer — the comparison is the skill.
