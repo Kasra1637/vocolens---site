@@ -46,7 +46,7 @@ export function EmotionDetection() {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-10 relative z-10">
             {/* Step 1 */}
-            <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
+            <div className="card-app rounded-3xl p-6 lg:p-8">
                <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
                   <Mic className="w-6 h-6" />
                </div>
@@ -57,7 +57,7 @@ export function EmotionDetection() {
             </div>
 
             {/* Step 2 */}
-            <div className="card-app rounded-3xl p-6 lg:p-8 hover:-translate-y-1 transition-transform duration-300">
+            <div className="card-app rounded-3xl p-6 lg:p-8">
                <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay">
                   <Brain className="w-6 h-6" />
                </div>
@@ -73,7 +73,7 @@ export function EmotionDetection() {
             </div>
 
             {/* Step 3 */}
-            <div className="card-app rounded-3xl p-6 lg:p-8 border-2 border-primary/40 btn-app-glow hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+            <div className="card-app rounded-3xl p-6 lg:p-8 border-2 border-primary/40 btn-app-glow relative overflow-hidden">
                <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-6 mx-auto shadow-clay relative z-10">
                   <Sparkles className="w-6 h-6" />
                </div>
@@ -108,8 +108,7 @@ export function EmotionDetection() {
           
            <div className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 border border-[#9b87f5]/20 flex flex-col justify-center">
               <div className="relative flex items-center justify-center mb-6" style={{ width: 44, height: 44 }}>
-                 <div className="absolute rounded-full demo-mic-pulse" style={{ width: 44, height: 44, border: '1.5px solid rgba(147,139,250,0.35)' }} aria-hidden="true" />
-                 <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center relative shadow-clay">
+                  <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center relative shadow-clay">
                     <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
                  </div>
               </div>

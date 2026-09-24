@@ -132,7 +132,7 @@ export function UseCases() {
                 <a
                   key={c.id}
                   href={`#${c.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 card-app rounded-full hover-lift transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-200"
                 >
                   <Icon className="w-4 h-4" style={{ color: c.color }} />
                   <span className="text-sm font-semibold text-text-primary">{c.name}</span>
@@ -150,7 +150,7 @@ export function UseCases() {
           animation="fade-in-up"
           staggerDelay={0.12}
         >
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center hover-lift">
+          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <Mic className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -159,7 +159,7 @@ export function UseCases() {
               No executive-function barrier. No blank page. Just talk — the app captures everything.
             </p>
           </div>
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center hover-lift">
+          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -168,7 +168,7 @@ export function UseCases() {
               When feelings are hard to identify, the AI does it for you — and learns your unique vocabulary over time.
             </p>
           </div>
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center hover-lift">
+          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <TrendingUp className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -202,7 +202,7 @@ export function UseCases() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
@@ -266,7 +266,7 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
           {condition.features.map((item) => (
             <div
               key={item.feature}
-              className="card-app rounded-2xl p-5 hover-lift"
+              className="card-app rounded-2xl p-5"
             >
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 mt-0.5">

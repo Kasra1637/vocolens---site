@@ -1,4 +1,4 @@
-import { AnimatedSection } from './AnimatedSection';
+
 import { ListenToArticle } from './ListenToArticle';
 import { ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle, Heart } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
@@ -27,7 +27,6 @@ const faqData = [
     answer: 'Initial improvements in emotion identification can appear within 2-4 weeks of daily practice. Meaningful vocabulary expansion — where you consistently use specific emotion words rather than generic descriptors — typically develops over 2-3 months. The AI personalisation system in Vocolens begins adapting after approximately 10-15 corrections, with significant personalisation emerging after 50+ entries.',
   },
 ];
-
 
 export function AlexithymiaEmotionalVocabulary() {
   const articleJsonLd = {
@@ -98,7 +97,6 @@ export function AlexithymiaEmotionalVocabulary() {
     })),
   };
 
-
   return (
     <article
       itemScope
@@ -115,7 +113,7 @@ export function AlexithymiaEmotionalVocabulary() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <AnimatedSection animation="fade-in-up">
+      <div>
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -169,10 +167,8 @@ export function AlexithymiaEmotionalVocabulary() {
           </div>
           <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
-      </AnimatedSection>
-
+      </div>
       <ListenToArticle slug="alexithymia-emotional-vocabulary" />
-
 
           <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
             <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
@@ -194,17 +190,15 @@ export function AlexithymiaEmotionalVocabulary() {
 
       <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
-        <AnimatedSection animation="fade-in-up" delay={0.05}>
+        <div>
           <p>
             Someone asks how you're doing, and there's a pause before you answer — because you actually don't know. There's a weight in your chest. A restlessness that won't sit still. Something is clearly happening in there. But when you reach for a word to describe it, you come up empty, and "fine" comes out instead, because "fine" is the only word available.
           </p>
           <p className="mt-4">
             If that sounds familiar, you're not broken, and you're definitely not alone. Psychologists call this <strong className="text-text-primary font-semibold">alexithymia</strong> — literally, from the Greek, "no words for emotions." It's a lot more common than most people think, and once you understand what's actually happening in your brain, it stops feeling like a personal failing and starts looking like a skill you were simply never taught.
           </p>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        </div>
+        <div>
           <section aria-labelledby="section-what-is-alexithymia">
             <h2 id="section-what-is-alexithymia" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               So what is alexithymia, exactly?
@@ -229,10 +223,8 @@ export function AlexithymiaEmotionalVocabulary() {
               Takeaway: alexithymia doesn't mean you feel nothing. It means the bridge between feeling and language hasn't been built yet — which also means it can be.
             </p>
           </section>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        </div>
+        <div>
           <section aria-labelledby="section-why-journaling-fails">
             <h2 id="section-why-journaling-fails" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Why "just write down how you feel" doesn't work here
@@ -253,14 +245,11 @@ export function AlexithymiaEmotionalVocabulary() {
               Takeaway: if journaling has never stuck for you, it's probably not a discipline problem — it's a design problem. The method assumed a skill you're still building.
             </p>
           </section>
-        </AnimatedSection>
-
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        </div>
+        <div>
           <div className="h-px bg-primary/10" />
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.35}>
+        </div>
+        <div>
           <section aria-labelledby="section-voice-ai-vocabulary">
             <h2 id="section-voice-ai-vocabulary" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               How voice and AI build a vocabulary out of nothing
@@ -295,10 +284,8 @@ export function AlexithymiaEmotionalVocabulary() {
               Takeaway: you don't need the right word to start. You just need to talk — the vocabulary catches up as you go.
             </p>
           </section>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.42}>
+        </div>
+        <div>
           <section aria-labelledby="section-body-bridge">
             <h2 id="section-body-bridge" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               When words fail, the body is still talking
@@ -320,16 +307,14 @@ export function AlexithymiaEmotionalVocabulary() {
               className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
             >
               <span className="min-w-0 underline underline-offset-2">Read more about interoception and body-based awareness</span>
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: if your mind goes blank, ask your body instead. It's usually been keeping notes the whole time.
             </p>
           </section>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.48}>
+        </div>
+        <div>
           <section aria-labelledby="section-granularity">
             <h2 id="section-granularity" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Getting past "I feel bad": what emotional granularity actually looks like
@@ -350,10 +335,8 @@ export function AlexithymiaEmotionalVocabulary() {
               Takeaway: the goal isn't more vocabulary for its own sake — it's precision. The more specific the word, the more specific (and useful) your response can be.
             </p>
           </section>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.52}>
+        </div>
+        <div>
           <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
@@ -380,16 +363,14 @@ export function AlexithymiaEmotionalVocabulary() {
               ))}
             </div>
           </section>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.56}>
+        </div>
+        <div>
           <div className="py-8 border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -399,12 +380,12 @@ export function AlexithymiaEmotionalVocabulary() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/autism-emotional-regulation"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -414,12 +395,12 @@ export function AlexithymiaEmotionalVocabulary() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Alexithymia affects up to 50% of autistic adults. See how voice journaling builds emotional vocabulary without social pressure.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl hover-lift transition-all group"
+                className="block w-full text-left p-5 card-app rounded-xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -429,15 +410,13 @@ export function AlexithymiaEmotionalVocabulary() {
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Neuroscience research proves that labeling emotions calms the amygdala. Discover how voice journaling applies affect labeling science.</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
               </Link>
             </div>
           </div>
-        </AnimatedSection>
-
-
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        </div>
+        <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Name what you feel
@@ -462,8 +441,7 @@ export function AlexithymiaEmotionalVocabulary() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
-
+        </div>
       </div>
     </article>
   );

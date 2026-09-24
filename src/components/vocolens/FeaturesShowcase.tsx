@@ -16,56 +16,28 @@ type Feature = {
 /* ---------- Visuals ---------- */
 
 /* ---------- Scroll-driven motion (uniform across all 13 visuals) ----------
- * Same contract as AnimatedSection: fire once when scrolled into view,
- * render the final state immediately for prefers-reduced-motion. Bars and
- * dots transition via CSS; headline numbers count up via rAF. */
+ * Standing decision: no scroll-driven motion on site. This hook now reports
+ * visible immediately so every visual renders its final state on first
+ * paint. Signature kept so all 13 call sites work unchanged. */
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 function useInViewOnce<T extends HTMLElement>(threshold = 0.25) {
   const ref = useRef<T | null>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setInView(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return { ref, inView };
+  void threshold;
+  return { ref, inView: true };
 }
 
 function useCountUp(target: number, start: boolean, duration = 1100) {
-  const [value, setValue] = useState(0);
+  // Standing decision: no animated counting on site — return the final
+  // value immediately once started. Signature kept so all visuals work
+  // unchanged. `duration` accepted and ignored.
+  void duration;
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     if (!start) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setValue(target);
-      return;
-    }
-    let raf = 0;
-    const t0 = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - t0) / duration, 1);
-      setValue(Math.round(target * (1 - Math.pow(1 - p, 3))));
-      if (p < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [start, target, duration]);
+    setValue(target);
+  }, [start, target]);
 
   return value;
 }
@@ -92,7 +64,7 @@ function CalendarVisual() {
         {days.map((d) => (
           <span
             key={d}
-            className={`aspect-square rounded-full transition-all duration-500 hover:scale-125 ${
+            className={`aspect-square rounded-full transition-all duration-500 ${
               inView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
             } ${
               active.has(d)
@@ -147,7 +119,7 @@ function WeeklyReflectionVisual() {
         {weekArc.map((d, i) => (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
             <div
-              className="w-full rounded-md bg-primary transition-all duration-700 ease-soft group-hover:brightness-110 group-hover:scale-x-110"
+              className="w-full rounded-md bg-primary transition-colors duration-200 group-hover:brightness-110"
               style={{
                 height: inView ? `${d.level}%` : '0%',
                 opacity: 0.35 + (d.level / 100) * 0.65,
@@ -167,7 +139,7 @@ function WeeklyReflectionVisual() {
         ].map(({ label, Icon }) => (
           <span
             key={label}
-            className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-all duration-200 hover:bg-primary/15 hover:-translate-y-0.5 flex items-center gap-1"
+            className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary font-semibold transition-all duration-200 hover:bg-primary/15 flex items-center gap-1"
           >
             <Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
             {label}
@@ -217,7 +189,7 @@ function MoodStoryVisual() {
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
               <div
-                className="w-full max-w-[32px] rounded-xl bg-primary transition-all duration-700 ease-soft group-hover:scale-105 group-hover:shadow-md relative overflow-hidden"
+                className="w-full max-w-[32px] rounded-xl bg-primary transition-colors duration-200 group-hover:shadow-md relative overflow-hidden"
                 style={{
                   height: inView ? `${w.intensity}%` : '0%',
                   minHeight: inView ? '28px' : '0px',
@@ -287,13 +259,13 @@ function ExploreDeeperVisual() {
           return (
             <div
               key={s.name}
-              className={`rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-500 hover:border-primary/25 hover:-translate-y-0.5 hover:shadow-md group ${
+              className={`rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-500 hover:border-primary/25 hover:shadow-md group ${
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}
               style={{ transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
             >
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110">
+                <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-[#6A3FC0]" />
                 </span>
                 <span className="text-sm font-semibold text-text-primary">{s.name}</span>
@@ -319,7 +291,7 @@ function ExploreDeeperVisual() {
       </div>
 
       <button className="w-full rounded-xl border border-dashed border-primary/25 bg-gradient-to-r from-primary/[0.03] to-primary/[0.06] px-4 py-3.5 flex items-center justify-center gap-2.5 text-primary text-sm font-semibold transition-all duration-300 hover:bg-primary/[0.08] hover:border-primary/40 hover:shadow-sm group relative">
-        <ChevronDownCircle className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+        <ChevronDownCircle className="w-4 h-4" />
         Explore deeper · 6 more
       </button>
     </div>
@@ -379,7 +351,7 @@ function EmotionalLandscapeVisual() {
         {clusters.map((p, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-primary transition-opacity duration-700 hover:scale-[1.8] hover:z-10"
+            className="absolute rounded-full bg-primary transition-opacity duration-700 hover:z-10"
             style={{
               top: `${p.y}%`,
               left: `${p.x}%`,
@@ -559,7 +531,7 @@ function TriggersVisual() {
         {triggers.map((t, i) => (
           <li
             key={t.topic}
-            className={`rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-500 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-md group ${
+            className={`rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-500 hover:border-primary/20 hover:shadow-md group ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
             style={{ transitionDelay: inView ? `${i * 80}ms` : '0ms' }}
@@ -582,7 +554,7 @@ function TriggersVisual() {
             </div>
             <div className="h-1.5 rounded-full bg-primary/[0.06] overflow-hidden">
               <div
-                className="h-full rounded-full bg-primary transition-[width] duration-700 ease-soft group-hover:brightness-110"
+                className="h-full rounded-full bg-primary group-hover:brightness-110"
                 style={{
                   width: inView ? `${t.bar * 100}%` : '0%',
                   opacity: 0.45 + t.bar * 0.55,
@@ -621,7 +593,7 @@ function ThemesVisual() {
             <span className="w-24 text-sm font-semibold text-text-primary">{t.name}</span>
             <div className="flex-1 h-3 rounded-full bg-primary/10 overflow-hidden">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary transition-[width] duration-700 ease-soft group-hover:from-primary/60 group-hover:to-primary"
+                className="h-full rounded-full bg-gradient-to-r from-primary/50 to-primary group-hover:from-primary/60 group-hover:to-primary"
                 style={{ width: inView ? `${(t.count / max) * 100}%` : '0%', transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
               />
             </div>
@@ -675,7 +647,7 @@ function TimeOfDayVisual() {
             </span>
             <div className="w-full relative">
               <div
-                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary transition-[height] duration-700 ease-soft group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
+                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
                 style={{ height: inView ? `${s.v}%` : '0%', minHeight: inView ? '12px' : '0px', transitionDelay: inView ? `${i * 60}ms` : '0ms' }}
               >
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
@@ -957,8 +929,8 @@ function FeatureNav({ activeId }: { activeId: string }) {
               title={f.eyebrow}
               className={`group flex items-center gap-3 transition-all duration-300 ${isActive ? '' : 'opacity-50 hover:opacity-100'}`}
             >
-              <span className={`block rounded-full transition-all duration-300 ${isActive ? 'w-8 h-2 bg-primary' : 'w-2 h-2 bg-primary/40 group-hover:bg-primary/70'}`} />
-              <span className={`text-xs font-medium transition-all duration-300 ${isActive ? 'text-primary opacity-100 translate-x-0' : 'text-text-muted opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`}>
+              <span className={`block rounded-full ${isActive ? 'w-8 h-2 bg-primary' : 'w-2 h-2 bg-primary/40'}`} />
+              <span className={`text-xs font-medium ${isActive ? 'text-primary' : 'text-text-muted'}`}>
                 {f.eyebrow}
               </span>
             </a>
@@ -1001,7 +973,7 @@ export function FeaturesShowcase() {
                 <a
                   key={f.id}
                   href={`#${f.id}`}
-                  className="group flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-300 hover:-translate-y-0.5"
+                  className="group flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-300"
                 >
                   <Icon className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
                   <span className="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors hidden sm:inline">
@@ -1082,10 +1054,10 @@ export function FeaturesShowcase() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 group"
             >
               Get it on Google Play
-              <CaretRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <CaretRight className="w-6 h-6" />
             </a>
           </div>
         </AnimatedSection>

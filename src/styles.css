@@ -173,10 +173,8 @@
   scroll-margin-top: 5.5rem;
 }
 
-/* Route transition — echoes the app's tab-focus remount cascades
- * (TAB_ENTER_1..6). Keyed by pathname in __root (see .route-fade). */
-@keyframes route-fade { 0% { opacity: 0; } 100% { opacity: 1; } }
-.route-fade { animation: route-fade 0.2s var(--ease-soft); }
+/* Route transition removed with the motion freeze (navigations render
+ * instantly, matching fully static content). */
 
 /* ============== Animations ============== */
 
@@ -185,29 +183,9 @@
   50% { box-shadow: 0 6px 20px rgba(147, 112, 219, 0.45); }
 }
 
-@keyframes scroll-left {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
-.animate-scroll-left {
-  animation: scroll-left 40s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-}
-.animate-scroll-left:hover { animation-play-state: paused; }
+/* Marquee removed with the scroll-reveal freeze (no call sites remain). */
 
-@keyframes fade-in-up { 0% { opacity: 0; transform: translateY(14px);} 100% { opacity: 1; transform: translateY(0);} }
-@keyframes fade-in-left { 0% { opacity: 0; transform: translateX(-16px);} 100% { opacity: 1; transform: translateX(0);} }
-@keyframes fade-in-right { 0% { opacity: 0; transform: translateX(16px);} 100% { opacity: 1; transform: translateX(0);} }
-@keyframes scale-in { 0% { opacity: 0; transform: scale(0.96);} 100% { opacity: 1; transform: scale(1);} }
-@keyframes blur-in { 0% { opacity: 0; filter: blur(10px);} 100% { opacity: 1; filter: blur(0);} }
-
-.animate-on-scroll { opacity: 0; }
-.animate-fade-in-up { animation: fade-in-up var(--dur-reveal) var(--ease-soft) forwards; }
-.animate-fade-in-left { animation: fade-in-left var(--dur-reveal) var(--ease-soft) forwards; }
-.animate-fade-in-right { animation: fade-in-right var(--dur-reveal) var(--ease-soft) forwards; }
-.animate-scale-in { animation: scale-in 0.6s var(--ease-soft) forwards; }
-.animate-blur-in { animation: blur-in 0.8s var(--ease-soft) forwards; }
+.animate-on-scroll { opacity: 1; }
 
 .hover-lift { transition: transform var(--dur-hover) var(--ease-soft); }
 .hover-lift:hover { transform: translateY(-1px); }
@@ -216,13 +194,8 @@
 
 /* Hero */
 .hero-title-container { position: relative; }
-/* Breathing hero halo — same lavender glow the hero already renders, slowed
- * to a calm 6s rhythm (app breathing family). */
-@keyframes hero-halo-breathe {
-  0%, 100% { opacity: 0.45; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
-}
-.hero-halo-breathe { animation: hero-halo-breathe 6s ease-in-out infinite; }
+/* Halo + CTA breathe removed with the motion freeze (see tokens above for
+ * the retained SOFT easing used by interactive chrome). */
 
 /* App demo */
 .demo-phone-frame {
@@ -254,21 +227,9 @@
 .demo-screen-scroll { scrollbar-width: none; -ms-overflow-style: none; }
 .demo-screen-scroll::-webkit-scrollbar { display: none; }
 
-@keyframes demo-float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-4px);} }
-.demo-phone-float { animation: demo-float 5s ease-in-out infinite; }
+/* Ambient loops removed with the motion freeze (mic pulse, glow breathe,
+ * phone float lived here). Survivors use static styles set inline. */
 
-@keyframes demo-mic-pulse { 0% { transform: scale(1); opacity: 0.4;} 100% { transform: scale(2); opacity: 0;} }
-@keyframes app-glow-breathe { 0%,100% { opacity: 0.55; transform: scale(1);} 50% { opacity: 0.9; transform: scale(1.04);} }
-.animate-app-glow { animation: app-glow-breathe 2.2s ease-in-out infinite; }
-/* Mic pulse period mirrors the app's sonar ripple (3.2s). */
-.demo-mic-pulse { animation: demo-mic-pulse 3.2s ease-out infinite; }
-.demo-mic-pulse-delayed { animation: demo-mic-pulse 3.2s ease-out infinite 0.7s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-on-scroll, .animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right,
-  .animate-scale-in, .animate-blur-in, .animate-scroll-left, .route-fade,
-  .hero-halo-breathe, .btn-app-glow-breathe {
-    animation: none; opacity: 1; transform: none; filter: none;
-  }
-  .demo-phone-float, .demo-mic-pulse, .demo-mic-pulse-delayed, .animate-app-glow { animation: none; }
-}
+/* Reduced-motion kill-switch retained as a guard: with all decorative
+ * keyframes removed above, OS-level reduced motion is the default
+ * experience everywhere on site. */

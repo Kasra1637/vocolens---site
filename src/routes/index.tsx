@@ -45,7 +45,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-surface">
       <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none hero-halo-breathe" style={{ background: 'radial-gradient(ellipse at center, rgba(147,112,219,0.22) 0%, transparent 70%)' }} aria-hidden="true" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(147,112,219,0.22) 0%, transparent 70%)' }} aria-hidden="true" />
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             <div className="hero-title-container mb-6">
@@ -103,7 +103,7 @@ function Home() {
           animation="fade-in-up"
           staggerDelay={0.15}
         >
-          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -123,7 +123,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -143,7 +143,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="card-app rounded-3xl p-8 hover-lift h-full flex flex-col">
+          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -188,7 +188,7 @@ function Home() {
           animation="fade-in-up"
           staggerDelay={0.15}
         >
-          <div className="card-app rounded-[28px] p-8 hover-lift">
+          <div className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
@@ -202,7 +202,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="card-app rounded-[28px] p-8 hover-lift">
+          <div className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
@@ -216,7 +216,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="card-app rounded-[28px] p-8 hover-lift">
+          <div className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
@@ -255,7 +255,7 @@ function Home() {
             { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
             { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
           ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="card-app rounded-2xl p-5 hover-lift text-center">
+            <div key={label} className="card-app rounded-2xl p-5 text-center">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
                 <Icon className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -268,7 +268,7 @@ function Home() {
         <AnimatedSection animation="fade-in-up" className="text-center">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300"
           >
             Explore all 13 features
             <CaretRight className="w-6 h-6" />
@@ -295,7 +295,7 @@ function Home() {
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow btn-app-glow-breathe transition-all duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
