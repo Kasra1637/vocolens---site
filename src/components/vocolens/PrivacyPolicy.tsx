@@ -1,15 +1,15 @@
 import { Shield, Eye, Lock, Database, Users, Globe, Trash as Trash2, FileText, WarningCircle as AlertCircle, DeviceMobile as Smartphone, Bell, Pulse as Activity } from '@phosphor-icons/react';
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal } from './Reveal';
 
 export function PrivacyPolicy() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24">
-      <AnimatedSection animation="fade-in-up">
-        <div className="text-center mb-12">
+    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
+      <Reveal>
+        <div className="text-center mb-12 lg:mb-16">
           <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
             <Shield className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2" style={{ color: '#1e293b' }}>
             Privacy Policy
           </h1>
           <p className="text-text-secondary mb-4 text-base leading-relaxed">Vocolens</p>
@@ -17,11 +17,11 @@ export function PrivacyPolicy() {
             Effective Date: June 23, 2026
           </p>
         </div>
-      </AnimatedSection>
+      </Reveal>
 
       <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12">
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
-          <div className="card-app rounded-2xl p-6">
+        <Reveal delay={0.1}>
+          <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Our Core Commitment</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               Vocolens is built on a simple principle: your personal reflections belong to you. We designed the app so your journal entries are stored only on your device. We do not operate user accounts, we do not store your journal data on our servers, and we do not sell or share your information with advertisers.
@@ -30,9 +30,9 @@ export function PrivacyPolicy() {
               This policy explains exactly what data leaves your device, why, and what happens to it.
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <Reveal delay={0.2}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -83,9 +83,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <Reveal delay={0.3}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -100,7 +100,7 @@ export function PrivacyPolicy() {
                 </p>
 
                 <div className="space-y-4">
-                  <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
+                  <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-5">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h4 className="font-bold text-text-primary mb-2 text-lg">1. Deepgram (Speech-to-Text)</h4>
@@ -117,7 +117,7 @@ export function PrivacyPolicy() {
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>Deepgram's own privacy policy governs how they handle audio data. See <a href="https://deepgram.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">deepgram.com/privacy</a>.</span>
+                        <span>Deepgram's own privacy policy governs how they handle audio data. See <a href="https://deepgram.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">deepgram.com/privacy</a>.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -126,7 +126,7 @@ export function PrivacyPolicy() {
                     </ul>
                   </div>
 
-                  <div className="bg-primary/5 rounded-lg p-4 border border-primary/10">
+                  <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-5">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <h4 className="font-bold text-text-primary mb-2 text-lg">2. OpenAI GPT-5.4 Mini (Emotional Analysis) via OpenRouter</h4>
@@ -147,7 +147,7 @@ export function PrivacyPolicy() {
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                        <span>OpenRouter's privacy policy governs routing of data: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openrouter.ai/privacy</a>. OpenAI's privacy policy governs how the underlying model handles text data: <a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">openai.com/privacy</a>.</span>
+                        <span>OpenRouter's privacy policy governs routing of data: <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">openrouter.ai/privacy</a>. OpenAI's privacy policy governs how the underlying model handles text data: <a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">openai.com/privacy</a>.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -159,9 +159,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.4}>
+        <Reveal delay={0.4}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -205,9 +205,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
         
-        <AnimatedSection animation="fade-in-up" delay={0.45}>
+        <Reveal delay={0.45}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -223,9 +223,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
+        <Reveal delay={0.5}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -260,9 +260,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.55}>
+        <Reveal delay={0.55}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -278,15 +278,15 @@ export function PrivacyPolicy() {
 
                 <div className="space-y-3">
                   <p className="text-text-secondary text-base leading-relaxed">
-                    We use Adapty to manage subscription status. Adapty may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://adapty.io/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">adapty.io/privacy</a>.
+                    We use Adapty to manage subscription status. Adapty may receive your device's anonymous app store identifier to verify purchase status. No personal information beyond purchase status is shared. See <a href="https://adapty.io/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">adapty.io/privacy</a>.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <Reveal delay={0.6}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -329,9 +329,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.7}>
+        <Reveal delay={0.7}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -374,9 +374,9 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.8}>
+        <Reveal delay={0.8}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -417,20 +417,20 @@ export function PrivacyPolicy() {
                   </li>
                 </ul>
 
-                <div className="mt-6 bg-gradient-to-br from-primary/5 to-transparent rounded-lg p-4 border border-primary/10">
+                <div className="mt-6 bg-primary/[0.04] border border-primary/15 rounded-2xl p-5">
                   <h4 className="font-bold text-text-primary mb-2">External Data Deletion Request</h4>
                   <p className="text-text-secondary text-base leading-relaxed">
                     If you have already uninstalled Vocolens and cannot access the in-app deletion options, you can request data deletion by contacting us at{' '}
-                    <a href="mailto:connect@vocolens.com" className="text-primary hover:underline font-medium">connect@vocolens.com</a>.
+                    <a href="mailto:connect@vocolens.com" className="text-primary font-semibold hover:underline">connect@vocolens.com</a>.
                     Because all journal data is stored locally on your device, uninstalling the app automatically removes all local data. If you believe any data was transmitted to a third-party service (Deepgram, OpenAI) during normal use, we can confirm that no data is permanently retained by those services on your behalf.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.9}>
+        <Reveal delay={0.9}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -442,16 +442,16 @@ export function PrivacyPolicy() {
                 </h2>
                 <p className="text-text-secondary mb-3 text-base leading-relaxed">
                   Vocolens is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child under 13 has used the app and their data has been transmitted to a third-party service, please contact us at{' '}
-                  <a href="mailto:connect@vocolens.com" className="text-primary hover:underline font-medium">
+                  <a href="mailto:connect@vocolens.com" className="text-primary font-semibold hover:underline">
                     connect@vocolens.com
                   </a>
                 </p>
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={1.0}>
+        <Reveal delay={1.0}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -470,21 +470,21 @@ export function PrivacyPolicy() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={1.1}>
-          <div className="card-app rounded-2xl p-6">
+        <Reveal delay={1.1}>
+          <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Contact Us</h2>
             <p className="text-text-secondary mb-3 text-base leading-relaxed">
               If you have questions about this Privacy Policy or how your data is handled, please contact us at:
             </p>
             <p className="text-text-secondary font-medium text-base leading-relaxed">
-              <a href="mailto:connect@vocolens.com" className="text-primary hover:underline">
+              <a href="mailto:connect@vocolens.com" className="text-primary font-semibold hover:underline">
                 connect@vocolens.com
               </a>
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
       </div>
     </section>

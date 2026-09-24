@@ -1,27 +1,27 @@
 import { FileText, WarningCircle as AlertCircle, CreditCard, Globe, Lock, Trash as Trash2, Pulse as Activity } from '@phosphor-icons/react';
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal } from './Reveal';
 
 export function TermsOfService() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24">
-      <AnimatedSection animation="fade-in-up">
-        <div className="text-center mb-12">
+    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
+      <Reveal>
+        <div className="text-center mb-12 lg:mb-16">
           <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
             <FileText className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#1e293b' }}>
             Terms of Service
           </h1>
-          <div className="space-y-2 text-text-muted text-base">
+          <div className="space-y-2 text-text-muted text-base leading-relaxed">
             <p>App: Vocolens</p>
             <p>Effective Date: June 23, 2026</p>
             <p>Contact: connect@vocolens.com</p>
           </div>
         </div>
-      </AnimatedSection>
+      </Reveal>
 
       <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12">
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
+        <Reveal delay={0.1}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Acceptance of Terms</h2>
             <p className="text-text-secondary text-base leading-relaxed">
@@ -31,9 +31,9 @@ export function TermsOfService() {
               These terms apply to all users of the app, including the free trial and paid subscription tiers.
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
+        <Reveal delay={0.2}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">Description of Service</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -66,9 +66,9 @@ export function TermsOfService() {
               </li>
             </ul>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <Reveal delay={0.3}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -106,9 +106,9 @@ export function TermsOfService() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.4}>
+        <Reveal delay={0.4}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Permitted Use</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -137,9 +137,9 @@ export function TermsOfService() {
               </li>
             </ul>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.5}>
+        <Reveal delay={0.5}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -169,15 +169,15 @@ export function TermsOfService() {
                     <span className="text-text-secondary">Crisis intervention services</span>
                   </li>
                 </ul>
-                <p className="text-text-secondary bg-amber-50 rounded-lg p-4 border border-amber-200 text-base leading-relaxed">
+                <p className="text-text-secondary bg-primary/[0.04] border border-primary/15 rounded-2xl p-5 text-base leading-relaxed">
                   If you are experiencing a mental health crisis, please contact a qualified mental health professional or a crisis helpline in your region.
                 </p>
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.6}>
+        <Reveal delay={0.6}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -212,9 +212,9 @@ export function TermsOfService() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.7}>
+        <Reveal delay={0.7}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -251,9 +251,9 @@ export function TermsOfService() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.8}>
+        <Reveal delay={0.8}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -269,9 +269,9 @@ export function TermsOfService() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={0.9}>
+        <Reveal delay={0.9}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -305,9 +305,9 @@ export function TermsOfService() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={1.0}>
+        <Reveal delay={1.0}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Disclaimers & Limitation of Liability</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -320,18 +320,18 @@ export function TermsOfService() {
               Our total liability for any claim arising from your use of the app shall not exceed the amount you paid for your subscription in the 12 months preceding the claim.
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={1.1}>
+        <Reveal delay={1.1}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Governing Law</h2>
             <p className="text-text-secondary text-base leading-relaxed">
               These Terms shall be governed by and construed in accordance with applicable laws. Disputes will be resolved through good-faith negotiation first; if unresolved, through binding arbitration or a court of competent jurisdiction.
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" delay={1.2}>
+        <Reveal delay={1.2}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Changes to These Terms</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -341,7 +341,7 @@ export function TermsOfService() {
               For questions, contact us at connect@vocolens.com
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
       </div>
     </section>
