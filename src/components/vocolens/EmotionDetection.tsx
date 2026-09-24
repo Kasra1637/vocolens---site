@@ -1,5 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic, Crosshair, ArrowsClockwise } from '@phosphor-icons/react';
+import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic, Crosshair, ArrowsClockwise, HeartStraight, Lightning } from '@phosphor-icons/react';
 
 const whyItMatters = [
   {
@@ -29,8 +29,8 @@ const detectedLayers = [
 ];
 
 const scales = [
-  { title: 'Unpleasant ↔ Pleasant', left: 'Unpleasant', right: 'Pleasant', position: '62%' },
-  { title: 'Calm ↔ Activated', left: 'Calm', right: 'Activated', position: '48%' },
+  { icon: HeartStraight, title: 'Unpleasant ↔ Pleasant', left: 'Unpleasant', right: 'Pleasant', position: '62%', value: '+18' },
+  { icon: Lightning, title: 'Calm ↔ Activated', left: 'Calm', right: 'Activated', position: '48%', value: '54%' },
 ];
 
 export function EmotionDetection() {
@@ -137,32 +137,39 @@ export function EmotionDetection() {
       </AnimatedSection>
 
       <AnimatedSection animation="fade-in-up" delay={0.15} className="mb-16 lg:mb-20">
-        <div className="card-app rounded-3xl p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6">
-            <h3 className="text-xl font-bold">Fine-tune if needed</h3>
-            <p className="text-sm text-text-muted">Adjust how it felt</p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-10">
-            {scales.map(({ title, left, right, position }) => (
-              <div key={title}>
-                <p className="text-[13px] font-semibold text-text-primary mb-4">{title}</p>
-                <div className="relative h-1.5 rounded-full bg-primary/12" aria-hidden="true">
-                  <div
-                    className="h-full rounded-full bg-primary/45"
-                    style={{ width: position }}
-                  />
-                  <span
-                    className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-2 border-white shadow-sm"
-                    style={{ left: position }}
-                  />
+        <div className="mb-6">
+          <h3 className="text-xl font-bold">Fine-tune if needed</h3>
+          <p className="text-sm text-text-muted mt-1.5">Adjust how it felt</p>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          {scales.map(({ icon: Icon, title, left, right, position, value }) => (
+            <div key={title} className="card-app rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                  <Icon className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="text-[11px] text-text-muted">{left}</span>
-                  <span className="text-[11px] text-text-muted">{right}</span>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-semibold text-text-primary">{title}</p>
+                  <p className="text-lg font-bold text-[#6A3FC0] tabular-nums leading-tight mt-0.5">{value}</p>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="relative h-2 rounded-full bg-primary/12" aria-hidden="true">
+                <div
+                  className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-primary/35 to-primary"
+                  style={{ width: position }}
+                />
+                <span className="absolute top-1/2 -translate-y-1/2 left-1/2 h-3.5 w-px bg-primary/25" />
+                <span
+                  className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-[3px] border-white shadow-md"
+                  style={{ left: position }}
+                />
+              </div>
+              <div className="flex items-center justify-between mt-4">
+                <span className="text-[11px] text-text-muted">{left}</span>
+                <span className="text-[11px] text-text-muted">{right}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </AnimatedSection>
 
