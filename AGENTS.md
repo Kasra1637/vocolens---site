@@ -20,6 +20,10 @@ Cloudflare Workers. Production: https://vocolens.com.
 - Verify with `npx tsc --noEmit` (only pre-existing `UseCases.tsx` errors are
   acceptable) and `npm run build` for anything user-visible, then commit to
   `main` and push to `origin/main` without asking.
+- Dual lockfiles: Cloudflare installs with `bun install --frozen-lockfile`,
+  so every `npm install/uninstall` must be followed by `bun install` to
+  re-sync `bun.lock` — commit both lockfiles together or the deploy dies
+  at install (twice bitten: embla/vaul removal, motion install).
 - Copy changes are content edits: never alter wording unless asked.
 
 ## Durable facts
