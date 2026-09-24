@@ -4,7 +4,7 @@ import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Spark
 const whyItMatters = [
   {
     icon: <Layers className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'All 8 core emotions are scored on the Plutchik model, not reduced to one verdict.',
+    desc: '8 Plutchik emotions scored, not reduced to one verdict.',
   },
   {
     icon: <Activity className="w-5 h-5 text-[#6A3FC0]" />,
@@ -12,7 +12,7 @@ const whyItMatters = [
   },
   {
     icon: <Edit3 className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'Your corrections stay on your device and are replayed as context in later analysis.',
+    desc: 'Corrections stay on your device and shape later analysis.',
   },
   {
     icon: <Brain className="w-5 h-5 text-[#6A3FC0]" />,
