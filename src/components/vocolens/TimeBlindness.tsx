@@ -142,7 +142,7 @@ export function TimeBlindness() {
               <Timer className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div className="min-w-0">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full" itemProp="articleSection">
                 ADHD &amp; Time Perception
               </span>
             </div>
