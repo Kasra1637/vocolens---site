@@ -1,32 +1,77 @@
-import { useState } from 'react';
-import { Reveal } from './Reveal';
-import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History, Smiley, Bone, Butterfly, Hand, HandsClapping, Footprints, Heartbeat } from '@phosphor-icons/react';
+import { useState } from "react";
+import { Reveal } from "./Reveal";
+import {
+  Smiley as Smile,
+  SmileySad as Frown,
+  Flame,
+  Shield,
+  Sparkle as Sparkles,
+  Warning as AlertTriangle,
+  Handshake,
+  Compass,
+  Pulse as Activity,
+  Heartbeat as HeartPulse,
+  Brain,
+  ArrowCounterClockwise as History,
+  Smiley,
+  Bone,
+  Butterfly,
+  Hand,
+  HandsClapping,
+  Footprints,
+  Heartbeat,
+} from "@phosphor-icons/react";
 
 const plutchikEmotions = [
-  { name: 'Happiness', icon: Smile, ladder: ['Content', 'Joyful', 'Elated'], scores: [34, 62, 85] },
-  { name: 'Sadness',   icon: Frown, ladder: ['Wistful', 'Sad', 'Grief'], scores: [29, 57, 81] },
-  { name: 'Anger',     icon: Flame, ladder: ['Annoyed', 'Frustrated', 'Furious'], scores: [31, 60, 88] },
-  { name: 'Fear',      icon: Shield, ladder: ['Uneasy', 'Anxious', 'Terrified'], scores: [27, 55, 83] },
-  { name: 'Surprise',  icon: Sparkles, ladder: ['Curious', 'Surprised', 'Astonished'], scores: [33, 59, 84] },
-  { name: 'Disgust',   icon: AlertTriangle, ladder: ['Dislike', 'Disgusted', 'Repulsed'], scores: [25, 52, 79] },
-  { name: 'Trust',     icon: Handshake, ladder: ['Accepting', 'Trusting', 'Devoted'], scores: [36, 64, 87] },
-  { name: 'Anticipation', icon: Compass, ladder: ['Interested', 'Anticipating', 'Vigilant'], scores: [30, 58, 82] },
+  { name: "Happiness", icon: Smile, ladder: ["Content", "Joyful", "Elated"], scores: [34, 62, 85] },
+  { name: "Sadness", icon: Frown, ladder: ["Wistful", "Sad", "Grief"], scores: [29, 57, 81] },
+  {
+    name: "Anger",
+    icon: Flame,
+    ladder: ["Annoyed", "Frustrated", "Furious"],
+    scores: [31, 60, 88],
+  },
+  { name: "Fear", icon: Shield, ladder: ["Uneasy", "Anxious", "Terrified"], scores: [27, 55, 83] },
+  {
+    name: "Surprise",
+    icon: Sparkles,
+    ladder: ["Curious", "Surprised", "Astonished"],
+    scores: [33, 59, 84],
+  },
+  {
+    name: "Disgust",
+    icon: AlertTriangle,
+    ladder: ["Dislike", "Disgusted", "Repulsed"],
+    scores: [25, 52, 79],
+  },
+  {
+    name: "Trust",
+    icon: Handshake,
+    ladder: ["Accepting", "Trusting", "Devoted"],
+    scores: [36, 64, 87],
+  },
+  {
+    name: "Anticipation",
+    icon: Compass,
+    ladder: ["Interested", "Anticipating", "Vigilant"],
+    scores: [30, 58, 82],
+  },
 ];
 
 const bodyRegions = [
-  { name: 'Head', Icon: Brain },
-  { name: 'Face', Icon: Smiley },
-  { name: 'Neck', Icon: Bone },
-  { name: 'Chest', Icon: Heartbeat },
-  { name: 'Stomach', Icon: Butterfly },
-  { name: 'Arms', Icon: Hand },
-  { name: 'Hands', Icon: HandsClapping },
-  { name: 'Legs', Icon: Footprints }
+  { name: "Head", Icon: Brain },
+  { name: "Face", Icon: Smiley },
+  { name: "Neck", Icon: Bone },
+  { name: "Chest", Icon: Heartbeat },
+  { name: "Stomach", Icon: Butterfly },
+  { name: "Arms", Icon: Hand },
+  { name: "Hands", Icon: HandsClapping },
+  { name: "Legs", Icon: Footprints },
 ];
 
 const distressLevels = [
-  { level: 'Moderate', color: '#F59E0B', response: 'A gentle on-screen note during reflection' },
-  { level: 'High',     color: '#EF4444', response: 'A gentle on-screen note during reflection' },
+  { level: "Moderate", color: "#F59E0B", response: "A gentle on-screen note during reflection" },
+  { level: "High", color: "#EF4444", response: "A gentle on-screen note during reflection" },
 ];
 
 /**
@@ -42,11 +87,7 @@ function PlutchikExplorer() {
 
   return (
     <div>
-      <div
-        role="tablist"
-        aria-label="Emotion families"
-        className="flex flex-wrap gap-2 py-2"
-      >
+      <div role="tablist" aria-label="Emotion families" className="flex flex-wrap gap-2 py-2">
         {plutchikEmotions.map(({ name, icon: Icon }, i) => {
           const isActive = i === selected;
           return (
@@ -58,14 +99,19 @@ function PlutchikExplorer() {
               onClick={() => setSelected(i)}
               className={`flex flex-col items-center gap-1.5 rounded-2xl px-3 py-3 min-w-[76px] min-h-[44px] flex-shrink-0 transition-all duration-200 ${
                 isActive
-                  ? 'bg-primary/10 ring-2 ring-primary/60'
-                  : 'hover:bg-primary/5 ring-1 ring-transparent hover:ring-primary/20'
+                  ? "bg-primary/10 ring-2 ring-primary/60"
+                  : "hover:bg-primary/5 ring-1 ring-transparent hover:ring-primary/20"
               }`}
             >
-              <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                <Icon className="w-5 h-5 text-[#6A3FC0]" weight={isActive ? 'fill' : 'regular'} />
+              <span
+                className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+                aria-hidden="true"
+              >
+                <Icon className="w-5 h-5 text-[#6A3FC0]" weight={isActive ? "fill" : "regular"} />
               </span>
-              <span className={`text-xs font-semibold leading-tight text-center ${isActive ? 'text-text-primary' : 'text-text-muted'}`}>
+              <span
+                className={`text-xs font-semibold leading-tight text-center ${isActive ? "text-text-primary" : "text-text-muted"}`}
+              >
                 {name}
               </span>
             </button>
@@ -79,12 +125,17 @@ function PlutchikExplorer() {
         className="mt-4 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 sm:p-6"
       >
         <div className="flex items-center gap-3 mb-1">
-          <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <span
+            className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+            aria-hidden="true"
+          >
             <ActiveIcon className="w-5 h-5 text-[#6A3FC0]" weight="fill" />
           </span>
           <div className="min-w-0">
             <h4 className="font-bold text-lg text-text-primary leading-tight">{active.name}</h4>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">Intensity ladder · example entry</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+              Intensity ladder · example entry
+            </p>
           </div>
           <span className="ml-auto text-2xl font-bold text-[#6A3FC0] tabular-nums flex-shrink-0">
             {active.scores[active.scores.length - 1]}
@@ -125,11 +176,16 @@ export function EmotionScienceSuite() {
           <Brain className="w-3.5 h-3.5" />
           Scientific Foundation
         </span>
-        <h2 id="emotion-science-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5" itemProp="name">
+        <h2
+          id="emotion-science-heading"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5"
+          itemProp="name"
+        >
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that adapts to you — your journal stays on your device, behind your biometrics.
+          See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that
+          adapts to you — your journal stays on your device, behind your biometrics.
         </p>
       </Reveal>
 
@@ -137,10 +193,13 @@ export function EmotionScienceSuite() {
       <Reveal delay={0.05} className="mb-10">
         <div className="card-app rounded-3xl p-6 sm:p-8">
           <div className="mb-6">
-            <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
+            <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">
+              8 Plutchik emotions, scored
+            </p>
             <h3 className="font-bold text-xl mb-2">Detected and ranked in every entry</h3>
             <p className="text-text-muted text-base leading-relaxed max-w-2xl">
-              Each emotion family maps to an intensity ladder — your wording reveals which step you&apos;re on.
+              Each emotion family maps to an intensity ladder — your wording reveals which step
+              you&apos;re on.
             </p>
           </div>
 
@@ -150,19 +209,23 @@ export function EmotionScienceSuite() {
 
       {/* Grid Layout */}
       <div className="grid lg:grid-cols-5 gap-5 mb-10">
-
         {/* Left column: Valence & Arousal + Distress Detection */}
         <div className="lg:col-span-3 flex flex-col gap-5">
           {/* Valence & Arousal */}
-                    <Reveal delay={0.1}>
+          <Reveal delay={0.1}>
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Brain className="w-4 h-4 text-primary" />
-                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Valence & Arousal</p>
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">
+                  Valence & Arousal
+                </p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Your emotion in 2D psychological space</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">
+                Your emotion in 2D psychological space
+              </h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the gold standard from affective neuroscience.
+                Every entry is mapped on two axes: Pleasant ↔ Unpleasant and Calm ↔ Activated — the
+                gold standard from affective neuroscience.
               </p>
 
               <div className="rounded-2xl bg-surface border border-primary/10 overflow-hidden">
@@ -173,18 +236,82 @@ export function EmotionScienceSuite() {
                   aria-label="Emotional landscape: one entry plotted as pleasant and slightly activated"
                 >
                   {/* quadrant corner labels, like the app */}
-                  <text x="10" y="20" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">TENSE</text>
-                  <text x="156" y="20" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">EXCITED</text>
-                  <text x="10" y="292" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">DOWN</text>
-                  <text x="156" y="292" fontSize="11" fontWeight="600" fill="#6B5E8A" opacity="0.7" fontFamily="Inter, sans-serif">CALM</text>
+                  <text
+                    x="10"
+                    y="20"
+                    fontSize="11"
+                    fontWeight="600"
+                    fill="#6B5E8A"
+                    opacity="0.7"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    TENSE
+                  </text>
+                  <text
+                    x="156"
+                    y="20"
+                    fontSize="11"
+                    fontWeight="600"
+                    fill="#6B5E8A"
+                    opacity="0.7"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    EXCITED
+                  </text>
+                  <text
+                    x="10"
+                    y="292"
+                    fontSize="11"
+                    fontWeight="600"
+                    fill="#6B5E8A"
+                    opacity="0.7"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    DOWN
+                  </text>
+                  <text
+                    x="156"
+                    y="292"
+                    fontSize="11"
+                    fontWeight="600"
+                    fill="#6B5E8A"
+                    opacity="0.7"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    CALM
+                  </text>
                   {/* dashed axes */}
-                  <line x1="150" y1="0" x2="150" y2="300" stroke="rgba(147,112,219,0.25)" strokeWidth="1" strokeDasharray="4 4" />
-                  <line x1="0" y1="150" x2="300" y2="150" stroke="rgba(147,112,219,0.25)" strokeWidth="1" strokeDasharray="4 4" />
+                  <line
+                    x1="150"
+                    y1="0"
+                    x2="150"
+                    y2="300"
+                    stroke="rgba(147,112,219,0.25)"
+                    strokeWidth="1"
+                    strokeDasharray="4 4"
+                  />
+                  <line
+                    x1="0"
+                    y1="150"
+                    x2="300"
+                    y2="150"
+                    stroke="rgba(147,112,219,0.25)"
+                    strokeWidth="1"
+                    strokeDasharray="4 4"
+                  />
                   {/* centre crosshair dot */}
                   <circle cx="150" cy="150" r="3" fill="rgba(147,112,219,0.2)" />
                   {/* data point: soft fill + ring + smile marker */}
                   <circle cx="195" cy="105" r="15" fill="rgba(147,112,219,0.10)" />
-                  <circle cx="195" cy="105" r="15" fill="none" stroke="#9370DB" strokeWidth="1.5" strokeOpacity="0.75" />
+                  <circle
+                    cx="195"
+                    cy="105"
+                    r="15"
+                    fill="none"
+                    stroke="#9370DB"
+                    strokeWidth="1.5"
+                    strokeOpacity="0.75"
+                  />
                   <g stroke="#6A3FC0" strokeWidth="1.4" strokeLinecap="round" aria-hidden="true">
                     <circle cx="190" cy="101" r="1.1" fill="#6A3FC0" stroke="none" />
                     <circle cx="200" cy="101" r="1.1" fill="#6A3FC0" stroke="none" />
@@ -204,16 +331,27 @@ export function EmotionScienceSuite() {
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <HeartPulse className="w-4 h-4 text-primary" />
-                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Distress detection</p>
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">
+                  Distress detection
+                </p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Distress awareness, right on time</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">
+                Distress awareness, right on time
+              </h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                Vocolens flags moderate and high distress signals during reflection, so you can notice and pause if you need to.
+                Vocolens flags moderate and high distress signals during reflection, so you can
+                notice and pause if you need to.
               </p>
               <ul className="space-y-3">
                 {distressLevels.map(({ level, color, response }) => (
-                  <li key={level} className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-white">
-                    <span className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0" style={{ background: color }} />
+                  <li
+                    key={level}
+                    className="flex items-start gap-3 rounded-xl p-3 border border-primary/10 bg-white"
+                  >
+                    <span
+                      className="w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0"
+                      style={{ background: color }}
+                    />
                     <div>
                       <p className="font-bold text-text-primary text-lg">{level} distress</p>
                       <p className="text-text-secondary text-base leading-relaxed">{response}</p>
@@ -232,11 +370,16 @@ export function EmotionScienceSuite() {
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Activity className="w-4 h-4 text-primary" />
-                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Body sensation mapping</p>
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">
+                  Body sensation mapping
+                </p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Body sensation: where do you feel it?</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">
+                Body sensation: where do you feel it?
+              </h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                After recording, tap the body region — head, face, neck, chest, stomach, arms, hands, or legs — where the emotion lives. Interoception turns feelings into data.
+                After recording, tap the body region — head, face, neck, chest, stomach, arms,
+                hands, or legs — where the emotion lives. Interoception turns feelings into data.
               </p>
               <div className="flex flex-wrap gap-2">
                 {bodyRegions.map((region) => (
@@ -259,28 +402,48 @@ export function EmotionScienceSuite() {
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-primary" />
-                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
+                <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">
+                  Personalization AI
+                </p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Adapts to every correction you make</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">
+                Adapts to every correction you make
+              </h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                A recency-weighted personalization layer studies the corrections you make and refines future suggestions. A pattern needs at least 3 corrections across 2 weeks, and your most recent ones count most.
+                A recency-weighted personalization layer studies the corrections you make and
+                refines future suggestions. A pattern needs at least 3 corrections across 2 weeks,
+                and your most recent ones count most.
               </p>
 
               <div className="grid grid-cols-1 gap-4">
                 <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                      <span className="font-bold text-base text-[#6A3FC0] tabular-nums">3&times;</span>
+                    <span
+                      className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+                      aria-hidden="true"
+                    >
+                      <span className="font-bold text-base text-[#6A3FC0] tabular-nums">
+                        3&times;
+                      </span>
                     </span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">Recency boost</p>
-                      <p className="text-text-muted text-sm leading-relaxed">weight · corrections from the last 14 days</p>
+                      <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">
+                        Recency boost
+                      </p>
+                      <p className="text-text-muted text-sm leading-relaxed">
+                        weight · corrections from the last 14 days
+                      </p>
                     </div>
                   </div>
-                  <div className="h-[5px] rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
-                    <div className="h-full rounded-full bg-primary" style={{ width: '75%' }} />
+                  <div
+                    className="h-[5px] rounded-full bg-primary/10 overflow-hidden"
+                    aria-hidden="true"
+                  >
+                    <div className="h-full rounded-full bg-primary" style={{ width: "75%" }} />
                   </div>
-                  <p className="text-text-muted mt-2 text-base leading-relaxed">Older corrections still count, with a 45-day half-life.</p>
+                  <p className="text-text-muted mt-2 text-base leading-relaxed">
+                    Older corrections still count, with a 45-day half-life.
+                  </p>
                 </div>
 
                 <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
@@ -289,16 +452,29 @@ export function EmotionScienceSuite() {
                   </p>
                   <ul className="divide-y divide-primary/10">
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span className="min-w-0">Anxious → <span className="text-text-primary font-semibold">Apprehensive</span></span>
-                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Tue</span>
+                      <span className="min-w-0">
+                        Anxious →{" "}
+                        <span className="text-text-primary font-semibold">Apprehensive</span>
+                      </span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">
+                        Tue
+                      </span>
                     </li>
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span className="min-w-0">Joyful → <span className="text-text-primary font-semibold">Hopeful</span></span>
-                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Mon</span>
+                      <span className="min-w-0">
+                        Joyful → <span className="text-text-primary font-semibold">Hopeful</span>
+                      </span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">
+                        Mon
+                      </span>
                     </li>
                     <li className="flex items-center justify-between gap-3 text-base text-text-secondary leading-relaxed py-2">
-                      <span className="min-w-0">Sad → <span className="text-text-primary font-semibold">Wistful</span></span>
-                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">Sun</span>
+                      <span className="min-w-0">
+                        Sad → <span className="text-text-primary font-semibold">Wistful</span>
+                      </span>
+                      <span className="text-xs font-semibold text-text-muted tabular-nums flex-shrink-0">
+                        Sun
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -313,55 +489,55 @@ export function EmotionScienceSuite() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
             mainEntity: [
               {
-                '@type': 'Question',
-                name: 'Which emotions does Vocolens detect?',
+                "@type": "Question",
+                name: "Which emotions does Vocolens detect?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Vocolens detects and scores the 8 Plutchik emotions: Happiness, Sadness, Anger, Fear, Surprise, Disgust, Trust, and Anticipation. Each is mapped to an intensity ladder (e.g. Happiness → Content → Joyful → Elated) for nuanced emotional vocabulary.',
+                  "@type": "Answer",
+                  text: "Vocolens detects and scores the 8 Plutchik emotions: Happiness, Sadness, Anger, Fear, Surprise, Disgust, Trust, and Anticipation. Each is mapped to an intensity ladder (e.g. Happiness → Content → Joyful → Elated) for nuanced emotional vocabulary.",
                 },
               },
               {
-                '@type': 'Question',
-                name: 'What are valence and arousal scoring?',
+                "@type": "Question",
+                name: "What are valence and arousal scoring?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Valence and arousal map your emotional state to a 2D psychological space — Pleasant vs. Unpleasant on one axis, Calm vs. Activated on the other. It is the standard model from affective neuroscience used to capture the full texture of a feeling.',
+                  "@type": "Answer",
+                  text: "Valence and arousal map your emotional state to a 2D psychological space — Pleasant vs. Unpleasant on one axis, Calm vs. Activated on the other. It is the standard model from affective neuroscience used to capture the full texture of a feeling.",
                 },
               },
               {
-                '@type': 'Question',
-                name: 'How does Vocolens handle distress?',
+                "@type": "Question",
+                name: "How does Vocolens handle distress?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Vocolens scores each entry for low, moderate, or high distress. When moderate or high distress is detected during reflection, the app shows a note asking you to take a moment if you need. Vocolens is not a crisis or medical service — if you are in crisis, please contact a mental health professional or a crisis helpline in your region.',
+                  "@type": "Answer",
+                  text: "Vocolens scores each entry for low, moderate, or high distress. When moderate or high distress is detected during reflection, the app shows a note asking you to take a moment if you need. Vocolens is not a crisis or medical service — if you are in crisis, please contact a mental health professional or a crisis helpline in your region.",
                 },
               },
               {
-                '@type': 'Question',
-                name: 'What is body sensation mapping?',
+                "@type": "Question",
+                name: "What is body sensation mapping?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.',
+                  "@type": "Answer",
+                  text: "After each recording you can tap a body region — head, face, neck, chest, stomach, arms, hands, or legs — to log where you physically feel the emotion. This builds interoceptive awareness over time.",
                 },
               },
               {
-                '@type': 'Question',
-                name: 'How does the personalization AI learn?',
+                "@type": "Question",
+                name: "How does the personalization AI learn?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Vocolens uses a recency-weighted personalization layer that studies your emotion corrections and refines future suggestions. A pattern needs at least 3 corrections across 2 weeks, and corrections from the last 14 days carry extra weight. You can view and manage every past correction at any time.',
+                  "@type": "Answer",
+                  text: "Vocolens uses a recency-weighted personalization layer that studies your emotion corrections and refines future suggestions. A pattern needs at least 3 corrections across 2 weeks, and corrections from the last 14 days carry extra weight. You can view and manage every past correction at any time.",
                 },
               },
               {
-                '@type': 'Question',
-                name: 'Is my emotional data private?',
+                "@type": "Question",
+                name: "Is my emotional data private?",
                 acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'Vocolens is biometric-locked and keeps your entries, audio, and personalization data on your device — there is no cloud account or synced backup of your journal. To turn speech into insight, your audio is sent transiently for transcription and the resulting text is sent for emotion analysis over an encrypted connection; neither service permanently stores your data, and no audio is sent for the analysis step. See our Privacy Policy for full detail.',
+                  "@type": "Answer",
+                  text: "Vocolens is biometric-locked and keeps your entries, audio, and personalization data on your device — there is no cloud account or synced backup of your journal. To turn speech into insight, your audio is sent transiently for transcription and the resulting text is sent for emotion analysis over an encrypted connection; neither service permanently stores your data, and no audio is sent for the analysis step. See our Privacy Policy for full detail.",
                 },
               },
             ],

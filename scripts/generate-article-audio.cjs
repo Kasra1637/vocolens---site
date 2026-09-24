@@ -36,7 +36,8 @@ const VOICE = process.env.TTS_VOICE || "en-US-AriaNeural";
 const SUFFIX = process.env.FILE_SUFFIX || "";
 // Additional voices share the same manifest under "<slug><suffix>" keys, e.g.:
 //   FILE_SUFFIX=-male TTS_VOICE=en-US-GuyNeural node scripts/generate-article-audio.cjs
-const FORMAT = OUTPUT_FORMAT.AUDIO_24KHZ_32KBITRATE_MONO_MP3 || OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3;
+const FORMAT =
+  OUTPUT_FORMAT.AUDIO_24KHZ_32KBITRATE_MONO_MP3 || OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3;
 const FORCE = process.argv.includes("--force");
 
 const SLUGS = [
@@ -121,7 +122,10 @@ const CHUNK_CHARS = 2000;
 
 /** Splits article text into request-sized chunks on paragraph/sentence edges. */
 function splitForSpeech(text, max = CHUNK_CHARS) {
-  const paras = text.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+  const paras = text
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
   const chunks = [];
   let cur = "";
   const pushCur = () => {
@@ -150,7 +154,8 @@ function splitForSpeech(text, max = CHUNK_CHARS) {
 /** Length of a leading ID3v2 tag, or 0 when absent. */
 function id3v2Length(buf) {
   if (buf.length < 10 || buf[0] !== 0x49 || buf[1] !== 0x44 || buf[2] !== 0x33) return 0;
-  const size = ((buf[6] & 0x7f) << 21) | ((buf[7] & 0x7f) << 14) | ((buf[8] & 0x7f) << 7) | (buf[9] & 0x7f);
+  const size =
+    ((buf[6] & 0x7f) << 21) | ((buf[7] & 0x7f) << 14) | ((buf[8] & 0x7f) << 7) | (buf[9] & 0x7f);
   return 10 + size;
 }
 
@@ -193,20 +198,25 @@ function concatMp3(files, outPath) {
       if (!res.ok) throw new Error("HTTP " + res.status);
       const html = await res.text();
       const text = extractArticleText(html);
-      if (!text || text.length < 200) throw new Error("extracted text too short (" + (text ? text.length : 0) + " chars)");
+      if (!text || text.length < 200)
+        throw new Error("extracted text too short (" + (text ? text.length : 0) + " chars)");
       const hash = sha256(text);
       const key = slug + SUFFIX;
       const outFile = path.join(OUT_DIR, key + ".mp3");
       const prev = manifest[key];
 
       if (!FORCE && prev && prev.hash === hash && fs.existsSync(outFile)) {
-        console.log("SKIP  " + slug + " (unchanged, " + Math.round(fs.statSync(outFile).size / 1024) + " KB)");
+        console.log(
+          "SKIP  " + slug + " (unchanged, " + Math.round(fs.statSync(outFile).size / 1024) + " KB)",
+        );
         skipped += 1;
         continue;
       }
 
       const chunks = splitForSpeech(text);
-      console.log("GEN   " + slug + " (" + text.length + " chars, " + chunks.length + " chunk(s))...");
+      console.log(
+        "GEN   " + slug + " (" + text.length + " chars, " + chunks.length + " chunk(s))...",
+      );
       const partFiles = [];
       for (let ci = 0; ci < chunks.length; ci += 1) {
         const tts = new MsEdgeTTS();
@@ -238,7 +248,13 @@ function concatMp3(files, outPath) {
       const actualMin = mp3Minutes(bytes);
       if (actualMin < expectedMin * 0.75) {
         throw new Error(
-          "audio too short: " + actualMin.toFixed(1) + " min for " + words + " words (expected >= " + expectedMin.toFixed(1) + " min)"
+          "audio too short: " +
+            actualMin.toFixed(1) +
+            " min for " +
+            words +
+            " words (expected >= " +
+            expectedMin.toFixed(1) +
+            " min)",
         );
       }
       manifest[key] = {
@@ -252,7 +268,15 @@ function concatMp3(files, outPath) {
         generatedAt: new Date().toISOString(),
       };
       fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + "\n", "utf8");
-      console.log("DONE  " + slug + " -> " + Math.round(bytes / 1024) + " KB (~" + actualMin.toFixed(1) + " min)");
+      console.log(
+        "DONE  " +
+          slug +
+          " -> " +
+          Math.round(bytes / 1024) +
+          " KB (~" +
+          actualMin.toFixed(1) +
+          " min)",
+      );
       generated += 1;
       await new Promise((r) => setTimeout(r, 800));
     } catch (err) {

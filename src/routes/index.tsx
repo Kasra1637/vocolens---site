@@ -1,22 +1,34 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
-import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
-import { Reveal, RevealGroup, RevealItem } from '@/components/vocolens/Reveal';
-import { AppDemo } from '@/components/vocolens/AppDemo';
-import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
-import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
-import { PrivacySection } from '@/components/vocolens/PrivacySection';
-import { FAQSection } from '@/components/vocolens/FAQSection';
-import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
+import {
+  SmileySad as Frown,
+  ChatsCircle as MessageSquare,
+  Lightbulb,
+  CalendarBlank as CalendarDays,
+  BookOpenText,
+  ChartBar as BarChart3,
+  CaretRight,
+  Lock,
+  Clock,
+  Sparkle,
+  Crosshair,
+} from "@phosphor-icons/react";
+import { Reveal, RevealGroup, RevealItem } from "@/components/vocolens/Reveal";
+import { AppDemo } from "@/components/vocolens/AppDemo";
+import { EmotionDetection } from "@/components/vocolens/EmotionDetection";
+import { EmotionScienceSuite } from "@/components/vocolens/EmotionScienceSuite";
+import { PrivacySection } from "@/components/vocolens/PrivacySection";
+import { FAQSection } from "@/components/vocolens/FAQSection";
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 
 const speakableLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "url": "https://vocolens.com",
-  "speakable": {
+  url: "https://vocolens.com",
+  speakable: {
     "@type": "SpeakableSpecification",
-    "cssSelector": ["#hero-heading", "#hero-subheading"],
+    cssSelector: ["#hero-heading", "#hero-subheading"],
   },
 };
 
@@ -24,21 +36,31 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vocolens | AI Voice Journal That Learns From You" },
-      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      {
+        name: "description",
+        content:
+          "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
+      },
       { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From You" },
-      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      {
+        property: "og:description",
+        content:
+          "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
+      },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From You" },
-      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      {
+        name: "twitter:description",
+        content:
+          "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
+      },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(speakableLd) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(speakableLd) }],
   }),
   component: Home,
 });
@@ -46,7 +68,10 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <div className="min-h-screen bg-surface">
-      <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+      <section
+        id="home"
+        className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden"
+      >
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <div className="lg:pl-[11%]">
             {/* Hero entrance orchestration (Motion house system): title →
@@ -58,10 +83,18 @@ function Home() {
               animate="show"
               custom={0.05}
             >
-              <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#1e293b' }}>
+              <h1
+                id="hero-heading"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
+                style={{ color: "#1e293b" }}
+              >
                 <span className="block">AI voice journal</span>
                 <span className="block">that reflects</span>
-                <span className="block"><span className="font-bold" style={{ color: '#1e293b' }}>your true self</span></span>
+                <span className="block">
+                  <span className="font-bold" style={{ color: "#1e293b" }}>
+                    your true self
+                  </span>
+                </span>
               </h1>
             </motion.div>
             <motion.p
@@ -72,7 +105,8 @@ function Home() {
               animate="show"
               custom={0.15}
             >
-              Put a name to the emotions your mind overlooks - just speak, and let the words you say do the rest.
+              Put a name to the emotions your mind overlooks - just speak, and let the words you say
+              do the rest.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-2 mb-6 max-w-lg"
@@ -81,42 +115,43 @@ function Home() {
               animate="show"
               custom={0.25}
             >
-              <div
-                className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm"
-              >
+              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <Lock className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
-                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Private by design</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">
+                  Private by design
+                </span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <Clock className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
-                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Just speak - no typing</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">
+                  Just speak - no typing
+                </span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <Sparkle className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
-                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Neurodivergent-friendly</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">
+                  Neurodivergent-friendly
+                </span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <Crosshair className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
-                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>
+                <span className="text-sm text-text-primary font-semibold whitespace-nowrap">
+                  Granular emotion mapping
+                </span>
               </div>
             </motion.div>
           </div>
 
           <div className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
-            <motion.div
-              variants={fadeRight}
-              initial="hidden"
-              animate="show"
-              custom={0.35}
-            >
+            <motion.div variants={fadeRight} initial="hidden" animate="show" custom={0.35}>
               <AppDemo />
             </motion.div>
           </div>
@@ -125,17 +160,20 @@ function Home() {
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 lg:mb-16" style={{ color: '#1e293b' }}>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 lg:mb-16"
+            style={{ color: "#1e293b" }}
+          >
             Real stories, real impact
           </h2>
         </Reveal>
-        <RevealGroup
-          className="grid md:grid-cols-3 gap-8"
-        >
+        <RevealGroup className="grid md:grid-cols-3 gap-8">
           <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+                <div key={i} className="w-5 h-5 text-amber-400">
+                  &#9733;
+                </div>
               ))}
             </div>
             <div className="min-w-0 mb-1">
@@ -143,7 +181,9 @@ function Home() {
               <p className="text-text-muted text-sm leading-relaxed">ADHD & Creative</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
-              "I hit record on my commute, talked for 90 seconds about my morning frustration, and the AI showed me it wasn't anger — it was decision fatigue. Three weeks in, I can see my energy crashes always follow overstimulating meetings."
+              "I hit record on my commute, talked for 90 seconds about my morning frustration, and
+              the AI showed me it wasn't anger — it was decision fatigue. Three weeks in, I can see
+              my energy crashes always follow overstimulating meetings."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
@@ -155,7 +195,9 @@ function Home() {
           <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+                <div key={i} className="w-5 h-5 text-amber-400">
+                  &#9733;
+                </div>
               ))}
             </div>
             <div className="min-w-0 mb-1">
@@ -163,7 +205,9 @@ function Home() {
               <p className="text-text-muted text-sm leading-relaxed">Autistic & Graduate Student</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
-              "After a meltdown last month, I went back through my entries and saw the body map lighting up my shoulders and chest for five days straight before it happened. Now I check my weekly pattern and take a rest day when I see it building."
+              "After a meltdown last month, I went back through my entries and saw the body map
+              lighting up my shoulders and chest for five days straight before it happened. Now I
+              check my weekly pattern and take a rest day when I see it building."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
@@ -175,7 +219,9 @@ function Home() {
           <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
+                <div key={i} className="w-5 h-5 text-amber-400">
+                  &#9733;
+                </div>
               ))}
             </div>
             <div className="min-w-0 mb-1">
@@ -183,7 +229,9 @@ function Home() {
               <p className="text-text-muted text-sm leading-relaxed">Alexithymia & Designer</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
-              "The AI labeled my entry as 'grief' and I almost corrected it — but then I sat with it and realized it was right. I'd been carrying that for weeks without a word for it. The emotion wheel helped me learn the difference between sadness and loss."
+              "The AI labeled my entry as 'grief' and I almost corrected it — but then I sat with it
+              and realized it was right. I'd been carrying that for weeks without a word for it. The
+              emotion wheel helped me learn the difference between sadness and loss."
             </p>
             <div className="bg-primary/5 rounded-xl p-3">
               <p className="text-primary italic text-base leading-relaxed">
@@ -205,16 +253,17 @@ function Home() {
               />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4"
+            style={{ color: "#1e293b" }}
+          >
             A personal mission
           </h2>
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-12 lg:mb-16 text-base leading-relaxed">
             Turning racing thoughts into clear, effortless expression.
           </p>
         </Reveal>
-        <RevealGroup
-          className="grid md:grid-cols-3 gap-8"
-        >
+        <RevealGroup className="grid md:grid-cols-3 gap-8">
           <RevealItem className="card-app rounded-3xl p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
@@ -223,7 +272,8 @@ function Home() {
               <div className="min-w-0">
                 <h3 className="font-bold mb-2 text-xl">The problem</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
-                  Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt like catching lightning with a pencil—frustrating, slow, never truly me.
+                  Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt
+                  like catching lightning with a pencil—frustrating, slow, never truly me.
                 </p>
               </div>
             </div>
@@ -237,7 +287,8 @@ function Home() {
               <div className="min-w-0">
                 <h3 className="font-bold mb-2 text-xl">Daily struggle</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
-                  Writing was a fight with myself. My thoughts raced while my hand cramped trying to keep up. I needed something as fast as my mind.
+                  Writing was a fight with myself. My thoughts raced while my hand cramped trying to
+                  keep up. I needed something as fast as my mind.
                 </p>
               </div>
             </div>
@@ -250,11 +301,12 @@ function Home() {
               </div>
               <div className="min-w-0">
                 <h3 className="font-bold mb-2 text-xl">The breakthrough</h3>
-              <p className="text-text-secondary text-base leading-relaxed">
-                So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
-              </p>
+                <p className="text-text-secondary text-base leading-relaxed">
+                  So I built this app. Now I just talk, and my thoughts are captured instantly. No
+                  barriers between mind and app. Finally, freedom to be authentically me.
+                </p>
+              </div>
             </div>
-          </div>
           </RevealItem>
         </RevealGroup>
       </section>
@@ -267,7 +319,10 @@ function Home() {
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+            style={{ color: "#1e293b" }}
+          >
             Inside Vocolens: 13 ways to finally understand yourself
           </h2>
           <p className="text-text-secondary text-base leading-relaxed">
@@ -275,13 +330,11 @@ function Home() {
           </p>
         </Reveal>
 
-        <RevealGroup
-          className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto"
-        >
+        <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {[
-            { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
-            { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
-            { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
+            { icon: CalendarDays, label: "Journal calendar", desc: "Presence, not streaks." },
+            { icon: BookOpenText, label: "Weekly reflection", desc: "Your week as a story." },
+            { icon: BarChart3, label: "Mood story", desc: "One emotion per day." },
           ].map(({ icon: Icon, label, desc }) => (
             <RevealItem key={label} className="card-app rounded-3xl p-5 text-center">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
@@ -302,7 +355,7 @@ function Home() {
             <CaretRight className="w-6 h-6" />
           </Link>
           <p className="text-text-muted text-base mt-5">
-            Curious how it fits your mind specifically?{' '}
+            Curious how it fits your mind specifically?{" "}
             <Link to="/use-cases" className="text-primary font-semibold hover:underline">
               See Vocolens for ADHD, autism &amp; alexithymia
             </Link>
@@ -314,11 +367,15 @@ function Home() {
 
       <section id="download" className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal className="card-app rounded-3xl p-8 lg:p-12 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+            style={{ color: "#1e293b" }}
+          >
             Understand yourself, one conversation at a time.
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-            Speak instead of typing — Vocolens turns your voice into mood insights and emotional clarity. Free to try on Google Play.
+            Speak instead of typing — Vocolens turns your voice into mood insights and emotional
+            clarity. Free to try on Google Play.
           </p>
           <a
             href={GOOGLE_PLAY_URL}

@@ -1,42 +1,66 @@
-import { Reveal, RevealGroup, RevealItem } from './Reveal';
-import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic, Crosshair, ArrowsClockwise, HeartStraight, Lightning } from '@phosphor-icons/react';
+import { Reveal, RevealGroup, RevealItem } from "./Reveal";
+import {
+  Stack as Layers,
+  Pulse as Activity,
+  PencilSimple as Edit3,
+  Brain,
+  Sparkle as Sparkles,
+  Microphone as Mic,
+  Crosshair,
+  ArrowsClockwise,
+  HeartStraight,
+  Lightning,
+} from "@phosphor-icons/react";
 
 const whyItMatters = [
   {
     icon: <Layers className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'All 8 Plutchik emotions are scored on the model, not one verdict.',
+    desc: "All 8 Plutchik emotions are scored on the model, not one verdict.",
   },
   {
     icon: <Activity className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'Blended emotions and emotional tension are detected, not flattened.',
+    desc: "Blended emotions and emotional tension are detected, not flattened.",
   },
   {
     icon: <Edit3 className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'Corrections stay on your device and shape how AI reads you later.',
+    desc: "Corrections stay on your device and shape how AI reads you later.",
   },
   {
     icon: <Brain className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'A pattern needs 3 corrections across 2 weeks, and recent ones count most.',
+    desc: "A pattern needs 3 corrections across 2 weeks, and recent ones count most.",
   },
 ];
 
-const correctionReasons = ['Wrong label', 'Wrong intensity', 'Context', 'Missing emotion'];
+const correctionReasons = ["Wrong label", "Wrong intensity", "Context", "Missing emotion"];
 
 const detectedLayers = [
-  { label: 'Vigilance', base: 'Anticipation', primary: true, fill: 'w-[78%]', tone: '' },
-  { label: 'Apprehension', base: 'Fear', primary: false, fill: 'w-[56%]', tone: 'opacity-75' },
-  { label: 'Surprise', base: '', primary: false, fill: 'w-[38%]', tone: 'opacity-55' },
+  { label: "Vigilance", base: "Anticipation", primary: true, fill: "w-[78%]", tone: "" },
+  { label: "Apprehension", base: "Fear", primary: false, fill: "w-[56%]", tone: "opacity-75" },
+  { label: "Surprise", base: "", primary: false, fill: "w-[38%]", tone: "opacity-55" },
 ];
 
 const scales = [
-  { icon: HeartStraight, title: 'Unpleasant ↔ Pleasant', left: 'Unpleasant', right: 'Pleasant', position: '62%', value: '+18' },
-  { icon: Lightning, title: 'Calm ↔ Activated', left: 'Calm', right: 'Activated', position: '48%', value: '54%' },
+  {
+    icon: HeartStraight,
+    title: "Unpleasant ↔ Pleasant",
+    left: "Unpleasant",
+    right: "Pleasant",
+    position: "62%",
+    value: "+18",
+  },
+  {
+    icon: Lightning,
+    title: "Calm ↔ Activated",
+    left: "Calm",
+    right: "Activated",
+    position: "48%",
+    value: "54%",
+  },
 ];
 
 export function EmotionDetection() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20 overflow-hidden">
-
       {/* Header */}
       <Reveal className="text-center mb-12 lg:mb-16 max-w-4xl mx-auto">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
@@ -51,10 +75,7 @@ export function EmotionDetection() {
         </p>
       </Reveal>
 
-      <RevealGroup
-        delay={0.1}
-        className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12"
-      >
+      <RevealGroup delay={0.1} className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12">
         {/* Step 1 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
           <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
@@ -65,7 +86,10 @@ export function EmotionDetection() {
             <p className="italic text-text-secondary text-[15px] leading-6">
               "I'm excited about the promotion, but terrified of failing."
             </p>
-            <div className="h-1.5 rounded-full bg-primary/15 overflow-hidden mt-5" aria-hidden="true">
+            <div
+              className="h-1.5 rounded-full bg-primary/15 overflow-hidden mt-5"
+              aria-hidden="true"
+            >
               <div className="h-full w-[70%] rounded-full bg-primary" />
             </div>
             <p className="text-xs text-text-muted mt-3 leading-relaxed">
@@ -151,7 +175,9 @@ export function EmotionDetection() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[13px] font-semibold text-text-primary">{title}</p>
-                  <p className="text-lg font-bold text-[#6A3FC0] tabular-nums leading-tight mt-0.5">{value}</p>
+                  <p className="text-lg font-bold text-[#6A3FC0] tabular-nums leading-tight mt-0.5">
+                    {value}
+                  </p>
                 </div>
               </div>
               <div className="relative h-2 rounded-full bg-primary/12" aria-hidden="true">
@@ -185,7 +211,9 @@ export function EmotionDetection() {
                     <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                       {item.icon}
                     </div>
-                    <p className="text-text-secondary text-sm leading-relaxed font-medium">{item.desc}</p>
+                    <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -206,7 +234,6 @@ export function EmotionDetection() {
           </div>
         </div>
       </Reveal>
-
     </section>
   );
 }

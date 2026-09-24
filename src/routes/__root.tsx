@@ -45,28 +45,31 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="min-h-screen bg-surface">
       <Header />
       <div className="flex min-h-screen items-center justify-center bg-surface px-4">
-      <div className="max-w-md text-center">
+        <div className="max-w-md text-center">
           <h2 className="text-xl font-semibold tracking-tight text-text-primary">
             This page didn't load
           </h2>
-        <p className="mt-2 text-sm text-text-muted">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => { router.invalidate(); reset(); }}
+          <p className="mt-2 text-sm text-text-muted">
+            Something went wrong on our end. You can try refreshing or head back home.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <button
+              onClick={() => {
+                router.invalidate();
+                reset();
+              }}
               className="inline-flex items-center justify-center rounded-full bg-primary/15 border-2 border-primary/60 px-5 py-2.5 min-h-[40px] text-sm font-semibold text-[#6A3FC0] btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
+            >
+              Try again
+            </button>
+            <a
+              href="/"
               className="inline-flex items-center justify-center rounded-full card-app px-5 py-2 text-sm font-medium text-text-primary hover:bg-primary/5"
-          >
-            Go home
-          </a>
+            >
+              Go home
+            </a>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
@@ -82,8 +85,14 @@ const softwareApplicationLd = {
   operatingSystem: "iOS, Android, Web",
   screenshot: ["https://vocolens.com/vocolens_app.png", "https://vocolens.com/vocolens_mobile.png"],
   image: "https://vocolens.com/vocolens_-_preview.png",
-  offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
-  description: "Vocolens is an AI voice journal for ADHD, autism, and alexithymia. Speak your mind, track mood patterns, and gain emotional clarity.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/PreOrder",
+  },
+  description:
+    "Vocolens is an AI voice journal for ADHD, autism, and alexithymia. Speak your mind, track mood patterns, and gain emotional clarity.",
   featureList: [
     "AI emotional analysis",
     "Voice-first journaling",
@@ -104,7 +113,8 @@ const organizationLd = {
   name: "Vocolens",
   url: "https://vocolens.com",
   logo: "https://vocolens.com/vocolens-logo.png",
-  description: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia.",
+  description:
+    "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia.",
   sameAs: [
     "https://www.instagram.com/vocolensapp/",
     "https://www.youtube.com/@vocolens",
@@ -132,15 +142,36 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#7c5cbf" },
       { name: "author", content: "Vocolens" },
-      { name: "robots", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      },
       { property: "og:site_name", content: "Vocolens" },
       { property: "og:locale", content: "en_US" },
       { title: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { property: "og:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "twitter:title", content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia" },
-      { name: "description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
-      { property: "og:description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
-      { name: "twitter:description", content: "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity." },
+      {
+        property: "og:title",
+        content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia",
+      },
+      {
+        name: "twitter:title",
+        content: "Vocolens | AI Voice Journal for ADHD, Autism & Alexithymia",
+      },
+      {
+        name: "description",
+        content:
+          "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity.",
+      },
       { property: "og:image", content: "https://vocolens.com/vocolens_-_preview.png" },
       { name: "twitter:image", content: "https://vocolens.com/vocolens_-_preview.png" },
       { name: "twitter:card", content: "summary_large_image" },

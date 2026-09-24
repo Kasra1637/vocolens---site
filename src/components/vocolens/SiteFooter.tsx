@@ -8,7 +8,6 @@ import { Link } from "@tanstack/react-router";
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden">
-
       <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
         <div className="text-center mb-16">
           <img

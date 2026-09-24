@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Reveal } from './Reveal';
-import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@phosphor-icons/react';
+import { useState } from "react";
+import { Reveal } from "./Reveal";
+import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from "@phosphor-icons/react";
 
 const faqs = [
   {
@@ -31,10 +31,7 @@ export function FAQSection() {
   // the viewport. Lazily read at mount (SSR-safe: server renders desktop
   // default, client corrects before paint on mobile).
   const [openIndex, setOpenIndex] = useState<number | null>(() =>
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 767px)").matches
-      ? null
-      : 0,
+    typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches ? null : 0,
   );
 
   const toggleFAQ = (index: number) => {
@@ -44,12 +41,12 @@ export function FAQSection() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(({ q, a }) => ({
+    mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
-      "name": q,
-      "acceptedAnswer": {
+      name: q,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": a,
+        text: a,
       },
     })),
   };
@@ -67,7 +64,6 @@ export function FAQSection() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
           Frequently asked questions
         </h2>
-
       </Reveal>
 
       <Reveal delay={0.1}>
@@ -76,18 +72,22 @@ export function FAQSection() {
             const isOpen = openIndex === index;
             return (
               <div key={index}>
-                <button 
+                <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-4 sm:px-5 py-5 flex items-center justify-between text-left focus:outline-none rounded-2xl hover:bg-primary/[0.04] transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span className="font-bold text-text-primary text-lg pr-4">{faq.q}</span>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? 'chip-app text-[#6A3FC0]' : 'chip-app text-text-muted'}`}>
-                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+                  <div
+                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300 ${isOpen ? "chip-app text-[#6A3FC0]" : "chip-app text-text-muted"}`}
+                  >
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
                   </div>
                 </button>
-                <div 
-                  className={`grid transition-all duration-300 ease-soft ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+                <div
+                  className={`grid transition-all duration-300 ease-soft ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                 >
                   <div className="overflow-hidden">
                     <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed">

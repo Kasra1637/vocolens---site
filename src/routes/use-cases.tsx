@@ -4,29 +4,50 @@ import { UseCases } from "@/components/vocolens/UseCases";
 const useCasesLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Vocolens for ADHD, Autism & Alexithymia",
-  "description": "How Vocolens' AI voice journal supports neurodivergent minds — ADHD, autism, and alexithymia — with voice-first capture, AI emotion detection, and personalized correction.",
-  "url": "https://vocolens.com/use-cases",
-  "publisher": {
+  name: "Vocolens for ADHD, Autism & Alexithymia",
+  description:
+    "How Vocolens' AI voice journal supports neurodivergent minds — ADHD, autism, and alexithymia — with voice-first capture, AI emotion detection, and personalized correction.",
+  url: "https://vocolens.com/use-cases",
+  publisher: {
     "@type": "Organization",
-    "name": "Vocolens",
-    "url": "https://vocolens.com"
+    name: "Vocolens",
+    url: "https://vocolens.com",
   },
-  "breadcrumb": {
+  breadcrumb: {
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vocolens.com" },
-      { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://vocolens.com/use-cases" }
-    ]
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vocolens.com" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Use Cases",
+        item: "https://vocolens.com/use-cases",
+      },
+    ],
   },
-  "mainEntity": {
+  mainEntity: {
     "@type": "ItemList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "ADHD", "url": "https://vocolens.com/use-cases#adhd" },
-      { "@type": "ListItem", "position": 2, "name": "Alexithymia", "url": "https://vocolens.com/use-cases#alexithymia" },
-      { "@type": "ListItem", "position": 3, "name": "Autism", "url": "https://vocolens.com/use-cases#autism" }
-    ]
-  }
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "ADHD",
+        url: "https://vocolens.com/use-cases#adhd",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Alexithymia",
+        url: "https://vocolens.com/use-cases#alexithymia",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Autism",
+        url: "https://vocolens.com/use-cases#autism",
+      },
+    ],
+  },
 };
 
 export const Route = createFileRoute("/use-cases")({
@@ -38,7 +59,10 @@ export const Route = createFileRoute("/use-cases")({
         content:
           "Discover how Vocolens AI voice journal supports neurodivergent minds — ADHD, autism, and alexithymia.",
       },
-      { property: "og:title", content: "Vocolens for Neurodivergent Minds — ADHD, Autism & Alexithymia" },
+      {
+        property: "og:title",
+        content: "Vocolens for Neurodivergent Minds — ADHD, Autism & Alexithymia",
+      },
       {
         property: "og:description",
         content:
@@ -47,7 +71,10 @@ export const Route = createFileRoute("/use-cases")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vocolens.com/use-cases" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vocolens for Neurodivergent Minds — ADHD, Autism & Alexithymia" },
+      {
+        name: "twitter:title",
+        content: "Vocolens for Neurodivergent Minds — ADHD, Autism & Alexithymia",
+      },
       {
         name: "twitter:description",
         content:
@@ -55,9 +82,7 @@ export const Route = createFileRoute("/use-cases")({
       },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/use-cases" }],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(useCasesLd) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(useCasesLd) }],
   }),
   component: () => <UseCases />,
 });

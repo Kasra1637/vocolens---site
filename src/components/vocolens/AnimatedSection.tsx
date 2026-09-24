@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-type AnimationType = 'fade-in-up' | 'fade-in-left' | 'fade-in-right' | 'scale-in' | 'blur-in';
+type AnimationType = "fade-in-up" | "fade-in-left" | "fade-in-right" | "scale-in" | "blur-in";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -14,10 +14,7 @@ interface AnimatedSectionProps {
 // Keeps the component API so all call sites render unchanged, fully visible
 // on first paint. `animation`, `delay`, and `threshold` are accepted and
 // ignored.
-export function AnimatedSection({
-  children,
-  className = '',
-}: AnimatedSectionProps) {
+export function AnimatedSection({ children, className = "" }: AnimatedSectionProps) {
   return <div className={className}>{children}</div>;
 }
 
@@ -30,11 +27,7 @@ interface AnimatedGridProps {
 }
 
 // Static passthrough — every item renders immediately, no stagger timers.
-export function AnimatedGrid({
-  children,
-  className = '',
-  itemClassName = ''
-}: AnimatedGridProps) {
+export function AnimatedGrid({ children, className = "", itemClassName = "" }: AnimatedGridProps) {
   return (
     <div className={className}>
       {children.map((child, index) => (

@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
-import { RecordingScreen } from './demo/RecordingScreen';
-import { JournalScreen } from './demo/JournalScreen';
-import { InsightsScreen } from './demo/InsightsScreen';
+import { useState, useEffect, useCallback } from "react";
+import { RecordingScreen } from "./demo/RecordingScreen";
+import { JournalScreen } from "./demo/JournalScreen";
+import { InsightsScreen } from "./demo/InsightsScreen";
 
 const SCREEN_DURATION = 3500;
 
@@ -14,9 +14,12 @@ const SCREEN_DURATION = 3500;
 // manually switchable via the dots. No ambient loops (float/glow/pulse
 // stay removed by the motion-freeze decision).
 const screens = [
-  { Component: RecordingScreen, alt: 'Record tab with the voice recording button' },
-  { Component: JournalScreen, alt: 'Journal entry with AI emotion breakdown' },
-  { Component: InsightsScreen, alt: 'Insights tab with streak, mood story, and body sensation map' },
+  { Component: RecordingScreen, alt: "Record tab with the voice recording button" },
+  { Component: JournalScreen, alt: "Journal entry with AI emotion breakdown" },
+  {
+    Component: InsightsScreen,
+    alt: "Insights tab with streak, mood story, and body sensation map",
+  },
 ];
 
 export function AppDemo() {
@@ -48,7 +51,7 @@ export function AppDemo() {
             {screens.map(({ Component, alt }, index) => (
               <div
                 key={index}
-                className={`demo-screen-layer ${activeScreen === index ? 'active' : ''}`}
+                className={`demo-screen-layer ${activeScreen === index ? "active" : ""}`}
                 role="img"
                 aria-label={alt}
               >
@@ -59,7 +62,11 @@ export function AppDemo() {
         </div>
       </div>
 
-      <div className="card-app rounded-full px-2 py-1.5 flex gap-1.5 mt-6" role="tablist" aria-label="Demo screens">
+      <div
+        className="card-app rounded-full px-2 py-1.5 flex gap-1.5 mt-6"
+        role="tablist"
+        aria-label="Demo screens"
+      >
         {screens.map((_, index) => (
           <button
             key={index}
@@ -72,9 +79,7 @@ export function AppDemo() {
             <span
               aria-hidden="true"
               className={`h-2 rounded-full transition-all duration-500 ${
-                activeScreen === index
-                  ? 'w-8 bg-primary'
-                  : 'w-2 bg-primary/20 hover:bg-primary/40'
+                activeScreen === index ? "w-8 bg-primary" : "w-2 bg-primary/20 hover:bg-primary/40"
               }`}
             />
           </button>
