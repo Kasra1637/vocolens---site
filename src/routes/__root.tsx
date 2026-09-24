@@ -82,15 +82,31 @@ const softwareApplicationLd = {
   url: "https://vocolens.com",
   applicationCategory: "HealthApplication",
   applicationSubCategory: "Mental Wellness",
-  operatingSystem: "iOS, Android, Web",
-  screenshot: ["https://vocolens.com/vocolens_app.png", "https://vocolens.com/vocolens_mobile.png"],
-  image: "https://vocolens.com/vocolens_-_preview.png",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/PreOrder",
-  },
+  operatingSystem: "Android",
+  image: "https://vocolens.com/vocolens-logo.png",
+  offers: [
+    {
+      "@type": "Offer",
+      price: "9.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/OnlineOnly",
+      name: "Monthly Pro",
+    },
+    {
+      "@type": "Offer",
+      price: "24.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/OnlineOnly",
+      name: "Quarterly Pro",
+    },
+    {
+      "@type": "Offer",
+      price: "79.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/OnlineOnly",
+      name: "Yearly Pro",
+    },
+  ],
   description:
     "Vocolens is an AI voice journal for ADHD, autism, and alexithymia. Speak your mind, track mood patterns, and gain emotional clarity.",
   featureList: [
@@ -172,8 +188,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity.",
       },
-      { property: "og:image", content: "https://vocolens.com/vocolens_-_preview.png" },
-      { name: "twitter:image", content: "https://vocolens.com/vocolens_-_preview.png" },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],

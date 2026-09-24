@@ -31,7 +31,7 @@ const whyItMatters = [
   },
 ];
 
-const correctionReasons = ["Wrong label", "Wrong intensity", "Context", "Missing emotion"];
+const correctionReasons = ["Wrong label", "Wrong intensity", "Context"];
 
 const detectedLayers = [
   { label: "Vigilance", base: "Anticipation", primary: true, fill: "w-[78%]", tone: "" },
@@ -143,7 +143,7 @@ export function EmotionDetection() {
               <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
                 You selected
               </span>
-              <p className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</p>
+              <p className="text-lg font-bold text-[#6A3FC0]">"Interest"</p>
             </div>
             <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-2">
               <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">

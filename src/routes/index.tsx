@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
         content:
           "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
       },
-      { property: "og:image", content: "/vocolens_-_preview.png" },
+      { property: "og:image", content: "/vocolens-logo.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/")({
         content:
           "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
       },
-      { name: "twitter:image", content: "/vocolens_-_preview.png" },
+      { name: "twitter:image", content: "/vocolens-logo.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(speakableLd) }],
@@ -392,6 +392,9 @@ function Home() {
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
           </a>
+          <p className="text-text-muted text-sm mt-4">
+            3-day free trial, then $79.99/year. Cancel anytime.
+          </p>
         </Reveal>
       </section>
 

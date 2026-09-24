@@ -130,7 +130,6 @@ function WeeklyReflectionVisual() {
   ];
 
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
-  const wellbeing = useCountUp(12, inView);
 
   return (
     <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
@@ -138,9 +137,6 @@ function WeeklyReflectionVisual() {
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your week · Mar 18 – 24
         </p>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary bg-primary/8 border border-primary/15 px-2 py-0.5 rounded-full tabular-nums">
-          +{wellbeing}% wellbeing
-        </span>
       </div>
 
       <p className="text-text-secondary text-[15px] leading-relaxed mb-5">
@@ -450,7 +446,7 @@ function BodyMapVisual() {
     <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
       <div className="flex items-center justify-between mb-1 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-          Where stress lives
+          Where you feel it most
         </p>
         <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           Last 30 days
@@ -458,7 +454,7 @@ function BodyMapVisual() {
       </div>
 
       <p className="text-[11px] text-text-muted mb-4 relative">
-        {highStress.length} region{highStress.length !== 1 ? "s" : ""} above 70% activation
+        {highStress.length} region{highStress.length !== 1 ? "s" : ""} at 70%+ peak frequency
       </p>
 
       <div className="space-y-2 relative">
@@ -500,7 +496,7 @@ function BodyMapVisual() {
           <div className="w-8 h-2.5 rounded-full bg-primary" />
           <span className="text-[11px] text-text-muted">High</span>
         </div>
-        <p className="text-[11px] text-text-muted italic ml-auto">Focus: chest & stomach</p>
+        <p className="text-[11px] text-text-muted italic ml-auto">Most tagged: chest & stomach</p>
       </div>
     </div>
   );
@@ -909,7 +905,7 @@ const features: Feature[] = [
     icon: Activity,
     headline: "Map where feelings land in your body",
     body: "Tap where you felt it across 8 regions — head, face, neck, chest, stomach, arms, hands, legs — as a heatmap.",
-    outcome: "Catch the burnout in your chest before it reaches your head.",
+    outcome: "See which regions you reach for most when load accumulates.",
     visual: <BodyMapVisual />,
   },
   {
@@ -1121,6 +1117,9 @@ export function FeaturesShowcase() {
               Get it on Google Play
               <CaretRight className="w-6 h-6" />
             </a>
+            <p className="text-text-muted text-sm mt-4">
+              3-day free trial, then $79.99/year. Cancel anytime.
+            </p>
           </div>
         </Reveal>
       </section>
@@ -1134,7 +1133,7 @@ export function FeaturesShowcase() {
             "@type": "SoftwareApplication",
             name: "Vocolens",
             applicationCategory: "HealthApplication",
-            operatingSystem: "iOS, Android, Web",
+            operatingSystem: "Android",
             featureList: features.map((f) => `${f.eyebrow}: ${f.headline}`),
           }),
         }}
@@ -1185,7 +1184,7 @@ export function FeaturesShowcase() {
                 name: "How does the body sensation map work?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "After each entry you tap one of 8 body regions — head, face, neck, chest, stomach, arms, hands, or legs — and Vocolens builds a heatmap of your physical stress signature over time.",
+                  text: "After each entry you tap one of 8 body regions — head, face, neck, chest, stomach, arms, hands, or legs — and Vocolens builds a frequency heatmap of where you tap most often over time.",
                 },
               },
               {
@@ -1193,7 +1192,7 @@ export function FeaturesShowcase() {
                 name: "Can I correct the AI\u2019s emotion analysis if it gets it wrong?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Every entry\u2019s emotion, distress level, and valence/arousal reading can be refined by you. Your correction is saved alongside the AI\u2019s original read, so both are kept for comparison and nothing is forced.",
+                  text: "Yes. Every entry\u2019s emotion and valence/arousal reading can be refined by you. Your correction is saved alongside the AI\u2019s original read, so both are kept for comparison and nothing is forced.",
                 },
               },
               {
