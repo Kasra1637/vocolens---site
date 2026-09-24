@@ -106,6 +106,12 @@ Cloudflare Workers. Production: https://vocolens.com.
 
 ## Product truth (verified against app code)
 
+- **"Free to try" is accurate — but it is a 3-day trial, not free forever.**
+  `legal.tsx:689` states "Vocolens offers a 3-day free trial followed by a paid
+  subscription"; the trial starts when onboarding completes and a paid tier is
+  selected. Also in `settings.tsx` ("Yearly Pro · $79.99/year · 3-day free
+  trial") and `PaywallScreen.tsx` ("Start my free trial now"). Safe to say "free
+  to try" / "try it free"; never imply the app is free permanently.
 - **Streaks are real and they reset.** `user-stats-store.ts` counts consecutive
   local-calendar days and resets `currentStreak` to 1 after any gap of 2+ days.
   Never claim Vocolens "avoids streaks", that "a missed day never punishes",
