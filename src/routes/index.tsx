@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
-import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
+import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
 import { AnimatedSection } from '@/components/vocolens/AnimatedSection';
 import { Reveal, RevealGroup, RevealItem } from '@/components/vocolens/Reveal';
 import { AppDemo } from '@/components/vocolens/AppDemo';
@@ -134,7 +134,7 @@ function Home() {
         <RevealGroup
           className="grid md:grid-cols-3 gap-8"
         >
-          <RevealItem>
+          <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -154,7 +154,7 @@ function Home() {
             </div>
           </RevealItem>
 
-          <RevealItem>
+          <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -174,7 +174,7 @@ function Home() {
             </div>
           </RevealItem>
 
-          <RevealItem>
+          <RevealItem className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -217,7 +217,7 @@ function Home() {
         <RevealGroup
           className="grid md:grid-cols-3 gap-8"
         >
-          <RevealItem>
+          <RevealItem className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
@@ -231,7 +231,7 @@ function Home() {
             </div>
           </RevealItem>
 
-          <RevealItem>
+          <RevealItem className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
@@ -245,7 +245,7 @@ function Home() {
             </div>
           </RevealItem>
 
-          <RevealItem>
+          <RevealItem className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
@@ -286,7 +286,6 @@ function Home() {
             { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
             { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
             { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
-            { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
           ].map(({ icon: Icon, label, desc }) => (
             <RevealItem key={label} className="card-app rounded-2xl p-5 text-center">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
