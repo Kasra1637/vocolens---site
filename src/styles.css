@@ -144,13 +144,8 @@
   .btn-app-glow {
     box-shadow: 0 6px 14px rgba(147, 112, 219, 0.35);
   }
-  /* CTA breathing glow — slow, settles to still on hover/focus so it gets
-   * out of the way the moment intent shows. Blog narration player opts out
-   * (see carve-out below): article scope stays fully static. */
-  @keyframes cta-glow-breathe {
-    0%, 100% { box-shadow: 0 6px 14px rgba(147, 112, 219, 0.3); }
-    50% { box-shadow: 0 6px 20px rgba(147, 112, 219, 0.45); }
-  }
+  /* CTA breathing glow — keyframes at root level below, next to all other
+   * keyframes. Settles to still on hover/focus; never applied in articles. */
   .btn-app-glow-breathe { animation: cta-glow-breathe 4s ease-in-out infinite; }
   .btn-app-glow-breathe:hover, .btn-app-glow-breathe:focus-visible {
     animation: none;
@@ -184,6 +179,11 @@
 .route-fade { animation: route-fade 0.2s var(--ease-soft); }
 
 /* ============== Animations ============== */
+
+@keyframes cta-glow-breathe {
+  0%, 100% { box-shadow: 0 6px 14px rgba(147, 112, 219, 0.3); }
+  50% { box-shadow: 0 6px 20px rgba(147, 112, 219, 0.45); }
+}
 
 @keyframes scroll-left {
   0% { transform: translate3d(0, 0, 0); }
