@@ -1,9 +1,10 @@
-import { Brain, Clock, Target as Radar, Pulse as Activity, PuzzlePiece as Puzzle, Heart, ArrowClockwise as RefreshCw, Flame, Timer } from '@phosphor-icons/react';
+import { Brain, Clock, Target as Radar, Pulse as Activity, PuzzlePiece as Puzzle, Heart, ArrowClockwise as RefreshCw, Flame, Timer, ArrowRight } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
+import { Reveal, RevealGroup, RevealItem } from './Reveal';
 
 export function Resources() {
   return (
-    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <main aria-label="Voice journaling and mental wellness resources" className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -29,22 +30,22 @@ export function Resources() {
         }}
       />
 
-      <div>
-        <div className="text-center mb-6">
+      <Reveal>
+        <div className="text-center mb-12 lg:mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Learning Hub
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-5 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-tight" style={{ color: '#1e293b' }}>
             Resources & Guides
           </h1>
           <p className="text-text-secondary max-w-2xl mx-auto text-base leading-relaxed">
             Evidence-based guides on mental wellness, journaling, and emotional resilience — backed by peer-reviewed research.
           </p>
         </div>
-      </div>
+      </Reveal>
 
-      <div>
+      <RevealGroup stagger={0.05}>
         <article
           itemScope
           itemType="https://schema.org/Article"
@@ -60,13 +61,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/emotional-granularity"
             aria-label="Read: Emotional Granularity: Why Specific Words Change What You Feel"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Heart className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -91,18 +93,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Emotional Granularity · Affect Labeling · Voice Journaling
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -119,13 +121,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/adhd-time-blindness"
             aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Timer className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -150,18 +153,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     ADHD · Time Blindness · Interval Timing
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -178,13 +181,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/burnout-recovery-signs"
             aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Flame className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -209,18 +213,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Burnout · Allostatic Load · Stress Recovery
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -237,13 +241,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/overthinking-rumination"
             aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <RefreshCw className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -268,18 +273,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Overthinking · Rumination · Worry Time
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -296,13 +301,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/autism-emotional-regulation"
             aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Puzzle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -327,18 +333,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Autism · Alexithymia · Emotional Regulation
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -355,13 +361,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/alexithymia-emotional-vocabulary"
             aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Heart className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -386,18 +393,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Alexithymia · Emotional Vocabulary · AI Journaling
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -414,13 +421,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/distress-detection"
             aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -445,18 +453,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Interoception · Body Awareness · Overwhelm
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -473,13 +481,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/emotional-awareness-patterns"
             aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Radar className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -504,18 +513,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Pattern Recognition · Emotional Intelligence · Self-Awareness
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
+
 
         <article
           itemScope
@@ -532,13 +541,14 @@ export function Resources() {
           <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
+          <RevealItem>
           <Link
             to="/resources/science-of-reflection"
             aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
             className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
           >
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                 <Brain className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0">
@@ -563,19 +573,18 @@ export function Resources() {
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                     Read article
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                    <ArrowRight className="w-4 h-4" />
                   </span>
-                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 card-app rounded-2xl sm:rounded-full leading-relaxed break-words">
+                  <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                     Emotion Labeling · Stress Relief Journaling · Resilience
                   </span>
                 </div>
               </div>
             </div>
           </Link>
+          </RevealItem>
         </article>
-      </div>
+      </RevealGroup>
     </main>
   );
 }
