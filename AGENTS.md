@@ -36,8 +36,12 @@ Cloudflare Workers. Production: https://vocolens.com.
   `chip-app` (diagonal gradient), `btn-app-glow` glass CTAs.
 - Blog narration: pre-generated MP3s (`public/audio/<slug>.mp3`); section
   timestamps in `src/lib/articleSections.ts` are word-count estimates —
-  player code compensates with a 3s header lead-in, do not "fix" by editing
-  timestamps by hand.
+  player code compensates with a 1.5s header lead-in, do not "fix" by editing
+  timestamps by hand. The player has **no scrub bar**: the chapter list plus
+  the prev/next buttons are the only chapter browsers, and the Listen button
+  is the only control that starts audio (every other gesture just selects a
+  chapter, leaving playback as it was). Position feedback is the `§ chapter`
+  label plus elapsed / total time.
 - `src/routeTree.gen.ts` is auto-generated (rebuild regenerates it).
 - `/join` was removed; `src/server.ts` 301s it to `/`. `site.webmanifest`
   512 icon is `public/vocolens-512.png` (keep in sync with the favicon).
@@ -126,12 +130,13 @@ Cloudflare Workers. Production: https://vocolens.com.
   routes, the 10 blog article components and `src/routeTree.gen.ts` (frozen /
   auto-generated). That block must stay **after** `eslintPluginPrettier` — flat
   config applies later entries last.
-- The 11 remaining warnings are the accepted baseline: 5 `react-refresh` in
-  unused `src/components/ui/*` shadcn files (0 imports — dead code) and 6
+- The 10 remaining warnings are the accepted baseline: 5 `react-refresh` in
+  unused `src/components/ui/*` shadcn files (0 imports — dead code) and 5
   `react-hooks/exhaustive-deps` in `ListenToArticle.tsx` that are false
   positives (`sections` is a stable module-level lookup; `[src]` already
-  tracks `slug`; `armBoundSuppress` is a dep-free `useCallback` writing a ref).
-  Fixing them changes nothing — don't churn them for a clean count.
+  tracks `slug`). Fixing them changes nothing — don't churn them for a clean
+  count. (Was 11/6 until the scrub bar was removed, which deleted the last
+  `sections`-dependent callback that omitted a dep.)
 
 ## Process lessons
 

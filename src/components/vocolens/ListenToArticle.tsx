@@ -45,36 +45,30 @@ function articleBlocks(): HTMLElement[] {
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
- * - chapter-only timeline: taps/drags resolve to section starts with a
- *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
- *   highlight, hover, chapters) always uses the mapped times directly
- * - the Listen button is the ONLY control that starts audio. Every other
- *   navigation gesture (chapter row, timeline tap/drag, prev/next, keys)
- *   selects a chapter: the playhead moves to that chapter's header and the
- *   row lights up, but playback stays as it was. Pressing Listen afterwards
- *   plays just the selected chapter
+ * - the Listen button is the ONLY control that starts audio. The chapter
+ *   list and the prev/next-section buttons only SELECT: the playhead moves
+ *   to that chapter's header with the same small lead-in and the row lights
+ *   up, but playback stays as it was. Pressing Listen afterwards plays just
+ *   the selected chapter
  *   (seeks are verified across frames against element desync; the
  *   chapter-bound auto-pause is suppressed briefly after each jump so a
  *   stale timeupdate can't pause instead of moving)
  * - an explicitly selected chapter plays ONLY itself once started, then
  *   auto-pauses at the next chapter's start; a fresh Listen with no
  *   selection plays through
- * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
- *   all resolving to header starts with the same lead-in
+ * - no scrub bar: the chapter list is the only chapter browser. Position
+ *   feedback is the § chapter label plus elapsed / total time
  * - live soft-highlight of the section being narrated + auto-scroll that
  *   follows along as playback advances
  * Regenerate audio with: node scripts/generate-article-audio.cjs
  */
 export function ListenToArticle({ slug }: { slug: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const trackRef = useRef<HTMLDivElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
   const [missing, setMissing] = useState(false);
-  const [scrubbing, setScrubbing] = useState(false);
-  const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [showChapters, setShowChapters] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   // Chapter highlighted the moment a tap lands, before playback catches
@@ -336,130 +330,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
     selectChapter(target);
   }, [sections, currentTime, selectChapter]);
 
-  const getTimeFromPointer = useCallback((clientX: number): number | null => {
-    const track = trackRef.current;
-    if (!track || !Number.isFinite(duration) || duration <= 0) return null;
-    const rect = track.getBoundingClientRect();
-    if (rect.width <= 0) return null;
-    const ratio = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
-    return ratio * duration;
-  }, [duration]);
-
-  // Chapter-only timeline: every gesture resolves to a section header —
-  // there is no arbitrary scrubbing. Taps jump straight to the enclosing
-  // section; drags step across boundaries as the pointer crosses them.
-  // (A legacy mouse fallback was removed earlier: touch browsers replay
-  // emulated mouse events after gestures, which double-seeked on mobile.)
-  const scrubbingRef = useRef(false);
-  const snappedIdxRef = useRef<number | null>(null);
-
-  const ratioFromPointer = useCallback((clientX: number): number | null => {
-    const track = trackRef.current;
-    if (!track) return null;
-    const rect = track.getBoundingClientRect();
-    if (rect.width <= 0) return null;
-    return Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
-  }, []);
-
-  const snapToSectionAt = useCallback(
-    (clientX: number) => {
-      const ratio = ratioFromPointer(clientX);
-      if (ratio === null || sections.length === 0) return;
-      if (!Number.isFinite(duration) || duration <= 0) {
-        // Metadata pending: park the tap and resolve it in onMeta (which
-        // replays the play intent). Highlight a proportional estimate
-        // instantly so the tap feels alive; onMeta corrects it.
-        const estimate = Math.min(Math.floor(ratio * sections.length), sections.length - 1);
-        setArmedIdx(estimate);
-        snappedIdxRef.current = estimate;
-        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: false };
-        armBoundSuppress();
-        try {
-          if (audioRef.current?.networkState === 0) audioRef.current?.load();
-        } catch {
-          /* non-fatal */
-        }
-        return;
-      }
-      const idx = sectionAt(sections, ratio * duration);
-      setArmedIdx(idx);
-      if (idx !== snappedIdxRef.current) {
-        snappedIdxRef.current = idx;
-        selectChapter(idx);
-      }
-    },
-    [ratioFromPointer, duration, sections, selectChapter],
-  );
-
-  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    // Ignore emulated extra buttons; primary button / touch contact only.
-    // Gate on track geometry (not duration) so pre-metadata taps park
-    // instead of dying silently.
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    if (ratioFromPointer(e.clientX) === null || sections.length === 0) return;
-    try {
-      e.currentTarget.setPointerCapture(e.pointerId);
-    } catch {
-      /* already released — non-fatal */
-    }
-    scrubbingRef.current = true;
-    setScrubbing(true);
-    snapToSectionAt(e.clientX);
-  };
-
-  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    const t = getTimeFromPointer(e.clientX);
-    if (t === null) return;
-    if (scrubbingRef.current) {
-      snapToSectionAt(e.clientX);
-    } else if (e.pointerType === "mouse") {
-      setHoverTime(t);
-    }
-  };
-
-  const endScrub = (e?: React.PointerEvent<HTMLDivElement>) => {
-    if (e && e.currentTarget.hasPointerCapture?.(e.pointerId)) {
-      try {
-        e.currentTarget.releasePointerCapture(e.pointerId);
-      } catch {
-        /* already released — non-fatal */
-      }
-    }
-    snappedIdxRef.current = null;
-    scrubbingRef.current = false;
-    setScrubbing(false);
-    setHoverTime(null);
-    // While playing, live progress owns the highlight; a pre-metadata tap
-    // keeps its estimated highlight until playback catches up.
-    if (playing) setArmedIdx(null);
-  };
-
-  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      prevSection();
-    } else if (e.key === "ArrowRight") {
-      e.preventDefault();
-      nextSection();
-    } else if (e.key === "Home") {
-      e.preventDefault();
-      if (sections.length > 0) selectChapter(0);
-    } else if (e.key === "End") {
-      e.preventDefault();
-      if (sections.length > 0) {
-        selectChapter(sections.length - 1);
-      }
-    }
-  };
 
   if (missing) return null;
 
-  const fraction = duration > 0 ? Math.min(Math.max(currentTime / duration, 0), 1) : 0;
   const speed = SPEEDS[speedIdx];
   const sectionIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
-
-  const tipTime = scrubbing ? currentTime : hoverTime;
-  const tipSection = tipTime !== null && sections.length > 0 ? sections[sectionAt(sections, tipTime)].title : null;
 
   return (
     <div
@@ -527,61 +402,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       </div>
 
       <div className="mt-3">
-        <div
-          ref={trackRef}
-          role="slider"
-          tabIndex={0}
-          aria-label="Seek narration"
-          aria-valuemin={0}
-          aria-valuemax={Math.round(duration || 0)}
-          aria-valuenow={Math.round(currentTime)}
-          aria-valuetext={
-            sectionIdx >= 0
-              ? `Chapter ${sectionIdx + 1} of ${sections.length}: ${sections[sectionIdx].title}, ${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
-              : `${formatClock(currentTime)} of ${duration > 0 ? formatClock(duration) : "unknown"}`
-          }
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={endScrub}
-          onPointerCancel={endScrub}
-          onLostPointerCapture={endScrub}
-          onPointerLeave={() => { if (!scrubbingRef.current) setHoverTime(null); }}
-          onKeyDown={onKeyDown}
-          className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
-        >
-          <div className="relative w-full h-2 rounded-full bg-[#F4F1FB]" aria-hidden="true">
-            <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none pointer-events-none" style={{ width: `${fraction * 100}%` }} />
-            {sections.slice(1).map((s, i) => {
-              const isCurrent = i + 1 === sectionIdx;
-              return (
-                <span
-                  key={i}
-                  title={s.title}
-                  className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full ring-2 ring-white pointer-events-none ${
-                    isCurrent ? "w-2.5 h-5 bg-primary" : "w-2 h-4 bg-[#BEA9E9]"
-                  }`}
-                  style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
-                  aria-hidden="true"
-                />
-              );
-            })}
-            <div
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-[3px] border-white shadow-md pointer-events-none"
-              style={{ left: `${fraction * 100}%` }}
-            />
-          </div>
-          {tipTime !== null && (
-            <div
-              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-2xl bg-white border border-primary/30 shadow-clay-sm text-text-primary text-[11px] font-medium px-2 py-1"
-              style={{ left: `clamp(56px, ${(tipTime / duration) * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
-              aria-hidden="true"
-            >
-              {formatClock(tipTime)}
-              {tipSection ? ` · ${tipSection}` : ""}
-            </div>
-          )}
-        </div>
-        <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-0.5">
+        <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-2">
           <span className="min-w-0 truncate">
             {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {sections[sectionIdx].title}</span> : <span>&nbsp;</span>}
           </span>
