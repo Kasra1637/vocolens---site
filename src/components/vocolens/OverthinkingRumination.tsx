@@ -101,7 +101,7 @@ export function OverthinkingRumination() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
     >
       <BackToTop />
       <script
@@ -119,7 +119,7 @@ export function OverthinkingRumination() {
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
-                className="hover:text-primary transition-colors"
+                className="text-primary font-semibold hover:underline"
                 itemProp="name"
               >
                 Resources
@@ -136,13 +136,13 @@ export function OverthinkingRumination() {
           </ol>
         </nav>
 
-        <div className="mb-10">
+        <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <RefreshCw className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 Anxiety &amp; Mental Wellness
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -155,24 +155,23 @@ export function OverthinkingRumination() {
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
             The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base lg:text-lg leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
             Overthinking isn't a willpower problem. It's what happens when your brain treats a thought as unfinished business and keeps reopening the file. Here's the neuroscience of <strong className="text-text-primary font-semibold">rumination</strong>, why "just stop thinking about it" tends to backfire, and how giving your brain a real completion signal — out loud — actually closes the loop.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
-          <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
       </div>
 
       <ListenToArticle slug="overthinking-rumination" />
 
-          <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
+          <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -189,7 +188,7 @@ export function OverthinkingRumination() {
             </ul>
       </div>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -231,7 +230,7 @@ export function OverthinkingRumination() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In a widely cited 2010 study, Harvard researchers Matthew Killingsworth and Daniel Gilbert tracked thousands of people in real time and found that people spend nearly half their waking hours mind-wandering — and that wandering minds are, on average, unhappier minds, regardless of what they were wandering to. The DMN isn't inherently a problem. But in people prone to rumination, it can get stuck in a self-critical loop, replaying the same material without ever producing an answer.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "A human mind is a wandering mind, and a wandering mind is an unhappy mind."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Killingsworth & Gilbert, 2010, Science</cite>
             </blockquote>
@@ -284,9 +283,9 @@ export function OverthinkingRumination() {
             </p>
             <a
               href="/resources/science-of-reflection"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read more about the neuroscience of affect labeling</span>
+              <span className="min-w-0">Read more about the neuroscience of affect labeling</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="mt-4 text-sm text-text-muted italic">
@@ -319,9 +318,9 @@ export function OverthinkingRumination() {
         </div>
 
         <div>
-          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+          <section aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
@@ -332,7 +331,7 @@ export function OverthinkingRumination() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group card-app rounded-xl overflow-hidden transition-shadow"
+                  className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -348,17 +347,17 @@ export function OverthinkingRumination() {
         </div>
 
         <div>
-          <div className="py-8 border-t border-primary/10">
+          <div className="border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
@@ -368,12 +367,12 @@ export function OverthinkingRumination() {
               </Link>
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness &amp; Distress Detection</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
@@ -383,12 +382,12 @@ export function OverthinkingRumination() {
               </Link>
               <Link
                 to="/resources/emotional-awareness-patterns"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness &amp; Self-Discovery</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
@@ -398,12 +397,12 @@ export function OverthinkingRumination() {
               </Link>
               <Link
                 to="/resources/burnout-recovery-signs"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Stress &amp; Burnout Recovery</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Stress &amp; Burnout Recovery</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Burnout doesn't start in your job — it starts in your nervous system
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the science of allostatic load and how a daily voice-journaled load check catches burnout before it becomes collapse.</p>
@@ -416,7 +415,7 @@ export function OverthinkingRumination() {
         </div>
 
         <div>
-          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Break the loop
             </h2>
@@ -427,14 +426,14 @@ export function OverthinkingRumination() {
               <a
                 href={GOOGLE_PLAY_URL}
                 {...STORE_LINK_ATTRS}
-                className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+                className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
               >
                 Get it on Google Play
                 <CaretRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
                 to="/resources"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
+                className="inline-flex items-center text-primary font-semibold hover:underline"
               >
                 Back to Resources
               </Link>

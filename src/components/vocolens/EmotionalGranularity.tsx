@@ -87,7 +87,7 @@ export function EmotionalGranularity() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
     >
       <BackToTop />
       <script
@@ -115,7 +115,7 @@ export function EmotionalGranularity() {
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
-                className="hover:text-primary transition-colors"
+                className="text-primary font-semibold hover:underline"
                 itemProp="name"
               >
                 Resources
@@ -132,13 +132,13 @@ export function EmotionalGranularity() {
           </ol>
         </nav>
 
-        <div className="mb-10">
+        <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <Heart className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 Neuroscience &amp; Emotional Intelligence
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -151,23 +151,22 @@ export function EmotionalGranularity() {
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
             Emotional Granularity: Why Specific Words Change What You Feel
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base lg:text-lg leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
             Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
-          <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
       </div>
 
       <ListenToArticle slug="emotional-granularity" />
-<div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
+<div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -184,7 +183,7 @@ export function EmotionalGranularity() {
             </ul>
       </div>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -206,7 +205,7 @@ export function EmotionalGranularity() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If concepts are tools, then the size of your toolbox matters. "I feel stressed" is a hammer: it can strike almost anything, and it tells you very little. "I feel apprehensively braced, already behind, and restless with unfinished things" is a set of finer tools — each one pointing at a different part of the experience, and each one suggesting a different thing to do about it.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "In the how of emotion, then, become specific and you can change the what of experience."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barrett, 2006, Personality and Social Psychology Review</cite>
             </blockquote>
@@ -218,9 +217,9 @@ export function EmotionalGranularity() {
               target="_blank"
               rel="noopener noreferrer"
               title="Read Barrett (2006) on categorization and the experience of emotion — PubMed"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read the research: Solving the emotion paradox — PubMed</span>
+              <span className="min-w-0">Read the research: Solving the emotion paradox — PubMed</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
@@ -236,7 +235,7 @@ export function EmotionalGranularity() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               In other words, naming looks less like reporting and more like regulating. The word becomes a handle the system can grip. And the finer the handle, the more specific the grip: "I'm stressed" points vaguely at everything, while "I'm braced for a conversation I haven't had yet" points at one thing — which is a thing you can actually prepare for.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "Putting feelings into words... reduces the response of the amygdala."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Lieberman et al., 2007, Psychological Science</cite>
             </blockquote>
@@ -251,9 +250,9 @@ export function EmotionalGranularity() {
               target="_blank"
               rel="noopener noreferrer"
               title="Read Lieberman et al. (2007) on affect labeling and reduced amygdala response — PubMed"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
+              <span className="min-w-0">Read the research: Putting feelings into words — affect labeling disconfirms amygdala response — PubMed</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
@@ -281,9 +280,9 @@ export function EmotionalGranularity() {
               target="_blank"
               rel="noopener noreferrer"
               title="Read Kashdan, Barrett & McKnight (2015) on emotion differentiation — Current Directions in Psychological Science"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
+              <span className="min-w-0">Read the review: Unpacking emotion differentiation — Current Directions in Psychological Science</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
@@ -312,9 +311,9 @@ export function EmotionalGranularity() {
         </div>
 
         <div>
-          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+          <section aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
@@ -325,7 +324,7 @@ export function EmotionalGranularity() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group card-app rounded-xl overflow-hidden transition-shadow"
+                  className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -341,17 +340,17 @@ export function EmotionalGranularity() {
         </div>
 
         <div>
-          <div className="py-8 border-t border-primary/10">
+          <div className="border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/alexithymia-emotional-vocabulary"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Emotional Intelligence</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Emotional Intelligence</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Why you can't name what you're feeling: alexithymia and the emotional vocabulary you were never taught
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Around 10% of people struggle to identify and describe their own emotions. Learn the neuroscience of emotional blindness and how AI voice journaling builds a personal vocabulary from scratch.</p>
@@ -361,12 +360,12 @@ export function EmotionalGranularity() {
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
@@ -376,12 +375,12 @@ export function EmotionalGranularity() {
               </Link>
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Body Awareness &amp; Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness &amp; Distress Detection</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
@@ -395,7 +394,7 @@ export function EmotionalGranularity() {
 
       </div>
 <div>
-        <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+        <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
           <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
             Find the exact word
           </h2>
@@ -406,14 +405,14 @@ export function EmotionalGranularity() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
             >
               Get it on Google Play
               <CaretRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <Link
               to="/resources"
-              className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
+              className="inline-flex items-center text-primary font-semibold hover:underline"
             >
               Back to Resources
             </Link>

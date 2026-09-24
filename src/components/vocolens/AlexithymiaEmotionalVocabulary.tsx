@@ -101,7 +101,7 @@ export function AlexithymiaEmotionalVocabulary() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
     >
       <BackToTop />
       <script
@@ -119,7 +119,7 @@ export function AlexithymiaEmotionalVocabulary() {
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
-                className="hover:text-primary transition-colors"
+                className="text-primary font-semibold hover:underline"
                 itemProp="name"
               >
                 Resources
@@ -136,13 +136,13 @@ export function AlexithymiaEmotionalVocabulary() {
           </ol>
         </nav>
 
-        <div className="mb-10">
+        <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <Heart className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 Neuroscience &amp; Emotional Intelligence
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -155,23 +155,22 @@ export function AlexithymiaEmotionalVocabulary() {
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
             Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base lg:text-lg leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
             Around 10% of people know something is wrong but can't say what — a trait called <strong className="text-text-primary font-semibold">alexithymia</strong>. The feeling shows up. The word never does. Here's why traditional journaling makes that worse, and how AI-assisted voice journaling helps you build an emotional vocabulary from the ground up.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
-          <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
       </div>
       <ListenToArticle slug="alexithymia-emotional-vocabulary" />
 
-          <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
+          <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -188,7 +187,7 @@ export function AlexithymiaEmotionalVocabulary() {
             </ul>
       </div>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -209,7 +208,7 @@ export function AlexithymiaEmotionalVocabulary() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Here's the part that surprises most people: alexithymia has nothing to do with feeling less. Brain scans of people high in alexithymia show completely normal — sometimes even heightened — activity in the emotional centers of the brain. The disconnect happens somewhere else entirely, in the handoff between the body's signal and the mind's ability to attach a word to it. It's a wiring issue, not an empathy issue.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "The emotions are there. The body registers them. What's missing is the bridge between sensation and language — the capacity to say 'this feeling is grief' or 'this feeling is excitement.'"
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Lane & Schwartz, 1987, Levels of Emotional Awareness</cite>
             </blockquote>
@@ -304,9 +303,9 @@ export function AlexithymiaEmotionalVocabulary() {
             </p>
             <a
               href="/resources/distress-detection"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read more about interoception and body-based awareness</span>
+              <span className="min-w-0">Read more about interoception and body-based awareness</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="mt-4 text-sm text-text-muted italic">
@@ -337,9 +336,9 @@ export function AlexithymiaEmotionalVocabulary() {
           </section>
         </div>
         <div>
-          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+          <section aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
@@ -350,7 +349,7 @@ export function AlexithymiaEmotionalVocabulary() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group card-app rounded-xl overflow-hidden transition-shadow"
+                  className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -365,17 +364,17 @@ export function AlexithymiaEmotionalVocabulary() {
           </section>
         </div>
         <div>
-          <div className="py-8 border-t border-primary/10">
+          <div className="border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/distress-detection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Body Awareness & Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness & Distress Detection</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
@@ -385,12 +384,12 @@ export function AlexithymiaEmotionalVocabulary() {
               </Link>
               <Link
                 to="/resources/autism-emotional-regulation"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Autism & Neurodivergent Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Autism & Neurodivergent Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Autism and emotional regulation: how voice journaling helps autistic adults process emotions
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Alexithymia affects up to 50% of autistic adults. See how voice journaling builds emotional vocabulary without social pressure.</p>
@@ -400,12 +399,12 @@ export function AlexithymiaEmotionalVocabulary() {
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience & Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience & Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds emotional resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Neuroscience research proves that labeling emotions calms the amygdala. Discover how voice journaling applies affect labeling science.</p>
@@ -417,7 +416,7 @@ export function AlexithymiaEmotionalVocabulary() {
           </div>
         </div>
         <div>
-          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Name what you feel
             </h2>
@@ -428,14 +427,14 @@ export function AlexithymiaEmotionalVocabulary() {
               <a
                 href={GOOGLE_PLAY_URL}
                 {...STORE_LINK_ATTRS}
-                className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+                className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
               >
                 Get it on Google Play
                 <CaretRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
                 to="/resources"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
+                className="inline-flex items-center text-primary font-semibold hover:underline"
               >
                 Back to Resources
               </Link>

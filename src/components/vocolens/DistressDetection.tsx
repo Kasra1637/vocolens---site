@@ -46,7 +46,7 @@ export function DistressDetection() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
     >
       <BackToTop />
       <script
@@ -102,7 +102,7 @@ export function DistressDetection() {
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
-                className="hover:text-primary transition-colors"
+                className="text-primary font-semibold hover:underline"
                 itemProp="name"
               >
                 Resources
@@ -119,13 +119,13 @@ export function DistressDetection() {
           </ol>
         </nav>
 
-        <div className="mb-10">
+        <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <Activity className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 Body Awareness &amp; Distress Detection
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -136,7 +136,7 @@ export function DistressDetection() {
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
             How Your Body Tells You Are Overwhelmed Before Your Mind Does
           </h1>
@@ -145,14 +145,13 @@ export function DistressDetection() {
             <span aria-hidden="true">·</span>
             <time dateTime="2026-06-11" itemProp="datePublished">June 11, 2026</time>
           </div>
-          <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
       </div>
 
       <ListenToArticle slug="distress-detection" />
 
-          <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
+          <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -169,7 +168,7 @@ export function DistressDetection() {
             </ul>
       </div>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -188,7 +187,7 @@ export function DistressDetection() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Antonio Damasio's somatic marker hypothesis points to the same truth from a different angle: the body's physiological state shapes decision-making and emotion long before conscious reasoning catches up. Distress isn't an idea you arrive at. It's a physical event you eventually notice.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "The body is not separate from emotion. It is the medium through which emotion is built."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Adapted from research on interoception and emotional awareness</cite>
             </blockquote>
@@ -217,9 +216,9 @@ export function DistressDetection() {
               target="_blank"
               rel="noopener noreferrer"
               title="Read Garfinkel et al. (2015) on interoceptive accuracy and emotional experience — PubMed"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read the research: Knowing your own heart — interoceptive accuracy and emotion — PubMed</span>
+              <span className="min-w-0">Read the research: Knowing your own heart — interoceptive accuracy and emotion — PubMed</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </section>
@@ -281,9 +280,9 @@ export function DistressDetection() {
         </div>
 
         <div>
-          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+          <section aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
@@ -294,7 +293,7 @@ export function DistressDetection() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group card-app rounded-xl overflow-hidden transition-shadow"
+                  className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -310,17 +309,17 @@ export function DistressDetection() {
         </div>
 
         <div>
-          <div className="py-8 border-t border-primary/10">
+          <div className="border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
@@ -330,12 +329,12 @@ export function DistressDetection() {
               </Link>
               <Link
                 to="/resources/emotional-awareness-patterns"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness &amp; Self-Discovery</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
@@ -348,7 +347,7 @@ export function DistressDetection() {
         </div>
 
         <div>
-          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               Hear your body first
             </h2>
@@ -359,14 +358,14 @@ export function DistressDetection() {
               <a
                 href={GOOGLE_PLAY_URL}
                 {...STORE_LINK_ATTRS}
-                className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+                className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
               >
                 Get it on Google Play
                 <CaretRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
                 to="/resources"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
+                className="inline-flex items-center text-primary font-semibold hover:underline"
               >
                 Back to Resources
               </Link>

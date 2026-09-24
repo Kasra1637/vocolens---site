@@ -101,7 +101,7 @@ export function TimeBlindness() {
     <article
       itemScope
       itemType="https://schema.org/Article"
-      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-24"
+      className="max-w-3xl mx-auto px-6 pt-24 sm:pt-32 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
     >
       <BackToTop />
       <script
@@ -119,7 +119,7 @@ export function TimeBlindness() {
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
-                className="hover:text-primary transition-colors"
+                className="text-primary font-semibold hover:underline"
                 itemProp="name"
               >
                 Resources
@@ -136,13 +136,13 @@ export function TimeBlindness() {
           </ol>
         </nav>
 
-        <div className="mb-10">
+        <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <Timer className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest block" itemProp="articleSection">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 ADHD &amp; Time Perception
               </span>
               <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
@@ -155,24 +155,23 @@ export function TimeBlindness() {
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl lg:text-4xl font-bold text-text-primary leading-tight mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
             Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base lg:text-lg leading-relaxed">
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
             Time blindness doesn't mean you don't care about the clock. It means your brain isn't reliably generating the internal signal that tells you how much time has actually passed. Here's the science of <strong className="text-text-primary font-semibold">interval timing</strong> in ADHD, why alarms and willpower alone don't fix it, and how a simple voice-logged time-anchor habit gives your brain the external clock it's missing.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
           </div>
-          <div className="h-1 w-16 bg-gradient-primary rounded-full mb-6" />
         </div>
       </div>
 
       <ListenToArticle slug="adhd-time-blindness" />
 
-          <div data-speakable="key-takeaways" className="card-app rounded-2xl p-5 mb-8">
-            <p className="font-semibold text-primary mb-2 uppercase tracking-widest text-sm leading-relaxed">Key takeaways</p>
+          <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
@@ -189,7 +188,7 @@ export function TimeBlindness() {
             </ul>
       </div>
 
-      <div className="space-y-10 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -211,7 +210,7 @@ export function TimeBlindness() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               This isn't a loose metaphor. A 2021 meta-analysis pooling more than 1,600 children and adolescents with ADHD against nearly 1,250 peers found consistent deficits in how accurately and precisely time was judged, regardless of the specific timing task used. Separate research on adults describes time perception as a <strong className="text-text-primary font-semibold">focal, central symptom</strong> of adult ADHD in its own right — not a downstream side effect of being distracted, but a core piece of how the condition works.
             </p>
-            <blockquote className="border-l-4 border-primary/40 pl-5 my-5 italic text-base text-text-secondary bg-primary/4 rounded-r-xl py-4 pr-4">
+            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
               "ADHD disrupts this process and returns control of behavior to the temporal now... a blindness to past, future, and time more generally."
               <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Barkley, 1997, Journal of Developmental &amp; Behavioral Pediatrics</cite>
             </blockquote>
@@ -284,9 +283,9 @@ export function TimeBlindness() {
             </p>
             <a
               href="/resources/emotional-awareness-patterns"
-              className="inline-flex items-center gap-2 mt-4 text-sm text-primary font-semibold hover:text-primary-dark transition-colors group"
+              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
             >
-              <span className="min-w-0 underline underline-offset-2">Read more about how pattern recognition builds self-understanding</span>
+              <span className="min-w-0">Read more about how pattern recognition builds self-understanding</span>
               <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
             </a>
             <p className="mt-4 text-sm text-text-muted italic">
@@ -316,9 +315,9 @@ export function TimeBlindness() {
         </div>
 
         <div>
-          <section aria-labelledby="section-faq" className="py-8 border-t border-primary/10">
+          <section aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
@@ -329,7 +328,7 @@ export function TimeBlindness() {
               {faqData.map(({ question, answer }, i) => (
                 <details
                   key={i}
-                  className="group card-app rounded-xl overflow-hidden transition-shadow"
+                  className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
@@ -345,17 +344,17 @@ export function TimeBlindness() {
         </div>
 
         <div>
-          <div className="py-8 border-t border-primary/10">
+          <div className="border-t border-primary/10">
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
                 to="/resources/emotional-awareness-patterns"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Mental Wellness &amp; Self-Discovery</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness &amp; Self-Discovery</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
@@ -365,12 +364,12 @@ export function TimeBlindness() {
               </Link>
               <Link
                 to="/resources/overthinking-rumination"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Anxiety &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Anxiety &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       The overthinking trap: why your brain won't stop
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover the neuroscience of rumination and how giving your brain a completion signal breaks the loop.</p>
@@ -380,12 +379,12 @@ export function TimeBlindness() {
               </Link>
               <Link
                 to="/resources/science-of-reflection"
-                className="block w-full text-left p-5 card-app rounded-xl group"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="font-semibold text-primary uppercase tracking-widest mb-1 text-sm leading-relaxed">Neuroscience &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-hover:text-primary transition-colors mb-2 text-lg">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
+                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
@@ -398,7 +397,7 @@ export function TimeBlindness() {
         </div>
 
         <div>
-          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 lg:p-12 text-center">
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
               See time clearly
             </h2>
@@ -409,14 +408,14 @@ export function TimeBlindness() {
               <a
                 href={GOOGLE_PLAY_URL}
                 {...STORE_LINK_ATTRS}
-                className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-colors"
+                className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
               >
                 Get it on Google Play
                 <CaretRight className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link
                 to="/resources"
-                className="inline-flex items-center gap-2 border border-primary/20 text-primary px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors"
+                className="inline-flex items-center text-primary font-semibold hover:underline"
               >
                 Back to Resources
               </Link>
