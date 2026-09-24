@@ -129,7 +129,7 @@ export function EmotionScienceSuite() {
           The emotion science inside Vocolens
         </h2>
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
-          See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that adapts to you — stays on your device, behind your biometrics.
+          See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that adapts to you — your journal stays on your device, behind your biometrics.
         </p>
       </AnimatedSection>
 
@@ -261,26 +261,26 @@ export function EmotionScienceSuite() {
                 <Sparkles className="w-4 h-4 text-primary" />
                 <p className="font-semibold uppercase tracking-widest text-primary/70 text-sm">Personalization AI</p>
               </div>
-              <h3 className="font-bold text-text-primary mb-2 text-xl">Learns from every entry you make</h3>
+              <h3 className="font-bold text-text-primary mb-2 text-xl">Adapts to every correction you make</h3>
               <p className="text-text-secondary mb-5 text-base leading-relaxed">
-                A recency-weighted model studies the corrections you make and refines future suggestions — capped at an honest 80% accuracy ceiling, because feelings aren&apos;t perfectly predictable.
+                A recency-weighted personalization layer studies the corrections you make and refines future suggestions. A pattern needs at least 3 corrections across 2 weeks, and your most recent ones count most.
               </p>
 
               <div className="grid grid-cols-1 gap-4">
                 <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                      <span className="font-bold text-base text-[#6A3FC0] tabular-nums">80</span>
+                      <span className="font-bold text-base text-[#6A3FC0] tabular-nums">3&times;</span>
                     </span>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">Model accuracy</p>
-                      <p className="text-text-muted text-sm leading-relaxed">% ceiling · recency-weighted</p>
+                      <p className="text-sm font-semibold uppercase tracking-wider text-primary/70">Recency boost</p>
+                      <p className="text-text-muted text-sm leading-relaxed">weight · corrections from the last 14 days</p>
                     </div>
                   </div>
                   <div className="h-[5px] rounded-full bg-primary/10 overflow-hidden" aria-hidden="true">
-                    <div className="h-full rounded-full bg-primary" style={{ width: '80%' }} />
+                    <div className="h-full rounded-full bg-primary" style={{ width: '75%' }} />
                   </div>
-                  <p className="text-text-muted mt-2 text-base leading-relaxed">Recency-weighted, learns continuously.</p>
+                  <p className="text-text-muted mt-2 text-base leading-relaxed">Older corrections still count, with a 45-day half-life.</p>
                 </div>
 
                 <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
@@ -337,7 +337,7 @@ export function EmotionScienceSuite() {
                 name: 'How does Vocolens handle distress?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vocolens scores each entry for low, moderate, or high distress. When moderate or high distress is detected during reflection, the app shows a gentle on-screen note so you can notice and pause if you need to. Vocolens is not a crisis or medical service — if you are in crisis, please contact a mental health professional or a crisis helpline in your region.',
+                  text: 'Vocolens scores each entry for low, moderate, or high distress. When moderate or high distress is detected during reflection, the app shows a note asking you to take a moment if you need. Vocolens is not a crisis or medical service — if you are in crisis, please contact a mental health professional or a crisis helpline in your region.',
                 },
               },
               {
@@ -353,7 +353,7 @@ export function EmotionScienceSuite() {
                 name: 'How does the personalization AI learn?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Vocolens uses a recency-weighted personalization model that studies your emotion corrections and refines future suggestions, with an honest 80% accuracy ceiling. You can view and manage every past correction at any time.',
+                  text: 'Vocolens uses a recency-weighted personalization layer that studies your emotion corrections and refines future suggestions. A pattern needs at least 3 corrections across 2 weeks, and corrections from the last 14 days carry extra weight. You can view and manage every past correction at any time.',
                 },
               },
               {

@@ -1131,7 +1131,7 @@ export function FeaturesShowcase() {
                 name: 'Can I correct the AI\u2019s emotion analysis if it gets it wrong?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Yes. Every entry\u2019s emotion, distress level, and valence/arousal reading can be refined by you. Your correction is saved alongside the AI\u2019s original read — nothing is overwritten or forced.',
+                  text: 'Yes. Every entry\u2019s emotion, distress level, and valence/arousal reading can be refined by you. Your correction is saved alongside the AI\u2019s original read, so both are kept for comparison and nothing is forced.',
                 },
               },
               {
