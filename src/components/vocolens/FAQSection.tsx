@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "Vocolens reads your words, phrasing, and story, plus vocal tone from audio when available. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: the app learns which labels fit you and biases later analysis your way.",
+    a: "Vocolens reads your words, phrasing, and story, plus vocal tone from audio when available. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: the app learns which labels fit you and biases later analysis toward your preferences.",
   },
   {
     q: "What makes Vocolens different from other journaling apps?",
