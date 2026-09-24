@@ -90,7 +90,7 @@ const softwareApplicationLd = {
     "Mood pattern tracking",
     "Body sensation mapping",
     "Emotion labeling with Plutchik's wheel",
-    "Personalized AI that learns your emotional dialect",
+    "Personalized AI that tunes itself to your corrections",
     "Weekly reflection summaries",
     "Private by design",
   ],

@@ -24,16 +24,16 @@ const speakableLd = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
-      { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      { title: "Vocolens | AI Voice Journal That Learns From You" },
+      { name: "description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      { property: "og:title", content: "Vocolens | AI Voice Journal That Learns From You" },
+      { property: "og:description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
       { property: "og:image", content: "/vocolens_-_preview.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From Every Entry" },
-      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every entry. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
+      { name: "twitter:title", content: "Vocolens | AI Voice Journal That Learns From You" },
+      { name: "twitter:description", content: "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play." },
       { name: "twitter:image", content: "/vocolens_-_preview.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
