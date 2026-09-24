@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
 import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
-import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
-import { Reveal } from '@/components/vocolens/Reveal';
+import { AnimatedSection } from '@/components/vocolens/AnimatedSection';
+import { Reveal, RevealGroup, RevealItem } from '@/components/vocolens/Reveal';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
 import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
@@ -131,11 +131,10 @@ function Home() {
             Real stories, real impact
           </h2>
         </Reveal>
-        <Reveal
+        <RevealGroup
           className="grid md:grid-cols-3 gap-8"
-          delay={0.1}
         >
-          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
+          <RevealItem>
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -153,9 +152,9 @@ function Home() {
                 "90 seconds of talking replaced an hour of overthinking"
               </p>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
+          <RevealItem>
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -173,9 +172,9 @@ function Home() {
                 "My body was warning me for days — now I actually listen"
               </p>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="card-app rounded-3xl p-8 h-full flex flex-col">
+          <RevealItem>
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
@@ -193,8 +192,8 @@ function Home() {
                 "The AI named what I couldn't — and it was right"
               </p>
             </div>
-          </div>
-        </Reveal>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       <section id="story" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
@@ -215,11 +214,10 @@ function Home() {
             Turning racing thoughts into clear, effortless expression.
           </p>
         </Reveal>
-        <Reveal
+        <RevealGroup
           className="grid md:grid-cols-3 gap-8"
-          delay={0.1}
         >
-          <div className="card-app rounded-[28px] p-8">
+          <RevealItem>
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
@@ -231,9 +229,9 @@ function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="card-app rounded-[28px] p-8">
+          <RevealItem>
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
@@ -245,9 +243,9 @@ function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="card-app rounded-[28px] p-8">
+          <RevealItem>
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
@@ -259,8 +257,8 @@ function Home() {
               </p>
             </div>
           </div>
-        </div>
-        </Reveal>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       <Reveal>
@@ -281,9 +279,8 @@ function Home() {
           </p>
         </Reveal>
 
-        <Reveal
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto"
-          delay={0.1}
+        <RevealGroup
+          className="grid md:grid-cols-3 gap-8"
         >
           {[
             { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
@@ -291,15 +288,15 @@ function Home() {
             { icon: BarChart3, label: 'Mood story', desc: 'One emotion per day.' },
             { icon: Activity, label: 'Body sensation map', desc: 'Read what your body knows.' },
           ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="card-app rounded-2xl p-5 text-center">
+            <RevealItem key={label} className="card-app rounded-2xl p-5 text-center">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
                 <Icon className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <p className="font-bold text-text-primary mb-1">{label}</p>
               <p className="text-sm text-text-secondary leading-relaxed">{desc}</p>
-            </div>
+            </RevealItem>
           ))}
-        </Reveal>
+        </RevealGroup>
 
         <Reveal className="text-center">
           <Link
