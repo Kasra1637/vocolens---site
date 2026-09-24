@@ -1,4 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "motion/react";
+import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
 import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
 import { AppDemo } from '@/components/vocolens/AppDemo';
@@ -48,18 +50,41 @@ function Home() {
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(147,112,219,0.22) 0%, transparent 70%)' }} aria-hidden="true" />
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
-            <div className="hero-title-container mb-6">
+            {/* Hero entrance orchestration (Motion house system): title →
+              sub → chips → demo, one calm cascade on load. */}
+            <motion.div
+              className="hero-title-container mb-6"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="show"
+              custom={0.05}
+            >
               <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ color: '#1e293b' }}>
                 <span className="block">AI voice journal</span>
                 <span className="block">that reflects</span>
                 <span className="block"><span className="font-bold" style={{ color: '#1e293b' }}>your true self</span></span>
               </h1>
-            </div>
-            <p id="hero-subheading" className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed">
+            </motion.div>
+            <motion.p
+              id="hero-subheading"
+              className="text-text-secondary mb-6 max-w-md text-xl leading-relaxed"
+              variants={fadeLeft}
+              initial="hidden"
+              animate="show"
+              custom={0.15}
+            >
               Put a name to the emotions your mind overlooks - just speak, and let the words you say do the rest.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-6 max-w-lg">
-              <div className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm">
+            </motion.p>
+            <motion.div
+              className="flex flex-wrap gap-2 mb-6 max-w-lg"
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
+              custom={0.25}
+            >
+              <div
+                className="flex items-center gap-2 px-3 py-1.5 card-app rounded-full shadow-sm"
+              >
                 <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                   <Lock className="w-3.5 h-3.5 text-primary" weight="bold" />
                 </div>
@@ -83,11 +108,18 @@ function Home() {
                 </div>
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>
               </div>
-            </div>
+            </motion.div>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-right" delay={0.2} className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
-            <AppDemo />
+            <motion.div
+              variants={fadeRight}
+              initial="hidden"
+              animate="show"
+              custom={0.35}
+            >
+              <AppDemo />
+            </motion.div>
           </AnimatedSection>
         </div>
       </section>

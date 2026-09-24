@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { MotionConfig } from "motion/react";
 import appCss from "../styles.css?url";
 import { Header } from "@/components/vocolens/Header";
 import { SiteFooter } from "@/components/vocolens/SiteFooter";
@@ -190,10 +191,14 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-surface">
-        <Header />
-        <Outlet />
-      </div>
+      {/* Global motion kill-switch: OS reduced-motion wins everywhere. */}
+      <MotionConfig reducedMotion="user">
+        <div className="min-h-screen bg-surface">
+          <Header />
+          <Outlet />
+          <SiteFooter />
+        </div>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }
