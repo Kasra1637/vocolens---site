@@ -265,7 +265,7 @@ function Home() {
         </Reveal>
         <RevealGroup className="grid md:grid-cols-3 gap-8">
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
+            <div className="flex flex-col items-start text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -280,7 +280,7 @@ function Home() {
           </RevealItem>
 
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
+            <div className="flex flex-col items-start text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
               </div>
@@ -295,7 +295,7 @@ function Home() {
           </RevealItem>
 
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
+            <div className="flex flex-col items-start text-left gap-4">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
               </div>
