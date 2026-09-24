@@ -79,9 +79,6 @@ export function EmotionDetection() {
             </div>
             <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
             <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
-              <p className="text-[9px] font-semibold uppercase tracking-[0.06em] text-text-muted mb-4">
-                Top Emotions — Plutchik Intensity
-              </p>
               <div className="space-y-4">
                 {detectedLayers.map(({ label, base, primary, fill, tone }) => (
                   <div key={label}>
@@ -116,17 +113,15 @@ export function EmotionDetection() {
             </div>
             <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
             <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted mb-2">
-                You selected
-              </span>
-              <div className="flex items-center justify-center gap-2 flex-wrap">
-                <h5 className="text-xl font-bold text-[#6A3FC0]">"Cautiously Optimistic"</h5>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
+                  You selected
+                </span>
+                <h5 className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</h5>
                 <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">
                   <ArrowsClockwise className="w-3 h-3" />
                   Adjusted
                 </span>
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
                 {correctionReasons.map((reason) => (
                   <span
                     key={reason}
