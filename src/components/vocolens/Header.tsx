@@ -91,7 +91,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-5 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         {showProgress && (
           <div
@@ -103,7 +103,7 @@ export function Header() {
         <div className="pointer-events-auto w-full" style={{ maxWidth: "min(92%, 1200px)" }}>
           {/* Desktop */}
           <div
-            className="hidden md:flex items-center justify-between bg-white rounded-3xl px-8 py-4"
+            className="hidden md:flex items-center justify-between bg-white rounded-3xl px-8 py-5"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
@@ -204,7 +204,7 @@ export function Header() {
 
           {/* Mobile */}
           <div
-            className="flex md:hidden items-center justify-between bg-white rounded-3xl px-4 py-3"
+            className="flex md:hidden items-center justify-between bg-white rounded-3xl px-4 py-4"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
             <Link to="/" className="flex items-center gap-3 group">

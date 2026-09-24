@@ -171,12 +171,12 @@
   background: rgba(147, 112, 219, 0.1);
   border-radius: 1rem;
   box-shadow: inset 3px 0 0 var(--primary);
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6.5rem;
   transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 #article-root section[aria-labelledby] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 6.5rem;
 }
 
 /* Route transition removed with the motion freeze (navigations render
