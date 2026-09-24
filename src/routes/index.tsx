@@ -359,7 +359,7 @@ function Home() {
             <CaretRight className="w-6 h-6" />
           </Link>
           <p className="text-text-muted text-base mt-5 max-w-[547px] mx-auto">
-            Curious how Vocolens fits your mind specifically?{" "}
+            Not sure how it fits your mind? Start with use cases.{" "}
             <Link to="/use-cases" className="text-primary font-semibold hover:underline">
               See Vocolens for ADHD, autism &amp; alexithymia
             </Link>
@@ -381,7 +381,7 @@ function Home() {
             Understand yourself, one conversation at a time.
           </h2>
           <p className="text-text-secondary text-lg mb-8 max-w-[547px] mx-auto">
-            Speak instead of typing — Vocolens turns your voice into mood insights. Free to try on
+            Speak instead of typing and start to see what your days have in common. Free to try on
             Google Play.
           </p>
           <a
