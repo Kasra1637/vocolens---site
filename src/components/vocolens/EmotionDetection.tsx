@@ -59,7 +59,7 @@ export function EmotionDetection() {
               <Mic className="w-6 h-6" />
             </div>
             <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
-            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 mt-auto">
+            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5">
               <p className="italic text-text-secondary text-[15px] leading-6">
                 "I'm excited about the promotion, but terrified of failing."
               </p>
@@ -78,7 +78,7 @@ export function EmotionDetection() {
               <Brain className="w-6 h-6" />
             </div>
             <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
-            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 mt-auto">
+            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5">
               <p className="text-[9px] font-semibold uppercase tracking-[0.06em] text-text-muted mb-4">
                 Top Emotions — Plutchik Intensity
               </p>
@@ -115,7 +115,7 @@ export function EmotionDetection() {
               <Sparkles className="w-6 h-6" />
             </div>
             <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
-            <div className="bg-white border border-primary/12 rounded-3xl p-5 mt-auto">
+            <div className="bg-white border border-primary/12 rounded-3xl p-5">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted mb-2">
                 You selected
               </span>
