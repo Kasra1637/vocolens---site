@@ -55,32 +55,32 @@ const conditions: Condition[] = [
     ],
     features: [
       {
-        feature: "Voice-first input",
+        feature: "Say it, don't type it",
         benefit:
           "No blank page. Speak through your racing thoughts, then read them back as text the moment you stop talking.",
       },
       {
-        feature: "AI emotion detection",
+        feature: "A name for what you felt",
         benefit:
           "You get a name for what you felt, read from your own words, so you never hunt for the label yourself.",
       },
       {
-        feature: "Self-correction that tunes later reads",
+        feature: "Correct it once, it sticks",
         benefit:
           "Correct a label that lands wrong and it is remembered. Repeat it, and later entries lean your way instead.",
       },
       {
-        feature: "Body heatmap with time tracking",
+        feature: "See where you feel it",
         benefit:
           "Tap where you feel it, and over 7, 14, or 30 days the map shows which spots you reach for most often.",
       },
       {
-        feature: "Presence-based milestones",
+        feature: "Badges that mark showing up",
         benefit:
           "21 badges mark every milestone: 3-day to 100-day streaks, entry counts, Early Bird and Night Owl, and more.",
       },
       {
-        feature: "Pattern detection",
+        feature: "See your own rhythms",
         benefit:
           "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to compare.",
       },
@@ -105,32 +105,32 @@ const conditions: Condition[] = [
     ],
     features: [
       {
-        feature: "AI names emotions from your speech",
+        feature: "It names what you can't",
         benefit:
           "Speak about your day in whatever words you happen to have. The AI finds the emotion and offers it to you.",
       },
       {
-        feature: "Body region tap-map (8 zones)",
+        feature: "Point to where you feel it",
         benefit:
           "Tap where you feel it across 8 areas of the body. Over time you see which spots you reach for most often.",
       },
       {
-        feature: "Self-correction that personalises later reads",
+        feature: "It remembers your words",
         benefit:
           "Fix a label once and it is remembered. Repeating a correction, especially recently, shapes later reads.",
       },
       {
-        feature: "Valence-arousal sliders",
+        feature: "Skip the words, use sliders",
         benefit:
           "Skip the emotion grid if the words will not come. Two sliders: pleasant or unpleasant, calm or activated.",
       },
       {
-        feature: "Plutchik emotion vocabulary with definitions",
+        feature: "Look up any emotion",
         benefit:
           "Long-press any of the 8 emotions to read its Plutchik definition and example, written in plain language.",
       },
       {
-        feature: "Longitudinal body heatmap",
+        feature: "Your body map over time",
         benefit:
           "The heatmap counts how often each region was tagged, so your 7, 14, or 30 day view shows your real pattern.",
       },
@@ -155,19 +155,19 @@ const conditions: Condition[] = [
     ],
     features: [
       {
-        feature: "Private, local-first space",
+        feature: "No audience, just you",
         benefit:
           "Your journal stays on your device, with an optional Face ID or PIN lock. No account, no server sync.",
       },
       {
-        feature: "Self-correction that adjusts to YOUR labels",
+        feature: "Labels that fit your experience",
         benefit:
           "Correct a label that does not fit autistic experience, and later entries lean toward the words you chose.",
       },
       {
-        feature: "Predictable, structured reflection",
+        feature: "The same steps, your way",
         benefit:
-          "Every entry takes the same path: review the AI read, adjust the two dials, then note where it landed.",
+          "Full mode repeats the same steps: review the AI read, adjust the two dials, then note where it landed.",
       },
       {
         feature: "Skip anything, anytime",
@@ -175,12 +175,12 @@ const conditions: Condition[] = [
           "Every step has a skip button, and three modes let you choose full reflection, quick, or save immediately.",
       },
       {
-        feature: "Valence-arousal over emotion labels",
+        feature: "Prefer sliders to names",
         benefit:
           "Prefer sliders to names? Skip the emotion grid and use Unpleasant to Pleasant, then Calm to Activated.",
       },
       {
-        feature: "Shareable reports for clinicians",
+        feature: "A report for your care team",
         benefit:
           "Build a styled report of mood trends, top emotions, body patterns and triggers to share with your care team.",
       },
