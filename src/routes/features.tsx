@@ -8,7 +8,7 @@ export const Route = createFileRoute("/features")({
       {
         name: "description",
         content:
-          "Explore every Vocolens feature: journal calendar without streaks, weekly AI reflection, mood story by day, body sensation map, triggers, themes, time-of-day patterns, AI emotion corrections, milestone badges, and therapist-ready reports.",
+          "Explore every Vocolens feature: journal calendar with streaks, weekly AI reflection, mood story by day, body sensation map, triggers, themes, time-of-day patterns, AI emotion corrections, milestone badges, and therapist-ready reports.",
       },
       { property: "og:title", content: "Inside Vocolens — 13 ways to finally understand yourself" },
       {

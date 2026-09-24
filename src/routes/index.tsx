@@ -332,7 +332,11 @@ function Home() {
 
         <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-3xl mx-auto">
           {[
-            { icon: CalendarDays, label: "Journal calendar", desc: "Presence, not streaks." },
+            {
+              icon: CalendarDays,
+              label: "Journal calendar",
+              desc: "Dots mark every day you showed up.",
+            },
             { icon: BookOpenText, label: "Weekly reflection", desc: "Your week as a story." },
             { icon: BarChart3, label: "Mood story", desc: "One emotion per day." },
           ].map(({ icon: Icon, label, desc }) => (

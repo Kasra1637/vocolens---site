@@ -73,7 +73,7 @@ const conditions: Condition[] = [
       {
         feature: "Presence-based milestones",
         benefit:
-          "No broken streaks. No guilt. 21 badges reward showing up — from your first entry to 100-day streaks — without punishing you for missing a day.",
+          "21 badges reward showing up — streaks from 3 days to 100, entry counts, Early Bird, Night Owl, and more.",
       },
       {
         feature: "Pattern detection",
@@ -176,9 +176,9 @@ const conditions: Condition[] = [
           "Don't relate to standard emotion names? Simply indicate pleasant/unpleasant and calm/activated on numeric sliders. The system works without forcing neurotypical vocabulary.",
       },
       {
-        feature: "PDF reports for clinicians",
+        feature: "Shareable reports for clinicians",
         benefit:
-          "Export your journal as a styled HTML/PDF document with emotion data, body patterns, and transcripts — share with therapists without needing to verbally explain everything.",
+          "Build a styled report with mood trends, top emotions, body patterns, and triggers, then share it with a therapist or doctor.",
       },
     ],
     quote:

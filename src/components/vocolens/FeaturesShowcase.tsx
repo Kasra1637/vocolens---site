@@ -113,9 +113,7 @@ function CalendarVisual() {
           />
         ))}
       </div>
-      <p className="text-xs text-text-muted mt-5 italic">
-        Presence first — a missed day never punishes you
-      </p>
+      <p className="text-xs text-text-muted mt-5 italic">Every dot is a day you showed up</p>
     </div>
   );
 }
@@ -823,7 +821,7 @@ function TherapistShareVisual() {
           </span>
           <div>
             <p className="font-bold text-text-primary text-base leading-tight">Insights report</p>
-            <p className="text-[11px] text-text-muted">Ready to share — prints to PDF</p>
+            <p className="text-[11px] text-text-muted">Ready to share as a report file</p>
           </div>
         </div>
         <div className="space-y-2">
@@ -858,7 +856,7 @@ const features: Feature[] = [
     eyebrow: "Journal calendar",
     icon: CalendarDays,
     headline: "Easily track your progress",
-    body: "Presence first. Calendar dots prove you showed up — streaks and totals surface only when wanted, and a missed day never punishes you. Come back whenever.",
+    body: "Dots mark the days you showed up, with entry counts on tap. Streaks sit alongside — a missed day resets them.",
     outcome: "\u201CI journaled 14 times this month without once feeling like I failed.\u201D",
     visual: <CalendarVisual />,
   },
@@ -867,7 +865,7 @@ const features: Feature[] = [
     eyebrow: "Weekly reflection",
     icon: BookOpenText,
     headline: "View your weekly mood story",
-    body: "Each week, Vocolens reads your entries and writes a personal narrative with key themes, growth moments, and one encouraging line. No more self-summarising.",
+    body: "Each week you get a reflection: a summary, emotional journey, key themes, a highlight, and what is ahead.",
     outcome:
       "The kind of weekly debrief a thoughtful friend would give you — generated in seconds, updated with every new entry.",
     visual: <WeeklyReflectionVisual />,
@@ -877,7 +875,7 @@ const features: Feature[] = [
     eyebrow: "Mood story",
     icon: BarChart3,
     headline: "Your dominant mood, daily",
-    body: "Trust on Monday. Anticipation on Wednesday. Happiness Saturday. Vocolens maps your dominant emotion to each weekday so you see what’s rising and shifting.",
+    body: "Across the last 30 days, each weekday gets a bar showing the emotion that showed up most, so patterns emerge.",
     outcome: "Know your emotional rhythm by day — and plan your life around it.",
     visual: <MoodStoryVisual />,
   },
@@ -886,7 +884,7 @@ const features: Feature[] = [
     eyebrow: "Explore deeper",
     icon: ChevronDownCircle,
     headline: "Explore as deep as you want",
-    body: "Three sections pinned up top, enough to grasp the week. Tap Explore Deeper to reveal six more: landscape maps, body heatmaps, pattern detection on demand.",
+    body: "Three core views load first: calendar, reflection, mood story. Explore deeper reveals six more analyses.",
     outcome:
       "Full control over your cognitive load. See more when you\u2019re sharp. See less when you\u2019re overstimulated.",
     visual: <ExploreDeeperVisual />,
@@ -896,7 +894,7 @@ const features: Feature[] = [
     eyebrow: "Emotional landscape",
     icon: Map,
     headline: "Map your mood in one chart",
-    body: "Every entry drops a pin: calm or activated, pleasant or not. Over time they form a constellation. Blended emotions and tension flags reveal hidden layers.",
+    body: "Every entry plots on Unpleasant-Pleasant and Calm-Activated, filling the Tense, Excited, Down, and Calm.",
     outcome:
       "\u201CI live in Tense during work weeks and shift to Calm every Saturday at 6pm.\u201D — self-knowledge that changes real decisions.",
     visual: <EmotionalLandscapeVisual />,
@@ -906,7 +904,7 @@ const features: Feature[] = [
     eyebrow: "Body sensation map",
     icon: Activity,
     headline: "Track your physical feelings",
-    body: "Tap where you felt it \u2014 chest, stomach, neck, any of 8 regions. Vocolens builds a heatmap of your stress signature, the first warning before mood shifts.",
+    body: "Tap where you felt it across 8 regions — head, face, neck, chest, stomach, arms, hands, legs — as a heatmap.",
     outcome: "Catch the burnout in your chest before it reaches your head.",
     visual: <BodyMapVisual />,
   },
@@ -915,7 +913,7 @@ const features: Feature[] = [
     eyebrow: "Deep insights",
     icon: Sparkles,
     headline: "One clear insight, no noise",
-    body: "One insight at a time, zero dashboard noise. Vocolens surfaces the single most important pattern in your entries: a loop, a growth moment, a gentle warning.",
+    body: "One insight shows first, ordered by priority — self-awareness, growth, warning, strength. Tap for up to five.",
     outcome: "Personalised emotional intelligence that respects your bandwidth.",
     visual: <DeepInsightsVisual />,
   },
@@ -924,7 +922,7 @@ const features: Feature[] = [
     eyebrow: "Emotional triggers",
     icon: Zap,
     headline: "Discover what sets you off",
-    body: "Which topics can move your state \u2014 and which way? Vocolens links them to emotional spikes across 7, 14, or 30 days. A pattern told in your very own voice.",
+    body: "Pick a 7, 14, or 30 day window to see which topics accompany spikes, plus a concrete coping step for each.",
     outcome: "Stop being blindsided. See the trigger before the spiral starts.",
     visual: <TriggersVisual />,
   },
@@ -933,7 +931,7 @@ const features: Feature[] = [
     eyebrow: "Emotional themes",
     icon: Repeat,
     headline: "Read your emotion narrative",
-    body: "Some topics resurface often. Vocolens ranks them and gives a concrete micro-action for your top theme \u2014 turning recurring patterns into choices, not loops.",
+    body: "Recurring topics get ranked, with a next step for your top theme: pause and name the feeling before reacting.",
     outcome: "See the narrative. Then decide if you want to keep writing it.",
     visual: <ThemesVisual />,
   },
@@ -942,7 +940,7 @@ const features: Feature[] = [
     eyebrow: "Time of day",
     icon: Clock,
     headline: "Mood rhythms across the day",
-    body: "Your mood runs on a schedule. Vocolens maps highs and lows across morning, afternoon, evening, night \u2014 turning timestamps into patterns you can plan around.",
+    body: "Entries group into morning, afternoon, evening, and night, each labelled with a mood and an entry count.",
     outcome: "Schedule hard conversations for your strong hours. Protect the weak ones.",
     visual: <TimeOfDayVisual />,
   },
@@ -951,7 +949,7 @@ const features: Feature[] = [
     eyebrow: "AI + Your Corrections",
     icon: SlidersHorizontal,
     headline: "Your call, every single time",
-    body: "The AI guesses your emotion, distress, and mood. If something feels off, tap Refine Analysis to adjust. Your correction lives alongside the AI\u2019s original.",
+    body: "Tap Refine Analysis to correct the label and the Pleasant/Activated dials. Your original stays beside it.",
     outcome:
       "\u201CThe AI labeled my entry as sadness. I changed it to grief \u2014 and finally had a word for what I\u2019d been carrying.\u201D",
     visual: <RefineAnalysisVisual />,
@@ -961,7 +959,7 @@ const features: Feature[] = [
     eyebrow: "Milestones",
     icon: Award,
     headline: "Celebrate what truly matters",
-    body: "Unlock badges as you build your practice \u2014 first entry, consistency streaks, breakthroughs. Each comes with a story and a tip. Share them as they unlock.",
+    body: "21 badges unlock as you go — streaks, entry counts, Early Bird, Night Owl — each with a tip you can share.",
     outcome:
       "\u201CSeeing \u201810 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D",
     visual: <MilestonesVisual />,
@@ -971,7 +969,7 @@ const features: Feature[] = [
     eyebrow: "Therapist Share",
     icon: HeartHandshake,
     headline: "Take your data into the room",
-    body: "Generate a personalised wellness report \u2014 mood trends, emotions, key patterns \u2014 to share with a therapist or doctor in a single tap. Print to PDF anywhere.",
+    body: "Build a wellness report over any date range, then share the file: moods, emotions, body map, and triggers.",
     outcome:
       "\u201CI stopped trying to summarise three weeks of feelings in five minutes. I just handed my therapist the report.\u201D",
     visual: <TherapistShareVisual />,
@@ -1151,7 +1149,7 @@ export function FeaturesShowcase() {
                 name: "Does Vocolens use streaks?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "No. Vocolens deliberately avoids streaks and guilt mechanics. The Journal Calendar shows the days you checked in, your total entries, and your longest run — but nothing breaks if you miss a day.",
+                  text: "Yes. A streak counts the consecutive days you journal and resets if you skip one. The Journal Calendar keeps the days you checked in, your total entries, and your longest run, so a gap never erases your history.",
                 },
               },
               {
@@ -1159,7 +1157,7 @@ export function FeaturesShowcase() {
                 name: "What is the Weekly Reflection?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Every week Vocolens reads your entries and writes a short personal narrative that connects your themes, growth moments, and one encouraging sentence for the week ahead.",
+                  text: "Every week Vocolens reads your entries and writes a reflection card: a narrative summary, your emotional journey, key themes, one highlight, and a look ahead.",
                 },
               },
               {
@@ -1207,7 +1205,7 @@ export function FeaturesShowcase() {
                 name: "Can I share my Vocolens insights with a therapist?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Vocolens can generate a personalised PDF wellness report covering mood trends, dominant emotions, and key patterns that you can share directly with a therapist, counselor, or doctor.",
+                  text: "Yes. Vocolens builds a report over any date range covering mood trends, dominant emotions, body patterns, and triggers, then shares it as a file you can open, print, or save anywhere.",
                 },
               },
             ],

@@ -106,6 +106,29 @@ Cloudflare Workers. Production: https://vocolens.com.
 
 ## Product truth (verified against app code)
 
+- **Streaks are real and they reset.** `user-stats-store.ts` counts consecutive
+  local-calendar days and resets `currentStreak` to 1 after any gap of 2+ days.
+  Never claim Vocolens "avoids streaks", that "a missed day never punishes",
+  or that streaks are opt-in (no such setting exists). `longestStreak`, total
+  entries and the calendar dots are all retained across a gap.
+- **The therapist report is an HTML file, not a PDF.** `insights.tsx` writes
+  `vocolens-insights-*.html` and shares it via the native share sheet; the
+  function is *named* `generateInsightsPDF` but expo-print is deliberately not
+  used (it would crash older OTA builds). The report itself tells users to print
+  from a browser. Never promise direct PDF output.
+- **Weekly Reflection is a card of 5 generated fields**, not free-form prose:
+  narrative summary, Emotional Journey, Key Themes, Highlight (`growthMoment`),
+  Looking Ahead (`weekAhead`).
+- Verified feature constants: **8 body regions** (head, face, neck, chest,
+  stomach, arms, hands, legs); **4 time-of-day buckets** (Morning 05–11,
+  Afternoon 12–16, Evening 17–20, Night 21–04); **7 / 14 / 30-day** trigger
+  windows; **21 badges**; Insights shows **3 core sections** and 6 behind
+  "Explore deeper"; Deep Insights shows **1 insight, up to 5 on expand**.
+- **Refine Analysis corrects the emotion label and the valence/arousal dials
+  only** — not distress, which is derived. The AI's original values are kept in
+  the correction log beside the user's.
+- The body heatmap is **frequency-based**, not a predictive "stress signature",
+  and trigger insights use fixed templates, not the user's own wording.
 - The "learning loop" is: correction stored on device → recency-weighted local
   aggregation → a generated personalization string appended to the next
   `/api/analyze` system prompt. **No model is ever retrained or fine-tuned.**
