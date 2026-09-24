@@ -89,13 +89,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Heart className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -108,7 +108,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Emotional Granularity: Why Specific Words Change What You Feel
                   </h2>
@@ -155,13 +155,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Timer className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -174,7 +174,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
                   </h2>
@@ -221,13 +221,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Flame className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -240,7 +240,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
                   </h2>
@@ -286,13 +286,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <RefreshCw className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -305,7 +305,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
                   </h2>
@@ -355,13 +355,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Puzzle className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -374,7 +374,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults
                     Process Emotions
@@ -425,13 +425,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Heart className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -444,7 +444,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary
                     You Were Never Taught
@@ -492,13 +492,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Activity className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -511,7 +511,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     How Your Body Tells You Are Overwhelmed Before Your Mind Does
                   </h2>
@@ -561,13 +561,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Radar className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -580,7 +580,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     Building Emotional Awareness: How Pattern Recognition in Voice Journaling
                     Transforms Self-Understanding
@@ -627,13 +627,13 @@ export function Resources() {
             >
               <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
                   aria-hidden="true"
                 >
                   <Brain className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
                 <div className="min-w-0">
-                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -646,7 +646,7 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
                     How Naming Your Emotions with Voice Journaling Reduces Stress and Builds
                     Emotional Resilience
