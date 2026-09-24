@@ -141,7 +141,7 @@ export function TimeBlindness() {
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <Timer className="w-5 h-5 text-[#6A3FC0]" />
             </div>
-            <div>
+            <div className="min-w-0">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 ADHD &amp; Time Perception
               </span>

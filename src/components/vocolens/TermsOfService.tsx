@@ -14,7 +14,7 @@ export function TermsOfService() {
     <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
       <Reveal>
         <div className="text-center mb-12 lg:mb-16">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-6 shadow-clay">
             <FileText className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h1

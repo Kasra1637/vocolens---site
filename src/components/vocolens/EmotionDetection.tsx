@@ -78,8 +78,8 @@ export function EmotionDetection() {
       <RevealGroup delay={0.1} className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12">
         {/* Step 1 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-            <Mic className="w-6 h-6" />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+            <Mic className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
@@ -100,8 +100,8 @@ export function EmotionDetection() {
 
         {/* Step 2 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-            <Brain className="w-6 h-6" />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+            <Brain className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
@@ -134,8 +134,8 @@ export function EmotionDetection() {
 
         {/* Step 3 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-            <Sparkles className="w-6 h-6" />
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+            <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
@@ -211,7 +211,7 @@ export function EmotionDetection() {
                     <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                       {item.icon}
                     </div>
-                    <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                    <p className="min-w-0 text-text-secondary text-sm leading-relaxed font-medium">
                       {item.desc}
                     </p>
                   </div>

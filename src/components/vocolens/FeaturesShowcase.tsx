@@ -791,7 +791,7 @@ function MilestonesVisual() {
             }}
           >
             <span
-              className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay"
+              className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay"
               aria-hidden="true"
             >
               <b.Icon className="w-5 h-5 text-[#6A3FC0]" weight={b.unlocked ? "fill" : "regular"} />
@@ -1072,8 +1072,8 @@ export function FeaturesShowcase() {
                   }`}
                 >
                   <div>
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center shadow-clay">
+                    <div className="mb-5">
+                      <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-3">
                         <Icon className="w-5 h-5 text-[#6A3FC0]" />
                       </span>
                       <span className="text-sm font-semibold uppercase tracking-widest text-primary">

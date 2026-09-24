@@ -228,7 +228,7 @@ export function UseCases() {
       <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <RevealGroup className="grid md:grid-cols-3 gap-6">
           <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
-            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <Mic className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">Speak, don't write</h3>
@@ -237,7 +237,7 @@ export function UseCases() {
             </p>
           </RevealItem>
           <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
-            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">AI names your emotions</h3>
@@ -247,7 +247,7 @@ export function UseCases() {
             </p>
           </RevealItem>
           <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
-            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
+            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <TrendingUp className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <h3 className="font-bold text-xl mb-2">Patterns emerge privately</h3>
@@ -304,19 +304,17 @@ function ConditionSection({ condition }: { condition: Condition }) {
     <Reveal delay={0.05}>
       <article id={condition.slug} className="scroll-mt-32">
         {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center shadow-clay">
+        <div className="mb-6">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-4">
             <Icon className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <div>
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-              style={{ color: "#1e293b" }}
-            >
-              {condition.name}
-            </h2>
-            <p className="text-text-secondary text-base mt-1">{condition.tagline}</p>
-          </div>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+            style={{ color: "#1e293b" }}
+          >
+            {condition.name}
+          </h2>
+          <p className="text-text-secondary text-base mt-1">{condition.tagline}</p>
         </div>
 
         {/* Challenges */}
@@ -341,15 +339,11 @@ function ConditionSection({ condition }: { condition: Condition }) {
         <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {condition.features.map((item) => (
             <RevealItem key={item.feature} className="card-app rounded-3xl p-5">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 mt-0.5 shadow-clay">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#6A3FC0]" />
-                </div>
-                <div>
-                  <p className="font-bold text-text-primary text-sm mb-1">{item.feature}</p>
-                  <p className="text-text-secondary text-sm leading-relaxed">{item.benefit}</p>
-                </div>
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-3">
+                <CheckCircle2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
+              <p className="font-bold text-text-primary text-sm mb-1">{item.feature}</p>
+              <p className="text-text-secondary text-sm leading-relaxed">{item.benefit}</p>
             </RevealItem>
           ))}
         </RevealGroup>

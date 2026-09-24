@@ -245,7 +245,7 @@ function Home() {
       <section id="story" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal>
           <div className="flex items-center justify-center mb-4">
-            <div className="rounded-full p-1.5 chip-app shadow-clay hover-scale">
+            <div className="rounded-full p-1.5 chip-app shadow-clay hover-scale flex-shrink-0">
               <img
                 src="/2e7f4e7c-9a75-4292-9b1d-399ac3f34923.jpg"
                 alt="Vocolens founder - Creator of AI voice journal app"
@@ -341,7 +341,7 @@ function Home() {
             { icon: BarChart3, label: "Mood story", desc: "One emotion per day." },
           ].map(({ icon: Icon, label, desc }) => (
             <RevealItem key={label} className="card-app rounded-3xl p-5 text-center">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mb-3 mx-auto shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-3 mx-auto shadow-clay">
                 <Icon className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <p className="font-bold text-text-primary mb-1">{label}</p>

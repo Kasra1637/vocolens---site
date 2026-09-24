@@ -58,7 +58,7 @@ export function FAQSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Reveal className="text-center mb-12 lg:mb-16">
-        <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
+        <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-5 h-5 text-[#6A3FC0]" />
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
