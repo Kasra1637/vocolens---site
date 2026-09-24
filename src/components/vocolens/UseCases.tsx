@@ -1,5 +1,5 @@
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
+import { Reveal, RevealGroup, RevealItem } from './Reveal';
 import { Lightning as Zap, Brain, Question as HelpCircle, Microphone as Mic, Sparkle as Sparkles, TrendUp as TrendingUp, CaretRight, CheckCircle as CheckCircle2 } from '@phosphor-icons/react';
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -111,20 +111,20 @@ export function UseCases() {
     <div className="min-h-screen bg-surface">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16">
-        <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             Find your condition below ↓
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5" style={{ color: '#1e293b' }}>
             Built for minds that don't think in straight lines.
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-text-secondary text-base leading-relaxed max-w-2xl mx-auto">
             Vocolens is built exclusively for neurodivergent brains.
           </p>
-        </AnimatedSection>
+        </Reveal>
 
         {/* Quick-nav pills */}
-        <AnimatedSection animation="fade-in-up" delay={0.2} className="mt-10">
+        <Reveal delay={0.2} className="mt-10">
           <div className="flex flex-wrap justify-center gap-2">
             {conditions.map((c) => {
               const Icon = c.icon;
@@ -132,7 +132,7 @@ export function UseCases() {
                 <a
                   key={c.id}
                   href={`#${c.slug}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 card-app rounded-full transition-colors duration-200 hover:border-primary/40"
                 >
                   <Icon className="w-4 h-4" style={{ color: c.color }} />
                   <span className="text-sm font-semibold text-text-primary">{c.name}</span>
@@ -140,17 +140,15 @@ export function UseCases() {
               );
             })}
           </div>
-        </AnimatedSection>
+        </Reveal>
       </section>
 
       {/* How it works — 3 pillars */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <AnimatedGrid
+      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+        <RevealGroup
           className="grid md:grid-cols-3 gap-6"
-          animation="fade-in-up"
-          staggerDelay={0.12}
         >
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
+          <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <Mic className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -158,8 +156,8 @@ export function UseCases() {
             <p className="text-text-secondary text-base leading-relaxed">
               No executive-function barrier. No blank page. Just talk — the app captures everything.
             </p>
-          </div>
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
+          </RevealItem>
+          <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -167,8 +165,8 @@ export function UseCases() {
             <p className="text-text-secondary text-base leading-relaxed">
               When feelings are hard to identify, the AI does it for you — and leans toward the labels you confirm over time.
             </p>
-          </div>
-          <div className="card-app rounded-3xl p-5 sm:p-8 text-center">
+          </RevealItem>
+          <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay">
               <TrendingUp className="w-5 h-5 text-[#6A3FC0]" />
             </div>
@@ -176,38 +174,38 @@ export function UseCases() {
             <p className="text-text-secondary text-base leading-relaxed">
               See your emotional rhythms, triggers, and growth over time — at your pace, on your terms.
             </p>
-          </div>
-        </AnimatedGrid>
+          </RevealItem>
+        </RevealGroup>
       </section>
 
       {/* Condition sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-16 lg:pb-24 space-y-12 sm:space-y-20 lg:space-y-28">
-        {conditions.map((condition, idx) => (
-          <ConditionSection key={condition.id} condition={condition} index={idx} />
+      <div className="max-w-7xl mx-auto px-6 pb-12 sm:pb-16 lg:pb-20 space-y-16 sm:space-y-24 lg:space-y-32">
+        {conditions.map((condition) => (
+          <ConditionSection key={condition.id} condition={condition} />
         ))}
       </div>
 
       {/* CTA */}
-      <section className="max-w-3xl mx-auto px-6 pb-20">
-        <AnimatedSection
-          animation="fade-in-up"
+      <section className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+        <Reveal
+          delay={0.1}
           className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Talk it out. See your patterns.
           </h2>
-          <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-2xl mx-auto">
             Talk for 60 seconds. Spot the patterns you're missing. Private, neurodivergent-first. Try it Free on Google Play.
           </p>
           <a
             href={GOOGLE_PLAY_URL}
             {...STORE_LINK_ATTRS}
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-12 sm:py-6 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
           >
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
           </a>
-        </AnimatedSection>
+        </Reveal>
       </section>
     </div>
   );
@@ -217,15 +215,11 @@ export function UseCases() {
  * Condition Section — unified layout for visual cohesion
  * ────────────────────────────────────────────────────────────────────────────── */
 
-function ConditionSection({ condition, index }: { condition: Condition; index: number }) {
+function ConditionSection({ condition }: { condition: Condition }) {
   const Icon = condition.icon;
-  const reverse = index % 2 === 1;
 
   return (
-    <AnimatedSection
-      animation={reverse ? 'fade-in-right' : 'fade-in-left'}
-      delay={0.05}
-    >
+    <Reveal delay={0.05}>
       <article
         id={condition.slug}
         className="scroll-mt-32"
@@ -236,7 +230,7 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
             <Icon className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight" style={{ color: '#1e293b' }}>
               {condition.name}
             </h2>
             <p className="text-text-secondary text-base mt-1">{condition.tagline}</p>
@@ -262,14 +256,14 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
         </div>
 
         {/* Features grid — 2 rows × 3 columns on desktop, consistent across all sections */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {condition.features.map((item) => (
-            <div
+            <RevealItem
               key={item.feature}
-              className="card-app rounded-2xl p-5"
+              className="card-app rounded-3xl p-5"
             >
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 mt-0.5 shadow-clay">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#6A3FC0]" />
                 </div>
                 <div>
@@ -277,12 +271,12 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
                   <p className="text-text-secondary text-sm leading-relaxed">{item.benefit}</p>
                 </div>
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
 
         {/* Quote */}
-        <div className="bg-primary/5 rounded-2xl px-6 py-5 border-l-4 border-primary">
+        <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl px-6 py-5">
           <p className="text-text-primary text-base leading-relaxed italic mb-2">
             "{condition.quote}"
           </p>
@@ -291,6 +285,6 @@ function ConditionSection({ condition, index }: { condition: Condition; index: n
           </p>
         </div>
       </article>
-    </AnimatedSection>
+    </Reveal>
   );
 }
