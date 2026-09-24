@@ -397,7 +397,7 @@ export function BurnoutRecovery() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Catch the load early
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto lg:max-w-[720px]">
               Sixty seconds a day. Vocolens surfaces the pattern before it crashes.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

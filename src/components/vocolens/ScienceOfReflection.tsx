@@ -366,7 +366,7 @@ export function ScienceOfReflection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Name it to ease it
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto lg:max-w-[720px]">
               Turn your thoughts into clarity, calm, and patterns you can make sense of.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
