@@ -48,13 +48,16 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
- * - every chapter selection (timeline, chapter list, buttons, keys)
- *   jumps to that chapter and plays it, whether playing or paused
+ * - chapter-list taps SELECT and never start audio: they move the playhead
+ *   to that chapter's header and highlight the row, so browsing chapters
+ *   stays silent; pressing Listen then plays just that chapter. The
+ *   timeline track, prev/next buttons and keys still jump and play
  *   (seeks are verified across frames against element desync; the
  *   chapter-bound auto-pause is suppressed briefly after each jump so a
  *   stale timeupdate can't pause instead of moving)
- * - any explicitly selected chapter plays ONLY itself, then auto-pauses at
- *   the next chapter's start; a fresh Listen with no selection plays through
+ * - an explicitly selected chapter plays ONLY itself once started, then
+ *   auto-pauses at the next chapter's start; a fresh Listen with no
+ *   selection plays through
  * - tap-to-seek chapter list + prev/next-section buttons (mobile friendly),
  *   all resolving to header starts with the same lead-in
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -327,6 +330,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
   // Chapters, timeline taps, transport buttons, and keys all jump-and-play.
   const playChapter = jumpToChapter;
 
+  // Chapter-list taps select only: the playhead moves and the row lights up,
+  // but playback is never started, so reading the list stays silent. The
+  // chapter bound is still set, so pressing Listen plays just that chapter.
+  const selectChapter = useCallback(
+    (target: number) => {
+      setBoundFor(target);
+      armBoundSuppress();
+      setArmedIdx(target);
+      seek(headerStart(target), target, false);
+    },
+    [seek, headerStart, setBoundFor, armBoundSuppress],
+  );
+
   const goToSection = useCallback(
     (target: number) => {
       playChapter(target);
@@ -562,7 +578,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           onKeyDown={onKeyDown}
           className="relative py-4 cursor-pointer touch-none select-none outline-none rounded-md focus-visible:ring-2 focus-visible:ring-primary/50"
         >
-          <div className="relative w-full h-2 rounded-full bg-primary/10" aria-hidden="true">
+          <div className="relative w-full h-2 rounded-full bg-[#F4F1FB]" aria-hidden="true">
             <div className="absolute left-0 top-0 h-full rounded-full bg-primary transition-none pointer-events-none" style={{ width: `${fraction * 100}%` }} />
             {sections.slice(1).map((s, i) => {
               const isCurrent = i + 1 === sectionIdx;
@@ -571,7 +587,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
                   key={i}
                   title={s.title}
                   className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full ring-2 ring-white pointer-events-none ${
-                    isCurrent ? "w-2.5 h-5 bg-primary" : "w-2 h-4 bg-primary/60"
+                    isCurrent ? "w-2.5 h-5 bg-primary" : "w-2 h-4 bg-[#BEA9E9]"
                   }`}
                   style={{ left: `${duration > 0 ? (s.startSec / duration) * 100 : 0}%` }}
                   aria-hidden="true"
@@ -585,7 +601,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           </div>
           {tipTime !== null && (
             <div
-              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-2xl bg-primary/10 border border-primary/15 text-text-primary text-[11px] font-medium px-2 py-1"
+              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-2xl bg-white border border-primary/30 shadow-clay-sm text-text-primary text-[11px] font-medium px-2 py-1"
               style={{ left: `clamp(56px, ${(tipTime / duration) * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
               aria-hidden="true"
             >
@@ -619,22 +635,22 @@ export function ListenToArticle({ slug }: { slug: string }) {
               <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {showChapters && (
-              <ol className="mt-1 space-y-0.5">
+              <ol className="mt-1 space-y-1 rounded-2xl bg-[#F4F1FB] border border-primary/15 p-1.5">
                 {sections.map((s, i) => {
                   const active = i === (playing ? sectionIdx : (armedIdx ?? sectionIdx));
                   return (
                     <li key={i}>
                       <button
                         type="button"
-                        onClick={() => playChapter(i)}
+                        onClick={() => selectChapter(i)}
                         aria-current={active ? "true" : undefined}
                         className={
                           active
-            ? "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm bg-primary/10 border border-primary/15 font-semibold text-text-primary transition-colors"
-            : "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-primary/5 transition-colors"
+            ? "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm bg-white border-2 border-primary text-[#6A3FC0] font-semibold shadow-clay-sm transition-colors"
+            : "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-white transition-colors"
                         }
                       >
-                        <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-primary" : "text-text-muted"}`}>
+                        <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-[#6A3FC0]" : "text-text-muted"}`}>
                           {formatClock(s.startSec)}
                         </span>
                         <span className="flex-1 truncate">{s.title}</span>
