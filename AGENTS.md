@@ -17,8 +17,9 @@ Cloudflare Workers. Production: https://vocolens.com.
 - Before committing: show `git status` + `git diff` for that folder first.
 - Never `--force` push, never `git add -A` blindly, never commit secrets,
   `.env` files, or build output (`.output/`).
-- Verify with `npx tsc --noEmit` (only pre-existing `UseCases.tsx` errors are
-  acceptable) and `npm run build` for anything user-visible, then commit to
+- Verify with all three gates before committing: `npx tsc --noEmit` (currently
+  0 errors), `npm run lint` (currently 0 errors, 11 known warnings — see
+  Lint baseline), and `npm run build` for anything user-visible, then commit to
   `main` and push to `origin/main` without asking.
 - Dual lockfiles: Cloudflare installs with `bun install --frozen-lockfile`,
   so every `npm install/uninstall` must be followed by `bun install` to
@@ -40,3 +41,94 @@ Cloudflare Workers. Production: https://vocolens.com.
 - `src/routeTree.gen.ts` is auto-generated (rebuild regenerates it).
 - `/join` was removed; `src/server.ts` 301s it to `/`. `site.webmanifest`
   512 icon is `public/vocolens-512.png` (keep in sync with the favicon).
+
+## Design system (settled — reuse, don't reinvent)
+
+- **One card radius: 24px.** Every primary card is `card-app rounded-3xl
+  p-6 sm:p-8`. Compact inner rows/tiles use `rounded-2xl`; never `rounded-2xl`
+  or `rounded-[28px]` on a primary card, and never `bg-white` + a custom hex
+  border where `card-app` already supplies surface + hairline + shadow.
+- **Spacing ramp:** sections are `py-12 sm:py-16 lg:py-20` (→ 96 / 128 / 160px
+  between sections). Hero-style tops stay `pt-24 sm:pt-32 lg:pt-40` to clear the
+  fixed header. Header → content is `mb-12 lg:mb-16`. Full-bleed dark panel
+  (privacy) sits one notch above at `py-16 sm:py-20 lg:py-24`.
+- **Nested panel:** `bg-primary/[0.04] border border-primary/15 rounded-2xl
+  p-5`. Micro-labels: `text-[10px] font-semibold uppercase tracking-[0.08em]`,
+  `rounded-full`, `bg-primary/8`, `border border-primary/15`.
+- **Chips:** 56 / 44 / 28px tiers, always `rounded-full chip-app` +
+  `shadow-clay`, glyphs `w-5 h-5` or `w-6 h-6` in `text-[#6A3FC0]`.
+- **Primary CTA:** `inline-flex items-center gap-3 bg-primary/15 border-2
+  border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full
+  font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5
+  hover:shadow-lg hover:shadow-primary/30`. Secondary links: `text-primary
+  font-semibold hover:underline`.
+- **Text colors:** only `text-text-primary` / `-secondary` / `-muted`, plus
+  `#1e293b` for headings on light surfaces. `text-gray-*` / `text-slate-*` /
+  arbitrary text hex are off-system.
+- **No decorative glows:** no blurred radial blobs, no gradient text
+  (`bg-clip-text`), no `animate-*` keyframe classes, no `hover:scale-*` on
+  cards, no `hover-lift`.
+
+## Motion
+
+- House system in `src/lib/motion.ts` (EASE_SOFT `[0.22,1,0.36,1]`, 0.7s
+  reveals, 80ms stagger), primitives in `src/components/vocolens/Reveal.tsx`,
+  reduced motion governed globally by `MotionConfig` in `routes/__root`.
+- **Rule: card grids stagger, single cards don't.** A grid of 3+ cards is a
+  `RevealGroup` with one `RevealItem` per card (card classes move ONTO the
+  `RevealItem`); headers, lone panels and accordions are a plain `Reveal`.
+  Use a tighter `stagger` (0.05) for long lists — 9 items at 80ms is sluggish.
+- **`AnimatedSection` / `AnimatedGrid` are static passthroughs** and only the
+  blog components still use them. Never use them on a non-blog page; their
+  `animation` / `delay` props are silently ignored.
+- Never render Reveal under `/resources*` — blog pages stay fully static.
+
+## Product truth (verified against app code)
+
+- The "learning loop" is: correction stored on device → recency-weighted local
+  aggregation → a generated personalization string appended to the next
+  `/api/analyze` system prompt. **No model is ever retrained or fine-tuned.**
+- A pattern needs **≥3 corrections across ≥2 distinct weeks**; corrections
+  from the last 14 days carry a 3× boost; half-life 45 days. "Context"
+  corrections are excluded from learning. The `0.80` figure is a heuristic
+  personalization-strength ceiling, **not an accuracy measurement** — the real
+  accuracy metric is the "How well AI reads you" confirmation rate.
+- Therefore never write that the app "learns from every entry", has an
+  "accuracy ceiling", or builds a phrase→emotion "dictionary" from your words.
+  It learns from *corrections*, and stores labels + numbers, not transcripts.
+- App's own wording to mirror: "Top Emotions — Plutchik Intensity",
+  `PRIMARY` badge, "You selected", "Adjusted", "Wrong label / Wrong intensity /
+  Context", "Unpleasant ↔ Pleasant" / "Calm ↔ Activated", "Adjust how it
+  felt". Intensity is expressed as Plutchik intensity words (Interest /
+  Anticipation / Vigilance), never as HIGH/MEDIUM pills.
+- Distress notice (exact): "High distress detected — take a moment if you
+  need" / "Moderate distress — take a moment if you need".
+
+## Lint baseline
+
+- `.prettierrc` sets `endOfLine: "auto"` **on purpose** — the repo is checked
+  out CRLF (`core.autocrlf=true`) and without it Prettier flags every line of
+  every file (~10k phantom errors). Do not remove it.
+- `eslint.config.js` turns `prettier/prettier` OFF for the 9 blog article
+  routes, the 10 blog article components and `src/routeTree.gen.ts` (frozen /
+  auto-generated). That block must stay **after** `eslintPluginPrettier` — flat
+  config applies later entries last.
+- The 11 remaining warnings are the accepted baseline: 5 `react-refresh` in
+  unused `src/components/ui/*` shadcn files (0 imports — dead code) and 6
+  `react-hooks/exhaustive-deps` in `ListenToArticle.tsx` that are false
+  positives (`sections` is a stable module-level lookup; `[src]` already
+  tracks `slug`; `armBoundSuppress` is a dep-free `useCallback` writing a ref).
+  Fixing them changes nothing — don't churn them for a clean count.
+
+## Process lessons
+
+- **Verify visually after any component-conversion edit.** Rewrapping
+  testimonial/story cards into `RevealItem` once silently dropped their
+  `card-app` classes — the card surfaces vanished while `tsc` and the build
+  stayed green. Compiler-green is not visual-green; a screenshot is the gate.
+- Consequence check: if prettier/formatting touched a file, confirm meta tags
+  and JSON-LD kept identical *values* (`git diff -w` shows quoting/wrapping
+  only, and object-shorthand serializes to the same JSON).
+- When piping UTF-8 files through PowerShell in a tool call, the console can
+  mangle em-dashes into `?` — re-read with a UTF-8 reader before reporting
+  encoding corruption. It has already produced one false alarm.
