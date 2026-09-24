@@ -318,12 +318,12 @@ function ConditionSection({ condition }: { condition: Condition }) {
         </div>
 
         {/* Challenges */}
-        <div className="mb-8">
+        <div className="mb-8 flex flex-col items-center text-center">
           <p className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Challenges this addresses
           </p>
-          <div className="flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
             {condition.challenges.map((challenge) => (
               <span
                 key={challenge}

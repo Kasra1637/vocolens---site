@@ -269,7 +269,7 @@ function Home() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">The problem</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt
@@ -284,7 +284,7 @@ function Home() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">Daily struggle</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   Writing was a fight with myself. My thoughts raced while my hand cramped trying to
@@ -299,7 +299,7 @@ function Home() {
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">The breakthrough</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   So I built this app. Now I just talk, and my thoughts are captured instantly. No
