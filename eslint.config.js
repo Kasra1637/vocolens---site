@@ -37,4 +37,36 @@ export default tseslint.config(
     },
   },
   eslintPluginPrettier,
+  {
+    // Individual blog pages are frozen by standing decision (static content, no
+    // motion) and are excluded from site design work; routeTree.gen.ts is
+    // regenerated on every build. Prettier formatting is not enforced there so
+    // neither set gets rewritten as a side effect of linting. This block must
+    // stay AFTER eslintPluginPrettier — flat config applies later entries last.
+    files: [
+      "src/routes/resources.adhd-time-blindness.tsx",
+      "src/routes/resources.alexithymia-emotional-vocabulary.tsx",
+      "src/routes/resources.autism-emotional-regulation.tsx",
+      "src/routes/resources.burnout-recovery-signs.tsx",
+      "src/routes/resources.distress-detection.tsx",
+      "src/routes/resources.emotional-awareness-patterns.tsx",
+      "src/routes/resources.emotional-granularity.tsx",
+      "src/routes/resources.overthinking-rumination.tsx",
+      "src/routes/resources.science-of-reflection.tsx",
+      "src/routeTree.gen.ts",
+      "src/components/vocolens/AlexithymiaEmotionalVocabulary.tsx",
+      "src/components/vocolens/AutismEmotionalRegulation.tsx",
+      "src/components/vocolens/BurnoutRecovery.tsx",
+      "src/components/vocolens/DistressDetection.tsx",
+      "src/components/vocolens/EmotionalAwareness.tsx",
+      "src/components/vocolens/EmotionalGranularity.tsx",
+      "src/components/vocolens/ListenToArticle.tsx",
+      "src/components/vocolens/OverthinkingRumination.tsx",
+      "src/components/vocolens/ScienceOfReflection.tsx",
+      "src/components/vocolens/TimeBlindness.tsx",
+    ],
+    rules: {
+      "prettier/prettier": "off",
+    },
+  },
 );
