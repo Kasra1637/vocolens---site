@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal } from './Reveal';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, CaretUp, CaretDown, TrendUp, TrendDown, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake, Briefcase, Bed, CurrencyCircleDollar, Users, Microphone, Fire, ChatCircle, Compass, SunHorizon, Stethoscope, Brain, Smiley, Bone, Heartbeat, Butterfly, Hand, HandsClapping, Footprints } from '@phosphor-icons/react';
 
@@ -49,7 +49,7 @@ function CalendarVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   const daysCount = useCountUp(14, inView);
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-3xl p-6">
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <p className="text-4xl font-bold text-primary leading-none tabular-nums">{daysCount}</p>
@@ -69,7 +69,7 @@ function CalendarVisual() {
             } ${
               active.has(d)
                 ? pulse.has(d)
-                  ? 'bg-primary animate-pulse shadow-sm shadow-primary/30'
+                  ? 'bg-primary shadow-sm shadow-primary/30'
                   : 'bg-primary/70'
                 : 'bg-primary/10'
             }`}
@@ -97,14 +97,14 @@ function WeeklyReflectionVisual() {
   const wellbeing = useCountUp(12, inView);
 
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-bl-full pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your week · Mar 18 – 24
         </p>
-        <span className="text-[11px] font-medium text-[#6A3FC0] bg-primary/8 px-2 py-0.5 rounded-full tabular-nums">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary bg-primary/8 border border-primary/15 px-2 py-0.5 rounded-full tabular-nums">
           +{wellbeing}% wellbeing
         </span>
       </div>
@@ -119,7 +119,7 @@ function WeeklyReflectionVisual() {
         {weekArc.map((d, i) => (
           <div key={i} className="flex-1 flex flex-col items-center gap-1 group">
             <div
-              className="w-full rounded-md bg-primary transition-colors duration-200 group-hover:brightness-110"
+              className="w-full rounded-full bg-primary transition-colors duration-200 group-hover:brightness-110"
               style={{
                 height: inView ? `${d.level}%` : '0%',
                 opacity: 0.35 + (d.level / 100) * 0.65,
@@ -147,7 +147,7 @@ function WeeklyReflectionVisual() {
         ))}
       </div>
 
-      <div className="bg-primary/5 rounded-xl px-4 py-3.5 relative">
+      <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl px-4 py-3.5 relative">
         <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-primary/40" />
         <p className="text-sm text-text-secondary italic leading-relaxed pl-2">
           &ldquo;You spoke kindly to yourself three times this week. Try one more.&rdquo;
@@ -169,8 +169,8 @@ function MoodStoryVisual() {
   ];
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
@@ -189,7 +189,7 @@ function MoodStoryVisual() {
           <div key={w.d} className="flex flex-col items-center gap-1.5 group">
             <div className="relative w-full flex justify-center">
               <div
-                className="w-full max-w-[32px] rounded-xl bg-primary transition-colors duration-200 group-hover:shadow-md relative overflow-hidden"
+                className="w-full max-w-[32px] rounded-2xl bg-primary transition-colors duration-200 group-hover:shadow-md relative"
                 style={{
                   height: inView ? `${w.intensity}%` : '0%',
                   minHeight: inView ? '28px' : '0px',
@@ -197,9 +197,7 @@ function MoodStoryVisual() {
                   transitionDelay: inView ? `${i * 70}ms` : '0ms',
                 }}
                 aria-label={`${w.d}: ${w.e}`}
-              >
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/5 to-white/20" />
-              </div>
+              />
             </div>
             <span className="text-[11px] font-semibold text-text-secondary mt-1">{w.d}</span>
             <span className="text-[11px] font-medium leading-tight text-center px-0.5 text-text-muted">
@@ -241,14 +239,14 @@ function ExploreDeeperVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
 
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-4 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Your dashboard
         </p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           3 pinned to top
         </span>
       </div>
@@ -259,18 +257,18 @@ function ExploreDeeperVisual() {
           return (
             <div
               key={s.name}
-              className={`rounded-xl border border-primary/12 bg-primary/[0.03] px-4 py-3 flex items-center justify-between transition-all duration-500 hover:border-primary/25 hover:shadow-md group ${
+              className={`rounded-2xl border border-primary/15 bg-primary/[0.04] px-4 py-3 flex items-center justify-between transition-all duration-500 hover:border-primary/25 hover:shadow-md group ${
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}
               style={{ transitionDelay: inView ? `${i * 90}ms` : '0ms' }}
             >
               <div className="flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-[#6A3FC0]" />
+                <span className="w-8 h-8 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                  <Icon className="w-3.5 h-3.5 text-[#6A3FC0]" />
                 </span>
                 <span className="text-sm font-semibold text-text-primary">{s.name}</span>
               </div>
-              <span className="text-[11px] text-[#6A3FC0] font-semibold bg-primary/8 px-2.5 py-1 rounded-full flex items-center gap-1">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary bg-primary/8 border border-primary/15 px-2.5 py-1 rounded-full flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 Visible
               </span>
@@ -283,14 +281,14 @@ function ExploreDeeperVisual() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
         <div className="pt-4 flex flex-wrap gap-1.5">
           {hiddenSections.map((s) => (
-            <span key={s} className="text-[11px] px-2 py-1 rounded-md bg-primary/[0.04] text-text-muted font-medium border border-primary/8">
+            <span key={s} className="text-[10px] font-semibold uppercase tracking-[0.08em] px-2 py-1 rounded-full bg-primary/8 text-text-muted border border-primary/15">
               {s}
             </span>
           ))}
         </div>
       </div>
 
-      <button className="w-full rounded-xl border border-dashed border-primary/25 bg-gradient-to-r from-primary/[0.03] to-primary/[0.06] px-4 py-3.5 flex items-center justify-center gap-2.5 text-primary text-sm font-semibold transition-all duration-300 hover:bg-primary/[0.08] hover:border-primary/40 hover:shadow-sm group relative">
+      <button className="w-full inline-flex items-center justify-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-5 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30">
         <ChevronDownCircle className="w-4 h-4" />
         Explore deeper · 6 more
       </button>
@@ -315,29 +313,29 @@ function EmotionalLandscapeVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
 
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-primary/[0.05] to-transparent rounded-tr-full pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-3 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Emotional landscape
         </p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           Last 7 days
         </span>
       </div>
 
-      <div className="relative aspect-[4/3] rounded-xl bg-primary/[0.03] border border-primary/10 overflow-hidden shadow-inner">
+      <div className="relative aspect-[4/3] rounded-2xl bg-primary/[0.04] border border-primary/15 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_30%,rgba(147,112,219,0.07)_0%,transparent_45%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_72%_72%,rgba(106,63,192,0.06)_0%,transparent_45%)]" />
 
         <div className="absolute inset-y-4 left-1/2 w-px bg-gradient-to-b from-primary/5 via-primary/15 to-primary/5" />
         <div className="absolute inset-x-4 top-1/2 h-px bg-gradient-to-r from-primary/5 via-primary/15 to-primary/5" />
 
-        <span className="absolute top-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Activated</span>
-        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Calm</span>
-        <span className="absolute top-1/2 left-3 -translate-y-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Unpleasant</span>
-        <span className="absolute top-1/2 right-3 -translate-y-1/2 text-[11px] font-bold text-text-muted/80 uppercase tracking-wider">Pleasant</span>
+        <span className="absolute top-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted uppercase tracking-wider">Activated</span>
+        <span className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[11px] font-bold text-text-muted uppercase tracking-wider">Calm</span>
+        <span className="absolute top-1/2 left-3 -translate-y-1/2 text-[11px] font-bold text-text-muted uppercase tracking-wider">Unpleasant</span>
+        <span className="absolute top-1/2 right-3 -translate-y-1/2 text-[11px] font-bold text-text-muted uppercase tracking-wider">Pleasant</span>
 
         <div className="absolute top-[18%] left-[12%] flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -358,7 +356,6 @@ function EmotionalLandscapeVisual() {
               width: `${p.size}px`,
               height: `${p.size}px`,
               opacity: inView ? p.opacity : 0,
-              boxShadow: `0 0 ${p.size}px ${p.size / 2}px rgba(142, 107, 255, 0.15)`,
               transform: 'translate(-50%, -50%)',
               transitionDelay: inView ? `${i * 70}ms` : '0ms',
             }}
@@ -408,14 +405,14 @@ function BodyMapVisual() {
   const progress = useCountUp(100, inView, 1200);
 
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -top-10 -right-10 w-28 h-28 bg-gradient-to-bl from-primary/[0.04] to-transparent rounded-full blur-xl pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-1 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Where stress lives
         </p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           Last 30 days
         </span>
       </div>
@@ -427,7 +424,7 @@ function BodyMapVisual() {
       <div className="space-y-2 relative">
         {regions.map((r) => (
           <div key={r.name} className="flex items-center gap-2.5 group">
-            <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
               <r.Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
             </span>
             <span className="w-14 text-[11px] font-semibold text-text-secondary">{r.name}</span>
@@ -469,8 +466,8 @@ function BodyMapVisual() {
 function DeepInsightsVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
-      <div className={`rounded-xl bg-primary/5 border border-primary/15 p-5 transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+    <div ref={ref} className="card-app rounded-3xl p-6">
+      <div className={`rounded-2xl bg-primary/[0.04] border border-primary/15 p-5 transition-all duration-500 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           One insight · this week
@@ -483,7 +480,7 @@ function DeepInsightsVisual() {
           your happiness vocabulary. A gentle invitation: name one good thing
           before naming the worry.
         </p>
-<button className="mt-4 py-2 -my-1 min-h-[28px] text-sm font-semibold text-[#6A3FC0] flex items-center gap-1 transition-all duration-200 hover:gap-2">
+      <button className="mt-4 -my-1 min-h-[28px] text-sm font-semibold text-primary hover:underline transition-colors duration-200">
             See more <CaretRight className="w-3.5 h-3.5" />
           </button>
       </div>
@@ -500,14 +497,14 @@ function TriggersVisual() {
   ];
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-2 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Trigger analysis
         </p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           Correlation strength
         </span>
       </div>
@@ -531,20 +528,20 @@ function TriggersVisual() {
         {triggers.map((t, i) => (
           <li
             key={t.topic}
-            className={`rounded-xl border border-primary/10 bg-primary/[0.03] px-4 py-3 transition-all duration-500 hover:border-primary/20 hover:shadow-md group ${
+              className={`rounded-2xl border border-primary/15 bg-primary/[0.04] px-4 py-3 transition-all duration-500 hover:border-primary/20 hover:shadow-md group ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
             }`}
             style={{ transitionDelay: inView ? `${i * 80}ms` : '0ms' }}
           >
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2.5">
-                <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
                   <t.Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
                 </span>
                 <span className="text-sm font-semibold text-text-primary">{t.topic}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-[11px] px-1.5 py-0.5 rounded font-semibold bg-primary/8 text-[#6A3FC0] flex items-center">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.08em] px-1.5 py-0.5 rounded-full bg-primary/8 border border-primary/15 text-primary flex items-center">
                   {t.dir === 'up' ? <CaretUp className="w-3 h-3" weight="bold" /> : <CaretDown className="w-3 h-3" weight="bold" />}
                 </span>
                 <span className="text-sm font-bold text-text-primary tabular-nums">
@@ -583,7 +580,7 @@ function ThemesVisual() {
   const max = 12;
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-3xl p-6">
       <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Themes · this month
       </p>
@@ -601,7 +598,7 @@ function ThemesVisual() {
           </li>
         ))}
       </ul>
-      <div className="rounded-xl bg-primary/5 border border-primary/15 px-4 py-3">
+      <div className="rounded-2xl bg-primary/[0.04] border border-primary/15 px-4 py-3">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Micro-action
         </p>
@@ -623,14 +620,14 @@ function TimeOfDayVisual() {
   const peak = slots.reduce((a, b) => (a.v > b.v ? a : b));
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6 relative overflow-hidden">
-      <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
+    <div ref={ref} className="card-app rounded-3xl p-6 relative overflow-hidden">
+
 
       <div className="flex items-center justify-between mb-1 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">
           Mood by hour
         </p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">
           7-day average
         </span>
       </div>
@@ -642,16 +639,14 @@ function TimeOfDayVisual() {
       <div className="flex items-end gap-2.5 h-32 mb-3 relative">
         {slots.map((s, i) => (
           <div key={s.t} className="flex-1 flex flex-col items-center gap-1 group">
-            <span className="text-[11px] font-bold text-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <span className="text-[11px] font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               {s.v}%
             </span>
             <div className="w-full relative">
               <div
-                className="w-full rounded-lg bg-gradient-to-t from-primary/30 to-primary group-hover:from-primary/40 group-hover:to-primary group-hover:shadow-sm relative"
+                className="w-full rounded-full bg-primary group-hover:shadow-sm relative"
                 style={{ height: inView ? `${s.v}%` : '0%', minHeight: inView ? '12px' : '0px', transitionDelay: inView ? `${i * 60}ms` : '0ms' }}
-              >
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-white/15" />
-              </div>
+              />
             </div>
             <span className="text-[11px] font-semibold text-text-muted">{s.t}</span>
             <span className="text-[11px] text-text-muted tabular-nums">{s.range}</span>
@@ -659,7 +654,7 @@ function TimeOfDayVisual() {
         ))}
       </div>
 
-      <div className="rounded-xl bg-primary/5 border border-primary/15 px-4 py-3 relative">
+      <div className="rounded-2xl bg-primary/[0.04] border border-primary/15 px-4 py-3 relative">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-1">
           Insight
         </p>
@@ -675,11 +670,11 @@ function RefineAnalysisVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   const confidence = useCountUp(78, inView);
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-3xl p-6">
       <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
         Emotion breakdown
       </p>
-      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5 space-y-4">
+      <div className="rounded-2xl bg-primary/[0.04] border border-primary/15 p-5 space-y-4">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted mb-1">AI detected</p>
@@ -714,21 +709,21 @@ function MilestonesVisual() {
   ];
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
+    <div ref={ref} className="card-app rounded-3xl p-6">
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold uppercase tracking-widest text-primary">Your milestones</p>
-        <span className="text-[11px] font-medium text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/10">21 badges to earn</span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted bg-primary/8 px-2 py-0.5 rounded-full border border-primary/15">21 badges to earn</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
         {badges.map((b, i) => (
           <div
             key={b.name}
-            className={`rounded-xl p-3 text-center border transition-all duration-500 ${
-              b.unlocked ? 'bg-primary/[0.04] border-primary/20' : 'bg-primary/[0.03] border-primary/8 opacity-50'
+          className={`rounded-2xl p-3 text-center border transition-all duration-500 ${
+            b.unlocked ? 'bg-primary/[0.04] border-primary/15' : 'bg-primary/[0.04] border-primary/15 opacity-50'
             } ${inView ? 'scale-100' : 'scale-90'}`}
             style={{ transitionDelay: inView ? `${i * 70}ms` : '0ms', opacity: !inView ? 0 : undefined }}
           >
-            <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-1.5" aria-hidden="true">
+            <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-4 shadow-clay" aria-hidden="true">
               <b.Icon className="w-5 h-5 text-[#6A3FC0]" weight={b.unlocked ? 'fill' : 'regular'} />
             </span>
             <p className="text-[11px] font-semibold text-text-secondary leading-tight">{b.name}</p>
@@ -743,10 +738,10 @@ function MilestonesVisual() {
 function TherapistShareVisual() {
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
   return (
-    <div ref={ref} className="card-app rounded-2xl p-6">
-      <div className="rounded-xl bg-primary/5 border border-primary/15 p-5">
+    <div ref={ref} className="card-app rounded-3xl p-6">
+      <div className="rounded-2xl bg-primary/[0.04] border border-primary/15 p-5">
         <div className="flex items-center gap-3 mb-4">
-          <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <span className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
             <Stethoscope className="w-5 h-5 text-[#6A3FC0]" weight="bold" />
           </span>
           <div>
@@ -768,7 +763,7 @@ function TherapistShareVisual() {
             </div>
           ))}
         </div>
-        <div className="mt-4 w-full rounded-full border-2 border-primary/60 bg-primary/15 text-[#6A3FC0] btn-app-glow text-sm font-semibold py-3 text-center">
+        <div className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full border-2 border-primary/60 bg-primary/15 text-[#6A3FC0] btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 text-sm font-semibold px-5 py-2.5">
           Share with therapist
         </div>
       </div>
@@ -947,25 +942,22 @@ export function FeaturesShowcase() {
   return (
     <div className="min-h-screen bg-surface">
       {/* Hero */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
-        <AnimatedSection animation="fade-in-up" className="relative text-center max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-6">
+      <section className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <Reveal className="relative text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            13 ways to finally{' '}
-            <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-              understand yourself
-            </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" style={{ color: '#1e293b' }}>
+            13 ways to finally understand yourself
           </h1>
-          <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
+          <p className="text-text-secondary text-base leading-relaxed max-w-2xl mx-auto">
             Vocolens has one job: turn your voice into clarity you can act on now
           </p>
-        </AnimatedSection>
+        </Reveal>
 
         {/* Feature icon strip */}
-        <AnimatedSection animation="fade-in-up" delay={0.2} className="relative mt-12">
+        <Reveal delay={0.2} className="relative">
           <div className="flex justify-center flex-wrap gap-3 max-w-4xl mx-auto">
             {features.map((f) => {
               const Icon = f.icon;
@@ -975,7 +967,7 @@ export function FeaturesShowcase() {
                   href={`#${f.id}`}
                   className="group flex items-center gap-2 px-4 py-2 card-app rounded-full transition-all duration-300"
                 >
-                  <Icon className="w-4 h-4 text-primary/70 group-hover:text-primary transition-colors" />
+                  <Icon className="w-4 h-4 text-primary group-hover:text-primary transition-colors" />
                   <span className="text-xs font-medium text-text-secondary group-hover:text-text-primary transition-colors hidden sm:inline">
                     {f.eyebrow}
                   </span>
@@ -983,23 +975,19 @@ export function FeaturesShowcase() {
               );
             })}
           </div>
-        </AnimatedSection>
+        </Reveal>
       </section>
 
       {/* Feature navigation sidebar */}
       <FeatureNav activeId={activeFeature} />
 
       {/* Feature sections */}
-      <div className="max-w-6xl mx-auto px-6 pb-24 lg:pb-40 space-y-20 sm:space-y-32 lg:space-y-48">
+      <div className="max-w-7xl mx-auto px-6 pb-12 sm:pb-16 lg:pb-20 space-y-16 sm:space-y-24 lg:space-y-32">
         {features.map((f, i) => {
           const Icon = f.icon;
           const reverse = i % 2 === 1;
           return (
-            <AnimatedSection
-              key={f.id}
-              animation={reverse ? 'fade-in-right' : 'fade-in-left'}
-              delay={0.05}
-            >
+            <Reveal key={f.id} delay={0.05}>
               <FeatureObserver id={f.id} onVisible={setActiveFeature}>
                 <article
                   id={f.id}
@@ -1016,13 +1004,13 @@ export function FeaturesShowcase() {
                         {f.eyebrow}
                       </span>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-5">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ color: '#1e293b' }}>
                       {f.headline}
                     </h2>
-                    <p className="text-text-secondary text-base lg:text-lg leading-relaxed mb-6">
+                    <p className="text-text-secondary text-base leading-relaxed mb-6">
                       {f.body}
                     </p>
-                    <div className="rounded-xl bg-gradient-to-r from-primary/5 to-primary/[0.02] border-l-4 border-primary px-5 py-4">
+                    <div className="rounded-2xl bg-primary/[0.04] border border-primary/15 px-5 py-4">
                       <p className="text-primary text-base leading-relaxed italic">
                         {f.outcome}
                       </p>
@@ -1031,36 +1019,34 @@ export function FeaturesShowcase() {
                   <div className="lg:sticky lg:top-32">{f.visual}</div>
                 </article>
               </FeatureObserver>
-            </AnimatedSection>
+            </Reveal>
           );
         })}
       </div>
 
       {/* CTA */}
-      <section className="max-w-3xl mx-auto px-6 pb-24">
-        <AnimatedSection
-          animation="fade-in-up"
-          className="relative overflow-hidden card-app rounded-3xl p-8 lg:p-12 text-center"
+      <section className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+        <Reveal
+          delay={0.2}
+          className="relative card-app rounded-3xl p-8 lg:p-12 text-center"
         >
-          <div className="absolute -top-16 -right-16 w-48 h-48 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-12 -left-12 w-36 h-36 bg-amber-100/30 rounded-full blur-3xl pointer-events-none" />
           <div className="relative">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#1e293b' }}>
               Understand yourself, one conversation at a time.
             </h2>
-            <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-2xl mx-auto">
               Talk for 60 seconds. Spot the patterns you&apos;re missing. Free to try — private by design.
             </p>
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 group"
+              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 group"
             >
               Get it on Google Play
               <CaretRight className="w-6 h-6" />
             </a>
           </div>
-        </AnimatedSection>
+        </Reveal>
       </section>
 
       {/* JSON-LD: FeatureList for SoftwareApplication */}
