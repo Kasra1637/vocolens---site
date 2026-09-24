@@ -296,7 +296,7 @@ function Home() {
           ))}
         </RevealGroup>
 
-        <Reveal className="text-center">
+        <Reveal className="text-center mt-12 lg:mt-16">
           <Link
             to="/features"
             className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
