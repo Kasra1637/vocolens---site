@@ -219,8 +219,8 @@
 /* Breathing hero halo — same lavender glow the hero already renders, slowed
  * to a calm 6s rhythm (app breathing family). */
 @keyframes hero-halo-breathe {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
 }
 .hero-halo-breathe { animation: hero-halo-breathe 6s ease-in-out infinite; }
 
