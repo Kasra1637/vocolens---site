@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from '@tanstack/react-router';
 import { AnimatedSection } from './AnimatedSection';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
 import { CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretCircleDown as ChevronDownCircle, MapTrifold as Map, Pulse as Activity, Sparkle as Sparkles, Lightning as Zap, Repeat, Clock, CaretRight, CaretUp, CaretDown, TrendUp, TrendDown, SlidersHorizontal, Medal as Award, HandHeart as HeartHandshake, Briefcase, Bed, CurrencyCircleDollar, Users, Microphone, Fire, ChatCircle, Compass, SunHorizon, Stethoscope, Brain, Smiley, Bone, Heartbeat, Butterfly, Hand, HandsClapping, Footprints } from '@phosphor-icons/react';
@@ -1091,63 +1090,6 @@ export function FeaturesShowcase() {
           </div>
         </AnimatedSection>
       </section>
-
-      <footer className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-surface via-primary/[0.03] to-primary/[0.08]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl opacity-50" />
-
-        <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
-          <div className="text-center mb-16">
-            <img
-              src="/vocolens-logo.png"
-              alt="Vocolens AI voice journal logo"
-              className="h-12 w-auto mx-auto mb-6"
-            />
-            <p className="text-text-secondary font-medium mb-2 text-base leading-relaxed">
-              Your emotions, finally in words
-            </p>
-            <p className="text-text-muted text-base leading-relaxed">
-              AI voice journaling for ADHD, autism & alexithymia
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
-            <Link
-              to="/terms"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/privacy"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/resources"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
-            >
-              Resources
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/use-cases"
-              className="text-sm text-text-muted hover:text-primary transition-colors"
-            >
-              Use Cases
-            </Link>
-          </div>
-
-          <div className="border-t border-primary/10 pt-8">
-            <p className="text-center text-text-muted/60 text-sm leading-relaxed">
-              2026 Vocolens. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
 
       {/* JSON-LD: FeatureList for SoftwareApplication */}
       <script

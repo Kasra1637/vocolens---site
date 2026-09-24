@@ -109,14 +109,9 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <div className="flex items-center gap-3 mb-1">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                <span className="font-bold text-lg text-[#6A3FC0]">J</span>
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-lg leading-tight">Jordan</h4>
-                <p className="text-text-muted text-sm leading-relaxed">ADHD & Creative</p>
-              </div>
+            <div className="min-w-0 mb-1">
+              <h4 className="font-bold text-lg leading-tight">Jordan</h4>
+              <p className="text-text-muted text-sm leading-relaxed">ADHD & Creative</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "I hit record on my commute, talked for 90 seconds about my morning frustration, and the AI showed me it wasn't anger — it was decision fatigue. Three weeks in, I can see my energy crashes always follow overstimulating meetings."
@@ -134,14 +129,9 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <div className="flex items-center gap-3 mb-1">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                <span className="font-bold text-lg text-[#6A3FC0]">R</span>
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-lg leading-tight">Riley</h4>
-                <p className="text-text-muted text-sm leading-relaxed">Autistic & Graduate Student</p>
-              </div>
+            <div className="min-w-0 mb-1">
+              <h4 className="font-bold text-lg leading-tight">Riley</h4>
+              <p className="text-text-muted text-sm leading-relaxed">Autistic & Graduate Student</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "After a meltdown last month, I went back through my entries and saw the body map lighting up my shoulders and chest for five days straight before it happened. Now I check my weekly pattern and take a rest day when I see it building."
@@ -159,14 +149,9 @@ function Home() {
                 <div key={i} className="w-5 h-5 text-amber-400">&#9733;</div>
               ))}
             </div>
-            <div className="flex items-center gap-3 mb-1">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                <span className="font-bold text-lg text-[#6A3FC0]">S</span>
-              </div>
-              <div className="min-w-0">
-                <h4 className="font-bold text-lg leading-tight">Sam</h4>
-                <p className="text-text-muted text-sm leading-relaxed">Alexithymia & Designer</p>
-              </div>
+            <div className="min-w-0 mb-1">
+              <h4 className="font-bold text-lg leading-tight">Sam</h4>
+              <p className="text-text-muted text-sm leading-relaxed">Alexithymia & Designer</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
               "The AI labeled my entry as 'grief' and I almost corrected it — but then I sat with it and realized it was right. I'd been carrying that for weeks without a word for it. The emotion wheel helped me learn the difference between sadness and loss."
@@ -321,63 +306,6 @@ function Home() {
       <FAQSection />
 
       <PrivacySection />
-
-      <footer className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-surface via-primary/[0.03] to-primary/[0.08]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl opacity-50" />
-
-        <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
-          <div className="text-center mb-16">
-            <img
-              src="/vocolens-logo.png"
-              alt="Vocolens AI voice journal logo"
-              className="h-12 w-auto mx-auto mb-6"
-            />
-            <p className="text-text-secondary font-medium mb-2 text-base leading-relaxed">
-              Your emotions, finally in words
-            </p>
-            <p className="text-text-muted text-base leading-relaxed">
-              AI voice journaling for ADHD, autism & alexithymia
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
-            <Link
-              to="/terms"
-              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
-            >
-              Terms of Service
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/privacy"
-              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
-            >
-              Privacy Policy
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/resources"
-              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
-            >
-              Resources
-            </Link>
-            <span className="w-1 h-1 rounded-full bg-primary/40" aria-hidden="true" />
-            <Link
-              to="/use-cases"
-              className="text-sm text-text-muted hover:text-primary transition-colors py-2"
-            >
-              Use Cases
-            </Link>
-          </div>
-
-          <div className="border-t border-primary/10 pt-8">
-            <p className="text-center text-text-muted/60 text-sm leading-relaxed">
-              2026 Vocolens. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

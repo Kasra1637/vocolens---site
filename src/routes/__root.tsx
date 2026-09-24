@@ -11,6 +11,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/vocolens/Header";
+import { SiteFooter } from "@/components/vocolens/SiteFooter";
 
 function NotFoundComponent() {
   return (
@@ -198,6 +199,7 @@ function RootComponent() {
         <div key={pathname} className={routeClass}>
           <Outlet />
         </div>
+        <SiteFooter />
       </div>
     </QueryClientProvider>
   );
