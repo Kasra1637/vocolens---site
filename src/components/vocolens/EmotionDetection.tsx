@@ -4,7 +4,7 @@ import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Spark
 const whyItMatters = [
   {
     icon: <Layers className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: '8 Plutchik emotions scored, not reduced to one verdict.',
+    desc: 'All 8 Plutchik emotions are scored on the model, not one verdict.',
   },
   {
     icon: <Activity className="w-5 h-5 text-[#6A3FC0]" />,
@@ -12,7 +12,7 @@ const whyItMatters = [
   },
   {
     icon: <Edit3 className="w-5 h-5 text-[#6A3FC0]" />,
-    desc: 'Corrections stay on your device and shape later analysis.',
+    desc: 'Corrections stay on your device and shape how AI reads you later.',
   },
   {
     icon: <Brain className="w-5 h-5 text-[#6A3FC0]" />,
@@ -200,9 +200,6 @@ export function EmotionDetection() {
               </div>
               <p className="text-text-secondary text-sm leading-relaxed mt-4">
                 Based on the entries you reviewed and confirmed or adjusted.
-              </p>
-              <p className="text-xs text-text-muted mt-3">
-                On average: pleasantness +10 · energy -5
               </p>
             </div>
           </div>
