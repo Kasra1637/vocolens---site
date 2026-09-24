@@ -97,7 +97,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Neuroscience &amp; Emotional Intelligence
@@ -163,7 +163,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       ADHD &amp; Time Perception
@@ -229,7 +229,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Stress &amp; Burnout Recovery
@@ -294,7 +294,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Anxiety &amp; Mental Wellness
@@ -363,7 +363,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Autism &amp; Neurodivergent Wellness
@@ -433,7 +433,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Neuroscience &amp; Emotional Intelligence
@@ -500,7 +500,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Body Awareness &amp; Distress Detection
@@ -569,7 +569,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Mental Wellness &amp; Self-Discovery
@@ -635,7 +635,7 @@ export function Resources() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
                     <span
-                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
                       itemProp="articleSection"
                     >
                       Neuroscience &amp; Mental Wellness
