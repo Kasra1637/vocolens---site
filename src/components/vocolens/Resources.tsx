@@ -87,15 +87,15 @@ export function Resources() {
               aria-label="Read: Emotional Granularity: Why Specific Words Change What You Feel"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Heart className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -108,12 +108,12 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Emotional Granularity: Why Specific Words Change What You Feel
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Anxious, stressed, overwhelmed — broad words can all be true and still be too
@@ -153,15 +153,15 @@ export function Resources() {
               aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Timer className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -174,12 +174,12 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     ADHD time blindness isn't laziness — it's a measurable gap in how the brain
@@ -219,15 +219,15 @@ export function Resources() {
               aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Flame className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -240,12 +240,12 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Burnout builds through unlogged accumulation, not a single bad week. Learn the
@@ -284,15 +284,15 @@ export function Resources() {
               aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <RefreshCw className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -305,12 +305,12 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Overthinking isn't a willpower problem — it's what happens when your brain
@@ -353,15 +353,15 @@ export function Resources() {
               aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Puzzle className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -374,13 +374,13 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults
                     Process Emotions
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Autistic adults face unique emotional regulation challenges including
@@ -423,15 +423,15 @@ export function Resources() {
               aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Heart className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -444,13 +444,13 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary
                     You Were Never Taught
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Around 10% of people struggle to identify and describe their own emotions — a
@@ -490,15 +490,15 @@ export function Resources() {
               aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Activity className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -511,12 +511,12 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     How Your Body Tells You Are Overwhelmed Before Your Mind Does
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Your body registers distress seconds before your conscious mind catches up.
@@ -559,15 +559,15 @@ export function Resources() {
               aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Radar className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -580,13 +580,13 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     Building Emotional Awareness: How Pattern Recognition in Voice Journaling
                     Transforms Self-Understanding
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Discover how metacognitive awareness and pattern recognition through daily voice
@@ -625,15 +625,15 @@ export function Resources() {
               aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4">
                 <div
-                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto"
                   aria-hidden="true"
                 >
                   <Brain className="w-5 h-5 text-[#6A3FC0]" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center gap-3 mb-3">
                     <span
                       className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest"
                       itemProp="articleSection"
@@ -646,13 +646,13 @@ export function Resources() {
                   </div>
                   <h2
                     itemProp="headline"
-                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center"
                   >
                     How Naming Your Emotions with Voice Journaling Reduces Stress and Builds
                     Emotional Resilience
                   </h2>
                   <p
-                    className="text-text-secondary line-clamp-3 text-base leading-relaxed"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
                     Neuroscience research by Lieberman (2007) proves that labeling emotions reduces

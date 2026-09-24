@@ -274,7 +274,7 @@ export function Header() {
                   key={to}
                   to={to}
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full text-left flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-text-muted hover:text-primary hover:bg-primary/[0.04] rounded-xl transition-colors ml-2"
+                  className="w-full text-left flex items-center gap-3 px-4 py-3 text-sm font-medium text-text-muted hover:text-primary hover:bg-primary/[0.04] rounded-xl transition-colors"
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" />
                   {label}

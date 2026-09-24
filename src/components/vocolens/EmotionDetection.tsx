@@ -78,10 +78,10 @@ export function EmotionDetection() {
       <RevealGroup delay={0.1} className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12">
         {/* Step 1 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay mx-auto">
             <Mic className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
+          <h4 className="font-bold text-xl mb-5 text-center">1. You Speak Freely</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
             <p className="italic text-text-secondary text-[15px] leading-6">
               "I'm excited about the promotion, but terrified of failing."
@@ -100,10 +100,10 @@ export function EmotionDetection() {
 
         {/* Step 2 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay mx-auto">
             <Brain className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
+          <h4 className="font-bold text-xl mb-5 text-center">2. AI Sees Layers</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
             <div className="space-y-4">
               {detectedLayers.map(({ label, base, primary, fill, tone }) => (
@@ -134,16 +134,16 @@ export function EmotionDetection() {
 
         {/* Step 3 */}
         <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mb-5 shadow-clay mx-auto">
             <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
           </div>
-          <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
+          <h4 className="font-bold text-xl mb-5 text-center">3. You Define the Truth</h4>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
               <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
                 You selected
               </span>
-              <h5 className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</h5>
+              <p className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</p>
               <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">
                 <ArrowsClockwise className="w-3 h-3" />
                 Adjusted

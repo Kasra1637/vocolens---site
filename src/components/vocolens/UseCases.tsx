@@ -231,7 +231,7 @@ export function UseCases() {
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <Mic className="w-5 h-5 text-[#6A3FC0]" />
             </div>
-            <h3 className="font-bold text-xl mb-2">Speak, don't write</h3>
+            <p className="font-bold text-xl mb-2">Speak, don't write</p>
             <p className="text-text-secondary text-base leading-relaxed">
               No executive-function barrier. No blank page. Just talk — the app captures everything.
             </p>
@@ -240,7 +240,7 @@ export function UseCases() {
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <Sparkles className="w-5 h-5 text-[#6A3FC0]" />
             </div>
-            <h3 className="font-bold text-xl mb-2">AI names your emotions</h3>
+            <p className="font-bold text-xl mb-2">AI names your emotions</p>
             <p className="text-text-secondary text-base leading-relaxed">
               When feelings are hard to identify, the AI does it for you — and leans toward the
               labels you confirm over time.
@@ -250,7 +250,7 @@ export function UseCases() {
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
               <TrendingUp className="w-5 h-5 text-[#6A3FC0]" />
             </div>
-            <h3 className="font-bold text-xl mb-2">Patterns emerge privately</h3>
+            <p className="font-bold text-xl mb-2">Patterns emerge privately</p>
             <p className="text-text-secondary text-base leading-relaxed">
               See your emotional rhythms, triggers, and growth over time — at your pace, on your
               terms.
@@ -305,16 +305,16 @@ function ConditionSection({ condition }: { condition: Condition }) {
       <article id={condition.slug} className="scroll-mt-32">
         {/* Header */}
         <div className="mb-6">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-4">
+          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-4 mx-auto">
             <Icon className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center"
             style={{ color: "#1e293b" }}
           >
             {condition.name}
           </h2>
-          <p className="text-text-secondary text-base mt-1">{condition.tagline}</p>
+          <p className="text-text-secondary text-base mt-1 text-center">{condition.tagline}</p>
         </div>
 
         {/* Challenges */}
@@ -339,11 +339,13 @@ function ConditionSection({ condition }: { condition: Condition }) {
         <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {condition.features.map((item) => (
             <RevealItem key={item.feature} className="card-app rounded-3xl p-5">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-3">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-3 mx-auto">
                 <CheckCircle2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
-              <p className="font-bold text-text-primary text-sm mb-1">{item.feature}</p>
-              <p className="text-text-secondary text-sm leading-relaxed">{item.benefit}</p>
+              <p className="font-bold text-text-primary text-sm mb-1 text-center">{item.feature}</p>
+              <p className="text-text-secondary text-sm leading-relaxed text-left">
+                {item.benefit}
+              </p>
             </RevealItem>
           ))}
         </RevealGroup>

@@ -90,7 +90,7 @@ export function FAQSection() {
                   className={`grid transition-all duration-300 ease-soft ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed">
+                    <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed max-w-prose">
                       {faq.a}
                     </div>
                   </div>

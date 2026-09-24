@@ -184,7 +184,7 @@ export function BurnoutRecovery() {
             </ul>
       </div>
 
-      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -350,7 +350,7 @@ export function BurnoutRecovery() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness &amp; Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
@@ -365,7 +365,7 @@ export function BurnoutRecovery() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Anxiety &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       The overthinking trap: why your brain won't stop
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover the neuroscience of rumination and how giving your brain a completion signal breaks the loop.</p>
@@ -380,7 +380,7 @@ export function BurnoutRecovery() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       How naming your emotions reduces stress and builds resilience
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>

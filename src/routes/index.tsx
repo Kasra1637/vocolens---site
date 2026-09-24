@@ -177,7 +177,7 @@ function Home() {
               ))}
             </div>
             <div className="min-w-0 mb-1">
-              <h4 className="font-bold text-lg leading-tight">Jordan</h4>
+              <p className="font-bold text-lg leading-tight">Jordan</p>
               <p className="text-text-muted text-sm leading-relaxed">ADHD & Creative</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
@@ -201,7 +201,7 @@ function Home() {
               ))}
             </div>
             <div className="min-w-0 mb-1">
-              <h4 className="font-bold text-lg leading-tight">Riley</h4>
+              <p className="font-bold text-lg leading-tight">Riley</p>
               <p className="text-text-muted text-sm leading-relaxed">Autistic & Graduate Student</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
@@ -225,7 +225,7 @@ function Home() {
               ))}
             </div>
             <div className="min-w-0 mb-1">
-              <h4 className="font-bold text-lg leading-tight">Sam</h4>
+              <p className="font-bold text-lg leading-tight">Sam</p>
               <p className="text-text-muted text-sm leading-relaxed">Alexithymia & Designer</p>
             </div>
             <p className="text-text-secondary my-4 text-base leading-relaxed flex-1">
@@ -265,12 +265,12 @@ function Home() {
         </Reveal>
         <RevealGroup className="grid md:grid-cols-3 gap-8">
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-start text-left gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <Frown className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="min-w-0">
-                <h3 className="font-bold mb-2 text-xl">The problem</h3>
+                <h3 className="font-bold mb-2 text-xl text-center">The problem</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt
                   like catching lightning with a pencil—frustrating, slow, never truly me.
@@ -280,12 +280,12 @@ function Home() {
           </RevealItem>
 
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-start text-left gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <MessageSquare className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="min-w-0">
-                <h3 className="font-bold mb-2 text-xl">Daily struggle</h3>
+                <h3 className="font-bold mb-2 text-xl text-center">Daily struggle</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   Writing was a fight with myself. My thoughts raced while my hand cramped trying to
                   keep up. I needed something as fast as my mind.
@@ -295,12 +295,12 @@ function Home() {
           </RevealItem>
 
           <RevealItem className="card-app rounded-3xl p-8">
-            <div className="flex flex-col items-start text-left gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto">
                 <Lightbulb className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="min-w-0">
-                <h3 className="font-bold mb-2 text-xl">The breakthrough</h3>
+                <h3 className="font-bold mb-2 text-xl text-center">The breakthrough</h3>
                 <p className="text-text-secondary text-base leading-relaxed">
                   So I built this app. Now I just talk, and my thoughts are captured instantly. No
                   barriers between mind and app. Finally, freedom to be authentically me.
@@ -353,7 +353,7 @@ function Home() {
         <Reveal className="text-center mt-12 lg:mt-16">
           <Link
             to="/features"
-            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
+            className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
           >
             Explore all 13 features
             <CaretRight className="w-6 h-6" />

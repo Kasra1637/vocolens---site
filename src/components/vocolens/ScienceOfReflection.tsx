@@ -187,7 +187,7 @@ export function ScienceOfReflection() {
             </ul>
       </div>
 
-      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg" itemProp="articleBody" id="article-root">
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
         <div>
           <p>
@@ -321,7 +321,7 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness & Self-Discovery</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       Building emotional awareness: how pattern recognition transforms self-understanding
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
@@ -336,7 +336,7 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness & Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       How your body tells you it's overwhelmed before your mind does
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
@@ -351,7 +351,7 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Anxiety & Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-text-primary font-semibold hover:underline mb-2 text-lg">
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
                       The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">The neuroscience of rumination, the Zeigarnik effect, and how voice journaling gives your brain the completion signal it's missing.</p>

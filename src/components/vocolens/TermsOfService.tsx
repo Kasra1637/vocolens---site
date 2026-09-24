@@ -31,7 +31,7 @@ export function TermsOfService() {
         </div>
       </Reveal>
 
-      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12">
+      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-prose">
         <Reveal delay={0.1}>
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">
