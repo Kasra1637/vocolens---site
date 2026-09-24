@@ -20,7 +20,7 @@ const whyItMatters = [
   },
 ];
 
-const correctionReasons = ['Wrong label', 'Wrong intensity', 'Context'];
+const correctionReasons = ['Wrong label', 'Wrong intensity', 'Context', 'Missing emotion'];
 
 const detectedLayers = [
   { label: 'Vigilance', base: 'Anticipation', primary: true, fill: 'w-[78%]', tone: '' },
