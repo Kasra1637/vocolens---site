@@ -5,23 +5,23 @@ import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@ph
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Your journal lives on your device — entries, audio, and personalization data stay local and locked behind biometric authentication (Face ID or Fingerprint) and a PIN, with no cloud account or synced backup of your journal. Turning speech into insight does involve a couple of brief, encrypted steps off-device: your audio is sent for speech-to-text transcription, and both your transcript and, when available, your audio are sent for emotion analysis — so the AI can pick up on vocal tone as well as your words. Neither service permanently stores your data. You can export or permanently delete everything at any time. Full detail lives in our Privacy Policy."
+    a: "Your journal lives on your device â€” entries stay local, no cloud account, locked behind biometrics or PIN. Two brief encrypted requests turn speech into insight: transcription plus emotion analysis of your words and tone. Audio is deleted after processing; export or wipe everything in Settings.",
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "Vocolens uses advanced AI to analyze the words and language in your journal transcript. It detects emotions from your word choice, phrasing, and narrative context — mapping your feelings to 8 core psychology-backed emotions and placing them on a 2D scale of pleasantness and energy. Over time, a personalization layer learns from any corrections you make and adapts future AI analysis to build your unique emotional fingerprint."
+    a: "Vocolens reads what you said â€” words, phrasing, and story â€” plus vocal tone from audio when available. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: the app learns which labels fit you and biases later analysis your way.",
   },
   {
     q: "What makes Vocolens different from other journaling apps?",
-    a: "Most journaling apps make you write. Vocolens lets you speak — and does the rest. The AI detects your emotions from your words, learns from your corrections over time, and builds a personal emotional map you can't get anywhere else. It's designed specifically for neurodivergent brains that think faster than they can type."
+    a: "Most apps make you write. Vocolens lets you speak: AI reads emotion from your words and vocal tone, learns from every correction, and tracks patterns across entries â€” streaks, triggers, weekly reflections. It is built for minds that think faster than they can type.",
   },
   {
     q: "What happens if the AI gets my emotion wrong?",
-    a: "You correct it — and it learns. Tap the emotion label, change it to what you actually felt, and the AI remembers. Over time, it stops making that mistake for you specifically. Your corrections build a personalised emotional vocabulary that no other user shares. The AI gets better the more you use it."
+    a: "Open any entry and correct the emotion to what you actually felt. Each correction is saved and tunes your personal analysis, so future results lean toward your labels over time. Corrections stay on your device and shape only your results â€” never anyone else’s.",
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a personal journaling and self-awareness tool, not a medical device or therapy service. However, it does include built-in emotional wellbeing awareness. If the app detects moderate or high distress during your entry, it gently flags it so you can pause and take a moment for yourself."
+    a: "Vocolens is a journaling and self-awareness tool â€” not therapy or a medical device. It watches for strain: entries scoring moderate or high distress show a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
   },
 ];
 
