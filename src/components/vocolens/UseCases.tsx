@@ -26,8 +26,6 @@ interface Condition {
   colorLight: string;
   challenges: string[];
   features: { feature: string; benefit: string }[];
-  quote: string;
-  quoteAuthor: string;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -85,9 +83,6 @@ const conditions: Condition[] = [
           "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to compare.",
       },
     ],
-    quote:
-      'My thoughts race at 100 mph and writing them down feels like trying to catch a waterfall with a teaspoon. Speaking into Vocolens is instant relief — and the AI actually gets that my "anxiety" is usually just excitement now.',
-    quoteAuthor: "Jordan, ADHD & Creative",
   },
   {
     id: "alexithymia",
@@ -135,9 +130,6 @@ const conditions: Condition[] = [
           "The heatmap counts how often each region was tagged, so your 7, 14, or 30 day view shows your real pattern.",
       },
     ],
-    quote:
-      "I used to just say \"I feel bad.\" Now the heatmap shows me it's chest tightness + stomach tension, and after months of corrections the AI knows that combination means I'm overwhelmed, not sad. I finally have a language for myself.",
-    quoteAuthor: "Sam, living with alexithymia",
   },
   {
     id: "autism",
@@ -185,9 +177,6 @@ const conditions: Condition[] = [
           "Build a styled report of mood trends, top emotions, body patterns and triggers to share with your care team.",
       },
     ],
-    quote:
-      'After correcting the AI for months, it finally stopped calling my excitement "anxiety." It gets me now. The structured flow and body map help me understand what I\'m feeling before it becomes a meltdown.',
-    quoteAuthor: "Riley, Autistic & Graduate Student",
   },
 ];
 
@@ -349,7 +338,7 @@ function ConditionSection({ condition }: { condition: Condition }) {
         </div>
 
         {/* Features grid — 2 rows × 3 columns on desktop, consistent across all sections */}
-        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {condition.features.map((item) => (
             <RevealItem key={item.feature} className="card-app rounded-3xl p-5">
               <div className="flex items-start gap-3">
@@ -364,14 +353,6 @@ function ConditionSection({ condition }: { condition: Condition }) {
             </RevealItem>
           ))}
         </RevealGroup>
-
-        {/* Quote */}
-        <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl px-6 py-5">
-          <p className="text-text-primary text-base leading-relaxed italic mb-2">
-            "{condition.quote}"
-          </p>
-          <p className="text-text-muted text-sm font-semibold">— {condition.quoteAuthor}</p>
-        </div>
       </article>
     </Reveal>
   );
