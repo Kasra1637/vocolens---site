@@ -151,6 +151,12 @@
     animation: none;
     box-shadow: 0 6px 14px rgba(147, 112, 219, 0.35);
   }
+  /* Gentle attention float, blog store CTA only. Animates transform (not
+   * translate) so it composes with Tailwind's hover:-translate-y-0.5 lift
+   * instead of overriding it, and freezes in place on hover/focus rather
+   * than snapping back to the 0% keyframe. */
+  .btn-app-float { animation: cta-float 3.2s ease-in-out infinite; }
+  .btn-app-float:hover, .btn-app-float:focus-visible { animation-play-state: paused; }
   .bg-gradient-soft {
     background-image: linear-gradient(135deg, #A88AFF 0%, #BEA3FF 100%);
   }
@@ -181,6 +187,11 @@
 @keyframes cta-glow-breathe {
   0%, 100% { box-shadow: 0 6px 14px rgba(147, 112, 219, 0.3); }
   50% { box-shadow: 0 6px 20px rgba(147, 112, 219, 0.45); }
+}
+
+@keyframes cta-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 /* Marquee removed with the scroll-reveal freeze (no call sites remain). */
@@ -238,9 +249,10 @@
 /* Ambient loops removed with the motion freeze (mic pulse, glow breathe,
  * phone float lived here). Survivors use static styles set inline. */
 
-/* Reduced-motion kill-switch retained as a guard: with decorative motion
- * removed site-wide, OS-level reduced motion is the default experience
- * everywhere. The demo pulse and scroll reveals below also respect it. */
+/* Reduced-motion kill-switch: the blog store CTA float is the site's one
+ * looping animation, so this guard is load-bearing, not decorative. The
+ * demo pulse and scroll reveals respect it too. */
 @media (prefers-reduced-motion: reduce) {
   .demo-mic-pulse, .demo-mic-pulse-delayed { animation: none; }
+  .btn-app-float { animation: none; }
 }
