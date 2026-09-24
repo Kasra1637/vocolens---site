@@ -162,7 +162,7 @@
  * Background + inset bar only (no padding/border changes) so toggling the
  * class never shifts layout. Toggled from ListenToArticle via DOM query. */
 #article-root .vocolens-reading {
-  background: linear-gradient(180deg, rgba(142, 107, 255, 0.1), rgba(142, 107, 255, 0.05));
+  background: rgba(147, 112, 219, 0.1);
   border-radius: 1rem;
   box-shadow: inset 3px 0 0 var(--primary);
   scroll-margin-top: 5.5rem;

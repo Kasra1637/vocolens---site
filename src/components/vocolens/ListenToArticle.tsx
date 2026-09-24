@@ -476,15 +476,15 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   return (
     <div
-      className="mt-4 mb-8 card-app rounded-2xl p-4"
+      className="mt-4 mb-8 card-app rounded-3xl p-6 sm:p-8"
       role="region"
       aria-label="Listen to this article"
       {...{ [EXCLUDE_ATTR]: true }}
     >
       <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
       <div className="flex flex-wrap items-center gap-3">
-        <div className="w-9 h-9 rounded-full chip-app flex items-center justify-center flex-shrink-0" aria-hidden="true">
-          <Volume2 className="w-4 h-4 text-[#6A3FC0]" />
+        <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
+          <Volume2 className="w-5 h-5 text-[#6A3FC0]" />
         </div>
         <div className="min-w-0 flex-1 basis-32">
           <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
@@ -498,7 +498,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
             type="button"
             onClick={prevSection}
             disabled={sections.length === 0}
-            className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
             aria-label="Previous section"
             title="Previous section"
           >
@@ -507,17 +507,21 @@ export function ListenToArticle({ slug }: { slug: string }) {
           <button
             type="button"
             onClick={toggle}
-            className="inline-flex items-center gap-2 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300"
+            className="inline-flex items-center gap-2 group bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 active:translate-y-0"
             aria-label={(playing ? "Pause" : "Play") + " article narration"}
           >
-            {playing ? <Pause className="w-4 h-4" aria-hidden="true" /> : <Play className="w-4 h-4" aria-hidden="true" />}
+            {playing ? (
+              <Pause className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+            ) : (
+              <Play className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+            )}
             {playing ? "Pause" : "Listen"}
           </button>
           <button
             type="button"
             onClick={nextSection}
             disabled={sections.length === 0}
-            className="inline-flex items-center justify-center w-9 h-9 rounded-full text-[#6A3FC0] hover:bg-primary/10 transition-colors disabled:opacity-40"
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
             aria-label="Next section"
             title="Next section"
           >
@@ -527,7 +531,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         <button
           type="button"
           onClick={() => setSpeedIdx((i) => (i + 1) % SPEEDS.length)}
-          className="inline-flex items-center justify-center h-8 px-2.5 rounded-full text-xs font-semibold text-[#6A3FC0] hover:bg-primary/10 transition-colors flex-shrink-0"
+          className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-primary/10 border border-primary/15 text-xs font-semibold text-[#6A3FC0] hover:bg-primary/15 transition-colors flex-shrink-0"
           aria-label={`Playback speed ${speed}x, activate to change`}
           title="Playback speed"
         >
@@ -581,7 +585,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           </div>
           {tipTime !== null && (
             <div
-              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-lg bg-text-primary text-white text-[11px] font-medium px-2 py-1 shadow-md"
+              className="absolute -top-1 -translate-y-full pointer-events-none max-w-[220px] truncate rounded-2xl bg-primary/10 border border-primary/15 text-text-primary text-[11px] font-medium px-2 py-1"
               style={{ left: `clamp(56px, ${(tipTime / duration) * 100}%, calc(100% - 56px))`, transform: "translate(-50%, -100%)" }}
               aria-hidden="true"
             >
@@ -626,15 +630,15 @@ export function ListenToArticle({ slug }: { slug: string }) {
                         aria-current={active ? "true" : undefined}
                         className={
                           active
-                            ? "flex w-full items-center gap-3 rounded-xl px-3 min-h-[44px] py-2 text-left text-sm bg-primary/10 font-semibold text-text-primary transition-colors"
-                            : "flex w-full items-center gap-3 rounded-xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-primary/5 transition-colors"
+            ? "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm bg-primary/10 border border-primary/15 font-semibold text-text-primary transition-colors"
+            : "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-primary/5 transition-colors"
                         }
                       >
                         <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-primary" : "text-text-muted"}`}>
                           {formatClock(s.startSec)}
                         </span>
                         <span className="flex-1 truncate">{s.title}</span>
-                        {active && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse flex-shrink-0" aria-hidden="true" />}
+                        {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" aria-hidden="true" />}
                       </button>
                     </li>
                   );

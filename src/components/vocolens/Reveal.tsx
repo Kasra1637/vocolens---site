@@ -6,7 +6,7 @@ import { fadeUp, STAGGER_STEP } from "@/lib/motion";
  * Reveal — the single section-entrance primitive for non-blog pages.
  *
  * One calm rhythm everywhere: fadeUp 0.7s SOFT with a 0.15s pre-beat,
- * replaying on every viewport entry (fades out on exit). Reduced motion is
+ * firing ONCE per page load (no replay on re-scroll). Reduced motion is
  * governed globally by MotionConfig in routes/__root. Never render this
  * under /resources routes (blogs stay fully static by standing decision).
  *
@@ -57,9 +57,8 @@ export function Reveal({
       initial="hidden"
       animate={shown ? "show" : "hidden"}
       whileInView="show"
-      viewport={{ once: false, margin: "0px", amount: 0.1 }}
+      viewport={{ once: true, margin: "0px", amount: 0.1 }}
       onViewportEnter={markEntered}
-      onViewportLeave={() => setEntered(false)}
       custom={0.15 + delay}
     >
       {children}
@@ -70,12 +69,12 @@ export function Reveal({
 /**
  * RevealGroup + RevealItem — card-level consistency using the same system.
  *
- * The group fires once per viewport entry (same failsafe semantics as
- * Reveal) and staggers its items by STAGGER_STEP (house token, 80ms —
- * the app's TAB_ENTER scale). Items use the plain `fadeUp` variant with
- * no per-card curves. Use for card grids INSTEAD of wrapping them in a
- * plain Reveal (motion happens once per card, not twice). Never render
- * under /resources routes.
+ * The group fires ONCE per page load (same failsafe semantics as Reveal) and
+ * staggers its items by STAGGER_STEP (house token, 80ms — the app's
+ * TAB_ENTER scale). Items use the plain `fadeUp` variant with no per-card
+ * curves. Use for card grids INSTEAD of wrapping them in a plain Reveal
+ * (motion happens once per card, not twice). Never render under /resources
+ * routes.
  */
 export function RevealGroup({
   children,
@@ -120,9 +119,8 @@ export function RevealGroup({
       initial="hidden"
       animate={shown ? "show" : "hidden"}
       whileInView="show"
-      viewport={{ once: false, margin: "0px", amount: 0.1 }}
+      viewport={{ once: true, margin: "0px", amount: 0.1 }}
       onViewportEnter={markEntered}
-      onViewportLeave={() => setEntered(false)}
       variants={{
         hidden: {},
         show: (baseDelay: number = 0) => ({
