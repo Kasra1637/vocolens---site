@@ -35,10 +35,10 @@ const scales = [
 
 export function EmotionDetection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 overflow-hidden">
+    <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20 overflow-hidden">
 
       {/* Header */}
-      <AnimatedSection animation="fade-in-up" className="text-center mb-16 max-w-4xl mx-auto">
+      <AnimatedSection animation="fade-in-up" className="text-center mb-12 lg:mb-16 max-w-4xl mx-auto">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
           <Crosshair className="w-3.5 h-3.5" />
           AI + Your Corrections
@@ -51,7 +51,7 @@ export function EmotionDetection() {
         </p>
       </AnimatedSection>
 
-      <AnimatedSection animation="fade-in-up" delay={0.1} className="mb-6 lg:mb-8">
+      <AnimatedSection animation="fade-in-up" delay={0.1} className="mb-10 lg:mb-12">
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {/* Step 1 */}
           <div className="card-app rounded-3xl p-5 flex flex-col">
@@ -136,7 +136,7 @@ export function EmotionDetection() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection animation="fade-in-up" delay={0.15} className="mb-16 lg:mb-20">
+      <AnimatedSection animation="fade-in-up" delay={0.15} className="mb-12 lg:mb-16">
         <div className="mb-6">
           <h3 className="text-xl font-bold">Fine-tune if needed</h3>
           <p className="text-sm text-text-muted mt-1.5">Adjust how it felt</p>

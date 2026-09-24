@@ -55,12 +55,12 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="max-w-4xl mx-auto px-6 py-16 lg:py-24">
+    <section id="faq" className="max-w-4xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <AnimatedSection animation="fade-in-up" className="text-center mb-12">
+      <AnimatedSection animation="fade-in-up" className="text-center mb-12 lg:mb-16">
         <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-5 h-5 text-[#6A3FC0]" />
         </div>

@@ -37,12 +37,12 @@ const features = [
 
 export function PrivacySection() {
   return (
-    <section id="privacy" className="relative overflow-hidden py-20 lg:py-28">
+    <section id="privacy" className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1230] via-[#1e1638] to-[#120d25]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <AnimatedSection animation="fade-in-up">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6">
               <Shield className="w-4 h-4 text-primary-muted" />
               <span className="text-sm text-white/70 font-semibold tracking-widest uppercase">Privacy</span>

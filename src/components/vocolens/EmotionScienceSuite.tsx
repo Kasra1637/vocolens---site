@@ -115,7 +115,7 @@ export function EmotionScienceSuite() {
   return (
     <section
       id="emotion-science"
-      className="max-w-7xl mx-auto px-6 py-16 lg:py-24"
+      className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20"
       aria-labelledby="emotion-science-heading"
       itemScope
       itemType="https://schema.org/SoftwareApplication"

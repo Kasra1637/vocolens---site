@@ -124,9 +124,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+      <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12 lg:mb-16" style={{ color: '#1e293b' }}>
             Real stories, real impact
           </h2>
         </Reveal>
@@ -195,7 +195,7 @@ function Home() {
         </RevealGroup>
       </section>
 
-      <section id="story" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+      <section id="story" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal>
           <div className="flex items-center justify-center mb-4">
             <div className="rounded-full p-1.5 chip-app shadow-clay hover-scale">
@@ -209,7 +209,7 @@ function Home() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4" style={{ color: '#1e293b' }}>
             A personal mission
           </h2>
-          <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
+          <p className="text-text-secondary text-center max-w-2xl mx-auto mb-12 lg:mb-16 text-base leading-relaxed">
             Turning racing thoughts into clear, effortless expression.
           </p>
         </Reveal>
@@ -264,8 +264,8 @@ function Home() {
         <EmotionDetection />
       </Reveal>
 
-      <section id="features-preview" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <Reveal className="text-center max-w-3xl mx-auto mb-12">
+      <section id="features-preview" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
@@ -317,7 +317,7 @@ function Home() {
         <EmotionScienceSuite />
       </Reveal>
 
-      <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
+      <section id="download" className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal className="card-app rounded-3xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Understand yourself, one conversation at a time.
