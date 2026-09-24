@@ -26,7 +26,16 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // First answer expanded by default on desktop; collapsed by default on
+  // mobile (<768px, Tailwind md) where the long privacy answer dominates
+  // the viewport. Lazily read at mount (SSR-safe: server renders desktop
+  // default, client corrects before paint on mobile).
+  const [openIndex, setOpenIndex] = useState<number | null>(() =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 767px)").matches
+      ? null
+      : 0,
+  );
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
