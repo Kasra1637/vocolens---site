@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal } from './Reveal';
 import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@phosphor-icons/react';
 
 const faqs = [
@@ -60,7 +60,7 @@ export function FAQSection() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <AnimatedSection animation="fade-in-up" className="text-center mb-12 lg:mb-16">
+      <Reveal className="text-center mb-12 lg:mb-16">
         <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center mx-auto mb-6 shadow-clay">
           <MessageCircleQuestion className="w-5 h-5 text-[#6A3FC0]" />
         </div>
@@ -68,9 +68,9 @@ export function FAQSection() {
           Frequently asked questions
         </h2>
 
-      </AnimatedSection>
+      </Reveal>
 
-      <AnimatedSection animation="fade-in-up" delay={0.1}>
+      <Reveal delay={0.1}>
         <div className="card-app rounded-3xl p-2 sm:p-3 divide-y divide-primary/10">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -99,7 +99,7 @@ export function FAQSection() {
             );
           })}
         </div>
-      </AnimatedSection>
+      </Reveal>
     </section>
   );
 }

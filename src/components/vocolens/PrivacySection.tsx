@@ -1,5 +1,5 @@
 import { DeviceMobile as Smartphone, Eye, Lock, Database, Trash as Trash2, Shield } from '@phosphor-icons/react';
-import { AnimatedSection, AnimatedGrid } from './AnimatedSection';
+import { Reveal, RevealGroup, RevealItem } from './Reveal';
 import { Link } from '@tanstack/react-router';
 
 const features = [
@@ -41,7 +41,7 @@ export function PrivacySection() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#1a1230] via-[#1e1638] to-[#120d25]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <AnimatedSection animation="fade-in-up">
+        <Reveal>
           <div className="text-center mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6">
               <Shield className="w-4 h-4 text-primary-muted" />
@@ -54,15 +54,14 @@ export function PrivacySection() {
               Your thoughts stay on your device. Always private, always yours.
             </p>
           </div>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedGrid
+        <RevealGroup
+          delay={0.1}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14"
-          animation="fade-in-up"
-          staggerDelay={0.1}
         >
           {features.map(({ icon: Icon, title, description }) => (
-            <div
+            <RevealItem
               key={title}
               className="group bg-white/[0.06] hover:bg-white/[0.10] border border-white/10 hover:border-primary/40 rounded-2xl p-6 transition-all duration-300"
             >
@@ -71,11 +70,11 @@ export function PrivacySection() {
               </div>
               <h3 className="text-white font-bold mb-2 text-xl">{title}</h3>
               <p className="text-white/55 text-base leading-relaxed">{description}</p>
-            </div>
+            </RevealItem>
           ))}
-        </AnimatedGrid>
+        </RevealGroup>
 
-        <AnimatedSection animation="fade-in-up" delay={0.3}>
+        <Reveal delay={0.3}>
           <div className="border border-white/10 rounded-2xl px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/[0.04]">
             <p className="text-white/70 text-center sm:text-left text-base leading-relaxed">
               <span className="text-white font-semibold">"Your personal reflections belong to you."</span>
@@ -88,7 +87,7 @@ export function PrivacySection() {
               Read full policy
             </Link>
           </div>
-        </AnimatedSection>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal, RevealGroup, RevealItem } from './Reveal';
 import { Stack as Layers, Pulse as Activity, PencilSimple as Edit3, Brain, Sparkle as Sparkles, Microphone as Mic, Crosshair, ArrowsClockwise, HeartStraight, Lightning } from '@phosphor-icons/react';
 
 const whyItMatters = [
@@ -38,7 +38,7 @@ export function EmotionDetection() {
     <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20 overflow-hidden">
 
       {/* Header */}
-      <AnimatedSection animation="fade-in-up" className="text-center mb-12 lg:mb-16 max-w-4xl mx-auto">
+      <Reveal className="text-center mb-12 lg:mb-16 max-w-4xl mx-auto">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
           <Crosshair className="w-3.5 h-3.5" />
           AI + Your Corrections
@@ -49,94 +49,95 @@ export function EmotionDetection() {
         <p className="text-center text-text-secondary mb-8 max-w-2xl mx-auto text-base leading-relaxed">
           AI reveals what's beneath the surface — you decide what's true.
         </p>
-      </AnimatedSection>
+      </Reveal>
 
-      <AnimatedSection animation="fade-in-up" delay={0.1} className="mb-10 lg:mb-12">
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Step 1 */}
-          <div className="card-app rounded-3xl p-5 flex flex-col">
-            <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-              <Mic className="w-6 h-6" />
-            </div>
-            <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
-            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
-              <p className="italic text-text-secondary text-[15px] leading-6">
-                "I'm excited about the promotion, but terrified of failing."
-              </p>
-              <div className="h-1.5 rounded-full bg-primary/15 overflow-hidden mt-5" aria-hidden="true">
-                <div className="h-full w-[70%] rounded-full bg-primary" />
-              </div>
-              <p className="text-xs text-text-muted mt-3 leading-relaxed">
-                Record for at least 50s for accurate emotional insights
-              </p>
-            </div>
+      <RevealGroup
+        delay={0.1}
+        className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12"
+      >
+        {/* Step 1 */}
+        <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
+          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
+            <Mic className="w-6 h-6" />
           </div>
-
-          {/* Step 2 */}
-          <div className="card-app rounded-3xl p-5 flex flex-col">
-            <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-              <Brain className="w-6 h-6" />
+          <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
+          <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
+            <p className="italic text-text-secondary text-[15px] leading-6">
+              "I'm excited about the promotion, but terrified of failing."
+            </p>
+            <div className="h-1.5 rounded-full bg-primary/15 overflow-hidden mt-5" aria-hidden="true">
+              <div className="h-full w-[70%] rounded-full bg-primary" />
             </div>
-            <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
-            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
-              <div className="space-y-4">
-                {detectedLayers.map(({ label, base, primary, fill, tone }) => (
-                  <div key={label}>
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <span className="text-[13px] font-semibold text-text-primary">{label}</span>
-                        {base && (
-                          <span className="block text-[9px] uppercase tracking-[0.05em] text-text-muted mt-0.5">
-                            {base}
-                          </span>
-                        )}
-                      </div>
-                      {primary && (
-                        <span className="text-[9px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/15 rounded-full px-2 py-0.5">
-                          Primary
+            <p className="text-xs text-text-muted mt-3 leading-relaxed">
+              Record for at least 50s for accurate emotional insights
+            </p>
+          </div>
+        </RevealItem>
+
+        {/* Step 2 */}
+        <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
+          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
+            <Brain className="w-6 h-6" />
+          </div>
+          <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
+          <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
+            <div className="space-y-4">
+              {detectedLayers.map(({ label, base, primary, fill, tone }) => (
+                <div key={label}>
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <span className="text-[13px] font-semibold text-text-primary">{label}</span>
+                      {base && (
+                        <span className="block text-[9px] uppercase tracking-[0.05em] text-text-muted mt-0.5">
+                          {base}
                         </span>
                       )}
                     </div>
-                    <div className="mt-2.5 h-1.5 rounded-full bg-primary/12">
-                      <div className={`h-full ${fill} rounded-full bg-primary ${tone}`} />
-                    </div>
+                    {primary && (
+                      <span className="text-[9px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/15 rounded-full px-2 py-0.5">
+                        Primary
+                      </span>
+                    )}
                   </div>
-                ))}
-              </div>
+                  <div className="mt-2.5 h-1.5 rounded-full bg-primary/12">
+                    <div className={`h-full ${fill} rounded-full bg-primary ${tone}`} />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+        </RevealItem>
 
-          {/* Step 3 */}
-          <div className="card-app rounded-3xl p-5 flex flex-col">
-            <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
-            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
-                  You selected
+        {/* Step 3 */}
+        <RevealItem className="card-app rounded-3xl p-5 flex flex-col">
+          <div className="w-14 h-14 rounded-full chip-app text-[#6A3FC0] flex items-center justify-center mb-5 shadow-clay">
+            <Sparkles className="w-6 h-6" />
+          </div>
+          <h4 className="font-bold text-xl mb-5">3. You Define the Truth</h4>
+          <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 flex-1 flex flex-col justify-center">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2.5">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
+                You selected
+              </span>
+              <h5 className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</h5>
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">
+                <ArrowsClockwise className="w-3 h-3" />
+                Adjusted
+              </span>
+              {correctionReasons.map((reason) => (
+                <span
+                  key={reason}
+                  className="px-3 py-1.5 rounded-full bg-white border border-primary/15 text-[13px] font-medium text-text-secondary"
+                >
+                  {reason}
                 </span>
-                <h5 className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</h5>
-                <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">
-                  <ArrowsClockwise className="w-3 h-3" />
-                  Adjusted
-                </span>
-                {correctionReasons.map((reason) => (
-                  <span
-                    key={reason}
-                    className="px-3 py-1.5 rounded-full bg-white border border-primary/15 text-[13px] font-medium text-text-secondary"
-                  >
-                    {reason}
-                  </span>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </RevealItem>
+      </RevealGroup>
 
-      <AnimatedSection animation="fade-in-up" delay={0.15} className="mb-12 lg:mb-16">
+      <Reveal delay={0.15} className="mb-12 lg:mb-16">
         <div className="mb-6">
           <h3 className="text-xl font-bold">Fine-tune if needed</h3>
           <p className="text-sm text-text-muted mt-1.5">Adjust how it felt</p>
@@ -171,9 +172,9 @@ export function EmotionDetection() {
             </div>
           ))}
         </div>
-      </AnimatedSection>
+      </Reveal>
 
-      <AnimatedSection animation="fade-in-up" delay={0.2}>
+      <Reveal delay={0.2}>
         <div className="card-app rounded-3xl p-6 sm:p-8 lg:p-10">
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
             <div className="lg:col-span-3">
@@ -204,7 +205,7 @@ export function EmotionDetection() {
             </div>
           </div>
         </div>
-      </AnimatedSection>
+      </Reveal>
 
     </section>
   );

@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
 import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
-import { AnimatedSection } from '@/components/vocolens/AnimatedSection';
 import { Reveal, RevealGroup, RevealItem } from '@/components/vocolens/Reveal';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
@@ -49,7 +48,7 @@ function Home() {
     <div className="min-h-screen bg-surface">
       <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
-          <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
+          <div className="lg:pl-[11%]">
             {/* Hero entrance orchestration (Motion house system): title →
               sub → chips → demo, one calm cascade on load. */}
             <motion.div
@@ -109,9 +108,9 @@ function Home() {
                 <span className="text-sm text-text-primary font-semibold whitespace-nowrap">Granular emotion mapping</span>
               </div>
             </motion.div>
-          </AnimatedSection>
+          </div>
 
-          <AnimatedSection animation="fade-in-right" delay={0.2} className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
+          <div className="flex flex-col items-center justify-center lg:justify-start lg:-ml-4">
             <motion.div
               variants={fadeRight}
               initial="hidden"
@@ -120,7 +119,7 @@ function Home() {
             >
               <AppDemo />
             </motion.div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
@@ -260,9 +259,7 @@ function Home() {
         </RevealGroup>
       </section>
 
-      <Reveal>
-        <EmotionDetection />
-      </Reveal>
+      <EmotionDetection />
 
       <section id="features-preview" className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
@@ -313,9 +310,7 @@ function Home() {
         </Reveal>
       </section>
 
-      <Reveal>
-        <EmotionScienceSuite />
-      </Reveal>
+      <EmotionScienceSuite />
 
       <section id="download" className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
         <Reveal className="card-app rounded-3xl p-8 lg:p-12 text-center">
@@ -336,13 +331,9 @@ function Home() {
         </Reveal>
       </section>
 
-      <Reveal>
-        <FAQSection />
-      </Reveal>
+      <FAQSection />
 
-      <Reveal>
-        <PrivacySection />
-      </Reveal>
+      <PrivacySection />
     </div>
   );
 }

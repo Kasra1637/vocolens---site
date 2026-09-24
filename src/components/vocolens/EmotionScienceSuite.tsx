@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AnimatedSection } from './AnimatedSection';
+import { Reveal } from './Reveal';
 import { Smiley as Smile, SmileySad as Frown, Flame, Shield, Sparkle as Sparkles, Warning as AlertTriangle, Handshake, Compass, Pulse as Activity, Heartbeat as HeartPulse, Brain, ArrowCounterClockwise as History, Smiley, Bone, Butterfly, Hand, HandsClapping, Footprints, Heartbeat } from '@phosphor-icons/react';
 
 const plutchikEmotions = [
@@ -120,7 +120,7 @@ export function EmotionScienceSuite() {
       itemScope
       itemType="https://schema.org/SoftwareApplication"
     >
-      <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+      <Reveal className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
         <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
           <Brain className="w-3.5 h-3.5" />
           Scientific Foundation
@@ -131,10 +131,10 @@ export function EmotionScienceSuite() {
         <p className="text-text-secondary text-base leading-relaxed" itemProp="description">
           See exactly what you&apos;re feeling. 8 emotions, valence, distress, body mapping. AI that adapts to you — your journal stays on your device, behind your biometrics.
         </p>
-      </AnimatedSection>
+      </Reveal>
 
       {/* 8 Plutchik emotions — interactive explorer */}
-      <AnimatedSection animation="fade-in-up" delay={0.05} className="mb-10">
+      <Reveal delay={0.05} className="mb-10">
         <div className="card-app rounded-3xl p-6 sm:p-8">
           <div className="mb-6">
             <p className="font-semibold uppercase tracking-widest text-primary/70 mb-1 text-sm">8 Plutchik emotions, scored</p>
@@ -146,7 +146,7 @@ export function EmotionScienceSuite() {
 
           <PlutchikExplorer />
         </div>
-      </AnimatedSection>
+      </Reveal>
 
       {/* Grid Layout */}
       <div className="grid lg:grid-cols-5 gap-5 mb-10">
@@ -154,7 +154,7 @@ export function EmotionScienceSuite() {
         {/* Left column: Valence & Arousal + Distress Detection */}
         <div className="lg:col-span-3 flex flex-col gap-5">
           {/* Valence & Arousal */}
-          <AnimatedSection animation="fade-in-up" delay={0.1}>
+                    <Reveal delay={0.1}>
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Brain className="w-4 h-4 text-primary" />
@@ -197,10 +197,10 @@ export function EmotionScienceSuite() {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
 
           {/* Distress Detection */}
-          <AnimatedSection animation="fade-in-up" delay={0.2}>
+          <Reveal delay={0.2}>
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <HeartPulse className="w-4 h-4 text-primary" />
@@ -222,13 +222,13 @@ export function EmotionScienceSuite() {
                 ))}
               </ul>
             </div>
-          </AnimatedSection>
+          </Reveal>
         </div>
 
         {/* Right column: Body Mapping + Personalization AI */}
         <div className="lg:col-span-2 flex flex-col gap-5">
           {/* Body Mapping */}
-          <AnimatedSection animation="fade-in-up" delay={0.15}>
+          <Reveal delay={0.15}>
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Activity className="w-4 h-4 text-primary" />
@@ -252,10 +252,10 @@ export function EmotionScienceSuite() {
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
 
           {/* Personalization AI */}
-          <AnimatedSection animation="fade-in-up" delay={0.25}>
+          <Reveal delay={0.25}>
             <div className="card-app rounded-3xl p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-primary" />
@@ -304,7 +304,7 @@ export function EmotionScienceSuite() {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
         </div>
       </div>
 
