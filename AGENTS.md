@@ -69,13 +69,18 @@ Cloudflare Workers. Production: https://vocolens.com.
   (`bg-clip-text`), no `animate-*` keyframe classes, no `hover:scale-*` on
   cards, no `hover-lift`.
 - **One scoped exception to the no-keyframes rule:** `.btn-app-float`
-  (`src/styles.css`) gives the 9 blog store CTAs a 4px / 3.2s vertical bob,
-  frozen in place on hover/focus. It is deliberately the site's only looping
-  animation — do not spread it to other CTAs or components. Two details are
-  load-bearing: the keyframe animates `transform`, not `translate`, so it
-  composes with Tailwind's `hover:-translate-y-0.5` instead of overriding
-  the lift; and it uses `animation-play-state: paused` rather than
-  `animation: none`, which would snap the button to the 0% keyframe.
+  (`src/styles.css`) gives the 4px / 3.2s vertical bob to the 12 store CTAs
+  labelled **"Get it on Google Play"** (9 blog articles + homepage,
+  `/features`, `/use-cases`), frozen in place on hover/focus. It is
+  deliberately the site's only looping animation. Apply it by **label**, not
+  by `btn-app-glow`: "Get the App" (fixed header — a bob there is a
+  permanent on-screen distraction), "Explore all 13 features", "Explore
+  deeper", "Share with therapist", the Listen/Pause transport and the 404
+  CTAs are all excluded. Two details are load-bearing: the keyframe animates
+  `transform`, not `translate`, so it composes with Tailwind's
+  `hover:-translate-y-0.5` instead of overriding the lift; and it uses
+  `animation-play-state: paused` rather than `animation: none`, which would
+  snap the button to the 0% keyframe.
 
 ## Motion
 
