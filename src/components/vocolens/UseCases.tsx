@@ -283,8 +283,8 @@ export function UseCases() {
             Talk it out. See your patterns.
           </h2>
           <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-[547px] mx-auto">
-            Talk for 60 seconds. Spot the patterns you're missing. Private, neurodivergent-first.
-            Try it Free on Google Play.
+            Talk for 60 seconds and spot the patterns you are missing. Built neurodivergent-first,
+            private.
           </p>
           <a
             href={GOOGLE_PLAY_URL}

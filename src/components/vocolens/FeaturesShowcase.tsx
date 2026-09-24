@@ -1106,8 +1106,8 @@ export function FeaturesShowcase() {
               Understand yourself, one conversation at a time.
             </h2>
             <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-[547px] mx-auto">
-              Talk for 60 seconds. Spot the patterns you&apos;re missing. Free to try — private by
-              design.
+              Talk for 60 seconds and spot the patterns you are missing. Private by design, on your
+              device.
             </p>
             <a
               href={GOOGLE_PLAY_URL}
