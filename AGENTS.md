@@ -55,7 +55,11 @@ Cloudflare Workers. Production: https://vocolens.com.
 - **Spacing ramp:** sections are `py-12 sm:py-16 lg:py-20` (→ 96 / 128 / 160px
   between sections). Hero-style tops stay `pt-24 sm:pt-32 lg:pt-40` to clear the
   fixed header. Header → content is `mb-12 lg:mb-16`. Full-bleed dark panel
-  (privacy) sits one notch above at `py-16 sm:py-20 lg:py-24`.
+  (privacy) sits one notch above at `py-16 sm:py-20 lg:py-24`. One deliberate
+  exception: the homepage download section (`#download`) runs
+  `pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20` so it sits closer to
+  EmotionScienceSuite above it (80 / 104 / 128px) — don't restore the full
+  ramp there.
 - **Nested panel:** `bg-primary/[0.04] border border-primary/15 rounded-2xl
   p-5`. Micro-labels: `text-[10px] font-semibold uppercase tracking-[0.08em]`,
   `rounded-full`, `bg-primary/8`, `border border-primary/15`.

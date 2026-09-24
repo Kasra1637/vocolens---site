@@ -330,7 +330,7 @@ function Home() {
           </p>
         </Reveal>
 
-        <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-3xl mx-auto">
           {[
             { icon: CalendarDays, label: "Journal calendar", desc: "Presence, not streaks." },
             { icon: BookOpenText, label: "Weekly reflection", desc: "Your week as a story." },
@@ -365,7 +365,10 @@ function Home() {
 
       <EmotionScienceSuite />
 
-      <section id="download" className="max-w-3xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+      <section
+        id="download"
+        className="max-w-3xl mx-auto px-6 pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20"
+      >
         <Reveal className="card-app rounded-3xl p-8 lg:p-12 text-center">
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
