@@ -15,7 +15,7 @@ const faqData = [
   },
   {
     question: 'How does body-sensation mapping in voice journaling work?',
-    answer: 'Body-sensation mapping means tagging where an emotion or stress response lives in your body as you voice journal — chest, stomach, throat, shoulders, hands, etc. Over days and weeks, these tags form a personal map showing which situations produce which physical responses. The map reveals patterns your mind might rationalize away, giving you an honest feedback loop for catching distress early.',
+    answer: 'Body-sensation mapping means tagging where an emotion or stress response lives in your body as you voice journal — chest, stomach, throat, shoulders, hands, etc. Over days and weeks, these tags form a personal frequency map showing how often each region is tagged. The map reveals patterns your mind might rationalize away, giving you an honest feedback loop for catching distress early.',
   },
   {
     question: 'Can you train your body awareness to detect stress earlier?',
@@ -61,7 +61,7 @@ export function DistressDetection() {
             "@type": "Article",
             "headline": "How Your Body Tells You Are Overwhelmed Before Your Mind Does",
             "description": "Your body registers distress seconds before your conscious mind catches up. Learn the neuroscience of interoception, body-based early warning signs, and how voice journaling with body-sensation mapping helps you catch overwhelm before it escalates.",
-            "image": "https://vocolens.com/vocolens_-_preview.png",
+            "image": "https://vocolens.com/vocolens-logo.png",
             "datePublished": "2026-06-11",
             "dateModified": "2026-06-11",
             "author": {
@@ -370,6 +370,7 @@ export function DistressDetection() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

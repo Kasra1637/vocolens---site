@@ -35,7 +35,7 @@ export function OverthinkingRumination() {
     "headline": "The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps",
     "alternativeHeadline": "Why You Can't Stop Overthinking: The Neuroscience of Rumination and How to Break the Loop",
     "description": "Overthinking isn't a willpower problem — it's what happens when your brain treats a thought as unfinished business. Learn the neuroscience of rumination, why \"just stop thinking about it\" backfires, and how voice journaling gives your brain the completion signal it's been missing.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-07-14",
     "dateModified": "2026-07-14",
     "author": {
@@ -438,6 +438,7 @@ export function OverthinkingRumination() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

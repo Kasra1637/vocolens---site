@@ -31,7 +31,7 @@ export function BurnoutRecovery() {
     "headline": "Burnout Doesn't Start in Your Job — It Starts in Your Nervous System",
     "alternativeHeadline": "Signs of Burnout and How to Recover: The Science of Allostatic Load and Emotional Exhaustion",
     "description": "Burnout isn't a single bad week — it's an unlogged accumulation of small stressors your nervous system never got to close out. Learn the science of allostatic load, why willpower and vacations don't fix it, and how a daily voice-journaled load check catches burnout before it becomes collapse.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-08-04",
     "dateModified": "2026-08-04",
     "author": {
@@ -416,6 +416,7 @@ export function BurnoutRecovery() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

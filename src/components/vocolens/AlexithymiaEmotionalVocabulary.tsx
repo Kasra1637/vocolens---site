@@ -35,7 +35,7 @@ export function AlexithymiaEmotionalVocabulary() {
     "headline": "Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught",
     "alternativeHeadline": "Alexithymia and Emotional Vocabulary: How AI Voice Journaling Creates Words for Feelings You Cannot Name",
     "description": "Around 10% of people struggle to identify and describe their own emotions — a trait called alexithymia. Learn the neuroscience of emotional blindness, why traditional journaling fails, and how AI-assisted voice journaling creates a personal emotional vocabulary from scratch.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-06-28",
     "dateModified": "2026-07-14",
     "author": {
@@ -269,7 +269,7 @@ export function AlexithymiaEmotionalVocabulary() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
-                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, that's not anxiety, that's excitement." The AI is nudged away from the rejected label and toward the one you picked.</span>
+                <span><strong className="text-text-primary font-semibold">Correct</strong> — "No, that's not fear, that's surprise." The AI is nudged away from the rejected label and toward the one you picked.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
@@ -296,10 +296,10 @@ export function AlexithymiaEmotionalVocabulary() {
               For a lot of people with alexithymia, the body becomes the real entry point into emotional understanding — not the mind. Instead of asking "what am I feeling?" and getting silence back, try asking: "where in my body do I notice something?" That question almost never comes up empty.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              This is exactly what Vocolens' body map is built for — a 9-region diagram you tap to mark where a sensation is showing up, paired with 16 physical descriptors like chest tightness, racing heart, heavy limbs, tingling, heat, and pressure. When emotion words won't come, this gives you a language you already have access to.
+              This is exactly what Vocolens' body map is built for — an 8-region diagram you tap to mark where a sensation is showing up, paired with 16 physical descriptors like chest tightness, racing heart, heavy limbs, tingling, heat, and pressure. When emotion words won't come, this gives you a language you already have access to.
             </p>
             <p>
-              Keep doing this, and patterns start surfacing on their own. Maybe you notice: <em>"Chest tightness plus shallow breathing shows up in 80% of the entries the AI later labels as apprehension."</em> That connection doesn't arrive through studying flashcards — it arrives through your own lived, embodied data, entry by entry, until your body has effectively taught your mind what it's been feeling all along.
+              Keep doing this, and patterns start surfacing on their own. Maybe you notice: <em>chest tightness plus shallow breathing shows up on the days that feel heaviest</em> — a connection you spotted yourself, entry by entry, until your body has effectively taught your mind what it's been feeling all along.
             </p>
             <a
               href="/resources/distress-detection"
@@ -322,13 +322,13 @@ export function AlexithymiaEmotionalVocabulary() {
               Psychologist Lisa Feldman Barrett has spent years studying something called <strong className="text-text-primary font-semibold">emotional granularity</strong> — the ability to tell closely related emotions apart instead of lumping them together. Her research keeps landing on the same conclusion: people who can distinguish "frustrated" from "disappointed" from "overwhelmed" tend to make better decisions, regulate themselves more skillfully, and carry less chronic distress. Not because they feel less. Because they know exactly what they're responding to.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Getting there tends to follow a fairly predictable arc. At the start, everything negative just collapses into "bad" or "stressed" — one bucket for every hard feeling. With enough AI-assisted labeling, though, distinctions start to emerge: <em>this is frustration</em>, not anger. <em>This is disappointment</em>, not sadness. <em>This is decision fatigue</em>, not laziness — which, honestly, might be the most useful reframe of all.
+              Getting there tends to follow a fairly predictable arc. At the start, everything negative just collapses into "bad" or "stressed" — one bucket for every hard feeling. With enough AI-assisted labeling, though, distinctions start to emerge: <em>this is frustration</em>, not anger. <em>This is disappointment</em>, not sadness. <em>This is apprehension</em>, not fear — which, honestly, might be the most useful reframe of all.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Vocolens leans on Plutchik's Wheel of Emotions to speed this along, scoring 8 primary emotions across three intensity tiers. So instead of a flat "I feel fear," you start to notice the difference between <strong className="text-text-primary font-semibold">apprehension</strong> (fear, low), <strong className="text-text-primary font-semibold">fear</strong> (moderate), and <strong className="text-text-primary font-semibold">terror</strong> (high) — and because the correction system keeps adjusting to you, those distinctions end up reflecting your actual life, not a definition out of a textbook.
             </p>
             <p>
-              Every correction is a tiny lesson in emotional literacy, and they add up. Over months, the AI gets better at reading you — and, almost as a side effect, you get better at reading yourself. Ask yourself: what would change if "decision fatigue" and "laziness" stopped feeling like the same thing? That's the kind of shift this builds, one small correction at a time, grounded in your real emotional life rather than a study you've never read.
+              Every correction is a tiny lesson in emotional literacy, and they add up. Over months, the AI gets better at reading you — and, almost as a side effect, you get better at reading yourself. Ask yourself: what would change if "apprehension" and "fear" stopped feeling like the same thing? That's the kind of shift this builds, one small correction at a time, grounded in your real emotional life rather than a study you've never read.
             </p>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: the goal isn't more vocabulary for its own sake — it's precision. The more specific the word, the more specific (and useful) your response can be.
@@ -439,6 +439,7 @@ export function AlexithymiaEmotionalVocabulary() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
       </div>

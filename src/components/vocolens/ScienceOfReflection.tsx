@@ -34,7 +34,7 @@ export function ScienceOfReflection() {
     "headline": "How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience",
     "alternativeHeadline": "The Neuroscience of Affect Labeling: Why Voice Journaling Calms Your Brain",
     "description": "Neuroscience research by Lieberman (2007) proves that labeling emotions (affect labeling) reduces amygdala activity and calms the nervous system. Discover how daily voice journaling with Vocolens uses this science to reduce anxiety and build lasting emotional resilience.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-02-28",
     "dateModified": "2026-03-30",
     "author": {
@@ -385,6 +385,7 @@ export function ScienceOfReflection() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

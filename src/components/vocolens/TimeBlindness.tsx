@@ -35,7 +35,7 @@ export function TimeBlindness() {
     "headline": "Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock",
     "alternativeHeadline": "ADHD Time Blindness Explained: The Neuroscience of Time Perception and What Actually Helps",
     "description": "ADHD time blindness isn't laziness or poor planning — it's a measurable difference in how the brain tracks duration. Learn the neuroscience of interval timing, why alarms and willpower don't fix it, and how a daily voice-logged time-anchor habit gives your brain the external clock it's missing.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-09-09",
     "dateModified": "2026-09-09",
     "author": {
@@ -420,6 +420,7 @@ export function TimeBlindness() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

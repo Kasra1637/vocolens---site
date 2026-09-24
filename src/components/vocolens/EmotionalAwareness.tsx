@@ -61,7 +61,7 @@ export function EmotionalAwareness() {
             "@type": "Article",
             "headline": "Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding",
             "description": "Discover how metacognitive awareness and pattern recognition through daily voice journaling rewire your brain for emotional intelligence. Research-backed insights on how Vocolens helps you identify emotional triggers, behavioral patterns, and accelerate personal growth.",
-            "image": "https://vocolens.com/vocolens_-_preview.png",
+            "image": "https://vocolens.com/vocolens-logo.png",
             "datePublished": "2026-03-30",
             "dateModified": "2026-03-30",
             "author": {
@@ -388,6 +388,7 @@ export function EmotionalAwareness() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 

@@ -35,7 +35,7 @@ export function AutismEmotionalRegulation() {
     "headline": "Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions",
     "alternativeHeadline": "Why Emotional Regulation Is Different for Autistic Adults — And What Actually Helps",
     "description": "Autistic adults face unique emotional regulation challenges including alexithymia, sensory overload, and meltdown cycles. Discover how voice journaling builds emotional vocabulary, tracks overwhelm patterns, and provides a safe space to process without social pressure.",
-    "image": "https://vocolens.com/vocolens_-_preview.png",
+    "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-06-29",
     "dateModified": "2026-06-29",
     "author": {
@@ -290,7 +290,7 @@ export function AutismEmotionalRegulation() {
               Daily voice journaling builds a personal early warning system. Over weeks, you start recognizing the precursors: "When I notice jaw tension and irritability by mid-afternoon, a meltdown is likely by evening if I don't reduce my load." "When I've had three consecutive days of heavy masking, I need a recovery day or I'll shut down." These aren't abstract insights — they're actionable rules that prevent crisis.
             </p>
             <p>
-              The body-sensation mapping in Vocolens makes this concrete. By tagging where stress lives in your body during each entry, you create a personalized distress map that reveals your unique warning signals — the ones that precede overwhelm by minutes or hours rather than seconds.
+              The body-sensation mapping in Vocolens makes this concrete. By tagging where stress shows up in your body during each entry, you build a personal frequency map of your most-tagged regions — concrete data to set alongside the trigger patterns Vocolens surfaces over 7, 14, and 30 days.
             </p>
           </section>
         </div>
@@ -403,6 +403,7 @@ export function AutismEmotionalRegulation() {
                 Back to Resources
               </Link>
             </div>
+            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 
