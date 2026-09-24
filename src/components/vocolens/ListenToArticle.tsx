@@ -48,10 +48,11 @@ function articleBlocks(): HTMLElement[] {
  * - chapter-only timeline: taps/drags resolve to section starts with a
  *   small lead-in so playback opens on the H2/H3 headline; display (ticks,
  *   highlight, hover, chapters) always uses the mapped times directly
- * - chapter-list taps SELECT and never start audio: they move the playhead
- *   to that chapter's header and highlight the row, so browsing chapters
- *   stays silent; pressing Listen then plays just that chapter. The
- *   timeline track, prev/next buttons and keys still jump and play
+ * - the Listen button is the ONLY control that starts audio. Every other
+ *   navigation gesture (chapter row, timeline tap/drag, prev/next, keys)
+ *   selects a chapter: the playhead moves to that chapter's header and the
+ *   row lights up, but playback stays as it was. Pressing Listen afterwards
+ *   plays just the selected chapter
  *   (seeks are verified across frames against element desync; the
  *   chapter-bound auto-pause is suppressed briefly after each jump so a
  *   stale timeupdate can't pause instead of moving)
@@ -303,36 +304,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
     requestAnimationFrame(repair);
   }, [duration]);
 
-  const seekAndPlay = useCallback((t: number, idx: number | null = null) => {
-    seek(t, idx, true);
-    play();
-  }, [seek, play]);
-
-  // Every chapter selection jumps to that chapter and plays it, whether
-  // the audio is playing or paused. While playing the element keeps
-  // playing from the new header; while paused this seeks and starts it.
-  // (The bound suppress guard above keeps backward jumps from tripping
-  // the previous chapter's auto-pause on a stale timeupdate.)
-  const jumpToChapter = useCallback(
-    (target: number) => {
-      setBoundFor(target);
-      armBoundSuppress();
-      const el = audioRef.current;
-      if (el && !el.paused) {
-        seek(headerStart(target), target, false);
-      } else {
-        seekAndPlay(headerStart(target), target);
-      }
-    },
-    [seek, seekAndPlay, headerStart, setBoundFor, armBoundSuppress],
-  );
-
-  // Chapters, timeline taps, transport buttons, and keys all jump-and-play.
-  const playChapter = jumpToChapter;
-
-  // Chapter-list taps select only: the playhead moves and the row lights up,
-  // but playback is never started, so reading the list stays silent. The
-  // chapter bound is still set, so pressing Listen plays just that chapter.
+  // Every chapter selection — list row, timeline tap/drag, prev/next, or
+  // keyboard — selects only: the playhead moves to that chapter's header
+  // and the row lights up, but playback is never started. The Listen button
+  // is the only control that starts audio. The chapter bound is still set,
+  // so pressing Listen plays just the selected chapter.
+  // (The bound suppress guard above keeps backward jumps from tripping the
+  // previous chapter's auto-pause on a stale timeupdate.)
   const selectChapter = useCallback(
     (target: number) => {
       setBoundFor(target);
@@ -343,27 +321,20 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [seek, headerStart, setBoundFor, armBoundSuppress],
   );
 
-  const goToSection = useCallback(
-    (target: number) => {
-      playChapter(target);
-    },
-    [playChapter],
-  );
-
   const prevSection = useCallback(() => {
     if (sections.length === 0) return;
     const idx = sectionAt(sections, currentTime);
     const intoSection = currentTime - sections[idx].startSec;
     const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
-    goToSection(target);
-  }, [sections, currentTime, goToSection]);
+    selectChapter(target);
+  }, [sections, currentTime, selectChapter]);
 
   const nextSection = useCallback(() => {
     if (sections.length === 0) return;
     const idx = sectionAt(sections, currentTime);
     const target = Math.min(sections.length - 1, idx + 1);
-    goToSection(target);
-  }, [sections, currentTime, goToSection]);
+    selectChapter(target);
+  }, [sections, currentTime, selectChapter]);
 
   const getTimeFromPointer = useCallback((clientX: number): number | null => {
     const track = trackRef.current;
@@ -401,7 +372,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
         const estimate = Math.min(Math.floor(ratio * sections.length), sections.length - 1);
         setArmedIdx(estimate);
         snappedIdxRef.current = estimate;
-        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: true };
+        pendingRef.current = { kind: "ratio", r: ratio, shouldPlay: false };
         armBoundSuppress();
         try {
           if (audioRef.current?.networkState === 0) audioRef.current?.load();
@@ -414,10 +385,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
       setArmedIdx(idx);
       if (idx !== snappedIdxRef.current) {
         snappedIdxRef.current = idx;
-        jumpToChapter(idx);
+        selectChapter(idx);
       }
     },
-    [ratioFromPointer, duration, sections, jumpToChapter],
+    [ratioFromPointer, duration, sections, selectChapter],
   );
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -472,11 +443,11 @@ export function ListenToArticle({ slug }: { slug: string }) {
       nextSection();
     } else if (e.key === "Home") {
       e.preventDefault();
-      if (sections.length > 0) goToSection(0);
+      if (sections.length > 0) selectChapter(0);
     } else if (e.key === "End") {
       e.preventDefault();
       if (sections.length > 0) {
-        goToSection(sections.length - 1);
+        selectChapter(sections.length - 1);
       }
     }
   };
@@ -509,7 +480,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
             {duration > 0 ? ` · ${formatClock(duration)}` : ""}
           </p>
         </div>
-        <div className="flex items-center gap-1 flex-shrink-0" role="group" aria-label="Narration section controls">
+        <div className="flex items-center gap-2 flex-shrink-0" role="group" aria-label="Narration section controls">
           <button
             type="button"
             onClick={prevSection}
