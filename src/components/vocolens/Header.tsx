@@ -180,7 +180,7 @@ export function Header() {
             style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
           >
             <Link to="/" className="flex items-center gap-3 group">
-              <img src="/vocolens-logo.png" alt="Vocolens AI voice journal logo" className="h-9 w-auto" />
+              <img src="/vocolens-logo.png" alt="Vocolens AI voice journal logo" className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" />
             </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

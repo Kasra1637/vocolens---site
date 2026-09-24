@@ -5,23 +5,23 @@ import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@ph
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Your journal lives on your device â€” entries stay local, no cloud account, locked behind biometrics or PIN. Two brief encrypted requests turn speech into insight: transcription plus emotion analysis of your words and tone. Audio is deleted after processing; export or wipe everything in Settings.",
+    a: "Your journal lives on your device: entries stay local, no cloud account, locked behind biometrics or PIN. Two brief encrypted requests turn speech into insight: transcription plus emotion analysis of your words and tone. Audio is deleted after processing; export or wipe everything in Settings.",
   },
   {
     q: "How does the AI actually know what I'm feeling?",
-    a: "Vocolens reads what you said â€” words, phrasing, and story â€” plus vocal tone from audio when available. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: the app learns which labels fit you and biases later analysis your way.",
+    a: "Vocolens reads your words, phrasing, and story, plus vocal tone from audio when available. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: the app learns which labels fit you and biases later analysis your way.",
   },
   {
     q: "What makes Vocolens different from other journaling apps?",
-    a: "Most apps make you write. Vocolens lets you speak: AI reads emotion from your words and vocal tone, learns from every correction, and tracks patterns across entries â€” streaks, triggers, weekly reflections. It is built for minds that think faster than they can type.",
+    a: "Most apps make you write. Vocolens lets you speak: AI reads emotion from your words and vocal tone, learns from every correction, and tracks patterns across entries such as streaks, triggers, and weekly reflections. It is built for minds that think faster than they can type.",
   },
   {
     q: "What happens if the AI gets my emotion wrong?",
-    a: "Open any entry and correct the emotion to what you actually felt. Each correction is saved and tunes your personal analysis, so future results lean toward your labels over time. Corrections stay on your device and shape only your results â€” never anyone else’s.",
+    a: "Open any entry and correct the emotion to what you actually felt. Each correction is saved and tunes your personal analysis, so future results lean toward your labels over time. Corrections stay on your device and shape only your results, never anyone else’s.",
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a journaling and self-awareness tool â€” not therapy or a medical device. It watches for strain: entries scoring moderate or high distress show a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
+    a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It watches for strain: entries scoring moderate or high distress show a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
   },
 ];
 
