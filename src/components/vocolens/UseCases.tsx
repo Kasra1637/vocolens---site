@@ -325,7 +325,7 @@ function ConditionSection({ condition }: { condition: Condition }) {
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Challenges this addresses
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:flex-wrap sm:items-center">
             {condition.challenges.map((challenge) => (
               <span
                 key={challenge}
