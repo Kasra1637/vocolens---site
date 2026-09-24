@@ -1106,8 +1106,8 @@ export function FeaturesShowcase() {
               Understand yourself, one conversation at a time.
             </h2>
             <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-[547px] mx-auto">
-              Thirteen features, one habit: 60 seconds a day, free to try, and the pattern shows
-              itself.
+              13 features, one simple habit: 60 seconds a day. Free to try &amp; built to help
+              surface your emotional patterns.
             </p>
             <a
               href={GOOGLE_PLAY_URL}
