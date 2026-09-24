@@ -330,7 +330,7 @@ function Home() {
           </p>
         </Reveal>
 
-        <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-3xl mx-auto">
+        <RevealGroup className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {[
             {
               icon: CalendarDays,
