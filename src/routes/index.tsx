@@ -335,7 +335,7 @@ function Home() {
             {
               icon: CalendarDays,
               label: "Journal calendar",
-              desc: "Dots mark every day you spoke.",
+              desc: "See every day you showed up.",
             },
             { icon: BookOpenText, label: "Weekly reflection", desc: "Your week as a story." },
             { icon: BarChart3, label: "Mood story", desc: "One emotion per day." },
