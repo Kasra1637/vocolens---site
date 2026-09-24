@@ -100,7 +100,7 @@ export function Header() {
             style={{ width: `${progress * 100}%`, transition: "width 150ms linear" }}
           />
         )}
-        <div className="pointer-events-auto w-full" style={{ maxWidth: "min(92%, 1100px)" }}>
+        <div className="pointer-events-auto w-full" style={{ maxWidth: "min(92%, 1200px)" }}>
           {/* Desktop */}
           <div
             className="hidden md:flex items-center justify-between bg-white rounded-3xl px-8 py-4"
