@@ -86,7 +86,6 @@ export function Header() {
           {/* Desktop */}
           <div
             className="hidden md:flex items-center justify-between bg-white rounded-[28px] px-8 py-4"
-            style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
           >
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
               <img
@@ -177,7 +176,6 @@ export function Header() {
           {/* Mobile */}
           <div
             className="flex md:hidden items-center justify-between bg-white rounded-[20px] px-4 py-3"
-            style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
           >
             <Link to="/" className="flex items-center gap-3 group">
               <img src="/vocolens-logo.png" alt="Vocolens AI voice journal logo" className="h-9 w-auto transition-transform duration-300 group-hover:scale-105" />
