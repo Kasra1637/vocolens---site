@@ -48,7 +48,6 @@ function Home() {
   return (
     <div className="min-h-screen bg-surface">
       <section id="home" className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full blur-3xl pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(147,112,219,0.22) 0%, transparent 70%)' }} aria-hidden="true" />
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0 items-center relative">
           <AnimatedSection animation="fade-in-left" className="lg:pl-[11%]">
             {/* Hero entrance orchestration (Motion house system): title →
