@@ -365,7 +365,7 @@ export function ScienceOfReflection() {
 
         <div>
           <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
-            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Name it to ease it
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed">
