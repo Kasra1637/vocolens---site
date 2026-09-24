@@ -8,7 +8,6 @@ import {
   Play,
   SkipBack,
   SkipForward,
-  SpeakerHigh as Volume2,
 } from "@phosphor-icons/react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
@@ -345,9 +344,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     >
       <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
       <div className="flex flex-wrap items-center gap-3">
-        <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
-          <Volume2 className="w-5 h-5 text-[#6A3FC0]" />
-        </div>
         <div className="min-w-0 flex-1 basis-32">
           <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
           <p className="text-xs text-text-muted mt-0.5">
