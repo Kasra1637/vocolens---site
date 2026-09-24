@@ -367,7 +367,7 @@ export function ScienceOfReflection() {
               Name it to ease it
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto">
-              Naming your emotions reduces stress. Vocolens turns naming into a habit.
+              Turn your thoughts into clarity, calm, and patterns you can make sense of.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
