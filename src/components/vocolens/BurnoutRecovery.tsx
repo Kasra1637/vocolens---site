@@ -141,12 +141,6 @@ export function BurnoutRecovery() {
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5" itemProp="articleSection">
                 Stress &amp; Burnout Recovery
               </span>
-              <span className="flex items-center gap-1 text-sm text-text-muted mt-0.5">
-                <Clock className="w-3 h-3" aria-hidden="true" />
-                <span>7 min read</span>
-                <span aria-hidden="true" className="mx-1">·</span>
-                <time dateTime="2026-08-04" itemProp="datePublished">Aug 4, 2026</time>
-              </span>
             </div>
           </div>
           <h1
@@ -160,6 +154,12 @@ export function BurnoutRecovery() {
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
+            <span className="flex items-center gap-1">
+              <Clock className="w-3 h-3" aria-hidden="true" />
+              <span>7 min read</span>
+              <span aria-hidden="true" className="mx-1">·</span>
+              <time dateTime="2026-08-04" itemProp="datePublished">Aug 4, 2026</time>
+            </span>
           </div>
         </div>
       </div>
