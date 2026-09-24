@@ -283,8 +283,8 @@ export function UseCases() {
             Talk it out. See your patterns.
           </h2>
           <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-[547px] mx-auto">
-            If your thoughts outrun your typing, this was built for you. Start with 60 seconds, free
-            to try.
+            If your thoughts outrun your typing, this was built for you. Start with your 60-second
+            voice entries, free to try.
           </p>
           <a
             href={GOOGLE_PLAY_URL}
