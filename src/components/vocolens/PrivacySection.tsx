@@ -26,7 +26,7 @@ const features = [
     icon: Shield,
     title: "Encrypted in transit",
     description:
-      "Audio and transcripts travel over encrypted HTTPS for transcription and analysis. Neither our backend nor vendors keep them.",
+      "Audio travels encrypted to Deepgram for transcription; the transcript travels encrypted to the analysis model. Neither our backend nor vendors keep them.",
   },
   {
     icon: Eye,
