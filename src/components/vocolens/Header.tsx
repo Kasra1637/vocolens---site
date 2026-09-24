@@ -101,7 +101,7 @@ export function Header() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+                  className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-primary/[0.04] relative group"
                 >
                   {link.label}
                   <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -110,7 +110,7 @@ export function Header() {
 
               <Link
                 to="/features"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+                className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-primary/[0.04] relative group"
               >
                 Features
                 <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -118,7 +118,7 @@ export function Header() {
 
               <Link
                 to="/use-cases"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+                className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-primary/[0.04] relative group"
               >
                 Use Cases
                 <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -133,7 +133,7 @@ export function Header() {
               >
                 <Link
                   to="/resources"
-                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-gray-50 relative group"
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-all duration-200 hover:opacity-100 opacity-80 rounded-xl hover:bg-primary/[0.04] relative group"
                 >
                   Resources
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
@@ -157,7 +157,7 @@ export function Header() {
                         <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors">
                           <Icon className="w-4 h-4 text-primary" />
                         </div>
-                        <p className="font-semibold text-gray-700 group-hover/item:text-primary transition-colors text-base leading-relaxed">{label}</p>
+                        <p className="font-semibold text-text-primary group-hover/item:text-primary transition-colors text-base leading-relaxed">{label}</p>
                       </Link>
                     ))}
                   </div>
@@ -184,7 +184,7 @@ export function Header() {
             </Link>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 -mr-1 text-gray-500 hover:text-gray-900 transition-colors rounded-xl hover:bg-gray-50"
+              className="p-2 -mr-1 text-text-secondary hover:text-text-primary transition-colors rounded-xl hover:bg-primary/[0.04]"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -206,7 +206,7 @@ export function Header() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                  className="w-full text-left px-4 py-3 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-primary/[0.04] rounded-xl transition-colors"
                 >
                   {link.label}
                 </button>
@@ -214,21 +214,21 @@ export function Header() {
               <Link
                 to="/features"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-primary/[0.04] rounded-xl transition-colors"
               >
                 Features
               </Link>
               <Link
                 to="/use-cases"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-primary/[0.04] rounded-xl transition-colors"
               >
                 Use Cases
               </Link>
               <Link
                 to="/resources"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-colors"
+                  className="block w-full text-left px-4 py-3 text-sm font-medium text-text-secondary hover:text-text-primary hover:bg-primary/[0.04] rounded-xl transition-colors"
               >
                 Resources
               </Link>
@@ -237,7 +237,7 @@ export function Header() {
                   key={to}
                   to={to}
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full text-left flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-primary hover:bg-primary/5 rounded-xl transition-colors ml-2"
+                  className="w-full text-left flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-text-muted hover:text-primary hover:bg-primary/[0.04] rounded-xl transition-colors ml-2"
                 >
                   <Icon className="w-4 h-4 flex-shrink-0" />
                   {label}
