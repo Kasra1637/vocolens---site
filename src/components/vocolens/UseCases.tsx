@@ -282,7 +282,7 @@ export function UseCases() {
           >
             Talk it out. See your patterns.
           </h2>
-          <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-xl mx-auto">
             Talk for 60 seconds. Spot the patterns you're missing. Private, neurodivergent-first.
             Try it Free on Google Play.
           </p>

@@ -368,7 +368,7 @@ export function ScienceOfReflection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Name it to ease it
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-xl mx-auto">
               Naming your emotions reduces stress. Vocolens turns naming into a habit.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

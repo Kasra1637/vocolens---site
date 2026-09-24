@@ -419,7 +419,7 @@ export function OverthinkingRumination() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Break the loop
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-xl mx-auto">
               The 2am argument ends when you say it out loud. Vocolens names it.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

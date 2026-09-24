@@ -401,7 +401,7 @@ export function TimeBlindness() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               See time clearly
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-xl mx-auto">
               Felt like ten minutes? Was ninety. Vocolens shows the gap your clock can&#x27;t.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
