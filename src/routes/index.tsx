@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { fadeLeft, fadeRight, fadeUp } from "@/lib/motion";
 import { SmileySad as Frown, ChatsCircle as MessageSquare, Lightbulb, CalendarBlank as CalendarDays, BookOpenText, ChartBar as BarChart3, Pulse as Activity, CaretRight, Lock, Clock, Sparkle, Crosshair } from '@phosphor-icons/react';
 import { AnimatedSection, AnimatedGrid } from '@/components/vocolens/AnimatedSection';
+import { Reveal } from '@/components/vocolens/Reveal';
 import { AppDemo } from '@/components/vocolens/AppDemo';
 import { EmotionDetection } from '@/components/vocolens/EmotionDetection';
 import { EmotionScienceSuite } from '@/components/vocolens/EmotionScienceSuite';
@@ -125,15 +126,14 @@ function Home() {
       </section>
 
       <section id="testimonials" className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-        <AnimatedSection animation="fade-in-up">
+        <Reveal>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12" style={{ color: '#1e293b' }}>
             Real stories, real impact
           </h2>
-        </AnimatedSection>
-        <AnimatedGrid
+        </Reveal>
+        <Reveal
           className="grid md:grid-cols-3 gap-8"
-          animation="fade-in-up"
-          staggerDelay={0.15}
+          delay={0.1}
         >
           <div className="card-app rounded-3xl p-8 h-full flex flex-col">
             <div className="flex gap-1 mb-4">
@@ -194,11 +194,11 @@ function Home() {
               </p>
             </div>
           </div>
-        </AnimatedGrid>
+        </Reveal>
       </section>
 
       <section id="story" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <AnimatedSection animation="scale-in">
+        <Reveal>
           <div className="flex items-center justify-center mb-4">
             <div className="rounded-full p-1.5 chip-app shadow-clay hover-scale">
               <img
@@ -214,11 +214,10 @@ function Home() {
           <p className="text-text-secondary text-center max-w-2xl mx-auto mb-16 text-base leading-relaxed">
             Turning racing thoughts into clear, effortless expression.
           </p>
-        </AnimatedSection>
-        <AnimatedGrid
+        </Reveal>
+        <Reveal
           className="grid md:grid-cols-3 gap-8"
-          animation="fade-in-up"
-          staggerDelay={0.15}
+          delay={0.1}
         >
           <div className="card-app rounded-[28px] p-8">
             <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
@@ -255,19 +254,21 @@ function Home() {
               </div>
               <div className="min-w-0">
                 <h3 className="font-bold mb-2 text-xl">The breakthrough</h3>
-                <p className="text-text-secondary text-base leading-relaxed">
-                  So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
-                </p>
-              </div>
+              <p className="text-text-secondary text-base leading-relaxed">
+                So I built this app. Now I just talk, and my thoughts are captured instantly. No barriers between mind and app. Finally, freedom to be authentically me.
+              </p>
             </div>
           </div>
-        </AnimatedGrid>
+        </div>
+        </Reveal>
       </section>
 
-      <EmotionDetection />
+      <Reveal>
+        <EmotionDetection />
+      </Reveal>
 
       <section id="features-preview" className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-        <AnimatedSection animation="fade-in-up" className="text-center max-w-3xl mx-auto mb-12">
+        <Reveal className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" aria-hidden="true" />
             Inside Vocolens
@@ -278,9 +279,12 @@ function Home() {
           <p className="text-text-secondary text-base leading-relaxed">
             Every screen has one job — turn your voice into clarity.
           </p>
-        </AnimatedSection>
+        </Reveal>
 
-        <AnimatedGrid className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto" animation="fade-in-up" staggerDelay={0.08}>
+        <Reveal
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 max-w-2xl mx-auto"
+          delay={0.1}
+        >
           {[
             { icon: CalendarDays, label: 'Journal calendar', desc: 'Presence, not streaks.' },
             { icon: BookOpenText, label: 'Weekly reflection', desc: 'Your week as a story.' },
@@ -295,9 +299,9 @@ function Home() {
               <p className="text-sm text-text-secondary leading-relaxed">{desc}</p>
             </div>
           ))}
-        </AnimatedGrid>
+        </Reveal>
 
-        <AnimatedSection animation="fade-in-up" className="text-center">
+        <Reveal className="text-center">
           <Link
             to="/features"
             className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full whitespace-nowrap text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300"
@@ -311,13 +315,15 @@ function Home() {
               See Vocolens for ADHD, autism &amp; alexithymia
             </Link>
           </p>
-        </AnimatedSection>
+        </Reveal>
       </section>
 
-      <EmotionScienceSuite />
+      <Reveal>
+        <EmotionScienceSuite />
+      </Reveal>
 
       <section id="download" className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
-        <AnimatedSection animation="fade-in-up" className="card-app rounded-3xl p-8 lg:p-12 text-center">
+        <Reveal className="card-app rounded-3xl p-8 lg:p-12 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#1e293b' }}>
             Understand yourself, one conversation at a time.
           </h2>
@@ -332,12 +338,16 @@ function Home() {
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
           </a>
-        </AnimatedSection>
+        </Reveal>
       </section>
 
-      <FAQSection />
+      <Reveal>
+        <FAQSection />
+      </Reveal>
 
-      <PrivacySection />
+      <Reveal>
+        <PrivacySection />
+      </Reveal>
     </div>
   );
 }
