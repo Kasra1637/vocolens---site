@@ -144,6 +144,8 @@ export function EmotionDetection() {
                 You selected
               </span>
               <p className="text-lg font-bold text-[#6A3FC0]">"Cautiously Optimistic"</p>
+            </div>
+            <div className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-2">
               <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#6A3FC0] bg-primary/8 border border-primary/20 rounded-full px-2 py-0.5">
                 <ArrowsClockwise className="w-3 h-3" />
                 Adjusted
