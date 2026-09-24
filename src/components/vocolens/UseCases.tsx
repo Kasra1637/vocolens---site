@@ -31,7 +31,11 @@ interface Condition {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
- * Data — every feature is 100% implemented in the app codebase
+ * Data — every benefit below is verified against the app source, and phrased
+ * to what the app actually does. Watch the known gaps: the body heatmap is a
+ * frequency count per region (no region-to-emotion link), the body map and
+ * triggers each carry their own 7/14/30 windows, and the real-time
+ * transcription path is disabled by design (text lands when you stop talking).
  * ────────────────────────────────────────────────────────────────────────────── */
 
 const conditions: Condition[] = [
@@ -53,32 +57,32 @@ const conditions: Condition[] = [
       {
         feature: "Voice-first input",
         benefit:
-          "No blank page, no writing paralysis. Just speak — capture thoughts at the speed they arrive. Real-time transcription turns speech into text instantly.",
+          "No blank page. Speak through your racing thoughts, then read them back as text the moment you stop talking.",
       },
       {
         feature: "AI emotion detection",
         benefit:
-          "The AI analyzes the words and language in what you say to identify emotions you might not recognize in the moment — labeling them so you don't have to.",
+          "You get a name for what you felt, read from your own words, so you never hunt for the label yourself.",
       },
       {
         feature: "Self-correction that tunes later reads",
         benefit:
-          "Tell the AI \"that's not anxiety — that's excitement for me.\" The correction is stored and weighted into later analysis, with your most recent corrections counting most.",
+          "Correct a label that lands wrong and it is remembered. Repeat it, and later entries lean your way instead.",
       },
       {
         feature: "Body heatmap with time tracking",
         benefit:
-          "See where tension and stress show up in your body across 7-day, 14-day, or 30-day windows. The heatmap aggregates every session to reveal physical patterns.",
+          "Tap where you feel it, and over 7, 14, or 30 days the map shows which spots you reach for most often.",
       },
       {
         feature: "Presence-based milestones",
         benefit:
-          "21 badges reward showing up — streaks from 3 days to 100, entry counts, Early Bird, Night Owl, and more.",
+          "21 badges mark every milestone: 3-day to 100-day streaks, entry counts, Early Bird and Night Owl, and more.",
       },
       {
         feature: "Pattern detection",
         benefit:
-          "The app tracks topic-emotion correlations, mood cycles, and time-of-day patterns across your entries — surfacing triggers you can't self-monitor in real time.",
+          "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to compare.",
       },
     ],
     quote:
@@ -103,32 +107,32 @@ const conditions: Condition[] = [
       {
         feature: "AI names emotions from your speech",
         benefit:
-          "Speak freely about your day — the AI analyzes your transcript to identify emotions without you needing to label them yourself.",
+          "Speak about your day in whatever words you happen to have. The AI finds the emotion and offers it to you.",
       },
       {
         feature: "Body region tap-map (8 zones)",
         benefit:
-          "Can't name the feeling? Tap where you feel it — head, face, neck, chest, stomach, arms, hands, or legs. The app connects physical regions to emotional patterns over time.",
+          "Tap where you feel it across 8 areas of the body. Over time you see which spots you reach for most often.",
       },
       {
         feature: "Self-correction that personalises later reads",
         benefit:
-          "Each correction shifts which labels the AI leans toward next time. A pattern needs 3 corrections across 2 weeks, and your most recent ones carry extra weight.",
+          "Fix a label once and it is remembered. Repeating a correction, especially recently, shapes later reads.",
       },
       {
         feature: "Valence-arousal sliders",
         benefit:
-          "Skip emotion labels entirely. Just indicate pleasant/unpleasant (-100 to +100) and calm/activated (0 to 100) on simple sliders. No vocabulary needed.",
+          "Skip the emotion grid if the words will not come. Two sliders: pleasant or unpleasant, calm or activated.",
       },
       {
         feature: "Plutchik emotion vocabulary with definitions",
         benefit:
-          "Eight core emotions, each with plain-language definitions, body signals, and examples. Long-press any emotion to learn what it means — building vocabulary at your own pace.",
+          "Long-press any of the 8 emotions to read its Plutchik definition and example, written in plain language.",
       },
       {
         feature: "Longitudinal body heatmap",
         benefit:
-          "As you journal, the heatmap aggregates body-tap data across 7, 14, or 30 days — revealing which zones consistently light up with certain emotions.",
+          "The heatmap counts how often each region was tagged, so your 7, 14, or 30 day view shows your real pattern.",
       },
     ],
     quote:
@@ -153,32 +157,32 @@ const conditions: Condition[] = [
       {
         feature: "Private, local-first space",
         benefit:
-          "No audience, no social rules, no masking. Your journal is stored on your device behind a biometric lock — no cloud account, no synced backup, nothing shared. Speak authentically without performing for anyone.",
+          "Your journal stays on your device, with an optional Face ID or PIN lock. No account, no server sync.",
       },
       {
         feature: "Self-correction that adjusts to YOUR labels",
         benefit:
-          "Autistic emotions don't always match neurotypical labels. Correct the AI and later analyses lean toward the labels you chose.",
+          "Correct a label that does not fit autistic experience, and later entries lean toward the words you chose.",
       },
       {
         feature: "Predictable, structured reflection",
         benefit:
-          "Multi-step reflection follows a fixed sequence: emotion selection, valence-arousal sliders, body scan. Same order every time. No surprises.",
+          "Every entry takes the same path: review the AI read, adjust the two dials, then note where it landed.",
       },
       {
         feature: "Skip anything, anytime",
         benefit:
-          "Every step is optional — skip individual steps or turn off reflection entirely. Three modes (full, quick, off) respect fluctuating capacity.",
+          "Every step has a skip button, and three modes let you choose full reflection, quick, or save immediately.",
       },
       {
         feature: "Valence-arousal over emotion labels",
         benefit:
-          "Don't relate to standard emotion names? Simply indicate pleasant/unpleasant and calm/activated on numeric sliders. The system works without forcing neurotypical vocabulary.",
+          "Prefer sliders to names? Skip the emotion grid and use Unpleasant to Pleasant, then Calm to Activated.",
       },
       {
         feature: "Shareable reports for clinicians",
         benefit:
-          "Build a styled report with mood trends, top emotions, body patterns, and triggers, then share it with a therapist or doctor.",
+          "Build a styled report of mood trends, top emotions, body patterns and triggers to share with your care team.",
       },
     ],
     quote:
