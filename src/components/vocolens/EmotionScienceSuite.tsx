@@ -104,7 +104,7 @@ function PlutchikExplorer() {
               }`}
             >
               <span
-                className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+                className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
                 aria-hidden="true"
               >
                 <Icon className="w-5 h-5 text-[#6A3FC0]" weight={isActive ? "fill" : "regular"} />
@@ -126,7 +126,7 @@ function PlutchikExplorer() {
       >
         <div className="flex items-center gap-3 mb-1">
           <span
-            className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+            className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
             aria-hidden="true"
           >
             <ActiveIcon className="w-5 h-5 text-[#6A3FC0]" weight="fill" />
@@ -387,8 +387,8 @@ export function EmotionScienceSuite() {
                     key={region.name}
                     className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-primary/8 border border-primary/15 text-primary text-sm font-semibold hover:bg-primary/12 transition-colors"
                   >
-                    <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center">
-                      <region.Icon className="w-4 h-4 text-[#6A3FC0]" weight="bold" />
+                    <span className="w-7 h-7 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+                      <region.Icon className="w-3.5 h-3.5 text-[#6A3FC0]" weight="bold" />
                     </span>
                     {region.name}
                   </span>
@@ -419,7 +419,7 @@ export function EmotionScienceSuite() {
                 <div className="rounded-2xl p-4 border border-primary/15 bg-primary/[0.04]">
                   <div className="flex items-center gap-3 mb-2">
                     <span
-                      className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0"
+                      className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
                       aria-hidden="true"
                     >
                       <span className="font-bold text-base text-[#6A3FC0] tabular-nums">
