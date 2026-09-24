@@ -1,6 +1,5 @@
 import {
   Brain,
-  Clock,
   Target as Radar,
   Pulse as Activity,
   PuzzlePiece as Puzzle,
@@ -102,9 +101,6 @@ export function Resources() {
                     >
                       Neuroscience &amp; Emotional Intelligence
                     </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />7 min read
-                    </span>
                   </div>
                   <h2
                     itemProp="headline"
@@ -167,9 +163,6 @@ export function Resources() {
                       itemProp="articleSection"
                     >
                       ADHD &amp; Time Perception
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />7 min read
                     </span>
                   </div>
                   <h2
@@ -234,9 +227,6 @@ export function Resources() {
                     >
                       Stress &amp; Burnout Recovery
                     </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />7 min read
-                    </span>
                   </div>
                   <h2
                     itemProp="headline"
@@ -298,9 +288,6 @@ export function Resources() {
                       itemProp="articleSection"
                     >
                       Anxiety &amp; Mental Wellness
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />7 min read
                     </span>
                   </div>
                   <h2
@@ -367,9 +354,6 @@ export function Resources() {
                       itemProp="articleSection"
                     >
                       Autism &amp; Neurodivergent Wellness
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />7 min read
                     </span>
                   </div>
                   <h2
@@ -438,9 +422,6 @@ export function Resources() {
                     >
                       Neuroscience &amp; Emotional Intelligence
                     </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />6 min read
-                    </span>
                   </div>
                   <h2
                     itemProp="headline"
@@ -504,9 +485,6 @@ export function Resources() {
                       itemProp="articleSection"
                     >
                       Body Awareness &amp; Distress Detection
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />6 min read
                     </span>
                   </div>
                   <h2
@@ -574,9 +552,6 @@ export function Resources() {
                     >
                       Mental Wellness &amp; Self-Discovery
                     </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />6 min read
-                    </span>
                   </div>
                   <h2
                     itemProp="headline"
@@ -639,9 +614,6 @@ export function Resources() {
                       itemProp="articleSection"
                     >
                       Neuroscience &amp; Mental Wellness
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-text-muted">
-                      <Clock className="w-3 h-3" />5 min read
                     </span>
                   </div>
                   <h2
