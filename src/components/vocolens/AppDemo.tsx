@@ -1,15 +1,18 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { RecordingScreen } from './demo/RecordingScreen';
 import { JournalScreen } from './demo/JournalScreen';
 import { InsightsScreen } from './demo/InsightsScreen';
+
+const SCREEN_DURATION = 3500;
 
 // Live-coded recreations of the app's current screens (Record, Entries,
 // Insights — see src/app/(tabs)/*.tsx and entry-detail.tsx in the mobile
 // app repo), styled with the Midnight Glow theme. Replaces the old static
 // screenshots, which were out of date with the shipped app UI.
 //
-// Standing decision: no autoplay motion on site. The demo shows the first
-// screen statically; visitors switch screens manually via the dots below.
+// Rotation-only demo motion: auto-advances every 3.5s, pauses on hover,
+// manually switchable via the dots. No ambient loops (float/glow/pulse
+// stay removed by the motion-freeze decision).
 const screens = [
   { Component: RecordingScreen, alt: 'Record tab with the voice recording button' },
   { Component: JournalScreen, alt: 'Journal entry with AI emotion breakdown' },
@@ -18,14 +21,27 @@ const screens = [
 
 export function AppDemo() {
   const [activeScreen, setActiveScreen] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const goToScreen = useCallback((index: number) => {
     setActiveScreen(index);
   }, []);
 
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setActiveScreen((prev) => (prev + 1) % 3);
+    }, SCREEN_DURATION);
+    return () => clearInterval(timer);
+  }, [isPaused, activeScreen]);
+
   return (
     <div className="flex flex-col items-center isolate mt-8">
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="demo-phone-frame">
           <div className="demo-phone-screen">
             <div className="demo-phone-notch" />

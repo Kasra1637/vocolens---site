@@ -24,8 +24,8 @@ export function Reveal({
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-10% 0px" }}
-      custom={delay}
+      viewport={{ once: true, margin: "-20% 0px", amount: 0.3 }}
+      custom={0.15 + delay}
     >
       {children}
     </motion.div>
