@@ -380,7 +380,7 @@ function Home() {
           >
             Understand yourself, one conversation at a time.
           </h2>
-          <p className="text-text-secondary text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-text-secondary text-lg mb-8 max-w-[547px] mx-auto">
             Speak instead of typing — Vocolens turns your voice into mood insights and emotional
             clarity. Free to try on Google Play.
           </p>

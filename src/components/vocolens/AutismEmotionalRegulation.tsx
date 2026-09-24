@@ -384,7 +384,7 @@ export function AutismEmotionalRegulation() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Regulate on your terms
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-xl mx-auto">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto">
               No masking. Speak freely and process emotions the way your brain works.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

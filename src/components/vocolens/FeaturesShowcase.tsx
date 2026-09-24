@@ -1105,7 +1105,7 @@ export function FeaturesShowcase() {
             >
               Understand yourself, one conversation at a time.
             </h2>
-            <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="text-text-secondary text-base leading-relaxed mb-8 max-w-[547px] mx-auto">
               Talk for 60 seconds. Spot the patterns you&apos;re missing. Free to try — private by
               design.
             </p>

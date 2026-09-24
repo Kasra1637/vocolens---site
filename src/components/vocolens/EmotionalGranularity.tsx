@@ -397,7 +397,7 @@ export function EmotionalGranularity() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
               Find the exact word
             </h2>
-            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-xl mx-auto">
+            <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto">
               Specific words change what you feel. Vocolens sharpens your vocabulary.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
