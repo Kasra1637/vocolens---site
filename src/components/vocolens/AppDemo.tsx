@@ -57,7 +57,6 @@ export function AppDemo() {
             ))}
           </div>
         </div>
-        <div className="absolute -inset-12 rounded-full blur-3xl -z-10 pointer-events-none bg-[rgba(167,139,250,0.12)]" />
       </div>
 
       <div className="card-app rounded-full px-2 py-1.5 flex gap-1.5 mt-6" role="tablist" aria-label="Demo screens">

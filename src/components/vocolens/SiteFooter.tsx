@@ -8,8 +8,6 @@ import { Link } from "@tanstack/react-router";
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-surface via-primary/[0.03] to-primary/[0.08]" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl opacity-50" />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-8">
         <div className="text-center mb-16">
