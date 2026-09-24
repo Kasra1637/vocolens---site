@@ -392,34 +392,33 @@ export function EmotionalGranularity() {
           </div>
         </div>
 
-      </div>
-<div>
-        <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Find the exact word
-          </h2>
-          <p className="text-text-secondary mb-5 text-base leading-relaxed">
-            Specific words change what you feel. Vocolens sharpens your vocabulary.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href={GOOGLE_PLAY_URL}
-              {...STORE_LINK_ATTRS}
-              className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
-            >
-              Get it on Google Play
-              <CaretRight className="w-4 h-4" aria-hidden="true" />
-            </a>
-            <Link
-              to="/resources"
-              className="inline-flex items-center text-primary font-semibold hover:underline"
-            >
-              Back to Resources
-            </Link>
+        <div>
+          <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
+              Find the exact word
+            </h2>
+            <p className="text-text-secondary mb-5 text-base leading-relaxed">
+              Specific words change what you feel. Vocolens sharpens your vocabulary.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href={GOOGLE_PLAY_URL}
+                {...STORE_LINK_ATTRS}
+                className="inline-flex items-center gap-3 bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-6 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-xl font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
+              >
+                Get it on Google Play
+                <CaretRight className="w-4 h-4" aria-hidden="true" />
+              </a>
+              <Link
+                to="/resources"
+                className="inline-flex items-center text-primary font-semibold hover:underline"
+              >
+                Back to Resources
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-
     </article>
   );
 }

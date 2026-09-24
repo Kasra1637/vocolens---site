@@ -132,3 +132,9 @@ Cloudflare Workers. Production: https://vocolens.com.
 - When piping UTF-8 files through PowerShell in a tool call, the console can
   mangle em-dashes into `?` — re-read with a UTF-8 reader before reporting
   encoding corruption. It has already produced one false alarm.
+- **Balanced JSX is not correct JSX.** A stray `</div>` once closed the
+  `space-y-*` body container early in one article, orphaning its store CTA
+  outside the rhythm container (the card lost its section gap and rendered
+  flush against the previous block) while every gate stayed green. After any
+  structural edit, diff the ancestor chain of the affected block against a
+  sibling file that is known-good, and check the block's depth is unchanged.
