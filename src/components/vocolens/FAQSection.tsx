@@ -5,7 +5,7 @@ import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from '@ph
 const faqs = [
   {
     q: "Is my voice and journal data private and secure?",
-    a: "Your journal lives on your device: entries stay local, no cloud account, locked behind biometrics or PIN. Two brief encrypted requests turn speech into insight: transcription plus emotion analysis of your words and tone. Audio is deleted after processing; export or wipe everything in Settings.",
+    a: "Entries stay local, no cloud account, locked behind biometrics or a PIN. Two brief encrypted requests turn speech into insight: transcription plus emotion analysis of your words and tone. Audio is deleted after processing; export or wipe everything in settings.",
   },
   {
     q: "How does the AI actually know what I'm feeling?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "What makes Vocolens different from other journaling apps?",
-    a: "Most apps make you write. Vocolens lets you speak: AI reads emotion from your words and vocal tone, learns from every correction, and tracks patterns across entries such as streaks, triggers, and weekly reflections. It is built for minds that think faster than they can type.",
+    a: "Most apps make you write. Vocolens lets you speak: AI reads emotion from your words and vocal tone, learns from every correction, and tracks patterns across entries, such as streaks, triggers, and weekly reflections. It's built for minds that think faster than they type.",
   },
   {
     q: "What happens if the AI gets my emotion wrong?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It watches for strain: entries scoring moderate or high distress show a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
+    a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It identifies signs of strain in your entries; those showing moderate or high distress display a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
   },
 ];
 
