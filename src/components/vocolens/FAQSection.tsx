@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Is this a replacement for therapy or mental health support?",
-    a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It identifies signs of strain in your entries; those showing moderate or high distress display a gentle note suggesting you pause and take a moment. For ongoing struggles, please contact a qualified professional or local support line.",
+    a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It identifies signs of strain in your entries; moderate or high distress displays a gentle note suggesting you pause and take a moment.",
   },
 ];
 

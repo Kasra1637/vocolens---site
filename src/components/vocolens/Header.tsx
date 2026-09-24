@@ -85,7 +85,7 @@ export function Header() {
         <div className="pointer-events-auto w-full" style={{ maxWidth: 'min(92%, 1100px)' }}>
           {/* Desktop */}
           <div
-            className="hidden md:flex items-center justify-between bg-white rounded-[28px] px-8 py-4"
+            className="hidden md:flex items-center justify-between bg-white rounded-3xl px-8 py-4"
             style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
           >
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
@@ -176,7 +176,7 @@ export function Header() {
 
           {/* Mobile */}
           <div
-            className="flex md:hidden items-center justify-between bg-white rounded-[20px] px-4 py-3"
+            className="flex md:hidden items-center justify-between bg-white rounded-3xl px-4 py-3"
             style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)' }}
           >
             <Link to="/" className="flex items-center gap-3 group">
