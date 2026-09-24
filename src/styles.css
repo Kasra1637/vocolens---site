@@ -223,6 +223,14 @@
   pointer-events: none;
 }
 .demo-screen-layer.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+/* Demo mic pulse — restored for the active demo screen only (rings render
+ * behind `isActive` in RecordingScreen, so they fade in after the screen
+ * crossfade with a natural delay). 3.2s period mirrors the app's sonar
+ * ripple; the delayed twin trails by 0.7s. */
+@keyframes demo-mic-pulse { 0% { transform: scale(1); opacity: 0.4;} 100% { transform: scale(2); opacity: 0;} }
+.demo-mic-pulse { animation: demo-mic-pulse 3.2s ease-out infinite; }
+.demo-mic-pulse-delayed { animation: demo-mic-pulse 3.2s ease-out infinite 0.7s; }
 /* Scrollable demo-screen content (hides the scrollbar for a clean mock look) */
 .demo-screen-scroll { scrollbar-width: none; -ms-overflow-style: none; }
 .demo-screen-scroll::-webkit-scrollbar { display: none; }
@@ -230,6 +238,9 @@
 /* Ambient loops removed with the motion freeze (mic pulse, glow breathe,
  * phone float lived here). Survivors use static styles set inline. */
 
-/* Reduced-motion kill-switch retained as a guard: with all decorative
- * keyframes removed above, OS-level reduced motion is the default
- * experience everywhere on site. */
+/* Reduced-motion kill-switch retained as a guard: with decorative motion
+ * removed site-wide, OS-level reduced motion is the default experience
+ * everywhere. The demo pulse and scroll reveals below also respect it. */
+@media (prefers-reduced-motion: reduce) {
+  .demo-mic-pulse, .demo-mic-pulse-delayed { animation: none; }
+}

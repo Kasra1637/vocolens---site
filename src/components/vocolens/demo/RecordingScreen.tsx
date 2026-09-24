@@ -33,6 +33,20 @@ export function RecordingScreen({ isActive }: Props) {
 
       <div className="flex-1 flex flex-col items-center justify-center -mt-2">
         <div className="relative flex items-center justify-center">
+          {/* Pulse rings — render only while this demo screen is active, so
+            they fade in after the screen crossfade with a natural delay. */}
+          {isActive && (
+            <>
+              <div
+                className="absolute rounded-full demo-mic-pulse"
+                style={{ width: 108, height: 108, border: '1.5px solid rgba(167,139,250,0.35)' }}
+              />
+              <div
+                className="absolute rounded-full demo-mic-pulse-delayed"
+                style={{ width: 108, height: 108, border: '1.5px solid rgba(167,139,250,0.35)' }}
+              />
+            </>
+          )}
           {/* Outer halo glow, matches Colors.buttonGlow */}
           <div
             className="absolute rounded-full"
