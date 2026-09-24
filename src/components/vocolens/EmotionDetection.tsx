@@ -59,7 +59,7 @@ export function EmotionDetection() {
               <Mic className="w-6 h-6" />
             </div>
             <h4 className="font-bold text-xl mb-5">1. You Speak Freely</h4>
-            <div className="bg-primary/10 border-[1.5px] border-primary/20 rounded-3xl p-5 mt-auto">
+            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 mt-auto">
               <p className="italic text-text-secondary text-[15px] leading-6">
                 "I'm excited about the promotion, but terrified of failing."
               </p>
@@ -78,7 +78,7 @@ export function EmotionDetection() {
               <Brain className="w-6 h-6" />
             </div>
             <h4 className="font-bold text-xl mb-5">2. AI Sees Layers</h4>
-            <div className="bg-primary/[0.04] rounded-3xl p-5 mt-auto">
+            <div className="bg-primary/[0.04] border border-primary/15 rounded-3xl p-5 mt-auto">
               <p className="text-[9px] font-semibold uppercase tracking-[0.06em] text-text-muted mb-4">
                 Top Emotions — Plutchik Intensity
               </p>
