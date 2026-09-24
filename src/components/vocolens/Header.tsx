@@ -152,7 +152,7 @@ export function Header() {
                         key={to}
                         to={to}
                         onClick={() => setResourcesOpen(false)}
-                        className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors group/item"
+                        className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/[0.04] transition-colors group/item"
                       >
                         <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover/item:bg-primary/20 transition-colors">
                           <Icon className="w-4 h-4 text-primary" />
