@@ -81,7 +81,7 @@ export function PrivacySection() {
                 <Icon className="w-5 h-5 text-primary-muted" />
               </div>
               <h3 className="text-white font-bold mb-2 text-xl text-center">{title}</h3>
-              <p className="text-white/55 text-base leading-relaxed text-left">{description}</p>
+              <p className="text-white/55 text-base leading-relaxed text-center">{description}</p>
             </RevealItem>
           ))}
         </RevealGroup>

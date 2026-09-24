@@ -343,7 +343,7 @@ function ConditionSection({ condition }: { condition: Condition }) {
                 <CheckCircle2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <p className="font-bold text-text-primary text-sm mb-1 text-center">{item.feature}</p>
-              <p className="text-text-secondary text-sm leading-relaxed text-left">
+              <p className="text-text-secondary text-sm leading-relaxed text-center">
                 {item.benefit}
               </p>
             </RevealItem>

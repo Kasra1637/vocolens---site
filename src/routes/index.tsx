@@ -271,7 +271,7 @@ function Home() {
               </div>
               <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">The problem</h3>
-                <p className="text-text-secondary text-base leading-relaxed">
+                <p className="text-text-secondary text-base leading-relaxed text-center">
                   Living with Tourette Syndrome & ADHD, my mind races. Traditional journaling felt
                   like catching lightning with a pencil—frustrating, slow, never truly me.
                 </p>
@@ -286,7 +286,7 @@ function Home() {
               </div>
               <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">Daily struggle</h3>
-                <p className="text-text-secondary text-base leading-relaxed">
+                <p className="text-text-secondary text-base leading-relaxed text-center">
                   Writing was a fight with myself. My thoughts raced while my hand cramped trying to
                   keep up. I needed something as fast as my mind.
                 </p>
@@ -301,7 +301,7 @@ function Home() {
               </div>
               <div className="min-w-0 w-full">
                 <h3 className="font-bold mb-2 text-xl text-center">The breakthrough</h3>
-                <p className="text-text-secondary text-base leading-relaxed">
+                <p className="text-text-secondary text-base leading-relaxed text-center">
                   So I built this app. Now I just talk, and my thoughts are captured instantly. No
                   barriers between mind and app. Finally, freedom to be authentically me.
                 </p>
