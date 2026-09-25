@@ -420,7 +420,6 @@ export function TimeBlindness() {
                 Back to Resources
               </Link>
             </div>
-            <p className="text-text-muted text-sm mt-4">3-day free trial, then $79.99/year. Cancel anytime.</p>
           </div>
         </div>
 
