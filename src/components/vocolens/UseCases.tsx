@@ -46,10 +46,10 @@ const conditions: Condition[] = [
     color: "#F59E0B",
     colorLight: "#FEF3C7",
     challenges: [
-      "Executive dysfunction makes starting feel impossible",
-      "Racing thoughts outpace writing speed",
-      "Emotional dysregulation hits without warning",
-      "Difficulty building consistent habits",
+      "You can’t start, so nothing gets done",
+      "Your thoughts outrun your hands",
+      "Emotions hit with no warning shot",
+      "Routines never survive real life",
     ],
     features: [
       {
@@ -93,10 +93,10 @@ const conditions: Condition[] = [
     color: "#8B5CF6",
     colorLight: "#EDE9FE",
     challenges: [
-      "Emotions register as vague physical sensations",
-      "Difficulty finding words for internal experiences",
-      "Disconnect between body signals and feeling labels",
-      'Frustration when asked "how do you feel?"',
+      "Feelings show up as vague body sensations",
+      "No words for what you’re feeling",
+      "Your body knows before you do",
+      "“How do you feel?” and the silence after",
     ],
     features: [
       {
@@ -140,10 +140,10 @@ const conditions: Condition[] = [
     color: "#10B981",
     colorLight: "#D1FAE5",
     challenges: [
-      "Masking exhaustion leaves nothing for self-processing",
-      "Interoception challenges make emotions invisible until meltdown",
-      "Overwhelm accumulates without clear warning signs",
-      "Social processing environments feel unsafe for vulnerability",
+      "Masking all day leaves nothing for you",
+      "You don’t feel it until it’s a meltdown",
+      "Overwhelm builds with no warning signs",
+      "Being vulnerable never feels safe",
     ],
     features: [
       {
