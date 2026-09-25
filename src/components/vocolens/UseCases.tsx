@@ -80,7 +80,7 @@ const conditions: Condition[] = [
       {
         feature: "See your own rhythms",
         benefit:
-          "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to spot.",
+          "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to see.",
       },
     ],
   },
