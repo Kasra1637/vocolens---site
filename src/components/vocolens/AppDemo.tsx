@@ -14,23 +14,24 @@ import { InsightsScreen } from "./demo/InsightsScreen";
 // processing with the transcribe/analyze text swap), then the reflection review
 // where the entry is actually stored, then the saved entry detail, then
 // Insights. Recording starts the instant the press ends, with no listening
-// pause; the recording itself is compressed to 7 demo seconds. Each press
-// occupies the tail of the state it acts on, so it bottoms out exactly as that
-// state changes. Auto-advances and loops forever; pauses on mouse hover,
-// manually switchable via the dots. No ambient loops.
+// pause; the recording itself is compressed to 7 demo seconds. The idle
+// "Speak your mind" screen holds 1.2s so it reads before anything happens.
+// Each press occupies the tail of the state it acts on, so it bottoms out
+// exactly as that state changes. Auto-advances and loops forever; pauses on
+// mouse hover, manually switchable via the dots. No ambient loops.
 const PRESS_MS = 350;
 const T = {
-  micTapStart: 700,
-  recordStart: 700 + PRESS_MS,
-  recordEnd: 8100,
-  saveTapStart: 8100 - PRESS_MS,
-  transcribeEnd: 10100,
-  analyzeEnd: 12100,
-  reflectSaveTapStart: 14000,
-  reflectSaveTapEnd: 14000 + PRESS_MS,
-  savingEnd: 16100,
-  journalEnd: 19600,
-  total: 23100,
+  micTapStart: 1200,
+  recordStart: 1200 + PRESS_MS,
+  recordEnd: 8600,
+  saveTapStart: 8600 - PRESS_MS,
+  transcribeEnd: 10600,
+  analyzeEnd: 12600,
+  reflectSaveTapStart: 14500,
+  reflectSaveTapEnd: 14500 + PRESS_MS,
+  savingEnd: 16600,
+  journalEnd: 20100,
+  total: 23600,
 } as const;
 
 const DOT_STARTS = [0, T.analyzeEnd, T.savingEnd, T.journalEnd];
