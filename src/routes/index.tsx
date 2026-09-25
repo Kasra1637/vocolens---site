@@ -392,9 +392,6 @@ function Home() {
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
           </a>
-          <p className="text-text-muted text-sm mt-4">
-            3-day free trial, then $79.99/year. Cancel anytime.
-          </p>
         </Reveal>
       </section>
 
