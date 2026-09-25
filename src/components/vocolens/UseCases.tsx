@@ -65,7 +65,7 @@ const conditions: Condition[] = [
       {
         feature: "Correct it once, it sticks",
         benefit:
-          "Correct a label that lands wrong and it is remembered. Repeat it, and later entries lean your way instead.",
+          "Correct a wrong label and it is remembered. Repeat it, and later entries lean toward your words.",
       },
       {
         feature: "See where you feel it",
@@ -127,7 +127,7 @@ const conditions: Condition[] = [
       {
         feature: "Your body map over time",
         benefit:
-          "The heatmap counts how often each region was tagged, so your 7, 14, or 30 day view shows your real pattern.",
+          "The heatmap counts how often each region was tagged, so your 7, 14, or 30 day view shows patterns.",
       },
     ],
   },
@@ -174,7 +174,7 @@ const conditions: Condition[] = [
       {
         feature: "A report for your care team",
         benefit:
-          "Build a styled report of mood trends, top emotions, body patterns and triggers to share with your care team.",
+          "Build a styled report of mood trends, top emotions, body patterns and triggers for your care team.",
       },
     ],
   },
@@ -287,9 +287,6 @@ export function UseCases() {
             Get it on Google Play
             <CaretRight className="w-6 h-6" />
           </a>
-          <p className="text-text-muted text-sm mt-4">
-            3-day free trial, then $79.99/year. Cancel anytime.
-          </p>
         </Reveal>
       </section>
     </div>
