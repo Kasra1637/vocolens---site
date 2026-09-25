@@ -242,7 +242,53 @@
 @keyframes demo-mic-pulse { 0% { transform: scale(1); opacity: 0.4;} 100% { transform: scale(2); opacity: 0;} }
 .demo-mic-pulse { animation: demo-mic-pulse 3.2s ease-out infinite; }
 .demo-mic-pulse-delayed { animation: demo-mic-pulse 3.2s ease-out infinite 0.7s; }
-/* Scrollable demo-screen content (hides the scrollbar for a clean mock look) */
+/* Demo finger tap — one-shot choreography, not an ambient loop. The fingertip
+ * descends onto the target, holds the press (target scales down + ripple
+ * expands), then lifts and fades. Re-triggered by remounting (React key).
+ * Follows the demo-mic-pulse precedent below for reduced motion. */
+.demo-finger-layer {
+  position: absolute; inset: 0; pointer-events: none; z-index: 30;
+}
+.demo-finger-tap {
+  position: absolute; left: 50%; top: 50%; opacity: 0;
+  animation: demo-finger-tap 1.1s var(--ease-soft) both;
+}
+@keyframes demo-finger-tap {
+  0% { opacity: 0; transform: translate(-50%, -150%); }
+  20% { opacity: 1; transform: translate(-50%, -150%); }
+  45% { opacity: 1; transform: translate(-50%, -88%) scale(0.96); }
+  62% { opacity: 1; transform: translate(-50%, -88%) scale(0.96); }
+  85% { opacity: 1; transform: translate(-50%, -150%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -150%) scale(1); }
+}
+.demo-tap-ripple {
+  position: absolute; left: 50%; top: 50%; border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.6); opacity: 0;
+  animation: demo-tap-ripple 0.7s ease-out 0.45s both;
+}
+@keyframes demo-tap-ripple {
+  0% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.4); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.45); }
+}
+/* Target press — applied to the tapped button for the press window only. */
+.demo-mic-press { animation: demo-mic-press 1.1s var(--ease-soft) both; }
+@keyframes demo-mic-press {
+  0%, 40% { transform: scale(1); }
+  50%, 62% { transform: scale(0.9); }
+  75%, 100% { transform: scale(1); }
+}
+/* Processing dots — state-driven (visible only while transcribing/analyzing),
+ * not ambient. Staggered via inline animation-delay. */
+.demo-proc-dot {
+  width: 10px; height: 10px; border-radius: 9999px; background: #ffffff;
+  animation: demo-proc-dot 0.9s ease-in-out infinite;
+}
+@keyframes demo-proc-dot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+/* Hover-pause freezes choreography mid-flight (timers already freeze). */
+.demo-paused .demo-phone-screen * { animation-play-state: paused !important; }
 .demo-screen-scroll { scrollbar-width: none; -ms-overflow-style: none; }
 .demo-screen-scroll::-webkit-scrollbar { display: none; }
 
@@ -254,5 +300,7 @@
  * demo pulse and scroll reveals respect it too. */
 @media (prefers-reduced-motion: reduce) {
   .demo-mic-pulse, .demo-mic-pulse-delayed { animation: none; }
+  .demo-finger-tap, .demo-tap-ripple, .demo-mic-press, .demo-proc-dot { animation: none; }
+  .demo-finger-layer { display: none; }
   .btn-app-float { animation: none; }
 }
