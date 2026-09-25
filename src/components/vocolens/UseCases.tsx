@@ -55,7 +55,7 @@ const conditions: Condition[] = [
       {
         feature: "Say it, don't type it",
         benefit:
-          "No blank page. Speak through your racing thoughts, then read them back as text the moment you stop talking.",
+          "No blank page. Speak through your racing thoughts, then read them back as text the moment you stop.",
       },
       {
         feature: "A name for what you felt",
@@ -75,12 +75,12 @@ const conditions: Condition[] = [
       {
         feature: "Badges that mark showing up",
         benefit:
-          "21 badges mark every milestone: 3-day to 100-day streaks, entry counts, Early Bird and Night Owl, and more.",
+          "21 badges mark every milestone: 3-day to 100-day streaks, entry counts, Early Bird and Night Owl.",
       },
       {
         feature: "See your own rhythms",
         benefit:
-          "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to compare.",
+          "Recurring topics, weekday moods and time-of-day rhythms appear once you have enough entries to spot.",
       },
     ],
   },
