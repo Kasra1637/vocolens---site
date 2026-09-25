@@ -225,7 +225,7 @@ export function UseCases() {
       </section>
 
       {/* How it works — 3 pillars */}
-      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-16 lg:py-20">
+      <section className="max-w-7xl mx-auto px-6 pt-8 sm:pt-10 lg:pt-12 pb-12 sm:pb-16 lg:pb-20">
         <RevealGroup className="grid md:grid-cols-3 gap-6">
           <RevealItem className="card-app rounded-3xl p-5 sm:p-8 text-center">
             <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-4 shadow-clay">
