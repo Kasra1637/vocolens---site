@@ -298,24 +298,17 @@ export function UseCases() {
  * ────────────────────────────────────────────────────────────────────────────── */
 
 function ConditionSection({ condition }: { condition: Condition }) {
-  const Icon = condition.icon;
-
   return (
     <Reveal delay={0.05}>
       <article id={condition.slug} className="scroll-mt-32">
-        {/* Header — emblem sits beside the name on sm+; stacked above it on phones */}
+        {/* Header */}
         <div className="mb-6">
-          <div className="flex flex-col items-center sm:flex-row sm:justify-center sm:gap-4">
-            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mb-4 sm:mb-0">
-              <Icon className="w-5 h-5 text-[#6A3FC0]" />
-            </div>
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center"
-              style={{ color: "#1e293b" }}
-            >
-              {condition.name}
-            </h2>
-          </div>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-center"
+            style={{ color: "#1e293b" }}
+          >
+            {condition.name}
+          </h2>
           <p className="text-text-secondary text-base mt-1 text-center">{condition.tagline}</p>
         </div>
 
