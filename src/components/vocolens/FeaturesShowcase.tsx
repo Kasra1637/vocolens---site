@@ -120,13 +120,13 @@ function CalendarVisual() {
 
 function WeeklyReflectionVisual() {
   const weekArc = [
-    { day: "M", mood: "Tense", level: 30 },
-    { day: "T", mood: "Anxious", level: 40 },
-    { day: "W", mood: "Calm", level: 70 },
-    { day: "T", mood: "Focused", level: 75 },
-    { day: "F", mood: "Relief", level: 85 },
-    { day: "S", mood: "Rest", level: 60 },
-    { day: "S", mood: "Peace", level: 80 },
+    { day: "M", mood: "Pensiveness", level: 30 },
+    { day: "T", mood: "Apprehension", level: 40 },
+    { day: "W", mood: "Serenity", level: 70 },
+    { day: "T", mood: "Acceptance", level: 75 },
+    { day: "F", mood: "Joy", level: 85 },
+    { day: "S", mood: "Trust", level: 60 },
+    { day: "S", mood: "Admiration", level: 80 },
   ];
 
   const { ref, inView } = useInViewOnce<HTMLDivElement>();
@@ -857,7 +857,7 @@ const features: Feature[] = [
     icon: CalendarDays,
     headline: "Easily track every day you showed up",
     body: "Dots mark the days you showed up, with entry counts on tap. Streaks sit alongside — a missed day resets them.",
-    outcome: "\u201CI journaled 14 times this month without once feeling like I failed.\u201D",
+    outcome: "Dots mark each day you journal, so consistency is visible at a glance.",
     visual: <CalendarVisual />,
   },
   {
@@ -896,7 +896,7 @@ const features: Feature[] = [
     headline: "Map your moods in one scatter chart",
     body: "Every entry plots on Unpleasant-Pleasant and Calm-Activated, filling the Tense, Excited, Down, and Calm.",
     outcome:
-      "\u201CI live in Tense during work weeks and shift to Calm every Saturday at 6pm.\u201D — self-knowledge that changes real decisions.",
+      "Every entry plots on Unpleasant-Pleasant and Calm-Activated, so weekly rhythms become visible.",
     visual: <EmotionalLandscapeVisual />,
   },
   {
@@ -951,7 +951,7 @@ const features: Feature[] = [
     headline: "Your call on every single reading",
     body: "Tap Refine Analysis to correct the label and the Pleasant/Activated dials. Your original stays beside it.",
     outcome:
-      "\u201CThe AI labeled my entry as sadness. I changed it to grief \u2014 and finally had a word for what I\u2019d been carrying.\u201D",
+      "Correct any reading to match what you felt; your label is saved alongside the original.",
     visual: <RefineAnalysisVisual />,
   },
   {
@@ -960,8 +960,7 @@ const features: Feature[] = [
     icon: Award,
     headline: "Celebrate each milestone as it lands",
     body: "21 badges unlock as you go — streaks, entry counts, Early Bird, Night Owl — each with a tip you can share.",
-    outcome:
-      "\u201CSeeing \u201810 entries\u2019 light up felt like proof I was actually showing up for myself.\u201D",
+    outcome: "21 badges track streaks, entry counts, and time-of-day habits as they unlock.",
     visual: <MilestonesVisual />,
   },
   {
@@ -971,7 +970,7 @@ const features: Feature[] = [
     headline: "Bring your report to your therapist",
     body: "Build a wellness report over any date range, then share the file: moods, emotions, body map, and triggers.",
     outcome:
-      "\u201CI stopped trying to summarise three weeks of feelings in five minutes. I just handed my therapist the report.\u201D",
+      "Build a styled report of trends and patterns, then share the file with your care team.",
     visual: <TherapistShareVisual />,
   },
 ];

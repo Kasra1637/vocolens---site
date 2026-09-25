@@ -117,7 +117,7 @@ export function Resources() {
                     linked to better regulation, and how voice journaling builds a personal
                     emotional vocabulary.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -180,7 +180,7 @@ export function Resources() {
                     fix it, and how a daily voice-logged time-anchor habit recalibrates your
                     internal clock.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -242,7 +242,7 @@ export function Resources() {
                     science of allostatic load, why a vacation alone doesn't fix it, and how a daily
                     voice-journaled load check catches burnout before it becomes collapse.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -305,7 +305,7 @@ export function Resources() {
                     why "just stop thinking about it" backfires, and how voice journaling gives your
                     brain the completion signal it's been missing.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -372,7 +372,7 @@ export function Resources() {
                     journaling builds emotional vocabulary, tracks overwhelm patterns, and provides
                     a safe space to process without masking pressure.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -439,7 +439,7 @@ export function Resources() {
                     traditional journaling fails, and how AI-assisted voice journaling creates a
                     personal emotional vocabulary from scratch.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -502,7 +502,7 @@ export function Resources() {
                     voice journaling with body-sensation mapping helps you catch overwhelm before it
                     escalates.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -568,7 +568,7 @@ export function Resources() {
                     journaling rewire your brain for emotional intelligence. Learn to identify
                     triggers and behavioral cycles with Vocolens' emotion tracking.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
@@ -632,7 +632,7 @@ export function Resources() {
                     journaling with Vocolens uses this science to help you reduce anxiety, create
                     mental space, and build lasting emotional resilience.
                   </p>
-                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between mt-5">
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
                       Read article
                       <ArrowRight className="w-4 h-4" />
