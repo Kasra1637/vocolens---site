@@ -68,7 +68,7 @@ export function Resources() {
         </div>
       </Reveal>
 
-      <RevealGroup stagger={0.05}>
+      <RevealGroup stagger={0.05} eager>
         <article itemScope itemType="https://schema.org/Article" className="w-full">
           <meta itemProp="url" content="https://vocolens.com/resources/emotional-granularity" />
           <meta itemProp="datePublished" content="2026-09-17" />

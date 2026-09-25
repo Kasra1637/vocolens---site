@@ -75,19 +75,26 @@ export function Reveal({
  * curves. Use for card grids INSTEAD of wrapping them in a plain Reveal
  * (motion happens once per card, not twice). Never render under /resources
  * routes.
+ *
+ * eager: show immediately, without waiting for intersection. Use only where a
+ * tall single-column group would otherwise gate its own first card behind the
+ * viewport threshold (the threshold is a share of the WHOLE group, so a 9-item
+ * stack needs ~10% of all of it on screen before the first card appears).
  */
 export function RevealGroup({
   children,
   className,
   delay = 0,
   stagger = STAGGER_STEP,
+  eager = false,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
   stagger?: number;
+  eager?: boolean;
 }) {
-  const [entered, setEntered] = useState(false);
+  const [entered, setEntered] = useState(eager);
   const [forced, setForced] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const enteredRef = useRef(false);
@@ -110,7 +117,7 @@ export function RevealGroup({
     setEntered(true);
   };
 
-  const shown = entered || forced;
+  const shown = eager || entered || forced;
 
   return (
     <motion.div
