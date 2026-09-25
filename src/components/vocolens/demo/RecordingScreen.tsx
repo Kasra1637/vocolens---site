@@ -75,11 +75,11 @@ export function RecordingScreen({
               <>
                 <div
                   className="absolute rounded-full demo-mic-pulse"
-                  style={{ width: 108, height: 108, border: "1.5px solid rgba(167,139,250,0.35)" }}
+                  style={{ width: 76, height: 76, border: "1.5px solid rgba(167,139,250,0.35)" }}
                 />
                 <div
                   className="absolute rounded-full demo-mic-pulse-delayed"
-                  style={{ width: 108, height: 108, border: "1.5px solid rgba(167,139,250,0.35)" }}
+                  style={{ width: 76, height: 76, border: "1.5px solid rgba(167,139,250,0.35)" }}
                 />
               </>
             )}
@@ -96,8 +96,8 @@ export function RecordingScreen({
             <div
               className="relative z-10 flex items-center justify-center rounded-full"
               style={{
-                width: 92,
-                height: 92,
+                width: 100,
+                height: 100,
                 background: "rgba(167,139,250,0.18)",
                 border: "1.5px solid rgba(167,139,250,0.3)",
               }}
@@ -163,18 +163,18 @@ export function RecordingScreen({
                 </div>
               </div>
             </div>
-            <div className="flex items-center mt-5" style={{ gap: 24 }}>
+            <div className="flex items-center mt-5" style={{ gap: 16 }}>
               <div className="flex flex-col items-center gap-1">
                 <div
                   className="flex items-center justify-center rounded-full"
                   style={{
-                    width: 64,
-                    height: 64,
+                    width: 44,
+                    height: 44,
                     background: "rgba(255,255,255,0.10)",
                     border: "1.5px solid rgba(255,255,255,0.22)",
                   }}
                 >
-                  <Trash className="w-6 h-6" style={{ color: "rgba(255,255,255,0.9)" }} />
+                  <Trash style={{ width: 18, height: 18, color: "rgba(255,255,255,0.9)" }} />
                 </div>
                 <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                   Discard
@@ -184,13 +184,13 @@ export function RecordingScreen({
                 <div
                   className="flex items-center justify-center rounded-full"
                   style={{
-                    width: 88,
-                    height: 88,
+                    width: 60,
+                    height: 60,
                     background: "rgba(147,112,219,0.18)",
                     border: "1.5px solid rgba(147,112,219,0.3)",
                   }}
                 >
-                  <Pause className="w-7 h-7 text-white" weight="fill" />
+                  <Pause style={{ width: 21, height: 21, color: "#FFFFFF" }} weight="fill" />
                 </div>
                 <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                   Pause
@@ -201,14 +201,14 @@ export function RecordingScreen({
                   <div
                     className="flex items-center justify-center rounded-full"
                     style={{
-                      width: 88,
-                      height: 88,
+                      width: 60,
+                      height: 60,
                       background: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
                     }}
                   >
-                    <Check className="w-9 h-9 text-white" weight="bold" />
+                    <Check style={{ width: 25, height: 25, color: "#FFFFFF" }} weight="bold" />
                   </div>
-                  {showSaveTap && <FingerTap tapKey={saveTapKey} rippleSize={88} />}
+                  {showSaveTap && <FingerTap tapKey={saveTapKey} rippleSize={60} />}
                 </div>
                 <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                   Save
@@ -223,8 +223,8 @@ export function RecordingScreen({
             <div
               className="relative flex items-center justify-center rounded-full"
               style={{
-                width: 92,
-                height: 92,
+                width: 100,
+                height: 100,
                 background: "rgba(167,139,250,0.18)",
                 border: "1.5px solid rgba(167,139,250,0.3)",
                 opacity: 0.55,
@@ -265,7 +265,7 @@ export function RecordingScreen({
 
         {!isRecording && !isProcessing && (
           <>
-            <p className="text-white text-[11px] mt-4">Tap to start</p>
+            <p className="text-white text-xs mt-4">Tap to start</p>
             <p
               className="text-center text-[11px] mt-1.5 px-6"
               style={{ color: "rgba(255,255,255,0.45)" }}
@@ -274,7 +274,7 @@ export function RecordingScreen({
             </p>
           </>
         )}
-        {isProcessing && <p className="text-white text-[11px] mt-4">Please wait...</p>}
+        {isProcessing && <p className="text-white text-xs mt-4">Please wait...</p>}
       </div>
 
       <DemoTabBar active="Record" />
