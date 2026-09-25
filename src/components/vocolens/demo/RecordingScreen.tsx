@@ -1,7 +1,7 @@
 import { Microphone as Mic, Trash, Pause, Check, Sparkle } from "@phosphor-icons/react";
 import { DemoTabBar } from "./DemoTabBar";
 
-export type RecordPhase = "idle" | "listening" | "recording" | "transcribing" | "analyzing";
+export type RecordPhase = "idle" | "recording" | "transcribing" | "analyzing";
 
 interface Props {
   isActive: boolean;
@@ -17,11 +17,12 @@ interface Props {
 /**
  * Recreates the app's Record tab (src/app/(tabs)/index.tsx) through its real
  * states: idle ("Speak your mind" + prompt + mic + "Tap to start" + 50s hint),
- * listening/recording ("Listening..." + status card + M:SS timer + 50s goal bar
+ * recording ("Listening..." + status card + M:SS timer + 50s goal bar
  * + Discard/Pause/Save), and processing ("Transcribing..."/"Processing..." +
  * pulsing dots + "Transcribing your voice..."/"Analyzing emotions..." +
  * "Please wait..."). Strings, sizes, and colors mirror the app source; the
- * press choreography is driven by AppDemo's clock via press keys.
+ * press choreography is driven by AppDemo's clock via press keys. Unlike the
+ * app's ~500ms listening pause, recording begins as soon as the press ends.
  */
 export function RecordingScreen({
   isActive,
@@ -31,7 +32,7 @@ export function RecordingScreen({
   showMicPress,
   showSavePress,
 }: Props) {
-  const isRecording = phase === "listening" || phase === "recording";
+  const isRecording = phase === "recording";
   const isProcessing = phase === "transcribing" || phase === "analyzing";
   const title =
     phase === "transcribing"

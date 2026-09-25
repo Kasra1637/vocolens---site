@@ -10,20 +10,18 @@ import { InsightsScreen } from "./demo/InsightsScreen";
 // screenshots, which were out of date with the shipped app UI.
 //
 // Scripted record-to-saved story inside the Record slot: the mic button presses
-// itself with a ripple, the screen walks the app's real states (listening → recording with a
+// itself with a ripple, the screen walks the app's real states (recording with a
 // live timer → processing with the transcribe/analyze text swap), then the
 // reflection review where the entry is actually stored, then the saved entry
-// detail. Timings mirror the app where it matters (500ms listening beat);
-// the recording itself is compressed to 6 demo seconds. Pauses on hover,
+// detail. Recording starts the instant the press finishes, with no listening
+// pause; the recording itself is compressed to 6 demo seconds. Pauses on hover,
 // manually switchable via the dots. No ambient loops.
 const T = {
   micTapStart: 700,
-  micTapEnd: 1900,
-  listenStart: 1600,
-  listenEnd: 2100,
+  recordStart: 1300,
   recordEnd: 8100,
   saveTapStart: 7100,
-  saveTapEnd: 8300,
+  saveTapEnd: 7700,
   transcribeEnd: 10100,
   analyzeEnd: 12100,
   reflectSaveTapStart: 14000,
@@ -36,8 +34,7 @@ const T = {
 const DOT_STARTS = [0, T.savingEnd, T.journalEnd];
 
 function recordPhaseAt(t: number): RecordPhase {
-  if (t < T.listenStart) return "idle";
-  if (t < T.listenEnd) return "listening";
+  if (t < T.recordStart) return "idle";
   if (t < T.recordEnd) return "recording";
   if (t < T.transcribeEnd) return "transcribing";
   return "analyzing";
@@ -75,7 +72,7 @@ export function AppDemo() {
   const showInsights = clock >= T.journalEnd;
 
   const phase = recordPhaseAt(clock);
-  const recSeconds = Math.min(6, Math.max(0, Math.floor((clock - T.listenEnd) / 1000)));
+  const recSeconds = Math.min(6, Math.max(0, Math.floor((clock - T.recordStart) / 1000)));
 
   return (
     <div className={`flex flex-col items-center isolate mt-8 ${isPaused ? "demo-paused" : ""}`}>
@@ -97,7 +94,7 @@ export function AppDemo() {
                 phase={phase}
                 recSeconds={recSeconds}
                 pressKey={`${cycle}-press`}
-                showMicPress={showRecord && clock >= T.micTapStart && clock < T.micTapEnd}
+                showMicPress={showRecord && clock >= T.micTapStart && clock < T.recordStart}
                 showSavePress={showRecord && clock >= T.saveTapStart && clock < T.saveTapEnd}
               />
             </div>
