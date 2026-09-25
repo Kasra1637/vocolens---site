@@ -242,26 +242,27 @@
 @keyframes demo-mic-pulse { 0% { transform: scale(1); opacity: 0.18;} 100% { transform: scale(1.55); opacity: 0;} }
 .demo-mic-pulse { animation: demo-mic-pulse 3.2s ease-out infinite; }
 .demo-mic-pulse-delayed { animation: demo-mic-pulse 3.2s ease-out infinite 0.7s; }
-/* Demo button press — one-shot choreography, not an ambient loop. The tapped
- * button scales down and back over 0.6s while a ripple ring expands over it.
- * Kept short enough that the whole press completes inside its clock window,
- * so the screen never swaps mid-animation. Re-triggered by remounting (React
- * key). Follows the demo-mic-pulse precedent below for reduced motion. */
-.demo-tap-ripple {
-  position: absolute; left: 50%; top: 50%; border-radius: 9999px;
-  border: 2px solid rgba(255, 255, 255, 0.6); opacity: 0;
-  animation: demo-tap-ripple 0.4s ease-out 0.2s both;
-}
-@keyframes demo-tap-ripple {
-  0% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.4); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.45); }
-}
-/* Target press — applied to the tapped button for the press window only. */
-.demo-mic-press { animation: demo-mic-press 0.6s var(--ease-soft) both; }
-@keyframes demo-mic-press {
-  0%, 30% { transform: scale(1); }
-  45%, 60% { transform: scale(0.9); }
-  80%, 100% { transform: scale(1); }
+/* Demo button press — one-shot choreography, not an ambient loop. The mic
+ * press is app-faithful: MicButton.tsx 161-168 does withSpring(0.92) down and
+ * withSpring(1) up on the bezel, driven by the buttonScale passed in at
+ * (tabs)/index.tsx 1383-1393. A spring can't be expressed as one
+ * cubic-bezier, so the overshoot-and-settle is baked into per-keyframe values
+ * with linear interpolation between them. 0.35s is the app's spring slowed
+ * ~3x for legibility at demo scale. box-shadow scales with the transform, so
+ * the elevation compresses on press without a second animation. Re-triggered
+ * by remounting (React key). The two Save presses reuse this curve: the app's
+ * own Save buttons carry Shadows.large but no scale animation, so the press
+ * there is a deliberate demo enhancement, not app-verbatim. */
+.demo-press { animation: demo-press 0.35s linear both; }
+@keyframes demo-press {
+  0%   { transform: scale(1); }
+  18%  { transform: scale(0.898); }
+  30%  { transform: scale(0.924); }
+  42%  { transform: scale(0.918); }
+  55%  { transform: scale(0.92); }
+  72%  { transform: scale(1.014); }
+  86%  { transform: scale(0.998); }
+  100% { transform: scale(1); }
 }
 /* Processing dots — state-driven (visible only while transcribing/analyzing),
  * not ambient. Staggered via inline animation-delay. */
@@ -286,6 +287,6 @@
  * demo pulse and scroll reveals respect it too. */
 @media (prefers-reduced-motion: reduce) {
   .demo-mic-pulse, .demo-mic-pulse-delayed { animation: none; }
-  .demo-tap-ripple, .demo-mic-press, .demo-proc-dot { animation: none; }
+  .demo-press, .demo-proc-dot { animation: none; }
   .btn-app-float { animation: none; }
 }

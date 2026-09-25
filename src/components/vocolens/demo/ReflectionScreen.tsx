@@ -129,24 +129,15 @@ export function ReflectionScreen({ phase, pressKey, showSavePress }: Props) {
         </div>
 
         <div className="flex flex-col items-center gap-1.5 pt-1">
-          <div className="relative">
-            <div
-              key={showSavePress ? pressKey : "rsave-idle"}
-              className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-mic-press" : ""}`}
-              style={{
-                background: "linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
-              }}
-            >
-              <span className="text-white text-[11px] font-semibold px-8 py-2.5">Save</span>
-            </div>
-            {showSavePress && (
-              <div
-                key={`ripple-${pressKey}`}
-                className="demo-tap-ripple"
-                style={{ width: 64, height: 64 }}
-              />
-            )}
+          <div
+            key={showSavePress ? pressKey : "rsave-idle"}
+            className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-press" : ""}`}
+            style={{
+              background: "linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
+            }}
+          >
+            <span className="text-white text-[11px] font-semibold px-8 py-2.5">Save</span>
           </div>
           <span className="text-white/50 text-[9px]">Skip this step</span>
         </div>

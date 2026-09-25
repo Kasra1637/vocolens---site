@@ -5,18 +5,26 @@ import { BodyMapCard } from "./BodyMapCard";
 
 interface Props {
   isActive: boolean;
+  isPaused: boolean;
 }
 
 const GLASS_BG = "rgba(255,255,255,0.08)";
 const GLASS_BORDER = "rgba(255,255,255,0.18)";
 
-export function InsightsScreen({ isActive }: Props) {
+export function InsightsScreen({ isActive, isPaused }: Props) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const bodyMapRef = useRef<HTMLDivElement | null>(null);
+
+  const pausedRef = useRef(isPaused);
+  useEffect(() => {
+    pausedRef.current = isPaused;
+  }, [isPaused]);
 
   // When this screen rotates into view, glide down to the body map section
   // with a slow eased animation (native smooth-scroll timing feels abrupt).
   // Any manual scroll/touch interrupts the glide. Only runs on activation.
+  // Progress accumulates only while unpaused, so hovering freezes the glide
+  // in step with the demo clock instead of letting it run on.
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -42,10 +50,12 @@ export function InsightsScreen({ isActive }: Props) {
       const DURATION = 1600;
       const easeInOutCubic = (x: number) =>
         x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-      let startTs: number | null = null;
+      let elapsed = 0;
+      let lastTs: number | null = null;
       const step = (ts: number) => {
-        if (startTs === null) startTs = ts;
-        const p = Math.min((ts - startTs) / DURATION, 1);
+        if (lastTs !== null && !pausedRef.current) elapsed += ts - lastTs;
+        lastTs = ts;
+        const p = Math.min(elapsed / DURATION, 1);
         container.scrollTop = start + dist * easeInOutCubic(p);
         if (p < 1) raf = requestAnimationFrame(step);
       };

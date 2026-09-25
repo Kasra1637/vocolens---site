@@ -93,7 +93,8 @@ export function RecordingScreen({
               }}
             />
             <div
-              className="relative z-10 flex items-center justify-center rounded-full"
+              key={showMicPress ? pressKey : "mic-idle"}
+              className={`relative z-10 flex items-center justify-center rounded-full ${showMicPress ? "demo-press" : ""}`}
               style={{
                 width: 100,
                 height: 100,
@@ -102,8 +103,7 @@ export function RecordingScreen({
               }}
             >
               <div
-                key={showMicPress ? pressKey : "mic-idle"}
-                className={`flex items-center justify-center rounded-full ${showMicPress ? "demo-mic-press" : ""}`}
+                className="flex items-center justify-center rounded-full"
                 style={{
                   width: 76,
                   height: 76,
@@ -114,13 +114,6 @@ export function RecordingScreen({
                 <Mic className="w-8 h-8 text-white" weight="bold" />
               </div>
             </div>
-            {showMicPress && (
-              <div
-                key={`ripple-${pressKey}`}
-                className="demo-tap-ripple"
-                style={{ width: 76, height: 76 }}
-              />
-            )}
           </div>
         )}
 
@@ -203,25 +196,17 @@ export function RecordingScreen({
                 </span>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <div className="relative">
-                  <div
-                    key={showSavePress ? pressKey : "save-idle"}
-                    className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-mic-press" : ""}`}
-                    style={{
-                      width: 60,
-                      height: 60,
-                      background: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
-                    }}
-                  >
-                    <Check style={{ width: 25, height: 25, color: "#FFFFFF" }} weight="bold" />
-                  </div>
-                  {showSavePress && (
-                    <div
-                      key={`ripple-${pressKey}`}
-                      className="demo-tap-ripple"
-                      style={{ width: 60, height: 60 }}
-                    />
-                  )}
+                <div
+                  key={showSavePress ? pressKey : "save-idle"}
+                  className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-press" : ""}`}
+                  style={{
+                    width: 60,
+                    height: 60,
+                    background: "linear-gradient(135deg, #EF4444 0%, #DC2626 100%)",
+                    boxShadow: "0 8px 16px rgba(147,112,219,0.2)",
+                  }}
+                >
+                  <Check style={{ width: 25, height: 25, color: "#FFFFFF" }} weight="bold" />
                 </div>
                 <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                   Save
