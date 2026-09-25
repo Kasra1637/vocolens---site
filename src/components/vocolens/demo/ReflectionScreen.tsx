@@ -1,12 +1,11 @@
 import { DemoTabBar } from "./DemoTabBar";
-import { FingerTap } from "./FingerTap";
 
 export type ReflectionPhase = "review" | "saving";
 
 interface Props {
   phase: ReflectionPhase;
-  saveTapKey: string | number;
-  showSaveTap: boolean;
+  pressKey: string | number;
+  showSavePress: boolean;
 }
 
 const DETECTED = [
@@ -50,7 +49,7 @@ function Slider({
  * layout is compressed to demo scale. The fullscreen "Saving..." overlay
  * matches reflection.tsx:709.
  */
-export function ReflectionScreen({ phase, saveTapKey, showSaveTap }: Props) {
+export function ReflectionScreen({ phase, pressKey, showSavePress }: Props) {
   return (
     <div
       className="h-full flex flex-col overflow-hidden relative"
@@ -132,15 +131,22 @@ export function ReflectionScreen({ phase, saveTapKey, showSaveTap }: Props) {
         <div className="flex flex-col items-center gap-1.5 pt-1">
           <div className="relative">
             <div
-              className="flex items-center justify-center rounded-full px-8 py-2.5"
+              key={showSavePress ? pressKey : "rsave-idle"}
+              className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-mic-press" : ""}`}
               style={{
                 background: "linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)",
                 boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
               }}
             >
-              <span className="text-white text-[11px] font-semibold">Save</span>
+              <span className="text-white text-[11px] font-semibold px-8 py-2.5">Save</span>
             </div>
-            {showSaveTap && <FingerTap tapKey={saveTapKey} rippleSize={64} />}
+            {showSavePress && (
+              <div
+                key={`ripple-${pressKey}`}
+                className="demo-tap-ripple"
+                style={{ width: 64, height: 64 }}
+              />
+            )}
           </div>
           <span className="text-white/50 text-[9px]">Skip this step</span>
         </div>

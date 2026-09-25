@@ -1,6 +1,5 @@
 import { Microphone as Mic, Trash, Pause, Check, Sparkle } from "@phosphor-icons/react";
 import { DemoTabBar } from "./DemoTabBar";
-import { FingerTap } from "./FingerTap";
 
 export type RecordPhase = "idle" | "listening" | "recording" | "transcribing" | "analyzing";
 
@@ -9,10 +8,10 @@ interface Props {
   phase: RecordPhase;
   /** Whole seconds elapsed in the demo recording (drives timer + goal bar). */
   recSeconds: number;
-  micTapKey: string | number;
-  showMicTap: boolean;
-  saveTapKey: string | number;
-  showSaveTap: boolean;
+  /** Cycle-unique key; remounts the press animation + ripple each loop. */
+  pressKey: string | number;
+  showMicPress: boolean;
+  showSavePress: boolean;
 }
 
 /**
@@ -22,16 +21,15 @@ interface Props {
  * + Discard/Pause/Save), and processing ("Transcribing..."/"Processing..." +
  * pulsing dots + "Transcribing your voice..."/"Analyzing emotions..." +
  * "Please wait..."). Strings, sizes, and colors mirror the app source; the
- * finger choreography is driven by AppDemo's clock via tap keys.
+ * press choreography is driven by AppDemo's clock via press keys.
  */
 export function RecordingScreen({
   isActive,
   phase,
   recSeconds,
-  micTapKey,
-  showMicTap,
-  saveTapKey,
-  showSaveTap,
+  pressKey,
+  showMicPress,
+  showSavePress,
 }: Props) {
   const isRecording = phase === "listening" || phase === "recording";
   const isProcessing = phase === "transcribing" || phase === "analyzing";
@@ -103,7 +101,8 @@ export function RecordingScreen({
               }}
             >
               <div
-                className={`flex items-center justify-center rounded-full ${showMicTap ? "demo-mic-press" : ""}`}
+                key={showMicPress ? pressKey : "mic-idle"}
+                className={`flex items-center justify-center rounded-full ${showMicPress ? "demo-mic-press" : ""}`}
                 style={{
                   width: 76,
                   height: 76,
@@ -114,7 +113,13 @@ export function RecordingScreen({
                 <Mic className="w-8 h-8 text-white" weight="bold" />
               </div>
             </div>
-            {showMicTap && <FingerTap tapKey={micTapKey} rippleSize={76} />}
+            {showMicPress && (
+              <div
+                key={`ripple-${pressKey}`}
+                className="demo-tap-ripple"
+                style={{ width: 76, height: 76 }}
+              />
+            )}
           </div>
         )}
 
@@ -199,7 +204,8 @@ export function RecordingScreen({
               <div className="flex flex-col items-center gap-1">
                 <div className="relative">
                   <div
-                    className="flex items-center justify-center rounded-full"
+                    key={showSavePress ? pressKey : "save-idle"}
+                    className={`flex items-center justify-center rounded-full ${showSavePress ? "demo-mic-press" : ""}`}
                     style={{
                       width: 60,
                       height: 60,
@@ -208,7 +214,13 @@ export function RecordingScreen({
                   >
                     <Check style={{ width: 25, height: 25, color: "#FFFFFF" }} weight="bold" />
                   </div>
-                  {showSaveTap && <FingerTap tapKey={saveTapKey} rippleSize={60} />}
+                  {showSavePress && (
+                    <div
+                      key={`ripple-${pressKey}`}
+                      className="demo-tap-ripple"
+                      style={{ width: 60, height: 60 }}
+                    />
+                  )}
                 </div>
                 <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                   Save

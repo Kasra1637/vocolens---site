@@ -9,8 +9,8 @@ import { InsightsScreen } from "./demo/InsightsScreen";
 // app repo), styled with the Midnight Glow theme. Replaces the old static
 // screenshots, which were out of date with the shipped app UI.
 //
-// Scripted record-to-saved story inside the Record slot: a fingertip taps the
-// mic, the screen walks the app's real states (listening → recording with a
+// Scripted record-to-saved story inside the Record slot: the mic button presses
+// itself with a ripple, the screen walks the app's real states (listening → recording with a
 // live timer → processing with the transcribe/analyze text swap), then the
 // reflection review where the entry is actually stored, then the saved entry
 // detail. Timings mirror the app where it matters (500ms listening beat);
@@ -90,16 +90,15 @@ export function AppDemo() {
             <div
               className={`demo-screen-layer ${showRecord ? "active" : ""}`}
               role="img"
-              aria-label="Record tab: fingertip taps the microphone, recording runs, then the entry is analyzed"
+              aria-label="Record tab: the microphone button presses, recording runs, then the entry is analyzed"
             >
               <RecordingScreen
                 isActive={showRecord}
                 phase={phase}
                 recSeconds={recSeconds}
-                micTapKey={`${cycle}-mic`}
-                showMicTap={showRecord && clock >= T.micTapStart && clock < T.micTapEnd}
-                saveTapKey={`${cycle}-save`}
-                showSaveTap={showRecord && clock >= T.saveTapStart && clock < T.saveTapEnd}
+                pressKey={`${cycle}-press`}
+                showMicPress={showRecord && clock >= T.micTapStart && clock < T.micTapEnd}
+                showSavePress={showRecord && clock >= T.saveTapStart && clock < T.saveTapEnd}
               />
             </div>
             <div
@@ -109,8 +108,8 @@ export function AppDemo() {
             >
               <ReflectionScreen
                 phase={clock < T.reflectSaveTapEnd ? "review" : "saving"}
-                saveTapKey={`${cycle}-rsave`}
-                showSaveTap={
+                pressKey={`${cycle}-press`}
+                showSavePress={
                   showReflection && clock >= T.reflectSaveTapStart && clock < T.reflectSaveTapEnd
                 }
               />
