@@ -19,7 +19,7 @@ export function PrivacyPolicy() {
     <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
       <Reveal>
         <div className="text-center mb-12 lg:mb-16">
-          <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 mx-auto mb-6 shadow-clay">
+          <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 mx-auto mb-6 shadow-clay">
             <Shield className="w-5 h-5 text-[#6A3FC0]" />
           </div>
           <h1
@@ -55,7 +55,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.2}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Smartphone className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -118,7 +118,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.3}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Users className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -258,7 +258,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.4}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Lock className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -324,7 +324,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.45}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -347,7 +347,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.5}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Bell className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -390,7 +390,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.55}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Database className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -426,7 +426,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.6}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Eye className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -474,7 +474,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.7}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Shield className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -539,7 +539,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.8}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <FileText className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -612,7 +612,7 @@ export function PrivacyPolicy() {
         <Reveal delay={0.9}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <Users className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
@@ -639,7 +639,7 @@ export function PrivacyPolicy() {
         <Reveal delay={1.0}>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
+              <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 shadow-clay">
                 <AlertCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
