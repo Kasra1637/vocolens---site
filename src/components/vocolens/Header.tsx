@@ -15,8 +15,18 @@ const resourcesDropdown = [
   { to: "/resources/emotional-awareness-patterns", icon: Radar, label: "Emotional Awareness" },
 ] as const;
 
-/** Scroll distance (px) at which the header reveals and the logo becomes the store CTA. */
-const REVEAL_AT = 80;
+/** Desktop-only auto-hide threshold (px). The compact bar stays pinned. */
+const DESKTOP_HIDE_AT = 80;
+
+/**
+ * Logo → store CTA swap, as a fraction of viewport height (not page height, so
+ * it reads the same on a long article and a short page). SWAP_OUT sits well
+ * below SWAP_IN on purpose: mobile browsers collapse the URL bar while
+ * scrolling, which grows innerHeight, and a single threshold would let that
+ * push itself back above the scroll position and flicker the swap.
+ */
+const CTA_SWAP_IN = 0.3;
+const CTA_SWAP_OUT = 0.15;
 
 export function Header() {
   const navigate = useNavigate();
@@ -26,7 +36,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  // Past REVEAL_AT the logo cross-fades into the store CTA on the compact bar.
+  // Past 30% of the viewport the logo cross-fades into the store CTA.
   const [isScrolled, setIsScrolled] = useState(false);
   // Scroll-progress hairline (0→1). Skipped on blog article routes, which
   // stay fully static by standing decision.
@@ -35,6 +45,8 @@ export function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastScrollY = useRef(0);
+  // Mirrors isScrolled so the rAF tick reads the current value, not stale state.
+  const isScrolledRef = useRef(false);
   const ticking = useRef(false);
 
   useEffect(() => {
@@ -52,9 +64,18 @@ export function Header() {
       ticking.current = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
-        if (y < REVEAL_AT) setIsScrolled(false);
-        else setIsScrolled(true);
-        if (y < REVEAL_AT) setIsVisible(true);
+        // Latched: once the CTA is shown it stays until the user scrolls back
+        // near the top, so a collapsing URL bar can't un-trigger it.
+        if (isScrolledRef.current) {
+          if (y < window.innerHeight * CTA_SWAP_OUT) {
+            isScrolledRef.current = false;
+            setIsScrolled(false);
+          }
+        } else if (y >= window.innerHeight * CTA_SWAP_IN) {
+          isScrolledRef.current = true;
+          setIsScrolled(true);
+        }
+        if (y < DESKTOP_HIDE_AT) setIsVisible(true);
         else if (y < lastScrollY.current) setIsVisible(true);
         else if (y > lastScrollY.current + 4) {
           setIsVisible(false);
