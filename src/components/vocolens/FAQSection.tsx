@@ -4,7 +4,7 @@ import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from "@ph
 
 const faqs = [
   {
-    q: "Is my voice and journal data private and secure?",
+    q: "Is voice and data private and secure?",
     a: "Entries stay stored only on your device — no cloud account, locked behind biometrics or a PIN. Processing needs two brief encrypted requests: your audio goes to Deepgram for transcription, and the resulting transcript goes to the analysis model. Neither is retained. Your recording stays on your device so you can play it back; delete it any time with the entry, or wipe everything in settings.",
   },
   {
@@ -20,7 +20,7 @@ const faqs = [
     a: "Open any entry and correct the emotion to what you actually felt. Each correction is saved and tunes your personal analysis, so future results lean toward your labels over time. Your corrections stay on your device and shape only your results, never anyone else’s.",
   },
   {
-    q: "Is this a replacement for therapy or mental health support?",
+    q: "Can this replace therapy or mental health support?",
     a: "Vocolens is a journaling and self-awareness tool, not therapy or a medical device. It identifies signs of strain in your entries; moderate or high distress shows a note asking you to take a moment if you need.",
   },
 ];
