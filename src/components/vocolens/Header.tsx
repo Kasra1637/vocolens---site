@@ -15,9 +15,6 @@ const resourcesDropdown = [
   { to: "/resources/emotional-awareness-patterns", icon: Radar, label: "Emotional Awareness" },
 ] as const;
 
-/** Desktop-only auto-hide threshold (px). The compact bar stays pinned. */
-const DESKTOP_HIDE_AT = 80;
-
 /**
  * Logo → store CTA swap, as a fraction of viewport height (not page height, so
  * it reads the same on a long article and a short page). SWAP_OUT sits well
@@ -28,6 +25,45 @@ const DESKTOP_HIDE_AT = 80;
 const CTA_SWAP_IN = 0.3;
 const CTA_SWAP_OUT = 0.15;
 
+/**
+ * The logo slot. The CTA is absolutely positioned so it never contributes to
+ * the bar's layout, which is what keeps the nav and hamburger from shifting
+ * when the swap happens. Used by both the desktop and compact bars so the
+ * behaviour is identical at every breakpoint.
+ */
+function BrandSlot({ isScrolled }: { isScrolled: boolean }) {
+  return (
+    <div className="relative flex items-center h-9 flex-shrink-0">
+      <Link
+        to="/"
+        className={`flex items-center group transition-opacity duration-300 ease-soft ${
+          isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+        aria-hidden={isScrolled}
+        tabIndex={isScrolled ? -1 : undefined}
+      >
+        <img
+          src="/vocolens-logo.png"
+          alt="Vocolens AI voice journal logo"
+          className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+        />
+      </Link>
+      <a
+        href={GOOGLE_PLAY_URL}
+        {...STORE_LINK_ATTRS}
+        className={`absolute left-0 top-1/2 -translate-y-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-1.5 text-sm font-semibold btn-app-glow transition-opacity duration-300 ease-soft ${
+          isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!isScrolled}
+        tabIndex={isScrolled ? undefined : -1}
+      >
+        <GooglePlayLogo className="w-4 h-4" weight="fill" />
+        Get it on Google Play
+      </a>
+    </div>
+  );
+}
+
 export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,7 +71,6 @@ export function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   // Past 30% of the viewport the logo cross-fades into the store CTA.
   const [isScrolled, setIsScrolled] = useState(false);
   // Scroll-progress hairline (0→1). Skipped on blog article routes, which
@@ -44,7 +79,6 @@ export function Header() {
   const showProgress = !location.pathname.startsWith("/resources/");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastScrollY = useRef(0);
   // Mirrors isScrolled so the rAF tick reads the current value, not stale state.
   const isScrolledRef = useRef(false);
   const ticking = useRef(false);
@@ -75,13 +109,6 @@ export function Header() {
           isScrolledRef.current = true;
           setIsScrolled(true);
         }
-        if (y < DESKTOP_HIDE_AT) setIsVisible(true);
-        else if (y < lastScrollY.current) setIsVisible(true);
-        else if (y > lastScrollY.current + 4) {
-          setIsVisible(false);
-          setResourcesOpen(false);
-        }
-        lastScrollY.current = y;
         const max = document.documentElement.scrollHeight - window.innerHeight;
         setProgress(max > 0 ? Math.min(1, Math.max(0, y / max)) : 0);
         ticking.current = false;
@@ -119,9 +146,7 @@ export function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-5 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft translate-y-0 ${isVisible ? "lg:translate-y-0" : "lg:-translate-y-full"}`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-5 px-3 sm:px-6 pointer-events-none">
         {showProgress && (
           <div
             aria-hidden="true"
@@ -135,13 +160,7 @@ export function Header() {
             className="hidden lg:flex items-center justify-between bg-white rounded-3xl px-8 py-5"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
-            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-              <img
-                src="/vocolens-logo.png"
-                alt="Vocolens AI voice journal logo"
-                className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-            </Link>
+            <BrandSlot isScrolled={isScrolled} />
 
             <nav className="flex items-center gap-0.5">
               {navLinks.map((link) => (
@@ -237,38 +256,10 @@ export function Header() {
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
             {/*
-              The CTA is absolutely positioned, so it never contributes to the
-              bar's layout and the hamburger cannot shift on swap. Both elements
-              stay mounted and cross-fade; the hidden one leaves the tab order.
+              Logo and store CTA cross-fade in place; BrandSlot keeps the
+              hamburger from shifting. See BrandSlot for the rationale.
             */}
-            <div className="relative flex items-center h-9">
-              <Link
-                to="/"
-                className={`flex items-center group transition-opacity duration-300 ease-soft ${
-                  isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-                }`}
-                aria-hidden={isScrolled}
-                tabIndex={isScrolled ? -1 : undefined}
-              >
-                <img
-                  src="/vocolens-logo.png"
-                  alt="Vocolens AI voice journal logo"
-                  className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
-                />
-              </Link>
-              <a
-                href={GOOGLE_PLAY_URL}
-                {...STORE_LINK_ATTRS}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-1.5 text-sm font-semibold btn-app-glow transition-opacity duration-300 ease-soft ${
-                  isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
-                }`}
-                aria-hidden={!isScrolled}
-                tabIndex={isScrolled ? undefined : -1}
-              >
-                <GooglePlayLogo className="w-4 h-4" weight="fill" />
-                Get it on Google Play
-              </a>
-            </div>
+            <BrandSlot isScrolled={isScrolled} />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 -mr-1 text-text-secondary hover:text-text-primary transition-colors rounded-xl hover:bg-primary/[0.04]"
