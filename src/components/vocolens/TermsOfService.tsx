@@ -34,9 +34,7 @@ export function TermsOfService() {
       <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-prose">
         <Reveal delay={0.1}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">
-              Acceptance of Terms
-            </h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary">Acceptance of Terms</h2>
             <p className="text-text-secondary text-base leading-relaxed">
               By downloading or using Vocolens, you agree to be bound by these Terms of Service. If
               you do not agree to these terms, do not use the app.
@@ -50,7 +48,7 @@ export function TermsOfService() {
 
         <Reveal delay={0.2}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary">
               Description of Service
             </h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -107,7 +105,7 @@ export function TermsOfService() {
                 <CreditCard className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Subscriptions & Free Trial
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -155,7 +153,7 @@ export function TermsOfService() {
 
         <Reveal delay={0.4}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Permitted Use</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Permitted Use</h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
               You may use Vocolens for lawful personal journaling purposes only. You agree not to:
             </p>
@@ -202,7 +200,7 @@ export function TermsOfService() {
                 <AlertCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Not a Medical Service
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -246,7 +244,7 @@ export function TermsOfService() {
                 <Lock className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Your Content
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -292,7 +290,7 @@ export function TermsOfService() {
                 <Globe className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Third-Party Services
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -342,7 +340,7 @@ export function TermsOfService() {
                 <Activity className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Usage Tracking
                 </h2>
                 <p className="text-text-secondary text-base leading-relaxed">
@@ -365,7 +363,7 @@ export function TermsOfService() {
                 <Trash2 className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <div className="flex-1 min-w-0 break-words">
-                <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+                <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">
                   Data Loss Disclaimer
                 </h2>
                 <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -407,7 +405,7 @@ export function TermsOfService() {
 
         <Reveal delay={1.0}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Disclaimers & Limitation of Liability
             </h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">
@@ -427,7 +425,7 @@ export function TermsOfService() {
 
         <Reveal delay={1.1}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Governing Law</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Governing Law</h2>
             <p className="text-text-secondary text-base leading-relaxed">
               These Terms shall be governed by and construed in accordance with applicable laws.
               Disputes will be resolved through good-faith negotiation first; if unresolved, through
@@ -438,7 +436,7 @@ export function TermsOfService() {
 
         <Reveal delay={1.2}>
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-4">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
               Changes to These Terms
             </h2>
             <p className="text-text-secondary mb-4 text-base leading-relaxed">

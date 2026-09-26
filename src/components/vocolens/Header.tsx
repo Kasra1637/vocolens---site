@@ -267,9 +267,12 @@ export function Header() {
           >
             {/*
               Phones and tablets swap the logo for the store CTA on scroll;
-              BrandSlot keeps the hamburger from shifting. See BrandSlot.
+              BrandSlot keeps the hamburger from shifting. See BrandSlot. The CTA
+              yields while the menu is open, so the menu's own store button is
+              never doubled — and it has to stay, because before the swap fires
+              the header shows the logo and the menu is the only store path.
             */}
-            <BrandSlot isScrolled={isScrolled} />
+            <BrandSlot isScrolled={isScrolled && !isMenuOpen} />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 -mr-1 text-text-secondary hover:text-text-primary transition-colors rounded-xl hover:bg-primary/[0.04]"
