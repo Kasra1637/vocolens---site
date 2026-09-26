@@ -26,10 +26,10 @@ const CTA_SWAP_IN = 0.3;
 const CTA_SWAP_OUT = 0.15;
 
 /**
- * The logo slot. The CTA is absolutely positioned so it never contributes to
- * the bar's layout, which is what keeps the nav and hamburger from shifting
- * when the swap happens. Used by both the desktop and compact bars so the
- * behaviour is identical at every breakpoint.
+ * Compact-bar logo slot. The CTA is absolutely positioned so it never
+ * contributes to the bar's layout, which is what keeps the hamburger from
+ * shifting when the swap happens. Desktop has room for both the logo and a
+ * permanent CTA, so it renders a plain logo link instead.
  */
 function BrandSlot({ isScrolled }: { isScrolled: boolean }) {
   return (
@@ -160,7 +160,16 @@ export function Header() {
             className="hidden lg:flex items-center justify-between bg-white rounded-3xl px-8 py-5"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
-            <BrandSlot isScrolled={isScrolled} />
+            {/* Desktop keeps the logo permanently: the bar is wide enough to
+                carry the brand and the store CTA at once, so it never needs the
+                compact bar's swap. */}
+            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+              <img
+                src="/vocolens-logo.png"
+                alt="Vocolens AI voice journal logo"
+                className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
 
             <nav className="flex items-center gap-0.5">
               {navLinks.map((link) => (
@@ -244,9 +253,10 @@ export function Header() {
             <a
               href={GOOGLE_PLAY_URL}
               {...STORE_LINK_ATTRS}
-              className="bg-gradient-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+              className="inline-flex items-center gap-2 bg-gradient-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
             >
-              Get the App
+              <GooglePlayLogo className="w-4 h-4" weight="fill" />
+              Get it on Google Play
             </a>
           </div>
 
@@ -256,8 +266,8 @@ export function Header() {
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
             {/*
-              Logo and store CTA cross-fade in place; BrandSlot keeps the
-              hamburger from shifting. See BrandSlot for the rationale.
+              Phones and tablets swap the logo for the store CTA on scroll;
+              BrandSlot keeps the hamburger from shifting. See BrandSlot.
             */}
             <BrandSlot isScrolled={isScrolled} />
             <button
@@ -330,9 +340,10 @@ export function Header() {
                 <a
                   href={GOOGLE_PLAY_URL}
                   {...STORE_LINK_ATTRS}
-                  className="block w-full bg-gradient-primary text-white py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary/20 active:scale-[0.98] transition-transform text-center"
+                  className="flex w-full items-center justify-center gap-2 bg-gradient-primary text-white py-2.5 rounded-full text-sm font-semibold shadow-md shadow-primary/20 active:scale-[0.98] transition-transform"
                 >
-                  Get the App
+                  <GooglePlayLogo className="w-4 h-4" weight="fill" />
+                  Get it on Google Play
                 </a>
               </div>
             </div>
