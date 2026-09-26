@@ -5,6 +5,7 @@ import {
   Brain,
   Target as Radar,
   CaretDown as ChevronDown,
+  GooglePlayLogo,
 } from "@phosphor-icons/react";
 import { Link, useNavigate, useLocation } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
@@ -14,6 +15,9 @@ const resourcesDropdown = [
   { to: "/resources/emotional-awareness-patterns", icon: Radar, label: "Emotional Awareness" },
 ] as const;
 
+/** Scroll distance (px) at which the header reveals and the logo becomes the store CTA. */
+const REVEAL_AT = 80;
+
 export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,6 +26,8 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  // Past REVEAL_AT the logo cross-fades into the store CTA on the compact bar.
+  const [isScrolled, setIsScrolled] = useState(false);
   // Scroll-progress hairline (0→1). Skipped on blog article routes, which
   // stay fully static by standing decision.
   const [progress, setProgress] = useState(0);
@@ -46,7 +52,9 @@ export function Header() {
       ticking.current = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
-        if (y < 80) setIsVisible(true);
+        if (y < REVEAL_AT) setIsScrolled(false);
+        else setIsScrolled(true);
+        if (y < REVEAL_AT) setIsVisible(true);
         else if (y < lastScrollY.current) setIsVisible(true);
         else if (y > lastScrollY.current + 4) {
           setIsVisible(false);
@@ -91,7 +99,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-5 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 sm:pt-5 px-3 sm:px-6 pointer-events-none transition-transform duration-300 ease-soft translate-y-0 ${isVisible ? "lg:translate-y-0" : "lg:-translate-y-full"}`}
       >
         {showProgress && (
           <div
@@ -103,7 +111,7 @@ export function Header() {
         <div className="pointer-events-auto w-full" style={{ maxWidth: "min(92%, 1200px)" }}>
           {/* Desktop */}
           <div
-            className="hidden md:flex items-center justify-between bg-white rounded-3xl px-8 py-5"
+            className="hidden lg:flex items-center justify-between bg-white rounded-3xl px-8 py-5"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
@@ -202,18 +210,44 @@ export function Header() {
             </a>
           </div>
 
-          {/* Mobile */}
+          {/* Compact bar — phones and tablets (below lg) */}
           <div
-            className="flex md:hidden items-center justify-between bg-white rounded-3xl px-4 py-4"
+            className="flex lg:hidden items-center justify-between bg-white rounded-3xl px-4 py-4"
             style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04)" }}
           >
-            <Link to="/" className="flex items-center gap-3 group">
-              <img
-                src="/vocolens-logo.png"
-                alt="Vocolens AI voice journal logo"
-                className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-            </Link>
+            {/*
+              The CTA is absolutely positioned, so it never contributes to the
+              bar's layout and the hamburger cannot shift on swap. Both elements
+              stay mounted and cross-fade; the hidden one leaves the tab order.
+            */}
+            <div className="relative flex items-center h-9">
+              <Link
+                to="/"
+                className={`flex items-center group transition-opacity duration-300 ease-soft ${
+                  isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+                }`}
+                aria-hidden={isScrolled}
+                tabIndex={isScrolled ? -1 : undefined}
+              >
+                <img
+                  src="/vocolens-logo.png"
+                  alt="Vocolens AI voice journal logo"
+                  className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+                />
+              </Link>
+              <a
+                href={GOOGLE_PLAY_URL}
+                {...STORE_LINK_ATTRS}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-1.5 text-sm font-semibold btn-app-glow transition-opacity duration-300 ease-soft ${
+                  isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+                aria-hidden={!isScrolled}
+                tabIndex={isScrolled ? undefined : -1}
+              >
+                <GooglePlayLogo className="w-4 h-4" weight="fill" />
+                Get it on Google Play
+              </a>
+            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 -mr-1 text-text-secondary hover:text-text-primary transition-colors rounded-xl hover:bg-primary/[0.04]"
@@ -227,7 +261,7 @@ export function Header() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
       >
         <div
           className="absolute inset-0 bg-black/20 backdrop-blur-sm"
