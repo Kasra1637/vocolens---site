@@ -33,7 +33,7 @@ export function PrivacyPolicy() {
         </div>
       </Reveal>
 
-      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-prose">
+      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-3xl">
         <Reveal delay={0.1}>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-6">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
