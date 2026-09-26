@@ -105,8 +105,7 @@ function Home() {
               animate="show"
               custom={0.15}
             >
-              Put a name to the emotions your mind overlooks - just speak, and let the words you say
-              do the rest.
+              Name what you feel. Understand what’s underneath.
             </motion.p>
             <motion.div
               className="flex flex-wrap gap-2 mb-6 max-w-lg"
