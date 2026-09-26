@@ -223,9 +223,9 @@ export function EmotionDetection() {
 
             <div className="lg:col-span-2 lg:border-l lg:border-primary/10 lg:pl-10 border-t border-primary/10 pt-8 lg:border-t-0 lg:pt-0 flex flex-col justify-center">
               <h3 className="text-xl font-bold mb-5">How well AI reads you</h3>
-              <div className="flex items-end gap-3">
+              <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-end sm:gap-3">
                 <span className="text-5xl font-bold text-[#6A3FC0] leading-none">86%</span>
-                <span className="text-sm font-semibold text-text-primary pb-1.5">
+                <span className="text-sm font-semibold text-text-primary sm:pb-1.5">
                   AI matched your feeling
                 </span>
               </div>
