@@ -77,7 +77,9 @@ export function FAQSection() {
                   className="w-full px-4 sm:px-5 py-5 flex items-center justify-between text-left focus:outline-none rounded-2xl hover:bg-primary/[0.04] transition-colors"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-bold text-text-primary text-lg pr-4">{faq.q}</span>
+                  <span className="font-bold text-text-primary text-base sm:text-lg pr-4">
+                    {faq.q}
+                  </span>
                   <div
                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center shadow-clay transition-colors duration-300 ${isOpen ? "chip-app text-[#6A3FC0]" : "chip-app text-text-muted"}`}
                   >
@@ -90,7 +92,7 @@ export function FAQSection() {
                   className={`grid transition-all duration-300 ease-soft ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-base leading-relaxed max-w-prose">
+                    <div className="px-4 sm:px-5 pb-6 pt-1 text-text-secondary text-sm sm:text-base leading-relaxed max-w-prose">
                       {faq.a}
                     </div>
                   </div>
