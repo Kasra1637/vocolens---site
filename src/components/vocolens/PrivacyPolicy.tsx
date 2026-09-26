@@ -16,7 +16,7 @@ import { Reveal } from "./Reveal";
 
 export function PrivacyPolicy() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
+    <section className="max-w-7xl mx-auto px-6 pt-24 sm:pt-32 pb-12 sm:pb-16 lg:pt-40 lg:pb-20">
       <Reveal>
         <div className="text-center mb-12 lg:mb-16">
           <div className="w-11 h-11 rounded-full chip-app hidden sm:flex items-center justify-center flex-shrink-0 mx-auto mb-6 shadow-clay">
@@ -33,7 +33,7 @@ export function PrivacyPolicy() {
         </div>
       </Reveal>
 
-      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-3xl">
+      <div className="card-app rounded-3xl p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-12 max-w-7xl">
         <Reveal delay={0.1}>
           <div className="bg-primary/[0.04] border border-primary/15 rounded-2xl p-6">
             <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
