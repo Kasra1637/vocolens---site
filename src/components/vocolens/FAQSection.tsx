@@ -8,7 +8,7 @@ const faqs = [
     a: "Entries stay stored only on your device — no cloud account, locked behind biometrics or a PIN. Processing needs two brief encrypted requests: your audio goes to Deepgram for transcription, and the resulting transcript goes to the analysis model. Neither is retained. Your recording stays on your device so you can play it back; delete it any time with the entry, or wipe everything in settings.",
   },
   {
-    q: "How does the AI actually know what I'm feeling?",
+    q: "How does the app actually know what I'm feeling?",
     a: "Vocolens reads your words, phrasing, and story from the transcript. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: a pattern needs at least 3 corrections across 2 weeks, and your most recent ones count most.",
   },
   {

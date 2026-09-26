@@ -19,7 +19,7 @@ Vocolens is an AI-powered voice journaling app designed specifically for neurodi
 Q: Is voice and data private and secure?
 A: Your journal entries, audio, and personalization data are stored on your device and locked behind biometric authentication (Face ID or Fingerprint) and a PIN - there is no cloud account or synced backup of your journal. To turn speech into insight, two steps happen off-device transiently over an encrypted connection: your audio is sent for speech-to-text transcription (Deepgram), and the resulting text transcript is sent for emotion analysis (OpenAI via OpenRouter). Neither service permanently stores your data, and no audio is sent for the analysis step. You can export or permanently delete your data at any time. See the Privacy Policy for full detail.
 
-Q: How does the AI actually know what I'm feeling?
+Q: How does the app actually know what I'm feeling?
 A: Vocolens analyses the words and language in your journal transcript - your word choice, phrasing, and narrative context - to name what you were feeling, mapping it to 8 core psychology-backed emotions on a 2D scale of pleasantness and energy. Over time it learns from the corrections you make, so the labels line up more closely with how you actually experience your emotions, giving you clearer self-understanding the more you use it.
 
 Q: What makes Vocolens different from other journaling apps?
