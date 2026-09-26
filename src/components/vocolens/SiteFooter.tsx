@@ -16,7 +16,7 @@ export function SiteFooter() {
             className="h-12 w-auto mx-auto mb-6"
           />
           <p className="text-text-secondary font-medium mb-2 text-base leading-relaxed">
-            Your emotions, finally in words
+            Hear yourself clearly
           </p>
           <p className="text-text-muted text-base leading-relaxed">
             AI voice journaling for ADHD, autism & alexithymia
