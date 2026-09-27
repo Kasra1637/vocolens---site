@@ -58,7 +58,7 @@ function BrandSlot({ isScrolled }: { isScrolled: boolean }) {
         tabIndex={isScrolled ? undefined : -1}
       >
         <GooglePlayLogo className="w-4 h-4" weight="fill" />
-        Get it on Google Play
+        Get the App
       </a>
     </div>
   );
