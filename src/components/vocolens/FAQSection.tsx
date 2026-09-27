@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How does the app actually know what I'm feeling?",
-    a: "Vocolens reads your words, phrasing, and story from the transcript. It maps feelings to 8 core emotions on a 2D scale of pleasantness and energy. Corrections tune future results: a pattern needs at least 3 corrections across 2 weeks, and your most recent ones count most.",
+    a: "Vocolens reads your words, phrasing, and story from the transcript. It maps feelings to 8 core emotions on pleasantness and energy scales. Corrections tune future results: a pattern needs 3+ corrections across 2 weeks, with your recent ones weighted most.",
   },
   {
     q: "What makes Vocolens different from other journaling apps?",
