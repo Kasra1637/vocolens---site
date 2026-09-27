@@ -5,7 +5,7 @@ import { CaretDown as ChevronDown, Question as MessageCircleQuestion } from "@ph
 const faqs = [
   {
     q: "Is voice and data private and secure?",
-    a: "Entries stay stored only on your device — no cloud account, locked behind biometrics or a PIN. Processing needs two brief encrypted requests: your audio goes to Deepgram for transcription, and the resulting transcript goes to the analysis model. Neither is retained. Your recording stays on your device so you can play it back; delete it any time with the entry, or wipe everything in settings.",
+    a: "Entries stay only on your device — no cloud account, locked by biometrics or PIN. Analysis uses two encrypted requests: audio to Deepgram for transcription, transcript to the analysis model. Neither is kept. Delete recordings anytime, or wipe all in settings.",
   },
   {
     q: "How does the app actually know what I'm feeling?",
