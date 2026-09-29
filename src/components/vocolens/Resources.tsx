@@ -4,6 +4,7 @@ import {
   Pulse as Activity,
   PuzzlePiece as Puzzle,
   Heart,
+  HeartBreak,
   ArrowClockwise as RefreshCw,
   Flame,
   Timer,
@@ -639,6 +640,68 @@ export function Resources() {
                     </span>
                     <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
                       Emotion Labeling · Stress Relief Journaling · Resilience
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </RevealItem>
+        </article>
+
+        <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
+          <meta itemProp="url" content="https://vocolens.com/resources/rejection-sensitivity" />
+          <meta itemProp="datePublished" content="2026-09-19" />
+          <meta itemProp="dateModified" content="2026-09-19" />
+          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
+          <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <RevealItem>
+            <Link
+              to="/resources/rejection-sensitivity"
+              aria-label="Read: Why 'No' Lands Like a Bruise: Rejection Sensitivity and the ADHD Brain"
+              className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
+            >
+              <div className="flex flex-col gap-4">
+                <div
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
+                  aria-hidden="true"
+                >
+                  <HeartBreak className="w-5 h-5 text-[#6A3FC0]" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mb-3">
+                    <span
+                      className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left"
+                      itemProp="articleSection"
+                    >
+                      ADHD &amp; Emotional Regulation
+                    </span>
+                  </div>
+                  <h2
+                    itemProp="headline"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
+                  >
+                    Why 'No' Lands Like a Bruise: Rejection Sensitivity and the ADHD Brain
+                  </h2>
+                  <p
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
+                    itemProp="description"
+                  >
+                    Some hits land harder than the moment merits — and with ADHD, that's not a
+                    character flaw. Learn what rejection sensitive dysphoria is, why social pain is
+                    real to your brain, and what helps in the minutes after.
+                  </p>
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                      Read article
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                    <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
+                      Rejection Sensitivity · RSD · ADHD
                     </span>
                   </div>
                 </div>

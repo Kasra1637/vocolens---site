@@ -76,6 +76,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection
 - Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
 - Distress Detection: https://vocolens.com/resources/distress-detection
+- Rejection Sensitivity: https://vocolens.com/resources/rejection-sensitivity
 - Privacy Policy: https://vocolens.com/privacy
 - Terms of Service: https://vocolens.com/terms
 - Get the app (Google Play): https://play.google.com/store/apps/details?id=com.vocolens.app
