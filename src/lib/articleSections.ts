@@ -88,6 +88,18 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "Completion signal", startSec: 280.6 },
     { title: "Worry time practice", startSec: 374.4 },
   ],
+  // Chapter starts are the word-count model below (manifest words / MP3
+  // duration), excluding the FAQ block because articleBlocks() skips it. The
+  // same model reproduces the existing entries to within ~4s, which is the
+  // accuracy the 1.5s header lead-in is built to absorb.
+  "rejection-sensitivity": [
+    { title: "Introduction", startSec: 0 },
+    { title: "What it actually is", startSec: 72.2 },
+    { title: "Why rejection physically hurts", startSec: 172.4 },
+    { title: "The ADHD brain", startSec: 259.7 },
+    { title: "Why advice backfires", startSec: 336.4 },
+    { title: "What actually helps", startSec: 418.7 },
+  ],
   "science-of-reflection": [
     { title: "Introduction", startSec: 0 },
     { title: "Neuroscience of labeling", startSec: 23.7 },

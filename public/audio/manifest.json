@@ -12,12 +12,12 @@
   "alexithymia-emotional-vocabulary": {
     "file": "/audio/alexithymia-emotional-vocabulary.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "52c0a4dd8f8a22f1",
-    "chars": 10304,
-    "words": 1682,
-    "bytes": 2674989,
-    "minutes": 11.1,
-    "generatedAt": "2026-09-19T03:58:25.374Z"
+    "hash": "17d8c6ec6aac867e",
+    "chars": 10140,
+    "words": 1663,
+    "bytes": 3943296,
+    "minutes": 11,
+    "generatedAt": "2026-09-29T21:23:40.540Z"
   },
   "burnout-recovery-signs": {
     "file": "/audio/burnout-recovery-signs.mp3",
@@ -42,12 +42,12 @@
   "autism-emotional-regulation": {
     "file": "/audio/autism-emotional-regulation.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "06c4f98af802c6a6",
-    "chars": 7021,
-    "words": 1010,
-    "bytes": 1826445,
+    "hash": "ab07026cdb97cb7b",
+    "chars": 7029,
+    "words": 1013,
+    "bytes": 2750256,
     "minutes": 7.6,
-    "generatedAt": "2026-09-19T03:58:25.374Z"
+    "generatedAt": "2026-09-29T21:24:09.228Z"
   },
   "distress-detection": {
     "file": "/audio/distress-detection.mp3",
@@ -82,11 +82,21 @@
   "emotional-granularity": {
     "file": "/audio/emotional-granularity.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "43627357ff46c916",
-    "chars": 6156,
-    "words": 1033,
-    "bytes": 1586061,
-    "minutes": 6.6,
-    "generatedAt": "2026-09-19T03:58:25.374Z"
+    "hash": "9c70130a74bc43ff",
+    "chars": 6225,
+    "words": 1042,
+    "bytes": 2406096,
+    "minutes": 6.7,
+    "generatedAt": "2026-09-29T21:24:50.313Z"
+  },
+  "rejection-sensitivity": {
+    "file": "/audio/rejection-sensitivity.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "a93fd618b9af07a9",
+    "chars": 8903,
+    "words": 1464,
+    "bytes": 3566592,
+    "minutes": 9.9,
+    "generatedAt": "2026-09-29T21:23:05.331Z"
   }
 }

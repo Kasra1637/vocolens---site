@@ -17,6 +17,7 @@ import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
+import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/resources.rejection-sensitivity'
 import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
 import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
@@ -65,6 +66,12 @@ const ResourcesScienceOfReflectionRoute =
   ResourcesScienceOfReflectionRouteImport.update({
     id: '/science-of-reflection',
     path: '/science-of-reflection',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesRejectionSensitivityRoute =
+  ResourcesRejectionSensitivityRouteImport.update({
+    id: '/rejection-sensitivity',
+    path: '/rejection-sensitivity',
     getParentRoute: () => ResourcesRoute,
   } as any)
 const ResourcesOverthinkingRuminationRoute =
@@ -131,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
+  '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -148,6 +156,7 @@ export interface FileRoutesByTo {
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
+  '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources': typeof ResourcesIndexRoute
 }
@@ -167,6 +176,7 @@ export interface FileRoutesById {
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
+  '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
+    | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
     | '/resources/'
   fileRoutesByTo: FileRoutesByTo
@@ -204,6 +215,7 @@ export interface FileRouteTypes {
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
+    | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
     | '/resources'
   id:
@@ -222,6 +234,7 @@ export interface FileRouteTypes {
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
     | '/resources/overthinking-rumination'
+    | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
     | '/resources/'
   fileRoutesById: FileRoutesById
@@ -293,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesScienceOfReflectionRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/rejection-sensitivity': {
+      id: '/resources/rejection-sensitivity'
+      path: '/rejection-sensitivity'
+      fullPath: '/resources/rejection-sensitivity'
+      preLoaderRoute: typeof ResourcesRejectionSensitivityRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/overthinking-rumination': {
       id: '/resources/overthinking-rumination'
       path: '/overthinking-rumination'
@@ -361,6 +381,7 @@ interface ResourcesRouteChildren {
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
   ResourcesEmotionalGranularityRoute: typeof ResourcesEmotionalGranularityRoute
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
+  ResourcesRejectionSensitivityRoute: typeof ResourcesRejectionSensitivityRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
   ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
@@ -377,6 +398,7 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
     ResourcesEmotionalAwarenessPatternsRoute,
   ResourcesEmotionalGranularityRoute: ResourcesEmotionalGranularityRoute,
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
+  ResourcesRejectionSensitivityRoute: ResourcesRejectionSensitivityRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,
   ResourcesIndexRoute: ResourcesIndexRoute,
 }
