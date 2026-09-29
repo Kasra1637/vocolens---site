@@ -36,8 +36,8 @@ export function RejectionSensitivity() {
     "alternativeHeadline": "Rejection Sensitive Dysphoria Explained: Why Criticism Hurts So Much With ADHD",
     "description": "Why does criticism or rejection hurt so much with ADHD? Learn what rejection sensitive dysphoria is, what social-pain research actually shows, and what helps in the minutes after the hit.",
     "image": "https://vocolens.com/vocolens-logo.png",
-    "datePublished": "2026-09-19",
-    "dateModified": "2026-09-19",
+    "datePublished": "2026-09-29",
+    "dateModified": "2026-09-29",
     "author": {
       "@type": "Organization",
       "name": "Vocolens",
@@ -163,7 +163,7 @@ export function RejectionSensitivity() {
               <Clock className="w-3 h-3" aria-hidden="true" />
               <span>8 min read</span>
               <span aria-hidden="true" className="mx-1">·</span>
-              <time dateTime="2026-09-19" itemProp="datePublished">Sep 19, 2026</time>
+              <time dateTime="2026-09-29" itemProp="datePublished">Sep 29, 2026</time>
             </span>
           </div>
         </div>

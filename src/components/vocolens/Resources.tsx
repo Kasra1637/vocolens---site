@@ -72,8 +72,8 @@ export function Resources() {
       <RevealGroup stagger={0.05} eager>
         <article itemScope itemType="https://schema.org/Article" className="w-full">
           <meta itemProp="url" content="https://vocolens.com/resources/rejection-sensitivity" />
-          <meta itemProp="datePublished" content="2026-09-19" />
-          <meta itemProp="dateModified" content="2026-09-19" />
+          <meta itemProp="datePublished" content="2026-09-29" />
+          <meta itemProp="dateModified" content="2026-09-29" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
