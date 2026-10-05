@@ -24,7 +24,7 @@ Added:
 Verified: prettier-clean, `eslint` clean for new/changed files, `vite build` passes, testing agent 100% (SSR head, JSON-LD validity, hub order, links, responsive 1920/390, regression on existing pages). Pre-existing and untouched: 1 tsc error in `src/routes/__root.tsx`, prettier lint errors in the RejectionSensitivity files.
 
 Known gaps / follow-ups:
-- **No narration MP3 yet** — Edge TTS is unreachable from this sandbox. Run `node scripts/generate-article-audio.cjs` locally (worker running, or `BASE_URL=https://vocolens.com` after deploy); the player hides itself until `public/audio/mixed-emotions.mp3` exists. After generating, re-measure the `mixed-emotions` chapter starts from the MP3 (current values are estimates).
+- ~~No narration MP3 yet~~ **Done 2026-10-05:** `public/audio/mixed-emotions.mp3` generated with `scripts/generate-article-audio.cjs` (Aria, 48 kbps like the other posts, 8:15, 2.9 MB; manifest updated). Chapter starts in `articleSections.ts` were measured from the MP3: the 95 ≥0.8 s silences align 1:1 with the 95 narrated sentences, so each H2 start is the silence_end before its heading (0 / 50.1 / 142.1 / 238.7 / 331.2). Verified in-browser: player shows 8:15, 5 chapters, select + Listen plays the right section and highlights it.
 - Publication date `2026-10-06` is an assumption (one week after the last post) — adjust in component, hub card and sitemap if publishing on another day.
 - `plan/plan.md` (planning notes) was swept into the platform checkpoint commit; delete if it should not ship.
 
@@ -91,7 +91,6 @@ Final title list (in order):
 - To preview locally: `cd /app && yarn install --ignore-engines && node_modules/.bin/vite dev --port 3000 --host 0.0.0.0`
 
 ## Backlog / Next Steps
-- P1: Generate `public/audio/mixed-emotions.mp3` and re-measure its chapter timestamps (see 2026-10 entry).
 - P2: Add `rejection-sensitivity` to `SLUGS` in `scripts/generate-article-audio.cjs` and to the prettier-off block in `eslint.config.js` (its route/component currently fail `npm run lint` on formatting only).
 - P2: Candidate next posts in the same arc: "The word under the word" (primary vs. secondary emotions) and "How to actually use an emotion wheel" (Plutchik ladders).
 - P2: Consider reviewing OG/meta titles in `src/routes/features.tsx` for consistency with new shorter section titles (not requested this round).

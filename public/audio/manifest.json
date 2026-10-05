@@ -98,5 +98,15 @@
     "bytes": 3566592,
     "minutes": 9.9,
     "generatedAt": "2026-09-29T21:23:05.331Z"
+  },
+  "mixed-emotions": {
+    "file": "/audio/mixed-emotions.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "8cf25eb17d7af099",
+    "chars": 7562,
+    "words": 1319,
+    "bytes": 2970720,
+    "minutes": 8.3,
+    "generatedAt": "2026-10-05T01:17:19.207Z"
   }
 }

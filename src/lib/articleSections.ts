@@ -80,12 +80,15 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "Getting more specific", startSec: 200 },
     { title: "Words worth keeping", startSec: 290 },
   ],
+  // Measured from the MP3 (2026-10-05): the 95 ≥0.8s silences align 1:1 with
+  // the 95 narrated sentences, so each chapter start is the silence_end
+  // preceding its H2 block (ffmpeg silencedetect noise=-35dB:d=0.35).
   "mixed-emotions": [
     { title: "Introduction", startSec: 0 },
-    { title: "Two things at once?", startSec: 61.2 },
-    { title: "Information, not noise", startSec: 175.6 },
-    { title: "Don't flatten it", startSec: 297.2 },
-    { title: "Holding both", startSec: 420 },
+    { title: "Two things at once?", startSec: 50.1 },
+    { title: "Information, not noise", startSec: 142.1 },
+    { title: "Don't flatten it", startSec: 238.7 },
+    { title: "Holding both", startSec: 331.2 },
   ],
   "overthinking-rumination": [
     { title: "Introduction", startSec: 0 },
