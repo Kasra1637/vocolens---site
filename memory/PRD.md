@@ -12,6 +12,22 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 
 ## Change Log
 
+### 2026-10 — New blog post: "Mixed Emotions" (next post after Emotional Granularity)
+Request: pick the next-best post idea matching the previous one (SEO/AEO/GEO, structure, voice, keywords) and generate it. Anchor: `/resources/emotional-granularity`. Chosen idea: **mixed emotions** (the step after "how specific should the word be" is "what if it's two words"); maps to the product fact "Blended emotions and emotional tension are detected, not flattened."
+
+Added:
+- `src/components/vocolens/MixedEmotions.tsx` — article in the exact granularity template: breadcrumb → category pill → H1 "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion" → dek → byline (8 min read, Oct 6 2026) → ListenToArticle → Key takeaways (3) → scene hook + bridge to the granularity post → 4 H2 sections (3 with verified research blockquote + "Read the research" link: Larsen/McGraw/Cacioppo 2001 PMID 11642354; Berrios et al. 2015 PMC4397957; Hershfield et al. 2013 PMID 24032072) + 4-item practical list → 5-question FAQ (one carries the "3 corrections across 2 weeks" product fact) → 3 related articles (granularity, science-of-reflection, alexithymia) → CTA "Hold both" with Google Play button. Article + FAQPage JSON-LD, microdata, speakable.
+- `src/routes/resources.mixed-emotions.tsx` — title tag, meta description (152 chars), og tags, canonical.
+- Hub card inserted first in `src/components/vocolens/Resources.tsx` (Intersect icon; RSD card now carries `mt-5 sm:mt-8`).
+- `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt` updated; slug added to `scripts/generate-article-audio.cjs`; estimated chapter starts (150 wpm word-count model) added to `src/lib/articleSections.ts` under `mixed-emotions`.
+
+Verified: prettier-clean, `eslint` clean for new/changed files, `vite build` passes, testing agent 100% (SSR head, JSON-LD validity, hub order, links, responsive 1920/390, regression on existing pages). Pre-existing and untouched: 1 tsc error in `src/routes/__root.tsx`, prettier lint errors in the RejectionSensitivity files.
+
+Known gaps / follow-ups:
+- **No narration MP3 yet** — Edge TTS is unreachable from this sandbox. Run `node scripts/generate-article-audio.cjs` locally (worker running, or `BASE_URL=https://vocolens.com` after deploy); the player hides itself until `public/audio/mixed-emotions.mp3` exists. After generating, re-measure the `mixed-emotions` chapter starts from the MP3 (current values are estimates).
+- Publication date `2026-10-06` is an assumption (one week after the last post) — adjust in component, hub card and sitemap if publishing on another day.
+- `plan/plan.md` (planning notes) was swept into the platform checkpoint commit; delete if it should not ship.
+
 ### 2026-02 — Features Page Section Titles Shortened (≤44 chars)
 Request: Make each Features page section title relevant and ≤44 characters, same tone, titles only (not body copy).
 
@@ -75,5 +91,8 @@ Final title list (in order):
 - To preview locally: `cd /app && yarn install --ignore-engines && node_modules/.bin/vite dev --port 3000 --host 0.0.0.0`
 
 ## Backlog / Next Steps
+- P1: Generate `public/audio/mixed-emotions.mp3` and re-measure its chapter timestamps (see 2026-10 entry).
+- P2: Add `rejection-sensitivity` to `SLUGS` in `scripts/generate-article-audio.cjs` and to the prettier-off block in `eslint.config.js` (its route/component currently fail `npm run lint` on formatting only).
+- P2: Candidate next posts in the same arc: "The word under the word" (primary vs. secondary emotions) and "How to actually use an emotion wheel" (Plutchik ladders).
 - P2: Consider reviewing OG/meta titles in `src/routes/features.tsx` for consistency with new shorter section titles (not requested this round).
 - P2: Investigate supervisor/environment mismatch if live preview via managed process is needed going forward.
