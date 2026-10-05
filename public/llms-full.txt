@@ -86,6 +86,9 @@ Vocolens is grounded in emotion science including:
 8. "Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock" - https://vocolens.com/resources/adhd-time-blindness
    Explains the neuroscience of ADHD time perception (interval timing) and how a daily voice-logged time-anchor habit recalibrates the internal clock.
 
+9. "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion" - https://vocolens.com/resources/mixed-emotions
+   Explains the research on mixed emotions (Larsen, McGraw & Cacioppo 2001; Berrios et al. 2015 meta-analysis; Hershfield et al. 2013) and why naming both feelings separately beats flattening them into one vague word, with voice journaling as the practice.
+
 ## Pages
 
 - Home: https://vocolens.com/
@@ -101,6 +104,7 @@ Vocolens is grounded in emotion science including:
 - Burnout Recovery: https://vocolens.com/resources/burnout-recovery-signs
 - ADHD Time Blindness: https://vocolens.com/resources/adhd-time-blindness
 - Rejection Sensitivity: https://vocolens.com/resources/rejection-sensitivity
+- Mixed Emotions: https://vocolens.com/resources/mixed-emotions
 - Privacy Policy: https://vocolens.com/privacy
 - Terms of Service: https://vocolens.com/terms
 - Get the app (Google Play): https://play.google.com/store/apps/details?id=com.vocolens.app

@@ -80,6 +80,13 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "Getting more specific", startSec: 200 },
     { title: "Words worth keeping", startSec: 290 },
   ],
+  "mixed-emotions": [
+    { title: "Introduction", startSec: 0 },
+    { title: "Two things at once?", startSec: 61.2 },
+    { title: "Information, not noise", startSec: 175.6 },
+    { title: "Don't flatten it", startSec: 297.2 },
+    { title: "Holding both", startSec: 420 },
+  ],
   "overthinking-rumination": [
     { title: "Introduction", startSec: 0 },
     { title: "Unfinished thoughts", startSec: 40.3 },

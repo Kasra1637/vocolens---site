@@ -9,42 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as UseCasesRouteImport } from './routes/use-cases'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as UseCasesRouteImport } from './routes/use-cases'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
-import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
-import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/resources.rejection-sensitivity'
-import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
-import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
-import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
-import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
-import { Route as ResourcesBurnoutRecoverySignsRouteImport } from './routes/resources.burnout-recovery-signs'
-import { Route as ResourcesAutismEmotionalRegulationRouteImport } from './routes/resources.autism-emotional-regulation'
-import { Route as ResourcesAlexithymiaEmotionalVocabularyRouteImport } from './routes/resources.alexithymia-emotional-vocabulary'
 import { Route as ResourcesAdhdTimeBlindnessRouteImport } from './routes/resources.adhd-time-blindness'
+import { Route as ResourcesAlexithymiaEmotionalVocabularyRouteImport } from './routes/resources.alexithymia-emotional-vocabulary'
+import { Route as ResourcesAutismEmotionalRegulationRouteImport } from './routes/resources.autism-emotional-regulation'
+import { Route as ResourcesBurnoutRecoverySignsRouteImport } from './routes/resources.burnout-recovery-signs'
+import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
+import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
+import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
+import { Route as ResourcesMixedEmotionsRouteImport } from './routes/resources.mixed-emotions'
+import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
+import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/resources.rejection-sensitivity'
+import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
 
-const UseCasesRoute = UseCasesRouteImport.update({
-  id: '/use-cases',
-  path: '/use-cases',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeaturesRoute = FeaturesRouteImport.update({
@@ -52,9 +38,24 @@ const FeaturesRoute = FeaturesRouteImport.update({
   path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UseCasesRoute = UseCasesRouteImport.update({
+  id: '/use-cases',
+  path: '/use-cases',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
@@ -62,52 +63,10 @@ const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ResourcesRoute,
 } as any)
-const ResourcesScienceOfReflectionRoute =
-  ResourcesScienceOfReflectionRouteImport.update({
-    id: '/science-of-reflection',
-    path: '/science-of-reflection',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesRejectionSensitivityRoute =
-  ResourcesRejectionSensitivityRouteImport.update({
-    id: '/rejection-sensitivity',
-    path: '/rejection-sensitivity',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesOverthinkingRuminationRoute =
-  ResourcesOverthinkingRuminationRouteImport.update({
-    id: '/overthinking-rumination',
-    path: '/overthinking-rumination',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesEmotionalGranularityRoute =
-  ResourcesEmotionalGranularityRouteImport.update({
-    id: '/emotional-granularity',
-    path: '/emotional-granularity',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesEmotionalAwarenessPatternsRoute =
-  ResourcesEmotionalAwarenessPatternsRouteImport.update({
-    id: '/emotional-awareness-patterns',
-    path: '/emotional-awareness-patterns',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesDistressDetectionRoute =
-  ResourcesDistressDetectionRouteImport.update({
-    id: '/distress-detection',
-    path: '/distress-detection',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesBurnoutRecoverySignsRoute =
-  ResourcesBurnoutRecoverySignsRouteImport.update({
-    id: '/burnout-recovery-signs',
-    path: '/burnout-recovery-signs',
-    getParentRoute: () => ResourcesRoute,
-  } as any)
-const ResourcesAutismEmotionalRegulationRoute =
-  ResourcesAutismEmotionalRegulationRouteImport.update({
-    id: '/autism-emotional-regulation',
-    path: '/autism-emotional-regulation',
+const ResourcesAdhdTimeBlindnessRoute =
+  ResourcesAdhdTimeBlindnessRouteImport.update({
+    id: '/adhd-time-blindness',
+    path: '/adhd-time-blindness',
     getParentRoute: () => ResourcesRoute,
   } as any)
 const ResourcesAlexithymiaEmotionalVocabularyRoute =
@@ -116,10 +75,57 @@ const ResourcesAlexithymiaEmotionalVocabularyRoute =
     path: '/alexithymia-emotional-vocabulary',
     getParentRoute: () => ResourcesRoute,
   } as any)
-const ResourcesAdhdTimeBlindnessRoute =
-  ResourcesAdhdTimeBlindnessRouteImport.update({
-    id: '/adhd-time-blindness',
-    path: '/adhd-time-blindness',
+const ResourcesAutismEmotionalRegulationRoute =
+  ResourcesAutismEmotionalRegulationRouteImport.update({
+    id: '/autism-emotional-regulation',
+    path: '/autism-emotional-regulation',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesBurnoutRecoverySignsRoute =
+  ResourcesBurnoutRecoverySignsRouteImport.update({
+    id: '/burnout-recovery-signs',
+    path: '/burnout-recovery-signs',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesDistressDetectionRoute =
+  ResourcesDistressDetectionRouteImport.update({
+    id: '/distress-detection',
+    path: '/distress-detection',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesEmotionalAwarenessPatternsRoute =
+  ResourcesEmotionalAwarenessPatternsRouteImport.update({
+    id: '/emotional-awareness-patterns',
+    path: '/emotional-awareness-patterns',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesEmotionalGranularityRoute =
+  ResourcesEmotionalGranularityRouteImport.update({
+    id: '/emotional-granularity',
+    path: '/emotional-granularity',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesMixedEmotionsRoute = ResourcesMixedEmotionsRouteImport.update({
+  id: '/mixed-emotions',
+  path: '/mixed-emotions',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesOverthinkingRuminationRoute =
+  ResourcesOverthinkingRuminationRouteImport.update({
+    id: '/overthinking-rumination',
+    path: '/overthinking-rumination',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesRejectionSensitivityRoute =
+  ResourcesRejectionSensitivityRouteImport.update({
+    id: '/rejection-sensitivity',
+    path: '/rejection-sensitivity',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
+const ResourcesScienceOfReflectionRoute =
+  ResourcesScienceOfReflectionRouteImport.update({
+    id: '/science-of-reflection',
+    path: '/science-of-reflection',
     getParentRoute: () => ResourcesRoute,
   } as any)
 
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByTo {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -214,6 +224,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -233,6 +244,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -250,32 +262,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/use-cases': {
-      id: '/use-cases'
-      path: '/use-cases'
-      fullPath: '/use-cases'
-      preLoaderRoute: typeof UseCasesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/features': {
@@ -285,11 +276,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/use-cases': {
+      id: '/use-cases'
+      path: '/use-cases'
+      fullPath: '/use-cases'
+      preLoaderRoute: typeof UseCasesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resources/': {
@@ -299,60 +311,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesIndexRouteImport
       parentRoute: typeof ResourcesRoute
     }
-    '/resources/science-of-reflection': {
-      id: '/resources/science-of-reflection'
-      path: '/science-of-reflection'
-      fullPath: '/resources/science-of-reflection'
-      preLoaderRoute: typeof ResourcesScienceOfReflectionRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/rejection-sensitivity': {
-      id: '/resources/rejection-sensitivity'
-      path: '/rejection-sensitivity'
-      fullPath: '/resources/rejection-sensitivity'
-      preLoaderRoute: typeof ResourcesRejectionSensitivityRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/overthinking-rumination': {
-      id: '/resources/overthinking-rumination'
-      path: '/overthinking-rumination'
-      fullPath: '/resources/overthinking-rumination'
-      preLoaderRoute: typeof ResourcesOverthinkingRuminationRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/emotional-granularity': {
-      id: '/resources/emotional-granularity'
-      path: '/emotional-granularity'
-      fullPath: '/resources/emotional-granularity'
-      preLoaderRoute: typeof ResourcesEmotionalGranularityRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/emotional-awareness-patterns': {
-      id: '/resources/emotional-awareness-patterns'
-      path: '/emotional-awareness-patterns'
-      fullPath: '/resources/emotional-awareness-patterns'
-      preLoaderRoute: typeof ResourcesEmotionalAwarenessPatternsRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/distress-detection': {
-      id: '/resources/distress-detection'
-      path: '/distress-detection'
-      fullPath: '/resources/distress-detection'
-      preLoaderRoute: typeof ResourcesDistressDetectionRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/burnout-recovery-signs': {
-      id: '/resources/burnout-recovery-signs'
-      path: '/burnout-recovery-signs'
-      fullPath: '/resources/burnout-recovery-signs'
-      preLoaderRoute: typeof ResourcesBurnoutRecoverySignsRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
-    '/resources/autism-emotional-regulation': {
-      id: '/resources/autism-emotional-regulation'
-      path: '/autism-emotional-regulation'
-      fullPath: '/resources/autism-emotional-regulation'
-      preLoaderRoute: typeof ResourcesAutismEmotionalRegulationRouteImport
+    '/resources/adhd-time-blindness': {
+      id: '/resources/adhd-time-blindness'
+      path: '/adhd-time-blindness'
+      fullPath: '/resources/adhd-time-blindness'
+      preLoaderRoute: typeof ResourcesAdhdTimeBlindnessRouteImport
       parentRoute: typeof ResourcesRoute
     }
     '/resources/alexithymia-emotional-vocabulary': {
@@ -362,11 +325,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesAlexithymiaEmotionalVocabularyRouteImport
       parentRoute: typeof ResourcesRoute
     }
-    '/resources/adhd-time-blindness': {
-      id: '/resources/adhd-time-blindness'
-      path: '/adhd-time-blindness'
-      fullPath: '/resources/adhd-time-blindness'
-      preLoaderRoute: typeof ResourcesAdhdTimeBlindnessRouteImport
+    '/resources/autism-emotional-regulation': {
+      id: '/resources/autism-emotional-regulation'
+      path: '/autism-emotional-regulation'
+      fullPath: '/resources/autism-emotional-regulation'
+      preLoaderRoute: typeof ResourcesAutismEmotionalRegulationRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/burnout-recovery-signs': {
+      id: '/resources/burnout-recovery-signs'
+      path: '/burnout-recovery-signs'
+      fullPath: '/resources/burnout-recovery-signs'
+      preLoaderRoute: typeof ResourcesBurnoutRecoverySignsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/distress-detection': {
+      id: '/resources/distress-detection'
+      path: '/distress-detection'
+      fullPath: '/resources/distress-detection'
+      preLoaderRoute: typeof ResourcesDistressDetectionRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/emotional-awareness-patterns': {
+      id: '/resources/emotional-awareness-patterns'
+      path: '/emotional-awareness-patterns'
+      fullPath: '/resources/emotional-awareness-patterns'
+      preLoaderRoute: typeof ResourcesEmotionalAwarenessPatternsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/emotional-granularity': {
+      id: '/resources/emotional-granularity'
+      path: '/emotional-granularity'
+      fullPath: '/resources/emotional-granularity'
+      preLoaderRoute: typeof ResourcesEmotionalGranularityRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/mixed-emotions': {
+      id: '/resources/mixed-emotions'
+      path: '/mixed-emotions'
+      fullPath: '/resources/mixed-emotions'
+      preLoaderRoute: typeof ResourcesMixedEmotionsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/overthinking-rumination': {
+      id: '/resources/overthinking-rumination'
+      path: '/overthinking-rumination'
+      fullPath: '/resources/overthinking-rumination'
+      preLoaderRoute: typeof ResourcesOverthinkingRuminationRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/rejection-sensitivity': {
+      id: '/resources/rejection-sensitivity'
+      path: '/rejection-sensitivity'
+      fullPath: '/resources/rejection-sensitivity'
+      preLoaderRoute: typeof ResourcesRejectionSensitivityRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/science-of-reflection': {
+      id: '/resources/science-of-reflection'
+      path: '/science-of-reflection'
+      fullPath: '/resources/science-of-reflection'
+      preLoaderRoute: typeof ResourcesScienceOfReflectionRouteImport
       parentRoute: typeof ResourcesRoute
     }
   }
@@ -380,6 +399,7 @@ interface ResourcesRouteChildren {
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
   ResourcesEmotionalGranularityRoute: typeof ResourcesEmotionalGranularityRoute
+  ResourcesMixedEmotionsRoute: typeof ResourcesMixedEmotionsRoute
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesRejectionSensitivityRoute: typeof ResourcesRejectionSensitivityRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
@@ -397,6 +417,7 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
   ResourcesEmotionalGranularityRoute: ResourcesEmotionalGranularityRoute,
+  ResourcesMixedEmotionsRoute: ResourcesMixedEmotionsRoute,
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesRejectionSensitivityRoute: ResourcesRejectionSensitivityRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,

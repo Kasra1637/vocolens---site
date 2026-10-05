@@ -50,6 +50,7 @@ const SLUGS = [
   "emotional-awareness-patterns",
   "science-of-reflection",
   "emotional-granularity",
+  "mixed-emotions",
 ];
 
 function decodeEntities(s) {
