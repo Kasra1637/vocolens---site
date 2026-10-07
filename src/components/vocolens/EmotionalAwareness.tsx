@@ -6,25 +6,25 @@ import { BackToTop } from './BackToTop';
 
 const faqData = [
   {
-    question: 'What is metacognitive awareness and why does it matter for emotional health?',
-    answer: 'Metacognitive awareness is the ability to observe and reflect on your own thoughts and emotions — essentially thinking about your thinking. Research shows it directly enhances emotional regulation capacity because it creates psychological distance between you and your reactions. Instead of being swept away by emotion, you develop the ability to notice patterns, question automatic responses, and choose how to act rather than simply reacting.',
+    "question": "What is emotional awareness?",
+    "answer": "Emotional awareness is recognizing and describing feelings in yourself and others. A tentative label can help you consider the context; it is not a diagnosis."
   },
   {
-    question: 'How does pattern recognition in voice journaling improve emotional intelligence?',
-    answer: 'When you journal consistently over days and weeks, isolated emotional reactions stop appearing random. Pattern recognition reveals that specific situations, people, or times of day reliably trigger certain emotions. This transforms vague feelings into structured self-knowledge — you understand not just what you feel, but when, why, and under what conditions. That clarity is the foundation of emotional intelligence and intentional behavior change.',
+    "question": "How can I improve emotional awareness?",
+    "answer": "Try a short check-in: notice a sensation, choose a possible emotion, record what happened, and consider what you need. Review several entries for recurring situations. This is a reflection exercise, not a treatment or a guaranteed timetable."
   },
   {
-    question: 'How long does it take to start noticing emotional patterns through journaling?',
-    answer: 'Most people begin noticing surface-level patterns within 1-2 weeks of daily voice journaling — such as mood dips on certain days or recurring frustrations after specific interactions. Deeper patterns involving triggers, behavioral cycles, and emotional cause-and-effect typically crystallize after 4-6 weeks of consistent practice. The key is frequency and honesty, not session length.',
+    "question": "What is an example of emotional awareness?",
+    "answer": "After a meeting, you notice tense shoulders and an urge to withdraw. You consider whether you feel disappointed because you wanted your idea to be heard, rather than assuming others dislike you."
   },
   {
-    question: 'What is the difference between emotional awareness and emotional suppression?',
-    answer: 'Emotional suppression means pushing feelings away or pretending they don\'t exist — which research shows increases physiological stress and reduces well-being over time. Emotional awareness is the opposite: deliberately noticing, naming, and understanding your emotions without judgment. Awareness doesn\'t mean dwelling on negativity — it means giving your brain the information it needs to regulate effectively, which produces genuine calm rather than surface-level avoidance.',
+    "question": "Is awareness the same as regulation?",
+    "answer": "No. Awareness means recognizing feelings; regulation concerns how you respond. Granularity is distinguishing similar feelings more precisely. You can notice anger and still need help choosing a response."
   },
   {
-    question: 'Can voice journaling replace therapy for building self-awareness?',
-    answer: 'Voice journaling is a powerful self-awareness practice, but it serves a different function than therapy. It excels at daily pattern tracking, emotional processing, and metacognitive skill-building — work that actually accelerates therapeutic progress. Many therapists recommend journaling between sessions precisely because the self-knowledge it generates makes therapy more focused and productive. Think of voice journaling as the daily practice and therapy as the guided interpretation.',
-  },
+    "question": "What if I cannot identify my emotions?",
+    "answer": "Start with sensations, energy, or pleasant versus unpleasant. Not knowing yet is valid. Persistent difficulty can be associated with alexithymia, but a journal cannot diagnose it. Seek qualified support if distress interferes with daily life."
+  }
 ];
 
 export function EmotionalAwareness() {
@@ -59,11 +59,11 @@ export function EmotionalAwareness() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding",
-            "description": "Discover how metacognitive awareness and pattern recognition through daily voice journaling rewire your brain for emotional intelligence. Research-backed insights on how Vocolens helps you identify emotional triggers, behavioral patterns, and accelerate personal growth.",
+            "headline": "Emotional Awareness: What It Is and How to Improve It",
+            "description": "Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.",
             "image": "https://vocolens.com/vocolens-logo.png",
             "datePublished": "2026-03-30",
-            "dateModified": "2026-03-30",
+            "dateModified": "2026-10-06",
             "author": {
               "@type": "Organization",
               "name": "Vocolens",
@@ -89,7 +89,7 @@ export function EmotionalAwareness() {
               "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vocolens.com" },
                 { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://vocolens.com/resources" },
-                { "@type": "ListItem", "position": 3, "name": "Building Emotional Awareness Through Pattern Recognition", "item": "https://vocolens.com/resources/emotional-awareness-patterns" }
+                { "@type": "ListItem", "position": 3, "name": "Emotional Awareness", "item": "https://vocolens.com/resources/emotional-awareness-patterns" }
               ]
             }
           })
@@ -112,7 +112,7 @@ export function EmotionalAwareness() {
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-text-primary font-medium" itemProp="name">Building Emotional Awareness</span>
+              <span className="text-text-primary font-medium" itemProp="name">Emotional Awareness</span>
               <meta itemProp="item" content="https://vocolens.com/resources/emotional-awareness-patterns" />
               <meta itemProp="position" content="2" />
             </li>
@@ -134,16 +134,18 @@ export function EmotionalAwareness() {
             itemProp="headline"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
-            Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding
+            Emotional Awareness: What It Is and How to Improve It
           </h1>
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.</p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" aria-hidden="true" />
-              6 min read
+              4 min read
             </span>
             <span aria-hidden="true">·</span>
             <time dateTime="2026-03-30" itemProp="datePublished">March 30, 2026</time>
+              <span>Updated <time dateTime="2026-10-06" itemProp="dateModified">Oct 6, 2026</time></span>
           </div>
         </div>
       </div>
@@ -155,135 +157,62 @@ export function EmotionalAwareness() {
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0">Metacognitive awareness—thinking about your thinking—is the foundation of emotional intelligence and accelerates personal growth.</div>
+                <div className="min-w-0">Awareness starts with noticing feelings, not forcing yourself to feel differently.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0">Pattern recognition through voice journaling reveals hidden emotional triggers and behavioral cycles you can't see alone.</div>
+                <div className="min-w-0">A record of situation, sensation, emotion, and need makes reflection concrete.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0">Consistent reflective practice rewires neural pathways, strengthening prefrontal regions and enhancing emotional regulation capacity.</div>
+                <div className="min-w-0">Repeated entries may reveal patterns; they do not prove causes or diagnose conditions.</div>
               </li>
             </ul>
       </div>
 
       <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
-        <div>
-          <p>
-            You experience the same emotional trigger again. Your anxiety spikes in certain situations. A particular conversation pattern leaves you frustrated every time. Yet each moment feels isolated, disconnected from the pattern beneath it. That's the gap where self-awareness lives—and where the most profound personal transformation becomes possible.
-          </p>
-        </div>
+        <div><p>You do not need the perfect emotion word or an app to begin. Start by noticing what changed, then consider what the feeling might tell you about the situation. A tentative label is enough.</p></div>
+
+        <div><section aria-labelledby="section-metacognition">
+<h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">What is emotional awareness?</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Emotional awareness is the ability to recognize and describe emotions in yourself and others. It means noticing what is happening before deciding how to respond. Awareness is different from control: recognizing anger does not make it disappear.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Lane and Smith's 2021 review describes emotional awareness as a socio-emotional skill and summarizes evidence linking it with emotion regulation and social functioning. This does not establish that a particular journaling app improves those outcomes. The exercises below are reflection suggestions, not a treatment protocol.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8395748/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Read Lane and Smith's review of emotional awareness (2021)</a>.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-expressive-writing">
+<h2 id="section-expressive-writing" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Everyday examples of emotional awareness</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">After receiving brief feedback, you notice a hot face and an urge to defend yourself. "I feel embarrassed and uncertain" separates the emotion from the assumption that the other person dislikes you.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Before a busy afternoon, a tight stomach could accompany anxiety, hunger, or both. Body signals are clues, not an emotion detector. After good news, you may feel excited and apprehensive at once; awareness can hold both.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">If words are hard to find, begin with "unpleasant and activated." Our guide to <Link to="/resources/alexithymia-emotional-vocabulary" className="text-primary font-semibold hover:underline">difficulty identifying emotions and alexithymia</Link> explores this experience without requiring a label up front.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-pattern-recognition">
+<h2 id="section-pattern-recognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">How to improve emotional awareness: a short check-in</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Try this when you have space to reflect. Stop if focusing inward makes distress worse. Write, speak, or make a few notes; choose whichever format is easiest for you.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><strong>1. Notice:</strong> What sensation or change in energy do I observe? "My shoulders are tense."</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><strong>2. Name:</strong> What emotion might fit? "Possibly anxious or disappointed." Putting a feeling into words is called <Link to="/resources/science-of-reflection" className="text-primary font-semibold hover:underline">affect labeling</Link>.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><strong>3. Locate the context:</strong> What happened just before this? Separate the event from your interpretation.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><strong>4. Choose a next step:</strong> Do I need rest, information, a boundary, or a conversation? A feeling is information, not an instruction.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-emotional-triggers">
+<h2 id="section-emotional-triggers" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">An emotion-and-trigger journal you can reuse</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Use this template: Situation | Body sensation | Possible emotion | Intensity in my own words | Need or next step. Example: "Meeting ended without feedback | tight chest | uncertain and disappointed | noticeable but manageable | ask for clarification tomorrow."</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">After several entries, look for repeated contexts: rushed mornings, missed meals, specific conversations, or overstimulation. Include exceptions too. If a situation sometimes feels easy, what was different? A small journal sample cannot prove causation.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Keep records private and avoid recording others without consent. In Vocolens, voice entries and emotion views can support reflection; suggested labels still need your judgment. You can use the same exercise on paper, without AI.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-accelerating-growth">
+<h2 id="section-accelerating-growth" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Awareness, naming, and granularity are different skills</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Awareness asks "What am I noticing?" Affect labeling adds "What word might fit?" <Link to="/resources/emotional-granularity" className="text-primary font-semibold hover:underline">Emotional granularity</Link> asks "Is disappointed more accurate than upset?" You can practice each without demanding certainty.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">There is no universal timetable for improvement. A brief check-in may be more sustainable than a long analysis. If reviewing entries becomes repetitive self-criticism, pause rather than treating more journaling as automatically better.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">This guide is educational, not diagnostic or medical advice. If feelings are overwhelming, persistent, or disrupting daily life, consider a qualified mental-health professional. Reflection can complement support; it does not replace it.</p>
+</section></div>
 
         <div>
-          <section aria-labelledby="section-metacognition">
-            <h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The power of metacognitive awareness: thinking about your thinking
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Metacognition—the ability to observe and reflect on your own thoughts and emotions—is one of the most powerful tools for personal growth. Unlike simple thinking, which is automatic and reactive, metacognitive awareness gives you the psychological distance needed to understand <em>why</em> you think and feel the way you do.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Research on metacognitive awareness demonstrates that individuals who regularly engage in reflective practice show significantly enhanced emotional regulation abilities. A study on metacognitive awareness and emotional development found that improving metacognitive awareness through structured reflection directly enhances emotional regulation capacity and concentration, with effects that persist over time.
-            </p>
-            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
-              "The faculty to observe one's own thoughts is a fundamental human capacity, yet most of us go through life without fully developing it. Metacognitive awareness is where genuine change begins."
-              <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Research on Metacognitive Awareness in Emotional Regulation</cite>
-            </blockquote>
-            <p>
-              When you pause to reflect on an emotional reaction—to ask yourself <em>why</em> you responded that way—you activate prefrontal regions involved in self-awareness and emotional insight. Over time, this practice literally rewires your brain, strengthening the neural pathways that support emotional intelligence.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-expressive-writing">
-            <h2 id="section-expressive-writing" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Expressive disclosure: why speaking your emotions unlocks insight
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Talking through your experiences isn't just emotionally cathartic—it's neurologically transformative. Research by Pennebaker and Beall (1986) showed that expressive writing about emotional experiences leads to measurable gains in clarity and insight into emotional patterns. Later meta-analyses by Frattaroli (2006) examining 146 studies confirmed that expressive disclosure produces lasting improvements in psychological health outcomes.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              What makes voice journaling uniquely powerful is that speaking engages different neural pathways than writing. When you articulate your emotions aloud, you're encoding them through multiple sensory channels—auditory, motor, and linguistic—creating stronger memory traces and deeper insight. This is why a 10-minute voice journal can sometimes unlock clarity that writing alone might take much longer to achieve.
-            </p>
-            <p>
-              The mechanism is straightforward: as you externalize your thoughts through voice, your prefrontal cortex becomes engaged in organizing and narrating your experience. This process itself is therapeutic—your brain gains perspective simply by putting feelings into words.
-            </p>
-            <a
-              href="https://pubmed.ncbi.nlm.nih.gov/17073523/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Read the Frattaroli (2006) meta-analysis on experimental disclosure and its health effects — PubMed"
-              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
-            >
-              <span className="min-w-0">Read the meta-analysis: Experimental Disclosure and Its Moderators — PubMed</span>
-              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-            </a>
-          </section>
-        </div>
-
-        <div>
-          <div className="h-px bg-primary/10" />
-        </div>
-
-        <div>
-          <section aria-labelledby="section-pattern-recognition">
-            <h2 id="section-pattern-recognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              From single moments to patterns: the real power of voice journaling
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              An isolated emotional reaction is just data. But when you journal consistently, something remarkable happens: patterns emerge. You notice that frustration tends to spike on Monday mornings. Anxiety about judgment clusters around social situations. Energy crashes after intense focus periods.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              This is where pattern recognition—one of the highest-level cognitive functions—transforms self-awareness into actionable insight. By reviewing your voice journals over weeks and months, you start to see the architecture of your emotional life. Triggers become visible. Behavioral cycles crystallize. You understand not just <em>what</em> you're feeling, but <em>when</em>, <em>why</em>, and <em>under what conditions</em>.
-            </p>
-            <p>
-              Vocolens' emotion tracking and pattern visualization features are specifically designed to support this. As you capture emotions, environmental contexts, and intensity levels in your voice entries, the app helps you recognize recurring patterns—transforming raw experience into structured self-knowledge. This is the gateway to intentional change.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-emotional-triggers">
-            <h2 id="section-emotional-triggers" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Identifying your emotional triggers: the foundation of self-regulation
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              You can't regulate an emotional response you don't understand. The first step to genuine emotional control is precise trigger identification—and voice journaling accelerates this process dramatically.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              When you pause to voice journal immediately after an emotional spike, you capture the full context: what happened beforehand, what you were thinking, what your body felt like. Over time, patterns emerge. You realize that criticism from authority figures triggers shame. Uncertainty about the future activates anxiety. Feeling unheard in relationships activates frustration.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Once a trigger is identified and named, your nervous system begins to respond differently to it. There's research showing that simply labeling an emotional trigger reduces its automatic power—the same affect labeling mechanism that names emotions also works for understanding the conditions that activate them. This knowledge becomes your leverage point for change.
-            </p>
-            <p>
-              In Vocolens, you can tag entries with trigger information, review them over time, and watch patterns crystallize. What felt random and overwhelming becomes comprehensible and manageable.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-accelerating-growth">
-            <h2 id="section-accelerating-growth" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Accelerating personal growth through reflective insight
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              The research is clear: individuals who engage in regular reflective practice—pausing to think about their experiences, emotions, and reactions—progress faster in therapy, coaching, and personal development than those who don't. Why? Because reflection bridges the gap between experience and learning.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Without reflection, you repeat the same patterns. With consistent voice journaling, each experience becomes an opportunity for insight. You're not just living your life—you're learning from it. Over months and years, this compounding effect transforms your emotional intelligence, resilience, and capacity for meaningful change.
-            </p>
-            <p>
-              Vocolens is designed around this insight. Daily voice journaling isn't just a wellness habit—it's an accelerant for personal transformation. By creating a space where you can reflect, track patterns, and build metacognitive awareness, the app turns your ordinary daily experiences into extraordinary opportunities for growth.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-faq" className="border-t border-primary/10">
+          <section data-listen-exclude aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
@@ -323,9 +252,9 @@ export function EmotionalAwareness() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience & Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How naming your emotions reduces stress and builds resilience
+                      Affect labeling: how to name your emotions
                     </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
+                    <p className="text-text-secondary text-base leading-relaxed">Explore evidence, everyday examples, and limitations of putting feelings into words.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>

@@ -10,6 +10,8 @@
  *  - Residual error is ~±1s; the player adds a short header lead-in
  *
  * Timestamps match the single female (Aria) narration MP3 per article.
+ * The two SEO refreshes use separately synthesized section durations from
+ * scripts/refresh-resource-audio.cjs; their offsets are measured, not hand-tuned.
  *
  * To regenerate after article edits:
  *   1. Run scripts/generate-article-audio.cjs --force (rebuilds MP3s)
@@ -67,11 +69,11 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
   ],
   "emotional-awareness-patterns": [
     { title: "Introduction", startSec: 0 },
-    { title: "Metacognitive awareness", startSec: 23.8 },
-    { title: "Expressive disclosure", startSec: 91 },
-    { title: "Moments into patterns", startSec: 168.6 },
-    { title: "Emotional triggers", startSec: 239.6 },
-    { title: "Accelerating growth", startSec: 320.1 },
+    { title: "What is emotional awareness?", startSec: 12.696 },
+    { title: "Everyday examples of emotional awareness", startSec: 57.312 },
+    { title: "How to improve emotional awareness: a short check-in", startSec: 101.64 },
+    { title: "An emotion-and-trigger journal you can reuse", startSec: 151.968 },
+    { title: "Awareness, naming, and granularity are different skills", startSec: 207.576 },
   ],
   "emotional-granularity": [
     { title: "Introduction", startSec: 0 },
@@ -112,10 +114,10 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
   ],
   "science-of-reflection": [
     { title: "Introduction", startSec: 0 },
-    { title: "Neuroscience of labeling", startSec: 23.7 },
-    { title: "The Vocolens approach", startSec: 90.6 },
-    { title: "Breaking worry loops", startSec: 146.2 },
-    { title: "Long-term resilience", startSec: 226 },
+    { title: "What is affect labeling, and what does research show?", startSec: 13.416 },
+    { title: "Affect labeling examples: feelings are not predictions", startSec: 78.504 },
+    { title: "How to practice affect labeling in a brief check-in", startSec: 130.056 },
+    { title: "Naming emotions, emotional awareness, and granularity", startSec: 192.6 },
   ],
 };
 

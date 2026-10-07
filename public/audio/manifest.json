@@ -62,22 +62,22 @@
   "emotional-awareness-patterns": {
     "file": "/audio/emotional-awareness-patterns.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "2a3c0c5df2f53100",
-    "chars": 6524,
-    "words": 875,
-    "bytes": 1704237,
-    "minutes": 7.1,
-    "generatedAt": "2026-09-19T03:58:25.374Z"
+    "hash": "d3663ee846d21eed",
+    "chars": 3698,
+    "words": 556,
+    "bytes": 1035116,
+    "minutes": 4.3,
+    "generatedAt": "2026-10-07T00:08:26.265Z"
   },
   "science-of-reflection": {
     "file": "/audio/science-of-reflection.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "a4463e0d66d0a750",
-    "chars": 5147,
-    "words": 752,
-    "bytes": 1288461,
-    "minutes": 5.4,
-    "generatedAt": "2026-09-19T03:58:25.374Z"
+    "hash": "8e32ec271a654f76",
+    "chars": 3728,
+    "words": 580,
+    "bytes": 1009196,
+    "minutes": 4.2,
+    "generatedAt": "2026-10-07T00:08:38.941Z"
   },
   "emotional-granularity": {
     "file": "/audio/emotional-granularity.mp3",
