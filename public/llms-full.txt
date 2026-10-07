@@ -56,38 +56,44 @@ A: No. Vocolens is a personal journaling and self-awareness tool, not a medical 
 
 Vocolens is grounded in emotion science including:
 - Plutchik's wheel of emotions for granular emotion mapping beyond "happy/sad" categories
-- Lieberman (2007) affect labeling research showing that naming emotions reduces amygdala activity and calms the nervous system
-- Interoception research on how the body registers distress before conscious awareness
+- Lieberman (2007) laboratory affect-labeling research; this is not a clinical trial of Vocolens
+- Interoception research on sensing and interpreting internal body signals
 - Metacognitive pattern recognition for building emotional intelligence over time
 
 ## Resource Articles
 
-1. "How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience" - https://vocolens.com/resources/science-of-reflection
-   Explains Lieberman's affect labeling research and how daily voice journaling reduces anxiety and builds resilience.
+- "Affect Labeling: How to Name Your Emotions" - https://vocolens.com/resources/science-of-reflection
+  Research scope, practical examples, and limitations of naming feelings.
 
-2. "Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding" - https://vocolens.com/resources/emotional-awareness-patterns
-   Explains metacognitive awareness and pattern recognition for identifying triggers and behavioral cycles.
+- "Emotional Awareness: What It Is and How to Improve It" - https://vocolens.com/resources/emotional-awareness-patterns
+  Definitions, examples, and a short emotion-and-trigger journal.
 
-3. "How Your Body Tells You Are Overwhelmed Before Your Mind Does" - https://vocolens.com/resources/distress-detection
-   Explains interoception and how body-sensation mapping helps catch overwhelm before it escalates.
+- "ADHD Time Blindness: Examples and Practical Time Supports" - https://vocolens.com/resources/adhd-time-blindness
+  Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.
 
-4. "Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions" - https://vocolens.com/resources/autism-emotional-regulation
-   Explains alexithymia, sensory overload, and meltdown cycles in autistic adults and how voice journaling helps.
+- "Alexithymia: Difficulty Identifying Emotions and Where to Start" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
+  Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.
 
-5. "Why You Can't Name What You Feel: The Neuroscience of Alexithymia and How Voice Journaling Builds an Emotional Vocabulary" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
-   Explains the neuroscience of alexithymia and how AI-assisted voice journaling builds emotional vocabulary from scratch.
+- "Autism and Emotional Regulation: Sensory Needs and Practical Supports" - https://vocolens.com/resources/autism-emotional-regulation
+  Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.
 
-6. "The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps" - https://vocolens.com/resources/overthinking-rumination
-   Explains the Zeigarnik effect and default mode network research on rumination, and how voice journaling gives the brain a completion signal.
+- "Burnout Signs and Recovery: What to Notice and What Can Help" - https://vocolens.com/resources/burnout-recovery-signs
+  Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.
 
-7. "Burnout Doesn't Start in Your Job — It Starts in Your Nervous System" - https://vocolens.com/resources/burnout-recovery-signs
-   Explains allostatic load and Maslach's three dimensions of burnout, and how a daily voice-journaled load check catches burnout early.
+- "Physical Signs of Overwhelm: Body Awareness Without Guessing" - https://vocolens.com/resources/distress-detection
+  Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.
 
-8. "Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock" - https://vocolens.com/resources/adhd-time-blindness
-   Explains the neuroscience of ADHD time perception (interval timing) and how a daily voice-logged time-anchor habit recalibrates the internal clock.
+- "Overthinking and Rumination: How to Recognize the Loop" - https://vocolens.com/resources/overthinking-rumination
+  Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.
 
-9. "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion" - https://vocolens.com/resources/mixed-emotions
-   Explains the research on mixed emotions (Larsen, McGraw & Cacioppo 2001; Berrios et al. 2015 meta-analysis; Hershfield et al. 2013) and why naming both feelings separately beats flattening them into one vague word, with voice journaling as the practice.
+- "Rejection Sensitivity and ADHD: What RSD Means and How to Respond" - https://vocolens.com/resources/rejection-sensitivity
+  Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.
+
+- "Mixed Emotions: Why You Can Feel Happy and Sad at Once" - https://vocolens.com/resources/mixed-emotions
+  Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.
+
+- "Emotional Granularity: Why Specific Words Change What You Feel" - https://vocolens.com/resources/emotional-granularity
+  Fine distinctions between emotional states and a personal vocabulary.
 
 ## Pages
 

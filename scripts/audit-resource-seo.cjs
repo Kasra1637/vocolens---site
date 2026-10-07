@@ -5,6 +5,12 @@ const assert = require("node:assert/strict");
 const { load } = require("cheerio");
 const base = process.env.BASE_URL || "http://127.0.0.1:8797";
 const origin = "https://vocolens.com";
+const briefs = require("../test_reports/resource-refresh-content.json");
+const refreshed = new Set([
+  ...briefs.map((b) => b.slug),
+  "emotional-awareness-patterns",
+  "science-of-reflection",
+]);
 async function get(route) {
   const res = await fetch(base + route, { signal: AbortSignal.timeout(30000) });
   assert.equal(res.status, 200, `${route}: HTTP ${res.status}`);
@@ -83,21 +89,37 @@ async function get(route) {
       if (!cache.has(target)) cache.set(target, get(target));
       await cache.get(target);
     }
-    if (
-      process.env.BASELINE !== "1" &&
-      (route.endsWith("emotional-awareness-patterns") || route.endsWith("science-of-reflection"))
-    ) {
+    if (process.env.BASELINE !== "1" && refreshed.has(route.split("/").pop())) {
       assert.equal(article.headline, $("h1").text().trim());
       assert.equal(article.dateModified, "2026-10-06");
       assert.equal($('time[itemprop="dateModified"]').attr("datetime"), article.dateModified);
-      assert($('#article-root a[href="/resources/emotional-granularity"]').length);
-      assert($('#article-root a[href="/resources/alexithymia-emotional-vocabulary"]').length);
+      const slugBrief = briefs.find((b) => route.endsWith("/" + b.slug));
+      if (slugBrief) {
+        assert.equal(article.headline, slugBrief.title);
+        assert.equal(description, slugBrief.description);
+      }
+      assert($("#article-root a[href^='/resources/']").length >= 2, `${route}: contextual links`);
+      assert($("#article-root a[href^='https:']").length >= 1, `${route}: visible source`);
       assert($("#section-faq").closest("section").is("[data-listen-exclude]"));
       assert(
         !/proves|rewires neural pathways|up to 50%/i.test($("article").text()),
         `${route}: unsupported claim regression`,
       );
       const slug = route.split("/").pop();
+      const mapping = require("node:fs").readFileSync(
+        require("node:path").join(__dirname, "../src/lib/articleSections.ts"),
+        "utf8",
+      );
+      const start = mapping.indexOf('"' + slug + '": [');
+      const sectionMap = mapping.slice(start, mapping.indexOf("],", start));
+      const starts = [...sectionMap.matchAll(/startSec: ([0-9.]+)/g)].map((m) => Number(m[1]));
+      const bodySections = $("#article-root section[aria-labelledby]:not([data-listen-exclude])");
+      assert.equal(starts.length, bodySections.length + 1, `${route}: complete chapter map`);
+      assert.equal(starts[0], 0);
+      assert(
+        starts.every((v, i) => i === 0 || v > starts[i - 1]),
+        `${route}: chronological chapters`,
+      );
       const manifest = require("../public/audio/manifest.json")[slug];
       const normalize = (s) =>
         s

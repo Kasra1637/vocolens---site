@@ -255,10 +255,8 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness & Self-Discovery</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional awareness: what it is and how to improve it
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn to notice feelings and track recurring situations with a practical check-in.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">Emotional Awareness: What It Is and How to Improve It</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn to notice feelings and use a short emotion-and-trigger check-in.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -270,10 +268,8 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness & Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How your body tells you it's overwhelmed before your mind does
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">Physical Signs of Overwhelm: Body Awareness Without Guessing</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -285,10 +281,8 @@ export function ScienceOfReflection() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Anxiety & Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">The neuroscience of rumination, the Zeigarnik effect, and how voice journaling gives your brain the completion signal it's missing.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">Overthinking and Rumination: How to Recognize the Loop</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>

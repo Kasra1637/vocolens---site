@@ -5,23 +5,21 @@ export const Route = createFileRoute("/resources/mixed-emotions")({
   head: () => ({
     meta: [
       {
-        title:
-          "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion | Vocolens",
+        title: "Mixed Emotions: Why You Can Feel Happy and Sad at Once | Vocolens",
       },
       {
         name: "description",
         content:
-          "Can you feel two emotions at once? Learn what mixed emotions are, why they are information, not confusion, and how voice journaling helps you hold both.",
+          "Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.",
       },
       {
         property: "og:title",
-        content:
-          "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion | Vocolens",
+        content: "Mixed Emotions: Why You Can Feel Happy and Sad at Once | Vocolens",
       },
       {
         property: "og:description",
         content:
-          "Excited and terrified. Relieved and resentful. Feeling two things at once isn't confusion — the research says it's a more complete read of the situation.",
+          "Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.",
       },
       { property: "og:type", content: "article" },
     ],
