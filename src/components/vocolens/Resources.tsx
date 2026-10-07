@@ -85,7 +85,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/mixed-emotions"
-              aria-label="Read: Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion"
+              aria-label="Read: Mixed Emotions: Why You Can Feel Happy and Sad at Once"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -108,16 +108,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion
+                    Mixed Emotions: Why You Can Feel Happy and Sad at Once
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Excited and terrified. Relieved and resentful. Feeling two things at once is not
-                    confusion — it is a more complete read of a situation with two things in it.
-                    Learn what the research says about mixed emotions and how voice journaling holds
-                    both instead of flattening them.
+                    Learn what mixed emotions are, see everyday examples of feeling two things at
+                    once, and try a reflection that makes room for both without forcing a choice.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -137,7 +135,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/rejection-sensitivity" />
           <meta itemProp="datePublished" content="2026-09-29" />
-          <meta itemProp="dateModified" content="2026-09-29" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -148,7 +146,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/rejection-sensitivity"
-              aria-label="Read: Why 'No' Lands Like a Bruise: Rejection Sensitivity and the ADHD Brain"
+              aria-label="Read: Rejection Sensitivity and ADHD: What RSD Means and How to Respond"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -171,15 +169,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Why 'No' Lands Like a Bruise: Rejection Sensitivity and the ADHD Brain
+                    Rejection Sensitivity and ADHD: What RSD Means and How to Respond
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Some hits land harder than the moment merits — and with ADHD, that's not a
-                    character flaw. Learn what rejection sensitive dysphoria is, why social pain is
-                    real to your brain, and what helps in the minutes after.
+                    Learn what rejection sensitivity and RSD mean, why the label is not a formal
+                    diagnosis, and practical ways to respond to hurt without assuming intent.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -262,7 +259,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/adhd-time-blindness" />
           <meta itemProp="datePublished" content="2026-09-09" />
-          <meta itemProp="dateModified" content="2026-09-09" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -273,7 +270,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/adhd-time-blindness"
-              aria-label="Read: Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock"
+              aria-label="Read: ADHD Time Blindness: Examples and Practical Time Supports"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -296,16 +293,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock
+                    ADHD Time Blindness: Examples and Practical Time Supports
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    ADHD time blindness isn't laziness — it's a measurable gap in how the brain
-                    tracks duration. Learn the science of interval timing, why alarms alone don't
-                    fix it, and how a daily voice-logged time-anchor habit recalibrates your
-                    internal clock.
+                    Learn what ADHD time blindness means, recognize everyday examples, and try
+                    visible timers, task estimates, and transition cues without blaming yourself.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -325,7 +320,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/burnout-recovery-signs" />
           <meta itemProp="datePublished" content="2026-08-04" />
-          <meta itemProp="dateModified" content="2026-08-04" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -336,7 +331,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/burnout-recovery-signs"
-              aria-label="Read: Burnout Doesn't Start in Your Job — It Starts in Your Nervous System"
+              aria-label="Read: Burnout Signs and Recovery: What to Notice and What Can Help"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -359,15 +354,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
+                    Burnout Signs and Recovery: What to Notice and What Can Help
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Burnout builds through unlogged accumulation, not a single bad week. Learn the
-                    science of allostatic load, why a vacation alone doesn't fix it, and how a daily
-                    voice-journaled load check catches burnout before it becomes collapse.
+                    Understand workplace burnout signs, how they differ from ordinary tiredness, and
+                    practical recovery supports that address demands as well as rest.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -387,7 +381,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
           <meta itemProp="datePublished" content="2026-07-14" />
-          <meta itemProp="dateModified" content="2026-07-14" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -398,7 +392,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/overthinking-rumination"
-              aria-label="Read: The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps"
+              aria-label="Read: Overthinking and Rumination: How to Recognize the Loop"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -421,16 +415,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    The Overthinking Trap: Why Your Brain Won't Stop and What Actually Helps
+                    Overthinking and Rumination: How to Recognize the Loop
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Overthinking isn't a willpower problem — it's what happens when your brain
-                    treats a thought as unfinished business. Learn the neuroscience of rumination,
-                    why "just stop thinking about it" backfires, and how voice journaling gives your
-                    brain the completion signal it's been missing.
+                    Understand rumination versus useful reflection, see examples of repetitive
+                    worry, and try a practical next-step check without promises of instant relief.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -453,7 +445,7 @@ export function Resources() {
             content="https://vocolens.com/resources/autism-emotional-regulation"
           />
           <meta itemProp="datePublished" content="2026-06-29" />
-          <meta itemProp="dateModified" content="2026-06-29" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -464,7 +456,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/autism-emotional-regulation"
-              aria-label="Read: Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults Process Emotions"
+              aria-label="Read: Autism and Emotional Regulation: Sensory Needs and Practical Supports"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -487,17 +479,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Autism and Emotional Regulation: How Voice Journaling Helps Autistic Adults
-                    Process Emotions
+                    Autism and Emotional Regulation: Sensory Needs and Practical Supports
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Autistic adults face unique emotional regulation challenges including
-                    alexithymia, sensory overload, and meltdown cycles. Discover how voice
-                    journaling builds emotional vocabulary, tracks overwhelm patterns, and provides
-                    a safe space to process without masking pressure.
+                    Explore emotional regulation in autistic adults, how sensory demands and
+                    alexithymia can differ, and ways to plan support without masking your needs.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -520,7 +509,7 @@ export function Resources() {
             content="https://vocolens.com/resources/alexithymia-emotional-vocabulary"
           />
           <meta itemProp="datePublished" content="2026-06-28" />
-          <meta itemProp="dateModified" content="2026-06-28" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -531,7 +520,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/alexithymia-emotional-vocabulary"
-              aria-label="Read: Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary You Were Never Taught"
+              aria-label="Read: Alexithymia: Difficulty Identifying Emotions and Where to Start"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -554,17 +543,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Why You Can't Name What You're Feeling: Alexithymia and the Emotional Vocabulary
-                    You Were Never Taught
+                    Alexithymia: Difficulty Identifying Emotions and Where to Start
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Around 10% of people struggle to identify and describe their own emotions — a
-                    trait called alexithymia. Learn the neuroscience of emotional blindness, why
-                    traditional journaling fails, and how AI-assisted voice journaling creates a
-                    personal emotional vocabulary from scratch.
+                    Explore what alexithymia means, examples of difficulty identifying feelings, and
+                    gentle ways to describe sensations and build emotional vocabulary.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -584,7 +570,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/distress-detection" />
           <meta itemProp="datePublished" content="2026-06-11" />
-          <meta itemProp="dateModified" content="2026-06-11" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -595,7 +581,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/distress-detection"
-              aria-label="Read: How Your Body Tells You Are Overwhelmed Before Your Mind Does"
+              aria-label="Read: Physical Signs of Overwhelm: Body Awareness Without Guessing"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -618,16 +604,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    How Your Body Tells You Are Overwhelmed Before Your Mind Does
+                    Physical Signs of Overwhelm: Body Awareness Without Guessing
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Your body registers distress seconds before your conscious mind catches up.
-                    Learn the neuroscience of interoception, body-based early warning signs, and how
-                    voice journaling with body-sensation mapping helps you catch overwhelm before it
-                    escalates.
+                    Learn what interoception means, explore physical signs that can accompany
+                    overwhelm, and try a gentle check-in without treating sensations as diagnoses.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">

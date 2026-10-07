@@ -1,94 +1,105 @@
-import { ListenToArticle } from './ListenToArticle';
-import { Flame, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
-import { Link } from '@tanstack/react-router';
-import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
-import { BackToTop } from './BackToTop';
+import { ListenToArticle } from "./ListenToArticle";
+import {
+  Flame,
+  ArrowUpRight,
+  Clock,
+  CaretRight,
+  CaretRight as ChevronRight,
+  Question as HelpCircle,
+} from "@phosphor-icons/react";
+import { Link } from "@tanstack/react-router";
+import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
+import { BackToTop } from "./BackToTop";
 
 const faqData = [
   {
-    question: 'What are the first signs of burnout?',
-    answer: 'The earliest signs of burnout are rarely dramatic — they show up as small, easy-to-dismiss shifts: needing more effort to start tasks you used to do automatically, feeling irritated by things that didn\'t used to bother you, and a flattening sense of "what\'s the point" around work you once cared about. Maslach and Leiter\'s three-dimension model names these as the beginning of exhaustion and the early edge of cynicism, both of which typically appear well before performance visibly drops. Because they\'re subtle and easy to explain away individually, most people don\'t notice the pattern until the exhaustion dimension is already severe.',
+    question: "What are the main burnout signs?",
+    answer:
+      "WHO describes exhaustion, increased distance or cynicism toward work, and reduced professional efficacy. These can overlap with other difficulties and do not establish a diagnosis on their own.",
   },
   {
-    question: 'Can journaling help with burnout?',
-    answer: 'Yes, but the mechanism matters. Burnout builds through accumulation that goes unlogged — small stressors compounding without ever being registered as a running total. Structured journaling interrupts this by giving your nervous system a regular checkpoint: naming today\'s load, in your own words, before it silently adds to tomorrow\'s. Research on expressive disclosure (Pennebaker & Beall, 1986; Frattaroli\'s 2006 meta-analysis of 146 studies) shows that structured processing measurably reduces the physiological cost of chronic stress. Unstructured venting without any reflection or tracking doesn\'t show the same effect — the value comes from making the load visible, not from complaining about it.',
+    question: "Is burnout just being tired?",
+    answer:
+      "Ordinary tiredness and sustained work-related exhaustion are not interchangeable. Duration, demands, and functioning matter; persistent symptoms deserve assessment.",
   },
   {
-    question: 'How long does burnout recovery take?',
-    answer: 'There\'s no fixed timeline, because burnout is a function of how long the imbalance between demand and recovery went unaddressed — not a single event with a countdown clock. Clinical reviews of burnout recovery describe a general arc: acute exhaustion easing within weeks once the demand load is genuinely reduced, but the cynicism and reduced-efficacy dimensions — the parts that make you doubt your own competence and care — often take months to rebuild, because they involve restoring trust in your environment and yourself, not just resting your body. Recovery that only addresses tiredness (a vacation, a long weekend) frequently doesn\'t hold, because the underlying allostatic load and the unresolved cynicism are still there when you return.',
+    question: "Will a vacation fix burnout?",
+    answer:
+      "Rest may help, but it does not guarantee recovery if demands and support remain unchanged. Consider practical adjustments and qualified care when needed.",
   },
   {
-    question: "What's the difference between burnout and depression?",
-    answer: 'Burnout is generally understood as context-specific and load-driven — it develops in relation to a particular role or set of demands, and Maslach\'s research shows it typically improves, at least partially, when that specific load is reduced or the environment changes. Depression is more pervasive, affecting mood, energy, and interest across contexts, not just the one producing the strain, and it doesn\'t reliably lift just because the triggering situation changes. In practice the two frequently overlap and can be hard to distinguish from the inside, which is exactly why tracking your load and mood over time — rather than relying on a single-moment gut check — matters: a pattern that\'s confined to specific triggers looks different from a pattern that spreads into everything.',
+    question: "Can a journal detect burnout?",
+    answer:
+      "A journal can record observations but cannot diagnose burnout or predict collapse. Do not substitute app patterns for assessment or workplace support.",
   },
 ];
 
 export function BurnoutRecovery() {
-
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Burnout Doesn't Start in Your Job — It Starts in Your Nervous System",
-    "alternativeHeadline": "Signs of Burnout and How to Recover: The Science of Allostatic Load and Emotional Exhaustion",
-    "description": "Burnout isn't a single bad week — it's an unlogged accumulation of small stressors your nervous system never got to close out. Learn the science of allostatic load, why willpower and vacations don't fix it, and how a daily voice-journaled load check catches burnout before it becomes collapse.",
-    "image": "https://vocolens.com/vocolens-logo.png",
-    "datePublished": "2026-08-04",
-    "dateModified": "2026-08-04",
-    "author": {
+    headline: "Burnout Signs and Recovery: What to Notice and What Can Help",
+    description:
+      "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
+    image: "https://vocolens.com/vocolens-logo.png",
+    datePublished: "2026-08-04",
+    dateModified: "2026-10-06",
+    author: {
       "@type": "Organization",
-      "name": "Vocolens",
-      "url": "https://vocolens.com"
+      name: "Vocolens",
+      url: "https://vocolens.com",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Vocolens",
-      "url": "https://vocolens.com",
-      "logo": {
+      name: "Vocolens",
+      url: "https://vocolens.com",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://vocolens.com/vocolens_favicon.png"
-      }
+        url: "https://vocolens.com/vocolens_favicon.png",
+      },
     },
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://vocolens.com/resources/burnout-recovery-signs"
+      "@id": "https://vocolens.com/resources/burnout-recovery-signs",
     },
-    "articleSection": "Stress & Burnout Recovery",
-    "keywords": "burnout, signs of burnout, burnout recovery, burnout symptoms, how to recover from burnout, emotional exhaustion, allostatic load, occupational burnout, burnout prevention, voice journaling stress",
-    "wordCount": 1550,
-    "inLanguage": "en-US",
-    "about": [
-      { "@type": "Thing", "name": "Burnout", "description": "A state of physical and emotional exhaustion caused by prolonged, unresolved stress" },
-      { "@type": "Thing", "name": "Allostatic load", "description": "The cumulative physiological cost of chronic stress on the body's regulatory systems" },
-      { "@type": "Thing", "name": "Voice journaling", "description": "Recording spoken reflections to build self-awareness and emotional clarity" }
-    ],
-    "mentions": [
-      { "@type": "ScholarlyArticle", "name": "The Truth About Burnout", "author": { "@type": "Person", "name": "Christina Maslach" }, "datePublished": "1997" },
-      { "@type": "ScholarlyArticle", "name": "Allostasis, Allostatic Load, and the Costs of Adaptation", "author": { "@type": "Person", "name": "Bruce S. McEwen" }, "datePublished": "2003" },
-      { "@type": "ScholarlyArticle", "name": "Confronting a Traumatic Event: Toward an Understanding of Inhibition and Disease", "author": { "@type": "Person", "name": "James W. Pennebaker" }, "datePublished": "1986" }
-    ],
-    "speakable": {
+    articleSection: "Stress & Burnout Recovery",
+    keywords:
+      "burnout, signs of burnout, burnout recovery, burnout symptoms, how to recover from burnout, emotional exhaustion, allostatic load, occupational burnout, burnout prevention, voice journaling stress",
+
+    inLanguage: "en-US",
+    speakable: {
       "@type": "SpeakableSpecification",
-      "cssSelector": ["[data-speakable='summary']", "[data-speakable='key-takeaways']"]
+      cssSelector: ["[data-speakable='summary']", "[data-speakable='key-takeaways']"],
     },
-    "breadcrumb": {
+    breadcrumb: {
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vocolens.com" },
-        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://vocolens.com/resources" },
-        { "@type": "ListItem", "position": 3, "name": "Burnout Recovery", "item": "https://vocolens.com/resources/burnout-recovery-signs" }
-      ]
-    }
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://vocolens.com" },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Resources",
+          item: "https://vocolens.com/resources",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Burnout Recovery",
+          item: "https://vocolens.com/resources/burnout-recovery-signs",
+        },
+      ],
+    },
   };
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqData.map(({ question, answer }) => ({
+    mainEntity: faqData.map(({ question, answer }) => ({
       "@type": "Question",
-      "name": question,
-      "acceptedAnswer": {
+      name: question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": answer,
+        text: answer,
       },
     })),
   };
@@ -111,7 +122,11 @@ export function BurnoutRecovery() {
 
       <div>
         <nav aria-label="Breadcrumb" className="mb-8">
-          <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
+          <ol
+            className="flex items-center gap-2 text-sm text-text-muted"
+            itemScope
+            itemType="https://schema.org/BreadcrumbList"
+          >
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
                 to="/resources"
@@ -125,8 +140,13 @@ export function BurnoutRecovery() {
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-text-primary font-medium" itemProp="name">Burnout Recovery</span>
-              <meta itemProp="item" content="https://vocolens.com/resources/burnout-recovery-signs" />
+              <span className="text-text-primary font-medium" itemProp="name">
+                Burnout Recovery
+              </span>
+              <meta
+                itemProp="item"
+                content="https://vocolens.com/resources/burnout-recovery-signs"
+              />
               <meta itemProp="position" content="2" />
             </li>
           </ol>
@@ -134,31 +154,57 @@ export function BurnoutRecovery() {
 
         <div className="mb-12 lg:mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay" aria-hidden="true">
+            <div
+              className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay"
+              aria-hidden="true"
+            >
               <Flame className="w-5 h-5 text-[#6A3FC0]" />
             </div>
             <div>
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full" itemProp="articleSection">
+              <span
+                className="inline-flex items-center gap-2 px-3 py-1 bg-primary/8 text-primary text-sm font-semibold uppercase tracking-widest rounded-full"
+                itemProp="articleSection"
+              >
                 Stress &amp; Burnout Recovery
               </span>
             </div>
           </div>
           <h1
             itemProp="headline"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
+            style={{ color: "#1e293b" }}
           >
-            Burnout Doesn't Start in Your Job — It Starts in Your Nervous System
+            Burnout Signs and Recovery: What to Notice and What Can Help
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
-            Burnout doesn't arrive the day you finally break. It arrives months earlier, one unlogged stressor at a time, and your nervous system has been keeping a running total the whole way. Here's the science of <strong className="text-text-primary font-semibold">allostatic load</strong>, why a vacation alone rarely fixes it, and how a daily voice-journaled load check catches the accumulation before it becomes collapse.
+          <p
+            data-speakable="summary"
+            className="text-text-secondary mb-5 text-base leading-relaxed"
+          >
+            Understand workplace burnout signs, how they differ from ordinary tiredness, and
+            practical recovery supports that address demands as well as rest.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
-            <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
+            <span>
+              By{" "}
+              <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+                <span itemProp="name">Vocolens</span>
+              </span>
+            </span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" aria-hidden="true" />
-              <span>7 min read</span>
-              <span aria-hidden="true" className="mx-1">·</span>
-              <time dateTime="2026-08-04" itemProp="datePublished">Aug 4, 2026</time>
+              <span>4 min read</span>
+              <span aria-hidden="true" className="mx-1">
+                ·
+              </span>
+              <time dateTime="2026-08-04" itemProp="datePublished">
+                Aug 4, 2026
+              </time>
+              <span className="ml-2">
+                Updated{" "}
+                <time dateTime="2026-10-06" itemProp="dateModified">
+                  Oct 6, 2026
+                </time>
+              </span>
             </span>
           </div>
         </div>
@@ -166,152 +212,168 @@ export function BurnoutRecovery() {
 
       <ListenToArticle slug="burnout-recovery-signs" />
 
-          <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
-            <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">Key takeaways</p>
-            <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Burnout is a running total, not a single event.</strong> Allostatic load explains how small, ordinary stressors compound silently until the body crosses a threshold.</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Exhaustion is the last symptom to show up, not the first.</strong> Cynicism and a creeping sense of inefficacy typically arrive earlier, and they're easy to mistake for a personality change instead of a warning sign.</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">A vacation resets your energy, not your ledger.</strong> Naming the load daily — out loud — is what actually keeps the running total visible before it becomes a crash.</div>
-              </li>
-            </ul>
+      <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
+        <p className="inline-flex items-center rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-2">
+          Key takeaways
+        </p>
+        <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
+          <li>WHO defines burnout in the occupational context, not as every form of exhaustion.</li>
+          <li>
+            Exhaustion, distance from work, and reduced efficacy can overlap with other
+            difficulties.
+          </li>
+          <li>
+            Recovery may require changes to demands and support, not simply better journaling.
+          </li>
+        </ul>
       </div>
 
-      <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
-
+      <div
+        className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose"
+        itemProp="articleBody"
+        id="article-root"
+      >
         <div>
           <p>
-            You didn't wake up burned out. There was no single Tuesday that broke you. What actually happened is quieter and much harder to notice in the moment: for months, your days asked more of you than your nights gave back, and somewhere underneath conscious awareness, your body kept a tally of the difference.
-          </p>
-          <p className="mt-4">
-            By the time it feels sudden — the morning you can't make yourself open your laptop, the meeting where you have to fight back tears over nothing in particular — the total has already been building for a long time. Burnout isn't a personal failing that shows up out of nowhere. It's the visible endpoint of an invisible ledger that finally came due.
+            You feel drained, increasingly detached from work, and less able to do tasks that once
+            felt manageable. Burnout is not a personal failure. The World Health Organization
+            describes it as an occupational phenomenon resulting from chronic workplace stress that
+            has not been successfully managed. Persistent exhaustion deserves attention without
+            assuming one explanation.
           </p>
         </div>
-
         <div>
           <section aria-labelledby="section-allostatic-load">
-            <h2 id="section-allostatic-load" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Your body is keeping a ledger you can't see
+            <h2
+              id="section-allostatic-load"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
+            >
+              What is burnout? The scope of the WHO definition
             </h2>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              In the early 1990s, neuroscientists Bruce McEwen and Eliot Stellar coined a term for something the body does constantly and invisibly: <strong className="text-text-primary font-semibold">allostatic load</strong> — the cumulative physiological wear of adapting, again and again, to demand. Your cortisol, blood pressure, and inflammation systems aren't built to reset to zero between stressors. They're built to stay slightly elevated, ready for the next one, and that readiness has a cost that compounds.
+              WHO describes three dimensions: energy depletion or exhaustion, increased mental
+              distance or cynicism toward work, and reduced professional efficacy. Its ICD-11
+              definition refers specifically to the occupational context and does not classify
+              burnout as a medical condition.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              A single stressful meeting doesn't burn you out. Neither does one bad night of sleep, one difficult client, or one missed workout. The problem is that none of these register individually as a big deal, so nothing in your daily experience flags the pattern. Meanwhile, the ledger doesn't care whether any single entry felt significant — it only cares about the running total.
+              People also use burnout informally for caregiving, study, or other prolonged demands.
+              Those experiences matter, but they should not be presented as identical to the WHO
+              definition. A journal cannot determine whether exhaustion comes from burnout,
+              depression, a physical condition, or another cause.
             </p>
-            <p>
-              This reframes what burnout actually is. It isn't a sign that you're too sensitive or not resilient enough. It's what happens to any system — human or otherwise — when demand consistently outpaces recovery for long enough, and nothing along the way gave the system a chance to see the total add up.
-            </p>
-            <p className="mt-4 text-sm text-text-muted italic">
-              Takeaway: burnout isn't caused by one hard thing. It's caused by many ordinary things that were never subtracted from, only added to.
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              Source:{" "}
+              <a
+                href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:underline"
+              >
+                WHO on burnout as an occupational phenomenon
+              </a>
+              .
             </p>
           </section>
         </div>
-
         <div>
           <section aria-labelledby="section-maslach">
-            <h2 id="section-maslach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The three warning signs — and why exhaustion is the last one to show up
+            <h2
+              id="section-maslach"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
+            >
+              Signs worth noticing, without a self-diagnosis
             </h2>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Psychologist Christina Maslach spent decades studying burnout and found it isn't a single symptom but a pattern of three: <strong className="text-text-primary font-semibold">emotional exhaustion</strong>, <strong className="text-text-primary font-semibold">cynicism</strong> (a growing detachment or negativity toward the work itself), and <strong className="text-text-primary font-semibold">reduced sense of efficacy</strong> — a creeping belief that nothing you do matters or works anymore.
+              You may notice sustained exhaustion, increasing dread or detachment about work, or
+              feeling less effective despite effort. These are not necessarily stages in a fixed
+              order. A difficult week alone does not establish burnout.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Most people assume exhaustion comes first, because it's the loudest and most physical. In practice, cynicism and doubt about your own competence often arrive earlier, and they're far easier to misread. You start rolling your eyes at meetings you used to care about. You catch yourself thinking, quietly, "why bother." It doesn't feel like burnout. It feels like you've just stopped liking your job, or stopped being good at it — which is exactly why so many people miss the window where intervention is easiest.
-            </p>
-            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
-              "Burnout is a syndrome of emotional exhaustion, depersonalization, and reduced personal accomplishment that can occur among individuals who work with people in some capacity."
-              <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Maslach & Jackson, 1981, Journal of Occupational Behaviour</cite>
-            </blockquote>
-            <p>
-              Exhaustion is usually the dimension that finally forces you to pay attention — because it's physical, undeniable, and eventually impossible to push through. But by the time it shows up in force, the other two dimensions have often been quietly present for weeks or months.
-            </p>
-            <p className="mt-4 text-sm text-text-muted italic">
-              Takeaway: if you've started feeling cynical or ineffective about work you used to care about, that's not a mood — it's an early warning sign, arriving before the exhaustion that usually gets all the attention.
+              Record duration, demands, opportunities for rest, and how daily functioning has
+              changed. Include what improves the situation. If low mood, sleep problems, or
+              exhaustion persist, consider professional assessment rather than treating a checklist
+              as a diagnosis.
             </p>
           </section>
         </div>
-
-        <div>
-          <div className="h-px bg-primary/10" />
-        </div>
-
         <div>
           <section aria-labelledby="section-vacation-fallacy">
-            <h2 id="section-vacation-fallacy" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Why a vacation resets your energy but not your ledger
+            <h2
+              id="section-vacation-fallacy"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
+            >
+              Recovery supports: change demands as well as rest
             </h2>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Here's the frustrating pattern almost everyone who's burned out eventually recognizes: you take a week off, you feel noticeably better, and within days of returning, it's like the break never happened. This isn't a failure of the vacation. It's a mismatch between what rest restores and what burnout actually depletes.
+              Rest can matter, but returning to unchanged demands may leave the same difficulties in
+              place. Consider workload, control over tasks, realistic priorities, social support,
+              and whether agreed accommodations or time away are possible. The available options
+              depend on your circumstances.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              A week away lowers your acute stress hormones and gives your body genuine short-term recovery — that part is real. But it doesn't touch the cynicism or the eroded sense of efficacy, because those dimensions aren't about energy. They're about trust: trust that your effort produces results, trust that the environment you're returning to won't simply refill the ledger at the same rate. Rest addresses the numerator. It does nothing to the conditions generating the load in the first place.
+              A small next step could be naming one unsustainable demand and asking for a concrete
+              change. Avoid framing recovery as another productivity project. If a conversation
+              feels difficult, write down the request before speaking to a manager, trusted
+              supporter, or clinician.
             </p>
-            <p>
-              This is why willpower-and-rest advice — push through, then take a long weekend — so often fails people who are genuinely burned out. It's not that they rested wrong. It's that resting was only ever going to solve one-third of a three-part problem.
-            </p>
-            <p className="mt-4 text-sm text-text-muted italic">
-              Takeaway: you can't rest your way out of a load you're not tracking. The environment producing the load has to change, or the tracking has to start, or both.
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              Persistent or severe symptoms warrant qualified care. Journaling is not a replacement
+              for medical assessment or workplace changes. If planning itself is hard,{" "}
+              <Link
+                to="/resources/adhd-time-blindness"
+                className="text-primary font-semibold hover:underline"
+              >
+                practical time supports
+              </Link>{" "}
+              may help organize one manageable step.
             </p>
           </section>
         </div>
-
         <div>
           <section aria-labelledby="section-daily-load-check">
-            <h2 id="section-daily-load-check" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Giving your nervous system a running total it can actually see
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              If burnout builds because small stressors go unlogged, then the fix has to involve something that actually logs them — consistently, before the total gets large enough to notice on its own. Waiting until you feel overwhelmed to reflect on why is like checking your bank balance only after it's already overdrawn.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Speaking your day out loud — even briefly — does something a mental recap doesn't: it forces you to notice specifics instead of averaging everything into a vague "fine" or "exhausted." Naming what actually happened ("three back-to-back meetings, skipped lunch, didn't hear back on the thing I've been anxious about") turns a diffuse feeling into a countable event. That specificity is what makes the running total visible at all.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              This is the same mechanism behind <strong className="text-text-primary font-semibold">expressive disclosure</strong> — the well-documented finding that structured verbal or written processing of stressful experiences produces measurable physiological benefits, not just a subjective sense of relief. Voice journaling applies that mechanism directly to burnout: you're not just venting about a hard day, you're logging load in a way your nervous system can actually reference later.
-            </p>
-            <a
-              href="/resources/distress-detection"
-              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
+            <h2
+              id="section-daily-load-check"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
             >
-              <span className="min-w-0">Read more about how your body signals overwhelm early</span>
-              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-            </a>
-            <p className="mt-4 text-sm text-text-muted italic">
-              Takeaway: your nervous system doesn't need you to eliminate stress. It needs a running total it can trust — and speaking your day out loud is one of the fastest ways to keep one.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-load-check-practice">
-            <h2 id="section-load-check-practice" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Building a daily load check that catches burnout before it catches you
+              A gentle demand-and-recovery check-in
             </h2>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Researchers studying burnout recovery consistently find the same thing: early intervention, while the load is still moderate, is far more effective than intervention after collapse. The problem has never been a lack of good advice for burned-out people — it's that most people don't realize they're accumulating load until the exhaustion dimension is already severe.
+              Try: What took energy today? What restored some energy? What could be reduced or
+              shared? What support do I need? Example: "Back-to-back calls were draining; a quiet
+              break helped; ask for a gap between meetings." This is a reflection prompt, not a
+              validated burnout score.
             </p>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              A daily load check closes that gap. At the end of each day, take 60-90 seconds and answer three questions out loud: <em>What drained me today? What, if anything, actually restored me? On a scale of "manageable" to "running on empty," where am I right now?</em> You're not trying to solve anything in this moment — you're just making today's entry in a ledger that's been running whether you tracked it or not.
+              Paper notes or a Vocolens voice entry can keep observations in one place. Look for
+              recurring demands without assuming the app predicts collapse or measures
+              nervous-system damage. Stop if tracking becomes another obligation.
             </p>
-            <p>
-              Over two or three weeks, the same drains tend to repeat — a specific meeting, a specific person, a specific type of task — while the "restored me" column often stays suspiciously empty. Once you can see that asymmetry laid out across days instead of buried in a single overwhelming feeling, it stops being a mystery why you're exhausted, and starts being a specific, addressable list.
-            </p>
-            <p className="mt-4 text-sm text-text-muted italic">
-              Takeaway: you don't need to fix your entire life to prevent burnout. You need a daily, honest total — because the load you can see is the load you can actually act on.
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              See{" "}
+              <Link
+                to="/resources/distress-detection"
+                className="text-primary font-semibold hover:underline"
+              >
+                body-awareness clues
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/resources/emotional-awareness-patterns"
+                className="text-primary font-semibold hover:underline"
+              >
+                emotional awareness
+              </Link>{" "}
+              for related exercises. This guide is educational, not medical advice.
             </p>
           </section>
         </div>
-
         <div>
-          <section aria-labelledby="section-faq" className="border-t border-primary/10">
+          <section
+            data-listen-exclude
+            aria-labelledby="section-faq"
+            className="border-t border-primary/10"
+          >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
@@ -327,7 +389,10 @@ export function BurnoutRecovery() {
                   className="group card-app rounded-3xl p-6 sm:p-8 overflow-hidden transition-shadow"
                 >
                   <summary className="flex items-start gap-3 cursor-pointer px-5 py-4 text-text-primary font-semibold text-sm lg:text-base select-none list-none [&::-webkit-details-marker]:hidden">
-                    <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90" aria-hidden="true" />
+                    <ChevronRight
+                      className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 transition-transform duration-200 group-open:rotate-90"
+                      aria-hidden="true"
+                    />
                     <span>{question}</span>
                   </summary>
                   <div className="px-5 pb-5 pl-12 text-sm lg:text-base text-text-secondary leading-relaxed">
@@ -349,11 +414,16 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness &amp; Distress Detection</p>
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">
+                      Body Awareness &amp; Distress Detection
+                    </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How your body tells you it's overwhelmed before your mind does
+                      Physical Signs of Overwhelm: Body Awareness Without Guessing
                     </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
+                    <p className="text-text-secondary text-base leading-relaxed">
+                      Learn what interoception means, explore physical signs that can accompany
+                      overwhelm, and try a gentle check-in without treating sensations as diagnoses.
+                    </p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -364,11 +434,16 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Anxiety &amp; Mental Wellness</p>
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">
+                      Anxiety &amp; Mental Wellness
+                    </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      The overthinking trap: why your brain won't stop
+                      Overthinking and Rumination: How to Recognize the Loop
                     </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Discover the neuroscience of rumination and how giving your brain a completion signal breaks the loop.</p>
+                    <p className="text-text-secondary text-base leading-relaxed">
+                      Understand rumination versus useful reflection, see examples of repetitive
+                      worry, and try a practical next-step check without promises of instant relief.
+                    </p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -379,11 +454,16 @@ export function BurnoutRecovery() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">
+                      Neuroscience &amp; Mental Wellness
+                    </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How naming your emotions reduces stress and builds resilience
+                      Affect Labeling: How to Name Your Emotions
                     </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
+                    <p className="text-text-secondary text-base leading-relaxed">
+                      Explore research, practical examples, and the limits of claims about naming
+                      emotions.
+                    </p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -398,7 +478,8 @@ export function BurnoutRecovery() {
               Catch the load early
             </h2>
             <p className="text-text-secondary mb-5 text-base leading-relaxed max-w-[547px] mx-auto lg:max-w-[720px]">
-              Sixty seconds a day. Vocolens surfaces the pattern before it crashes.
+              Keep a voice reflection, review suggested emotion labels, and decide what fits your
+              experience. Vocolens supports reflection; it does not diagnose or predict distress.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
@@ -418,9 +499,7 @@ export function BurnoutRecovery() {
             </div>
           </div>
         </div>
-
       </div>
     </article>
   );
 }
-
