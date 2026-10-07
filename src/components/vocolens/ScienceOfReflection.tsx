@@ -6,37 +6,36 @@ import { BackToTop } from './BackToTop';
 
 const faqData = [
   {
-    question: 'What is affect labeling and how does it reduce stress?',
-    answer: 'Affect labeling is the neuroscience-backed practice of putting your emotions into specific words. Research by Lieberman et al. (2007) demonstrated that simply naming what you feel — such as saying "I feel anxious about being judged" instead of just "I feel bad" — measurably reduces activity in the amygdala, the brain\'s threat-detection center. This dampens the fight-or-flight response and produces genuine emotional regulation, not just suppression.',
+    "question": "What is affect labeling?",
+    "answer": "Affect labeling is putting an emotion into words. An example is saying \"I feel nervous about this conversation\" rather than simply \"I feel bad.\""
   },
   {
-    question: 'How does voice journaling help with anxiety and worry loops?',
-    answer: 'Voice journaling breaks anxiety loops through two mechanisms. First, speaking your worries externalizes them — your brain registers them as "stored" rather than requiring active processing. Second, scheduling a daily worry time (5-10 minutes) with voice journaling prevents rumination from hijacking your day. You capture anxious thoughts as they arise, then review them during your designated time, asking whether action is possible or acceptance is needed.',
+    "question": "Does naming emotions reduce stress?",
+    "answer": "Research suggests labeling can change responses to emotional stimuli in some settings. The cited 2007 imaging study found diminished amygdala responses to negative emotional images relative to other encoding tasks. This is not guaranteed felt relief or evidence of an app treatment effect."
   },
   {
-    question: 'Is voice journaling more effective than written journaling for emotional health?',
-    answer: 'Voice journaling engages additional neural pathways beyond what writing activates. Speaking your emotions involves auditory, motor, and linguistic processing simultaneously, creating stronger memory traces and deeper emotional insight. While both forms of journaling have proven benefits, voice journaling removes the friction barrier that stops many people from maintaining a consistent practice — you can journal anywhere, anytime, without needing to sit down and write.',
+    "question": "How do I practice affect labeling?",
+    "answer": "Pause somewhere safe, notice a sensation and the situation, and choose a tentative word. Say or write \"I feel [emotion] about [situation].\" Check whether it fits, then choose a practical next step. Stop if this increases distress."
   },
   {
-    question: 'How long does it take to build emotional resilience through journaling?',
-    answer: 'Research suggests that consistent daily journaling produces measurable changes in emotional regulation within 2-4 weeks. The amygdala response begins shifting after just a few sessions of affect labeling. Long-term resilience — the ability to recover faster from setbacks and adapt more gracefully — develops over months of consistent practice as neural pathways strengthen through repeated use.',
+    "question": "Is voice journaling better than writing?",
+    "answer": "Neither is established here as universally better. Speaking may be easier for some people; writing may feel more private for others. The cited imaging study did not compare Vocolens with written journaling."
   },
   {
-    question: 'What does the neuroscience say about naming emotions?',
-    answer: 'The key finding from Lieberman\'s 2007 study published in Psychological Science is that affect labeling produces a lasting dampening of the amygdala\'s emotional response. A 2011 follow-up study confirmed these results. The prefrontal cortex — responsible for rational thinking and self-regulation — becomes more active when you name emotions, effectively giving your brain the language it needs to process experiences rather than simply react to them.',
-  },
+    "question": "Is labeling the same as emotional granularity?",
+    "answer": "No. Labeling is naming an emotion; granularity is how precisely you distinguish feelings. A broad label can be a starting point. Greater precision is useful only if the word fits your experience."
+  }
 ];
 
 export function ScienceOfReflection() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience",
-    "alternativeHeadline": "The Neuroscience of Affect Labeling: Why Voice Journaling Calms Your Brain",
-    "description": "Neuroscience research by Lieberman (2007) proves that labeling emotions (affect labeling) reduces amygdala activity and calms the nervous system. Discover how daily voice journaling with Vocolens uses this science to reduce anxiety and build lasting emotional resilience.",
+    "headline": "Affect Labeling: How to Name Your Emotions",
+        "description": "Learn what affect labeling is, what research shows about naming emotions, and how to try a short check-in without promises of guaranteed stress relief.",
     "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-02-28",
-    "dateModified": "2026-03-30",
+    "dateModified": "2026-10-06",
     "author": {
       "@type": "Organization",
       "name": "Vocolens",
@@ -57,10 +56,9 @@ export function ScienceOfReflection() {
     },
     "articleSection": "Neuroscience & Mental Wellness",
     "keywords": "affect labeling, emotion labeling, voice journaling, stress relief, emotional resilience, amygdala, mental wellness, daily journaling, anxiety journaling, worry loop, emotional regulation, Lieberman study",
-    "wordCount": 1200,
     "inLanguage": "en-US",
     "about": [
-      { "@type": "Thing", "name": "Affect labeling", "description": "The neuroscience practice of naming emotions to reduce amygdala activity" },
+      { "@type": "Thing", "name": "Affect labeling", "description": "Putting an emotion into words" },
       { "@type": "Thing", "name": "Emotional resilience", "description": "The ability to recover from and adapt to stress and adversity" },
       { "@type": "Thing", "name": "Voice journaling", "description": "Recording spoken reflections to build self-awareness and emotional clarity" }
     ],
@@ -76,7 +74,7 @@ export function ScienceOfReflection() {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vocolens.com" },
         { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://vocolens.com/resources" },
-        { "@type": "ListItem", "position": 3, "name": "How Naming Emotions Reduces Stress", "item": "https://vocolens.com/resources/science-of-reflection" }
+        { "@type": "ListItem", "position": 3, "name": "Affect Labeling", "item": "https://vocolens.com/resources/science-of-reflection" }
       ]
     }
   };
@@ -126,7 +124,7 @@ export function ScienceOfReflection() {
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-              <span className="text-text-primary font-medium" itemProp="name">How Naming Emotions Reduces Stress</span>
+              <span className="text-text-primary font-medium" itemProp="name">Affect Labeling</span>
               <meta itemProp="item" content="https://vocolens.com/resources/science-of-reflection" />
               <meta itemProp="position" content="2" />
             </li>
@@ -148,18 +146,17 @@ export function ScienceOfReflection() {
             itemProp="headline"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
-            How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience
+            Affect Labeling: How to Name Your Emotions
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
-            Neuroscience research proves that putting emotions into specific words — a process called <strong className="text-text-primary font-semibold">affect labeling</strong> — reduces amygdala activity and calms your nervous system. Learn how daily voice journaling applies this science to help you break free from worry loops and build lasting resilience.
-          </p>
+          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">Learn what affect labeling is, what research shows about naming emotions, and how to try a short check-in without promises of guaranteed stress relief.</p>
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" aria-hidden="true" />
-              <span>5 min read</span>
+              <span>4 min read</span>
               <span aria-hidden="true" className="mx-1">·</span>
               <time dateTime="2026-02-28" itemProp="datePublished">Feb 28, 2026</time>
+              <span className="ml-2">Updated <time dateTime="2026-10-06" itemProp="dateModified">Oct 6, 2026</time></span>
             </span>
           </div>
         </div>
@@ -172,121 +169,60 @@ export function ScienceOfReflection() {
             <ul className="space-y-3 text-sm text-text-secondary leading-relaxed">
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Affect labeling reduces amygdala activity.</strong> Naming emotions measurably calms the brain's stress response, producing genuine regulation — not suppression.</div>
+                <div className="min-w-0">Affect labeling means putting an emotion into words; tentative labels are a starting point.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Scheduled worry time prevents rumination.</strong> A daily 5-10 minute voice journaling slot stops anxious thoughts from hijacking your entire day.</div>
+                <div className="min-w-0">Laboratory findings suggest a mechanism, not guaranteed stress relief or a fixed percentage benefit.</div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
-                <div className="min-w-0"><strong className="font-semibold text-text-primary">Consistent practice rewires neural pathways.</strong> Daily voice journaling with Vocolens builds long-term emotional resilience through repeated prefrontal cortex engagement.</div>
+                <div className="min-w-0">Naming feelings can support reflection, but does not replace action or professional care.</div>
               </li>
             </ul>
       </div>
 
       <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
-        <div>
-          <p>
-            In a world full of constant demands, emotional overwhelm is becoming the norm. Most of us feel our emotions deeply — but few of us have been taught to name them with precision. That gap between feeling and labeling turns out to be one of the most powerful levers for mental wellness and stress relief.
-          </p>
-        </div>
+        <div><p>Naming a feeling can give you a clearer starting point for reflection without requiring you to argue with it or pretend it has gone away. Here is what the evidence supports, where its limits are, and how to try a brief check-in.</p></div>
+
+        <div><section aria-labelledby="section-neuroscience">
+<h2 id="section-neuroscience" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">What is affect labeling, and what does research show?</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Affect labeling means putting an emotion into words, whether it is your own feeling or an emotion you perceive in someone else. "I feel nervous before this call" is a label; "everything will go wrong" is a prediction.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">In a 2007 functional MRI study, Lieberman and colleagues found that labeling affective stimuli diminished amygdala responses to negative emotional images relative to other encoding tasks. Labeling also increased activity in the right ventrolateral prefrontal cortex. The authors suggested a possible pathway through which labeling may diminish emotional reactivity.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">An imaging result is not the same as feeling calmer in everyday life. The study did not test Vocolens, establish a universal percentage reduction, or demonstrate long-term brain changes from app use. Research about a mechanism should not be presented as a clinical result for a product.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><a href="https://pubmed.ncbi.nlm.nih.gov/17576282/" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Read Lieberman and colleagues: Putting Feelings Into Words (2007)</a>.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-vocolens-approach">
+<h2 id="section-vocolens-approach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Affect labeling examples: feelings are not predictions</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Before a presentation: "I feel anxious about being evaluated." After a cancelled plan: "I feel disappointed and a little relieved." During conflict: "I feel angry, and I want to be heard." These labels name an experience without claiming to know another person's intentions.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Compare "I feel ignored" with "I feel hurt because I interpreted the silence as rejection." The second separates a feeling from a possible explanation. You may later learn that the other person was busy; the hurt was still real.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">If identifying a feeling is difficult, start with a sensation or broad word. Our <Link to="/resources/alexithymia-emotional-vocabulary" className="text-primary font-semibold hover:underline">alexithymia and emotional vocabulary guide</Link> discusses difficulty finding words. There is no need to force a precise label.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-worry-loops">
+<h2 id="section-worry-loops" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">How to practice affect labeling in a brief check-in</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Pause somewhere safe. Notice a body sensation and the immediate context. Choose a possible emotion, then say or write: "I feel [emotion] about [situation]." Add "maybe" if you are unsure. This is a suggested everyday exercise, not the exact laboratory task used in the imaging study.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">For example: "My stomach is tight. I may be apprehensive about tomorrow's appointment." Check whether the word fits instead of repeating it until it produces a desired result. You can change your mind, use two words, or leave the feeling unnamed.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Choose one next step: ask a question, prepare what you need, take a break, or contact someone supportive. Naming alone cannot resolve every source of distress. If you keep analysing the same worry without gaining useful information, pause; our <Link to="/resources/overthinking-rumination" className="text-primary font-semibold hover:underline">guide to overthinking and rumination</Link> explores that distinction.</p>
+</section></div>
+
+        <div><section aria-labelledby="section-structured-review">
+<h2 id="section-structured-review" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Naming emotions, emotional awareness, and granularity</h2>
+<p className="mb-4 text-base lg:text-lg leading-relaxed"><Link to="/resources/emotional-awareness-patterns" className="text-primary font-semibold hover:underline">Emotional awareness</Link> is noticing and understanding feelings. Affect labeling is putting a word to them. <Link to="/resources/emotional-granularity" className="text-primary font-semibold hover:underline">Emotional granularity</Link> is distinguishing closely related feelings: disappointed, lonely, or resentful instead of only "bad."</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">Voice journaling is one possible format, not a superior treatment established by the cited study. In Vocolens, suggested emotion labels can be reviewed and corrected. Treat them as candidates, not diagnoses or authoritative readings of your mind. Paper or a private note can work too.</p>
+<p className="mb-4 text-base lg:text-lg leading-relaxed">There is no established timetable here for building resilience, and no promise that daily use will rewire your brain. Stop if the exercise increases distress. Persistent or severe distress deserves qualified support. This article is educational and is not medical advice.</p>
+</section></div>
 
         <div>
-          <section aria-labelledby="section-neuroscience">
-            <h2 id="section-neuroscience" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              The neuroscience of emotion labeling: how affect labeling reduces stress
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              Scientific studies by <strong className="text-text-primary font-semibold">Lieberman et al. (2007)</strong> and a 2011 follow-up demonstrated that simply putting feelings into words — a process called <strong className="text-text-primary font-semibold">affect labeling</strong> — reduces activity in the amygdala, the brain's alarm center. Less amygdala activation means a calmer nervous system and a more measured emotional response.
-            </p>
-            <blockquote className="my-5 rounded-2xl border border-primary/15 bg-primary/[0.04] p-5 italic text-base text-text-secondary leading-relaxed">
-              "Putting feelings into words produces a lasting dampening of emotional response — not just suppression, but genuine regulation."
-              <cite className="block mt-2 text-sm not-italic text-text-muted font-medium">— Lieberman et al., 2007, <span className="italic">Psychological Science</span></cite>
-            </blockquote>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              This isn't about toxic positivity or ignoring hard emotions. It's about giving your brain the language it needs to process what you're experiencing — and in doing so, creating real neurological relief. The prefrontal cortex — responsible for rational thinking and self-regulation — becomes more active when you name emotions, effectively bridging the gap between reactive feeling and deliberate understanding.
-            </p>
-            <p>
-              The implication for daily life is significant: every time you pause to name what you're feeling with specificity ("overwhelmed by uncertainty" rather than just "stressed"), you engage your brain's regulatory systems and reduce the intensity of the emotional response.
-            </p>
-            <a
-              href="https://pubmed.ncbi.nlm.nih.gov/17576282/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Read the full Lieberman (2007) study on affect labeling and amygdala reduction — PubMed"
-              className="inline-flex items-center gap-2 mt-4 text-primary font-semibold hover:underline transition-colors group"
-            >
-              <span className="min-w-0">Read the peer-reviewed research — PubMed</span>
-              <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-            </a>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-vocolens-approach">
-            <h2 id="section-vocolens-approach" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              How voice journaling applies affect labeling science to daily life
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              With Vocolens, you don't just record — you harness this neurological power every time you speak. The app prompts you to go beyond surface-level descriptions and precisely name what you're feeling: not just "stressed," but "overwhelmed by uncertainty," or "anxious about being judged."
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              By precisely naming your feelings, distancing yourself from them through voice, and grounding in the physical sensations behind each emotion, you create mental space between stimulus and response. Over time, this daily voice journaling practice reduces baseline stress levels and fosters genuine resilience — the ability to recover faster and adapt more gracefully.
-            </p>
-            <p>
-              Voice journaling is uniquely effective for this because speaking engages multiple neural pathways simultaneously — auditory, motor, and linguistic processing — creating stronger memory traces and deeper emotional regulation than silent reflection alone.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <div className="h-px bg-primary/10" />
-        </div>
-
-        <div>
-          <section aria-labelledby="section-worry-loops">
-            <h2 id="section-worry-loops" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Breaking anxiety worry loops with structured voice journaling
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              In today's fast-paced world, our minds often get trapped in endless loops of worry. Instead of fighting intrusive thoughts — which research shows often makes them stronger — voice journaling helps you give your brain what it truly needs: a sense of control and completion.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              The approach is structured and evidence-informed. First, you set a specific <strong className="text-text-primary font-semibold">worry time</strong> each day — a 5-10 minute slot when you have mental energy, just not right before bed. As anxious thoughts arise throughout the day, Vocolens captures each concern in a dedicated voice entry. This act of recording creates a sense of containment: your brain knows the worry is stored somewhere safe, releasing it from active processing.
-            </p>
-            <p>
-              During your scheduled worry time, you review each captured thought and ask: <em>Is there an action I can take now, or can I accept this uncertainty?</em> By anchoring your attention in this structured way, you prevent rumination from hijacking your entire day. The combination of voice externalization and scheduled review directly targets the cognitive loops that sustain anxiety.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-structured-review">
-            <h2 id="section-structured-review" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">
-              Pattern awareness and building long-term emotional resilience
-            </h2>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              The power of consistent voice journaling extends beyond individual sessions. Over time, you see patterns emerge — helping you identify when certain worries spike, which contexts trigger them, and how long they typically last. That pattern awareness is itself transformative, because you shift from reacting to individual emotional events to understanding the architecture of your emotional life.
-            </p>
-            <p className="mb-4 text-base lg:text-lg leading-relaxed">
-              For long-standing thought loops, pairing voice journaling with a counter-narrative practice — recording evidence that directly challenges your negative beliefs — further accelerates resilience building. What we focus on expands, so by using voice journaling daily, you actively condition your mind toward strength rather than anxiety.
-            </p>
-            <p>
-              This is the bridge between short-term stress relief and long-term emotional resilience. Single sessions of affect labeling calm the amygdala; sustained practice rewires neural pathways, strengthening prefrontal regulation and building your capacity to navigate difficulty with greater composure.
-            </p>
-          </section>
-        </div>
-
-        <div>
-          <section aria-labelledby="section-faq" className="border-t border-primary/10">
+          <section data-listen-exclude aria-labelledby="section-faq" className="border-t border-primary/10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay">
                 <HelpCircle className="w-5 h-5 text-[#6A3FC0]" />
               </div>
               <h2 id="section-faq" className="text-xl lg:text-2xl font-bold text-text-primary">
-                Frequently asked questions about voice journaling and stress relief
+                Frequently asked questions about affect labeling
               </h2>
             </div>
             <div className="space-y-6">
@@ -320,9 +256,9 @@ export function ScienceOfReflection() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Mental Wellness & Self-Discovery</p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Building emotional awareness: how pattern recognition transforms self-understanding
+                      Emotional awareness: what it is and how to improve it
                     </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Discover metacognitive awareness and how recognizing emotional patterns accelerates personal growth and self-understanding.</p>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn to notice feelings and track recurring situations with a practical check-in.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
