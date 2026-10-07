@@ -586,7 +586,7 @@ export function Resources() {
             content="https://vocolens.com/resources/emotional-awareness-patterns"
           />
           <meta itemProp="datePublished" content="2026-03-30" />
-          <meta itemProp="dateModified" content="2026-03-30" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -597,7 +597,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/emotional-awareness-patterns"
-              aria-label="Read: Building Emotional Awareness: How Pattern Recognition in Voice Journaling Transforms Self-Understanding"
+              aria-label="Read: Emotional Awareness: What It Is and How to Improve It"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -620,16 +620,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Building Emotional Awareness: How Pattern Recognition in Voice Journaling
-                    Transforms Self-Understanding
+                    Emotional Awareness: What It Is and How to Improve It
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Discover how metacognitive awareness and pattern recognition through daily voice
-                    journaling rewire your brain for emotional intelligence. Learn to identify
-                    triggers and behavioral cycles with Vocolens' emotion tracking.
+                    Learn what emotional awareness means, see everyday examples, and try a simple
+                    emotion-and-trigger journal to recognize feelings and patterns.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
@@ -649,7 +647,7 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mt-5 sm:mt-8">
           <meta itemProp="url" content="https://vocolens.com/resources/science-of-reflection" />
           <meta itemProp="datePublished" content="2026-02-28" />
-          <meta itemProp="dateModified" content="2026-02-28" />
+          <meta itemProp="dateModified" content="2026-10-06" />
           <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
@@ -660,7 +658,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/science-of-reflection"
-              aria-label="Read: How Naming Your Emotions with Voice Journaling Reduces Stress and Builds Emotional Resilience"
+              aria-label="Read: Affect Labeling: How to Name Your Emotions"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -683,17 +681,14 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    How Naming Your Emotions with Voice Journaling Reduces Stress and Builds
-                    Emotional Resilience
+                    Affect Labeling: How to Name Your Emotions
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
                     itemProp="description"
                   >
-                    Neuroscience research by Lieberman (2007) proves that labeling emotions reduces
-                    amygdala activity and calms the nervous system. Discover how daily voice
-                    journaling with Vocolens uses this science to help you reduce anxiety, create
-                    mental space, and build lasting emotional resilience.
+                    Learn what affect labeling is, what research shows about naming emotions, and
+                    how to try a short check-in without promises of guaranteed stress relief.
                   </p>
                   <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
