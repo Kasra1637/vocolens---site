@@ -41,6 +41,8 @@ const FORMAT =
 const FORCE = process.argv.includes("--force");
 
 const SLUGS = [
+  "valence-and-arousal",
+  "rejection-sensitivity",
   "adhd-time-blindness",
   "alexithymia-emotional-vocabulary",
   "burnout-recovery-signs",

@@ -98,5 +98,15 @@
     "bytes": 3566592,
     "minutes": 9.9,
     "generatedAt": "2026-09-29T21:23:05.331Z"
+  },
+  "valence-and-arousal": {
+    "file": "/audio/valence-and-arousal.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "cd645a6f7b6f8ca3",
+    "chars": 6246,
+    "words": 990,
+    "bytes": 1713356,
+    "minutes": 7.1,
+    "generatedAt": "2026-10-11T08:48:34.543Z"
   }
 }

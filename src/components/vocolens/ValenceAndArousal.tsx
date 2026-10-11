@@ -2,6 +2,7 @@ import { ArrowUpRight, CaretRight, Clock, Heart, Question } from "@phosphor-icon
 import { Link } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 import { BackToTop } from "./BackToTop";
+import { ListenToArticle } from "./ListenToArticle";
 
 const title = "Valence and Arousal: Why Calm Isn’t Always Happy";
 const description =
@@ -235,6 +236,8 @@ export function ValenceAndArousal() {
           </span>
         </div>
       </header>
+
+      <ListenToArticle slug="valence-and-arousal" />
 
       <div data-speakable="key-takeaways" className="card-app rounded-3xl p-6 sm:p-8 mb-8">
         <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-3">

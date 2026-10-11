@@ -109,6 +109,17 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "How to practice affect labeling in a brief check-in", startSec: 130.056 },
     { title: "Naming emotions, emotional awareness, and granularity", startSec: 192.6 },
   ],
+  // Measured per-section synthesis (same method as the two SEO refreshes above):
+  // each chapter synthesized separately with Aria, offsets from ffprobe.
+  "valence-and-arousal": [
+    { title: "Introduction", startSec: 0 },
+    { title: "What are valence and arousal?", startSec: 35.952 },
+    { title: "Four combinations, not four boxes you have to fit", startSec: 101.664 },
+    { title: "Is arousal the same as emotional intensity?", startSec: 141.408 },
+    { title: "What a two-axis emotion map cannot tell you", startSec: 203.4 },
+    { title: "A check-in for when the emotion word will not come", startSec: 266.904 },
+    { title: "How to read these dimensions in Vocolens", startSec: 349.608 },
+  ],
 };
 
 /** Index of the section containing the given time (seconds). */
