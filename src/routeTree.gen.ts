@@ -16,6 +16,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
+import { Route as ResourcesValenceAndArousalRouteImport } from './routes/resources.valence-and-arousal'
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
 import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/resources.rejection-sensitivity'
 import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
@@ -62,6 +63,12 @@ const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ResourcesRoute,
 } as any)
+const ResourcesValenceAndArousalRoute =
+  ResourcesValenceAndArousalRouteImport.update({
+    id: '/valence-and-arousal',
+    path: '/valence-and-arousal',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 const ResourcesScienceOfReflectionRoute =
   ResourcesScienceOfReflectionRouteImport.update({
     id: '/science-of-reflection',
@@ -140,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
+  '/resources/valence-and-arousal': typeof ResourcesValenceAndArousalRoute
   '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -158,6 +166,7 @@ export interface FileRoutesByTo {
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
+  '/resources/valence-and-arousal': typeof ResourcesValenceAndArousalRoute
   '/resources': typeof ResourcesIndexRoute
 }
 export interface FileRoutesById {
@@ -178,6 +187,7 @@ export interface FileRoutesById {
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
+  '/resources/valence-and-arousal': typeof ResourcesValenceAndArousalRoute
   '/resources/': typeof ResourcesIndexRoute
 }
 export interface FileRouteTypes {
@@ -199,6 +209,7 @@ export interface FileRouteTypes {
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
+    | '/resources/valence-and-arousal'
     | '/resources/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -217,6 +228,7 @@ export interface FileRouteTypes {
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
+    | '/resources/valence-and-arousal'
     | '/resources'
   id:
     | '__root__'
@@ -236,6 +248,7 @@ export interface FileRouteTypes {
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
+    | '/resources/valence-and-arousal'
     | '/resources/'
   fileRoutesById: FileRoutesById
 }
@@ -297,6 +310,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/resources/'
       preLoaderRoute: typeof ResourcesIndexRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/valence-and-arousal': {
+      id: '/resources/valence-and-arousal'
+      path: '/valence-and-arousal'
+      fullPath: '/resources/valence-and-arousal'
+      preLoaderRoute: typeof ResourcesValenceAndArousalRouteImport
       parentRoute: typeof ResourcesRoute
     }
     '/resources/science-of-reflection': {
@@ -383,6 +403,7 @@ interface ResourcesRouteChildren {
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesRejectionSensitivityRoute: typeof ResourcesRejectionSensitivityRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
+  ResourcesValenceAndArousalRoute: typeof ResourcesValenceAndArousalRoute
   ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
 
@@ -400,6 +421,7 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesRejectionSensitivityRoute: ResourcesRejectionSensitivityRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,
+  ResourcesValenceAndArousalRoute: ResourcesValenceAndArousalRoute,
   ResourcesIndexRoute: ResourcesIndexRoute,
 }
 

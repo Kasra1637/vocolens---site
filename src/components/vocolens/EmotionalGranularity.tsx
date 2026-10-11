@@ -344,6 +344,21 @@ export function EmotionalGranularity() {
             <h3 className="font-bold text-text-primary mb-6 text-lg">Explore related articles</h3>
             <div className="space-y-4">
               <Link
+                to="/resources/valence-and-arousal"
+                className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Emotional Intelligence</p>
+                    <h4 className="font-bold text-text-primary group-hover:underline mb-2 text-lg">
+                      Valence and Arousal: Why Calm Isn’t Always Happy
+                    </h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Separate pleasantness from activation when an emotion word does not quite fit, and see what a two-axis map leaves out.</p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
+                </div>
+              </Link>
+              <Link
                 to="/resources/alexithymia-emotional-vocabulary"
                 className="block w-full text-left p-6 sm:p-8 card-app rounded-3xl group"
               >

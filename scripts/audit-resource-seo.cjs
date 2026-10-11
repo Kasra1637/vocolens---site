@@ -127,6 +127,46 @@ async function get(route) {
         `${route}: narration content hash`,
       );
     }
+    if (route.endsWith("valence-and-arousal")) {
+      assert.equal(article.headline, $("h1").text().trim());
+      assert.equal(article.datePublished, "2026-10-11");
+      assert.equal(article.dateModified, "2026-10-11");
+      assert.equal($('time[itemprop="datePublished"]').attr("datetime"), article.datePublished);
+      assert.equal($('meta[property="og:title"]').attr("content"), title);
+      assert.equal($('meta[name="twitter:title"]').attr("content"), title);
+      assert.equal($('meta[property="og:description"]').attr("content"), description);
+      assert.equal($('meta[name="twitter:description"]').attr("content"), description);
+      assert.equal($('meta[property="og:type"]').attr("content"), "article");
+      assert.equal($('meta[property="og:url"]').attr("content"), origin + route);
+      assert.equal($("#article-root table tbody tr").length, 4, "four valence/arousal examples");
+      assert($("#article-root table caption").text().trim(), "accessible examples caption");
+      assert($("#section-intensity").length, "separate explanation of intensity");
+      assert($("#section-map-limits").length, "explicit model limitations");
+      assert($("#section-faq").closest("section").is("[data-listen-exclude]"));
+      assert(article.speakable.cssSelector.every((selector) => $(selector).length));
+      assert.equal(article.citation.length, 2);
+      for (const source of article.citation) {
+        assert(
+          $("#article-root a")
+            .toArray()
+            .some((e) => $(e).attr("href") === source),
+          "visible research citation",
+        );
+      }
+      assert($('#article-root a[href="/resources/emotional-granularity"]').length);
+      assert($('#article-root a[href="/resources/emotional-awareness-patterns"]').length);
+      assert.match($("#article-root").text(), /not diagnostic or medical advice/);
+      assert.match(
+        await get("/llms.txt"),
+        /https:\/\/vocolens\.com\/resources\/valence-and-arousal/,
+      );
+      assert.match(
+        await get("/llms-full.txt"),
+        /https:\/\/vocolens\.com\/resources\/valence-and-arousal/,
+      );
+      const reference = load(await get("/resources/emotional-granularity"));
+      assert(reference(`a[href="${route}"]`).length, "reference article links to the new guide");
+    }
     results.push({
       route,
       status: 200,

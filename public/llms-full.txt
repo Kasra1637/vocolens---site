@@ -86,12 +86,16 @@ Vocolens is grounded in emotion science including:
 8. "Time Blindness Isn't a Focus Problem — It's a Missing Internal Clock" - https://vocolens.com/resources/adhd-time-blindness
    Explains the neuroscience of ADHD time perception (interval timing) and how a daily voice-logged time-anchor habit recalibrates the internal clock.
 
+9. "Valence and Arousal: Why Calm Isn’t Always Happy" - https://vocolens.com/resources/valence-and-arousal
+   Defines pleasantness versus activation, distinguishes arousal from emotional intensity, and offers everyday examples and a brief reflection exercise. Explains the limits of two-axis summaries and treats Vocolens’s suggested labels and controls as reflection aids, not diagnoses or proven clinical benefits.
+
 ## Pages
 
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Use Cases: https://vocolens.com/use-cases
 - Resources: https://vocolens.com/resources
+- Valence and Arousal: https://vocolens.com/resources/valence-and-arousal
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection
 - Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
 - Distress Detection: https://vocolens.com/resources/distress-detection
