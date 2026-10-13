@@ -72,6 +72,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Resources: https://vocolens.com/resources
+- Mixed Emotions: https://vocolens.com/resources/mixed-emotions
 - Valence and Arousal: Why Calm Isn’t Always Happy: https://vocolens.com/resources/valence-and-arousal
 - Emotional Granularity: https://vocolens.com/resources/emotional-granularity
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection
@@ -81,6 +82,12 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Privacy Policy: https://vocolens.com/privacy
 - Terms of Service: https://vocolens.com/terms
 - Get the app (Google Play): https://play.google.com/store/apps/details?id=com.vocolens.app
+
+- ADHD Time Blindness: Examples and Practical Time Supports: https://vocolens.com/resources/adhd-time-blindness
+- Alexithymia: Difficulty Identifying Emotions and Where to Start: https://vocolens.com/resources/alexithymia-emotional-vocabulary
+- Autism and Emotional Regulation: Sensory Needs and Practical Supports: https://vocolens.com/resources/autism-emotional-regulation
+- Burnout Signs and Recovery: What to Notice and What Can Help: https://vocolens.com/resources/burnout-recovery-signs
+- Overthinking and Rumination: How to Recognize the Loop: https://vocolens.com/resources/overthinking-rumination
 
 ## Contact & Social
 

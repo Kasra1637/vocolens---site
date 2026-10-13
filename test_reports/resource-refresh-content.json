@@ -1,0 +1,506 @@
+[
+  {
+    "slug": "adhd-time-blindness",
+    "component": "TimeBlindness",
+    "title": "ADHD Time Blindness: Examples and Practical Time Supports",
+    "description": "Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.",
+    "takeaways": [
+      "Time blindness describes difficulty tracking or estimating time, not a separate diagnosis.",
+      "Visible clocks, task estimates, and transition cues can make time easier to notice.",
+      "Timing research varies; journals are not proven to recalibrate an internal clock."
+    ],
+    "intro": "You plan to leave in ten minutes, start one small task, and look up much later than expected. Time blindness is an informal description for difficulty sensing elapsed time or estimating how long things will take. It can occur with ADHD, but does not diagnose ADHD or mean you do not care about a deadline.",
+    "sections": [
+      {
+        "title": "What is ADHD time blindness?",
+        "paragraphs": [
+          "Time perception includes estimating duration, reproducing an interval, and organizing actions around time. Everyday difficulties can involve underestimating preparation, losing track during absorbing work, or struggling to change activities. These experiences vary between people and situations.",
+          "Mette's 2023 review found few adult ADHD studies and mixed results across methods. Some showed timing difficulties; others did not show a clear association. The evidence does not support describing every ADHD brain as having the same missing clock, or claiming that journaling repairs it.",
+          "<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9962130/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Read Time Perception in Adult ADHD (Mette, 2023)</a>."
+        ]
+      },
+      {
+        "title": "Examples: estimating, tracking, and switching",
+        "paragraphs": [
+          "You budget twenty minutes for an errand but omit getting dressed, finding keys, and travel. Or an interesting task captures attention and you miss your intended stopping point. A vague plan such as 'leave soon' gives less information than a visible departure time.",
+          "Fatigue, stress, interruptions, and unfamiliar tasks can also affect timing. Record the context rather than treating one late arrival as proof of a condition. If time pressure brings strong feelings, try the <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">emotional awareness check-in</Link>."
+        ]
+      },
+      {
+        "title": "Practical supports that make time visible",
+        "paragraphs": [
+          "Choose one support and test it on an ordinary task. Put a clock where you can see it, use a visible countdown, or set a cue that names an action: 'save the file and stand up.' These are practical experiments, not guaranteed treatment.",
+          "Break departure into steps and add a realistic buffer. An alarm can be useful; the question is what happens after it rings. If you dismiss it repeatedly, try changing its location, simplifying the transition, or arranging an agreed check-in with someone supportive.",
+          "Avoid stacking more alerts than you can use. Tools should reduce friction, not become another source of criticism. Discuss persistent difficulties and ADHD care options with a qualified professional."
+        ]
+      },
+      {
+        "title": "An estimate-versus-actual journal you can reuse",
+        "paragraphs": [
+          "Before one task, note your estimate and start time. Afterwards, record elapsed time, interruptions, and preparation you left out. Example: 'Estimated 15 minutes; actual 28; included finding materials and answering a call.' Adjust your next plan rather than scoring your character.",
+          "A written note or voice entry in Vocolens can hold the observation. The app is not a time-perception assessment, and the record does not establish why a mismatch happened. Stop if tracking becomes punitive; use a gentler support instead.",
+          "If overload keeps recurring, read about <Link to=\"/resources/burnout-recovery-signs\" className=\"text-primary font-semibold hover:underline\">burnout signs and recovery supports</Link>. This guide is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Is time blindness a diagnosis?",
+        "No. It is an informal description of difficulty noticing or estimating time. It does not establish ADHD or replace clinical assessment."
+      ],
+      [
+        "Can alarms help ADHD time blindness?",
+        "They can provide external cues. Pair an alert with a specific transition action and test whether it fits your routine. No single tool works for everyone."
+      ],
+      [
+        "How can I estimate tasks more realistically?",
+        "Compare an estimate with actual elapsed time and include preparation, travel, and transitions. Treat the result as information, not a judgment."
+      ],
+      [
+        "Does voice journaling fix time perception?",
+        "The cited review does not test Vocolens or show that journaling recalibrates time perception. A journal can record observations while other supports address timing."
+      ]
+    ]
+  },
+  {
+    "slug": "alexithymia-emotional-vocabulary",
+    "component": "AlexithymiaEmotionalVocabulary",
+    "title": "Alexithymia: Difficulty Identifying Emotions and Where to Start",
+    "description": "Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.",
+    "takeaways": [
+      "Difficulty naming emotions does not mean an absence of feelings or caring.",
+      "Sensations, context, and tentative words can offer a starting point.",
+      "AI labels and journals cannot diagnose or cure alexithymia."
+    ],
+    "intro": "Someone asks how you feel, and you know something is happening but cannot find a word. Alexithymia describes difficulty identifying and describing emotions, often alongside an externally focused thinking style. It is not the same as having no feelings or not caring about others.",
+    "sections": [
+      {
+        "title": "What is alexithymia?",
+        "paragraphs": [
+          "A person may notice a tight chest or an urge to leave before knowing whether they feel anxious, angry, or overwhelmed. Another can describe an event clearly but finds its emotional meaning harder to explain. These examples are not a diagnostic checklist.",
+          "Kinnaird and colleagues' 2019 systematic review found alexithymia more common in the autistic samples studied, but not universal. Autism and alexithymia are not interchangeable. Study results should not be treated as a personal diagnosis or a universal prevalence estimate.",
+          "<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6331035/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Read Investigating alexithymia in autism (Kinnaird and colleagues, 2019)</a>."
+        ]
+      },
+      {
+        "title": "Examples: knowing the event but not the feeling",
+        "paragraphs": [
+          "You can say 'the meeting ended early' but not how it affected you. You notice restlessness after a conversation without a clear label. Asking 'what emotion is that?' may add pressure rather than clarity.",
+          "Not every uncertain feeling is alexithymia. Emotions can be ambiguous, mixed, or hard to name when you are tired. Persistent difficulty can be explored with qualified support; a questionnaire score or AI interpretation should not stand alone."
+        ]
+      },
+      {
+        "title": "Start with sensations, context, and tentative words",
+        "paragraphs": [
+          "Try one observation: 'my hands feel tense,' 'my energy dropped,' or 'this is unpleasant.' Add what happened, what you expected, and what you want to do. Body sensations are clues, not one-to-one emotion codes.",
+          "Offer two or three possible words rather than a perfect answer. Our <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">emotional awareness exercise</Link> gives a reusable format. You can write, speak, draw, or pause; no format is universally better.",
+          "Avoid forcing an inward check if it increases distress. Attending to your surroundings, meeting a physical need, or seeking support may be more helpful."
+        ]
+      },
+      {
+        "title": "Using vocabulary without outsourcing your judgment",
+        "paragraphs": [
+          "Describe the situation in your own words. If Vocolens suggests a label, check it against your experience and correct it when needed. The suggestion is not a diagnosis or proof of what you really feel.",
+          "Personalization uses patterns in corrections; it does not retrain a model or guarantee improvement in alexithymia. Paper notes can support the same exploration. Keep reflection separate from claims about product effectiveness.",
+          "Once broad words are available, <Link to=\"/resources/emotional-granularity\" className=\"text-primary font-semibold hover:underline\">emotional granularity</Link> explores finer distinctions. If sensory demands are also relevant, see <Link to=\"/resources/autism-emotional-regulation\" className=\"text-primary font-semibold hover:underline\">autism and emotional regulation</Link>. This guide is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Does alexithymia mean I have no emotions?",
+        "No. It concerns difficulty identifying or explaining experience, not an absence of feelings or caring."
+      ],
+      [
+        "Is alexithymia the same as autism?",
+        "No. They can co-occur, but alexithymia is not universal in autism and also occurs outside autism."
+      ],
+      [
+        "Where can I start without an emotion word?",
+        "Describe sensations, energy, pleasant versus unpleasant, and the situation. A tentative word or not knowing yet is acceptable."
+      ],
+      [
+        "Can an AI journal diagnose alexithymia?",
+        "No. AI labels are candidates to review. Seek qualified assessment or support when difficulties affect daily life."
+      ]
+    ]
+  },
+  {
+    "slug": "autism-emotional-regulation",
+    "component": "AutismEmotionalRegulation",
+    "title": "Autism and Emotional Regulation: Sensory Needs and Practical Supports",
+    "description": "Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.",
+    "takeaways": [
+      "Autistic people have varied emotional and sensory experiences.",
+      "Sensory adjustments and communication supports matter alongside reflection.",
+      "A journal cannot predict meltdowns or replace individualized care."
+    ],
+    "intro": "A noisy room, a sudden change of plan, and a difficult conversation can add up. Emotional regulation means responding to feelings in ways that fit your needs and situation. For autistic adults, support may include sensory adjustments, clearer communication, rest, and space to process rather than pressure to appear unaffected.",
+    "sections": [
+      {
+        "title": "What does emotional regulation mean for autistic adults?",
+        "paragraphs": [
+          "Regulation is not suppressing every visible reaction or performing calm for others. It may involve reducing demands, recognizing a need, asking for a change, or recovering in a less overwhelming environment. Different people need different supports.",
+          "Difficulty identifying feelings is called alexithymia. A 2019 systematic review found it common but not universal in the autistic samples studied. Do not assume every autistic person struggles to identify emotions or lacks empathy.",
+          "Read <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6331035/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Kinnaird and colleagues on alexithymia in autism</a>, and our <Link to=\"/resources/alexithymia-emotional-vocabulary\" className=\"text-primary font-semibold hover:underline\">alexithymia guide</Link>."
+        ]
+      },
+      {
+        "title": "Sensory overload and emotions are related, not identical",
+        "paragraphs": [
+          "An uncomfortable sound, bright light, crowded space, or unexpected touch may make a situation harder to tolerate. You may need a sensory change before you can think about an emotion word. Naming a feeling does not remove the source of discomfort.",
+          "A shutdown, meltdown, or need to withdraw should not be treated as deliberate misbehavior or reduced to a single cause from a journal entry. Make room for individual descriptions and agreed support instead of assuming a universal sequence."
+        ]
+      },
+      {
+        "title": "A practical support plan before, during, and after overload",
+        "paragraphs": [
+          "Before a demanding situation, identify one likely sensory challenge and one available adjustment. Examples include a quieter waiting area, written instructions, a predictable schedule, or permission to leave. Ask what is helpful rather than imposing a tool.",
+          "During overload, reduce demands when possible. Keep communication simple and allow processing time. A person may prefer quiet, space, or a trusted supporter; do not assume breathing exercises, touch, or speaking are welcome.",
+          "Afterwards, prioritize recovery before analysis. A short note can record the setting, what felt difficult, what helped, and what might change next time. Our <Link to=\"/resources/distress-detection\" className=\"text-primary font-semibold hover:underline\">body-awareness guide</Link> explains why sensations are clues rather than diagnoses."
+        ]
+      },
+      {
+        "title": "Reflection without pressure to mask or perform",
+        "paragraphs": [
+          "If reflection is useful, try: What demand was present? What did I notice? What support did I need? Which change helped? Writing, voice, drawing, or no journal at all are valid options. Do not record someone else without consent.",
+          "Vocolens can hold voice reflections and suggested emotion labels for you to review. It is not a meltdown predictor, a measure of how autistic you are, or a treatment proven by the cited review. Keep your own interpretation and preferences central.",
+          "Persistent distress or difficulty meeting daily needs deserves qualified support and accommodations. See <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">emotional awareness</Link> for a gentler check-in. This article is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Do all autistic adults have difficulty naming emotions?",
+        "No. Emotional experiences vary. Alexithymia can co-occur with autism but is not universal."
+      ],
+      [
+        "Can sensory changes help with emotional overload?",
+        "Reducing an uncomfortable demand may be useful. Choose adjustments according to the individual rather than assuming one technique helps everyone."
+      ],
+      [
+        "Should I journal during a meltdown?",
+        "Not if it adds demand or distress. Safety, space, agreed support, and recovery can take priority; reflection can wait."
+      ],
+      [
+        "Can Vocolens predict or prevent meltdowns?",
+        "No such predictive or preventive effectiveness is established here. Journal patterns are observations, not reliable forecasts or medical assessments."
+      ]
+    ]
+  },
+  {
+    "slug": "burnout-recovery-signs",
+    "component": "BurnoutRecovery",
+    "title": "Burnout Signs and Recovery: What to Notice and What Can Help",
+    "description": "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
+    "takeaways": [
+      "WHO defines burnout in the occupational context, not as every form of exhaustion.",
+      "Exhaustion, distance from work, and reduced efficacy can overlap with other difficulties.",
+      "Recovery may require changes to demands and support, not simply better journaling."
+    ],
+    "intro": "You feel drained, increasingly detached from work, and less able to do tasks that once felt manageable. Burnout is not a personal failure. The World Health Organization describes it as an occupational phenomenon resulting from chronic workplace stress that has not been successfully managed. Persistent exhaustion deserves attention without assuming one explanation.",
+    "sections": [
+      {
+        "title": "What is burnout? The scope of the WHO definition",
+        "paragraphs": [
+          "WHO describes three dimensions: energy depletion or exhaustion, increased mental distance or cynicism toward work, and reduced professional efficacy. Its ICD-11 definition refers specifically to the occupational context and does not classify burnout as a medical condition.",
+          "People also use burnout informally for caregiving, study, or other prolonged demands. Those experiences matter, but they should not be presented as identical to the WHO definition. A journal cannot determine whether exhaustion comes from burnout, depression, a physical condition, or another cause.",
+          "Source: <a href=\"https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">WHO on burnout as an occupational phenomenon</a>."
+        ]
+      },
+      {
+        "title": "Signs worth noticing, without a self-diagnosis",
+        "paragraphs": [
+          "You may notice sustained exhaustion, increasing dread or detachment about work, or feeling less effective despite effort. These are not necessarily stages in a fixed order. A difficult week alone does not establish burnout.",
+          "Record duration, demands, opportunities for rest, and how daily functioning has changed. Include what improves the situation. If low mood, sleep problems, or exhaustion persist, consider professional assessment rather than treating a checklist as a diagnosis."
+        ]
+      },
+      {
+        "title": "Recovery supports: change demands as well as rest",
+        "paragraphs": [
+          "Rest can matter, but returning to unchanged demands may leave the same difficulties in place. Consider workload, control over tasks, realistic priorities, social support, and whether agreed accommodations or time away are possible. The available options depend on your circumstances.",
+          "A small next step could be naming one unsustainable demand and asking for a concrete change. Avoid framing recovery as another productivity project. If a conversation feels difficult, write down the request before speaking to a manager, trusted supporter, or clinician.",
+          "Persistent or severe symptoms warrant qualified care. Journaling is not a replacement for medical assessment or workplace changes. If planning itself is hard, <Link to=\"/resources/adhd-time-blindness\" className=\"text-primary font-semibold hover:underline\">practical time supports</Link> may help organize one manageable step."
+        ]
+      },
+      {
+        "title": "A gentle demand-and-recovery check-in",
+        "paragraphs": [
+          "Try: What took energy today? What restored some energy? What could be reduced or shared? What support do I need? Example: \"Back-to-back calls were draining; a quiet break helped; ask for a gap between meetings.\" This is a reflection prompt, not a validated burnout score.",
+          "Paper notes or a Vocolens voice entry can keep observations in one place. Look for recurring demands without assuming the app predicts collapse or measures nervous-system damage. Stop if tracking becomes another obligation.",
+          "See <Link to=\"/resources/distress-detection\" className=\"text-primary font-semibold hover:underline\">body-awareness clues</Link> and <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">emotional awareness</Link> for related exercises. This guide is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "What are the main burnout signs?",
+        "WHO describes exhaustion, increased distance or cynicism toward work, and reduced professional efficacy. These can overlap with other difficulties and do not establish a diagnosis on their own."
+      ],
+      [
+        "Is burnout just being tired?",
+        "Ordinary tiredness and sustained work-related exhaustion are not interchangeable. Duration, demands, and functioning matter; persistent symptoms deserve assessment."
+      ],
+      [
+        "Will a vacation fix burnout?",
+        "Rest may help, but it does not guarantee recovery if demands and support remain unchanged. Consider practical adjustments and qualified care when needed."
+      ],
+      [
+        "Can a journal detect burnout?",
+        "A journal can record observations but cannot diagnose burnout or predict collapse. Do not substitute app patterns for assessment or workplace support."
+      ]
+    ]
+  },
+  {
+    "slug": "distress-detection",
+    "component": "DistressDetection",
+    "title": "Physical Signs of Overwhelm: Body Awareness Without Guessing",
+    "description": "Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.",
+    "takeaways": [
+      "Interoception involves sensing and interpreting internal body signals.",
+      "Tension, heat, or stomach discomfort are nonspecific clues, not emotion codes.",
+      "New or severe physical symptoms deserve medical attention, not an app interpretation."
+    ],
+    "intro": "Your shoulders tighten, your breathing changes, or your stomach feels unsettled during a demanding moment. These sensations can accompany overwhelm, but they can have many other causes. Body awareness starts with describing what you notice rather than assuming your body has diagnosed your emotional state.",
+    "sections": [
+      {
+        "title": "What is interoception?",
+        "paragraphs": [
+          "Interoception refers to sensing, interpreting, and integrating signals from within the body. It includes experiences such as hunger, breathing, heartbeat, and other internal sensations. Attention, context, and interpretation all matter.",
+          "Khalsa and colleagues describe interoception as a multidimensional research area, not a single early-warning switch. Noticing more signals is not automatically the same as interpreting them accurately or feeling better.",
+          "Reference: <a href=\"https://pubmed.ncbi.nlm.nih.gov/29884281/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Interoception and Mental Health: A Roadmap (2018)</a>."
+        ]
+      },
+      {
+        "title": "Physical signs that can accompany overwhelm",
+        "paragraphs": [
+          "You might notice muscle tension, restlessness, warmth, shallow breathing, or stomach discomfort. People differ, and the same sensation can occur with exertion, hunger, illness, medication effects, or anxiety. There is no reliable one-to-one map from a body area to an emotion.",
+          "Compare contexts rather than deciding immediately. Did the sensation begin after a difficult conversation, a missed meal, or physical activity? Record uncertainty. Our <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">emotional awareness guide</Link> separates observation from interpretation."
+        ]
+      },
+      {
+        "title": "A gentle body-and-context check-in",
+        "paragraphs": [
+          "Only if it feels comfortable, pause and describe one sensation without judging it: where, what it feels like, and whether it changed. Then notice the situation and one practical need such as water, food, a quieter space, or a break.",
+          "Do not force deep breathing or inward attention if it increases distress. You can instead look around, identify something neutral in the room, or contact a trusted person. This is a reflection suggestion, not a treatment protocol.",
+          "For sensory demands, see <Link to=\"/resources/autism-emotional-regulation\" className=\"text-primary font-semibold hover:underline\">autism and regulation supports</Link>. Choose support according to the individual rather than assuming one exercise fits everyone."
+        ]
+      },
+      {
+        "title": "When a body map is useful, and when it is not",
+        "paragraphs": [
+          "A paper sketch or Vocolens body-sensation record can help you remember what you noticed. A frequency map shows recorded patterns; it is not a predictive stress signature, diagnostic test, or proof that an emotion caused a symptom.",
+          "If sensation labels are easier than emotion words, begin there. The <Link to=\"/resources/alexithymia-emotional-vocabulary\" className=\"text-primary font-semibold hover:underline\">alexithymia guide</Link> offers other starting points. Keep the record brief and stop if checking becomes distressing or repetitive.",
+          "Do not dismiss new, severe, or concerning symptoms as stress. Chest pain, serious breathing difficulty, fainting, or another urgent symptom can require immediate medical care. Seek qualified advice for persistent symptoms. This article is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "What is interoception?",
+        "It is sensing and interpreting signals from inside the body. Awareness and accurate interpretation are related but distinct."
+      ],
+      [
+        "Does a tight chest mean anxiety?",
+        "Not necessarily. Physical sensations can have many causes. New, severe, or concerning symptoms should receive medical attention rather than an assumed emotional explanation."
+      ],
+      [
+        "Can body awareness prevent overwhelm?",
+        "No preventive benefit is guaranteed here. A comfortable check-in may help you notice a need, but reducing demands or getting support may matter more."
+      ],
+      [
+        "Can a body map diagnose stress?",
+        "No. It records observations and patterns, not diagnoses or reliable forecasts."
+      ]
+    ]
+  },
+  {
+    "slug": "overthinking-rumination",
+    "component": "OverthinkingRumination",
+    "title": "Overthinking and Rumination: How to Recognize the Loop",
+    "description": "Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.",
+    "takeaways": [
+      "Rumination and worry can repeat without producing a useful next step.",
+      "Separate what you can act on from uncertainty you cannot resolve right now.",
+      "More journaling is not automatically better if it feeds the same loop."
+    ],
+    "intro": "You replay a conversation, search for the one perfect explanation, and end up with the same question again. Overthinking is an everyday term; rumination and worry describe forms of repetitive thinking that can feel like problem-solving without reaching a useful next step. Not every repeated thought is harmful, but its effect on your day matters.",
+    "sections": [
+      {
+        "title": "What is rumination, and how is it different from reflection?",
+        "paragraphs": [
+          "Useful reflection can produce new information, a decision, or a next action. Rumination often returns to the same painful themes without movement. Worry frequently concerns possible future problems; rumination often revisits distress or its causes. The categories can overlap.",
+          "A 2022 qualitative study explores how people experience both forms of repetitive negative thinking. It does not establish that one brain network or an unfinished-task mechanism explains every thought loop, nor that recording a thought supplies a guaranteed completion signal.",
+          "Reference: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9790473/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Understanding the experience of rumination and worry (2022)</a>."
+        ]
+      },
+      {
+        "title": "Examples: a replay, a prediction, and a useful question",
+        "paragraphs": [
+          "Replay: \"Why did I say that?\" repeated without new information. Prediction: \"What if tomorrow goes badly?\" Useful question: \"Is there one thing I can prepare or clarify?\" The last question does not guarantee calm, but it makes the purpose of thinking more concrete.",
+          "Notice what happens after a few minutes: do you understand more, or feel more stuck? You do not need to label yourself an overthinker. If a feeling is hard to separate from a prediction, try <Link to=\"/resources/science-of-reflection\" className=\"text-primary font-semibold hover:underline\">naming the emotion</Link>."
+        ]
+      },
+      {
+        "title": "A practical next-step check",
+        "paragraphs": [
+          "Write one sentence about the concern. Ask: Is there an action available now? If yes, choose a small action and a realistic time. If not, name the uncertainty and shift to an ordinary activity or supportive contact rather than demanding certainty from yourself.",
+          "A planned worry period is one self-help approach discussed by the Centre for Clinical Interventions. It may not suit everyone and is not a reason to postpone urgent action or care. If it worsens distress, stop and seek support.",
+          "Resource: <a href=\"https://www.cci.health.wa.gov.au/resources/looking-after-yourself/worry-and-rumination\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">CCI worry and rumination resources</a>."
+        ]
+      },
+      {
+        "title": "Using a journal without extending the loop",
+        "paragraphs": [
+          "Try a bounded entry: concern, feeling, available action, and what I will do next. Example: \"Worried about feedback; ask one clarifying question tomorrow; return to dinner now.\" End the entry rather than rehearsing the same conclusion repeatedly.",
+          "A Vocolens voice entry can hold a reflection, but speaking is not established here as superior to writing or as a treatment for anxiety. If reviewing entries fuels self-criticism, take a break. The <Link to=\"/resources/rejection-sensitivity\" className=\"text-primary font-semibold hover:underline\">rejection-sensitivity guide</Link> may help distinguish hurt from assumptions about intent.",
+          "Persistent loops that disrupt sleep, work, relationships, or safety deserve qualified help. This article is educational and is not a replacement for assessment or treatment."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Is rumination the same as problem-solving?",
+        "Not necessarily. Problem-solving can produce information or action; rumination often repeats distressing themes without movement."
+      ],
+      [
+        "What is the difference between worry and rumination?",
+        "Worry often concerns possible future problems, while rumination often revisits distress or its causes. They overlap and are not diagnoses by themselves."
+      ],
+      [
+        "Does recording a worry make it stop?",
+        "No guaranteed effect is established here. A brief record may clarify a next step, but repeated recording can also extend a loop."
+      ],
+      [
+        "When should I seek support for overthinking?",
+        "Seek qualified help if repetitive thinking persistently affects sleep, work, relationships, or safety, or if self-help makes distress worse."
+      ]
+    ]
+  },
+  {
+    "slug": "rejection-sensitivity",
+    "component": "RejectionSensitivity",
+    "title": "Rejection Sensitivity and ADHD: What RSD Means and How to Respond",
+    "description": "Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.",
+    "takeaways": [
+      "RSD is an informal term, not an officially recognized diagnosis.",
+      "Painful feelings are real even when another person's intent is uncertain.",
+      "A pause, clarification, and qualified support can matter more than more analysis."
+    ],
+    "intro": "A short reply or a small correction lands painfully, and you start reading it as a verdict about you. Rejection sensitivity concerns anticipating or reacting strongly to rejection. Rejection sensitive dysphoria, or RSD, is a term used for intense rejection-related distress, especially in ADHD discussions. It is not a formal diagnosis.",
+    "sections": [
+      {
+        "title": "What is rejection sensitivity, and what does RSD mean?",
+        "paragraphs": [
+          "The experience can involve embarrassment, hurt, worry about disapproval, or a strong urge to withdraw or defend yourself. These examples are not a diagnostic test and do not establish ADHD.",
+          "Cleveland Clinic describes RSD as not an officially recognized symptom or diagnosis and notes limited research on its prevalence and causes. Avoid presenting a proposed mechanism or a popular label as settled evidence about every ADHD brain.",
+          "Reference: <a href=\"https://my.clevelandclinic.org/health/diseases/24099-rejection-sensitive-dysphoria-rsd\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Cleveland Clinic on rejection sensitive dysphoria</a>."
+        ]
+      },
+      {
+        "title": "Examples: separating the event from its meaning",
+        "paragraphs": [
+          "Event: a colleague writes \"please revise this.\" Interpretation: \"they think I am incompetent.\" Feeling: hurt, shame, or anxiety. Separating the three does not invalidate the feeling; it leaves room for another explanation and a useful response.",
+          "Social-pain research does not mean emotional rejection and physical injury are identical, or that a scan can diagnose RSD. Past experiences, context, and other difficulties can also matter. Do not infer another person's intention from the intensity of your reaction."
+        ]
+      },
+      {
+        "title": "What to try in the moment",
+        "paragraphs": [
+          "If it is safe, pause before sending the reply you may later regret. Notice one feeling and one observable fact. A sentence such as \"I feel hurt, and I do not yet know what they intended\" keeps both in view.",
+          "Choose an ordinary support: a quieter space, a break, a trusted person, or a clarifying question. For example: \"Which part should I revise first?\" These are practical suggestions, not a guarantee that distress will disappear in ten minutes.",
+          "Our guide to <Link to=\"/resources/science-of-reflection\" className=\"text-primary font-semibold hover:underline\">affect labeling</Link> explains naming feelings without promises of instant relief."
+        ]
+      },
+      {
+        "title": "A brief reflection instead of a repeated replay",
+        "paragraphs": [
+          "Try recording: what happened, what I assumed, what I felt, and what I need next. Include alternative explanations without demanding that you feel positive. If the entry becomes a repeated prosecution of yourself, stop and return to a concrete activity or support.",
+          "Vocolens can hold a voice reflection and candidate emotion labels. It cannot diagnose RSD, determine someone else's intentions, or establish which treatment you need. Writing can serve the same purpose.",
+          "See <Link to=\"/resources/overthinking-rumination\" className=\"text-primary font-semibold hover:underline\">rumination versus reflection</Link> and <Link to=\"/resources/emotional-granularity\" className=\"text-primary font-semibold hover:underline\">specific emotion words</Link>. Persistent distress or relationship difficulties deserve qualified support. This guide is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Is RSD a formal diagnosis?",
+        "No. It is an informal term used for intense rejection-related distress. Research on its causes and prevalence remains limited."
+      ],
+      [
+        "Does feeling rejected mean someone rejected me?",
+        "Not necessarily. The feeling is real, but the meaning of a vague interaction may still be uncertain. Separate the event from the interpretation."
+      ],
+      [
+        "What can I do after painful feedback?",
+        "Pause if possible, name the feeling, identify an observable fact, and choose support or a clarifying question. These suggestions do not guarantee immediate relief."
+      ],
+      [
+        "Can an AI journal diagnose RSD?",
+        "No. A journal cannot diagnose RSD, infer another person's intention, or choose treatment. Seek qualified help for persistent or severe distress."
+      ]
+    ]
+  },
+  {
+    "slug": "mixed-emotions",
+    "component": "MixedEmotions",
+    "title": "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
+    "description": "Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.",
+    "takeaways": [
+      "Pleasant and unpleasant feelings can co-occur about the same situation.",
+      "Mixed feelings are not automatically indecision or a problem to eliminate.",
+      "Research on mixed emotions does not establish a health benefit from an app."
+    ],
+    "intro": "You are happy about a new opportunity and sad about what you will leave behind. Mixed emotions are feelings that co-occur, often with opposite valence: one pleasant and one unpleasant. You do not have to choose a single word just because the situation is hard to summarize.",
+    "sections": [
+      {
+        "title": "What are mixed emotions?",
+        "paragraphs": [
+          "Researchers often use the term for simultaneous positive and negative emotions, such as happy and sad. Ordinary language also uses mixed feelings more broadly. A transition, farewell, or meaningful choice can have both a gain and a loss.",
+          "Berrios and colleagues' 2015 meta-analysis examined 63 experiments and found that mixed emotions could be elicited across different models, emotion pairs, and measurement methods. How they are measured matters. This supports studying the experience, not a claim that everyone feels the same mix.",
+          "Source: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4397957/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary font-semibold hover:underline\">Eliciting mixed emotions (Berrios and colleagues, 2015)</a>."
+        ]
+      },
+      {
+        "title": "Examples: happy and sad, relieved and disappointed",
+        "paragraphs": [
+          "Graduation can bring pride and sadness. A cancelled commitment can bring relief and disappointment. A move can feel exciting and unsettling. These examples do not tell you what you ought to feel; they show why a single pleasant-or-unpleasant score may miss part of an experience.",
+          "Indecision concerns what action to take. Mixed emotions concern what you feel. You can be decided about moving and still feel sad about leaving. Equally, a repeated conflict can point to a decision that deserves practical attention rather than more emotion analysis."
+        ]
+      },
+      {
+        "title": "A reflection that makes room for both",
+        "paragraphs": [
+          "Try two sentences: \"I feel [first emotion] because [one aspect]. I also feel [second emotion] because [another aspect].\" You can use tentative words and change them later. There is no requirement that the two feelings be equal in intensity.",
+          "Example: \"I feel excited about the new role. I also feel apprehensive about learning the routine.\" Ask what each feeling points toward, then choose one next step such as preparing a question or planning a goodbye. This is a reflection suggestion, not a validated treatment.",
+          "For more precise words, see <Link to=\"/resources/emotional-granularity\" className=\"text-primary font-semibold hover:underline\">emotional granularity</Link>. For the act of naming a feeling, see <Link to=\"/resources/science-of-reflection\" className=\"text-primary font-semibold hover:underline\">affect labeling</Link>."
+        ]
+      },
+      {
+        "title": "Using a journal without forcing a single answer",
+        "paragraphs": [
+          "Paper or a voice entry can hold both sentences. If Vocolens suggests labels, review them rather than treating the analysis as a definitive explanation. You can reject a label, adjust it, or leave the experience partly unnamed.",
+          "Do not interpret the research as proof that mixed feelings improve physical health for everyone or that recording them in an app produces a clinical benefit. An association or laboratory finding is not a product trial.",
+          "If reflection becomes repetitive distress, pause and seek support. The <Link to=\"/resources/emotional-awareness-patterns\" className=\"text-primary font-semibold hover:underline\">awareness guide</Link> offers a brief check-in; persistent or severe difficulties deserve qualified care. This article is educational, not medical advice."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Can I feel happy and sad at the same time?",
+        "Yes, research supports the co-occurrence of pleasant and unpleasant feelings in some situations. Your experience does not need to fit a single label."
+      ],
+      [
+        "Are mixed emotions the same as indecision?",
+        "No. Mixed emotions concern feelings; indecision concerns action. You can make a clear choice and still have mixed feelings about it."
+      ],
+      [
+        "How can I describe mixed feelings?",
+        "Name each feeling and the aspect of the situation it relates to. Tentative words and different intensities are acceptable."
+      ],
+      [
+        "Does journaling mixed feelings improve health?",
+        "No product or universal health benefit is established here. A journal can support reflection, but it is not a substitute for qualified care."
+      ]
+    ]
+  }
+]

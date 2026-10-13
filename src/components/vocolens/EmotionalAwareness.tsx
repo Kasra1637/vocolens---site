@@ -251,10 +251,8 @@ export function EmotionalAwareness() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience & Mental Wellness</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Affect labeling: how to name your emotions
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Explore evidence, everyday examples, and limitations of putting feelings into words.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">Affect Labeling: How to Name Your Emotions</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Explore research, practical examples, and the limits of claims about naming emotions.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -266,10 +264,8 @@ export function EmotionalAwareness() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness & Distress Detection</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How your body tells you it's overwhelmed before your mind does
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">Physical Signs of Overwhelm: Body Awareness Without Guessing</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>
@@ -281,10 +277,8 @@ export function EmotionalAwareness() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">ADHD & Time Perception</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Time blindness isn't a focus problem — it's a missing internal clock
-                    </h4>
-                    <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of ADHD time perception and how a daily voice-logged time-anchor habit recalibrates your internal clock.</p>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">ADHD Time Blindness: Examples and Practical Time Supports</h4>
+                    <p className="text-text-secondary text-base leading-relaxed">Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
                 </div>

@@ -20,6 +20,7 @@ import { Route as ResourcesValenceAndArousalRouteImport } from './routes/resourc
 import { Route as ResourcesScienceOfReflectionRouteImport } from './routes/resources.science-of-reflection'
 import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/resources.rejection-sensitivity'
 import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
+import { Route as ResourcesMixedEmotionsRouteImport } from './routes/resources.mixed-emotions'
 import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
 import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
@@ -87,6 +88,11 @@ const ResourcesOverthinkingRuminationRoute =
     path: '/overthinking-rumination',
     getParentRoute: () => ResourcesRoute,
   } as any)
+const ResourcesMixedEmotionsRoute = ResourcesMixedEmotionsRouteImport.update({
+  id: '/mixed-emotions',
+  path: '/mixed-emotions',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 const ResourcesEmotionalGranularityRoute =
   ResourcesEmotionalGranularityRouteImport.update({
     id: '/emotional-granularity',
@@ -144,6 +150,7 @@ export interface FileRoutesByFullPath {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -163,6 +170,7 @@ export interface FileRoutesByTo {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -184,6 +192,7 @@ export interface FileRoutesById {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/rejection-sensitivity': typeof ResourcesRejectionSensitivityRoute
   '/resources/science-of-reflection': typeof ResourcesScienceOfReflectionRoute
@@ -206,6 +215,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -245,6 +256,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/rejection-sensitivity'
     | '/resources/science-of-reflection'
@@ -340,6 +352,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesOverthinkingRuminationRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/mixed-emotions': {
+      id: '/resources/mixed-emotions'
+      path: '/mixed-emotions'
+      fullPath: '/resources/mixed-emotions'
+      preLoaderRoute: typeof ResourcesMixedEmotionsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/emotional-granularity': {
       id: '/resources/emotional-granularity'
       path: '/emotional-granularity'
@@ -400,6 +419,7 @@ interface ResourcesRouteChildren {
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
   ResourcesEmotionalGranularityRoute: typeof ResourcesEmotionalGranularityRoute
+  ResourcesMixedEmotionsRoute: typeof ResourcesMixedEmotionsRoute
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesRejectionSensitivityRoute: typeof ResourcesRejectionSensitivityRoute
   ResourcesScienceOfReflectionRoute: typeof ResourcesScienceOfReflectionRoute
@@ -418,6 +438,7 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
   ResourcesEmotionalGranularityRoute: ResourcesEmotionalGranularityRoute,
+  ResourcesMixedEmotionsRoute: ResourcesMixedEmotionsRoute,
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesRejectionSensitivityRoute: ResourcesRejectionSensitivityRoute,
   ResourcesScienceOfReflectionRoute: ResourcesScienceOfReflectionRoute,

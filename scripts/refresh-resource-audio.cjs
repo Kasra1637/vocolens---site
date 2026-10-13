@@ -1,4 +1,4 @@
-/** Refresh only the two SEO articles; leave other narration and its generator untouched.
+/** Refresh selected reviewed SEO articles; leave the reference article and general generator untouched.
  * Usage: BASE_URL=http://127.0.0.1:8797 node scripts/refresh-resource-audio.cjs
  * Requires the existing msedge-tts, cheerio, and ffmpeg/ffprobe on PATH.
  * Chapter offsets come from separately synthesized section durations, not hand edits.
@@ -11,7 +11,14 @@ const { load } = require("cheerio");
 const { MsEdgeTTS, OUTPUT_FORMAT } = require("msedge-tts");
 const root = path.resolve(__dirname, "..");
 const base = process.env.BASE_URL || "http://127.0.0.1:8797";
-const slugs = ["emotional-awareness-patterns", "science-of-reflection"];
+const briefs = require("../test_reports/resource-refresh-content.json");
+const slugs = process.argv.slice(2).length ? process.argv.slice(2) : briefs.map((b) => b.slug);
+const allowed = new Set([
+  ...briefs.map((b) => b.slug),
+  "emotional-awareness-patterns",
+  "science-of-reflection",
+]);
+if (slugs.some((slug) => !allowed.has(slug))) throw new Error("Unknown refresh slug");
 const tmp = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "vocolens-seo-audio-"));
 const normalize = (s) =>
   s
@@ -77,7 +84,12 @@ async function synthesize(text, dir) {
           .filter(Boolean)
           .join("\n\n"),
       }));
-      if (sections.length !== (slug === slugs[0] ? 6 : 5) || sections.some((s) => !s.text))
+      if (
+        sections.length !==
+          (briefs.find((b) => b.slug === slug)?.sections.length + 1 ||
+            (slug === "emotional-awareness-patterns" ? 6 : 5)) ||
+        sections.some((s) => !s.text)
+      )
         throw new Error(`${slug}: invalid narration blocks`);
       let offset = 0;
       const files = [];
@@ -141,6 +153,11 @@ async function synthesize(text, dir) {
       };
       fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
       fs.writeFileSync(sectionPath, mapping);
+      execFileSync(
+        process.execPath,
+        [path.join(root, "node_modules/prettier/bin/prettier.cjs"), "--write", sectionPath],
+        { stdio: "inherit" },
+      );
       console.log(
         `DONE ${slug}: ${duration.toFixed(2)} seconds; ${sections.length} measured chapters`,
       );
