@@ -52,6 +52,14 @@ function articleBlocks(): HTMLElement[] {
  *   (seeks are verified across frames against element desync; the
  *   chapter-bound auto-pause is suppressed briefly after each jump so a
  *   stale timeupdate can't pause instead of moving)
+ * - every readout names the chapter the player is ON, and the title is read
+ *   from the article itself (the narrated block's own H2/H3), never assumed
+ *   from a list: the § label, the chapter list, the collapsed summary, the
+ *   article highlight and prev/next all follow the selected chapter from the
+ *   tap until its narration actually starts, then hand over to the live
+ *   chapter — the seek target sits a lead-in before the mapped start, so a
+ *   playhead-only readout would name the previous chapter for the whole
+ *   lead-in
  * - an explicitly selected chapter plays ONLY itself once started, then
  *   auto-pauses at the next chapter's start; a fresh Listen with no
  *   selection plays through
@@ -70,17 +78,27 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [missing, setMissing] = useState(false);
   const [showChapters, setShowChapters] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
-  // Chapter highlighted the moment a tap lands, before playback catches
-  // up (pre-metadata estimate or the play-promise gap). Cleared on play;
-  // while playing the live section owns the highlight.
+  // Chapter a tap landed on, held until its narration actually starts: the
+  // seek goes a lead-in *before* the chapter's mapped start, so the playhead
+  // alone would still name the previous chapter (pre-metadata estimate, the
+  // play-promise gap, and the whole lead-in after Listen). It is not cleared
+  // when playback starts — sectionIdx retires it on its own the moment the
+  // playhead reaches the chapter's header.
   const [armedIdx, setArmedIdx] = useState<number | null>(null);
+  // Chapter titles read from the article itself (each narrated block's own
+  // H2/H3), so the player can never name a chapter differently from the
+  // heading on the page. Null until the DOM is read; the mapped titles stand
+  // in for SSR and the first paint.
+  const [articleTitles, setArticleTitles] = useState<string[] | null>(null);
 
   const src = `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
 
-  // Header-resolved start for a section: the mapped timestamp pulled
-  // earlier by HEADER_BACKOFF. Display (ticks, highlight, hover, chapters)
-  // always uses the raw mapped times; only seek targets use this.
+  // Header-resolved start for a section: the mapped timestamp pulled earlier
+  // by HEADER_BACKOFF. The chapter clocks and the chapter list always show the
+  // raw mapped times; only seek targets use this earlier start — and the
+  // readout resolves the current chapter with the same lead-in so a tap names
+  // the chapter it selected (see sectionIdx).
   const headerStart = useCallback(
     (i: number) => (i === 0 ? 0 : Math.max(0, sections[i].startSec - HEADER_BACKOFF)),
     [sections],
@@ -137,6 +155,23 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     audio.load();
   }, [src]);
+
+  // Titles come from the article, not from the chapter map: read each narrated
+  // block's own heading so the player always names the section the user is
+  // looking at, even if the mapped title ever drifts from the page. Read in an
+  // effect rather than during render so the hydration pass still matches the
+  // server-rendered (mapped) titles.
+  useEffect(() => {
+    const list = ARTICLE_SECTIONS[slug] ?? [];
+    const blocks = articleBlocks();
+    if (list.length === 0 || blocks.length !== list.length) {
+      setArticleTitles(null);
+      return;
+    }
+    setArticleTitles(
+      blocks.map((block, i) => block.querySelector("h2, h3")?.textContent?.trim() || list[i].title),
+    );
+  }, [slug]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -232,7 +267,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
-    setArmedIdx(null);
+    // armedIdx is deliberately kept: the seek parked the playhead a lead-in
+    // before the selected chapter's header, and the readout must name that
+    // chapter until the narration gets there (see sectionIdx).
     // A tap parked before metadata landed: carry the play intent into
     // onMeta so Listen pressed after arming still starts playback.
     if (pendingRef.current) pendingRef.current.shouldPlay = true;
@@ -314,26 +351,44 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [seek, headerStart, setBoundFor, armBoundSuppress],
   );
 
+  // The chapter the player is ON — the one index every readout names: the
+  // chapter list, the § label, the collapsed summary, the article highlight
+  // and prev/next all read it. It is the selection while the playhead is still
+  // inside that chapter's lead-in, because a tap parks the playhead a lead-in
+  // *before* the chapter's mapped start: resolving from the playhead alone
+  // would name the previous chapter for the whole lead-in, and again for the
+  // first 1.5 s after Listen. From the moment the narration reaches the
+  // selected chapter's header the live, time-derived chapter owns it again.
+  const liveIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
+  const sectionIdx =
+    armedIdx !== null && armedIdx < sections.length && currentTime < sections[armedIdx].startSec
+      ? armedIdx
+      : liveIdx;
+
+  // Chapter title for display, read from the article itself once mounted
+  // (articleTitles) with the mapped title as the SSR / pre-mount fallback.
+  const titleAt = (i: number) =>
+    articleTitles && articleTitles.length === sections.length
+      ? articleTitles[i]
+      : sections[i].title;
+
   const prevSection = useCallback(() => {
     if (sections.length === 0) return;
-    const idx = sectionAt(sections, currentTime);
-    const intoSection = currentTime - sections[idx].startSec;
-    const target = intoSection > 3 ? idx : Math.max(0, idx - 1);
+    const intoSection = currentTime - sections[sectionIdx].startSec;
+    const target = intoSection > 3 ? sectionIdx : Math.max(0, sectionIdx - 1);
     selectChapter(target);
-  }, [sections, currentTime, selectChapter]);
+  }, [sections, currentTime, sectionIdx, selectChapter]);
 
   const nextSection = useCallback(() => {
     if (sections.length === 0) return;
-    const idx = sectionAt(sections, currentTime);
-    const target = Math.min(sections.length - 1, idx + 1);
+    const target = Math.min(sections.length - 1, sectionIdx + 1);
     selectChapter(target);
-  }, [sections, currentTime, selectChapter]);
+  }, [sections, sectionIdx, selectChapter]);
 
 
   if (missing) return null;
 
   const speed = SPEEDS[speedIdx];
-  const sectionIdx = sections.length > 0 ? sectionAt(sections, currentTime) : -1;
 
   return (
     <div
@@ -400,7 +455,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       <div className="mt-3">
         <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-2">
           <span className="min-w-0 truncate">
-            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {sections[sectionIdx].title}</span> : <span>&nbsp;</span>}
+            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {titleAt(sectionIdx)}</span> : <span>&nbsp;</span>}
           </span>
           <span className="tabular-nums flex-shrink-0">
             {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
@@ -418,14 +473,14 @@ export function ListenToArticle({ slug }: { slug: string }) {
               <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
               <span className="flex-shrink-0">Chapters · {sections.length}</span>
               <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
-                {sectionIdx >= 0 ? sections[sectionIdx].title : ""}
+                {sectionIdx >= 0 ? titleAt(sectionIdx) : ""}
               </span>
               <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {showChapters && (
               <ol className="mt-1 space-y-1 rounded-2xl bg-[#F4F1FB] border border-primary/15 p-1.5">
                 {sections.map((s, i) => {
-                  const active = i === (playing ? sectionIdx : (armedIdx ?? sectionIdx));
+                  const active = i === sectionIdx;
                   return (
                     <li key={i}>
                       <button
@@ -441,7 +496,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
                         <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-[#6A3FC0]" : "text-text-muted"}`}>
                           {formatClock(s.startSec)}
                         </span>
-                        <span className="flex-1 truncate">{s.title}</span>
+                        <span className="flex-1 truncate">{titleAt(i)}</span>
                         {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" aria-hidden="true" />}
                       </button>
                     </li>
