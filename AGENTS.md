@@ -41,7 +41,17 @@ Cloudflare Workers. Production: https://vocolens.com.
   the prev/next buttons are the only chapter browsers, and the Listen button
   is the only control that starts audio (every other gesture just selects a
   chapter, leaving playback as it was). Position feedback is the `§ chapter`
-  label plus elapsed / total time.
+  label plus elapsed / total time. Every readout — that label, the chapter
+  list, the collapsed summary, the article highlight and prev/next — names the
+  chapter the player is *on*: the selection while the playhead is still inside
+  its 1.5s header lead-in (a tap seeks *before* the mapped start, so a
+  playhead-only readout names the previous chapter for the whole lead-in and
+  again for the first 1.5s after Listen), then the live chapter. Chapter
+  titles are read from the article's own H2/H3 — the mapped `title` is only the
+  SSR / first-paint fallback — so the reference article lists its real headings
+  ("So what is emotional granularity, exactly?") instead of its older shortened
+  labels ("What is granularity?"). Titles are display copy, not timestamps: the
+  no-hand-edits rule below is about `startSec` only.
 - `src/routeTree.gen.ts` is auto-generated (rebuild regenerates it).
 - `/join` was removed; `src/server.ts` 301s it to `/`. `site.webmanifest`
   512 icon is `public/vocolens-512.png` (keep in sync with the favicon).
