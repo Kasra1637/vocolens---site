@@ -1,0 +1,79 @@
+{
+  "summary": "Verified new blog post 'Mixed Emotions' on Vocolens TanStack Start site (frontend-only, no backend). Checked SSR HTML via curl for head tags, JSON-LD, static files, and ran Playwright for interactive FAQ, hub cards, nav, outbound link attrs, responsive overflow, console errors, and audio hiding. All 10 feature groups in the request pass.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verification_details": {
+    "ssr_head": {
+      "title": "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion | Vocolens",
+      "meta_description_length": 152,
+      "og_title_present": true,
+      "og_description_present": true,
+      "og_type": "article",
+      "canonical": "https://vocolens.com/resources/mixed-emotions"
+    },
+    "jsonld": {
+      "scripts_found": 5,
+      "all_valid_json": true,
+      "article": {"headline_matches_h1": true, "datePublished": "2026-10-06", "mainEntityOfPage_id": "https://vocolens.com/resources/mixed-emotions", "mentions_scholarly_count": 3, "breadcrumb_items": 3},
+      "faqpage": {"questions": 5, "names_match_summaries": true, "first_q": "What are mixed emotions?"}
+    },
+    "article_body": {
+      "breadcrumb": "Resources > Mixed Emotions (visible)",
+      "category_pill": "Neuroscience & Emotional Intelligence (present)",
+      "h1": "Mixed Emotions: Why Feeling Two Things at Once Is Information, Not Confusion",
+      "byline": "By Vocolens · 8 min read · Oct 6, 2026 (all 3 parts rendered)",
+      "key_takeaways_card": true,
+      "content_h2_sections": 4,
+      "research_outbound_links": {
+        "pubmed_11642354": {"target": "_blank", "rel": "noopener noreferrer"},
+        "pmc_PMC4397957": {"target": "_blank", "rel": "noopener noreferrer"},
+        "pubmed_24032072": {"target": "_blank", "rel": "noopener noreferrer"}
+      },
+      "article_root_id_present": true
+    },
+    "faq_accordion": {"summaries": 5, "first_toggle_open_after_click": true},
+    "related_links": ["/resources/emotional-granularity (200)", "/resources/science-of-reflection (200)", "/resources/alexithymia-emotional-vocabulary (200)"],
+    "cta": {"play_store": "https://play.google.com/store/apps/details?id=com.vocolens.app target=_blank present", "back_to_resources": true},
+    "static_files": {
+      "sitemap_xml": "contains <loc>https://vocolens.com/resources/mixed-emotions</loc> lastmod 2026-10-06",
+      "llms_txt": "Mixed Emotions line present",
+      "llms_full_txt": "Mixed Emotions line present"
+    },
+    "hub": {
+      "total_article_cards": 11,
+      "first_card_is_mixed_emotions": true,
+      "second_card_is_rejection_sensitivity": true,
+      "tag_pill_text": "Mixed Emotions · Emotional Ambivalence · Voice Journaling",
+      "click_navigation_works": true
+    },
+    "audio_player": {
+      "mp3_404_as_expected": true,
+      "listen_region_hidden_after_media_error": true,
+      "note": "Immediately after navigation the region briefly exists in DOM; after ~2.5s media error event fires and ListenToArticle unmounts (returns null). Final state: region absent."
+    },
+    "responsive": {
+      "mixed_emotions_1920x800_overflow": 0,
+      "mixed_emotions_390x844_overflow": 0,
+      "hub_1920x800_overflow": 0,
+      "hub_390x844_overflow": 0
+    },
+    "regression_200": ["/", "/resources", "/resources/emotional-granularity", "/resources/rejection-sensitivity", "/resources/science-of-reflection", "/resources/alexithymia-emotional-vocabulary", "/features"],
+    "console_errors_unexpected": 0,
+    "console_errors_expected": ["404 for /audio/mixed-emotions.mp3 (expected per spec)"]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "ListenToArticle briefly renders before unmounting on media error; harmless but could cause a tiny CLS flash on slow networks. Consider rendering audio with preload='metadata' and gating UI on 'canplay' rather than mounting-then-removing. Low priority."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A - no backend", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Vocolens is a static TanStack Start + React 19 site served by Vite on :3000 (no backend). Use curl for SSR'd head/JSON-LD checks and Playwright for interactive. There are no data-testid attributes on blog pages — use semantic selectors. Expected console error: 404 for /audio/mixed-emotions.mp3 (ListenToArticle hides itself on media error). All features and regressions verified in iteration_2."
+}

@@ -41,6 +41,8 @@ const FORMAT =
 const FORCE = process.argv.includes("--force");
 
 const SLUGS = [
+  "valence-and-arousal",
+  "rejection-sensitivity",
   "adhd-time-blindness",
   "alexithymia-emotional-vocabulary",
   "burnout-recovery-signs",
@@ -50,6 +52,7 @@ const SLUGS = [
   "emotional-awareness-patterns",
   "science-of-reflection",
   "emotional-granularity",
+  "mixed-emotions",
 ];
 
 function decodeEntities(s) {
