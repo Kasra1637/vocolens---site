@@ -113,7 +113,9 @@ async function get(route) {
       const start = mapping.indexOf('"' + slug + '": [');
       const sectionMap = mapping.slice(start, mapping.indexOf("],", start));
       const starts = [...sectionMap.matchAll(/startSec: ([0-9.]+)/g)].map((m) => Number(m[1]));
-      const bodySections = $("#article-root section[aria-labelledby]:not([data-listen-exclude])");
+      const bodySections = $(
+        "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+      );
       assert.equal(starts.length, bodySections.length + 1, `${route}: complete chapter map`);
       assert.equal(starts[0], 0);
       assert(
@@ -129,7 +131,9 @@ async function get(route) {
           .trim();
       const blocks = [
         $("#article-root").children().first(),
-        ...$("#article-root section[aria-labelledby]:not([data-listen-exclude])")
+        ...$(
+          "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+        )
           .toArray()
           .map((e) => $(e)),
       ];

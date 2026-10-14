@@ -176,13 +176,7 @@ export function AlexithymiaEmotionalVocabulary() {
           >
             Alexithymia: Difficulty Identifying Emotions and Where to Start
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Explore what alexithymia means, examples of difficulty identifying feelings, and gentle
-            ways to describe sensations and build emotional vocabulary.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -227,14 +221,14 @@ export function AlexithymiaEmotionalVocabulary() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             Someone asks how you feel, and you know something is happening but cannot find a word.
             Alexithymia describes difficulty identifying and describing emotions, often alongside an
             externally focused thinking style. It is not the same as having no feelings or not
             caring about others.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-what-is-alexithymia">
             <h2

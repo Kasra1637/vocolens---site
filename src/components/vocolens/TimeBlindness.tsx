@@ -173,13 +173,7 @@ export function TimeBlindness() {
           >
             ADHD Time Blindness: Examples and Practical Time Supports
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Learn what ADHD time blindness means, recognize everyday examples, and try visible
-            timers, task estimates, and transition cues without blaming yourself.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -230,14 +224,14 @@ export function TimeBlindness() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             You plan to leave in ten minutes, start one small task, and look up much later than
             expected. Time blindness is an informal description for difficulty sensing elapsed time
             or estimating how long things will take. It can occur with ADHD, but does not diagnose
             ADHD or mean you do not care about a deadline.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-two-clocks">
             <h2

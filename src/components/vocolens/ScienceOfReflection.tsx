@@ -148,7 +148,7 @@ export function ScienceOfReflection() {
           >
             Affect Labeling: How to Name Your Emotions
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">Learn what affect labeling is, what research shows about naming emotions, and how to try a short check-in without promises of guaranteed stress relief.</p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
             <span className="flex items-center gap-1">
@@ -184,7 +184,7 @@ export function ScienceOfReflection() {
 
       <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
-        <div><p>Naming a feeling can give you a clearer starting point for reflection without requiring you to argue with it or pretend it has gone away. Here is what the evidence supports, where its limits are, and how to try a brief check-in.</p></div>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Learn what affect labeling is, what research shows about naming emotions, and how to try a short check-in without promises of guaranteed stress relief.</p><p className="mb-4 text-base lg:text-lg leading-relaxed">Naming a feeling can give you a clearer starting point for reflection without requiring you to argue with it or pretend it has gone away. Here is what the evidence supports, where its limits are, and how to try a brief check-in.</p></section></div>
 
         <div><section aria-labelledby="section-neuroscience">
 <h2 id="section-neuroscience" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">What is affect labeling, and what does research show?</h2>

@@ -212,11 +212,7 @@ export function ValenceAndArousal() {
         >
           {title}
         </h1>
-        <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
-          Quiet can feel peaceful, or it can feel heavy. Energy can feel exciting, or it can feel
-          like being braced for bad news. Valence and arousal separate those questions—so a single
-          mood score does not have to carry the whole story.
-        </p>
+
         <div className="flex flex-wrap items-center gap-4 text-sm text-text-muted">
           <span>
             By{" "}
@@ -271,24 +267,37 @@ export function ValenceAndArousal() {
         className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose"
       >
         <div>
-          <p>
-            You finish the day, sit down, and notice that everything has gone quiet. Yesterday that
-            quiet felt like relief. Tonight it feels more like being emptied out. If the only
-            question is “How much energy do I have?”, the two evenings look similar. If the question
-            is “How am I?”, they are not the same at all.
-          </p>
-          <p className="mt-4">
-            The{" "}
-            <Link
-              to="/resources/emotional-granularity"
-              className="text-primary font-semibold hover:underline"
+          <section aria-labelledby="section-overview">
+            <h2
+              id="section-overview"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
             >
-              emotional-granularity guide
-            </Link>{" "}
-            is about finding a more precise word. This guide takes a step back: when the word is not
-            there yet, what can you notice? Pleasantness and activation give you two useful
-            questions before you ask for a label.
-          </p>
+              Overview
+            </h2>
+            <p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">
+              Quiet can feel peaceful, or it can feel heavy. Energy can feel exciting, or it can
+              feel like being braced for bad news. Valence and arousal separate those questions—so a
+              single mood score does not have to carry the whole story.
+            </p>
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              You finish the day, sit down, and notice that everything has gone quiet. Yesterday
+              that quiet felt like relief. Tonight it feels more like being emptied out. If the only
+              question is “How much energy do I have?”, the two evenings look similar. If the
+              question is “How am I?”, they are not the same at all.
+            </p>
+            <p className="mt-4">
+              The{" "}
+              <Link
+                to="/resources/emotional-granularity"
+                className="text-primary font-semibold hover:underline"
+              >
+                emotional-granularity guide
+              </Link>{" "}
+              is about finding a more precise word. This guide takes a step back: when the word is
+              not there yet, what can you notice? Pleasantness and activation give you two useful
+              questions before you ask for a label.
+            </p>
+          </section>
         </div>
 
         <section aria-labelledby="section-valence-arousal">

@@ -176,13 +176,7 @@ export function AutismEmotionalRegulation() {
           >
             Autism and Emotional Regulation: Sensory Needs and Practical Supports
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Explore emotional regulation in autistic adults, how sensory demands and alexithymia can
-            differ, and ways to plan support without masking your needs.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -228,14 +222,14 @@ export function AutismEmotionalRegulation() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             A noisy room, a sudden change of plan, and a difficult conversation can add up.
             Emotional regulation means responding to feelings in ways that fit your needs and
             situation. For autistic adults, support may include sensory adjustments, clearer
             communication, rest, and space to process rather than pressure to appear unaffected.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-alexithymia">
             <h2

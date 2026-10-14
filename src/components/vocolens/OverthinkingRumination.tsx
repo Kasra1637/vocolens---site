@@ -176,13 +176,7 @@ export function OverthinkingRumination() {
           >
             Overthinking and Rumination: How to Recognize the Loop
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Understand rumination versus useful reflection, see examples of repetitive worry, and
-            try a practical next-step check without promises of instant relief.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -228,15 +222,15 @@ export function OverthinkingRumination() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             You replay a conversation, search for the one perfect explanation, and end up with the
             same question again. Overthinking is an everyday term; rumination and worry describe
             forms of repetitive thinking that can feel like problem-solving without reaching a
             useful next step. Not every repeated thought is harmful, but its effect on your day
             matters.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-zeigarnik">
             <h2

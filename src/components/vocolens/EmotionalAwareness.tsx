@@ -136,7 +136,7 @@ export function EmotionalAwareness() {
           >
             Emotional Awareness: What It Is and How to Improve It
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.</p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
             <span className="flex items-center gap-1">
@@ -172,7 +172,7 @@ export function EmotionalAwareness() {
 
       <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
-        <div><p>You do not need the perfect emotion word or an app to begin. Start by noticing what changed, then consider what the feeling might tell you about the situation. A tentative label is enough.</p></div>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.</p><p className="mb-4 text-base lg:text-lg leading-relaxed">You do not need the perfect emotion word or an app to begin. Start by noticing what changed, then consider what the feeling might tell you about the situation. A tentative label is enough.</p></section></div>
 
         <div><section aria-labelledby="section-metacognition">
 <h2 id="section-metacognition" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">What is emotional awareness?</h2>

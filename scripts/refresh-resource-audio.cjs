@@ -71,12 +71,14 @@ async function synthesize(text, dir) {
       const blocks = [
         article.children().first(),
         ...article
-          .find("section[aria-labelledby]:not([data-listen-exclude])")
+          .find(
+            "section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+          )
           .toArray()
           .map((e) => $(e)),
       ];
       const sections = blocks.map((block, i) => ({
-        title: i === 0 ? "Introduction" : normalize(block.find("h2").first().text()),
+        title: i === 0 ? "Overview" : normalize(block.find("h2").first().text()),
         text: block
           .find("h2,h3,p,li")
           .toArray()

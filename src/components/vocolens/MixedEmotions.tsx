@@ -168,13 +168,7 @@ export function MixedEmotions() {
           >
             Mixed Emotions: Why You Can Feel Happy and Sad at Once
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Learn what mixed emotions are, see everyday examples of feeling two things at once, and
-            try a reflection that makes room for both without forcing a choice.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -220,12 +214,24 @@ export function MixedEmotions() {
         id="article-root"
       >
         <div>
-          <p>
-            You are happy about a new opportunity and sad about what you will leave behind. Mixed
-            emotions are feelings that co-occur, often with opposite valence: one pleasant and one
-            unpleasant. You do not have to choose a single word just because the situation is hard
-            to summarize.
-          </p>
+          <section aria-labelledby="section-overview">
+            <h2
+              id="section-overview"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
+            >
+              Overview
+            </h2>
+            <p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">
+              Learn what mixed emotions are, see everyday examples of feeling two things at once,
+              and try a reflection that makes room for both without forcing a choice.
+            </p>
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              You are happy about a new opportunity and sad about what you will leave behind. Mixed
+              emotions are feelings that co-occur, often with opposite valence: one pleasant and one
+              unpleasant. You do not have to choose a single word just because the situation is hard
+              to summarize.
+            </p>
+          </section>
         </div>
         <div>
           <section aria-labelledby="section-two-at-once">

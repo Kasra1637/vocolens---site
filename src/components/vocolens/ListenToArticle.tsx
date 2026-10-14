@@ -35,7 +35,7 @@ function articleBlocks(): HTMLElement[] {
   const first = root.firstElementChild as HTMLElement | null;
   if (first) blocks.push(first);
   root
-    .querySelectorAll('section[aria-labelledby]:not([aria-labelledby="section-faq"])')
+    .querySelectorAll('section[aria-labelledby]:not([aria-labelledby="section-faq"]):not([aria-labelledby="section-overview"])')
     .forEach((el) => blocks.push(el as HTMLElement));
   return blocks;
 }

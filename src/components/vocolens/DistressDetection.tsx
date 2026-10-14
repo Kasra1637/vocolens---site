@@ -166,13 +166,7 @@ export function DistressDetection() {
           >
             Physical Signs of Overwhelm: Body Awareness Without Guessing
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Learn what interoception means, explore physical signs that can accompany overwhelm, and
-            try a gentle check-in without treating sensations as diagnoses.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -217,14 +211,14 @@ export function DistressDetection() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             Your shoulders tighten, your breathing changes, or your stomach feels unsettled during a
             demanding moment. These sensations can accompany overwhelm, but they can have many other
             causes. Body awareness starts with describing what you notice rather than assuming your
             body has diagnosed your emotional state.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-body-first">
             <h2

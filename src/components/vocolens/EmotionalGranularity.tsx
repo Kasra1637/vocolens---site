@@ -149,9 +149,7 @@ export function EmotionalGranularity() {
           >
             Emotional Granularity: Why Specific Words Change What You Feel
           </h1>
-          <p data-speakable="summary" className="text-text-secondary mb-5 text-base leading-relaxed">
-            Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>By <span itemProp="author" itemScope itemType="https://schema.org/Organization"><span itemProp="name">Vocolens</span></span></span>
             <span className="flex items-center gap-1">
@@ -185,14 +183,14 @@ export function EmotionalGranularity() {
 
       <div className="space-y-12 sm:space-y-16 lg:space-y-20 text-text-secondary leading-relaxed text-base lg:text-lg max-w-prose" itemProp="articleBody" id="article-root">
 
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Once you can name a feeling, the next lever is not more effort — it is more precision. Here is what emotional granularity is, why specific emotion words seem to change the feeling itself, and how a voice-journaling habit can build a personal vocabulary of emotion words one entry at a time.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             Someone asks how you are, and this time you actually have an answer. "Anxious," you say. And it's true — but as soon as the word leaves your mouth, you notice it doesn't quite land. Anxious could mean the tight-chested kind, the wired-at-3am kind, or the bracing-for-news kind. It covers a whole weather system, and you've just described all of it with one word that fits none of it exactly.
           </p>
           <p className="mt-4">
             If that sounds familiar, you're past the first problem and into the second one. The alexithymia article in this library is about not having words at all. This one is about the words you already have being too broad to be useful — and about why choosing a sharper one is worth the effort.
           </p>
-        </div>
+        </section></div>
 
         <div>
           <section aria-labelledby="section-what-is-granularity">

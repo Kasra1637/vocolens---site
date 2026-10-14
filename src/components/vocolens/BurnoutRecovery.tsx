@@ -176,13 +176,7 @@ export function BurnoutRecovery() {
           >
             Burnout Signs and Recovery: What to Notice and What Can Help
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Understand workplace burnout signs, how they differ from ordinary tiredness, and
-            practical recovery supports that address demands as well as rest.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -233,15 +227,15 @@ export function BurnoutRecovery() {
         itemProp="articleBody"
         id="article-root"
       >
-        <div>
-          <p>
+        <div><section aria-labelledby="section-overview"><h2 id="section-overview" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Overview</h2><p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.</p>
+          <p className="mb-4 text-base lg:text-lg leading-relaxed">
             You feel drained, increasingly detached from work, and less able to do tasks that once
             felt manageable. Burnout is not a personal failure. The World Health Organization
             describes it as an occupational phenomenon resulting from chronic workplace stress that
             has not been successfully managed. Persistent exhaustion deserves attention without
             assuming one explanation.
           </p>
-        </div>
+        </section></div>
         <div>
           <section aria-labelledby="section-allostatic-load">
             <h2

@@ -176,13 +176,7 @@ export function RejectionSensitivity() {
           >
             Rejection Sensitivity and ADHD: What RSD Means and How to Respond
           </h1>
-          <p
-            data-speakable="summary"
-            className="text-text-secondary mb-5 text-base leading-relaxed"
-          >
-            Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis,
-            and practical ways to respond to hurt without assuming intent.
-          </p>
+
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
             <span>
               By{" "}
@@ -229,13 +223,25 @@ export function RejectionSensitivity() {
         id="article-root"
       >
         <div>
-          <p>
-            A short reply or a small correction lands painfully, and you start reading it as a
-            verdict about you. Rejection sensitivity concerns anticipating or reacting strongly to
-            rejection. Rejection sensitive dysphoria, or RSD, is a term used for intense
-            rejection-related distress, especially in ADHD discussions. It is not a formal
-            diagnosis.
-          </p>
+          <section aria-labelledby="section-overview">
+            <h2
+              id="section-overview"
+              className="text-xl lg:text-2xl font-bold text-text-primary mb-4"
+            >
+              Overview
+            </h2>
+            <p data-speakable="summary" className="mb-4 text-base lg:text-lg leading-relaxed">
+              Learn what rejection sensitivity and RSD mean, why the label is not a formal
+              diagnosis, and practical ways to respond to hurt without assuming intent.
+            </p>
+            <p className="mb-4 text-base lg:text-lg leading-relaxed">
+              A short reply or a small correction lands painfully, and you start reading it as a
+              verdict about you. Rejection sensitivity concerns anticipating or reacting strongly to
+              rejection. Rejection sensitive dysphoria, or RSD, is a term used for intense
+              rejection-related distress, especially in ADHD discussions. It is not a formal
+              diagnosis.
+            </p>
+          </section>
         </div>
         <div>
           <section aria-labelledby="section-what-is-rsd">
