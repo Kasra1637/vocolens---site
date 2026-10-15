@@ -11,6 +11,12 @@ const refreshed = new Set([
   "emotional-awareness-patterns",
   "science-of-reflection",
 ]);
+const audioVerified = new Set([
+  ...refreshed,
+  "emotional-granularity",
+  "valence-and-arousal",
+  "plutchik-emotion-wheel",
+]);
 async function get(route) {
   const res = await fetch(base + route, { signal: AbortSignal.timeout(30000) });
   assert.equal(res.status, 200, `${route}: HTTP ${res.status}`);
@@ -106,6 +112,9 @@ async function get(route) {
         `${route}: unsupported claim regression`,
       );
       const slug = route.split("/").pop();
+    }
+    if (process.env.BASELINE !== "1" && audioVerified.has(route.split("/").pop())) {
+      const slug = route.split("/").pop();
       const mapping = require("node:fs").readFileSync(
         require("node:path").join(__dirname, "../src/lib/articleSections.ts"),
         "utf8",
@@ -194,6 +203,47 @@ async function get(route) {
         /https:\/\/vocolens\.com\/resources\/valence-and-arousal/,
       );
       const reference = load(await get("/resources/emotional-granularity"));
+      assert(reference(`a[href="${route}"]`).length, "reference article links to the new guide");
+    }
+    if (route.endsWith("plutchik-emotion-wheel")) {
+      assert.equal(article.headline, $("h1").text().trim());
+      assert.equal(article.datePublished, "2026-10-15");
+      assert.equal(article.dateModified, "2026-10-15");
+      assert.equal($('time[itemprop="datePublished"]').attr("datetime"), article.datePublished);
+      assert.equal($('meta[property="og:title"]').attr("content"), title);
+      assert.equal($('meta[name="twitter:title"]').attr("content"), title);
+      assert.equal($('meta[property="og:description"]').attr("content"), description);
+      assert.equal($('meta[name="twitter:description"]').attr("content"), description);
+      assert.equal($('meta[property="og:type"]').attr("content"), "article");
+      assert.equal($('meta[property="og:url"]').attr("content"), origin + route);
+      assert.equal($("#article-root table tbody tr").length, 8, "eight Plutchik families");
+      assert($("#article-root table caption").text().trim(), "accessible ladders caption");
+      assert($("#section-blends").length, "separate explanation of blended emotions");
+      assert($("#section-wheel-limits").length, "explicit model limitations");
+      assert($("#section-faq").closest("section").is("[data-listen-exclude]"));
+      assert(article.speakable.cssSelector.every((selector) => $(selector).length));
+      assert.equal(article.citation.length, 4);
+      for (const source of article.citation) {
+        assert(
+          $("#article-root a")
+            .toArray()
+            .some((e) => $(e).attr("href") === source),
+          "visible research citation",
+        );
+      }
+      assert($('#article-root a[href="/resources/valence-and-arousal"]').length);
+      assert($('#article-root a[href="/resources/emotional-granularity"]').length);
+      assert($('#article-root a[href="/resources/mixed-emotions"]').length);
+      assert.match($("#article-root").text(), /not diagnostic or medical advice/);
+      assert.match(
+        await get("/llms.txt"),
+        /https:\/\/vocolens\.com\/resources\/plutchik-emotion-wheel/,
+      );
+      assert.match(
+        await get("/llms-full.txt"),
+        /https:\/\/vocolens\.com\/resources\/plutchik-emotion-wheel/,
+      );
+      const reference = load(await get("/resources/valence-and-arousal"));
       assert(reference(`a[href="${route}"]`).length, "reference article links to the new guide");
     }
     results.push({

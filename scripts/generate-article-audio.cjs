@@ -41,6 +41,7 @@ const FORMAT =
 const FORCE = process.argv.includes("--force");
 
 const SLUGS = [
+  "plutchik-emotion-wheel",
   "valence-and-arousal",
   "rejection-sensitivity",
   "adhd-time-blindness",

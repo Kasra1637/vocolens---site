@@ -72,6 +72,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Resources: https://vocolens.com/resources
+- Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder: https://vocolens.com/resources/plutchik-emotion-wheel
 - Mixed Emotions: https://vocolens.com/resources/mixed-emotions
 - Valence and Arousal: Why Calm Isn’t Always Happy: https://vocolens.com/resources/valence-and-arousal
 - Emotional Granularity: https://vocolens.com/resources/emotional-granularity

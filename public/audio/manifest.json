@@ -118,5 +118,15 @@
     "bytes": 1795436,
     "minutes": 7.5,
     "generatedAt": "2026-10-15T06:44:32.394Z"
+  },
+  "plutchik-emotion-wheel": {
+    "file": "/audio/plutchik-emotion-wheel.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "38bd6167c1cd6347",
+    "chars": 10898,
+    "words": 1717,
+    "bytes": 2785388,
+    "minutes": 11.6,
+    "generatedAt": "2026-10-15T23:10:52.285Z"
   }
 }

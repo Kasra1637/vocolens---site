@@ -74,6 +74,12 @@ const examples = [
 
 const relatedArticles = [
   {
+    to: "/resources/plutchik-emotion-wheel" as const,
+    title: "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder",
+    description:
+      "See how eight primary emotion families and three intensity rungs complement the two-axis map.",
+  },
+  {
     to: "/resources/emotional-granularity" as const,
     title: "Emotional Granularity: Why Specific Words Change What You Feel",
     description:

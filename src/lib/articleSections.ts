@@ -124,6 +124,21 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "A check-in for when the emotion word will not come", startSec: 287.59 },
     { title: "How to read these dimensions in Vocolens", startSec: 370.25 },
   ],
+  "plutchik-emotion-wheel": [
+    { title: "Overview", startSec: 0 },
+    { title: "What is Plutchik’s emotion wheel?", startSec: 84.456 },
+    { title: "The eight emotion families and their intensity ladders", startSec: 204.288 },
+    {
+      title: "Primary families, blends, and why two feelings can show up together",
+      startSec: 272.952,
+    },
+    {
+      title: "What an emotion wheel leaves out (and when it feels like too much)",
+      startSec: 358.536,
+    },
+    { title: "A two-step ladder check-in (without memorizing the wheel)", startSec: 458.592 },
+    { title: "How to read Plutchik intensity in Vocolens", startSec: 581.76 },
+  ],
 };
 
 /** Index of the section containing the given time (seconds). */
