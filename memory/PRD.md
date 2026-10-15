@@ -12,6 +12,15 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 
 ## Change Log
 
+### 2026-10 — Blog narration reads the article title first (titles never skipped)
+Request: when Listen is pressed inside a blog post — e.g. with the Overview chapter selected — playback must start reading from that chapter *including its title*; titles of blogs must not be skipped.
+
+Root cause: the narration MP3s predated the "Overview" H2 + `data-speakable="summary"` dek that the pages later gained, and neither generator ever narrated the page's H1 (the text slice starts at `#article-root`, which sits below the H1). So the Overview chapter's audio began mid-Overview with no title at all, while chapters 1+ did open with their H2.
+
+Fix: `scripts/refresh-resource-audio.cjs` and `scripts/generate-article-audio.cjs` now prepend the article's own H1 to the first chapter's text; all twelve MP3s were regenerated with the same Aria voice (`msedge-tts` bumped to 2.1.0 — 2.0.7 is rejected by the service with HTTP 403, so the old pipeline could no longer regenerate at all); `public/audio/manifest.json` and the measured chapter starts in `src/lib/articleSections.ts` were rewritten by that script; `scripts/audit-resource-seo.cjs` hashes the title too.
+
+Verified: ASR of the regenerated audio reads "ADHD Time Blindness: Examples and Practical Time Supports. Overview. Learn what ADHD time blindness means…" and the same for Mixed Emotions; every chapter start still lands on the silence boundary before its heading (max |delta| 0.22s); `npx tsc --noEmit`, `npm run lint`, `npm run build` and the full SSR audit pass.
+
 ### 2026-10 — New blog post: "Mixed Emotions" (next post after Emotional Granularity)
 Request: pick the next-best post idea matching the previous one (SEO/AEO/GEO, structure, voice, keywords) and generate it. Anchor: `/resources/emotional-granularity`. Chosen idea: **mixed emotions** (the step after "how specific should the word be" is "what if it's two words"); maps to the product fact "Blended emotions and emotional tension are detected, not flattened."
 

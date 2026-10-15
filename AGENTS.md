@@ -34,10 +34,16 @@ Cloudflare Workers. Production: https://vocolens.com.
   tier: 56 display / 44 standard / 48 rows / 36 pills / 28 dense.
 - Surfaces: `card-app` (white, hairline primary border, soft primary shadow),
   `chip-app` (diagonal gradient), `btn-app-glow` glass CTAs.
-- Blog narration: pre-generated MP3s (`public/audio/<slug>.mp3`); section
-  timestamps in `src/lib/articleSections.ts` are word-count estimates —
-  player code compensates with a 1.5s header lead-in, do not "fix" by editing
-  timestamps by hand. The player has **no scrub bar**: the chapter list plus
+- Blog narration: pre-generated MP3s (`public/audio/<slug>.mp3`), rebuilt with
+  `scripts/refresh-resource-audio.cjs` (needs `msedge-tts` >= 2.1.0 — 2.0.7 and
+  older are rejected by the service with HTTP 403). The narration opens with the
+  article's own H1 title, then the Overview heading and its summary, so pressing
+  Listen on the Overview chapter never skips the title; every later chapter
+  opens with its H2/H3 heading. Chapter `startSec` values in
+  `src/lib/articleSections.ts` are exact per-section measurements (that script
+  synthesizes each chapter separately and rewrites them) — never hand-edit them;
+  the player adds a 1.5s header lead-in to absorb the ~0.15s of silence each
+  part starts with. The player has **no scrub bar**: the chapter list plus
   the prev/next buttons are the only chapter browsers, and the Listen button
   is the only control that starts audio (every other gesture just selects a
   chapter, leaving playback as it was). Position feedback is the `§ chapter`

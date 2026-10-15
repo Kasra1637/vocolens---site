@@ -114,7 +114,7 @@ async function get(route) {
       const sectionMap = mapping.slice(start, mapping.indexOf("],", start));
       const starts = [...sectionMap.matchAll(/startSec: ([0-9.]+)/g)].map((m) => Number(m[1]));
       const bodySections = $(
-        "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+        "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview]):not([aria-labelledby=section-faq])",
       );
       assert.equal(starts.length, bodySections.length + 1, `${route}: complete chapter map`);
       assert.equal(starts[0], 0);
@@ -132,20 +132,23 @@ async function get(route) {
       const blocks = [
         $("#article-root").children().first(),
         ...$(
-          "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+          "#article-root section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview]):not([aria-labelledby=section-faq])",
         )
           .toArray()
           .map((e) => $(e)),
       ];
-      const text = blocks
-        .map((b) =>
+      const text = [
+        normalize($("h1").first().text()),
+        ...blocks.map((b) =>
           b
             .find("h2,h3,p,li")
             .toArray()
             .map((e) => normalize($(e).text()))
             .filter(Boolean)
             .join("\n\n"),
-        )
+        ),
+      ]
+        .filter(Boolean)
         .join("\n\n");
       assert.equal(
         require("node:crypto").createHash("sha256").update(text).digest("hex").slice(0, 16),
