@@ -1,6 +1,13 @@
-/** Refresh selected reviewed SEO articles; leave the reference article and general generator untouched.
- * Usage: BASE_URL=http://127.0.0.1:8797 node scripts/refresh-resource-audio.cjs
- * Requires the existing msedge-tts, cheerio, and ffmpeg/ffprobe on PATH.
+/** Regenerates the narration MP3 for a resource article (all twelve by default).
+ *
+ * The narrated text of chapter 0 starts with the article's own H1 title, so
+ * pressing Listen on the Overview chapter reads the title of the blog before
+ * the Overview heading and its summary — titles are never skipped. Every other
+ * chapter keeps its H2/H3 heading as the first thing narrated.
+ *
+ * Usage: BASE_URL=http://127.0.0.1:8797 node scripts/refresh-resource-audio.cjs [slug ...]
+ * Requires msedge-tts (>= 2.1.0 — older releases are rejected with HTTP 403),
+ * cheerio, and ffmpeg/ffprobe on PATH.
  * Chapter offsets come from separately synthesized section durations, not hand edits.
  */
 const fs = require("node:fs");
@@ -12,13 +19,18 @@ const { MsEdgeTTS, OUTPUT_FORMAT } = require("msedge-tts");
 const root = path.resolve(__dirname, "..");
 const base = process.env.BASE_URL || "http://127.0.0.1:8797";
 const briefs = require("../test_reports/resource-refresh-content.json");
-const slugs = process.argv.slice(2).length ? process.argv.slice(2) : briefs.map((b) => b.slug);
-const allowed = new Set([
+// Every resource article is narratable, including the reference article and the
+// later additions that never went through a content refresh.
+const allowed = [
   ...briefs.map((b) => b.slug),
   "emotional-awareness-patterns",
   "science-of-reflection",
-]);
-if (slugs.some((slug) => !allowed.has(slug))) throw new Error("Unknown refresh slug");
+  "emotional-granularity",
+  "valence-and-arousal",
+];
+const slugs = process.argv.slice(2).length ? process.argv.slice(2) : allowed;
+const allowedSlugs = new Set(allowed);
+if (slugs.some((slug) => !allowedSlugs.has(slug))) throw new Error("Unknown refresh slug");
 const tmp = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "vocolens-seo-audio-"));
 const normalize = (s) =>
   s
@@ -68,28 +80,37 @@ async function synthesize(text, dir) {
       if (!res.ok) throw new Error(`${slug}: HTTP ${res.status}`);
       const $ = load(await res.text());
       const article = $("#article-root");
+      // The article's own H1 is read first, inside chapter 0: narration starts
+      // at the top of the post, so the blog title is never skipped.
+      const title = normalize($("h1").first().text());
+      if (!title) throw new Error(`${slug}: missing article title`);
       const blocks = [
         article.children().first(),
+        // Same chapter set the player highlights (articleBlocks() in
+        // ListenToArticle.tsx): the FAQ is never narrated or mapped, even when
+        // a page forgets the data-listen-exclude attribute.
         ...article
           .find(
-            "section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview])",
+            "section[aria-labelledby]:not([data-listen-exclude]):not([aria-labelledby=section-overview]):not([aria-labelledby=section-faq])",
           )
           .toArray()
           .map((e) => $(e)),
       ];
       const sections = blocks.map((block, i) => ({
         title: i === 0 ? "Overview" : normalize(block.find("h2").first().text()),
-        text: block
-          .find("h2,h3,p,li")
-          .toArray()
-          .map((e) => normalize($(e).text()))
-          .filter(Boolean)
-          .join("\n\n"),
+        text: [
+          ...(i === 0 ? [title] : []),
+          ...block
+            .find("h2,h3,p,li")
+            .toArray()
+            .map((e) => normalize($(e).text()))
+            .filter(Boolean),
+        ].join("\n\n"),
       }));
+      const expected = briefs.find((b) => b.slug === slug)?.sections.length;
       if (
-        sections.length !==
-          (briefs.find((b) => b.slug === slug)?.sections.length + 1 ||
-            (slug === "emotional-awareness-patterns" ? 6 : 5)) ||
+        (expected !== undefined && sections.length !== expected + 1) ||
+        sections.length < 2 ||
         sections.some((s) => !s.text)
       )
         throw new Error(`${slug}: invalid narration blocks`);

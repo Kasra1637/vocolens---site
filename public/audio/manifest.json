@@ -2,121 +2,121 @@
   "adhd-time-blindness": {
     "file": "/audio/adhd-time-blindness.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "38e015ac7fbef0d1",
-    "chars": 2967,
-    "words": 456,
-    "bytes": 829100,
-    "minutes": 3.5,
-    "generatedAt": "2026-10-07T00:53:48.198Z"
+    "hash": "6a02374e35575afa",
+    "chars": 3190,
+    "words": 486,
+    "bytes": 898316,
+    "minutes": 3.7,
+    "generatedAt": "2026-10-15T06:43:23.450Z"
   },
   "alexithymia-emotional-vocabulary": {
     "file": "/audio/alexithymia-emotional-vocabulary.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "ff7265a6a23898c4",
-    "chars": 2705,
-    "words": 412,
-    "bytes": 755756,
-    "minutes": 3.1,
-    "generatedAt": "2026-10-07T00:54:00.844Z"
+    "hash": "d6d296d0ff7aca4c",
+    "chars": 2929,
+    "words": 440,
+    "bytes": 821708,
+    "minutes": 3.4,
+    "generatedAt": "2026-10-15T06:43:30.047Z"
   },
   "burnout-recovery-signs": {
     "file": "/audio/burnout-recovery-signs.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "3848d201a86d34d7",
-    "chars": 3067,
-    "words": 444,
-    "bytes": 850508,
-    "minutes": 3.5,
-    "generatedAt": "2026-10-07T00:54:26.457Z"
+    "hash": "f19779831aa3ed81",
+    "chars": 3287,
+    "words": 477,
+    "bytes": 910508,
+    "minutes": 3.8,
+    "generatedAt": "2026-10-15T06:43:41.294Z"
   },
   "overthinking-rumination": {
     "file": "/audio/overthinking-rumination.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "8b4046e6df3ed4d9",
-    "chars": 2890,
-    "words": 447,
-    "bytes": 788396,
-    "minutes": 3.3,
-    "generatedAt": "2026-10-07T00:54:55.399Z"
+    "hash": "48e2de39cd47c138",
+    "chars": 3111,
+    "words": 477,
+    "bytes": 850508,
+    "minutes": 3.5,
+    "generatedAt": "2026-10-15T06:43:52.615Z"
   },
   "autism-emotional-regulation": {
     "file": "/audio/autism-emotional-regulation.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "d479341a7f6e3f64",
-    "chars": 3007,
-    "words": 453,
-    "bytes": 835340,
-    "minutes": 3.5,
-    "generatedAt": "2026-10-07T00:54:11.173Z"
+    "hash": "fb94d1058d20e57b",
+    "chars": 3239,
+    "words": 485,
+    "bytes": 901676,
+    "minutes": 3.8,
+    "generatedAt": "2026-10-15T06:43:35.108Z"
   },
   "distress-detection": {
     "file": "/audio/distress-detection.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "582911d437da97ae",
-    "chars": 2812,
-    "words": 410,
-    "bytes": 773996,
-    "minutes": 3.2,
-    "generatedAt": "2026-10-07T00:54:37.076Z"
+    "hash": "feaa4f50937453c8",
+    "chars": 3038,
+    "words": 440,
+    "bytes": 835820,
+    "minutes": 3.5,
+    "generatedAt": "2026-10-15T06:43:47.105Z"
   },
   "emotional-awareness-patterns": {
     "file": "/audio/emotional-awareness-patterns.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "d3663ee846d21eed",
-    "chars": 3698,
-    "words": 556,
-    "bytes": 1035116,
-    "minutes": 4.3,
-    "generatedAt": "2026-10-07T00:08:26.265Z"
+    "hash": "310aa83f9d1c36cc",
+    "chars": 3906,
+    "words": 586,
+    "bytes": 1092044,
+    "minutes": 4.5,
+    "generatedAt": "2026-10-15T06:44:10.657Z"
   },
   "science-of-reflection": {
     "file": "/audio/science-of-reflection.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "8e32ec271a654f76",
-    "chars": 3728,
-    "words": 580,
-    "bytes": 1009196,
-    "minutes": 4.2,
-    "generatedAt": "2026-10-07T00:08:38.941Z"
+    "hash": "71b6468a4453b667",
+    "chars": 3935,
+    "words": 612,
+    "bytes": 1065932,
+    "minutes": 4.4,
+    "generatedAt": "2026-10-15T06:44:15.768Z"
   },
   "emotional-granularity": {
     "file": "/audio/emotional-granularity.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "9c70130a74bc43ff",
-    "chars": 6225,
-    "words": 1042,
-    "bytes": 2406096,
-    "minutes": 6.7,
-    "generatedAt": "2026-09-29T21:24:50.313Z"
+    "hash": "01a023ac6e24aca1",
+    "chars": 5945,
+    "words": 1018,
+    "bytes": 1527596,
+    "minutes": 6.4,
+    "generatedAt": "2026-10-15T06:54:45.749Z"
   },
   "rejection-sensitivity": {
     "file": "/audio/rejection-sensitivity.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "d78650296c70df47",
-    "chars": 2723,
-    "words": 417,
-    "bytes": 767564,
-    "minutes": 3.2,
-    "generatedAt": "2026-10-07T00:55:19.241Z"
+    "hash": "fa0f3c77b229564c",
+    "chars": 2952,
+    "words": 454,
+    "bytes": 836300,
+    "minutes": 3.5,
+    "generatedAt": "2026-10-15T06:43:58.964Z"
   },
   "mixed-emotions": {
     "file": "/audio/mixed-emotions.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "5f94455c966dd4b0",
-    "chars": 2881,
-    "words": 453,
-    "bytes": 801164,
-    "minutes": 3.3,
-    "generatedAt": "2026-10-07T21:46:13.255Z"
+    "hash": "2db8d3759a23152c",
+    "chars": 3104,
+    "words": 492,
+    "bytes": 861836,
+    "minutes": 3.6,
+    "generatedAt": "2026-10-15T06:44:04.422Z"
   },
   "valence-and-arousal": {
     "file": "/audio/valence-and-arousal.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "cd645a6f7b6f8ca3",
-    "chars": 6246,
-    "words": 990,
-    "bytes": 1713356,
-    "minutes": 7.1,
-    "generatedAt": "2026-10-11T08:48:34.543Z"
+    "hash": "006ec738077e19e4",
+    "chars": 6535,
+    "words": 1040,
+    "bytes": 1795436,
+    "minutes": 7.5,
+    "generatedAt": "2026-10-15T06:44:32.394Z"
   }
 }

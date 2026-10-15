@@ -1,21 +1,22 @@
 /**
- * Precise narration chapter timestamps per article.
+ * Narration chapter timestamps per article.
  *
- * Measured from the actual MP3s (2026-09-22), not estimated:
- *  - Speech blocks extracted with the same rules as
- *    scripts/generate-article-audio.cjs (h1/h2/h3/p/li before
- *    data-listen-exclude), fitted to per-article speech rate
- *  - Each section start snapped to the measured silence boundary
- *    (ffmpeg silencedetect) preceding its H2/H3 block
- *  - Residual error is ~±1s; the player adds a short header lead-in
+ * Every start time is measured, never hand-tuned:
+ * scripts/refresh-resource-audio.cjs synthesizes each chapter's text separately
+ * with Aria and concatenates the parts, so `startSec` is the exact sum of the
+ * preceding chapter durations (each part opens with ~0.15s of lead-in silence,
+ * which the player's 1.5s header lead-in absorbs).
  *
- * Timestamps match the single female (Aria) narration MP3 per article.
- * The ten SEO refreshes use separately synthesized section durations from
- * scripts/refresh-resource-audio.cjs; their offsets are measured, not hand-tuned.
+ * Chapter 0 ("Overview") narrates the article's own H1 title first, then the
+ * Overview heading and its summary — narration starts at the top of the post,
+ * so the title of the blog is never skipped. Every later chapter narrates its
+ * H2/H3 heading first. `title` here is display copy for SSR / first paint only;
+ * the player reads each chapter's heading from the article itself.
  *
  * To regenerate after article edits:
- *   1. Run scripts/generate-article-audio.cjs --force (rebuilds MP3s)
- *   2. Re-measure section starts from the new MP3 silences (same method)
+ *   1. Run scripts/refresh-resource-audio.cjs against a running dev or preview
+ *      server (needs msedge-tts >= 2.1.0, cheerio, ffmpeg/ffprobe on PATH)
+ *   2. It rewrites these entries and public/audio/manifest.json
  *   3. Never hand-tweak individual values to "fix" playback
  */
 
@@ -29,70 +30,70 @@ export interface ArticleSection {
 export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
   "adhd-time-blindness": [
     { title: "Overview", startSec: 0 },
-    { title: "What is ADHD time blindness?", startSec: 20.544 },
-    { title: "Examples: estimating, tracking, and switching", startSec: 69.792 },
-    { title: "Practical supports that make time visible", startSec: 106.8 },
-    { title: "An estimate-versus-actual journal you can reuse", startSec: 157.584 },
+    { title: "What is ADHD time blindness?", startSec: 38.11 },
+    { title: "Examples: estimating, tracking, and switching", startSec: 87.31 },
+    { title: "Practical supports that make time visible", startSec: 124.25 },
+    { title: "An estimate-versus-actual journal you can reuse", startSec: 174.96 },
   ],
   "alexithymia-emotional-vocabulary": [
     { title: "Overview", startSec: 0 },
-    { title: "What is alexithymia?", startSec: 18.528 },
-    { title: "Examples: knowing the event but not the feeling", startSec: 62.856 },
-    { title: "Start with sensations, context, and tentative words", startSec: 96.6 },
-    { title: "Using vocabulary without outsourcing your judgment", startSec: 140.304 },
+    { title: "What is alexithymia?", startSec: 35.21 },
+    { title: "Examples: knowing the event but not the feeling", startSec: 79.49 },
+    { title: "Start with sensations, context, and tentative words", startSec: 113.19 },
+    { title: "Using vocabulary without outsourcing your judgment", startSec: 156.85 },
   ],
   "autism-emotional-regulation": [
     { title: "Overview", startSec: 0 },
-    { title: "What does emotional regulation mean for autistic adults?", startSec: 21.816 },
-    { title: "Sensory overload and emotions are related, not identical", startSec: 65.4 },
-    { title: "A practical support plan before, during, and after overload", startSec: 101.352 },
-    { title: "Reflection without pressure to mask or perform", startSec: 156.096 },
+    { title: "What does emotional regulation mean for autistic adults?", startSec: 38.62 },
+    { title: "Sensory overload and emotions are related, not identical", startSec: 82.13 },
+    { title: "A practical support plan before, during, and after overload", startSec: 118.03 },
+    { title: "Reflection without pressure to mask or perform", startSec: 172.73 },
   ],
   "burnout-recovery-signs": [
     { title: "Overview", startSec: 0 },
-    { title: "What is burnout? The scope of the WHO definition", startSec: 23.4 },
-    { title: "Signs worth noticing, without a self-diagnosis", startSec: 69.456 },
-    { title: "Recovery supports: change demands as well as rest", startSec: 106.776 },
-    { title: "A gentle demand-and-recovery check-in", startSec: 164.376 },
+    { title: "What is burnout? The scope of the WHO definition", startSec: 38.62 },
+    { title: "Signs worth noticing, without a self-diagnosis", startSec: 84.63 },
+    { title: "Recovery supports: change demands as well as rest", startSec: 121.88 },
+    { title: "A gentle demand-and-recovery check-in", startSec: 179.43 },
   ],
   "distress-detection": [
     { title: "Overview", startSec: 0 },
-    { title: "What is interoception?", startSec: 18.936 },
-    { title: "Physical signs that can accompany overwhelm", startSec: 57.288 },
-    { title: "A gentle body-and-context check-in", startSec: 96.768 },
-    { title: "When a body map is useful, and when it is not", startSec: 140.904 },
+    { title: "What is interoception?", startSec: 34.58 },
+    { title: "Physical signs that can accompany overwhelm", startSec: 72.88 },
+    { title: "A gentle body-and-context check-in", startSec: 112.31 },
+    { title: "When a body map is useful, and when it is not", startSec: 156.4 },
   ],
   "emotional-awareness-patterns": [
     { title: "Overview", startSec: 0 },
-    { title: "What is emotional awareness?", startSec: 12.696 },
-    { title: "Everyday examples of emotional awareness", startSec: 57.312 },
-    { title: "How to improve emotional awareness: a short check-in", startSec: 101.64 },
-    { title: "An emotion-and-trigger journal you can reuse", startSec: 151.968 },
-    { title: "Awareness, naming, and granularity are different skills", startSec: 207.576 },
+    { title: "What is emotional awareness?", startSec: 27.22 },
+    { title: "Everyday examples of emotional awareness", startSec: 71.79 },
+    { title: "How to improve emotional awareness: a short check-in", startSec: 116.07 },
+    { title: "An emotion-and-trigger journal you can reuse", startSec: 166.33 },
+    { title: "Awareness, naming, and granularity are different skills", startSec: 221.89 },
   ],
   "emotional-granularity": [
     { title: "Overview", startSec: 0 },
-    { title: "What is granularity?", startSec: 47 },
-    { title: "Why finer words work", startSec: 120.1 },
-    { title: "Getting more specific", startSec: 200 },
-    { title: "Words worth keeping", startSec: 290 },
+    { title: "So what is emotional granularity, exactly?", startSec: 67.61 },
+    { title: "Why a finer word does something, not just describes something", startSec: 140.19 },
+    { title: "How to get more specific without guessing", startSec: 221.41 },
+    { title: "A few words worth keeping", startSec: 307.81 },
   ],
   // Measured from the MP3 (2026-10-05): the 95 ≥0.8s silences align 1:1 with
   // the 95 narrated sentences, so each chapter start is the silence_end
   // preceding its H2 block (ffmpeg silencedetect noise=-35dB:d=0.35).
   "mixed-emotions": [
     { title: "Overview", startSec: 0 },
-    { title: "What are mixed emotions?", startSec: 17.4 },
-    { title: "Examples: happy and sad, relieved and disappointed", startSec: 62.928 },
-    { title: "A reflection that makes room for both", startSec: 103.824 },
-    { title: "Using a journal without forcing a single answer", startSec: 151.392 },
+    { title: "What are mixed emotions?", startSec: 32.78 },
+    { title: "Examples: happy and sad, relieved and disappointed", startSec: 78.26 },
+    { title: "A reflection that makes room for both", startSec: 119.08 },
+    { title: "Using a journal without forcing a single answer", startSec: 166.6 },
   ],
   "overthinking-rumination": [
     { title: "Overview", startSec: 0 },
-    { title: "What is rumination, and how is it different from reflection?", startSec: 21.624 },
-    { title: "Examples: a replay, a prediction, and a useful question", startSec: 69.024 },
-    { title: "A practical next-step check", startSec: 105.864 },
-    { title: "Using a journal without extending the loop", startSec: 146.592 },
+    { title: "What is rumination, and how is it different from reflection?", startSec: 37.34 },
+    { title: "Examples: a replay, a prediction, and a useful question", startSec: 84.69 },
+    { title: "A practical next-step check", startSec: 121.48 },
+    { title: "Using a journal without extending the loop", startSec: 162.16 },
   ],
   // Chapter starts are the word-count model below (manifest words / MP3
   // duration), excluding the FAQ block because articleBlocks() skips it. The
@@ -100,28 +101,28 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
   // accuracy the 1.5s header lead-in is built to absorb.
   "rejection-sensitivity": [
     { title: "Overview", startSec: 0 },
-    { title: "What is rejection sensitivity, and what does RSD mean?", startSec: 24.72 },
-    { title: "Examples: separating the event from its meaning", startSec: 63.12 },
-    { title: "What to try in the moment", startSec: 103.344 },
-    { title: "A brief reflection instead of a repeated replay", startSec: 142.32 },
+    { title: "What is rejection sensitivity, and what does RSD mean?", startSec: 42.1 },
+    { title: "Examples: separating the event from its meaning", startSec: 80.45 },
+    { title: "What to try in the moment", startSec: 120.63 },
+    { title: "A brief reflection instead of a repeated replay", startSec: 159.56 },
   ],
   "science-of-reflection": [
     { title: "Overview", startSec: 0 },
-    { title: "What is affect labeling, and what does research show?", startSec: 13.416 },
-    { title: "Affect labeling examples: feelings are not predictions", startSec: 78.504 },
-    { title: "How to practice affect labeling in a brief check-in", startSec: 130.056 },
-    { title: "Naming emotions, emotional awareness, and granularity", startSec: 192.6 },
+    { title: "What is affect labeling, and what does research show?", startSec: 27.79 },
+    { title: "Affect labeling examples: feelings are not predictions", startSec: 92.83 },
+    { title: "How to practice affect labeling in a brief check-in", startSec: 144.33 },
+    { title: "Naming emotions, emotional awareness, and granularity", startSec: 206.83 },
   ],
   // Measured per-section synthesis (same method as the two SEO refreshes above):
   // each chapter synthesized separately with Aria, offsets from ffprobe.
   "valence-and-arousal": [
     { title: "Overview", startSec: 0 },
-    { title: "What are valence and arousal?", startSec: 35.952 },
-    { title: "Four combinations, not four boxes you have to fit", startSec: 101.664 },
-    { title: "Is arousal the same as emotional intensity?", startSec: 141.408 },
-    { title: "What a two-axis emotion map cannot tell you", startSec: 203.4 },
-    { title: "A check-in for when the emotion word will not come", startSec: 266.904 },
-    { title: "How to read these dimensions in Vocolens", startSec: 349.608 },
+    { title: "What are valence and arousal?", startSec: 56.83 },
+    { title: "Four combinations, not four boxes you have to fit", startSec: 122.49 },
+    { title: "Is arousal the same as emotional intensity?", startSec: 162.19 },
+    { title: "What a two-axis emotion map cannot tell you", startSec: 224.13 },
+    { title: "A check-in for when the emotion word will not come", startSec: 287.59 },
+    { title: "How to read these dimensions in Vocolens", startSec: 370.25 },
   ],
 };
 

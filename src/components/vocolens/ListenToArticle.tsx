@@ -60,6 +60,10 @@ function articleBlocks(): HTMLElement[] {
  *   chapter — the seek target sits a lead-in before the mapped start, so a
  *   playhead-only readout would name the previous chapter for the whole
  *   lead-in
+ * - narration starts at the top of the post: the first chapter narrates the
+ *   article's own H1 title, then the Overview heading and its summary, and
+ *   every later chapter narrates its H2/H3 heading first — pressing Listen on
+ *   a chapter never skips that chapter's title
  * - an explicitly selected chapter plays ONLY itself once started, then
  *   auto-pauses at the next chapter's start; a fresh Listen with no
  *   selection plays through
@@ -67,7 +71,7 @@ function articleBlocks(): HTMLElement[] {
  *   feedback is the § chapter label plus elapsed / total time
  * - live soft-highlight of the section being narrated + auto-scroll that
  *   follows along as playback advances
- * Regenerate audio with: node scripts/generate-article-audio.cjs
+ * Regenerate audio with: node scripts/refresh-resource-audio.cjs
  */
 export function ListenToArticle({ slug }: { slug: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
