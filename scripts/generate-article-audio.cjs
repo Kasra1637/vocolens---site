@@ -77,10 +77,6 @@ function decodeEntities(s) {
 
 /** Pulls the readable article text out of a server-rendered page. */
 function extractArticleText(html) {
-  // The article's H1 sits above the body container, so read it first: narration
-  // starts at the top of the post and must never skip the blog title.
-  const titleMatch = /<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html);
-  const title = titleMatch ? toSpeakableText(titleMatch[1].replace(/<[^>]+>/g, " ")) : "";
   const marker = 'id="article-root"';
   const start = html.indexOf(marker);
   if (start === -1) return null;
@@ -95,13 +91,13 @@ function extractArticleText(html) {
 
   // Headings and paragraphs become separate utterances.
   const blocks = [];
-  const re = /<(h1|h2|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  const re = /<(h2|h3|p|li)\b[^>]*>([\s\S]*?)<\/\1>/gi;
   let m;
   while ((m = re.exec(slice)) !== null) {
     const text = toSpeakableText(m[2].replace(/<[^>]+>/g, " "));
     if (text.length > 1) blocks.push(text);
   }
-  return [title, ...blocks].filter((b) => b.length > 1).join("\n\n");
+  return blocks.filter((b) => b.length > 1).join("\n\n");
 }
 
 /**

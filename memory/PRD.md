@@ -12,14 +12,13 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 
 ## Change Log
 
-### 2026-10 — Blog narration reads the article title first (titles never skipped)
-Request: when Listen is pressed inside a blog post — e.g. with the Overview chapter selected — playback must start reading from that chapter *including its title*; titles of blogs must not be skipped.
+### 2026-10 — Blog narration reads only each section's own title and content
+Request: fix the audio player inside each blog post so it does NOT read the H1 title and main title at the very top of each post. Instead, it should only read the title of the specific section the user wants the audio player to read, including only that section's title and the rest of its content, while also highlighting it inside the blog content UI.
 
-Root cause: the narration MP3s predated the "Overview" H2 + `data-speakable="summary"` dek that the pages later gained, and neither generator ever narrated the page's H1 (the text slice starts at `#article-root`, which sits below the H1). So the Overview chapter's audio began mid-Overview with no title at all, while chapters 1+ did open with their H2.
-
-Fix: `scripts/refresh-resource-audio.cjs` and `scripts/generate-article-audio.cjs` now prepend the article's own H1 to the first chapter's text; all twelve MP3s were regenerated with the same Aria voice (`msedge-tts` bumped to 2.1.0 — 2.0.7 is rejected by the service with HTTP 403, so the old pipeline could no longer regenerate at all); `public/audio/manifest.json` and the measured chapter starts in `src/lib/articleSections.ts` were rewritten by that script; `scripts/audit-resource-seo.cjs` hashes the title too.
-
-Verified: ASR of the regenerated audio reads "ADHD Time Blindness: Examples and Practical Time Supports. Overview. Learn what ADHD time blindness means…" and the same for Mixed Emotions; every chapter start still lands on the silence boundary before its heading (max |delta| 0.22s); `npx tsc --noEmit`, `npm run lint`, `npm run build` and the full SSR audit pass.
+Fix:
+- `scripts/refresh-resource-audio.cjs`, `scripts/generate-article-audio.cjs`, and `scripts/audit-resource-seo.cjs` no longer prepend the top `<h1>` blog title to chapter 0; every chapter narrates only its own section heading (`h2`/`h3`) and body content.
+- `src/components/vocolens/ListenToArticle.tsx` sets `HEADER_BACKOFF = 0` so chapter seeks land directly at `sections[i].startSec` (the exact start of that section's title without bleeding 1.5s into the previous section), scopes `play()` to the current/selected section so it only reads that specific section and auto-pauses at the next section's start, and activates `ReadingHighlighter` immediately when a section is selected (`active={hasStarted || armedIdx !== null}`) as well as during playback.
+- Regenerated all thirteen MP3s (`public/audio/*.mp3`) and updated `public/audio/manifest.json` + measured chapter offsets in `src/lib/articleSections.ts`.
 
 ### 2026-10 — New blog post: "Mixed Emotions" (next post after Emotional Granularity)
 Request: pick the next-best post idea matching the previous one (SEO/AEO/GEO, structure, voice, keywords) and generate it. Anchor: `/resources/emotional-granularity`. Chosen idea: **mixed emotions** (the step after "how specific should the word be" is "what if it's two words"); maps to the product fact "Blended emotions and emotional tension are detected, not flattened."

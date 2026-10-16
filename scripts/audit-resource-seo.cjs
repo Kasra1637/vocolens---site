@@ -146,17 +146,15 @@ async function get(route) {
           .toArray()
           .map((e) => $(e)),
       ];
-      const text = [
-        normalize($("h1").first().text()),
-        ...blocks.map((b) =>
+      const text = blocks
+        .map((b) =>
           b
             .find("h2,h3,p,li")
             .toArray()
             .map((e) => normalize($(e).text()))
             .filter(Boolean)
             .join("\n\n"),
-        ),
-      ]
+        )
         .filter(Boolean)
         .join("\n\n");
       assert.equal(

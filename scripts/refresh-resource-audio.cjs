@@ -1,9 +1,7 @@
-/** Regenerates the narration MP3 for a resource article (all twelve by default).
+/** Regenerates the narration MP3 for a resource article (all thirteen by default).
  *
- * The narrated text of chapter 0 starts with the article's own H1 title, so
- * pressing Listen on the Overview chapter reads the title of the blog before
- * the Overview heading and its summary — titles are never skipped. Every other
- * chapter keeps its H2/H3 heading as the first thing narrated.
+ * Every chapter narrates only its own section heading (H2/H3) and its body
+ * content — never the top H1 blog title.
  *
  * Usage: BASE_URL=http://127.0.0.1:8797 node scripts/refresh-resource-audio.cjs [slug ...]
  * Requires msedge-tts (>= 2.1.0 — older releases are rejected with HTTP 403),
@@ -81,10 +79,6 @@ async function synthesize(text, dir) {
       if (!res.ok) throw new Error(`${slug}: HTTP ${res.status}`);
       const $ = load(await res.text());
       const article = $("#article-root");
-      // The article's own H1 is read first, inside chapter 0: narration starts
-      // at the top of the post, so the blog title is never skipped.
-      const title = normalize($("h1").first().text());
-      if (!title) throw new Error(`${slug}: missing article title`);
       const blocks = [
         article.children().first(),
         // Same chapter set the player highlights (articleBlocks() in
@@ -99,14 +93,12 @@ async function synthesize(text, dir) {
       ];
       const sections = blocks.map((block, i) => ({
         title: i === 0 ? "Overview" : normalize(block.find("h2").first().text()),
-        text: [
-          ...(i === 0 ? [title] : []),
-          ...block
-            .find("h2,h3,p,li")
-            .toArray()
-            .map((e) => normalize($(e).text()))
-            .filter(Boolean),
-        ].join("\n\n"),
+        text: block
+          .find("h2,h3,p,li")
+          .toArray()
+          .map((e) => normalize($(e).text()))
+          .filter(Boolean)
+          .join("\n\n"),
       }));
       const expected = briefs.find((b) => b.slug === slug)?.sections.length;
       if (

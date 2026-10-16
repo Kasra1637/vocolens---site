@@ -14,12 +14,13 @@ import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
-// Small lead-in before each section start so taps land on the section's
-// H2/H3 headline instead of mid-paragraph. Section timestamps are estimated
-// from word counts (accurate within a few seconds either way), so the
-// lead-in stays small: large enough to catch the headline, small enough to
-// never drag playback back into the previous section. Intro starts at 0.
-const HEADER_BACKOFF = 1.5; // seconds
+// Each chapter's audio is synthesized separately and concatenated in
+// scripts/refresh-resource-audio.cjs, so sections[i].startSec is the exact
+// boundary where that chapter's heading (H2/H3) begins (~0.15s of lead-in
+// silence, then the heading). Seeks land directly on startSec so selecting a
+// section starts at that section's title without bleeding into the previous
+// section.
+const HEADER_BACKOFF = 0; // seconds
 
 
 
@@ -60,13 +61,12 @@ function articleBlocks(): HTMLElement[] {
  *   chapter — the seek target sits a lead-in before the mapped start, so a
  *   playhead-only readout would name the previous chapter for the whole
  *   lead-in
- * - narration starts at the top of the post: the first chapter narrates the
- *   article's own H1 title, then the Overview heading and its summary, and
- *   every later chapter narrates its H2/H3 heading first — pressing Listen on
- *   a chapter never skips that chapter's title
- * - an explicitly selected chapter plays ONLY itself once started, then
- *   auto-pauses at the next chapter's start; a fresh Listen with no
- *   selection plays through
+ * - every chapter narrates ONLY its own section title (H2/H3) and its body
+ *   content — never the top H1 blog title
+ * - an explicitly selected chapter highlights immediately in the blog content
+ *   UI and plays ONLY itself once started, then auto-pauses at the next
+ *   chapter's start; a fresh Listen from the beginning starts bounded to the
+ *   currently selected section (Overview by default)
  * - no scrub bar: the chapter list is the only chapter browser. Position
  *   feedback is the § chapter label plus elapsed / total time
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -271,9 +271,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
-    // armedIdx is deliberately kept: the seek parked the playhead a lead-in
-    // before the selected chapter's header, and the readout must name that
-    // chapter until the narration gets there (see sectionIdx).
+    // Scope playback to the current/selected section so pressing Listen only
+    // reads the specific section the user wants (starting with its section
+    // title and content) rather than spilling into subsequent sections.
+    const list = ARTICLE_SECTIONS[slug] ?? [];
+    if (boundEndRef.current === null && list.length > 0) {
+      const idx =
+        armedIdx !== null && armedIdx < list.length
+          ? armedIdx
+          : sectionAt(list, audio.currentTime || 0);
+      setBoundFor(idx);
+    }
     // A tap parked before metadata landed: carry the play intent into
     // onMeta so Listen pressed after arming still starts playback.
     if (pendingRef.current) pendingRef.current.shouldPlay = true;
@@ -281,7 +289,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       () => setPlaying(true),
       () => setPlaying(false),
     );
-  }, []);
+  }, [slug, armedIdx, setBoundFor]);
 
   const toggle = () => {
     const audio = audioRef.current;
@@ -514,8 +522,8 @@ export function ListenToArticle({ slug }: { slug: string }) {
       <ReadingHighlighter
         slug={slug}
         sectionIdx={sectionIdx}
-        active={hasStarted}
-        follow={playing}
+        active={hasStarted || armedIdx !== null}
+        follow={playing || armedIdx !== null}
       />
     </div>
   );
