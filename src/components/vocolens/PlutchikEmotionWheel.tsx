@@ -756,8 +756,7 @@ export function PlutchikEmotionWheel() {
             Find the emotion that fits
           </h2>
           <p className="text-text-secondary mb-5 text-base leading-relaxed">
-            Speak a reflection, review the eight emotion families, and keep the one that fits your
-            day.
+            Speak a reflection, review the eight emotion families, and track them over time.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a

@@ -16,7 +16,7 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 Request: update the closing CTA on the last blog post (Plutchik's emotion wheel) so it no longer uses the word "rung" and reads in simple language.
 
 Fix:
-- `src/components/vocolens/PlutchikEmotionWheel.tsx` — CTA heading "Find your rung on the ladder" → "Find the emotion that fits"; body "…and keep the rung that actually fits your day." → "…and keep the one that fits your day."
+- `src/components/vocolens/PlutchikEmotionWheel.tsx` — CTA heading "Find your rung on the ladder" → "Find the emotion that fits"; body → "Speak a reflection, review the eight emotion families, and track them over time." (the middle sentence was then re-pointed at tracking over time so the CTA matches what the app actually does).
 - The CTA block stays `data-listen-exclude`, so no narration MP3s needed regenerating.
 
 ### 2026-10 — Blog narration reads only each section's own title and content
