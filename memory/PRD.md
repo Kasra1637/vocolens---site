@@ -12,6 +12,13 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 
 ## Change Log
 
+### 2026-10 — Plutchik wheel CTA copy: drop the "rung on the ladder" metaphor
+Request: update the closing CTA on the last blog post (Plutchik's emotion wheel) so it no longer uses the word "rung" and reads in simple language.
+
+Fix:
+- `src/components/vocolens/PlutchikEmotionWheel.tsx` — CTA heading "Find your rung on the ladder" → "Find the emotion that fits"; body "…and keep the rung that actually fits your day." → "…and keep the one that fits your day."
+- The CTA block stays `data-listen-exclude`, so no narration MP3s needed regenerating.
+
 ### 2026-10 — Blog narration reads only each section's own title and content
 Request: fix the audio player inside each blog post so it does NOT read the H1 title and main title at the very top of each post. Instead, it should only read the title of the specific section the user wants the audio player to read, including only that section's title and the rest of its content, while also highlighting it inside the blog content UI.
 

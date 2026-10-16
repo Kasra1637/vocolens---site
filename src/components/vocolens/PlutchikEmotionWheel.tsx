@@ -753,11 +753,11 @@ export function PlutchikEmotionWheel() {
 
         <div data-listen-exclude className="card-app rounded-3xl p-6 sm:p-8 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Find your rung on the ladder
+            Find the emotion that fits
           </h2>
           <p className="text-text-secondary mb-5 text-base leading-relaxed">
-            Speak a reflection, review the eight emotion families, and keep the rung that actually
-            fits your day.
+            Speak a reflection, review the eight emotion families, and keep the one that fits your
+            day.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
