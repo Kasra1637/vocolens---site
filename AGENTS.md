@@ -117,6 +117,39 @@ Cloudflare Workers. Production: https://vocolens.com.
   `animation` / `delay` props are silently ignored.
 - Never render Reveal under `/resources*` — blog pages stay fully static.
 
+## App-UI figures (blog article illustrations)
+
+Eleven articles carry a live replica of the app screen they describe.
+Tokens live in `src/lib/appTheme.ts`, components in
+`src/components/vocolens/figures/`. **Read `../Vocolens-app` — never eyeball
+a value.** Verified sources: glass card + radii from the app's
+`src/lib/theme.ts`, Midnight Glow colours from
+`src/lib/state/onboarding-store.ts`, Plutchik ladders and emotion colours from
+`src/lib/types.ts`, slider fill maths from `shared/UnifiedSlider.tsx` (it is
+`|normalized − zeroNorm|`, right-anchored at 50% when negative).
+
+- **Mount inside an existing `section-*`.** `ListenToArticle.tsx:39` derives
+  chapters from `section[aria-labelledby]`; a new section silently becomes a
+  new chapter and needs a regenerated MP3 plus hand-measured `startSec`.
+- **A figure's subtree contains no `h2` / `h3` / `p` / `li`.**
+  `refresh-resource-audio.cjs:97` hashes exactly those, and
+  `audit-resource-seo.cjs:184` asserts the hash — so one `<p>` inside a figure
+  invalidates the narration manifest and fails the audit on the next run.
+  Use `div` / `span` / `figcaption` only.
+- **Figures are static.** No `useState`, `useEffect` or rAF — which is why
+  `demo/InsightsScreen` cannot be reused (it auto-scrolls).
+- **The `demo/*` components cannot be dropped into an article.** They are built
+  for the homepage hero and use `<p>` / `<h3>` and `demo-mic-pulse` animation,
+  so they break the two rules above. Write a static variant instead; leaving
+  `AppDemo.tsx` and the homepage untouched is the point.
+- Phone-framed where the whole screen is the point (`PhoneFrame` reuses the
+  `.demo-phone-frame` CSS), cropped to the card where the detail is. Panel caps
+  at 420px so it keeps real app proportions instead of stretching across the
+  65ch column.
+- Screenshots are the only real gate here: `AppCard` once shipped rendering
+  empty cards and a slider bubble overlapping its thumb with `tsc`, `lint` and
+  `npm run build` all green.
+
 ## Product truth (verified against app code)
 
 - **"Free to try" is accurate — but it is a 3-day trial, not free forever.**
@@ -172,10 +205,15 @@ Cloudflare Workers. Production: https://vocolens.com.
 - `.prettierrc` sets `endOfLine: "auto"` **on purpose** — the repo is checked
   out CRLF (`core.autocrlf=true`) and without it Prettier flags every line of
   every file (~10k phantom errors). Do not remove it.
-- `eslint.config.js` turns `prettier/prettier` OFF for the 9 blog article
-  routes, the 10 blog article components and `src/routeTree.gen.ts` (frozen /
-  auto-generated). That block must stay **after** `eslintPluginPrettier` — flat
-  config applies later entries last.
+- `eslint.config.js` turns `prettier/prettier` OFF for the 13 blog article
+  routes, the 13 blog article components, `ListenToArticle.tsx` and
+  `src/routeTree.gen.ts` (frozen / auto-generated). That block must stay
+  **after** `eslintPluginPrettier` — flat config applies later entries last.
+  **New articles must be added to it.** The list was last touched 2026-09-23
+  and four articles created after that slipped through until 2026-10-17;
+  check it when you add a route or component. `Resources.tsx` and
+  `resourceArticles.ts` are deliberately *not* in it — both are actively
+  maintained, not frozen content.
 - The 10 remaining warnings are the accepted baseline: 5 `react-refresh` in
   unused `src/components/ui/*` shadcn files (0 imports — dead code) and 5
   `react-hooks/exhaustive-deps` in `ListenToArticle.tsx` that are false
