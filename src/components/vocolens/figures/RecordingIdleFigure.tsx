@@ -1,4 +1,5 @@
 import { Microphone as Mic } from "@phosphor-icons/react";
+import { appGradients } from "@/lib/appTheme";
 import { DemoTabBar } from "../demo/DemoTabBar";
 import { PhoneFrame } from "./PhoneFrame";
 
@@ -68,7 +69,7 @@ export function RecordingIdleFigure() {
                 style={{
                   width: 76,
                   height: 76,
-                  background: "linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)",
+                  background: appGradients.button,
                   boxShadow: "0 4px 24px rgba(0,0,0,0.18)",
                 }}
               >

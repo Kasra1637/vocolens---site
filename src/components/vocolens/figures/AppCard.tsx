@@ -70,12 +70,3 @@ export function AppIconTile({ children }: { children: ReactNode }) {
     </span>
   );
 }
-
-/** Uppercase tracked micro-label, as used for card eyebrows in the app. */
-export function AppMicroLabel({ children }: { children: ReactNode }) {
-  return (
-    <span className="block text-white/50 text-[10px] font-semibold uppercase tracking-[0.08em]">
-      {children}
-    </span>
-  );
-}

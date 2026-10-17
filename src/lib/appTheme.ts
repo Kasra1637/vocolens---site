@@ -18,7 +18,7 @@ export const appColors = {
 
 export const appGradients = {
   screen: "linear-gradient(180deg, #181624 0%, #0F0E1A 100%)",
-  button: "linear-gradient(180deg, #A78BFA 0%, #9370DB 45%, #6A3FC0 100%)",
+  button: `linear-gradient(180deg, ${appColors.secondary} 0%, ${appColors.primary} 45%, ${appColors.deep} 100%)`,
   iconTile: "linear-gradient(135deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.05) 100%)",
 } as const;
 
