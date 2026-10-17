@@ -38,7 +38,7 @@ export function BurnoutRecovery() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Burnout Signs and Recovery: What to Notice and What Can Help",
+    headline: "Burnout Signs & Recovery: What to Notice & What Can Help",
     description:
       "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -174,7 +174,7 @@ export function BurnoutRecovery() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Burnout Signs and Recovery: What to Notice and What Can Help
+            Burnout Signs & Recovery: What to Notice & What Can Help
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -432,7 +432,7 @@ export function BurnoutRecovery() {
                       Anxiety &amp; Mental Wellness
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Overthinking and Rumination: How to Recognize the Loop
+                      Overthinking & Rumination: How to Recognize the Loop
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Understand rumination versus useful reflection, see examples of repetitive

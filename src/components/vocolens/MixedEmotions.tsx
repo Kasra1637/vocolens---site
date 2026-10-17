@@ -40,7 +40,7 @@ export function MixedEmotions() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
+    headline: "Mixed Emotions: Why You Can Feel Happy & Sad at Once",
     description:
       "Mixed emotions let you feel happy and sad at once. See everyday examples and try a reflection that holds both feelings without forcing a choice.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -168,7 +168,7 @@ export function MixedEmotions() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Mixed Emotions: Why You Can Feel Happy and Sad at Once
+            Mixed Emotions: Why You Can Feel Happy & Sad at Once
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -421,7 +421,7 @@ export function MixedEmotions() {
                       Neuroscience &amp; Emotional Intelligence
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional granularity: why specific words change what you feel
+                      Emotional Granularity: Why Specific Words Change What You Feel
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Anxious, stressed, overwhelmed — broad words can be true and still too vague
@@ -462,7 +462,7 @@ export function MixedEmotions() {
                       Neuroscience &amp; Emotional Intelligence
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Alexithymia: Difficulty Identifying Emotions and Where to Start
+                      Alexithymia: Difficulty Identifying Emotions & Where to Start
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Explore what alexithymia means, examples of difficulty identifying feelings,

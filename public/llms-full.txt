@@ -65,40 +65,40 @@ Vocolens is grounded in emotion science including:
 - "Affect Labeling: How to Name Your Emotions" - https://vocolens.com/resources/science-of-reflection
   Research scope, practical examples, and limitations of naming feelings.
 
-- "Emotional Awareness: What It Is and How to Improve It" - https://vocolens.com/resources/emotional-awareness-patterns
+- "Emotional Awareness: What It Is & How to Improve It" - https://vocolens.com/resources/emotional-awareness-patterns
   Definitions, examples, and a short emotion-and-trigger journal.
 
-- "ADHD Time Blindness: Examples and Practical Time Supports" - https://vocolens.com/resources/adhd-time-blindness
+- "ADHD Time Blindness: Examples & Practical Time Supports" - https://vocolens.com/resources/adhd-time-blindness
   Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.
 
-- "Alexithymia: Difficulty Identifying Emotions and Where to Start" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
+- "Alexithymia: Difficulty Identifying Emotions & Where to Start" - https://vocolens.com/resources/alexithymia-emotional-vocabulary
   Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.
 
-- "Autism and Emotional Regulation: Sensory Needs and Practical Supports" - https://vocolens.com/resources/autism-emotional-regulation
+- "Autism & Emotional Regulation: Sensory Needs & Practical Supports" - https://vocolens.com/resources/autism-emotional-regulation
   Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.
 
-- "Burnout Signs and Recovery: What to Notice and What Can Help" - https://vocolens.com/resources/burnout-recovery-signs
+- "Burnout Signs & Recovery: What to Notice & What Can Help" - https://vocolens.com/resources/burnout-recovery-signs
   Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.
 
 - "Physical Signs of Overwhelm: Body Awareness Without Guessing" - https://vocolens.com/resources/distress-detection
   Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.
 
-- "Overthinking and Rumination: How to Recognize the Loop" - https://vocolens.com/resources/overthinking-rumination
+- "Overthinking & Rumination: How to Recognize the Loop" - https://vocolens.com/resources/overthinking-rumination
   Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.
 
-- "Rejection Sensitivity and ADHD: What RSD Means and How to Respond" - https://vocolens.com/resources/rejection-sensitivity
+- "Rejection Sensitivity & ADHD: What RSD Means & How to Respond" - https://vocolens.com/resources/rejection-sensitivity
   Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.
 
-- "Mixed Emotions: Why You Can Feel Happy and Sad at Once" - https://vocolens.com/resources/mixed-emotions
+- "Mixed Emotions: Why You Can Feel Happy & Sad at Once" - https://vocolens.com/resources/mixed-emotions
   Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.
 
 - "Emotional Granularity: Why Specific Words Change What You Feel" - https://vocolens.com/resources/emotional-granularity
   Fine distinctions between emotional states and a personal vocabulary.
 
-9. "Valence and Arousal: Why Calm Isn’t Always Happy" - https://vocolens.com/resources/valence-and-arousal
+9. "Valence & Arousal: Why Calm Isn’t Always Happy" - https://vocolens.com/resources/valence-and-arousal
    Defines pleasantness versus activation, distinguishes arousal from emotional intensity, and offers everyday examples and a brief reflection exercise. Explains the limits of two-axis summaries and treats Vocolens’s suggested labels and controls as reflection aids, not diagnoses or proven clinical benefits.
 
-10. "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder" - https://vocolens.com/resources/plutchik-emotion-wheel
+10. "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder" - https://vocolens.com/resources/plutchik-emotion-wheel
    Explains Plutchik’s eight emotion families and three-step intensity ladders, compares discrete wheels with dimensional valence/arousal models, and offers a two-step family-and-rung check-in without treating the wheel as a literal brain map or clinical diagnosis.
 
 ## Pages
@@ -108,7 +108,7 @@ Vocolens is grounded in emotion science including:
 - Use Cases: https://vocolens.com/use-cases
 - Resources: https://vocolens.com/resources
 - Plutchik’s Emotion Wheel: https://vocolens.com/resources/plutchik-emotion-wheel
-- Valence and Arousal: https://vocolens.com/resources/valence-and-arousal
+- Valence & Arousal: https://vocolens.com/resources/valence-and-arousal
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection
 - Emotional Awareness Patterns: https://vocolens.com/resources/emotional-awareness-patterns
 - Distress Detection: https://vocolens.com/resources/distress-detection

@@ -40,7 +40,7 @@ export function AlexithymiaEmotionalVocabulary() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Alexithymia: Difficulty Identifying Emotions and Where to Start",
+    headline: "Alexithymia: Difficulty Identifying Emotions & Where to Start",
     description:
       "Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -176,7 +176,7 @@ export function AlexithymiaEmotionalVocabulary() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Alexithymia: Difficulty Identifying Emotions and Where to Start
+            Alexithymia: Difficulty Identifying Emotions & Where to Start
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -425,7 +425,7 @@ export function AlexithymiaEmotionalVocabulary() {
                       Autism & Neurodivergent Wellness
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Autism and Emotional Regulation: Sensory Needs and Practical Supports
+                      Autism & Emotional Regulation: Sensory Needs & Practical Supports
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Explore emotional regulation in autistic adults, how sensory demands and

@@ -86,7 +86,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/plutchik-emotion-wheel"
-              aria-label="Read: Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder"
+              aria-label="Read: Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -107,7 +107,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder
+                    Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder
                   </h2>
                   <p
                     itemProp="description"
@@ -144,7 +144,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/valence-and-arousal"
-              aria-label="Read: Valence and Arousal: Why Calm Isn’t Always Happy"
+              aria-label="Read: Valence & Arousal: Why Calm Isn’t Always Happy"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -165,7 +165,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Valence and Arousal: Why Calm Isn’t Always Happy
+                    Valence & Arousal: Why Calm Isn’t Always Happy
                   </h2>
                   <p
                     itemProp="description"
@@ -201,7 +201,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/mixed-emotions"
-              aria-label="Read: Mixed Emotions: Why You Can Feel Happy and Sad at Once"
+              aria-label="Read: Mixed Emotions: Why You Can Feel Happy & Sad at Once"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -224,7 +224,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Mixed Emotions: Why You Can Feel Happy and Sad at Once
+                    Mixed Emotions: Why You Can Feel Happy & Sad at Once
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -261,7 +261,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/rejection-sensitivity"
-              aria-label="Read: Rejection Sensitivity and ADHD: What RSD Means and How to Respond"
+              aria-label="Read: Rejection Sensitivity & ADHD: What RSD Means & How to Respond"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -284,7 +284,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Rejection Sensitivity and ADHD: What RSD Means and How to Respond
+                    Rejection Sensitivity & ADHD: What RSD Means & How to Respond
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -383,7 +383,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/adhd-time-blindness"
-              aria-label="Read: ADHD Time Blindness: Examples and Practical Time Supports"
+              aria-label="Read: ADHD Time Blindness: Examples & Practical Time Supports"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -406,7 +406,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    ADHD Time Blindness: Examples and Practical Time Supports
+                    ADHD Time Blindness: Examples & Practical Time Supports
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -443,7 +443,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/burnout-recovery-signs"
-              aria-label="Read: Burnout Signs and Recovery: What to Notice and What Can Help"
+              aria-label="Read: Burnout Signs & Recovery: What to Notice & What Can Help"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -466,7 +466,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Burnout Signs and Recovery: What to Notice and What Can Help
+                    Burnout Signs & Recovery: What to Notice & What Can Help
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -503,7 +503,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/overthinking-rumination"
-              aria-label="Read: Overthinking and Rumination: How to Recognize the Loop"
+              aria-label="Read: Overthinking & Rumination: How to Recognize the Loop"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -526,7 +526,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Overthinking and Rumination: How to Recognize the Loop
+                    Overthinking & Rumination: How to Recognize the Loop
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -566,7 +566,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/autism-emotional-regulation"
-              aria-label="Read: Autism and Emotional Regulation: Sensory Needs and Practical Supports"
+              aria-label="Read: Autism & Emotional Regulation: Sensory Needs & Practical Supports"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -589,7 +589,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Autism and Emotional Regulation: Sensory Needs and Practical Supports
+                    Autism & Emotional Regulation: Sensory Needs & Practical Supports
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -629,7 +629,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/alexithymia-emotional-vocabulary"
-              aria-label="Read: Alexithymia: Difficulty Identifying Emotions and Where to Start"
+              aria-label="Read: Alexithymia: Difficulty Identifying Emotions & Where to Start"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -652,7 +652,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Alexithymia: Difficulty Identifying Emotions and Where to Start
+                    Alexithymia: Difficulty Identifying Emotions & Where to Start
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
@@ -752,7 +752,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/emotional-awareness-patterns"
-              aria-label="Read: Emotional Awareness: What It Is and How to Improve It"
+              aria-label="Read: Emotional Awareness: What It Is & How to Improve It"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -775,7 +775,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Emotional Awareness: What It Is and How to Improve It
+                    Emotional Awareness: What It Is & How to Improve It
                   </h2>
                   <p
                     className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"

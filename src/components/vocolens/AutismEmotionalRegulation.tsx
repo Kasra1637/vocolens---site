@@ -40,7 +40,7 @@ export function AutismEmotionalRegulation() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Autism and Emotional Regulation: Sensory Needs and Practical Supports",
+    headline: "Autism & Emotional Regulation: Sensory Needs & Practical Supports",
     description:
       "Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -86,7 +86,7 @@ export function AutismEmotionalRegulation() {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Autism and Emotional Regulation",
+          name: "Autism & Emotional Regulation",
           item: "https://vocolens.com/resources/autism-emotional-regulation",
         },
       ],
@@ -143,7 +143,7 @@ export function AutismEmotionalRegulation() {
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <span className="text-text-primary font-medium" itemProp="name">
-                Autism and Emotional Regulation
+                Autism & Emotional Regulation
               </span>
               <meta
                 itemProp="item"
@@ -176,7 +176,7 @@ export function AutismEmotionalRegulation() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Autism and Emotional Regulation: Sensory Needs and Practical Supports
+            Autism & Emotional Regulation: Sensory Needs & Practical Supports
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">

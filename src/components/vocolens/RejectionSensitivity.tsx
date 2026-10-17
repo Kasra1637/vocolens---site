@@ -40,7 +40,7 @@ export function RejectionSensitivity() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Rejection Sensitivity and ADHD: What RSD Means and How to Respond",
+    headline: "Rejection Sensitivity & ADHD: What RSD Means & How to Respond",
     description:
       "Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -176,7 +176,7 @@ export function RejectionSensitivity() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Rejection Sensitivity and ADHD: What RSD Means and How to Respond
+            Rejection Sensitivity & ADHD: What RSD Means & How to Respond
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -423,7 +423,7 @@ export function RejectionSensitivity() {
                       Neuroscience &amp; Emotional Intelligence
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional granularity: why specific words change what you feel
+                      Emotional Granularity: Why Specific Words Change What You Feel
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Precise emotion labels take intensity out of a feeling — the skill that makes
@@ -443,7 +443,7 @@ export function RejectionSensitivity() {
                       Anxiety &amp; Mental Wellness
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Overthinking and Rumination: How to Recognize the Loop
+                      Overthinking & Rumination: How to Recognize the Loop
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Understand rumination versus useful reflection, see examples of repetitive
@@ -463,7 +463,7 @@ export function RejectionSensitivity() {
                       Alexithymia &amp; Emotional Vocabulary
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Alexithymia: Difficulty Identifying Emotions and Where to Start
+                      Alexithymia: Difficulty Identifying Emotions & Where to Start
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Explore what alexithymia means, examples of difficulty identifying feelings,
@@ -483,7 +483,7 @@ export function RejectionSensitivity() {
                       Mental Wellness &amp; Self-Discovery
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional Awareness: What It Is and How to Improve It
+                      Emotional Awareness: What It Is & How to Improve It
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Learn to notice feelings and use a short emotion-and-trigger check-in.

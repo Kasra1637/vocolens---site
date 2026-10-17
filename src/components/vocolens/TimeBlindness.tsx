@@ -38,7 +38,7 @@ export function TimeBlindness() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "ADHD Time Blindness: Examples and Practical Time Supports",
+    headline: "ADHD Time Blindness: Examples & Practical Time Supports",
     description:
       "Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -171,7 +171,7 @@ export function TimeBlindness() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            ADHD Time Blindness: Examples and Practical Time Supports
+            ADHD Time Blindness: Examples & Practical Time Supports
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -400,7 +400,7 @@ export function TimeBlindness() {
                       Mental Wellness &amp; Self-Discovery
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional Awareness: What It Is and How to Improve It
+                      Emotional Awareness: What It Is & How to Improve It
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Learn to notice feelings and use a short emotion-and-trigger check-in.
@@ -419,7 +419,7 @@ export function TimeBlindness() {
                       Anxiety &amp; Mental Wellness
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Overthinking and Rumination: How to Recognize the Loop
+                      Overthinking & Rumination: How to Recognize the Loop
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Understand rumination versus useful reflection, see examples of repetitive

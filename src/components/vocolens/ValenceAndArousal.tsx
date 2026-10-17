@@ -6,7 +6,7 @@ import { ListenToArticle } from "./ListenToArticle";
 import { AdjustHowItFeltFigure } from "./figures/AdjustHowItFeltFigure";
 import { AppFigure } from "./figures/AppFigure";
 
-const title = "Valence and Arousal: Why Calm Isn’t Always Happy";
+const title = "Valence & Arousal: Why Calm Isn’t Always Happy";
 const description =
   "Learn how emotional valence and arousal differ, why low energy does not always mean calm contentment, and how to use a two-axis emotion check-in.";
 const url = "https://vocolens.com/resources/valence-and-arousal";
@@ -77,7 +77,7 @@ const examples = [
 const relatedArticles = [
   {
     to: "/resources/plutchik-emotion-wheel" as const,
-    title: "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder",
+    title: "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder",
     description:
       "See how eight primary emotion families and three intensity rungs complement the two-axis map.",
   },
@@ -89,7 +89,7 @@ const relatedArticles = [
   },
   {
     to: "/resources/emotional-awareness-patterns" as const,
-    title: "Emotional Awareness: What It Is and How to Improve It",
+    title: "Emotional Awareness: What It Is & How to Improve It",
     description: "Connect a possible feeling with its situation and a practical next step.",
   },
   {
@@ -152,7 +152,7 @@ export function ValenceAndArousal() {
           name: "Resources",
           item: "https://vocolens.com/resources",
         },
-        { "@type": "ListItem", position: 3, name: "Valence and Arousal", item: url },
+        { "@type": "ListItem", position: 3, name: "Valence & Arousal", item: url },
       ],
     },
   };
@@ -194,7 +194,7 @@ export function ValenceAndArousal() {
             <CaretRight className="w-3.5 h-3.5" />
           </li>
           <li aria-current="page" className="text-text-primary font-medium">
-            Valence and Arousal
+            Valence & Arousal
           </li>
         </ol>
       </nav>

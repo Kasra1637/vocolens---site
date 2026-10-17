@@ -34,7 +34,7 @@ export function EmotionalGranularity() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Emotional Granularity: Why Specific Words Change What You Feel",
-    "alternativeHeadline": "Emotional Granularity: Why Saying 'Anxious' or 'Stressed' Is Not Enough — and How More Specific Words Change the Feeling",
+    "alternativeHeadline": "Emotional Granularity: Why Saying 'Anxious' or 'Stressed' Is Not Enough — & How More Specific Words Change the Feeling",
     "description": "Emotional granularity is distinguishing specific feelings from broad labels. Learn why precise emotion words support regulation and how to practice.",
     "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-09-17",
@@ -367,7 +367,7 @@ export function EmotionalGranularity() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Emotional Intelligence</p>
                     <h4 className="font-bold text-text-primary group-hover:underline mb-2 text-lg">
-                      Valence and Arousal: Why Calm Isn’t Always Happy
+                      Valence & Arousal: Why Calm Isn’t Always Happy
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Separate pleasantness from activation when an emotion word does not quite fit, and see what a two-axis map leaves out.</p>
                   </div>
@@ -382,7 +382,7 @@ export function EmotionalGranularity() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Emotional Intelligence</p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Why you can't name what you're feeling: alexithymia and the emotional vocabulary you were never taught
+                      Alexithymia: Difficulty Identifying Emotions & Where to Start
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Around 10% of people struggle to identify and describe their own emotions. Learn the neuroscience of emotional blindness and how AI voice journaling builds a personal vocabulary from scratch.</p>
                   </div>
@@ -397,7 +397,7 @@ export function EmotionalGranularity() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Neuroscience &amp; Mental Wellness</p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How naming your emotions reduces stress and builds resilience
+                      Affect Labeling: How to Name Your Emotions
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn how affect labeling decreases amygdala activity and calms your nervous system through daily voice journaling.</p>
                   </div>
@@ -412,7 +412,7 @@ export function EmotionalGranularity() {
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">Body Awareness &amp; Distress Detection</p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      How your body tells you it's overwhelmed before your mind does
+                      Physical Signs of Overwhelm: Body Awareness Without Guessing
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn the neuroscience of interoception and how body-sensation mapping helps you catch overwhelm before it escalates.</p>
                   </div>

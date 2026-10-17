@@ -106,7 +106,7 @@ export function DistressDetection() {
                 {
                   "@type": "ListItem",
                   position: 3,
-                  name: "Physical Signs of Overwhelm: Body Awareness Without Guessing",
+                  name: "Physical Signs of Overwhelm",
                   item: "https://vocolens.com/resources/distress-detection",
                 },
               ],
@@ -136,7 +136,7 @@ export function DistressDetection() {
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <span className="text-text-primary font-medium" itemProp="name">
-                How Your Body Tells You Are Overwhelmed
+                Physical Signs of Overwhelm
               </span>
               <meta itemProp="item" content="https://vocolens.com/resources/distress-detection" />
               <meta itemProp="position" content="2" />
@@ -419,7 +419,7 @@ export function DistressDetection() {
                       Mental Wellness &amp; Self-Discovery
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional Awareness: What It Is and How to Improve It
+                      Emotional Awareness: What It Is & How to Improve It
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Learn to notice feelings and use a short emotion-and-trigger check-in.

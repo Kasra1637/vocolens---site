@@ -6,7 +6,7 @@ import { ListenToArticle } from "./ListenToArticle";
 import { AppFigure } from "./figures/AppFigure";
 import { EmotionBreakdownFigure } from "./figures/EmotionBreakdownFigure";
 
-const title = "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder";
+const title = "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder";
 const description =
   "Plutchik’s emotion wheel groups feelings into eight families and three intensity steps. Learn when a wheel helps or overwhelms and how to check in.";
 const url = "https://vocolens.com/resources/plutchik-emotion-wheel";
@@ -114,7 +114,7 @@ const ladders = [
 const relatedArticles = [
   {
     to: "/resources/valence-and-arousal" as const,
-    title: "Valence and Arousal: Why Calm Isn’t Always Happy",
+    title: "Valence & Arousal: Why Calm Isn’t Always Happy",
     description:
       "Separate pleasantness from activation when an emotion word does not quite fit, and see how a two-axis map complements emotion families.",
   },
@@ -126,13 +126,13 @@ const relatedArticles = [
   },
   {
     to: "/resources/mixed-emotions" as const,
-    title: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
+    title: "Mixed Emotions: Why You Can Feel Happy & Sad at Once",
     description:
       "Explore what happens when two emotion families show up in the same moment and how to reflect without forcing a single winner.",
   },
   {
     to: "/resources/alexithymia-emotional-vocabulary" as const,
-    title: "Alexithymia: Difficulty Identifying Emotions and Where to Start",
+    title: "Alexithymia: Difficulty Identifying Emotions & Where to Start",
     description: "Practical starting points when emotion wheels and word lists feel inaccessible.",
   },
 ];

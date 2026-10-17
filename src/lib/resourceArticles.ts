@@ -41,7 +41,7 @@ export const RESOURCE_ARTICLES = {
     title: "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
     description:
       "Plutchik’s emotion wheel groups feelings into eight families and three intensity steps. Learn when a wheel helps or overwhelms and how to check in.",
-    h1: "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder",
+    h1: "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder",
     datePublished: "2026-10-15",
     dateModified: "2026-10-17",
     image: {
@@ -57,14 +57,14 @@ export const RESOURCE_ARTICLES = {
     title: "Valence & Arousal: Why Calm Isn’t Always Happy | Vocolens",
     description:
       "Learn how emotional valence and arousal differ, why low energy does not always mean calm contentment, and how to use a two-axis emotion check-in.",
-    h1: "Valence and Arousal: Why Calm Isn’t Always Happy",
+    h1: "Valence & Arousal: Why Calm Isn’t Always Happy",
     datePublished: "2026-10-11",
     dateModified: "2026-10-11",
     image: {
       url: "https://vocolens.com/og/valence-and-arousal.png",
       width: 1200,
       height: 630,
-      alt: "Valence and Arousal: Why calm isn’t always happy. Vocolens resource card.",
+      alt: "Valence & Arousal: Why calm isn’t always happy. Vocolens resource card.",
     },
   },
   "mixed-emotions": {
@@ -73,14 +73,14 @@ export const RESOURCE_ARTICLES = {
     title: "Mixed Emotions: Feeling Happy & Sad at Once | Vocolens",
     description:
       "Mixed emotions let you feel happy and sad at once. See everyday examples and try a reflection that holds both feelings without forcing a choice.",
-    h1: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
+    h1: "Mixed Emotions: Why You Can Feel Happy & Sad at Once",
     datePublished: "2026-10-06",
     dateModified: "2026-10-06",
     image: {
       url: "https://vocolens.com/og/mixed-emotions.png",
       width: 1200,
       height: 630,
-      alt: "Mixed Emotions: Why you can feel happy and sad at once. Vocolens resource card.",
+      alt: "Mixed Emotions: Why you can feel happy & sad at once. Vocolens resource card.",
     },
   },
   "rejection-sensitivity": {
@@ -89,7 +89,7 @@ export const RESOURCE_ARTICLES = {
     title: "Rejection Sensitivity & ADHD: What RSD Means | Vocolens",
     description:
       "Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.",
-    h1: "Rejection Sensitivity and ADHD: What RSD Means and How to Respond",
+    h1: "Rejection Sensitivity & ADHD: What RSD Means & How to Respond",
     datePublished: "2026-09-29",
     dateModified: "2026-10-06",
     image: {
@@ -121,14 +121,14 @@ export const RESOURCE_ARTICLES = {
     title: "ADHD Time Blindness: Examples & Practical Supports",
     description:
       "Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.",
-    h1: "ADHD Time Blindness: Examples and Practical Time Supports",
+    h1: "ADHD Time Blindness: Examples & Practical Time Supports",
     datePublished: "2026-09-09",
     dateModified: "2026-10-06",
     image: {
       url: "https://vocolens.com/og/adhd-time-blindness.png",
       width: 1200,
       height: 630,
-      alt: "ADHD Time Blindness: Examples and practical time supports. Vocolens resource card.",
+      alt: "ADHD Time Blindness: Examples & practical time supports. Vocolens resource card.",
     },
   },
   "burnout-recovery-signs": {
@@ -137,7 +137,7 @@ export const RESOURCE_ARTICLES = {
     title: "Burnout Signs & Recovery: What to Notice & Try",
     description:
       "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
-    h1: "Burnout Signs and Recovery: What to Notice and What Can Help",
+    h1: "Burnout Signs & Recovery: What to Notice & What Can Help",
     datePublished: "2026-08-04",
     dateModified: "2026-10-06",
     image: {
@@ -153,7 +153,7 @@ export const RESOURCE_ARTICLES = {
     title: "Overthinking & Rumination: How to Spot the Loop",
     description:
       "Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.",
-    h1: "Overthinking and Rumination: How to Recognize the Loop",
+    h1: "Overthinking & Rumination: How to Recognize the Loop",
     datePublished: "2026-07-14",
     dateModified: "2026-10-06",
     image: {
@@ -169,7 +169,7 @@ export const RESOURCE_ARTICLES = {
     title: "Autism Emotional Regulation: Sensory Needs & Supports",
     description:
       "Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.",
-    h1: "Autism and Emotional Regulation: Sensory Needs and Practical Supports",
+    h1: "Autism & Emotional Regulation: Sensory Needs & Practical Supports",
     datePublished: "2026-06-29",
     dateModified: "2026-10-06",
     image: {
@@ -185,7 +185,7 @@ export const RESOURCE_ARTICLES = {
     title: "Alexithymia: Difficulty Naming Emotions & Where to Start",
     description:
       "Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.",
-    h1: "Alexithymia: Difficulty Identifying Emotions and Where to Start",
+    h1: "Alexithymia: Difficulty Identifying Emotions & Where to Start",
     datePublished: "2026-06-28",
     dateModified: "2026-10-06",
     image: {
@@ -217,14 +217,14 @@ export const RESOURCE_ARTICLES = {
     title: "Emotional Awareness: What It Is & How to Build It",
     description:
       "Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.",
-    h1: "Emotional Awareness: What It Is and How to Improve It",
+    h1: "Emotional Awareness: What It Is & How to Improve It",
     datePublished: "2026-03-30",
     dateModified: "2026-10-06",
     image: {
       url: "https://vocolens.com/og/emotional-awareness-patterns.png",
       width: 1200,
       height: 630,
-      alt: "Emotional Awareness: What it is and how to improve it. Vocolens resource card.",
+      alt: "Emotional Awareness: What it is & how to improve it. Vocolens resource card.",
     },
   },
   "science-of-reflection": {

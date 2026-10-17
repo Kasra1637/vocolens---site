@@ -40,7 +40,7 @@ export function OverthinkingRumination() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Overthinking and Rumination: How to Recognize the Loop",
+    headline: "Overthinking & Rumination: How to Recognize the Loop",
     description:
       "Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.",
     image: "https://vocolens.com/vocolens-logo.png",
@@ -176,7 +176,7 @@ export function OverthinkingRumination() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4"
             style={{ color: "#1e293b" }}
           >
-            Overthinking and Rumination: How to Recognize the Loop
+            Overthinking & Rumination: How to Recognize the Loop
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -465,7 +465,7 @@ export function OverthinkingRumination() {
                       Mental Wellness &amp; Self-Discovery
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Emotional Awareness: What It Is and How to Improve It
+                      Emotional Awareness: What It Is & How to Improve It
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Learn to notice feelings and use a short emotion-and-trigger check-in.
@@ -484,7 +484,7 @@ export function OverthinkingRumination() {
                       Stress &amp; Burnout Recovery
                     </p>
                     <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">
-                      Burnout Signs and Recovery: What to Notice and What Can Help
+                      Burnout Signs & Recovery: What to Notice & What Can Help
                     </h4>
                     <p className="text-text-secondary text-base leading-relaxed">
                       Understand workplace burnout signs, how they differ from ordinary tiredness,

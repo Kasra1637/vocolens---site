@@ -61,7 +61,7 @@ export function EmotionalAwareness() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Emotional Awareness: What It Is and How to Improve It",
+            "headline": "Emotional Awareness: What It Is & How to Improve It",
             "description": "Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.",
             "image": "https://vocolens.com/vocolens-logo.png",
             "datePublished": "2026-03-30",
@@ -136,7 +136,7 @@ export function EmotionalAwareness() {
             itemProp="headline"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4" style={{ color: '#1e293b' }}
           >
-            Emotional Awareness: What It Is and How to Improve It
+            Emotional Awareness: What It Is & How to Improve It
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 mb-5 text-sm text-text-muted">
@@ -297,7 +297,7 @@ caption="One entry holding the template in app form: Meeting with no feedback, r
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <p className="inline-flex rounded-full bg-primary/8 border border-primary/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-primary leading-none mb-1">ADHD & Time Perception</p>
-                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">ADHD Time Blindness: Examples and Practical Time Supports</h4>
+                    <h4 className="font-bold text-text-primary group-text-primary hover:underline mb-2 text-lg">ADHD Time Blindness: Examples & Practical Time Supports</h4>
                     <p className="text-text-secondary text-base leading-relaxed">Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.</p>
                   </div>
                   <ArrowUpRight className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
