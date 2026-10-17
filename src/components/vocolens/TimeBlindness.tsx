@@ -10,6 +10,8 @@ import {
 import { Link } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 import { BackToTop } from "./BackToTop";
+import { AppFigure } from "./figures/AppFigure";
+import { StreakCalendarFigure } from "./figures/StreakCalendarFigure";
 
 const faqData = [
   {
@@ -338,6 +340,12 @@ export function TimeBlindness() {
               time-perception assessment, and the record does not establish why a mismatch happened.
               Stop if tracking becomes punitive; use a gentler support instead.
             </p>
+            <AppFigure
+              label="The Insights tab of Vocolens showing an 18-day journal streak on the streak calendar, with badge progress toward the 30-day streak."
+              caption="Vocolens has no timers or estimate features — its nearest time-shaped surface is this streak calendar. A missed day restarts the streak at one; the month, total and longest-run counters are kept."
+            >
+              <StreakCalendarFigure />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If overload keeps recurring, read about{" "}
               <Link

@@ -10,6 +10,8 @@ import {
 import { Link } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 import { BackToTop } from "./BackToTop";
+import { AppFigure } from "./figures/AppFigure";
+import { BodyMapFigure } from "./figures/BodyMapFigure";
 
 const faqData = [
   {
@@ -343,6 +345,17 @@ export function BurnoutRecovery() {
               recurring demands without assuming the app predicts collapse or measures
               nervous-system damage. Stop if tracking becomes another obligation.
             </p>
+            <AppFigure
+              label="The body sensation map in Vocolens, with the neck ranked as the most frequently logged region over the last 14 days."
+              caption="The body map is a neighbouring feature — the app has no burnout tracker. Use it as the check-in suggests: log where today's strain actually showed up and read the pattern; it is a frequency map, not a burnout score."
+            >
+              <BodyMapFigure
+                counts={{ neck: 12, arms: 8, chest: 6, head: 4, stomach: 3, hands: 2 }}
+                scanCount={24}
+                selected="neck"
+                range="14D"
+              />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               See{" "}
               <Link

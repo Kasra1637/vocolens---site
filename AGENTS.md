@@ -119,7 +119,10 @@ Cloudflare Workers. Production: https://vocolens.com.
 
 ## App-UI figures (blog article illustrations)
 
-Eleven articles carry a live replica of the app screen they describe.
+Thirteen articles carry a live replica of the app screen they describe
+(ADHD Time Blindness and Burnout Recovery mount *adjacent* features —
+StreakCalendarFigure and a BodyMapFigure variant — with captions that state
+plainly the app has no timer/estimate or burnout UI; never drop that caveat).
 Tokens live in `src/lib/appTheme.ts`, components in
 `src/components/vocolens/figures/`. **Read `../Vocolens-app` — never eyeball
 a value.** Verified sources: glass card + radii from the app's
