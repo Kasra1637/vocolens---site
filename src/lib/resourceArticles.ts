@@ -60,7 +60,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Valence and Arousal: Why Calm Isn’t Always Happy",
     datePublished: "2026-10-11",
     dateModified: "2026-10-11",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/valence-and-arousal.png",
+      width: 1200,
+      height: 630,
+      alt: "Valence and Arousal: Why calm isn’t always happy. Vocolens resource card.",
+    },
   },
   "mixed-emotions": {
     slug: "mixed-emotions",
@@ -71,7 +76,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
     datePublished: "2026-10-06",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/mixed-emotions.png",
+      width: 1200,
+      height: 630,
+      alt: "Mixed Emotions: Why you can feel happy and sad at once. Vocolens resource card.",
+    },
   },
   "rejection-sensitivity": {
     slug: "rejection-sensitivity",
@@ -82,7 +92,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Rejection Sensitivity and ADHD: What RSD Means and How to Respond",
     datePublished: "2026-09-29",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/rejection-sensitivity.png",
+      width: 1200,
+      height: 630,
+      alt: "Rejection Sensitivity & ADHD: What RSD means and how to respond. Vocolens resource card.",
+    },
   },
   "emotional-granularity": {
     slug: "emotional-granularity",
@@ -93,7 +108,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Emotional Granularity: Why Specific Words Change What You Feel",
     datePublished: "2026-09-17",
     dateModified: "2026-09-17",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/emotional-granularity.png",
+      width: 1200,
+      height: 630,
+      alt: "Emotional Granularity: Why specific emotion words matter. Vocolens resource card.",
+    },
   },
   "adhd-time-blindness": {
     slug: "adhd-time-blindness",
@@ -104,7 +124,12 @@ export const RESOURCE_ARTICLES = {
     h1: "ADHD Time Blindness: Examples and Practical Time Supports",
     datePublished: "2026-09-09",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/adhd-time-blindness.png",
+      width: 1200,
+      height: 630,
+      alt: "ADHD Time Blindness: Examples and practical time supports. Vocolens resource card.",
+    },
   },
   "burnout-recovery-signs": {
     slug: "burnout-recovery-signs",
@@ -115,7 +140,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Burnout Signs and Recovery: What to Notice and What Can Help",
     datePublished: "2026-08-04",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/burnout-recovery-signs.png",
+      width: 1200,
+      height: 630,
+      alt: "Burnout Signs & Recovery: What to notice and what can help. Vocolens resource card.",
+    },
   },
   "overthinking-rumination": {
     slug: "overthinking-rumination",
@@ -126,7 +156,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Overthinking and Rumination: How to Recognize the Loop",
     datePublished: "2026-07-14",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/overthinking-rumination.png",
+      width: 1200,
+      height: 630,
+      alt: "Overthinking & Rumination: How to recognize the loop. Vocolens resource card.",
+    },
   },
   "autism-emotional-regulation": {
     slug: "autism-emotional-regulation",
@@ -137,7 +172,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Autism and Emotional Regulation: Sensory Needs and Practical Supports",
     datePublished: "2026-06-29",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/autism-emotional-regulation.png",
+      width: 1200,
+      height: 630,
+      alt: "Autism & Emotional Regulation: Sensory needs and practical supports. Vocolens resource card.",
+    },
   },
   "alexithymia-emotional-vocabulary": {
     slug: "alexithymia-emotional-vocabulary",
@@ -148,7 +188,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Alexithymia: Difficulty Identifying Emotions and Where to Start",
     datePublished: "2026-06-28",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/alexithymia-emotional-vocabulary.png",
+      width: 1200,
+      height: 630,
+      alt: "Alexithymia: Difficulty identifying emotions and where to start. Vocolens resource card.",
+    },
   },
   "distress-detection": {
     slug: "distress-detection",
@@ -159,7 +204,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Physical Signs of Overwhelm: Body Awareness Without Guessing",
     datePublished: "2026-06-11",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/distress-detection.png",
+      width: 1200,
+      height: 630,
+      alt: "Physical Signs of Overwhelm: Body awareness without guessing. Vocolens resource card.",
+    },
   },
   "emotional-awareness-patterns": {
     slug: "emotional-awareness-patterns",
@@ -170,7 +220,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Emotional Awareness: What It Is and How to Improve It",
     datePublished: "2026-03-30",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/emotional-awareness-patterns.png",
+      width: 1200,
+      height: 630,
+      alt: "Emotional Awareness: What it is and how to improve it. Vocolens resource card.",
+    },
   },
   "science-of-reflection": {
     slug: "science-of-reflection",
@@ -181,7 +236,12 @@ export const RESOURCE_ARTICLES = {
     h1: "Affect Labeling: How to Name Your Emotions",
     datePublished: "2026-02-28",
     dateModified: "2026-10-06",
-    image: null,
+    image: {
+      url: "https://vocolens.com/og/science-of-reflection.png",
+      width: 1200,
+      height: 630,
+      alt: "Affect Labeling: How to name your emotions. Vocolens resource card.",
+    },
   },
 } satisfies Record<string, ResourceArticleMeta>;
 
