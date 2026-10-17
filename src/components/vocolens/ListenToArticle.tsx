@@ -45,12 +45,13 @@ function articleBlocks(): HTMLElement[] {
  * ListenToArticle — human-narration audio player for resource articles.
  * Plays a pre-generated neural-voice MP3 (`/audio/<slug>.mp3`, voice
  * en-US-AriaNeural). Features:
- * - the Listen button is the ONLY control that starts audio. The chapter
- *   list and the prev/next-section buttons only SELECT: the playhead moves
- *   to that chapter's header with the same small lead-in and the row lights
- *   up, but playback stays as it was. Pressing Listen afterwards plays just
- *   the selected chapter
- *   (seeks are verified across frames against element desync; the
+ * - selecting a chapter — a chapter-list row or prev/next — takes the playhead
+ *   to that chapter's header AND narrates it: the section that lights up in the
+ *   blog content UI is the section the voice reads. The Listen/Pause button
+ *   toggles playback at the playhead, and a fresh Listen starts the currently
+ *   selected chapter
+ *   (seeks are verified across frames against element desync and re-asserted
+ *   when playback begins, in case the element dropped the pre-play seek; the
  *   chapter-bound auto-pause is suppressed briefly after each jump so a
  *   stale timeupdate can't pause instead of moving)
  * - every readout names the chapter the player is ON, and the title is read
@@ -63,10 +64,10 @@ function articleBlocks(): HTMLElement[] {
  *   lead-in
  * - every chapter narrates ONLY its own section title (H2/H3) and its body
  *   content — never the top H1 blog title
- * - an explicitly selected chapter highlights immediately in the blog content
- *   UI and plays ONLY itself once started, then auto-pauses at the next
- *   chapter's start; a fresh Listen from the beginning starts bounded to the
- *   currently selected section (Overview by default)
+ * - a selected chapter highlights immediately in the blog content UI and plays
+ *   ONLY itself, then auto-pauses at the next chapter's start; a fresh Listen
+ *   from the beginning starts bounded to the currently selected section
+ *   (Overview by default)
  * - no scrub bar: the chapter list is the only chapter browser. Position
  *   feedback is the § chapter label plus elapsed / total time
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -126,6 +127,13 @@ export function ListenToArticle({ slug }: { slug: string }) {
       suppressBoundUntilRef.current = 0;
     }
   }, []);
+  // The chapter start the current selection asked for. A seek made before
+  // playback begins is discarded by some mobile browsers (the element restarts
+  // at 0), which would leave the voice reading one section while the highlight
+  // names another — so the intended start is re-asserted when playback begins,
+  // and only retired once the playhead has genuinely played past it (so a later
+  // resume is never yanked backwards).
+  const intendedStartRef = useRef<number | null>(null);
   const setBoundFor = useCallback(
     (idx: number) => {
       if (sections.length === 0) {
@@ -182,6 +190,15 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     const onTime = () => {
       setCurrentTime(audio.currentTime);
+      // The selection's start is retired once the playhead has played past it,
+      // so pausing mid-chapter and resuming never rewinds to the chapter top.
+      if (
+        !audio.paused &&
+        intendedStartRef.current !== null &&
+        audio.currentTime > intendedStartRef.current + 1
+      ) {
+        intendedStartRef.current = null;
+      }
       // End of an explicitly selected chapter: stop instead of spilling
       // into the next one. Reads element state directly (no stale closure).
       // Skipped briefly after an explicit jump so a stale pre-seek
@@ -235,6 +252,25 @@ export function ListenToArticle({ slug }: { slug: string }) {
         );
       }
     };
+    const onPlaying = () => {
+      // The element owns the truth: mirror it so the transport label can never
+      // drift from the real state (a stale "Pause" would turn the next tap into
+      // a no-op pause instead of starting the selected chapter).
+      setPlaying(true);
+      const intended = intendedStartRef.current;
+      if (intended === null) return;
+      // Playback began before the chapter the user selected (the element
+      // dropped the pre-play seek): put the voice back on the highlighted
+      // section instead of reading the one before it.
+      if (audio.currentTime < intended - 1) {
+        try {
+          audio.currentTime = intended;
+        } catch {
+          /* non-fatal */
+        }
+      }
+    };
+    const onPause = () => setPlaying(false);
     const onEnd = () => {
       setPlaying(false);
       setHasStarted(false);
@@ -242,11 +278,15 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const onError = () => setMissing(true);
     audio.addEventListener("timeupdate", onTime);
     audio.addEventListener("loadedmetadata", onMeta);
+    audio.addEventListener("playing", onPlaying);
+    audio.addEventListener("pause", onPause);
     audio.addEventListener("ended", onEnd);
     audio.addEventListener("error", onError);
     return () => {
       audio.removeEventListener("timeupdate", onTime);
       audio.removeEventListener("loadedmetadata", onMeta);
+      audio.removeEventListener("playing", onPlaying);
+      audio.removeEventListener("pause", onPause);
       audio.removeEventListener("ended", onEnd);
       audio.removeEventListener("error", onError);
     };
@@ -346,21 +386,33 @@ export function ListenToArticle({ slug }: { slug: string }) {
     requestAnimationFrame(repair);
   }, [duration]);
 
-  // Every chapter selection — list row, timeline tap/drag, prev/next, or
-  // keyboard — selects only: the playhead moves to that chapter's header
-  // and the row lights up, but playback is never started. The Listen button
-  // is the only control that starts audio. The chapter bound is still set,
-  // so pressing Listen plays just the selected chapter.
+  // Every chapter selection — list row, prev/next or keyboard — takes the
+  // playhead to that chapter's header AND narrates it, bounded to that
+  // chapter: the section the user picks is the section they hear, so the
+  // read-along highlight can never sit on a section the voice is not reading.
+  // The Listen/Pause button still toggles playback at the playhead, and a
+  // fresh Listen starts the currently selected chapter.
   // (The bound suppress guard above keeps backward jumps from tripping the
   // previous chapter's auto-pause on a stale timeupdate.)
   const selectChapter = useCallback(
     (target: number) => {
+      const audio = audioRef.current;
       setBoundFor(target);
       armBoundSuppress();
       setArmedIdx(target);
-      seek(headerStart(target), target, false);
+      setHasStarted(true);
+      intendedStartRef.current = headerStart(target);
+      // Seek first: while metadata is still missing the seek is parked with
+      // its play intent, and onMeta starts playback at the target instead.
+      const ready = Number.isFinite(duration) && duration > 0;
+      seek(headerStart(target), target, true);
+      if (!ready || !audio) return;
+      void audio.play().then(
+        () => setPlaying(true),
+        () => setPlaying(false),
+      );
     },
-    [seek, headerStart, setBoundFor, armBoundSuppress],
+    [duration, seek, headerStart, setBoundFor, armBoundSuppress],
   );
 
   // The chapter the player is ON — the one index every readout names: the

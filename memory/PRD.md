@@ -12,6 +12,29 @@ Note: This project has no FastAPI/Mongo backend in use for the pages worked on s
 
 ## Change Log
 
+### 2026-10 — Chapter selection narrates the section it highlights
+Request: the blog audio reader highlighted the correct section but did not read
+it — "it does not read where it is highlighted".
+
+Fix:
+- `src/components/vocolens/ListenToArticle.tsx` — `selectChapter()` now seeks to
+  the tapped chapter's header *and* narrates it (bounded to that chapter, still
+  auto-pausing at the next chapter's start), so the section that lights up in the
+  blog content UI is the section the voice reads. Previously a selection only
+  moved the playhead: a tap while paused highlighted a section and left the
+  reader silent until Listen was pressed again.
+- Seeks are now re-asserted when playback begins (`intendedStartRef` + a
+  `playing` listener): some mobile browsers discard a seek made before playback
+  starts and restart at 0, which would have read one section while highlighting
+  another. The intended start is retired once the playhead has genuinely played
+  past it, so pausing mid-chapter and resuming never rewinds to the chapter top.
+- `playing` state now mirrors the element's own `playing`/`pause` events, so the
+  transport label can never drift from reality (a stale "Pause" turned the next
+  tap into a no-op pause instead of starting the selected chapter).
+- No audio, timestamps or copy changed: `public/audio/*.mp3`,
+  `public/audio/manifest.json` and every `startSec` in `src/lib/articleSections.ts`
+  are untouched.
+
 ### 2026-10 — Plutchik wheel CTA copy: drop the "rung on the ladder" metaphor
 Request: update the closing CTA on the last blog post (Plutchik's emotion wheel) so it no longer uses the word "rung" and reads in simple language.
 

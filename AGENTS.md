@@ -18,9 +18,15 @@ Cloudflare Workers. Production: https://vocolens.com.
 - Never `--force` push, never `git add -A` blindly, never commit secrets,
   `.env` files, or build output (`.output/`).
 - Verify with all three gates before committing: `npx tsc --noEmit` (currently
-  0 errors), `npm run lint` (currently 0 errors, 11 known warnings — see
+  0 errors), `npm run lint` (currently 0 errors, 10 known warnings — see
   Lint baseline), and `npm run build` for anything user-visible, then commit to
   `main` and push to `origin/main` without asking.
+- Player changes (`ListenToArticle.tsx`) also need
+  `BASE_URL=http://127.0.0.1:8797 node scripts/audit-audio-player.cjs` against a
+  running server (`npm i --no-save jsdom` first; jsdom stays undeclared so both
+  lockfiles are untouched). It is the only gate that can see the read-along
+  rules — the section that lights up must be the section the voice reads —
+  which tsc, lint and build all pass straight through.
 - Dual lockfiles: Cloudflare installs with `bun install --frozen-lockfile`,
   so every `npm install/uninstall` must be followed by `bun install` to
   re-sync `bun.lock` — commit both lockfiles together or the deploy dies
@@ -42,15 +48,19 @@ Cloudflare Workers. Production: https://vocolens.com.
   per-section measurements (that script synthesizes each chapter separately and
   rewrites them) — never hand-edit them; seeks land directly on `startSec`
   (`HEADER_BACKOFF = 0`). The player has **no scrub bar**: the chapter list plus
-  the prev/next buttons are the only chapter browsers, and the Listen button
-  is the only control that starts audio (every other gesture just selects a
-  chapter, highlights it in the blog content UI, and leaves playback as it was).
-  Pressing Listen plays only the currently selected section (auto-pausing at the
-  next chapter's start). Position feedback is the `§ chapter` label plus
-  elapsed / total time. Every readout — that label, the chapter list, the
-  collapsed summary, the article highlight and prev/next — names the chapter
-  the player is *on*. Chapter titles are read from the article's own H2/H3 — the
-  mapped `title` is only the SSR / first-paint fallback — so the reference
+  the prev/next buttons are the only chapter browsers, and **selecting a chapter
+  narrates it** — a tap (or prev/next) seeks to that section's heading and starts
+  reading it, so the row, the `§ chapter` label and the article highlight always
+  name the section the voice is actually reading. The Listen/Pause button toggles
+  playback at the playhead, and a fresh Listen reads the currently selected
+  section (auto-pausing at the next chapter's start). A seek is re-asserted when
+  playback begins (some mobile browsers drop a pre-play seek and restart at 0,
+  which would read one section while highlighting another). Position feedback is
+  the `§ chapter` label plus elapsed / total time. Every readout — that label,
+  the chapter list, the collapsed summary, the article highlight and prev/next —
+  names the chapter the player is *on*. Chapter titles are read from the
+  article's own H2/H3 — the mapped `title` is only the SSR / first-paint
+  fallback — so the reference
   article lists its real headings ("So what is emotional granularity, exactly?")
   instead of its older shortened labels ("What is granularity?"). Titles are
   display copy, not timestamps: the no-hand-edits rule below is about `startSec`
