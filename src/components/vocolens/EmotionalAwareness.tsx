@@ -1,4 +1,6 @@
 import { ListenToArticle } from './ListenToArticle';
+import { AppFigure } from './figures/AppFigure';
+import { EntryDetailFigure } from './figures/EntryDetailFigure';
 import { Target as Radar, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
@@ -202,6 +204,24 @@ export function EmotionalAwareness() {
 <p className="mb-4 text-base lg:text-lg leading-relaxed">Use this template: Situation | Body sensation | Possible emotion | Intensity in my own words | Need or next step. Example: "Meeting ended without feedback | tight chest | uncertain and disappointed | noticeable but manageable | ask for clarification tomorrow."</p>
 <p className="mb-4 text-base lg:text-lg leading-relaxed">After several entries, look for repeated contexts: rushed mornings, missed meals, specific conversations, or overstimulation. Include exceptions too. If a situation sometimes feels easy, what was different? A small journal sample cannot prove causation.</p>
 <p className="mb-4 text-base lg:text-lg leading-relaxed">Keep records private and avoid recording others without consent. In Vocolens, voice entries and emotion views can support reflection; suggested labels still need your judgment. You can use the same exercise on paper, without AI.</p>
+            <AppFigure
+              label="A saved entry in Vocolens titled Meeting with no feedback, showing a Time, Duration and Intensity strip, an Emotion Breakdown, and topic tags."
+caption="One entry holding the template in app form: Meeting with no feedback, recorded Tuesday, and broken down as Disgust 61 as PRIMARY, Sadness 52, Anger 44 — plus the topics, so the same situation is easier to spot next time."
+          >
+            <EntryDetailFigure
+              title="Meeting with no feedback"
+              date="Tuesday, March 3, 2026"
+              time="4:18 PM"
+              duration="3m"
+              intensity="61%"
+              rows={[
+                { family: "disgust", score: 61 },
+                { family: "sadness", score: 52 },
+                { family: "anger", score: 44 },
+              ]}
+              topics={["Work", "Communication"]}
+            />
+            </AppFigure>
 </section></div>
 
         <div><section aria-labelledby="section-accelerating-growth">

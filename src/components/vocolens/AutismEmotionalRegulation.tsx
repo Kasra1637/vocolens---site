@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { RecordingIdleFigure } from "./figures/RecordingIdleFigure";
 import {
   PuzzlePiece as Puzzle,
   ArrowUpRight,
@@ -334,6 +336,12 @@ export function AutismEmotionalRegulation() {
               did I need? Which change helped? Writing, voice, drawing, or no journal at all are
               valid options. Do not record someone else without consent.
             </p>
+            <AppFigure
+              label="The Record tab in Vocolens, showing the Speak your mind screen with a single large microphone button."
+              caption="Nothing to perform for it. One tap starts the recording, and the whole entry is you speaking — no form, no checkboxes, no masking required."
+            >
+              <RecordingIdleFigure />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Vocolens can hold voice reflections and suggested emotion labels for you to review. It
               is not a meltdown predictor, a measure of how autistic you are, or a treatment proven

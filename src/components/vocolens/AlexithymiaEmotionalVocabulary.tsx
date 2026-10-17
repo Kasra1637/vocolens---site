@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { BodyMapFigure } from "./figures/BodyMapFigure";
 import {
   ArrowUpRight,
   Clock,
@@ -324,6 +326,12 @@ export function AlexithymiaEmotionalVocabulary() {
               against your experience and correct it when needed. The suggestion is not a diagnosis
               or proof of what you really feel.
             </p>
+            <AppFigure
+              label="The Body sensation map in Vocolens, with the chest selected and ranked as the most frequently logged region."
+              caption="When a word is unreachable, start where you can still notice: chest 5 sessions, stomach 3, head 2. A region you can point to is a real starting point — the label can come second."
+            >
+              <BodyMapFigure counts={{ chest: 5, stomach: 3, head: 2 }} scanCount={5} selected="chest" />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Personalization uses patterns in corrections; it does not retrain a model or guarantee
               improvement in alexithymia. Paper notes can support the same exploration. Keep

@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { BodyMapFigure } from "./figures/BodyMapFigure";
 import {
   Pulse as Activity,
   ArrowUpRight,
@@ -322,6 +324,12 @@ export function DistressDetection() {
               noticed. A frequency map shows recorded patterns; it is not a predictive stress
               signature, diagnostic test, or proof that an emotion caused a symptom.
             </p>
+            <AppFigure
+              label="The Body sensation map in Vocolens, with the chest selected and ranked as the most frequently logged region."
+              caption="This is a frequency map, not a stress reading: the darker the region, the more often you selected it. It shows where your sensations have turned up, not what they predict."
+            >
+              <BodyMapFigure counts={{ chest: 5, stomach: 3, head: 2 }} scanCount={5} selected="chest" />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               If sensation labels are easier than emotion words, begin there. The{" "}
               <Link

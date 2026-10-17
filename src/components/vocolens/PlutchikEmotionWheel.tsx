@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 import { BackToTop } from "./BackToTop";
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { EmotionBreakdownFigure } from "./figures/EmotionBreakdownFigure";
 
 const title = "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder";
 const description =
@@ -689,6 +691,19 @@ export function PlutchikEmotionWheel() {
             of what a family means while reflecting, you can long-press any of the eight emotions in
             the app to read its plain-language definition and example.
           </p>
+          <AppFigure
+            label="The Emotion Breakdown card in Vocolens, listing Rage in the Anger family as PRIMARY, Fear in the Fear family, Interest in the Anticipation family, and Pensiveness in the Sadness family."
+            caption="Each family is scored from your transcript, then mapped to one rung of its three-step ladder. The PRIMARY badge marks the strongest match — here Rage, on the Anger family."
+          >
+            <EmotionBreakdownFigure
+              rows={[
+                { family: "anger", score: 72 },
+                { family: "fear", score: 58 },
+                { family: "anticipation", score: 31 },
+                { family: "sadness", score: 24 },
+              ]}
+            />
+          </AppFigure>
           <p className="mb-4">
             Those scores are candidates generated from your words, not a direct readout of your
             nervous system or proof of what you truly feel. If the AI suggests Sadness when Grief or

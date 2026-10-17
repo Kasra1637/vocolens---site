@@ -1,4 +1,6 @@
 import { ListenToArticle } from './ListenToArticle';
+import { AppFigure } from './figures/AppFigure';
+import { EmotionBreakdownFigure } from './figures/EmotionBreakdownFigure';
 import { Brain, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
@@ -212,6 +214,18 @@ export function ScienceOfReflection() {
 <h2 id="section-structured-review" className="text-xl lg:text-2xl font-bold text-text-primary mb-4">Naming emotions, emotional awareness, and granularity</h2>
 <p className="mb-4 text-base lg:text-lg leading-relaxed"><Link to="/resources/emotional-awareness-patterns" className="text-primary font-semibold hover:underline">Emotional awareness</Link> is noticing and understanding feelings. Affect labeling is putting a word to them. <Link to="/resources/emotional-granularity" className="text-primary font-semibold hover:underline">Emotional granularity</Link> is distinguishing closely related feelings: disappointed, lonely, or resentful instead of only "bad."</p>
 <p className="mb-4 text-base lg:text-lg leading-relaxed">Voice journaling is one possible format, not a superior treatment established by the cited study. In Vocolens, suggested emotion labels can be reviewed and corrected. Treat them as candidates, not diagnoses or authoritative readings of your mind. Paper or a private note can work too.</p>
+          <AppFigure
+            label="The Emotion Breakdown card in Vocolens, listing Sadness 52 as PRIMARY, Anticipation 44, and Apprehension 31 on the Fear family."
+            caption="Naming is the whole step. The app proposes a word per family; you confirm, adjust, or replace it — the label is a candidate, not a finding."
+          >
+            <EmotionBreakdownFigure
+              rows={[
+                { family: "sadness", score: 52 },
+                { family: "anticipation", score: 44 },
+                { family: "fear", score: 31 },
+              ]}
+            />
+          </AppFigure>
 <p className="mb-4 text-base lg:text-lg leading-relaxed">There is no established timetable here for building resilience, and no promise that daily use will rewire your brain. Stop if the exercise increases distress. Persistent or severe distress deserves qualified support. This article is educational and is not medical advice.</p>
 </section></div>
 

@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { RecordingIdleFigure } from "./figures/RecordingIdleFigure";
 import {
   HeartBreak,
   ArrowUpRight,
@@ -340,6 +342,12 @@ export function RejectionSensitivity() {
               entry becomes a repeated prosecution of yourself, stop and return to a concrete
               activity or support.
             </p>
+            <AppFigure
+              label="The Record tab in Vocolens, showing the Speak your mind screen with a single large microphone button."
+              caption="One button, no form to fill in. You speak the reflection out loud, and the transcript comes after — so there is nothing to compose before you can start."
+            >
+              <RecordingIdleFigure />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Vocolens can hold a voice reflection and candidate emotion labels. It cannot diagnose
               RSD, determine someone else's intentions, or establish which treatment you need.

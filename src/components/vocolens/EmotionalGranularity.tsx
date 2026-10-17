@@ -1,4 +1,6 @@
 import { ListenToArticle } from './ListenToArticle';
+import { AppFigure } from './figures/AppFigure';
+import { DetectedEmotionsFigure } from './figures/DetectedEmotionsFigure';
 import { Heart, ArrowUpRight, Clock, CaretRight, CaretRight as ChevronRight, Question as HelpCircle } from '@phosphor-icons/react';
 import { Link } from '@tanstack/react-router';
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from '@/lib/app-links';
@@ -270,6 +272,18 @@ export function EmotionalGranularity() {
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Answering those questions doesn't require a list. It requires two or three candidates to compare — which is where a sounding board helps, and where a voice journal earns its place. You speak the experience in your own words, and the system offers a couple of candidate labels. You keep the one that rings truer and reject the one that doesn't. The rejection matters as much as the acceptance: repeated rejections shift which labels the AI suggests next time, so the suggestions get closer to the distinctions you actually make.
             </p>
+            <AppFigure
+              label="The emotion grid in Vocolens, showing Sadness selected and Anticipation offered as an unselected candidate."
+              caption="The grid offers candidates rather than a verdict. Keeping the one that rings truer — and rejecting the one that doesn't — is the part that makes the next suggestion closer."
+            >
+              <DetectedEmotionsFigure
+                chips={[
+                  { family: "sadness", score: 58, selected: true },
+                  { family: "anticipation", score: 36, selected: false },
+                  { family: "disgust", score: 22, selected: false },
+                ]}
+              />
+            </AppFigure>
             <p className="mt-4 text-sm text-text-muted italic">
               Takeaway: don't hunt for the perfect word. Compare two plausible ones and keep the truer — the comparison is the skill.
             </p>

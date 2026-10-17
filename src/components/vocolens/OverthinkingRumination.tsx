@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { EntryDetailFigure } from "./figures/EntryDetailFigure";
 import {
   ArrowClockwise as RefreshCw,
   ArrowUpRight,
@@ -336,6 +338,24 @@ export function OverthinkingRumination() {
               Example: "Worried about feedback; ask one clarifying question tomorrow; return to
               dinner now." End the entry rather than rehearsing the same conclusion repeatedly.
             </p>
+            <AppFigure
+              label="A saved entry in Vocolens titled Before the review call, showing a Time, Duration and Intensity strip, an Emotion Breakdown, and topic tags."
+              caption="The entry ends and it is stored: Terror 74 on the Fear family as PRIMARY, Sadness 63, Anticipation 38, tagged Interview. The loop closes because there is a finished artifact — not because you stopped thinking about it."
+            >
+              <EntryDetailFigure
+                title="Before the review call"
+                date="Tuesday, March 3, 2026"
+                time="7:42 PM"
+                duration="2m"
+                intensity="74%"
+                rows={[
+                  { family: "fear", score: 74 },
+                  { family: "sadness", score: 63 },
+                  { family: "anticipation", score: 38 },
+                ]}
+                topics={["Interview", "Preparation"]}
+              />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               A Vocolens voice entry can hold a reflection, but speaking is not established here as
               superior to writing or as a treatment for anxiety. If reviewing entries fuels

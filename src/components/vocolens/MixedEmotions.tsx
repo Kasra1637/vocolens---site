@@ -1,4 +1,6 @@
 import { ListenToArticle } from "./ListenToArticle";
+import { AppFigure } from "./figures/AppFigure";
+import { DetectedEmotionsFigure } from "./figures/DetectedEmotionsFigure";
 import {
   Intersect,
   ArrowUpRight,
@@ -339,6 +341,18 @@ export function MixedEmotions() {
               them rather than treating the analysis as a definitive explanation. You can reject a
               label, adjust it, or leave the experience partly unnamed.
             </p>
+            <AppFigure
+              label="The emotion grid in Vocolens showing Sadness and Happiness both detected on one entry, with Sadness selected."
+              caption="A single entry can carry a pleasant and an unpleasant family at once. Nothing forces you to drop one — you can keep both, drop one, or leave part of it unnamed."
+            >
+              <DetectedEmotionsFigure
+                chips={[
+                  { family: "sadness", score: 64, selected: true },
+                  { family: "happiness", score: 48, selected: false },
+                  { family: "trust", score: 27, selected: false },
+                ]}
+              />
+            </AppFigure>
             <p className="mb-4 text-base lg:text-lg leading-relaxed">
               Do not interpret the research as proof that mixed feelings improve physical health for
               everyone or that recording them in an app produces a clinical benefit. An association

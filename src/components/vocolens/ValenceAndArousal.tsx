@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { GOOGLE_PLAY_URL, STORE_LINK_ATTRS } from "@/lib/app-links";
 import { BackToTop } from "./BackToTop";
 import { ListenToArticle } from "./ListenToArticle";
+import { AdjustHowItFeltFigure } from "./figures/AdjustHowItFeltFigure";
+import { AppFigure } from "./figures/AppFigure";
 
 const title = "Valence and Arousal: Why Calm Isn’t Always Happy";
 const description =
@@ -556,6 +558,34 @@ export function ValenceAndArousal() {
             transcript—not direct measurement of your nervous system. You can describe a mixture or
             an uncertainty in the entry even when a score cannot express it fully.
           </p>
+          <AppFigure
+            label="The Adjust how it felt step in Vocolens, showing an Unpleasant to Pleasant dial reading minus 18 and a Calm to Activated dial reading 22 percent."
+            caption="“Adjust how it felt” is the only valence and arousal control in Vocolens. This example is unpleasant but calm — the combination that looks calm but does not feel good."
+          >
+            <AdjustHowItFeltFigure
+              title="Adjust how it felt"
+              dials={[
+                {
+                  label: "Unpleasant ↔ Pleasant",
+                  minLabel: "Unpleasant",
+                  maxLabel: "Pleasant",
+                  knobPct: 41,
+                  valueNum: -18,
+                  value: "-18",
+                  bipolar: true,
+                },
+                {
+                  label: "Calm ↔ Activated",
+                  minLabel: "Calm",
+                  maxLabel: "Activated",
+                  knobPct: 22,
+                  valueNum: 22,
+                  value: "22%",
+                  bipolar: false,
+                },
+              ]}
+            />
+          </AppFigure>
           <p className="mb-4">
             The purpose is not to push every entry toward pleasant and calm. Excitement can be
             welcome; disappointment can point to something important. A paper journal can hold the
