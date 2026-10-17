@@ -6,9 +6,11 @@ import { ListenToArticle } from "./ListenToArticle";
 
 const title = "Plutchik’s emotion wheel: why “annoyed” and “furious” belong on the same ladder";
 const description =
-  "Learn how Plutchik’s emotion wheel groups feelings into eight families and three intensity steps, when a wheel helps or overwhelms, and how to use it in a check-in.";
+  "Plutchik’s emotion wheel groups feelings into eight families and three intensity steps. Learn when a wheel helps or overwhelms and how to check in.";
 const url = "https://vocolens.com/resources/plutchik-emotion-wheel";
 const date = "2026-10-15";
+const modifiedDate = "2026-10-17";
+const imageUrl = "https://vocolens.com/og/plutchik-emotion-wheel.png";
 const plutchikSource =
   "https://www.emotionalcompetency.com/papers/plutchiknatureofemotions%202001.pdf";
 const mixedEmotionsSource = "https://pmc.ncbi.nlm.nih.gov/articles/PMC4397957/";
@@ -139,9 +141,9 @@ export function PlutchikEmotionWheel() {
     "@type": "Article",
     headline: title,
     description,
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: imageUrl,
     datePublished: date,
-    dateModified: date,
+    dateModified: modifiedDate,
     inLanguage: "en",
     author: { "@type": "Organization", name: "Vocolens", url: "https://vocolens.com" },
     publisher: {
@@ -272,6 +274,12 @@ export function PlutchikEmotionWheel() {
             <time dateTime={date} itemProp="datePublished">
               Oct 15, 2026
             </time>
+            <span className="ml-2">
+              Updated{" "}
+              <time dateTime={modifiedDate} itemProp="dateModified">
+                Oct 17, 2026
+              </time>
+            </span>
           </span>
         </div>
       </header>
@@ -692,11 +700,19 @@ export function PlutchikEmotionWheel() {
             future suggestions lean toward the distinctions you actually use.
           </p>
           <p className="text-sm text-text-muted">
-            You can do the same family-and-ladder check-in on paper. Vocolens offers a voice-first
-            way to record and review candidate labels, not a clinical assessment or guaranteed
-            emotional outcome. This article is educational, not diagnostic or medical advice. Stop
-            if focusing inward makes distress worse; persistent or severe difficulties deserve
-            qualified support.
+            You can do the same family-and-ladder check-in on paper.
+          </p>
+          <div className="my-4 bg-primary/[0.04] border border-primary/15 rounded-2xl p-5">
+            <p className="text-sm sm:text-base font-semibold text-text-primary leading-relaxed">
+              Or skip the manual steps entirely — Vocolens detects all eight emotion families from
+              your voice in seconds.
+            </p>
+          </div>
+          <p className="text-sm text-text-muted">
+            Vocolens offers a voice-first way to record and review candidate labels, not a clinical
+            assessment or guaranteed emotional outcome. This article is educational, not diagnostic
+            or medical advice. Stop if focusing inward makes distress worse; persistent or severe
+            difficulties deserve qualified support.
           </p>
         </section>
 

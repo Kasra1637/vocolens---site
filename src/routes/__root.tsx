@@ -188,8 +188,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Vocolens is an AI voice journal built for neurodivergent minds - ADHD, autism, and alexithymia. Speak your mind, see patterns, and gain clarity.",
       },
-      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
-      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],

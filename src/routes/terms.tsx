@@ -15,6 +15,8 @@ export const Route = createFileRoute("/terms")({
         property: "og:description",
         content: "Read the Vocolens Terms of Service for our AI voice journal app.",
       },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/terms" }],
   }),

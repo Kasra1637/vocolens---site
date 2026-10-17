@@ -15,6 +15,8 @@ export const Route = createFileRoute("/privacy")({
         property: "og:description",
         content: "Learn how Vocolens protects your data and voice journal entries.",
       },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/privacy" }],
   }),

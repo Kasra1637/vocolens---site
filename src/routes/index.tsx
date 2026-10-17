@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
         content:
           "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
       },
-      { property: "og:image", content: "/vocolens-logo.png" },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
       { property: "og:url", content: "https://vocolens.com" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/")({
         content:
           "Now I use Vocolens - the AI voice journal that learns from every correction. Inside Vocolens: body sensation mapping and distress awareness. Get it on Google Play.",
       },
-      { name: "twitter:image", content: "/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com" }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(speakableLd) }],

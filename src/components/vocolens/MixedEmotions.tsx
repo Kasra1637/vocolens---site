@@ -40,7 +40,7 @@ export function MixedEmotions() {
     "@type": "Article",
     headline: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
     description:
-      "Learn what mixed emotions are, see everyday examples of feeling two things at once, and try a reflection that makes room for both without forcing a choice.",
+      "Mixed emotions let you feel happy and sad at once. See everyday examples and try a reflection that holds both feelings without forcing a choice.",
     image: "https://vocolens.com/vocolens-logo.png",
     datePublished: "2026-10-06",
     dateModified: "2026-10-06",

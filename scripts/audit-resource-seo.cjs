@@ -60,6 +60,29 @@ async function get(route) {
     const description = $('meta[name="description"]').attr("content");
     assert(title && !titles.has(title), `${route}: unique title`);
     assert(description && !descriptions.has(description), `${route}: unique description`);
+    assert(title.length < 60, `${route}: title length ${title.length} >= 60`);
+    assert(description.length < 155, `${route}: description length ${description.length} >= 155`);
+    assert.equal($('meta[property="og:title"]').attr("content"), title, `${route}: og:title`);
+    assert.equal($('meta[name="twitter:title"]').attr("content"), title, `${route}: twitter:title`);
+    assert.equal(
+      $('meta[property="og:description"]').attr("content"),
+      description,
+      `${route}: og:description`,
+    );
+    assert.equal(
+      $('meta[name="twitter:description"]').attr("content"),
+      description,
+      `${route}: twitter:description`,
+    );
+    assert.equal(
+      $('meta[name="twitter:card"]').attr("content"),
+      "summary_large_image",
+      `${route}: twitter:card`,
+    );
+    assert(
+      $('meta[property="og:image"]').attr("content") !== "https://vocolens.com/vocolens-logo.png",
+      `${route}: must not fall back to site logo`,
+    );
     titles.add(title);
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').length, 1, `${route}: one canonical`);
@@ -206,14 +229,32 @@ async function get(route) {
     if (route.endsWith("plutchik-emotion-wheel")) {
       assert.equal(article.headline, $("h1").text().trim());
       assert.equal(article.datePublished, "2026-10-15");
-      assert.equal(article.dateModified, "2026-10-15");
+      assert.equal(article.dateModified, "2026-10-17");
       assert.equal($('time[itemprop="datePublished"]').attr("datetime"), article.datePublished);
+      assert.equal($('time[itemprop="dateModified"]').attr("datetime"), article.dateModified);
+      assert.equal(
+        title,
+        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+        "plutchik exact title tag",
+      );
       assert.equal($('meta[property="og:title"]').attr("content"), title);
       assert.equal($('meta[name="twitter:title"]').attr("content"), title);
       assert.equal($('meta[property="og:description"]').attr("content"), description);
       assert.equal($('meta[name="twitter:description"]').attr("content"), description);
       assert.equal($('meta[property="og:type"]').attr("content"), "article");
       assert.equal($('meta[property="og:url"]').attr("content"), origin + route);
+      assert.equal(
+        $('meta[property="og:image"]').attr("content"),
+        "https://vocolens.com/og/plutchik-emotion-wheel.png",
+      );
+      assert.equal($('meta[property="og:image:width"]').attr("content"), "1200");
+      assert.equal($('meta[property="og:image:height"]').attr("content"), "630");
+      assert($('meta[property="og:image:alt"]').attr("content")?.trim());
+      assert.equal(
+        $('meta[name="twitter:image"]').attr("content"),
+        "https://vocolens.com/og/plutchik-emotion-wheel.png",
+      );
+      assert.equal($('meta[name="twitter:card"]').attr("content"), "summary_large_image");
       assert.equal($("#article-root table tbody tr").length, 8, "eight Plutchik families");
       assert($("#article-root table caption").text().trim(), "accessible ladders caption");
       assert($("#section-blends").length, "separate explanation of blended emotions");

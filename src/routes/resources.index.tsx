@@ -19,6 +19,9 @@ export const Route = createFileRoute("/resources/")({
         content:
           "Explore neuroscience-backed articles on voice journaling, emotion labeling, and building emotional resilience through daily reflection.",
       },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/resources" }],
   }),

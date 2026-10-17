@@ -75,8 +75,8 @@ export function Resources() {
         <article itemScope itemType="https://schema.org/Article" className="w-full mb-5 sm:mb-8">
           <meta itemProp="url" content="https://vocolens.com/resources/plutchik-emotion-wheel" />
           <meta itemProp="datePublished" content="2026-10-15" />
-          <meta itemProp="dateModified" content="2026-10-15" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
+          <meta itemProp="dateModified" content="2026-10-17" />
+          <meta itemProp="image" content="https://vocolens.com/og/plutchik-emotion-wheel.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -135,7 +135,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/valence-and-arousal" />
           <meta itemProp="datePublished" content="2026-10-11" />
           <meta itemProp="dateModified" content="2026-10-11" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -193,7 +192,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/mixed-emotions" />
           <meta itemProp="datePublished" content="2026-10-06" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -254,7 +252,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/rejection-sensitivity" />
           <meta itemProp="datePublished" content="2026-09-29" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -315,7 +312,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/emotional-granularity" />
           <meta itemProp="datePublished" content="2026-09-17" />
           <meta itemProp="dateModified" content="2026-09-17" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -378,7 +374,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/adhd-time-blindness" />
           <meta itemProp="datePublished" content="2026-09-09" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -439,7 +434,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/burnout-recovery-signs" />
           <meta itemProp="datePublished" content="2026-08-04" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -500,7 +494,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/overthinking-rumination" />
           <meta itemProp="datePublished" content="2026-07-14" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -564,7 +557,6 @@ export function Resources() {
           />
           <meta itemProp="datePublished" content="2026-06-29" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -628,7 +620,6 @@ export function Resources() {
           />
           <meta itemProp="datePublished" content="2026-06-28" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -689,7 +680,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/distress-detection" />
           <meta itemProp="datePublished" content="2026-06-11" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -753,7 +743,6 @@ export function Resources() {
           />
           <meta itemProp="datePublished" content="2026-03-30" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>
@@ -814,7 +803,6 @@ export function Resources() {
           <meta itemProp="url" content="https://vocolens.com/resources/science-of-reflection" />
           <meta itemProp="datePublished" content="2026-02-28" />
           <meta itemProp="dateModified" content="2026-10-06" />
-          <meta itemProp="image" content="https://vocolens.com/vocolens-logo.png" />
           <span itemProp="author" itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="Vocolens" />
           </span>

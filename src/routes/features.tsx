@@ -18,6 +18,8 @@ export const Route = createFileRoute("/features")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vocolens.com/features" },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://vocolens.com/features" }],

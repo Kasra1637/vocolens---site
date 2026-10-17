@@ -122,11 +122,11 @@
   "plutchik-emotion-wheel": {
     "file": "/audio/plutchik-emotion-wheel.mp3",
     "voice": "en-US-AriaNeural",
-    "hash": "c4e085968673b80a",
-    "chars": 10817,
-    "words": 1705,
-    "bytes": 2765036,
-    "minutes": 11.5,
-    "generatedAt": "2026-10-16T00:08:54.004Z"
+    "hash": "dab750919c8cceb0",
+    "chars": 10927,
+    "words": 1723,
+    "bytes": 2793548,
+    "minutes": 11.6,
+    "generatedAt": "2026-10-17T00:44:05.754Z"
   }
 }

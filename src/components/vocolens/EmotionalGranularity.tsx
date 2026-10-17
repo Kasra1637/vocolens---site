@@ -33,7 +33,7 @@ export function EmotionalGranularity() {
     "@type": "Article",
     "headline": "Emotional Granularity: Why Specific Words Change What You Feel",
     "alternativeHeadline": "Emotional Granularity: Why Saying 'Anxious' or 'Stressed' Is Not Enough — and How More Specific Words Change the Feeling",
-    "description": "Once you can name an emotion, the next question is how specific to get. Learn what emotional granularity is, why more specific labels change what you feel, and how voice journaling helps build a personal emotional vocabulary.",
+    "description": "Emotional granularity is distinguishing specific feelings from broad labels. Learn why precise emotion words support regulation and how to practice.",
     "image": "https://vocolens.com/vocolens-logo.png",
     "datePublished": "2026-09-17",
     "dateModified": "2026-09-17",

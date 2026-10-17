@@ -70,6 +70,8 @@ export const Route = createFileRoute("/use-cases")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vocolens.com/use-cases" },
+      { property: "og:image", content: "https://vocolens.com/vocolens-logo.png" },
+      { name: "twitter:image", content: "https://vocolens.com/vocolens-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
