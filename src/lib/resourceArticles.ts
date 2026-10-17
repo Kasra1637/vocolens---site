@@ -54,7 +54,7 @@ export const RESOURCE_ARTICLES = {
   "valence-and-arousal": {
     slug: "valence-and-arousal",
     url: "https://vocolens.com/resources/valence-and-arousal",
-    title: "Valence and Arousal: Why Calm Isn’t Always Happy | Vocolens",
+    title: "Valence & Arousal: Why Calm Isn’t Always Happy | Vocolens",
     description:
       "Learn how emotional valence and arousal differ, why low energy does not always mean calm contentment, and how to use a two-axis emotion check-in.",
     h1: "Valence and Arousal: Why Calm Isn’t Always Happy",
@@ -65,7 +65,7 @@ export const RESOURCE_ARTICLES = {
   "mixed-emotions": {
     slug: "mixed-emotions",
     url: "https://vocolens.com/resources/mixed-emotions",
-    title: "Mixed Emotions: Feeling Happy and Sad at Once | Vocolens",
+    title: "Mixed Emotions: Feeling Happy & Sad at Once | Vocolens",
     description:
       "Mixed emotions let you feel happy and sad at once. See everyday examples and try a reflection that holds both feelings without forcing a choice.",
     h1: "Mixed Emotions: Why You Can Feel Happy and Sad at Once",
@@ -76,7 +76,7 @@ export const RESOURCE_ARTICLES = {
   "rejection-sensitivity": {
     slug: "rejection-sensitivity",
     url: "https://vocolens.com/resources/rejection-sensitivity",
-    title: "Rejection Sensitivity and ADHD: What RSD Means | Vocolens",
+    title: "Rejection Sensitivity & ADHD: What RSD Means | Vocolens",
     description:
       "Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.",
     h1: "Rejection Sensitivity and ADHD: What RSD Means and How to Respond",
@@ -98,7 +98,7 @@ export const RESOURCE_ARTICLES = {
   "adhd-time-blindness": {
     slug: "adhd-time-blindness",
     url: "https://vocolens.com/resources/adhd-time-blindness",
-    title: "ADHD Time Blindness: Examples and Practical Supports",
+    title: "ADHD Time Blindness: Examples & Practical Supports",
     description:
       "Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.",
     h1: "ADHD Time Blindness: Examples and Practical Time Supports",
@@ -109,7 +109,7 @@ export const RESOURCE_ARTICLES = {
   "burnout-recovery-signs": {
     slug: "burnout-recovery-signs",
     url: "https://vocolens.com/resources/burnout-recovery-signs",
-    title: "Burnout Signs and Recovery: What to Notice and Try",
+    title: "Burnout Signs & Recovery: What to Notice & Try",
     description:
       "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
     h1: "Burnout Signs and Recovery: What to Notice and What Can Help",
@@ -120,7 +120,7 @@ export const RESOURCE_ARTICLES = {
   "overthinking-rumination": {
     slug: "overthinking-rumination",
     url: "https://vocolens.com/resources/overthinking-rumination",
-    title: "Overthinking and Rumination: How to Spot the Loop",
+    title: "Overthinking & Rumination: How to Spot the Loop",
     description:
       "Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.",
     h1: "Overthinking and Rumination: How to Recognize the Loop",
@@ -131,7 +131,7 @@ export const RESOURCE_ARTICLES = {
   "autism-emotional-regulation": {
     slug: "autism-emotional-regulation",
     url: "https://vocolens.com/resources/autism-emotional-regulation",
-    title: "Autism Emotional Regulation: Sensory Needs and Supports",
+    title: "Autism Emotional Regulation: Sensory Needs & Supports",
     description:
       "Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.",
     h1: "Autism and Emotional Regulation: Sensory Needs and Practical Supports",
@@ -142,7 +142,7 @@ export const RESOURCE_ARTICLES = {
   "alexithymia-emotional-vocabulary": {
     slug: "alexithymia-emotional-vocabulary",
     url: "https://vocolens.com/resources/alexithymia-emotional-vocabulary",
-    title: "Alexithymia: Difficulty Naming Emotions and Where to Start",
+    title: "Alexithymia: Difficulty Naming Emotions & Where to Start",
     description:
       "Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.",
     h1: "Alexithymia: Difficulty Identifying Emotions and Where to Start",
@@ -153,7 +153,7 @@ export const RESOURCE_ARTICLES = {
   "distress-detection": {
     slug: "distress-detection",
     url: "https://vocolens.com/resources/distress-detection",
-    title: "Physical Signs of Overwhelm and Body Awareness | Vocolens",
+    title: "Physical Signs of Overwhelm & Body Awareness | Vocolens",
     description:
       "Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.",
     h1: "Physical Signs of Overwhelm: Body Awareness Without Guessing",
@@ -164,7 +164,7 @@ export const RESOURCE_ARTICLES = {
   "emotional-awareness-patterns": {
     slug: "emotional-awareness-patterns",
     url: "https://vocolens.com/resources/emotional-awareness-patterns",
-    title: "Emotional Awareness: What It Is and How to Build It",
+    title: "Emotional Awareness: What It Is & How to Build It",
     description:
       "Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.",
     h1: "Emotional Awareness: What It Is and How to Improve It",
