@@ -86,7 +86,7 @@ export function Resources() {
           <RevealItem>
             <Link
               to="/resources/plutchik-emotion-wheel"
-              aria-label="Read: Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder"
+              aria-label="Read: Plutchik's Emotion Wheel: Annoyed to Furious Guide"
               className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
             >
               <div className="flex flex-col gap-4">
@@ -107,7 +107,7 @@ export function Resources() {
                     itemProp="headline"
                     className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
                   >
-                    Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder
+                    Plutchik's Emotion Wheel: Annoyed to Furious Guide
                   </h2>
                   <p
                     itemProp="description"
