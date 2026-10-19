@@ -44,7 +44,7 @@ export const RESOURCE_ARTICLES = {
     slug: "plutchik-emotion-wheel",
     url: "https://vocolens.com/resources/plutchik-emotion-wheel",
     title: "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
-    titleTag: "Plutchik's Emotion Wheel: From Annoyed to Furious",
+    titleTag: "Plutchik's Emotion Wheel: Annoyed to Furious Guide",
     description:
       "Plutchik’s emotion wheel groups feelings into eight families and three intensity steps. Learn when a wheel helps or overwhelms and how to check in.",
     h1: "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder",

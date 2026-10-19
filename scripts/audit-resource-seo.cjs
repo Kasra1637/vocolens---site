@@ -63,7 +63,7 @@ async function get(route) {
     assert(title.length < 60, `${route}: title length ${title.length} >= 60`);
     assert(description.length < 155, `${route}: description length ${description.length} >= 155`);
     if (route.endsWith("plutchik-emotion-wheel")) {
-      // Intentional exception: the HTML <title> was shortened (49 chars) while
+      // Intentional exception: the HTML <title> was shortened (50 chars) while
       // og:title / twitter:title deliberately retain the legacy title.
       assert.equal(
         $('meta[property="og:title"]').attr("content"),
@@ -253,7 +253,7 @@ async function get(route) {
       assert.equal($('time[itemprop="dateModified"]').attr("datetime"), article.dateModified);
       assert.equal(
         title,
-        "Plutchik's Emotion Wheel: From Annoyed to Furious",
+        "Plutchik's Emotion Wheel: Annoyed to Furious Guide",
         "plutchik exact title tag",
       );
       assert.equal(
