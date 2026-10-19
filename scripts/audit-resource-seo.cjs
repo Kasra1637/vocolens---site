@@ -62,8 +62,27 @@ async function get(route) {
     assert(description && !descriptions.has(description), `${route}: unique description`);
     assert(title.length < 60, `${route}: title length ${title.length} >= 60`);
     assert(description.length < 155, `${route}: description length ${description.length} >= 155`);
-    assert.equal($('meta[property="og:title"]').attr("content"), title, `${route}: og:title`);
-    assert.equal($('meta[name="twitter:title"]').attr("content"), title, `${route}: twitter:title`);
+    if (route.endsWith("plutchik-emotion-wheel")) {
+      // Intentional exception: the HTML <title> was shortened (49 chars) while
+      // og:title / twitter:title deliberately retain the legacy title.
+      assert.equal(
+        $('meta[property="og:title"]').attr("content"),
+        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+        `${route}: og:title`,
+      );
+      assert.equal(
+        $('meta[name="twitter:title"]').attr("content"),
+        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+        `${route}: twitter:title`,
+      );
+    } else {
+      assert.equal($('meta[property="og:title"]').attr("content"), title, `${route}: og:title`);
+      assert.equal(
+        $('meta[name="twitter:title"]').attr("content"),
+        title,
+        `${route}: twitter:title`,
+      );
+    }
     assert.equal(
       $('meta[property="og:description"]').attr("content"),
       description,
@@ -234,11 +253,17 @@ async function get(route) {
       assert.equal($('time[itemprop="dateModified"]').attr("datetime"), article.dateModified);
       assert.equal(
         title,
-        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+        "Plutchik's Emotion Wheel: From Annoyed to Furious",
         "plutchik exact title tag",
       );
-      assert.equal($('meta[property="og:title"]').attr("content"), title);
-      assert.equal($('meta[name="twitter:title"]').attr("content"), title);
+      assert.equal(
+        $('meta[property="og:title"]').attr("content"),
+        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+      );
+      assert.equal(
+        $('meta[name="twitter:title"]').attr("content"),
+        "Plutchik's Emotion Wheel Explained: 8 Families, 3 Steps",
+      );
       assert.equal($('meta[property="og:description"]').attr("content"), description);
       assert.equal($('meta[name="twitter:description"]').attr("content"), description);
       assert.equal($('meta[property="og:type"]').attr("content"), "article");
