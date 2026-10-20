@@ -131,6 +131,18 @@ export function AutismEmotionalRegulation() {
           >
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
+                to="/"
+                className="text-primary font-semibold hover:underline"
+                itemProp="name"
+              >
+                Home
+              </Link>
+              <meta itemProp="item" content="https://vocolens.com" />
+              <meta itemProp="position" content="1" />
+            </li>
+            <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link
                 to="/resources"
                 className="text-primary font-semibold hover:underline"
                 itemProp="name"
@@ -138,7 +150,7 @@ export function AutismEmotionalRegulation() {
                 Resources
               </Link>
               <meta itemProp="item" content="https://vocolens.com/resources" />
-              <meta itemProp="position" content="1" />
+              <meta itemProp="position" content="2" />
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -149,7 +161,7 @@ export function AutismEmotionalRegulation() {
                 itemProp="item"
                 content="https://vocolens.com/resources/autism-emotional-regulation"
               />
-              <meta itemProp="position" content="2" />
+              <meta itemProp="position" content="3" />
             </li>
           </ol>
         </nav>

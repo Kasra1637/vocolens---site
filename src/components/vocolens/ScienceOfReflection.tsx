@@ -115,6 +115,18 @@ export function ScienceOfReflection() {
           <ol className="flex items-center gap-2 text-sm text-text-muted" itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <Link
+                to="/"
+                className="text-primary font-semibold hover:underline"
+                itemProp="name"
+              >
+                Home
+              </Link>
+              <meta itemProp="item" content="https://vocolens.com" />
+              <meta itemProp="position" content="1" />
+            </li>
+            <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
+            <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <Link
                 to="/resources"
                 className="text-primary font-semibold hover:underline"
                 itemProp="name"
@@ -122,13 +134,13 @@ export function ScienceOfReflection() {
                 Resources
               </Link>
               <meta itemProp="item" content="https://vocolens.com/resources" />
-              <meta itemProp="position" content="1" />
+              <meta itemProp="position" content="2" />
             </li>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
             <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
               <span className="text-text-primary font-medium" itemProp="name">Affect Labeling</span>
               <meta itemProp="item" content="https://vocolens.com/resources/science-of-reflection" />
-              <meta itemProp="position" content="2" />
+              <meta itemProp="position" content="3" />
             </li>
           </ol>
         </nav>
