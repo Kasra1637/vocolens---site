@@ -22,6 +22,7 @@ import { Route as ResourcesRejectionSensitivityRouteImport } from './routes/reso
 import { Route as ResourcesPlutchikEmotionWheelRouteImport } from './routes/resources.plutchik-emotion-wheel'
 import { Route as ResourcesOverthinkingRuminationRouteImport } from './routes/resources.overthinking-rumination'
 import { Route as ResourcesMixedEmotionsRouteImport } from './routes/resources.mixed-emotions'
+import { Route as ResourcesHowToStartEmotionJournalRouteImport } from './routes/resources.how-to-start-emotion-journal'
 import { Route as ResourcesEmotionalGranularityRouteImport } from './routes/resources.emotional-granularity'
 import { Route as ResourcesEmotionalAwarenessPatternsRouteImport } from './routes/resources.emotional-awareness-patterns'
 import { Route as ResourcesDistressDetectionRouteImport } from './routes/resources.distress-detection'
@@ -100,6 +101,12 @@ const ResourcesMixedEmotionsRoute = ResourcesMixedEmotionsRouteImport.update({
   path: '/mixed-emotions',
   getParentRoute: () => ResourcesRoute,
 } as any)
+const ResourcesHowToStartEmotionJournalRoute =
+  ResourcesHowToStartEmotionJournalRouteImport.update({
+    id: '/how-to-start-emotion-journal',
+    path: '/how-to-start-emotion-journal',
+    getParentRoute: () => ResourcesRoute,
+  } as any)
 const ResourcesEmotionalGranularityRoute =
   ResourcesEmotionalGranularityRouteImport.update({
     id: '/emotional-granularity',
@@ -157,6 +164,7 @@ export interface FileRoutesByFullPath {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/how-to-start-emotion-journal': typeof ResourcesHowToStartEmotionJournalRoute
   '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/plutchik-emotion-wheel': typeof ResourcesPlutchikEmotionWheelRoute
@@ -178,6 +186,7 @@ export interface FileRoutesByTo {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/how-to-start-emotion-journal': typeof ResourcesHowToStartEmotionJournalRoute
   '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/plutchik-emotion-wheel': typeof ResourcesPlutchikEmotionWheelRoute
@@ -201,6 +210,7 @@ export interface FileRoutesById {
   '/resources/distress-detection': typeof ResourcesDistressDetectionRoute
   '/resources/emotional-awareness-patterns': typeof ResourcesEmotionalAwarenessPatternsRoute
   '/resources/emotional-granularity': typeof ResourcesEmotionalGranularityRoute
+  '/resources/how-to-start-emotion-journal': typeof ResourcesHowToStartEmotionJournalRoute
   '/resources/mixed-emotions': typeof ResourcesMixedEmotionsRoute
   '/resources/overthinking-rumination': typeof ResourcesOverthinkingRuminationRoute
   '/resources/plutchik-emotion-wheel': typeof ResourcesPlutchikEmotionWheelRoute
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/how-to-start-emotion-journal'
     | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/plutchik-emotion-wheel'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/how-to-start-emotion-journal'
     | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/plutchik-emotion-wheel'
@@ -268,6 +280,7 @@ export interface FileRouteTypes {
     | '/resources/distress-detection'
     | '/resources/emotional-awareness-patterns'
     | '/resources/emotional-granularity'
+    | '/resources/how-to-start-emotion-journal'
     | '/resources/mixed-emotions'
     | '/resources/overthinking-rumination'
     | '/resources/plutchik-emotion-wheel'
@@ -379,6 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesMixedEmotionsRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/how-to-start-emotion-journal': {
+      id: '/resources/how-to-start-emotion-journal'
+      path: '/how-to-start-emotion-journal'
+      fullPath: '/resources/how-to-start-emotion-journal'
+      preLoaderRoute: typeof ResourcesHowToStartEmotionJournalRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/emotional-granularity': {
       id: '/resources/emotional-granularity'
       path: '/emotional-granularity'
@@ -439,6 +459,7 @@ interface ResourcesRouteChildren {
   ResourcesDistressDetectionRoute: typeof ResourcesDistressDetectionRoute
   ResourcesEmotionalAwarenessPatternsRoute: typeof ResourcesEmotionalAwarenessPatternsRoute
   ResourcesEmotionalGranularityRoute: typeof ResourcesEmotionalGranularityRoute
+  ResourcesHowToStartEmotionJournalRoute: typeof ResourcesHowToStartEmotionJournalRoute
   ResourcesMixedEmotionsRoute: typeof ResourcesMixedEmotionsRoute
   ResourcesOverthinkingRuminationRoute: typeof ResourcesOverthinkingRuminationRoute
   ResourcesPlutchikEmotionWheelRoute: typeof ResourcesPlutchikEmotionWheelRoute
@@ -459,6 +480,8 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesEmotionalAwarenessPatternsRoute:
     ResourcesEmotionalAwarenessPatternsRoute,
   ResourcesEmotionalGranularityRoute: ResourcesEmotionalGranularityRoute,
+  ResourcesHowToStartEmotionJournalRoute:
+    ResourcesHowToStartEmotionJournalRoute,
   ResourcesMixedEmotionsRoute: ResourcesMixedEmotionsRoute,
   ResourcesOverthinkingRuminationRoute: ResourcesOverthinkingRuminationRoute,
   ResourcesPlutchikEmotionWheelRoute: ResourcesPlutchikEmotionWheelRoute,

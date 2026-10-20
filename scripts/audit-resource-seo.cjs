@@ -16,6 +16,7 @@ const audioVerified = new Set([
   "emotional-granularity",
   "valence-and-arousal",
   "plutchik-emotion-wheel",
+  "how-to-start-emotion-journal",
 ]);
 async function get(route) {
   const res = await fetch(base + route, { signal: AbortSignal.timeout(30000) });

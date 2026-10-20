@@ -10,6 +10,7 @@ import {
   Timer,
   Intersect,
   Compass,
+  Microphone,
   ArrowRight,
 } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
@@ -72,6 +73,71 @@ export function Resources() {
       </Reveal>
 
       <RevealGroup stagger={0.05} eager>
+        <article itemScope itemType="https://schema.org/Article" className="w-full mb-5 sm:mb-8">
+          <meta
+            itemProp="url"
+            content="https://vocolens.com/resources/how-to-start-emotion-journal"
+          />
+          <meta itemProp="datePublished" content="2026-10-20" />
+          <meta itemProp="dateModified" content="2026-10-20" />
+          <meta
+            itemProp="image"
+            content="https://vocolens.com/og/how-to-start-emotion-journal.png"
+          />
+          <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <span itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="Vocolens" />
+          </span>
+          <RevealItem>
+            <Link
+              to="/resources/how-to-start-emotion-journal"
+              aria-label="Read: How to Start an Emotion Journal: When Your Mind Goes Blank"
+              className="block w-full text-left card-app rounded-3xl p-5 sm:p-8 lg:p-10 group"
+            >
+              <div className="flex flex-col gap-4">
+                <div
+                  className="w-11 h-11 rounded-full chip-app flex items-center justify-center flex-shrink-0 shadow-clay mx-auto sm:mx-0"
+                  aria-hidden="true"
+                >
+                  <Microphone className="w-5 h-5 text-[#6A3FC0]" />
+                </div>
+                <div className="min-w-0">
+                  <span
+                    className="block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest text-center sm:text-left mb-3"
+                    itemProp="articleSection"
+                  >
+                    Mental Wellness &amp; Self-Discovery
+                  </span>
+                  <h2
+                    itemProp="headline"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-text-primary mb-3 leading-snug text-center sm:text-left"
+                  >
+                    How to Start an Emotion Journal: When Your Mind Goes Blank
+                  </h2>
+                  <p
+                    itemProp="description"
+                    className="text-text-secondary line-clamp-3 text-base leading-relaxed text-left"
+                  >
+                    Learn how to start an emotion journal without blank-page pressure: what to
+                    record, how often to check in, and where to begin when no emotion word comes.
+                  </p>
+                  <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start sm:gap-3 mt-5">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                      Read article
+                      <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </span>
+                    <span className="max-w-full text-xs sm:text-sm text-text-muted px-2.5 py-1 rounded-full bg-primary/[0.04] border border-primary/15 leading-relaxed break-words">
+                      60-Second Check-In · First Entry · Voice Journaling
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </RevealItem>
+        </article>
+
         <article itemScope itemType="https://schema.org/Article" className="w-full mb-5 sm:mb-8">
           <meta itemProp="url" content="https://vocolens.com/resources/plutchik-emotion-wheel" />
           <meta itemProp="datePublished" content="2026-10-15" />

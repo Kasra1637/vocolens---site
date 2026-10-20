@@ -101,12 +101,16 @@ Vocolens is grounded in emotion science including:
 10. "Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder" - https://vocolens.com/resources/plutchik-emotion-wheel
    Explains Plutchik’s eight emotion families and three-step intensity ladders, compares discrete wheels with dimensional valence/arousal models, and offers a two-step family-and-rung check-in without treating the wheel as a literal brain map or clinical diagnosis.
 
+11. "How to Start an Emotion Journal: When Your Mind Goes Blank" - https://vocolens.com/resources/how-to-start-emotion-journal
+   Explains what goes into a brief emotion check-in versus a full diary, offers four non-label starting points (situation, body/energy, pleasantness, tentative word) and a 60-second spoken or written template, and frames Vocolens’s candidate labels and affect dials as reflection aids rather than clinical tools.
+
 ## Pages
 
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Use Cases: https://vocolens.com/use-cases
 - Resources: https://vocolens.com/resources
+- How to Start an Emotion Journal: https://vocolens.com/resources/how-to-start-emotion-journal
 - Plutchik’s Emotion Wheel: https://vocolens.com/resources/plutchik-emotion-wheel
 - Valence & Arousal: https://vocolens.com/resources/valence-and-arousal
 - Science of Reflection: https://vocolens.com/resources/science-of-reflection

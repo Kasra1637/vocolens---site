@@ -40,6 +40,22 @@ export function defineNewResourceArticle<
 }
 
 export const RESOURCE_ARTICLES = {
+  "how-to-start-emotion-journal": defineNewResourceArticle({
+    slug: "how-to-start-emotion-journal",
+    url: "https://vocolens.com/resources/how-to-start-emotion-journal",
+    title: "How to Start an Emotion Journal: When Your Mind Goes Blank",
+    description:
+      "Learn how to start an emotion journal without blank-page pressure: what to record, how often to check in, and where to begin when no emotion word comes.",
+    h1: "How to Start an Emotion Journal: When Your Mind Goes Blank",
+    datePublished: "2026-10-20",
+    dateModified: "2026-10-20",
+    image: {
+      url: "https://vocolens.com/og/how-to-start-emotion-journal.png",
+      width: 1200,
+      height: 630,
+      alt: "Starting an Emotion Journal: What to write or say when your mind goes blank. Vocolens resource card.",
+    },
+  }),
   "plutchik-emotion-wheel": defineNewResourceArticle({
     slug: "plutchik-emotion-wheel",
     url: "https://vocolens.com/resources/plutchik-emotion-wheel",

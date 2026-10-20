@@ -138,6 +138,16 @@ export const ARTICLE_SECTIONS: Record<string, ArticleSection[]> = {
     { title: "A two-step ladder check-in (without memorizing the wheel)", startSec: 453.576 },
     { title: "How to read Plutchik intensity in Vocolens", startSec: 576.744 },
   ],
+  "how-to-start-emotion-journal": [
+    { title: "Overview", startSec: 0 },
+    { title: "What is an emotion journal, and how does it differ from a diary?", startSec: 65.856 },
+    { title: "Four starting points when you do not know what to write", startSec: 159.96 },
+    { title: "What to do when you feel nothing—or too many things at once", startSec: 220.584 },
+    { title: "Why longer entries are not always better", startSec: 310.728 },
+    { title: "How often to check in—and what happens when you miss a day", startSec: 408.552 },
+    { title: "A 60-second first entry you can write or speak today", startSec: 476.232 },
+    { title: "How an entry works inside Vocolens", startSec: 579.408 },
+  ],
 };
 
 /** Index of the section containing the given time (seconds). */

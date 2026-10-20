@@ -26,6 +26,7 @@ const allowed = [
   "emotional-granularity",
   "valence-and-arousal",
   "plutchik-emotion-wheel",
+  "how-to-start-emotion-journal",
 ];
 const slugs = process.argv.slice(2).length ? process.argv.slice(2) : allowed;
 const allowedSlugs = new Set(allowed);

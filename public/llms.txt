@@ -72,6 +72,7 @@ Journal entries, audio, and personalization data are stored on your device and l
 - Home: https://vocolens.com/
 - Features: https://vocolens.com/features
 - Resources: https://vocolens.com/resources
+- How to Start an Emotion Journal: When Your Mind Goes Blank: https://vocolens.com/resources/how-to-start-emotion-journal
 - Plutchik’s emotion wheel: why “annoyed” & “furious” belong on the same ladder: https://vocolens.com/resources/plutchik-emotion-wheel
 - Mixed Emotions: https://vocolens.com/resources/mixed-emotions
 - Valence & Arousal: Why Calm Isn’t Always Happy: https://vocolens.com/resources/valence-and-arousal

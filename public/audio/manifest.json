@@ -128,5 +128,15 @@
     "bytes": 2793548,
     "minutes": 11.6,
     "generatedAt": "2026-10-17T00:44:05.754Z"
+  },
+  "how-to-start-emotion-journal": {
+    "file": "/audio/how-to-start-emotion-journal.mp3",
+    "voice": "en-US-AriaNeural",
+    "hash": "63b0272e7da82d18",
+    "chars": 11061,
+    "words": 1804,
+    "bytes": 2829068,
+    "minutes": 11.8,
+    "generatedAt": "2026-10-20T10:45:30.678Z"
   }
 }
