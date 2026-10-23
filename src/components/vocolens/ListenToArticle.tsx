@@ -244,6 +244,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
     audio.addEventListener("loadedmetadata", onMeta);
     audio.addEventListener("ended", onEnd);
     audio.addEventListener("error", onError);
+    // If metadata already landed before the listener attached (fast cache),
+    // loadedmetadata won't fire again and duration would stay 0 forever —
+    // leaving every seek parked in pendingRef while the element sits at 0.
+    // Heal that race by running the same handler off the live element state.
+    try {
+      if (audio.readyState >= 1 && Number.isFinite(audio.duration) && audio.duration > 0) {
+        onMeta();
+      }
+    } catch {
+      /* non-fatal */
+    }
     return () => {
       audio.removeEventListener("timeupdate", onTime);
       audio.removeEventListener("loadedmetadata", onMeta);
@@ -282,14 +293,64 @@ export function ListenToArticle({ slug }: { slug: string }) {
           : sectionAt(list, audio.currentTime || 0);
       setBoundFor(idx);
     }
-    // A tap parked before metadata landed: carry the play intent into
-    // onMeta so Listen pressed after arming still starts playback.
-    if (pendingRef.current) pendingRef.current.shouldPlay = true;
+    // The highlight (React state) and the element can diverge: a seek parked
+    // while metadata was missing, a missed loadedmetadata event, or a
+    // pre-playback seek the element ignored all leave audio.currentTime at 0
+    // while the UI names the selected chapter — so Listen would read the
+    // overview. Re-assert the selected chapter's start before playing, unless
+    // playback is already inside it (pause/resume must not rewind).
+    const effD =
+      Number.isFinite(audio.duration) && audio.duration > 0
+        ? audio.duration
+        : Number.isFinite(duration) && duration > 0
+          ? duration
+          : 0;
+    if (effD > 0 && list.length > 0) {
+      if (effD !== duration) setDuration(effD);
+      const pending = pendingRef.current;
+      if (pending !== null && pending.kind === "time") {
+        const t = Math.min(Math.max(pending.t, 0), effD);
+        pendingRef.current = null;
+        const idx = pending.idx ?? sectionAt(list, t);
+        if (idx + 1 < list.length) boundEndRef.current = list[idx + 1].startSec;
+        else boundEndRef.current = effD;
+        try {
+          audio.currentTime = t;
+        } catch {
+          /* non-fatal */
+        }
+        setCurrentTime(t);
+      } else if (armedIdx !== null && armedIdx < list.length) {
+        const target = headerStart(armedIdx);
+        let cur = 0;
+        try {
+          cur = audio.currentTime;
+        } catch {
+          cur = 0;
+        }
+        if (cur < target - 0.35) {
+          const t = Math.min(Math.max(target, 0), effD);
+          try {
+            audio.currentTime = t;
+          } catch {
+            /* non-fatal */
+          }
+          setCurrentTime(t);
+        }
+        if (pendingRef.current) pendingRef.current.shouldPlay = true;
+      } else if (pendingRef.current) {
+        pendingRef.current.shouldPlay = true;
+      }
+    } else if (pendingRef.current) {
+      // A tap parked before metadata landed: carry the play intent into
+      // onMeta so Listen pressed after arming still starts playback.
+      pendingRef.current.shouldPlay = true;
+    }
     void audio.play().then(
       () => setPlaying(true),
       () => setPlaying(false),
     );
-  }, [slug, armedIdx, setBoundFor]);
+  }, [slug, armedIdx, setBoundFor, headerStart, duration]);
 
   const toggle = () => {
     const audio = audioRef.current;
@@ -305,7 +366,21 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const seek = useCallback((t: number, idx: number | null = null, shouldPlay = false) => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (!Number.isFinite(duration) || duration <= 0) {
+    // Prefer the element's live duration: the React state can still be 0 when
+    // loadedmetadata fired before the listener attached (fast cache) or the
+    // repair below hasn't synced yet. Gating only on state would park every
+    // seek in pendingRef while the element sits at 0 — highlight moves, audio
+    // doesn't.
+    let effD = duration;
+    try {
+      if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        effD = audio.duration;
+        if (effD !== duration) setDuration(effD);
+      }
+    } catch {
+      /* non-fatal */
+    }
+    if (!Number.isFinite(effD) || effD <= 0) {
       // Metadata not ready yet (slow networks): park the absolute target
       // for onMeta (which replays the arm/play intent) and update the UI
       // optimistically. Only kick off the fetch when nothing started yet —
@@ -320,7 +395,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       }
       return;
     }
-    const clamped = Math.min(Math.max(t, 0), duration);
+    const clamped = Math.min(Math.max(t, 0), effD);
     try {
       audio.currentTime = clamped;
     } catch {
