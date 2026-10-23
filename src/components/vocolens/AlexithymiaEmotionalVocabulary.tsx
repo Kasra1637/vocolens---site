@@ -43,7 +43,7 @@ export function AlexithymiaEmotionalVocabulary() {
     headline: "Alexithymia: Difficulty Identifying Emotions & Where to Start",
     description:
       "Explore what alexithymia means, examples of difficulty identifying feelings, and gentle ways to describe sensations and build emotional vocabulary.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/alexithymia-emotional-vocabulary.png",
     datePublished: "2026-06-28",
     dateModified: "2026-10-06",
     author: {

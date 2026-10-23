@@ -43,7 +43,7 @@ export function AutismEmotionalRegulation() {
     headline: "Autism & Emotional Regulation: Sensory Needs & Practical Supports",
     description:
       "Explore emotional regulation in autistic adults, how sensory demands and alexithymia can differ, and ways to plan support without masking your needs.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/autism-emotional-regulation.png",
     datePublished: "2026-06-29",
     dateModified: "2026-10-06",
     author: {

@@ -35,7 +35,7 @@ export function ScienceOfReflection() {
     "@type": "Article",
     "headline": "Affect Labeling: How to Name Your Emotions",
         "description": "Learn what affect labeling is, what research shows about naming emotions, and how to try a short check-in without promises of guaranteed stress relief.",
-    "image": "https://vocolens.com/vocolens-logo.png",
+    "image": "https://vocolens.com/og/science-of-reflection.png",
     "datePublished": "2026-02-28",
     "dateModified": "2026-10-06",
     "author": {

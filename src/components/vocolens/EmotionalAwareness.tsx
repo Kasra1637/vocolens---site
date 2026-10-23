@@ -63,7 +63,7 @@ export function EmotionalAwareness() {
             "@type": "Article",
             "headline": "Emotional Awareness: What It Is & How to Improve It",
             "description": "Learn what emotional awareness means, see everyday examples, and try a simple emotion-and-trigger journal to recognize feelings and patterns.",
-            "image": "https://vocolens.com/vocolens-logo.png",
+            "image": "https://vocolens.com/og/emotional-awareness-patterns.png",
             "datePublished": "2026-03-30",
             "dateModified": "2026-10-06",
             "author": {

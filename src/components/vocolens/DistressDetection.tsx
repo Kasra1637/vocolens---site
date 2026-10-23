@@ -69,7 +69,7 @@ export function DistressDetection() {
             headline: "Physical Signs of Overwhelm: Body Awareness Without Guessing",
             description:
               "Learn what interoception means, explore physical signs that can accompany overwhelm, and try a gentle check-in without treating sensations as diagnoses.",
-            image: "https://vocolens.com/vocolens-logo.png",
+            image: "https://vocolens.com/og/distress-detection.png",
             datePublished: "2026-06-11",
             dateModified: "2026-10-06",
             author: {

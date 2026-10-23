@@ -43,7 +43,7 @@ export function OverthinkingRumination() {
     headline: "Overthinking & Rumination: How to Recognize the Loop",
     description:
       "Understand rumination versus useful reflection, see examples of repetitive worry, and try a practical next-step check without promises of instant relief.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/overthinking-rumination.png",
     datePublished: "2026-07-14",
     dateModified: "2026-10-06",
     author: {

@@ -43,7 +43,7 @@ export function BurnoutRecovery() {
     headline: "Burnout Signs & Recovery: What to Notice & What Can Help",
     description:
       "Understand workplace burnout signs, how they differ from ordinary tiredness, and practical recovery supports that address demands as well as rest.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/burnout-recovery-signs.png",
     datePublished: "2026-08-04",
     dateModified: "2026-10-06",
     author: {

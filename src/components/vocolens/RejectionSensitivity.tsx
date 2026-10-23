@@ -43,7 +43,7 @@ export function RejectionSensitivity() {
     headline: "Rejection Sensitivity & ADHD: What RSD Means & How to Respond",
     description:
       "Learn what rejection sensitivity and RSD mean, why the label is not a formal diagnosis, and practical ways to respond to hurt without assuming intent.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/rejection-sensitivity.png",
     datePublished: "2026-09-29",
     dateModified: "2026-10-06",
     author: {

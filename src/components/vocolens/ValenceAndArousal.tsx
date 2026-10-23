@@ -105,7 +105,7 @@ export function ValenceAndArousal() {
     "@type": "Article",
     headline: title,
     description,
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/valence-and-arousal.png",
     datePublished: date,
     dateModified: date,
     inLanguage: "en",

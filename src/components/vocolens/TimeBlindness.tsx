@@ -43,7 +43,7 @@ export function TimeBlindness() {
     headline: "ADHD Time Blindness: Examples & Practical Time Supports",
     description:
       "Learn what ADHD time blindness means, recognize everyday examples, and try visible timers, task estimates, and transition cues without blaming yourself.",
-    image: "https://vocolens.com/vocolens-logo.png",
+    image: "https://vocolens.com/og/adhd-time-blindness.png",
     datePublished: "2026-09-09",
     dateModified: "2026-10-06",
     author: {

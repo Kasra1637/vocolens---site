@@ -103,6 +103,19 @@ async function get(route) {
       $('meta[property="og:image"]').attr("content") !== "https://vocolens.com/vocolens-logo.png",
       `${route}: must not fall back to site logo`,
     );
+    // Every article ships its own 1200x630 share card at /og/<slug>.png;
+    // head og:image / twitter:image must resolve to it (never the logo).
+    assert.equal(
+      $('meta[property="og:image"]').attr("content"),
+      `${origin}/og/${route.split("/").pop()}.png`,
+      `${route}: unique og:image`,
+    );
+    assert.equal(
+      $('meta[name="twitter:image"]').attr("content"),
+      `${origin}/og/${route.split("/").pop()}.png`,
+      `${route}: unique twitter:image`,
+    );
+    assert($('meta[property="og:image:alt"]').attr("content")?.trim(), `${route}: og:image:alt`);
     titles.add(title);
     descriptions.add(description);
     assert.equal($('link[rel="canonical"]').length, 1, `${route}: one canonical`);
@@ -121,6 +134,13 @@ async function get(route) {
     assert.equal(article.mainEntityOfPage["@id"], origin + route);
     assert(article.dateModified >= article.datePublished, `${route}: chronological dates`);
     assert.equal(article.breadcrumb["@type"], "BreadcrumbList");
+    // JSON-LD Article.image must match the same unique share card so rich
+    // results / Discover show the article visual instead of the site logo.
+    assert.equal(
+      article.image,
+      `${origin}/og/${route.split("/").pop()}.png`,
+      `${route}: unique Article.image`,
+    );
     const faq = schemas.find((s) => s["@type"] === "FAQPage");
     assert(faq && faq.mainEntity.length > 0, `${route}: FAQ schema`);
     const details = $("details").toArray();
