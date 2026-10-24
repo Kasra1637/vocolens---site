@@ -43,10 +43,15 @@ Cloudflare Workers. Production: https://vocolens.com.
   rewrites them) — never hand-edit them; seeks land directly on `startSec`
   (`HEADER_BACKOFF = 0`). The player has **no scrub bar**: the chapter list plus
   the prev/next buttons are the only chapter browsers, and the Listen button
-  is the only control that starts audio (every other gesture just selects a
-  chapter, highlights it in the blog content UI, and leaves playback as it was).
-  Pressing Listen plays only the currently selected section (auto-pausing at the
-  next chapter's start). Position feedback is the `§ chapter` label plus
+  (or the sticky mini-bar transport, which mirrors it) is the only control
+  that starts audio (every other gesture just selects a chapter, highlights
+  it in the blog content UI, and leaves playback as it was — paused stays
+  paused, playing keeps playing from the new chapter). Pressing Listen starts
+  continuous playback from the currently selected section through the end of
+  the file. A bottom-left sticky mini-bar (play/pause, prev/next, chapter,
+  time, speed, dismiss) appears once narration has started, and Media Session
+  exposes the chapter plus play/pause/prev/next to lock-screen/headset
+  controls. Position feedback is the `§ chapter` label plus
   elapsed / total time. Every readout — that label, the chapter list, the
   collapsed summary, the article highlight and prev/next — names the chapter
   the player is *on*. Chapter titles are read from the article's own H2/H3 — the

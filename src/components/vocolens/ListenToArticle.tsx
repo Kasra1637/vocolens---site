@@ -8,6 +8,7 @@ import {
   Play,
   SkipBack,
   SkipForward,
+  X,
 } from "@phosphor-icons/react";
 import { EXCLUDE_ATTR } from "../../lib/articleSpeech";
 import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
@@ -48,11 +49,10 @@ function articleBlocks(): HTMLElement[] {
  * - the Listen button is the ONLY control that starts audio. The chapter
  *   list and the prev/next-section buttons only SELECT: the playhead moves
  *   to that chapter's header with the same small lead-in and the row lights
- *   up, but playback stays as it was. Pressing Listen afterwards plays just
- *   the selected chapter
- *   (seeks are verified across frames against element desync; the
- *   chapter-bound auto-pause is suppressed briefly after each jump so a
- *   stale timeupdate can't pause instead of moving)
+ *   up, but playback stays as it was (paused stays paused, playing keeps
+ *   playing from the new chapter). Pressing Listen afterwards starts
+ *   continuous playback from the selected chapter through the end of the
+ *   file (seeks are verified across frames against element desync)
  * - every readout names the chapter the player is ON, and the title is read
  *   from the article itself (the narrated block's own H2/H3), never assumed
  *   from a list: the § label, the chapter list, the collapsed summary, the
@@ -64,9 +64,12 @@ function articleBlocks(): HTMLElement[] {
  * - every chapter narrates ONLY its own section title (H2/H3) and its body
  *   content — never the top H1 blog title
  * - an explicitly selected chapter highlights immediately in the blog content
- *   UI and plays ONLY itself once started, then auto-pauses at the next
- *   chapter's start; a fresh Listen from the beginning starts bounded to the
- *   currently selected section (Overview by default)
+ *   UI; playback continues across chapter boundaries until the end of the
+ *   file unless the user pauses or selects another chapter
+ * - a bottom-left sticky mini-bar mirrors the transport (play/pause,
+ *   prev/next, chapter, time, speed) once narration has started, so the
+ *   player stays reachable on long articles
+ * - lock-screen / headset controls via Media Session (play/pause/prev/next)
  * - no scrub bar: the chapter list is the only chapter browser. Position
  *   feedback is the § chapter label plus elapsed / total time
  * - live soft-highlight of the section being narrated + auto-scroll that
@@ -82,6 +85,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const [missing, setMissing] = useState(false);
   const [showChapters, setShowChapters] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
   // Chapter a tap landed on, held until its narration actually starts: the
   // seek goes a lead-in *before* the chapter's mapped start, so the playhead
   // alone would still name the previous chapter (pre-metadata estimate, the
@@ -108,40 +112,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [sections],
   );
 
-  // Chapter scope: an explicitly selected chapter plays ONLY itself, then
-  // auto-pauses at the next chapter's start (a fresh Listen with no
-  // selection plays through unbounded). Null = unbounded.
-  const boundEndRef = useRef<number | null>(null);
-  // Guard against the chapter-bound auto-pause racing an explicit jump: a
-  // timeupdate can fire with the stale pre-seek position after the new
-  // (lower) bound is set but before the seek lands, which would wrongly
-  // pause instead of moving to the selected chapter. Suppressed briefly
-  // after every explicit chapter jump; a fresh chapter start is always
-  // far from its bound so legit end-of-chapter pauses are unaffected.
-  const suppressBoundUntilRef = useRef(0);
-  const armBoundSuppress = useCallback(() => {
-    try {
-      suppressBoundUntilRef.current = performance.now() + 800;
-    } catch {
-      suppressBoundUntilRef.current = 0;
-    }
-  }, []);
-  const setBoundFor = useCallback(
-    (idx: number) => {
-      if (sections.length === 0) {
-        boundEndRef.current = null;
-        return;
-      }
-      boundEndRef.current =
-        idx + 1 < sections.length
-          ? sections[idx + 1].startSec
-          : Number.isFinite(duration) && duration > 0
-            ? duration
-            : Number.POSITIVE_INFINITY;
-    },
-    [sections, duration],
-  );
-
   // Seek parked while audio metadata is missing (slow networks): applied
   // the moment duration becomes known, so pre-load taps never strand
   // playback at 0. Either an absolute time or a track ratio. idx is the
@@ -159,6 +129,16 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     audio.load();
   }, [src]);
+
+  // Reset per-article state on slug change (SPA navigation reuses the component).
+  useEffect(() => {
+    setPlaying(false);
+    setCurrentTime(0);
+    setHasStarted(false);
+    setArmedIdx(null);
+    setShowChapters(false);
+    setDismissed(false);
+  }, [slug]);
 
   // Titles come from the article, not from the chapter map: read each narrated
   // block's own heading so the player always names the section the user is
@@ -182,22 +162,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     const onTime = () => {
       setCurrentTime(audio.currentTime);
-      // End of an explicitly selected chapter: stop instead of spilling
-      // into the next one. Reads element state directly (no stale closure).
-      // Skipped briefly after an explicit jump so a stale pre-seek
-      // timeupdate can't pause playback instead of moving chapters.
-      const bound = boundEndRef.current;
-      if (bound === null || audio.paused || audio.ended || audio.currentTime < bound) return;
-      let suppressed = false;
-      try {
-        suppressed = performance.now() < suppressBoundUntilRef.current;
-      } catch {
-        suppressed = false;
-      }
-      if (suppressed) return;
-      audio.pause();
-      setPlaying(false);
-      boundEndRef.current = null;
     };
     const onMeta = () => {
       const d = audio.duration || 0;
@@ -219,7 +183,6 @@ export function ListenToArticle({ slug }: { slug: string }) {
         idx = sectionAt(list, pending.r * d);
         target = idx === 0 ? 0 : Math.max(0, list[idx].startSec - HEADER_BACKOFF);
       }
-      boundEndRef.current = idx + 1 < list.length ? list[idx + 1].startSec : d;
       if (!pending.shouldPlay) setArmedIdx(idx);
       try {
         audio.currentTime = target;
@@ -282,45 +245,32 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
-    // Scope playback to the current/selected section so pressing Listen only
-    // reads the specific section the user wants (starting with its section
-    // title and content) rather than spilling into subsequent sections.
-    const list = ARTICLE_SECTIONS[slug] ?? [];
-    if (boundEndRef.current === null && list.length > 0) {
-      const idx =
-        armedIdx !== null && armedIdx < list.length
-          ? armedIdx
-          : sectionAt(list, audio.currentTime || 0);
-      setBoundFor(idx);
-    }
     // The highlight (React state) and the element can diverge: a seek parked
     // while metadata was missing, a missed loadedmetadata event, or a
     // pre-playback seek the element ignored all leave audio.currentTime at 0
     // while the UI names the selected chapter — so Listen would read the
     // overview. Re-assert the selected chapter's start before playing, unless
-    // playback is already inside it (pause/resume must not rewind).
+    // playback is already inside it (pause/resume must not rewind, and
+    // continuous playback must never jump back to an older selection).
     const effD =
       Number.isFinite(audio.duration) && audio.duration > 0
         ? audio.duration
         : Number.isFinite(duration) && duration > 0
           ? duration
           : 0;
-    if (effD > 0 && list.length > 0) {
+    if (effD > 0 && sections.length > 0) {
       if (effD !== duration) setDuration(effD);
       const pending = pendingRef.current;
       if (pending !== null && pending.kind === "time") {
         const t = Math.min(Math.max(pending.t, 0), effD);
         pendingRef.current = null;
-        const idx = pending.idx ?? sectionAt(list, t);
-        if (idx + 1 < list.length) boundEndRef.current = list[idx + 1].startSec;
-        else boundEndRef.current = effD;
         try {
           audio.currentTime = t;
         } catch {
           /* non-fatal */
         }
         setCurrentTime(t);
-      } else if (armedIdx !== null && armedIdx < list.length) {
+      } else if (armedIdx !== null && armedIdx < sections.length) {
         const target = headerStart(armedIdx);
         let cur = 0;
         try {
@@ -350,7 +300,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
       () => setPlaying(true),
       () => setPlaying(false),
     );
-  }, [slug, armedIdx, setBoundFor, headerStart, duration]);
+  }, [armedIdx, headerStart, duration, sections.length]);
 
   const toggle = () => {
     const audio = audioRef.current;
@@ -371,11 +321,10 @@ export function ListenToArticle({ slug }: { slug: string }) {
     // repair below hasn't synced yet. Gating only on state would park every
     // seek in pendingRef while the element sits at 0 — highlight moves, audio
     // doesn't.
-    let effD = duration;
+    let effD = 0;
     try {
       if (Number.isFinite(audio.duration) && audio.duration > 0) {
         effD = audio.duration;
-        if (effD !== duration) setDuration(effD);
       }
     } catch {
       /* non-fatal */
@@ -419,23 +368,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
       }
     };
     requestAnimationFrame(repair);
-  }, [duration]);
+  }, []);
 
-  // Every chapter selection — list row, timeline tap/drag, prev/next, or
-  // keyboard — selects only: the playhead moves to that chapter's header
-  // and the row lights up, but playback is never started. The Listen button
-  // is the only control that starts audio. The chapter bound is still set,
-  // so pressing Listen plays just the selected chapter.
-  // (The bound suppress guard above keeps backward jumps from tripping the
-  // previous chapter's auto-pause on a stale timeupdate.)
+  // Every chapter selection — list row, prev/next, or keyboard — selects
+  // only: the playhead moves to that chapter's header and the row lights up,
+  // but playback is never started or stopped. The Listen button (or the
+  // mini-bar transport) is the only control that starts audio; once started,
+  // playback continues across chapter boundaries to the end of the file.
   const selectChapter = useCallback(
     (target: number) => {
-      setBoundFor(target);
-      armBoundSuppress();
       setArmedIdx(target);
       seek(headerStart(target), target, false);
     },
-    [seek, headerStart, setBoundFor, armBoundSuppress],
+    [seek, headerStart],
   );
 
   // The chapter the player is ON — the one index every readout names: the
@@ -461,7 +406,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
 
   const prevSection = useCallback(() => {
     if (sections.length === 0) return;
-    const intoSection = currentTime - sections[sectionIdx].startSec;
+    const intoSection = sectionIdx >= 0 ? currentTime - sections[sectionIdx].startSec : 0;
     const target = intoSection > 3 ? sectionIdx : Math.max(0, sectionIdx - 1);
     selectChapter(target);
   }, [sections, currentTime, sectionIdx, selectChapter]);
@@ -472,135 +417,258 @@ export function ListenToArticle({ slug }: { slug: string }) {
     selectChapter(target);
   }, [sections, sectionIdx, selectChapter]);
 
+  // Lock-screen / headset metadata: article chapter + share art.
+  useEffect(() => {
+    try {
+      const nav = navigator as Navigator & { mediaSession?: MediaSession };
+      if (!nav.mediaSession || sections.length === 0) return;
+      const idx = sectionIdx >= 0 ? sectionIdx : 0;
+      const title =
+        articleTitles && articleTitles.length === sections.length
+          ? articleTitles[idx]
+          : sections[idx].title;
+      nav.mediaSession.metadata = new MediaMetadata({
+        title,
+        artist: "Vocolens",
+        album: "Vocolens blog narration",
+        artwork: [{ src: `/og/${slug}.png`, sizes: "1200x630", type: "image/png" }],
+      });
+    } catch {
+      /* non-fatal */
+    }
+  }, [slug, sectionIdx, sections, articleTitles]);
+
+  // Lock-screen / headset transport.
+  useEffect(() => {
+    try {
+      const nav = navigator as Navigator & { mediaSession?: MediaSession };
+      if (!nav.mediaSession) return;
+      nav.mediaSession.setActionHandler("play", () => {
+        play();
+      });
+      nav.mediaSession.setActionHandler("pause", () => {
+        try {
+          audioRef.current?.pause();
+        } catch {
+          /* non-fatal */
+        }
+        setPlaying(false);
+      });
+      nav.mediaSession.setActionHandler("previoustrack", () => {
+        prevSection();
+      });
+      nav.mediaSession.setActionHandler("nexttrack", () => {
+        nextSection();
+      });
+    } catch {
+      /* non-fatal */
+    }
+  }, [play, prevSection, nextSection]);
 
   if (missing) return null;
 
   const speed = SPEEDS[speedIdx];
+  const miniTitle = sectionIdx >= 0 ? titleAt(sectionIdx) : null;
 
   return (
-    <div
-      className="mt-4 mb-8 card-app rounded-3xl p-6 sm:p-8"
-      role="region"
-      aria-label="Listen to this article"
-      {...{ [EXCLUDE_ATTR]: true }}
-    >
-      <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
-      <div className="flex flex-wrap items-center gap-3">
-        <div className="min-w-0 flex-1 basis-32">
-          <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
-          <p className="text-xs text-text-muted mt-0.5">
-            Human narration
-            {duration > 0 ? ` · ${formatClock(duration)}` : ""}
-          </p>
-        </div>
-        <div className="flex items-center gap-2 flex-shrink-0" role="group" aria-label="Narration section controls">
-          <button
-            type="button"
-            onClick={prevSection}
-            disabled={sections.length === 0}
-            className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
-            aria-label="Previous section"
-            title="Previous section"
-          >
-            <SkipBack className="w-4 h-4" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            onClick={toggle}
-            className="inline-flex items-center gap-2 group bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 active:translate-y-0"
-            aria-label={(playing ? "Pause" : "Play") + " article narration"}
-          >
-            {playing ? (
-              <Pause className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-            ) : (
-              <Play className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-            )}
-            {playing ? "Pause" : "Listen"}
-          </button>
-          <button
-            type="button"
-            onClick={nextSection}
-            disabled={sections.length === 0}
-            className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
-            aria-label="Next section"
-            title="Next section"
-          >
-            <SkipForward className="w-4 h-4" aria-hidden="true" />
-          </button>
-        </div>
-        <button
-          type="button"
-          onClick={() => setSpeedIdx((i) => (i + 1) % SPEEDS.length)}
-          className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-primary/10 border border-primary/15 text-xs font-semibold text-[#6A3FC0] hover:bg-primary/15 transition-colors flex-shrink-0"
-          aria-label={`Playback speed ${speed}x, activate to change`}
-          title="Playback speed"
-        >
-          {speed}x
-        </button>
-      </div>
-
-      <div className="mt-3">
-        <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-2">
-          <span className="min-w-0 truncate">
-            {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {titleAt(sectionIdx)}</span> : <span>&nbsp;</span>}
-          </span>
-          <span className="tabular-nums flex-shrink-0">
-            {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
-          </span>
-        </div>
-
-        {sections.length > 0 && (
-          <div className="mt-2 border-t border-primary/10 pt-1">
+    <>
+      <div
+        className="mt-4 mb-8 card-app rounded-3xl p-6 sm:p-8"
+        role="region"
+        aria-label="Listen to this article"
+        {...{ [EXCLUDE_ATTR]: true }}
+      >
+        <audio key={src} ref={audioRef} src={src} preload="metadata" className="hidden" aria-hidden="true" />
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="min-w-0 flex-1 basis-32">
+            <p className="font-fraunces text-[15px] font-semibold text-text-primary leading-tight">Listen to this article</p>
+            <p className="text-xs text-text-muted mt-0.5">
+              Human narration
+              {duration > 0 ? ` · ${formatClock(duration)}` : ""}
+            </p>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0" role="group" aria-label="Narration section controls">
             <button
               type="button"
-              onClick={() => setShowChapters((v) => !v)}
-              aria-expanded={showChapters}
-              className="flex w-full items-center gap-2 rounded-lg px-2 min-h-[44px] py-2 text-left text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+              onClick={prevSection}
+              disabled={sections.length === 0}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
+              aria-label="Previous section"
+              title="Previous section"
             >
-              <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-              <span className="flex-shrink-0">Chapters · {sections.length}</span>
-              <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
-                {sectionIdx >= 0 ? titleAt(sectionIdx) : ""}
-              </span>
-              <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
+              <SkipBack className="w-4 h-4" aria-hidden="true" />
             </button>
-            {showChapters && (
-              <ol className="mt-1 space-y-1 rounded-2xl bg-[#F4F1FB] border border-primary/15 p-1.5">
-                {sections.map((s, i) => {
-                  const active = i === sectionIdx;
-                  return (
-                    <li key={i}>
-                      <button
-                        type="button"
-                        onClick={() => selectChapter(i)}
-                        aria-current={active ? "true" : undefined}
-                        className={
-                          active
-            ? "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm bg-white border-2 border-primary text-[#6A3FC0] font-semibold shadow-clay-sm transition-colors"
-            : "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-white transition-colors"
-                        }
-                      >
-                        <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-[#6A3FC0]" : "text-text-muted"}`}>
-                          {formatClock(s.startSec)}
-                        </span>
-                        <span className="flex-1 truncate">{titleAt(i)}</span>
-                        {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" aria-hidden="true" />}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ol>
-            )}
+            <button
+              type="button"
+              onClick={toggle}
+              className="inline-flex items-center gap-2 group bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] px-4 py-2.5 rounded-full text-sm font-semibold btn-app-glow transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 active:translate-y-0"
+              aria-label={(playing ? "Pause" : "Play") + " article narration"}
+            >
+              {playing ? (
+                <Pause className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+              ) : (
+                <Play className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+              )}
+              {playing ? "Pause" : "Listen"}
+            </button>
+            <button
+              type="button"
+              onClick={nextSection}
+              disabled={sections.length === 0}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40"
+              aria-label="Next section"
+              title="Next section"
+            >
+              <SkipForward className="w-4 h-4" aria-hidden="true" />
+            </button>
           </div>
-        )}
+          <button
+            type="button"
+            onClick={() => setSpeedIdx((i) => (i + 1) % SPEEDS.length)}
+            className="inline-flex items-center justify-center h-7 px-3 rounded-full bg-primary/10 border border-primary/15 text-xs font-semibold text-[#6A3FC0] hover:bg-primary/15 transition-colors flex-shrink-0"
+            aria-label={`Playback speed ${speed}x, activate to change`}
+            title="Playback speed"
+          >
+            {speed}x
+          </button>
+        </div>
+
+        <div className="mt-3">
+          <div className="flex items-center justify-between gap-2 text-xs text-text-muted mt-2">
+            <span className="min-w-0 truncate">
+              {sectionIdx >= 0 ? <span className="text-primary font-medium">§ {titleAt(sectionIdx)}</span> : <span>&nbsp;</span>}
+            </span>
+            <span className="tabular-nums flex-shrink-0">
+              {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
+            </span>
+          </div>
+
+          {sections.length > 0 && (
+            <div className="mt-2 border-t border-primary/10 pt-1">
+              <button
+                type="button"
+                onClick={() => setShowChapters((v) => !v)}
+                aria-expanded={showChapters}
+                className="flex w-full items-center gap-2 rounded-lg px-2 min-h-[44px] py-2 text-left text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+              >
+                <ListMusic className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span className="flex-shrink-0">Chapters · {sections.length}</span>
+                <span className="flex-1 truncate text-xs font-normal text-text-muted text-right">
+                  {sectionIdx >= 0 ? titleAt(sectionIdx) : ""}
+                </span>
+                <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform ${showChapters ? "rotate-180" : ""}`} aria-hidden="true" />
+              </button>
+              {showChapters && (
+                <ol className="mt-1 space-y-1 rounded-2xl bg-[#F4F1FB] border border-primary/15 p-1.5">
+                  {sections.map((s, i) => {
+                    const active = i === sectionIdx;
+                    return (
+                      <li key={i}>
+                        <button
+                          type="button"
+                          onClick={() => selectChapter(i)}
+                          aria-current={active ? "true" : undefined}
+                          className={
+                            active
+              ? "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm bg-white border-2 border-primary text-[#6A3FC0] font-semibold shadow-clay-sm transition-colors"
+              : "flex w-full items-center gap-3 rounded-2xl px-3 min-h-[44px] py-2 text-left text-sm text-text-secondary hover:bg-white transition-colors"
+                          }
+                        >
+                          <span className={`tabular-nums text-xs flex-shrink-0 ${active ? "text-[#6A3FC0]" : "text-text-muted"}`}>
+                            {formatClock(s.startSec)}
+                          </span>
+                          <span className="flex-1 truncate">{titleAt(i)}</span>
+                          {active && <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" aria-hidden="true" />}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
+            </div>
+          )}
+        </div>
+        <ReadingHighlighter
+          slug={slug}
+          sectionIdx={sectionIdx}
+          active={hasStarted || armedIdx !== null}
+          follow={playing || armedIdx !== null}
+        />
       </div>
-      <ReadingHighlighter
-        slug={slug}
-        sectionIdx={sectionIdx}
-        active={hasStarted || armedIdx !== null}
-        follow={playing || armedIdx !== null}
-      />
-    </div>
+      {hasStarted && !dismissed && (
+        <div
+          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 max-w-[calc(100vw-2rem)]"
+          style={{ marginBottom: "env(safe-area-inset-bottom)" }}
+          {...{ [EXCLUDE_ATTR]: true }}
+        >
+          <div
+            className="card-app rounded-3xl shadow-lg flex items-center gap-2 p-3 sm:p-4"
+            role="region"
+            aria-label="Blog narration mini player"
+          >
+            <button
+              type="button"
+              onClick={prevSection}
+              disabled={sections.length === 0}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40 flex-shrink-0"
+              aria-label="Mini player: previous section"
+              title="Previous section"
+            >
+              <SkipBack className="w-4 h-4" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={toggle}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/15 border-2 border-primary/60 text-[#6A3FC0] btn-app-glow transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+              aria-label={(playing ? "Pause" : "Play") + " article narration from mini player"}
+              title={playing ? "Pause" : "Play"}
+            >
+              {playing ? (
+                <Pause className="w-4 h-4" aria-hidden="true" />
+              ) : (
+                <Play className="w-4 h-4" aria-hidden="true" />
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={nextSection}
+              disabled={sections.length === 0}
+              className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] hover:bg-primary/15 transition-colors disabled:opacity-40 flex-shrink-0"
+              aria-label="Mini player: next section"
+              title="Next section"
+            >
+              <SkipForward className="w-4 h-4" aria-hidden="true" />
+            </button>
+            <div className="min-w-0 w-36 sm:w-48">
+              <div className="truncate text-xs font-semibold text-text-primary">
+                {miniTitle ? `§ ${miniTitle}` : "Narration"}
+              </div>
+              <div className="tabular-nums text-[11px] text-text-muted">
+                {formatClock(currentTime)} / {duration > 0 ? formatClock(duration) : "--:--"}
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSpeedIdx((i) => (i + 1) % SPEEDS.length)}
+              className="inline-flex items-center justify-center h-7 px-2.5 rounded-full bg-primary/10 border border-primary/15 text-xs font-semibold text-[#6A3FC0] hover:bg-primary/15 transition-colors flex-shrink-0"
+              aria-label={`Mini player playback speed ${speed}x, activate to change`}
+              title="Playback speed"
+            >
+              {speed}x
+            </button>
+            <button
+              type="button"
+              onClick={() => setDismissed(true)}
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full text-text-muted hover:bg-primary/5 hover:text-text-secondary transition-colors flex-shrink-0"
+              aria-label="Dismiss mini player"
+              title="Dismiss"
+            >
+              <X className="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
