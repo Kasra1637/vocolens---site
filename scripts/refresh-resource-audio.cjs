@@ -61,7 +61,7 @@ async function synthesize(text, dir) {
   try {
     return await Promise.race([
       (async () => {
-        await tts.setMetadata("en-US-AriaNeural", OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
+        await tts.setMetadata("en-US-AndrewNeural", OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
         return (await tts.toFile(dir, text)).audioFilePath;
       })(),
       new Promise((_, reject) => {
@@ -160,7 +160,7 @@ async function synthesize(text, dir) {
       fs.copyFileSync(output, path.join(root, "public/audio", slug + ".mp3"));
       manifest[slug] = {
         file: `/audio/${slug}.mp3`,
-        voice: "en-US-AriaNeural",
+        voice: "en-US-AndrewNeural",
         hash: crypto.createHash("sha256").update(text).digest("hex").slice(0, 16),
         chars: text.length,
         words: text.split(/\s+/).length,

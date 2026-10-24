@@ -26,7 +26,7 @@ const { MsEdgeTTS, OUTPUT_FORMAT } = require("msedge-tts");
   for (const c of cases) {
     try {
       const tts = new MsEdgeTTS();
-      await tts.setMetadata("en-US-AriaNeural", OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
+      await tts.setMetadata("en-US-AndrewNeural", OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
       const { audioFilePath } = await tts.toFile(outDir, c.text);
       console.log("OK    " + c.label + " -> " + fs.statSync(audioFilePath).size + " bytes");
       fs.unlinkSync(audioFilePath);

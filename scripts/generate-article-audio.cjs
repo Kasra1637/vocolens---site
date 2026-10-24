@@ -32,7 +32,7 @@ const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "public", "audio");
 const MANIFEST = path.join(OUT_DIR, "manifest.json");
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8793";
-const VOICE = process.env.TTS_VOICE || "en-US-AriaNeural";
+const VOICE = process.env.TTS_VOICE || "en-US-AndrewNeural";
 const SUFFIX = process.env.FILE_SUFFIX || "";
 // Additional voices share the same manifest under "<slug><suffix>" keys, e.g.:
 //   FILE_SUFFIX=-male TTS_VOICE=en-US-GuyNeural node scripts/generate-article-audio.cjs
@@ -248,7 +248,7 @@ function concatMp3(files, outPath) {
 
       const bytes = fs.statSync(outFile).size;
       const words = text.split(/\s+/).filter(Boolean).length;
-      const expectedMin = words / 230; // Aria speaks quickly; floor for sanity
+      const expectedMin = words / 230; // Andrew speaks quickly; floor for sanity
       const actualMin = mp3Minutes(bytes);
       if (actualMin < expectedMin * 0.75) {
         throw new Error(
