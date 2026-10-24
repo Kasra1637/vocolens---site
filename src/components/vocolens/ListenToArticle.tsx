@@ -112,6 +112,16 @@ export function ListenToArticle({ slug }: { slug: string }) {
     [sections],
   );
 
+  // Latest known file duration for seeks when the element transiently
+  // reports nothing usable, plus stable mirrors so play/seek stay dep-stable
+  // (sections is a module-level lookup; the rule can't see that).
+  const durationRef = useRef(0);
+  durationRef.current = duration;
+  const sectionsRef = useRef(sections);
+  sectionsRef.current = sections;
+  const currentTimeRef = useRef(0);
+  currentTimeRef.current = currentTime;
+
   // Seek parked while audio metadata is missing (slow networks): applied
   // the moment duration becomes known, so pre-load taps never strand
   // playback at 0. Either an absolute time or a track ratio. idx is the
@@ -162,6 +172,37 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (!audio) return;
     const onTime = () => {
       setCurrentTime(audio.currentTime);
+      // Self-heal a seek parked while metadata was missing that onMeta never
+      // drained (its load-event/heal-race ran before the park): once the
+      // element actually has data, apply it instead of stranding playback
+      // at 0 under a chapter label.
+      const pending = pendingRef.current;
+      if (pending?.kind === "time") {
+        try {
+          if (
+            Number.isFinite(audio.duration) &&
+            audio.duration > 0 &&
+            !audio.seeking &&
+            !audio.ended
+          ) {
+            const t = Math.min(Math.max(pending.t, 0), audio.duration);
+            if (Math.abs(audio.currentTime - t) > 1.0) {
+              audio.currentTime = t;
+            }
+            setCurrentTime(t);
+            pendingRef.current = null;
+            if (pending.shouldPlay && audio.paused) {
+              setHasStarted(true);
+              void audio.play().then(
+                () => setPlaying(true),
+                () => setPlaying(false),
+              );
+            }
+          }
+        } catch {
+          /* non-fatal */
+        }
+      }
     };
     const onMeta = () => {
       const d = audio.duration || 0;
@@ -312,6 +353,32 @@ export function ListenToArticle({ slug }: { slug: string }) {
       // onMeta so Listen pressed after arming still starts playback.
       pendingRef.current.shouldPlay = true;
     }
+    if (
+      !(effD > 0) &&
+      Number.isFinite(duration) &&
+      duration > 0 &&
+      sections.length > 0
+    ) {
+      // The element lost its data (mobile backgrounding / evicted decoder):
+      // it reports no duration and sits at 0 while the UI still names the
+      // selected chapter. Reload and park the visible chapter as pending so
+      // onMeta seeks and starts it — never blind-play the element from 0
+      // (the overview) under a chapter label.
+      const list = sectionsRef.current;
+      const idx =
+        armedIdx !== null && armedIdx < list.length
+          ? armedIdx
+          : sectionAt(list, currentTimeRef.current);
+      const t = Math.min(Math.max(headerStart(idx), 0), duration);
+      pendingRef.current = { kind: "time", t, idx, shouldPlay: true };
+      setCurrentTime(t);
+      try {
+        audio.load();
+      } catch {
+        /* non-fatal */
+      }
+      return;
+    }
     void audio.play().then(
       () => setPlaying(true),
       () => setPlaying(false),
@@ -332,15 +399,17 @@ export function ListenToArticle({ slug }: { slug: string }) {
   const seek = useCallback((t: number, idx: number | null = null, shouldPlay = false) => {
     const audio = audioRef.current;
     if (!audio) return;
-    // Prefer the element's live duration: the React state can still be 0 when
-    // loadedmetadata fired before the listener attached (fast cache) or the
-    // repair below hasn't synced yet. Gating only on state would park every
-    // seek in pendingRef while the element sits at 0 — highlight moves, audio
-    // doesn't.
-    let effD = 0;
+    // Prefer the element's live duration, falling back to the known file
+    // duration: the element can transiently report nothing usable (evicted
+    // media data after backgrounding, or loadedmetadata racing the listener)
+    // while the file length is already known. Gating only on the element
+    // would park every seek in pendingRef while the element sits at 0 —
+    // highlight moves, audio doesn't.
+    let effD = durationRef.current;
     try {
       if (Number.isFinite(audio.duration) && audio.duration > 0) {
         effD = audio.duration;
+        if (effD !== durationRef.current) setDuration(effD);
       }
     } catch {
       /* non-fatal */
