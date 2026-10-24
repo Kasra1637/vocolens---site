@@ -15,6 +15,9 @@ import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
+// TEMP voice bake-off (deleted with the ?voice= block below). Test blogs get
+// a visible voice picker; test MP3s live in public/audio/test-voices/.
+const TEST_BLOGS = ["mixed-emotions", "science-of-reflection"];
 // TEMP voice bake-off short names (deleted with the ?voice= block above).
 const TEST_VOICES = [
   "Aria",
@@ -119,7 +122,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
   // Client-only state (set in an effect) so SSR hydration never mismatches.
   const [testVoice, setTestVoice] = useState<string | null>(null);
   useEffect(() => {
-    if (slug !== "mixed-emotions") return;
+    if (!TEST_BLOGS.includes(slug)) return;
     const v = new URLSearchParams(window.location.search).get("voice");
     if (v && TEST_VOICES.includes(v)) setTestVoice(v);
   }, [slug]);
@@ -699,7 +702,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
             </div>
           )}
         </div>
-        {slug === "mixed-emotions" && (
+        {TEST_BLOGS.includes(slug) && (
           <div className="mt-4 border-t border-primary/10 pt-3">
             <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
               Test voices (temporary)
