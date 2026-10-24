@@ -15,6 +15,20 @@ import { ARTICLE_SECTIONS, sectionAt } from "../../lib/articleSections";
 
 const SPEEDS = [1, 1.25, 1.5, 2];
 
+// TEMP voice bake-off short names (deleted with the ?voice= block above).
+const TEST_VOICES = [
+  "Aria",
+  "Jenny",
+  "Ava",
+  "Emma",
+  "Michelle",
+  "Ana",
+  "Andrew",
+  "Brian",
+  "Guy",
+  "Christopher",
+];
+
 // Each chapter's audio is synthesized separately and concatenated in
 // scripts/refresh-resource-audio.cjs, so sections[i].startSec is the exact
 // boundary where that chapter's heading (H2/H3) begins (~0.15s of lead-in
@@ -99,7 +113,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
   // in for SSR and the first paint.
   const [articleTitles, setArticleTitles] = useState<string[] | null>(null);
 
-  const src = `/audio/${slug}.mp3`;
+  // TEMP voice bake-off: ?voice=<Short> on mixed-emotions swaps in a test
+  // MP3 so voices can be compared during real blog playback. Delete this
+  // block once the winner is picked and all blogs are regenerated in it.
+  // Client-only state (set in an effect) so SSR hydration never mismatches.
+  const [testVoice, setTestVoice] = useState<string | null>(null);
+  useEffect(() => {
+    if (slug !== "mixed-emotions") return;
+    const v = new URLSearchParams(window.location.search).get("voice");
+    if (v && TEST_VOICES.includes(v)) setTestVoice(v);
+  }, [slug]);
+  const src = testVoice
+    ? `/audio/test-voices/${slug}.${testVoice}.mp3`
+    : `/audio/${slug}.mp3`;
   const sections = ARTICLE_SECTIONS[slug] ?? [];
 
   // Header-resolved start for a section: the mapped timestamp pulled earlier
@@ -673,6 +699,42 @@ export function ListenToArticle({ slug }: { slug: string }) {
             </div>
           )}
         </div>
+        {slug === "mixed-emotions" && (
+          <div className="mt-4 border-t border-primary/10 pt-3">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-text-muted">
+              Test voices (temporary)
+            </div>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {TEST_VOICES.map((v) => {
+                const on = testVoice === v;
+                return (
+                  <button
+                    key={v}
+                    type="button"
+                    onClick={() => setTestVoice(v)}
+                    aria-pressed={on}
+                    className={
+                      on
+                        ? "inline-flex items-center h-8 px-3 rounded-full bg-primary text-primary-foreground text-xs font-semibold transition-colors"
+                        : "inline-flex items-center h-8 px-3 rounded-full bg-primary/10 border border-primary/15 text-[#6A3FC0] text-xs font-semibold hover:bg-primary/15 transition-colors"
+                    }
+                  >
+                    {v}
+                  </button>
+                );
+              })}
+              {testVoice && (
+                <button
+                  type="button"
+                  onClick={() => setTestVoice(null)}
+                  className="inline-flex items-center h-8 px-3 rounded-full text-xs font-semibold text-text-muted hover:bg-primary/5 transition-colors"
+                >
+                  Reset
+                </button>
+              )}
+            </div>
+          </div>
+        )}
         <ReadingHighlighter
           slug={slug}
           sectionIdx={sectionIdx}
