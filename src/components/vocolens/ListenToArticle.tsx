@@ -231,6 +231,19 @@ export function ListenToArticle({ slug }: { slug: string }) {
     if (audio) audio.playbackRate = SPEEDS[speedIdx];
   }, [speedIdx]);
 
+  // Tell floating controls (BackToTop) when the mini-bar is on screen so
+  // they can get out of its way on narrow viewports.
+  const minibarVisible = hasStarted && !dismissed && !missing;
+  useEffect(() => {
+    try {
+      window.dispatchEvent(
+        new CustomEvent("vocolens:minibar", { detail: { visible: minibarVisible } }),
+      );
+    } catch {
+      /* non-fatal */
+    }
+  }, [minibarVisible]);
+
   // Clear any lingering highlight on unmount / slug change.
   useEffect(
     () => () => {
@@ -245,6 +258,9 @@ export function ListenToArticle({ slug }: { slug: string }) {
     const audio = audioRef.current;
     if (!audio) return;
     setHasStarted(true);
+    // A dismissed mini-bar reopens on the next explicit Listen: dismiss is
+    // a per-pause hiding, not a permanent opt-out for the page.
+    setDismissed(false);
     // The highlight (React state) and the element can diverge: a seek parked
     // while metadata was missing, a missed loadedmetadata event, or a
     // pre-playback seek the element ignored all leave audio.currentTime at 0
@@ -602,7 +618,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
           {...{ [EXCLUDE_ATTR]: true }}
         >
           <div
-            className="card-app rounded-3xl shadow-lg flex items-center gap-2 p-3 sm:p-4"
+            className="card-app rounded-3xl shadow-lg flex items-center gap-1.5 sm:gap-2 p-3 sm:p-4"
             role="region"
             aria-label="Blog narration mini player"
           >
@@ -639,7 +655,7 @@ export function ListenToArticle({ slug }: { slug: string }) {
             >
               <SkipForward className="w-4 h-4" aria-hidden="true" />
             </button>
-            <div className="min-w-0 w-36 sm:w-48">
+            <div className="min-w-0 w-24 sm:w-48">
               <div className="truncate text-xs font-semibold text-text-primary">
                 {miniTitle ? `§ ${miniTitle}` : "Narration"}
               </div>
